@@ -1,0 +1,206 @@
+// 数据库管理：创建数据库 | 查看数据库 | 使用数据库 | 删除数据库
+
+connect root/root;
+
+
+//一、创建和查看数据库
+--0.清理环境
+DROP DATABASE ln; <<NULL;
+DROP DATABASE sgcc; <<NULL;
+
+--1. 创建数据库
+CREATE DATABASE ln;
+CREATE DATABASE sgcc;
+
+--2. 查看数据库
+SHOW DATABASES;
+
+--3. 使用数据库
+USE ln;
+use sgcc;
+use db;
+<<SQLSTATE;
+
+--4. 删除数据库并查看数据库
+DROP DATABASE ln;
+DROP DATABASE sgcc;
+SHOW DATABASES;
+
+
+//二、创建数据库名称字符校验，如字符类型及字符长度
+--0.清理环境
+DROP DATABASE "sgcc.1w_测试_1"; <<NULL;
+DROP DATABASE "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"; <<NULL;
+DROP DATABASE "`test1`"; <<NULL;
+DROP DATABASE "123w.24h"; <<NULL;
+
+--1.创建数据库
+
+--1.1数据库节点名只支持中英文字符、数字和下划线的组合
+CREATE DATABASE "sgcc.1W_测试_1";
+CREATE DATABASE "123w.24h";
+CREATE DATABASE "`test1`";
+CREATE DATABASE "123";
+<<SQLSTATE;
+CREATE DATABASE "win&one";
+<<SQLSTATE;
+SHOW DATABASES;
+
+--1.2数据库名称字符长度限制【目前支持64个】
+create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234";
+create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop12345";
+<<SQLSTATE;
+SHOW DATABASES;
+
+--1.3数据库名称为保留字符：ROOT | TIME | TIMESTAMP
+create database root;
+<<SQLSTATE;
+create database time;
+<<SQLSTATE;
+create database timestamp;
+<<SQLSTATE;
+
+--1.4数据库名称中包含不合规的字符：【-,.,"",'',/】
+CREATE DATABASE "sgcc.w-s1";
+<<SQLSTATE;
+CREATE DATABASE "db.";
+<<SQLSTATE;
+CREATE DATABASE "'data'";
+<<SQLSTATE;
+CREATE DATABASE ""test2"";
+<<SQLSTATE;
+CREATE DATABASE "D/?<|>&%$#@()";
+<<SQLSTATE;
+CREATE DATABASE "s//";
+<<SQLSTATE;
+
+--2. 查看数据库
+SHOW DATABASES;
+
+--3. 清理环境：删除数据库
+DROP DATABASE "sgcc.1w_测试_1"; 
+DROP DATABASE "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234";
+DROP DATABASE "`test1`"; <<SQLSTATE;
+DROP DATABASE "123w.24h";
+
+
+//三、已创建数据库，再次创建相同的名称创建数据库
+--0.清理环境
+DROP DATABASE db;
+<<NULL;
+
+--1. 创建数据库
+CREATE DATABASE db;
+SHOW DATABASES;
+
+--2. 再次创建已有的数据库，进行校验
+CREATE DATABASE DB;
+<<SQLSTATE;
+
+--3.查看数据库
+SHOW DATABASES;
+
+--4.清理环境
+DROP DATABASE db;
+<<NULL;
+
+
+//四、删除不存在的存储组
+--0.清理环境
+DROP DATABASE test;
+<<NULL;
+
+--1.创建数据库
+CREATE DATABASE TEST;
+
+--2.删除不存在的数据库
+DROP DATABASE data;
+<<SQLSTATE;
+SHOW DATABASES;
+
+--3.清理环境：删除数据库
+DROP DATABASE test;
+
+
+//五、不支持自动创建元数据（自动创建数据库）
+
+-- 通过inser自动创建元数据
+insert into INSERT INTO table1(time,device_id,s1) values(2, 'd1', 'test');
+<<SQLSTATE;
+
+
+//六、删除已经create时间序列和insert数据的存储组
+--0.清理环境
+DROP DATABASE test;
+<<NULL;
+
+--1.创建数据库并查看数据库
+create database test;
+show databases;
+use test;
+
+--2.创建表
+create table table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT, s3 INT64 MEASUREMENT, s4 FLOAT MEASUREMENT, s5 DOUBLE MEASUREMENT, s6 BOOLEAN MEASUREMENT, s7 DATE MEASUREMENT, s8 TIMESTAMP MEASUREMENT, s9 STRING MEASUREMENT, s10 BLOB MEASUREMENT);
+
+--3.查看数据库下已创建的表，描述表信息
+show tables from test;
+desc table1;
+
+--4.插入数据
+INSERT INTO table1(time,device_id,color,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10) values(1, 'd1', 'red', 'abcd', 1, 1, 1, 1, true, '2021-10-01', 1633046400000, 'abcd', X'abcd');
+
+--5.查询所有列的数据
+select * from table1;
+
+--6.删除数据库
+drop database test;
+
+--7.查询设备和时间序列，查询数据
+show databases;
+show tables from test;
+<<SQLSTATE;
+desc table1;
+<<SQLSTATE;
+
+--8.再次创建数据库，表
+create database test;
+create table table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT, s3 INT64 MEASUREMENT, s4 FLOAT MEASUREMENT, s5 DOUBLE MEASUREMENT, s6 BOOLEAN MEASUREMENT, s7 DATE MEASUREMENT, s8 TIMESTAMP MEASUREMENT, s9 STRING MEASUREMENT, s10 BLOB MEASUREMENT);
+
+--9.查看数据库，展示表，列出表信息
+show databases;
+show tables from test;
+desc table1;
+
+--10.验证之前的数据是否还存在【空列表】
+select * from table1;
+
+--11.清理环境
+DROP DATABASE test;
+<<NULL;
+
+
+//七、统计数据库数量
+--0.清理环境
+drop database test_db1;
+<<NULL;
+drop database test_db2;
+<<NULL;
+drop database test_db3;
+<<NULL;
+
+--1.创建数据库
+CREATE DATABASE test_DB1;
+CREATE DATABASE test_DB2;
+CREATE DATABASE test_DB3;
+
+--2.暂不支持统计数据库数量：count
+count databases;
+<<SQLSTATE;
+
+--3.清理环境:删除数据库
+drop database test_db1;
+<<NULL;
+drop database test_db2;
+<<NULL;
+drop database test_db3;
+<<NULL;

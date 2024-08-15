@@ -1,0 +1,172 @@
+-- [1]12:create database test_db
+STRICT{
+PASS
+}
+-- [1]13:create database data
+STRICT{
+PASS
+}
+-- [1]16:create table table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT)
+STRICT{
+SQLSTATE : 701: database is not specified
+}
+-- [1]20:use test_db
+STRICT{
+PASS
+}
+-- [1]30:create table device_type_1 (     "地区" STRING ID,     "厂号" STRING ID,     "设备号" STRING ID,     "温度" FLOAT MEASUREMENT,     "排量" DOUBLE MEASUREMENT ) with (TTL=3600000)
+STRICT{
+PASS
+}
+-- [1]42:create table device_type_2 (     "地区" STRING ID,     "厂号" STRING ID,     "设备号" STRING ID,     "型号" STRING ATTRIBUTE,     "温度" FLOAT MEASUREMENT,     "排量" DOUBLE MEASUREMENT ) with (TTL=3600000)
+STRICT{
+PASS
+}
+-- [1]55:create table device_type_3 (     "地区" STRING ID,     "厂号" STRING ID,     "设备号" STRING ID,     "型号" STRING ATTRIBUTE,     "温度" FLOAT MEASUREMENT,     "排量" DOUBLE MEASUREMENT, 	"维修周期" DATE MEASUREMENT )
+STRICT{
+PASS
+}
+
+-- [1]58:show tables
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+device_type_3        |INF                |
+----------------------------------------
+device_type_2        |3600000            |
+----------------------------------------
+device_type_1        |3600000            |
+总数目：3
+}
+
+Elapsed Time: 0.0.1
+-- [1]61:describe device_type_1
+STRICT{
+PASS
+}
+-- [1]62:desc device_type_2
+STRICT{
+PASS
+}
+-- [1]63:desc device_type_3
+STRICT{
+PASS
+}
+-- [1]67:create table data.table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT, s3 INT64 MEASUREMENT, s4 FLOAT MEASUREMENT, s5 DOUBLE MEASUREMENT, s6 BOOLEAN MEASUREMENT, s7 DATE MEASUREMENT, s8 TIMESTAMP MEASUREMENT, s9 STRING MEASUREMENT, s10 BLOB MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]70:create table data.table2(time timestamp ID, sensor_1 INT64 MEASUREMENT, sensor_2 FLOAT MEASUREMENT)
+STRICT{
+SQLSTATE : 701: Columns in table shall not share the same name time.
+}
+-- [1]74:create table data.table3(device INT64 ID, area STRING ATTRIBUTE, sensor_1 INT64 MEASUREMENT, sensor_2 FLOAT MEASUREMENT)
+STRICT{
+SQLSTATE : 701: DataType of ID Column should only be STRING, current is INT64
+}
+-- [1]76:create table data.table4(device STRING ID, area TEXT ATTRIBUTE, sensor_1 INT64 MEASUREMENT, sensor_2 FLOAT MEASUREMENT)
+STRICT{
+SQLSTATE : 701: DataType of ATTRIBUTE Column should only be STRING, current is TEXT
+}
+-- [1]80:create table data.table5(device STRING, area STRING, sensor_1 INT64, sensor_2 FLOAT)
+STRICT{
+PASS
+}
+-- [1]83:create table data.table6(device ID, area ATTRIBUTE, sensor_1 DOUBLE MEASUREMENT, sensor_2 BOOLEAN MEASUREMENT)
+STRICT{
+SQLSTATE : 701: Unknown type: ID
+}
+-- [1]87:create table data.table7(device STRING ID, area STRING ATTRIBUTE, s1 BOOLEAN MEASUREMENT, s2 INT32 MEASUREMENT) with (TTL=3600000)
+STRICT{
+PASS
+}
+-- [1]88:create table data.table7(device STRING ID, area STRING ATTRIBUTE, s1 BOOLEAN MEASUREMENT, s2 INT32 MEASUREMENT) with (format='ORC')
+STRICT{
+SQLSTATE : 701: Table property format is currently not allowed.
+}
+
+-- [1]92:show databases
+STRICT{
+Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
+----------------------------------------------------------------------------------------------------------------------------
+test_db             |1                                   |1                                 |604800000                         |
+----------------------------------------------------------------------------------------------------------------------------
+`test1`             |1                                   |1                                 |604800000                         |
+----------------------------------------------------------------------------------------------------------------------------
+data                |1                                   |1                                 |604800000                         |
+总数目：3
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]93:show tables from test_db
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+device_type_3        |INF                |
+----------------------------------------
+device_type_2        |3600000            |
+----------------------------------------
+device_type_1        |3600000            |
+总数目：3
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]94:show tables from data
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+table5               |INF                |
+----------------------------------------
+table1               |INF                |
+----------------------------------------
+table7               |3600000            |
+总数目：3
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]95:show tables in test_db
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+device_type_3        |INF                |
+----------------------------------------
+device_type_2        |3600000            |
+----------------------------------------
+device_type_1        |3600000            |
+总数目：3
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]96:show tables in data
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+table5               |INF                |
+----------------------------------------
+table1               |INF                |
+----------------------------------------
+table7               |3600000            |
+总数目：3
+}
+
+Elapsed Time: 0.0.1
+-- [1]99:desc data.table1
+STRICT{
+PASS
+}
+-- [1]100:desc data.table5
+STRICT{
+PASS
+}
+-- [1]101:desc test_db.device_type_1
+STRICT{
+PASS
+}
+-- [1]102:desc test_db.device_type_2
+STRICT{
+PASS
+}
