@@ -1,0 +1,64 @@
+// 比较谓词
+
+connect root/root;
+--0.清理数据：删除数据库 
+drop database test_db;
+<<NULL;
+
+--1. 创建数据库
+create database test_db;
+
+--2. 指定数据库
+use test_db;
+
+--3. 创建表 t1
+create table t1
+(
+    "region" STRING ID,
+    "factoryid" STRING ID,
+    "deviceid" STRING ID,
+    "type" STRING ATTRIBUTE,
+    "int64" INT64,
+    "text" TEXT,
+    "boolean" BOOLEAN
+);
+
+
+
+
+--4. 写入数据（自动创建其他列）
+INSERT INTO t1(time,region,factoryid,deviceid,type,int64,text,boolean) values(1,'1','1','1','t1',111,'aaa',0);
+INSERT INTO t1(time,region,factoryid,deviceid,type,text,boolean) values(2,'1','2','2','t1','bbb',1);
+INSERT INTO t1(time,region,factoryid,deviceid,type,boolean) values(3,'1','3','3','t1',0);
+INSERT INTO t1(time,region,factoryid,deviceid,type,int64,text,boolean) values(4,'2','1','4','t1',444,'ddd',1);
+INSERT INTO t1(time,region,factoryid,deviceid,type,int64,text) values(5,'2','2','5','t1',555,'eee');
+INSERT INTO t1(time,region,factoryid,deviceid,type,int64) values(6,'2','3','6','t1',666);
+INSERT INTO t1(time,region,factoryid,deviceid,type,int64) values(7,'3','1','7','t1',777);
+INSERT INTO t1(time,region,factoryid,deviceid,type,text) values(8,'3','2','8','t1','hhh');
+INSERT INTO t1(time,region,factoryid,deviceid,type,boolean) values(9,'3','3','9','t1',0);
+<<SQLSTATE;
+
+--5-1. 查询：between
+select * from t1 where int64 between 300 and 600 order by time;
+
+--5-2. 查询：not between
+select * from t1 where int64 not between 300 and 600 order by time;
+
+--6-1. 查询：is null
+select * from t1 where text is null order by time;
+
+--6-2. 查询：is not null
+select * from t1 where text is not null order by time;
+
+--7-1. 查询：in
+select * from t1 where text in ('aaa','bbb','ccc') order by time;
+
+--7-2. 查询：not in
+select * from t1 where text not in ('aaa','bbb','ccc') order by time;
+
+--8. 清理数据：删除数据库 
+drop database test_db;
+<<NULL;
+
+
+
