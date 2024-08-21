@@ -36,7 +36,6 @@ INSERT INTO t1(time,region,factoryid,deviceid,type,int64) values(6,'2','3','6','
 INSERT INTO t1(time,region,factoryid,deviceid,type,int64) values(7,'3','1','7','t1',777);
 INSERT INTO t1(time,region,factoryid,deviceid,type,text) values(8,'3','2','8','t1','hhh');
 INSERT INTO t1(time,region,factoryid,deviceid,type,boolean) values(9,'3','3','9','t1',0);
-<<SQLSTATE;
 
 --5-1. 查询：between
 select * from t1 where int64 between 300 and 600 order by time;
