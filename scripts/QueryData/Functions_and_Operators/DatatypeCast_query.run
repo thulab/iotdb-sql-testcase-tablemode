@@ -119,7 +119,98 @@ select s1, cast(s1 as INT32) from table_a; <<SQLSTATE;
 select s1, cast(s1 as INT64) from table_a; <<SQLSTATE;
 select s1, cast(s1 as FLOAT) from table_a; <<SQLSTATE;
 select s1, cast(s1 as DOUBLE) from table_a; <<SQLSTATE;
+select s1, cast(s1 as DATE) from table_a; <<SQLSTATE;
+select s1, cast(s1 as TIMESTAMP) from table_a; <<SQLSTATE;
+select s1, cast(s1 as STRING) from table_a;
+select s1, cast(s1 as BLOB) from table_a;
 
+--8.3  INT32 数据类型转换其他数据类型
+select s2, cast(s2 as BOOLEAN) from table_a;
+select s2, cast(s2 as TEXT) from table_a;
+select s2, cast(s2 as INT64) from table_a;
+select s2, cast(s2 as FLOAT) from table_a;
+select s2, cast(s2 as DOUBLE) from table_a;
+select s2, cast(s2 as DATE) from table_a;
+select s2, cast(s2 as TIMESTAMP) from table_a;
+select s2, cast(s2 as STRING) from table_a;
+select s2, cast(s2 as BLOB) from table_a;
+
+--8.4 INT64 数据类型转换其他数据类型
+select s3, cast(s3 as BOOLEAN) from table_a;
+select s3, cast(s3 as TEXT) from table_a;
+select s3, cast(s3 as INT32) from table_a;
+select s3, cast(s3 as FLOAT) from table_a;
+select s3, cast(s3 as DOUBLE) from table_a;
+select s3, cast(s3 as DATE) from table_a;
+select s3, cast(s3 as TIMESTAMP) from table_a;
+select s3, cast(s3 as STRING) from table_a;
+select s3, cast(s3 as BLOB) from table_a;
+
+--8.5 FLOAT 数据类型转换其他数据类型
+select s4, cast(s4 as BOOLEAN) from table_a;
+select s4, cast(s4 as TEXT) from table_a;
+select s4, cast(s4 as INT32) from table_a;
+select s4, cast(s4 as INT64) from table_a;
+select s4, cast(s4 as DOUBLE) from table_a;
+select s4, cast(s4 as DATE) from table_a;
+select s4, cast(s4 as TIMESTAMP) from table_a;
+select s4, cast(s4 as STRING) from table_a;
+select s4, cast(s4 as BLOB) from table_a;
+
+--8.6 DOUBLE 数据类型转换其他数据类型
+select s5, cast(s5 as BOOLEAN) from table_a;
+select s5, cast(s5 as TEXT) from table_a;
+select s5, cast(s5 as INT32) from table_a;
+select s5, cast(s5 as INT64) from table_a;
+select s5, cast(s5 as FLOAT) from table_a;
+select s5, cast(s5 as DATE) from table_a;
+select s5, cast(s5 as TIMESTAMP) from table_a;
+select s5, cast(s5 as STRING) from table_a;
+select s5, cast(s5 as BLOB) from table_a;
+
+--8.7 DATE 数据类型转换其他数据类型
+select s7, cast(s7 as BOOLEAN) from table_a;
+select s7, cast(s7 as TEXT) from table_a;
+select s7, cast(s7 as INT32) from table_a;
+select s7, cast(s7 as INT64) from table_a;
+select s7, cast(s7 as FLOAT) from table_a;
+select s7, cast(s7 as DOUBLE) from table_a;
+select s7, cast(s7 as TIMESTAMP) from table_a;
+select s7, cast(s7 as STRING) from table_a;
+select s7, cast(s7 as BLOB) from table_a;
+
+--8.8 TIMESTAMP 数据类型转换其他数据类型
+select s8, cast(s8 as BOOLEAN) from table_a;
+select s8, cast(s8 as TEXT) from table_a;
+select s8, cast(s8 as INT32) from table_a; <<SQLSTATE;
+select s8, cast(s8 as INT64) from table_a;
+select s8, cast(s8 as FLOAT) from table_a;
+select s8, cast(s8 as DOUBLE) from table_a;
+select s8, cast(s8 as DATE) from table_a; <<SQLSTATE;
+select s8, cast(s8 as STRING) from table_a;
+select s8, cast(s8 as BLOB) from table_a;
+
+--8.9 STRING 数据类型转换其他数据类型
+select s9, cast(s9 as BOOLEAN) from table_a; <<SQLSTATE;
+select s9, cast(s9 as TEXT) from table_a;
+select s9, cast(s9 as INT32) from table_a; <<SQLSTATE;
+select s9, cast(s9 as INT64) from table_a; <<SQLSTATE;
+select s9, cast(s9 as FLOAT) from table_a; <<SQLSTATE;
+select s9, cast(s9 as DOUBLE) from table_a; <<SQLSTATE;
+select s9, cast(s9 as DATE) from table_a; <<SQLSTATE;
+select s9, cast(s9 as TIMESTAMP) from table_a; <<SQLSTATE;
+select s9, cast(s9 as BLOB) from table_a;
+
+--8.10 BLOB 数据类型转换其他数据类型
+select s10, cast(s10 as BOOLEAN) from table_a; <<SQLSTATE;
+select s10, cast(s10 as TEXT) from table_a;
+select s9, cast(s9 as INT32) from table_a; <<SQLSTATE;
+select s9, cast(s9 as INT64) from table_a; <<SQLSTATE;
+select s9, cast(s9 as FLOAT) from table_a; <<SQLSTATE;
+select s9, cast(s9 as DOUBLE) from table_a; <<SQLSTATE;
+select s9, cast(s9 as DATE) from table_a; <<SQLSTATE;
+select s9, cast(s9 as TIMESTAMP) from table_a; <<SQLSTATE;
+select s9, cast(s9 as BLOB) from table_a;
 
 --9. 清理数据：
 drop database test_db;
