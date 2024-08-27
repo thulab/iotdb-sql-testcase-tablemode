@@ -39,7 +39,7 @@ device_type_1        |3600000            |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 -- [1]61:describe device_type_1
 STRICT{
 PASS
@@ -97,7 +97,7 @@ data                |1                                   |1                     
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]93:show tables from test_db
 STRICT{
