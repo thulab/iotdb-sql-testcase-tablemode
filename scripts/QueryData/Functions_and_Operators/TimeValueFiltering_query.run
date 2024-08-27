@@ -51,7 +51,6 @@ select * from device_type_0 where time > 3 and time < 20;
 select * from device_type_0 where "温度" >= 85 and "排量" > 1500;
 select time,"温度" from device_type_0 where time >= 10 and "排量" > 1300;
 select time,"地区","维修周期","排量" from device_type_0 where "厂号" = '2000' and "温度" < 85 and time < 5;
-<<SQLSTATE;
 select "温度" from device_type_0 where "地区"='beijing' and time >= 1 and time < 10;
 
 --8. 清理数据：删除数据库

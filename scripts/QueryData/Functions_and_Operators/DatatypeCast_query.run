@@ -186,7 +186,7 @@ select s8, cast(s8 as INT32) from table_a; <<SQLSTATE;
 select s8, cast(s8 as INT64) from table_a;
 select s8, cast(s8 as FLOAT) from table_a;
 select s8, cast(s8 as DOUBLE) from table_a;
-select s8, cast(s8 as DATE) from table_a; <<SQLSTATE;
+select s8, cast(s8 as DATE) from table_a;
 select s8, cast(s8 as STRING) from table_a;
 select s8, cast(s8 as BLOB) from table_a;
 

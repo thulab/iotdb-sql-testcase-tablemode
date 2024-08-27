@@ -29,7 +29,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.2.15
+Elapsed Time: 0.2.297
 -- [1]49:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 2, 'd1', 'red', true, 'v2', 5, 121, 222.1, 12.2, false, '2022-10-01', 1724049989000, 'ertbsad', X'24ad' )
 STRICT{
 0
@@ -65,7 +65,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.52
+Elapsed Time: 0.0.328
 -- [1]79:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 8, 'd2', 'purple', true, 'v3', 555, 1001, 202.1, 1.2, false, '2002-10-01', 1653046400000, 'ioep11', X'abcdef' )
 STRICT{
 0
@@ -77,25 +77,25 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
 -- [1]89:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 10, 'd2', 'red', false, 'v2', 111, 222, 22.5, 13.3, true, '2020-10-11', 1702277189000, 'sad', X'ae' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.7
 -- [1]94:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 11, 'd2', 'red', null, 'v2', 111, 20, 2, 11.3, true, null, 1702277189000, 'sad', X'ae' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.7
 -- [1]99:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1702277189000, 'sad', X'ae' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]102:select * from Table_A
 STRICT{
@@ -139,7 +139,7 @@ time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)   
 总数目：12
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.12
 
 -- [1]106:select s2, diff(s2) from table_a
 STRICT{
@@ -169,7 +169,7 @@ s2(INT32)      |_col1(DOUBLE)      |
 总数目：11
 }
 
-Elapsed Time: 0.0.14
+Elapsed Time: 0.0.15
 
 -- [1]107:select s3, diff(s3) from table_a
 STRICT{
@@ -201,7 +201,7 @@ s3(INT64)      |_col1(DOUBLE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.10
 
 -- [1]108:select s4, diff(s4) from table_a
 STRICT{
@@ -233,7 +233,7 @@ s4(FLOAT)      |_col1(DOUBLE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.7
 
 -- [1]109:select s5, diff(s5) from table_a
 STRICT{
@@ -265,7 +265,7 @@ s5(DOUBLE)      |_col1(DOUBLE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.8
 
 -- [1]110:select s8, diff(s8) from table_a
 STRICT{
@@ -309,7 +309,7 @@ s8(TIMESTAMP)      |_col1(DOUBLE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.10
 
 -- [1]112:SELECT s4, DIFF(s4, false),s5, DIFF(s5, true) from table_a offset 3 limit 5
 STRICT{
@@ -327,7 +327,7 @@ s4(FLOAT)      |_col1(DOUBLE)      |s5(DOUBLE)      |_col3(DOUBLE)      |
 总数目：5
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.9
 -- [1]114:select s1, diff(s1) from table_a
 STRICT{
 SQLSTATE : 701: Scalar function diff only supports one numeric data types [INT32, INT64, FLOAT, DOUBLE] and one boolean

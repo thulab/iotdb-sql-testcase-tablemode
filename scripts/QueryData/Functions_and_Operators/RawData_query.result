@@ -19,7 +19,7 @@ device_type_0        |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]30:desc device_type_0
 STRICT{
 PASS
@@ -29,37 +29,37 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.2.16
+Elapsed Time: 0.2.170
 -- [1]35:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量" ) values(1, 'hebei', '2000', '7', '2', '5', 80.5, 1200)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.55
+Elapsed Time: 0.0.115
 -- [1]36:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量") values(1, 'shanghai', '3000','3','1','15', 90, 1200)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.9
 -- [1]37:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量") values(2, 'beiijing', '1001','1','2','3',87.5, 1300)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.8
 -- [1]38:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量") values(2, 'hebei', '2000','7','2','5', 88, 1200)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 -- [1]39:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量") values(2, 'shanghai', '3010', '3', '1', '15', 92, 1000)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.8
 
 -- [1]42:select * from device_type_0
 STRICT{
@@ -85,7 +85,7 @@ time(TIMESTAMP)      |地区(STRING)      |厂号(STRING)      |设备号(STRING
 总数目：6
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.8
 
 -- [1]43:select "型号", time, "温度", "维修周期" from device_type_0
 STRICT{
@@ -111,7 +111,7 @@ STRICT{
 总数目：6
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.7
 
 -- [1]44:select "地区", "厂号", "温度" from device_type_0
 STRICT{
@@ -131,7 +131,7 @@ shanghai        |3010            |92.0           |
 总数目：6
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.6
 
 -- [1]45:select time, "地区", "厂号", "设备号", "型号", "维修周期" from device_type_0
 STRICT{
@@ -139,7 +139,7 @@ time(TIMESTAMP)      |地区(STRING)      |厂号(STRING)      |设备号(STRING
 总数目：0
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.5
 
 -- [1]46:select time, "温度" from test_db.device_type_0
 STRICT{
@@ -165,7 +165,7 @@ time(TIMESTAMP)      |温度(FLOAT)      |
 总数目：6
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.7
 
 -- [1]49:select * from device_type_0 order by time desc
 STRICT{
@@ -191,7 +191,7 @@ time(TIMESTAMP)      |地区(STRING)      |厂号(STRING)      |设备号(STRING
 总数目：6
 }
 
-Elapsed Time: 0.0.23
+Elapsed Time: 0.0.21
 
 -- [1]50:select * from device_type_0 order by "地区" asc
 STRICT{
@@ -217,7 +217,7 @@ time(TIMESTAMP)      |地区(STRING)      |厂号(STRING)      |设备号(STRING
 总数目：6
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.10
 
 -- [1]51:select * from device_type_0 order by "温度" asc, "排量" desc
 STRICT{
@@ -243,4 +243,4 @@ time(TIMESTAMP)      |地区(STRING)      |厂号(STRING)      |设备号(STRING
 总数目：6
 }
 
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.9
