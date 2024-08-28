@@ -47,34 +47,34 @@ INSERT INTO t1(time,device,type,int32,int64,double,float,boolean,text,string,blo
 
 
 --5-1. 查询 -> 比较谓词: [not] between and
-select int32 from t1 where int32 between 300 and 700;
-select int64 from t1 where int64 between 300000000000 and 700000000000;
-select double from t1 where double between 3.33 and 8.89;
-select float from t1 where float between 3.33 and 8.88;
-select boolean from t1 where boolean between false and true;
-select text from t1 where text between '2.22' and '4.44';
-select string from t1 where string between '2.22' and '4.44';
-select blob from t1 where blob between X'32DCD5' and X'62DCD5';
-select timestamp from t1 where timestamp between 1 and 3;
---TIMECHODB-936 select date from t1 where date between CAST('1970-01-03' as DATE) and CAST('1970-01-06' as DATE);
+select int32 from t1 where int32 between 300 and 700 order by time;
+select int64 from t1 where int64 between 300000000000 and 700000000000 order by time;
+select double from t1 where double between 3.33 and 8.89 order by time;
+select float from t1 where float between 3.33 and 8.88 order by time;
+select boolean from t1 where boolean between false and true order by time;
+select text from t1 where text between '2.22' and '4.44' order by time;
+select string from t1 where string between '2.22' and '4.44' order by time;
+select blob from t1 where blob between X'32DCD5' and X'62DCD5' order by time;
+select timestamp from t1 where timestamp between 1 and 3 order by time;
+--TIMECHODB-936 select date from t1 where date between CAST('1970-01-03' as DATE) and CAST('1970-01-06' as DATE) order by time;
 
-select int32 from t1 where int32 not between 300 and 700;
-select int64 from t1 where int64 not between 300000000000 and 700000000000;
-select double from t1 where double not between 3.33 and 8.89;
-select float from t1 where float not between 3.33 and 8.88;
---TIMECHODB-936 select boolean from t1 where boolean not between false and true;
-select text from t1 where text not between '1.11' and '4.44';
-select string from t1 where string not between '2.22' and '4.44';
---TIMECHODB-936 select blob from t1 where blob not between X'32DCD5' and X'62DCD5';
-select timestamp from t1 where timestamp not between 1 and 3;
---TIMECHODB-936 select date from t1 where date not between CAST('1970-01-03' as DATE) and CAST('1970-01-06' as DATE);
+select int32 from t1 where int32 not between 300 and 700 order by time;
+select int64 from t1 where int64 not between 300000000000 and 700000000000 order by time;
+select double from t1 where double not between 3.33 and 8.89 order by time;
+select float from t1 where float not between 3.33 and 8.88 order by time;
+--TIMECHODB-936 select boolean from t1 where boolean not between false and true order by time;
+select text from t1 where text not between '1.11' and '4.44' order by time;
+select string from t1 where string not between '2.22' and '4.44' order by time;
+--TIMECHODB-936 select blob from t1 where blob not between X'32DCD5' and X'62DCD5' order by time;
+select timestamp from t1 where timestamp not between 1 and 3 order by time;
+--TIMECHODB-936 select date from t1 where date not between CAST('1970-01-03' as DATE) and CAST('1970-01-06' as DATE) order by time;
 
-select boolean from t1 where boolean between 0 and 1;
+select boolean from t1 where boolean between 0 and 1 order by time;
 <<SQLSTATE;
 
-select * from t1 where int32 between 222 and 666;
-select * from t1 where int32 between 222 and 666 limit 3;
-select * from t1 where int32 between 222 and 666 offset 2 limit 3;
+select * from t1 where int32 between 222 and 666 order by time;
+select * from t1 where int32 between 222 and 666 order by time limit 3;
+select * from t1 where int32 between 222 and 666 order by time offset 2 limit 3;
 
 
 --5-2. 查询 -> 比较谓词: is [not] null
@@ -107,36 +107,36 @@ select * from t1 where int32 is not null and int64 = 555555555555;
 
 
 --5-3. 查询 -> 比较谓词: [not] in
-select * from t1 where int32 in (222,333,444);
-select * from t1 where int64 in (111111111111,333333333333,444444444444);
-select * from t1 where double in (1.1111111,2.2222222,4.4444444);
-select * from t1 where float in (1.11,2.22,3.33);
-select * from t1 where boolean in (true,false);
-select * from t1 where text in ('1.11','2.22','3.33');
-select * from t1 where string in ('1.11','2.22','3.33');
-select * from t1 where blob in (X'10F447',X'21E88E',X'32DCD5');
-select * from t1 where timestamp in (1,2,3);
-select * from t1 where date in ('1970-01-03','1970-01-04','1970-01-05');
+select * from t1 where int32 in (222,333,444) order by time;
+select * from t1 where int64 in (111111111111,333333333333,444444444444) order by time;
+select * from t1 where double in (1.1111111,2.2222222,4.4444444) order by time;
+select * from t1 where float in (1.11,2.22,3.33) order by time;
+select * from t1 where boolean in (true,false) order by time;
+select * from t1 where text in ('1.11','2.22','3.33') order by time;
+select * from t1 where string in ('1.11','2.22','3.33') order by time;
+select * from t1 where blob in (X'10F447',X'21E88E',X'32DCD5') order by time;
+select * from t1 where timestamp in (1,2,3) order by time;
+select * from t1 where date in ('1970-01-03','1970-01-04','1970-01-05') order by time;
 <<SQLSTATE;
-select date from t1 where date in (CAST('1970-01-03' as DATE),CAST('1970-01-04' as DATE));
-<<SQLSTATE;
-
-select * from t1 where int32 not in (222,333,444);
-select * from t1 where int64 not in (111111111111,333333333333,444444444444);
-select * from t1 where double not in (1.1111111,2.2222222,4.4444444);
-select * from t1 where float not in (1.11,2.22,3.33);
-select * from t1 where boolean not in (true,false);
-select * from t1 where text not in ('1.11','2.22','3.33');
-select * from t1 where string not in ('1.11','2.22','3.33');
-select * from t1 where blob not in (X'10F447',X'21E88E',X'32DCD5');
-select * from t1 where timestamp not in (1,2,3);
-select * from t1 where date not in ('1970-01-03','1970-01-04','1970-01-05');
-<<SQLSTATE;
-select date from t1 where date not in (CAST('1970-01-03' as DATE),CAST('1970-01-04' as DATE));
+select date from t1 where date in (CAST('1970-01-03' as DATE),CAST('1970-01-04' as DATE)) order by time;
 <<SQLSTATE;
 
-select * from t1 where int64 not in (111111111111,333333333333,444444444444) limit 3;
-select * from t1 where int64 not in (111111111111,333333333333,444444444444) offset 2 limit 3;
+select * from t1 where int32 not in (222,333,444) order by time;
+select * from t1 where int64 not in (111111111111,333333333333,444444444444) order by time;
+select * from t1 where double not in (1.1111111,2.2222222,4.4444444) order by time;
+select * from t1 where float not in (1.11,2.22,3.33) order by time;
+select * from t1 where boolean not in (true,false) order by time;
+select * from t1 where text not in ('1.11','2.22','3.33') order by time;
+select * from t1 where string not in ('1.11','2.22','3.33') order by time;
+select * from t1 where blob not in (X'10F447',X'21E88E',X'32DCD5') order by time;
+select * from t1 where timestamp not in (1,2,3) order by time;
+select * from t1 where date not in ('1970-01-03','1970-01-04','1970-01-05') order by time;
+<<SQLSTATE;
+select date from t1 where date not in (CAST('1970-01-03' as DATE),CAST('1970-01-04' as DATE)) order by time;
+<<SQLSTATE;
+
+select * from t1 where int64 not in (111111111111,333333333333,444444444444) order by time limit 3;
+select * from t1 where int64 not in (111111111111,333333333333,444444444444) order by time offset 2 limit 3;
 
 --6. 清理数据: 删除数据库 
 drop database test_db;
