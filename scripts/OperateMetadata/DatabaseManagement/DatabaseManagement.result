@@ -17,7 +17,7 @@ ln                  |1                                   |1                     
 总数目：2
 }
 
-Elapsed Time: 0.0.61
+Elapsed Time: 0.0.60
 -- [1]20:USE ln
 STRICT{
 PASS
@@ -34,7 +34,7 @@ SQLSTATE : 500: Unknown database db
 STRICT{
 PASS
 }
--- [1]27:DROP DATABASE sgcc
+-- [1]27:DROP DATABASE IF EXISTS sgcc
 STRICT{
 PASS
 }
@@ -46,50 +46,48 @@ Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(
 }
 
 Elapsed Time: 0.0.4
--- [1]41:CREATE DATABASE "sgcc.1W_测试_1"
+-- [1]43:CREATE DATABASE "sgcc.1W_测试_1"
+STRICT{
+SQLSTATE : 509: sgcc.1w_测试_1 is not a legal path, because The database name shall not contain '.'
+}
+-- [1]44:CREATE DATABASE "123w.24h"
+STRICT{
+SQLSTATE : 509: 123w.24h is not a legal path, because The database name shall not contain '.'
+}
+-- [1]45:CREATE DATABASE "win&one"
+STRICT{
+SQLSTATE : 509: The database name can only be characters, numbers and underscores. root.win&one is not a legal path
+}
+-- [1]46:CREATE DATABASE "`test1`"
 STRICT{
 PASS
 }
--- [1]42:CREATE DATABASE "123w.24h"
+-- [1]47:CREATE DATABASE "123"
 STRICT{
 PASS
-}
--- [1]43:CREATE DATABASE "`test1`"
-STRICT{
-PASS
-}
--- [1]44:CREATE DATABASE "123"
-STRICT{
-SQLSTATE : 509: root.123 is not a legal path
-}
--- [1]46:CREATE DATABASE "win&one"
-STRICT{
-SQLSTATE : 509: root.win&one is not a legal path
 }
 
--- [1]48:SHOW DATABASES
+-- [1]49:SHOW DATABASES
 STRICT{
 Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 ----------------------------------------------------------------------------------------------------------------------------
-sgcc.1w_测试_1        |1                                   |1                                 |604800000                         |
+123                 |1                                   |1                                 |604800000                         |
 ----------------------------------------------------------------------------------------------------------------------------
 `test1`             |1                                   |1                                 |604800000                         |
-----------------------------------------------------------------------------------------------------------------------------
-123w.24h            |1                                   |1                                 |604800000                         |
-总数目：3
+总数目：2
 }
 
-Elapsed Time: 0.0.3
--- [1]50:create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"
+Elapsed Time: 0.0.2
+-- [1]51:create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"
 STRICT{
 PASS
 }
--- [1]51:create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop12345"
+-- [1]52:create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop12345"
 STRICT{
 SQLSTATE : 509: qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop12345 is not a legal path, because the length of database name shall not exceed 64
 }
 
--- [1]54:SHOW DATABASES
+-- [1]55:SHOW DATABASES
 STRICT{
 Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 ----------------------------------------------------------------------------------------------------------------------------
@@ -98,53 +96,71 @@ qwertyuiop1234567890|1                                   |1                     
 p1234567890qwertyui|                                    |                                  |                                  |
 op1234              |                                    |                                  |                                  |
 ----------------------------------------------------------------------------------------------------------------------------
-sgcc.1w_测试_1        |1                                   |1                                 |604800000                         |
+123                 |1                                   |1                                 |604800000                         |
 ----------------------------------------------------------------------------------------------------------------------------
 `test1`             |1                                   |1                                 |604800000                         |
-----------------------------------------------------------------------------------------------------------------------------
-123w.24h            |1                                   |1                                 |604800000                         |
-总数目：4
+总数目：3
 }
 
 Elapsed Time: 0.0.3
--- [1]56:create database root
+-- [1]57:create database root
 STRICT{
-SQLSTATE : 509: root.root is not a legal path
+PASS
 }
 -- [1]58:create database time
 STRICT{
-SQLSTATE : 509: root.time is not a legal path
+PASS
 }
--- [1]60:create database timestamp
+-- [1]59:create database timestamp
 STRICT{
-SQLSTATE : 509: root.timestamp is not a legal path
+PASS
 }
--- [1]65:CREATE DATABASE "sgcc.w-s1"
+-- [1]63:CREATE DATABASE "sgcc.w-s1"
 STRICT{
-SQLSTATE : 509: root.sgcc.w-s1 is not a legal path
+SQLSTATE : 509: sgcc.w-s1 is not a legal path, because The database name shall not contain '.'
 }
--- [1]67:CREATE DATABASE "db."
+-- [1]64:create database .
 STRICT{
-SQLSTATE : 509: root.db. is not a legal path
+SQLSTATE : 700: line 1:17: mismatched input '.'. Expecting: 'IF', <identifier>
 }
--- [1]69:CREATE DATABASE "'data'"
+-- [1]66:create database "."
 STRICT{
-SQLSTATE : 509: root.'data' is not a legal path
+SQLSTATE : 509: . is not a legal path, because The database name shall not contain '.'
 }
--- [1]71:CREATE DATABASE ""test2""
+-- [1]68:create database "`.`"
+STRICT{
+SQLSTATE : 509: `.` is not a legal path, because The database name shall not contain '.'
+}
+-- [1]71:CREATE DATABASE "db."
+STRICT{
+SQLSTATE : 509: db. is not a legal path, because The database name shall not contain '.'
+}
+-- [1]73:CREATE DATABASE "a.b"
+STRICT{
+SQLSTATE : 509: a.b is not a legal path, because The database name shall not contain '.'
+}
+-- [1]75:CREATE DATABASE "'data'"
+STRICT{
+SQLSTATE : 509: The database name can only be characters, numbers and underscores. root.'data' is not a legal path
+}
+-- [1]77:CREATE DATABASE ""test2""
 STRICT{
 SQLSTATE : 700: line 1:17: Zero-length delimited identifier not allowed
 }
--- [1]73:CREATE DATABASE "D/?<|>&%$#@()"
+-- [1]79:CREATE DATABASE "````x.\"
 STRICT{
-SQLSTATE : 509: root.d/?<|>&%$#@() is not a legal path
+SQLSTATE : 509: ````x.\ is not a legal path, because The database name shall not contain '.'
 }
--- [1]75:CREATE DATABASE "s//"
+-- [1]81:CREATE DATABASE "D/?<|>&%$#@()"
 STRICT{
-SQLSTATE : 509: root.s// is not a legal path
+SQLSTATE : 509: The database name can only be characters, numbers and underscores. root.d/?<|>&%$#@() is not a legal path
+}
+-- [1]83:CREATE DATABASE "s//"
+STRICT{
+SQLSTATE : 509: The database name can only be characters, numbers and underscores. root.s// is not a legal path
 }
 
--- [1]79:SHOW DATABASES
+-- [1]87:SHOW DATABASES
 STRICT{
 Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 ----------------------------------------------------------------------------------------------------------------------------
@@ -153,117 +169,121 @@ qwertyuiop1234567890|1                                   |1                     
 p1234567890qwertyui|                                    |                                  |                                  |
 op1234              |                                    |                                  |                                  |
 ----------------------------------------------------------------------------------------------------------------------------
-sgcc.1w_测试_1        |1                                   |1                                 |604800000                         |
+root                |1                                   |1                                 |604800000                         |
 ----------------------------------------------------------------------------------------------------------------------------
 `test1`             |1                                   |1                                 |604800000                         |
 ----------------------------------------------------------------------------------------------------------------------------
-123w.24h            |1                                   |1                                 |604800000                         |
-总数目：4
+time                |1                                   |1                                 |604800000                         |
+----------------------------------------------------------------------------------------------------------------------------
+timestamp           |1                                   |1                                 |604800000                         |
+----------------------------------------------------------------------------------------------------------------------------
+123                 |1                                   |1                                 |604800000                         |
+总数目：6
 }
 
 Elapsed Time: 0.0.3
--- [1]82:DROP DATABASE "sgcc.1w_测试_1"
+-- [1]90:DROP DATABASE root
 STRICT{
 PASS
 }
--- [1]83:DROP DATABASE "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"
+-- [1]91:DROP DATABASE time
 STRICT{
 PASS
 }
--- [1]84:DROP DATABASE "`test1`"
-STRICT{
-SQLSTATE : 500: Database `test1` doesn't exist
-}
--- [1]85:DROP DATABASE "123w.24h"
+-- [1]92:DROP DATABASE timestamp
 STRICT{
 PASS
 }
--- [1]94:CREATE DATABASE db
+-- [1]93:DROP DATABASE "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"
+STRICT{
+PASS
+}
+-- [1]94:DROP DATABASE "`test1`"
+STRICT{
+PASS
+}
+-- [1]95:DROP DATABASE "123"
+STRICT{
+PASS
+}
+-- [1]104:CREATE DATABASE db
 STRICT{
 PASS
 }
 
--- [1]95:SHOW DATABASES
+-- [1]105:SHOW DATABASES
 STRICT{
 Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 ----------------------------------------------------------------------------------------------------------------------------
-`test1`             |1                                   |1                                 |604800000                         |
-----------------------------------------------------------------------------------------------------------------------------
 db                  |1                                   |1                                 |604800000                         |
-总数目：2
+总数目：1
 }
 
 Elapsed Time: 0.0.2
--- [1]98:CREATE DATABASE DB
+-- [1]108:CREATE DATABASE DB
 STRICT{
 SQLSTATE : 501: Database db already exists
 }
 
--- [1]102:SHOW DATABASES
+-- [1]112:SHOW DATABASES
 STRICT{
 Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 ----------------------------------------------------------------------------------------------------------------------------
-`test1`             |1                                   |1                                 |604800000                         |
-----------------------------------------------------------------------------------------------------------------------------
 db                  |1                                   |1                                 |604800000                         |
-总数目：2
+总数目：1
 }
 
 Elapsed Time: 0.0.2
--- [1]115:CREATE DATABASE TEST
+-- [1]125:CREATE DATABASE TEST
 STRICT{
 PASS
 }
--- [1]118:DROP DATABASE data
+-- [1]128:DROP DATABASE data
 STRICT{
 SQLSTATE : 500: Database data doesn't exist
 }
 
--- [1]120:SHOW DATABASES
+-- [1]130:SHOW DATABASES
 STRICT{
 Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 ----------------------------------------------------------------------------------------------------------------------------
-`test1`             |1                                   |1                                 |604800000                         |
-----------------------------------------------------------------------------------------------------------------------------
 test                |1                                   |1                                 |604800000                         |
-总数目：2
+总数目：1
 }
 
 Elapsed Time: 0.0.2
--- [1]123:DROP DATABASE test
+-- [1]133:DROP DATABASE test
 STRICT{
 PASS
 }
--- [1]128:insert into INSERT INTO table1(time,device_id,s1) values(2, 'd1', 'test')
+-- [1]138:insert into INSERT INTO table1(time,device_id,s1) values(2, 'd1', 'test')
 STRICT{
 SQLSTATE : 700: line 1:13: mismatched input 'INSERT'. Expecting: <identifier>
 }
--- [1]138:create database test
+-- [1]148:create database test
 STRICT{
 PASS
 }
 
--- [1]139:show databases
+-- [1]149:show databases
 STRICT{
 Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 ----------------------------------------------------------------------------------------------------------------------------
-`test1`             |1                                   |1                                 |604800000                         |
-----------------------------------------------------------------------------------------------------------------------------
 test                |1                                   |1                                 |604800000                         |
-总数目：2
+总数目：1
 }
 
 Elapsed Time: 0.0.2
--- [1]140:use test
+-- [1]150:use test
 STRICT{
 PASS
 }
--- [1]143:create table table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT, s3 INT64 MEASUREMENT, s4 FLOAT MEASUREMENT, s5 DOUBLE MEASUREMENT, s6 BOOLEAN MEASUREMENT, s7 DATE MEASUREMENT, s8 TIMESTAMP MEASUREMENT, s9 STRING MEASUREMENT, s10 BLOB MEASUREMENT)
+-- [1]153:create table table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT, s3 INT64 MEASUREMENT, s4 FLOAT MEASUREMENT, s5 DOUBLE MEASUREMENT, s6 BOOLEAN MEASUREMENT, s7 DATE MEASUREMENT, s8 TIMESTAMP MEASUREMENT, s9 STRING MEASUREMENT, s10 BLOB MEASUREMENT)
 STRICT{
 PASS
 }
 
--- [1]146:show tables from test
+-- [1]156:show tables from test
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -271,19 +291,19 @@ table1               |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.26
--- [1]147:desc table1
+Elapsed Time: 0.0.17
+-- [1]157:desc table1
 STRICT{
 PASS
 }
--- [1]151:INSERT INTO table1(time,device_id,color,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10) values(1, 'd1', 'red', 'abcd', 1, 1, 1, 1, true, '2021-10-01', 1633046400000, 'abcd', X'abcd')
+-- [1]161:INSERT INTO table1(time,device_id,color,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10) values(1, 'd1', 'red', 'abcd', 1, 1, 1, 1, true, '2021-10-01', 1633046400000, 'abcd', X'abcd')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.724
+Elapsed Time: 0.0.843
 
--- [1]153:select * from table1
+-- [1]163:select * from table1
 STRICT{
 time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -292,51 +312,47 @@ time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s1(TEXT)      
 总数目：1
 }
 
-Elapsed Time: 0.0.235
--- [1]156:drop database test
+Elapsed Time: 0.0.222
+-- [1]166:drop database test
 STRICT{
 PASS
 }
 
--- [1]159:show databases
+-- [1]169:show databases
 STRICT{
 Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
-----------------------------------------------------------------------------------------------------------------------------
-`test1`             |1                                   |1                                 |604800000                         |
-总数目：1
-}
-
-Elapsed Time: 0.0.3
--- [1]160:show tables from test
-STRICT{
-SQLSTATE : 500: Unknown database test
-}
--- [1]162:desc table1
-STRICT{
-SQLSTATE : 550: Table 'test.table1' does not exist.
-}
--- [1]166:create database test
-STRICT{
-PASS
-}
--- [1]167:create table table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT, s3 INT64 MEASUREMENT, s4 FLOAT MEASUREMENT, s5 DOUBLE MEASUREMENT, s6 BOOLEAN MEASUREMENT, s7 DATE MEASUREMENT, s8 TIMESTAMP MEASUREMENT, s9 STRING MEASUREMENT, s10 BLOB MEASUREMENT)
-STRICT{
-PASS
-}
-
--- [1]170:show databases
-STRICT{
-Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
-----------------------------------------------------------------------------------------------------------------------------
-`test1`             |1                                   |1                                 |604800000                         |
-----------------------------------------------------------------------------------------------------------------------------
-test                |1                                   |1                                 |604800000                         |
-总数目：2
+总数目：0
 }
 
 Elapsed Time: 0.0.2
+-- [1]170:show tables from test
+STRICT{
+SQLSTATE : 500: Unknown database test
+}
+-- [1]172:desc table1
+STRICT{
+SQLSTATE : 550: Table 'test.table1' does not exist.
+}
+-- [1]176:create database test
+STRICT{
+PASS
+}
+-- [1]177:create table table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT, s3 INT64 MEASUREMENT, s4 FLOAT MEASUREMENT, s5 DOUBLE MEASUREMENT, s6 BOOLEAN MEASUREMENT, s7 DATE MEASUREMENT, s8 TIMESTAMP MEASUREMENT, s9 STRING MEASUREMENT, s10 BLOB MEASUREMENT)
+STRICT{
+PASS
+}
 
--- [1]171:show tables from test
+-- [1]180:show databases
+STRICT{
+Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
+----------------------------------------------------------------------------------------------------------------------------
+test                |1                                   |1                                 |604800000                         |
+总数目：1
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]181:show tables from test
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -344,32 +360,45 @@ table1               |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
--- [1]172:desc table1
+Elapsed Time: 0.0.1
+-- [1]182:desc table1
 STRICT{
 PASS
 }
 
--- [1]175:select * from table1
+-- [1]185:select * from table1
 STRICT{
 time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.12
--- [1]193:CREATE DATABASE test_DB1
+Elapsed Time: 0.0.14
+-- [1]203:CREATE DATABASE test_DB1
 STRICT{
 PASS
 }
--- [1]194:CREATE DATABASE test_DB2
+-- [1]204:CREATE DATABASE test_DB2
 STRICT{
 PASS
 }
--- [1]195:CREATE DATABASE test_DB3
+-- [1]205:CREATE DATABASE test_DB3 IF NOT EXISTS
 STRICT{
-PASS
+SQLSTATE : 700: line 1:26: mismatched input 'IF'. Expecting: 'WITH', <EOF>
+EXPECT:PASS
 }
--- [1]197:count databases
+
+-- [1]207:show databases
+STRICT{
+Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
+----------------------------------------------------------------------------------------------------------------------------
+test_db1            |1                                   |1                                 |604800000                         |
+----------------------------------------------------------------------------------------------------------------------------
+test_db2            |1                                   |1                                 |604800000                         |
+总数目：2
+}
+
+Elapsed Time: 0.0.1
+-- [1]210:count databases
 STRICT{
 SQLSTATE : 700: line 1:7: mismatched input 'databases'. Expecting: 'DEVICES', 'TIMEPARTITION', 'TIMESLOTID'
 }

@@ -23,27 +23,28 @@ use db;
 
 --4. 删除数据库并查看数据库
 DROP DATABASE ln;
-DROP DATABASE sgcc;
+DROP DATABASE IF EXISTS sgcc ;
 SHOW DATABASES;
 
 
 //二、创建数据库名称字符校验，如字符类型及字符长度
 --0.清理环境
-DROP DATABASE "sgcc.1w_测试_1"; <<NULL;
+DROP DATABASE root; <<NULL;
+DROP DATABASE time; <<NULL;
+DROP DATABASE timestamp; <<NULL;
 DROP DATABASE "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"; <<NULL;
+DROP DATABASE "123"; <<NULL;
 DROP DATABASE "`test1`"; <<NULL;
-DROP DATABASE "123w.24h"; <<NULL;
 
 --1.创建数据库
 
 --1.1数据库节点名只支持中英文字符、数字和下划线的组合
-CREATE DATABASE "sgcc.1W_测试_1";
-CREATE DATABASE "123w.24h";
+CREATE DATABASE "sgcc.1W_测试_1"; <<SQLSTATE;
+CREATE DATABASE "123w.24h"; <<SQLSTATE;
+CREATE DATABASE "win&one"; <<SQLSTATE;
 CREATE DATABASE "`test1`";
 CREATE DATABASE "123";
-<<SQLSTATE;
-CREATE DATABASE "win&one";
-<<SQLSTATE;
+
 SHOW DATABASES;
 
 --1.2数据库名称字符长度限制【目前支持64个】
@@ -54,20 +55,27 @@ SHOW DATABASES;
 
 --1.3数据库名称为保留字符：ROOT | TIME | TIMESTAMP
 create database root;
-<<SQLSTATE;
 create database time;
-<<SQLSTATE;
 create database timestamp;
-<<SQLSTATE;
 
 --1.4数据库名称中包含不合规的字符：【-,.,"",'',/】
 CREATE DATABASE "sgcc.w-s1";
 <<SQLSTATE;
+create database .;
+<<SQLSTATE;
+create database ".";
+<<SQLSTATE;
+create database "`.`";
+<<SQLSTATE;
 CREATE DATABASE "db.";
+<<SQLSTATE;
+CREATE DATABASE "a.b";
 <<SQLSTATE;
 CREATE DATABASE "'data'";
 <<SQLSTATE;
 CREATE DATABASE ""test2"";
+<<SQLSTATE;
+CREATE DATABASE "````x.\";
 <<SQLSTATE;
 CREATE DATABASE "D/?<|>&%$#@()";
 <<SQLSTATE;
@@ -78,10 +86,12 @@ CREATE DATABASE "s//";
 SHOW DATABASES;
 
 --3. 清理环境：删除数据库
-DROP DATABASE "sgcc.1w_测试_1"; 
+DROP DATABASE root;
+DROP DATABASE time;
+DROP DATABASE timestamp; 
 DROP DATABASE "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234";
-DROP DATABASE "`test1`"; <<SQLSTATE;
-DROP DATABASE "123w.24h";
+DROP DATABASE "`test1`";
+DROP DATABASE "123";
 
 
 //三、已创建数据库，再次创建相同的名称创建数据库
@@ -191,13 +201,16 @@ drop database test_db3;
 --1.创建数据库
 CREATE DATABASE test_DB1;
 CREATE DATABASE test_DB2;
-CREATE DATABASE test_DB3;
+CREATE DATABASE test_DB3 IF NOT EXISTS;
 
---2.暂不支持统计数据库数量：count
+--2. 查看数据库列表
+show databases;
+
+--3. 暂不支持统计数据库数量：count
 count databases;
 <<SQLSTATE;
 
---3.清理环境:删除数据库
+--4.清理环境:删除数据库
 drop database test_db1;
 <<NULL;
 drop database test_db2;
