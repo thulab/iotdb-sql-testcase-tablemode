@@ -24,42 +24,42 @@ Elapsed Time: 0.0.2
 STRICT{
 PASS
 }
--- [1]32:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(1, 'beiijing', '1000','1','1','1')
+-- [1]32:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(1, 'beijing', '1000','1','1','1')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.206
+Elapsed Time: 0.0.216
 -- [1]33:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(1, 'hebei', '2000','7','2','5')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.56
+Elapsed Time: 0.0.71
 -- [1]34:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(1, 'shanghai', '3000','3','1','15')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.12
--- [1]35:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(2, 'beiijing', '1001','1','2','3')
+Elapsed Time: 0.0.15
+-- [1]35:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(2, 'beijing', '1001','1','2','3')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.16
 -- [1]36:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(2, 'hebei', '2000','7','2','5')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.17
 -- [1]37:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(2, 'shanghai', '3010','3','1','15')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.14
 
 -- [1]38:show devices from device_type_0
 STRICT{
@@ -67,29 +67,47 @@ STRICT{
 -----------------------------------------------------------------------------------
 hebei           |2000            |7                |2               |5                 |
 -----------------------------------------------------------------------------------
-beiijing        |1001            |1                |2               |3                 |
------------------------------------------------------------------------------------
-beiijing        |1000            |1                |1               |1                 |
------------------------------------------------------------------------------------
 shanghai        |3000            |3                |1               |15                |
 -----------------------------------------------------------------------------------
 shanghai        |3010            |3                |1               |15                |
+-----------------------------------------------------------------------------------
+beijing         |1001            |1                |2               |3                 |
+-----------------------------------------------------------------------------------
+beijing         |1000            |1                |1               |1                 |
 总数目：5
 }
 
 Elapsed Time: 0.0.6
+
 -- [1]39:show devices from device_type_0 where "地区"='hebei'
 STRICT{
-SQLSTATE : 305: [INTERNAL_SERVER_ERROR(305)] Exception occurred: "show devices from device_type_0 where "地区"='hebei'". executeStatement failed. Show devices with WHERE/LIMIT/OFFSET is unsupported yet.
+地区(STRING)      |厂号(STRING)      |设备号(STRING)      |型号(STRING)      |维修周期(STRING)      |
+-----------------------------------------------------------------------------------
+hebei           |2000            |7                |2               |5                 |
+总数目：1
 }
+
+Elapsed Time: 0.0.15
+
 -- [1]40:show devices from device_type_0 where "地区"='beijing' and "型号"='1'
 STRICT{
-SQLSTATE : 305: [INTERNAL_SERVER_ERROR(305)] Exception occurred: "show devices from device_type_0 where "地区"='beijing' and "型号"='1'". executeStatement failed. Show devices with WHERE/LIMIT/OFFSET is unsupported yet.
+地区(STRING)      |厂号(STRING)      |设备号(STRING)      |型号(STRING)      |维修周期(STRING)      |
+-----------------------------------------------------------------------------------
+beijing         |1000            |1                |1               |1                 |
+总数目：1
 }
+
+Elapsed Time: 0.0.35
+
 -- [1]41:show devices from device_type_0 where "厂号"='1001'
 STRICT{
-SQLSTATE : 305: [INTERNAL_SERVER_ERROR(305)] Exception occurred: "show devices from device_type_0 where "厂号"='1001'". executeStatement failed. Show devices with WHERE/LIMIT/OFFSET is unsupported yet.
+地区(STRING)      |厂号(STRING)      |设备号(STRING)      |型号(STRING)      |维修周期(STRING)      |
+-----------------------------------------------------------------------------------
+beijing         |1001            |1                |2               |3                 |
+总数目：1
 }
+
+Elapsed Time: 0.0.6
 
 -- [1]45:count devices from device_type_0
 STRICT{
@@ -99,12 +117,24 @@ count(devices)(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.8
+
 -- [1]46:count devices from device_type_0 where "地区"='hebei'
 STRICT{
-SQLSTATE : 305: [INTERNAL_SERVER_ERROR(305)] Exception occurred: "count devices from device_type_0 where "地区"='hebei'". executeStatement failed. Count devices with WHERE is unsupported yet.
+count(devices)(INT64)      |
+---------------------------
+1                          |
+总数目：1
 }
--- [1]47:count devices from device_type_0 where "厂号"='1000' and '2000'
+
+Elapsed Time: 0.0.5
+
+-- [1]47:count devices from device_type_0 where "地区"='shanghai' and "厂号"='3000'
 STRICT{
-SQLSTATE : 305: [INTERNAL_SERVER_ERROR(305)] Exception occurred: "count devices from device_type_0 where "厂号"='1000' and '2000'". executeStatement failed. Count devices with WHERE is unsupported yet.
+count(devices)(INT64)      |
+---------------------------
+1                          |
+总数目：1
 }
+
+Elapsed Time: 0.0.7

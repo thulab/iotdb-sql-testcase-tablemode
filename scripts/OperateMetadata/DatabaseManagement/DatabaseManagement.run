@@ -9,7 +9,7 @@ DROP DATABASE ln; <<NULL;
 DROP DATABASE sgcc; <<NULL;
 
 --1. 创建数据库
-CREATE DATABASE ln;
+CREATE DATABASE IF NOT EXISTS ln;
 CREATE DATABASE sgcc;
 
 --2. 查看数据库
@@ -35,16 +35,16 @@ DROP DATABASE timestamp; <<NULL;
 DROP DATABASE "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"; <<NULL;
 DROP DATABASE "123"; <<NULL;
 DROP DATABASE "`test1`"; <<NULL;
+DROP DATABASE "数据库"; <<NULL;
+DROP DATABASE _; <<NULL;
 
 --1.创建数据库
 
 --1.1数据库节点名只支持中英文字符、数字和下划线的组合
-CREATE DATABASE "sgcc.1W_测试_1"; <<SQLSTATE;
-CREATE DATABASE "123w.24h"; <<SQLSTATE;
-CREATE DATABASE "win&one"; <<SQLSTATE;
 CREATE DATABASE "`test1`";
 CREATE DATABASE "123";
-
+CREATE DATABASE "数据库";
+CREATE DATABASE _;
 SHOW DATABASES;
 
 --1.2数据库名称字符长度限制【目前支持64个】
@@ -59,6 +59,13 @@ create database time;
 create database timestamp;
 
 --1.4数据库名称中包含不合规的字符：【-,.,"",'',/】
+CREATE DATABASE "sgcc.1W_测试_1"; <<SQLSTATE;
+CREATE DATABASE "123w.24h"; <<SQLSTATE;
+CREATE DATABASE "win&one"; <<SQLSTATE;
+CREATE DATABASE ``;
+<<SQLSTATE;
+CREATE DATABASE 存储;
+<<SQLSTATE;
 CREATE DATABASE "sgcc.w-s1";
 <<SQLSTATE;
 create database .;
@@ -92,6 +99,8 @@ DROP DATABASE timestamp;
 DROP DATABASE "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234";
 DROP DATABASE "`test1`";
 DROP DATABASE "123";
+DROP DATABASE "数据库";
+DROP DATABASE _;
 
 
 //三、已创建数据库，再次创建相同的名称创建数据库
