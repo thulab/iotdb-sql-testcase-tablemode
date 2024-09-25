@@ -26,5 +26,5 @@ PASS
 }
 -- [1]25:INSERT INTO auto_table(time,device_id,s_0,s_1) values(1, 'd1', 1.1,false)
 STRICT{
-SQLSTATE : 507: Unknown column category for device_id. Cannot auto create column.
+SQLSTATE : 616: Unknown column category for device_id. Cannot auto create column.
 }

@@ -19,7 +19,7 @@ device_type_0        |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]30:desc device_type_0
 STRICT{
 PASS
@@ -29,13 +29,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.1.976
+Elapsed Time: 0.2.12
 -- [1]35:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量" ) values(1, 'hebei', '2000', '7', '2', '5', 80.5, 1200)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.50
+Elapsed Time: 0.0.51
 -- [1]36:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量") values(1, 'shanghai', '3000','3','1','15', 90, 1200)
 STRICT{
 0
@@ -53,13 +53,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 -- [1]39:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量") values(2, 'shanghai', '3010', '3', '1', '15', 92, 1000)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.5
 -- [1]40:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量") values(3, 'beijing', '1001','1','2','3',79.5, 2300)
 STRICT{
 0
@@ -71,13 +71,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]42:INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量") values(3, 'shanghai', '3010', '3', '1', '15', 91, 1800)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 -- [1]44:explain select * from device_type_0
 STRICT{
 PASS

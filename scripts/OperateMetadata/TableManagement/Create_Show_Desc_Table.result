@@ -39,7 +39,7 @@ device_type_1        |3600000            |
 总数目：3
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]61:describe device_type_1
 STRICT{
 PASS
@@ -74,7 +74,8 @@ PASS
 }
 -- [1]83:create table data.table6(device ID, area ATTRIBUTE, sensor_1 DOUBLE MEASUREMENT, sensor_2 BOOLEAN MEASUREMENT)
 STRICT{
-SQLSTATE : 701: Unknown type: ID
+PASS
+EXPECT:FAIL
 }
 -- [1]87:create table data.table7(device STRING ID, area STRING ATTRIBUTE, s1 BOOLEAN MEASUREMENT, s2 INT32 MEASUREMENT) with (TTL=3600000)
 STRICT{
@@ -82,19 +83,17 @@ PASS
 }
 -- [1]88:create table data.table7(device STRING ID, area STRING ATTRIBUTE, s1 BOOLEAN MEASUREMENT, s2 INT32 MEASUREMENT) with (format='ORC')
 STRICT{
-SQLSTATE : 701: Table property format is currently not allowed.
+SQLSTATE : 701: Table property 'format' is currently not allowed.
 }
 
 -- [1]92:show databases
 STRICT{
 Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 ----------------------------------------------------------------------------------------------------------------------------
-test_db             |1                                   |1                                 |604800000                         |
-----------------------------------------------------------------------------------------------------------------------------
-`test1`             |1                                   |1                                 |604800000                         |
-----------------------------------------------------------------------------------------------------------------------------
 data                |1                                   |1                                 |604800000                         |
-总数目：3
+----------------------------------------------------------------------------------------------------------------------------
+test_db             |1                                   |1                                 |604800000                         |
+总数目：2
 }
 
 Elapsed Time: 0.0.2
@@ -122,10 +121,12 @@ table5               |INF                |
 table1               |INF                |
 ----------------------------------------
 table7               |3600000            |
-总数目：3
+----------------------------------------
+table6               |INF                |
+总数目：4
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
 -- [1]95:show tables in test_db
 STRICT{
@@ -150,10 +151,12 @@ table5               |INF                |
 table1               |INF                |
 ----------------------------------------
 table7               |3600000            |
-总数目：3
+----------------------------------------
+table6               |INF                |
+总数目：4
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]99:desc data.table1
 STRICT{
 PASS

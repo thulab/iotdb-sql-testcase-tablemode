@@ -73,7 +73,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]66:use test
 STRICT{
 PASS
@@ -181,7 +181,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]162:use test
 STRICT{
 PASS
@@ -209,7 +209,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]196:drop database test
 STRICT{
 PASS
@@ -397,7 +397,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]354:use test
 STRICT{
 PASS
@@ -425,7 +425,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]388:drop database test
 STRICT{
 PASS
@@ -479,7 +479,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]436:drop database test
 STRICT{
 PASS
@@ -505,7 +505,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]450:use test
 STRICT{
 PASS
@@ -533,7 +533,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]484:drop database test
 STRICT{
 PASS
@@ -559,7 +559,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]498:use test
 STRICT{
 PASS
@@ -613,7 +613,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]546:use test
 STRICT{
 PASS
@@ -641,7 +641,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]580:drop database test
 STRICT{
 PASS
@@ -667,7 +667,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]594:use test
 STRICT{
 PASS
@@ -695,7 +695,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]628:drop database test
 STRICT{
 PASS
@@ -749,7 +749,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]676:drop database test
 STRICT{
 PASS
@@ -829,7 +829,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]738:use test
 STRICT{
 PASS
@@ -883,7 +883,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]786:use test
 STRICT{
 PASS
@@ -965,7 +965,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]868:drop database test
 STRICT{
 PASS
@@ -991,7 +991,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]882:use test
 STRICT{
 PASS
@@ -1019,7 +1019,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]916:drop database test
 STRICT{
 PASS
@@ -1045,7 +1045,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]930:use test
 STRICT{
 PASS
@@ -1099,7 +1099,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]978:use test
 STRICT{
 PASS
@@ -1127,7 +1127,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]1012:drop database test
 STRICT{
 PASS
@@ -1153,7 +1153,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1026:use test
 STRICT{
 PASS
@@ -1181,7 +1181,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1060:drop database test
 STRICT{
 PASS
@@ -1315,7 +1315,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1170:use test
 STRICT{
 PASS
@@ -1343,7 +1343,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]1204:drop database test
 STRICT{
 PASS
@@ -1369,7 +1369,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1218:use test
 STRICT{
 PASS
@@ -1423,7 +1423,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1266:use test
 STRICT{
 PASS
@@ -1451,7 +1451,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1300:drop database test
 STRICT{
 PASS
@@ -1477,7 +1477,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]1314:use test
 STRICT{
 PASS
@@ -1505,7 +1505,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]1348:drop database test
 STRICT{
 PASS
@@ -1531,7 +1531,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]1362:use test
 STRICT{
 PASS
@@ -1559,7 +1559,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1396:drop database test
 STRICT{
 PASS
@@ -1613,7 +1613,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1444:drop database test
 STRICT{
 PASS
@@ -1667,7 +1667,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]1492:drop database test
 STRICT{
 PASS
@@ -1693,7 +1693,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1506:use test
 STRICT{
 PASS
@@ -1721,7 +1721,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1540:drop database test
 STRICT{
 PASS
@@ -1747,7 +1747,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]1554:use test
 STRICT{
 PASS
@@ -1829,7 +1829,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1636:drop database test
 STRICT{
 PASS
@@ -1909,7 +1909,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1698:use test
 STRICT{
 PASS
@@ -2099,7 +2099,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1876:drop database test
 STRICT{
 PASS
@@ -2125,7 +2125,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1890:use test
 STRICT{
 PASS
@@ -2153,7 +2153,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]1924:drop database test
 STRICT{
 PASS
@@ -2261,7 +2261,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2020:drop database test
 STRICT{
 PASS
@@ -2341,7 +2341,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]2082:use test
 STRICT{
 PASS
@@ -2369,7 +2369,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]2116:drop database test
 STRICT{
 PASS
@@ -2503,7 +2503,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2226:use test
 STRICT{
 PASS
@@ -2531,7 +2531,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]2260:drop database test
 STRICT{
 PASS
@@ -2557,7 +2557,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2274:use test
 STRICT{
 PASS
@@ -2585,7 +2585,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2308:drop database test
 STRICT{
 PASS
@@ -2665,7 +2665,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2370:use test
 STRICT{
 PASS
@@ -2801,7 +2801,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]2500:drop database test
 STRICT{
 PASS
@@ -2827,7 +2827,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2514:use test
 STRICT{
 PASS
@@ -2855,7 +2855,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]2548:drop database test
 STRICT{
 PASS
@@ -2909,7 +2909,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]2596:drop database test
 STRICT{
 PASS
@@ -2935,7 +2935,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2610:use test
 STRICT{
 PASS
@@ -2963,7 +2963,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2644:drop database test
 STRICT{
 PASS
@@ -2989,7 +2989,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2658:use test
 STRICT{
 PASS
@@ -3017,7 +3017,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2692:drop database test
 STRICT{
 PASS
@@ -3043,7 +3043,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2706:use test
 STRICT{
 PASS
@@ -3097,7 +3097,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2754:use test
 STRICT{
 PASS
@@ -3125,7 +3125,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2788:drop database test
 STRICT{
 PASS
@@ -3259,7 +3259,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]2898:use test
 STRICT{
 PASS
@@ -3287,7 +3287,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]2932:drop database test
 STRICT{
 PASS
@@ -3341,7 +3341,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]2980:drop database test
 STRICT{
 PASS
@@ -3395,7 +3395,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3028:drop database test
 STRICT{
 PASS
@@ -3449,7 +3449,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]3076:drop database test
 STRICT{
 PASS
@@ -3503,7 +3503,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]3124:drop database test
 STRICT{
 PASS
@@ -3583,7 +3583,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3186:use test
 STRICT{
 PASS
@@ -3637,7 +3637,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3234:use test
 STRICT{
 PASS
@@ -3665,7 +3665,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3268:drop database test
 STRICT{
 PASS
@@ -3691,7 +3691,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3282:use test
 STRICT{
 PASS
@@ -3719,7 +3719,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3316:drop database test
 STRICT{
 PASS
@@ -3745,7 +3745,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3330:use test
 STRICT{
 PASS
@@ -3853,7 +3853,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3426:use test
 STRICT{
 PASS
@@ -3881,7 +3881,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3460:drop database test
 STRICT{
 PASS
@@ -3907,7 +3907,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3474:use test
 STRICT{
 PASS
@@ -3935,7 +3935,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3508:drop database test
 STRICT{
 PASS
@@ -3961,7 +3961,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.0
 -- [1]3522:use test
 STRICT{
 PASS
@@ -4069,7 +4069,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3618:use test
 STRICT{
 PASS
@@ -4151,7 +4151,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3700:drop database test
 STRICT{
 PASS
@@ -4231,7 +4231,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3762:use test
 STRICT{
 PASS
@@ -4259,7 +4259,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3796:drop database test
 STRICT{
 PASS
@@ -4285,7 +4285,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3810:use test
 STRICT{
 PASS
@@ -4313,7 +4313,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3844:drop database test
 STRICT{
 PASS
@@ -4339,7 +4339,7 @@ test                |1                                   |1                     
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3858:use test
 STRICT{
 PASS
@@ -4367,7 +4367,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3892:drop database test
 STRICT{
 PASS
