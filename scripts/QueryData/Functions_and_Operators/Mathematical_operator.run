@@ -45,6 +45,8 @@ INSERT INTO t2(time,device,type,int32,int64,double,float,boolean,text,string,blo
 (9,'d9','t9',99,-999,9.99,-9.9,0,'9.9','9.9',X'92DCD5',null,'1970-01-09'),
 (10,'d10','t10',-10,100,-10.01,10.1,1,'10.1','10.1',X'102DCD62',11,null);
 
+--5-0. 查询全量数据
+select * from t2 order by time desc;
 
 --5-1. 查询 -> 数学运算符: +
 -- int32
@@ -151,6 +153,7 @@ select boolean+text from t2 order by time;
 select boolean+string from t2 order by time;
 <<SQLSTATE;
 select boolean+blob from t2 order by time;
+<<SQLSTATE;
 -- text
 select text+int32 from t2 order by time;
 <<SQLSTATE;
@@ -171,6 +174,7 @@ select text+text from t2 order by time;
 select text+string from t2 order by time;
 <<SQLSTATE;
 select text+blob from t2 order by time;
+<<SQLSTATE;
 -- string
 select string+int32 from t2 order by time;
 <<SQLSTATE;
@@ -191,6 +195,7 @@ select string+text from t2 order by time;
 select string+string from t2 order by time;
 <<SQLSTATE;
 select string+blob from t2 order by time;
+<<SQLSTATE;
 -- blob
 select blob+int32 from t2 order by time;
 <<SQLSTATE;
@@ -327,6 +332,7 @@ select boolean-text from t2 order by time;
 select boolean-string from t2 order by time;
 <<SQLSTATE;
 select boolean-blob from t2 order by time;
+<<SQLSTATE;
 -- text
 select text-int32 from t2 order by time;
 <<SQLSTATE;
@@ -347,6 +353,7 @@ select text-text from t2 order by time;
 select text-string from t2 order by time;
 <<SQLSTATE;
 select text-blob from t2 order by time;
+<<SQLSTATE;
 -- string
 select string-int32 from t2 order by time;
 <<SQLSTATE;
@@ -367,6 +374,7 @@ select string-text from t2 order by time;
 select string-string from t2 order by time;
 <<SQLSTATE;
 select string-blob from t2 order by time;
+<<SQLSTATE;
 -- blob
 select blob-int32 from t2 order by time;
 <<SQLSTATE;
@@ -509,6 +517,7 @@ select boolean*text from t2 order by time;
 select boolean*string from t2 order by time;
 <<SQLSTATE;
 select boolean*blob from t2 order by time;
+<<SQLSTATE;
 -- text
 select text*int32 from t2 order by time;
 <<SQLSTATE;
@@ -529,6 +538,7 @@ select text*text from t2 order by time;
 select text*string from t2 order by time;
 <<SQLSTATE;
 select text*blob from t2 order by time;
+<<SQLSTATE;
 -- string
 select string*int32 from t2 order by time;
 <<SQLSTATE;
@@ -549,6 +559,7 @@ select string*text from t2 order by time;
 select string*string from t2 order by time;
 <<SQLSTATE;
 select string*blob from t2 order by time;
+<<SQLSTATE;
 -- blob
 select blob*int32 from t2 order by time;
 <<SQLSTATE;
@@ -691,6 +702,7 @@ select boolean/text from t2 order by time;
 select boolean/string from t2 order by time;
 <<SQLSTATE;
 select boolean/blob from t2 order by time;
+<<SQLSTATE;
 -- text
 select text/int32 from t2 order by time;
 <<SQLSTATE;
@@ -711,6 +723,7 @@ select text/text from t2 order by time;
 select text/string from t2 order by time;
 <<SQLSTATE;
 select text/blob from t2 order by time;
+<<SQLSTATE;
 -- string
 select string/int32 from t2 order by time;
 <<SQLSTATE;
@@ -731,6 +744,7 @@ select string/text from t2 order by time;
 select string/string from t2 order by time;
 <<SQLSTATE;
 select string/blob from t2 order by time;
+<<SQLSTATE;
 -- blob
 select blob/int32 from t2 order by time;
 <<SQLSTATE;
@@ -873,6 +887,7 @@ select boolean%text from t2 order by time;
 select boolean%string from t2 order by time;
 <<SQLSTATE;
 select boolean%blob from t2 order by time;
+<<SQLSTATE;
 -- text
 select text%int32 from t2 order by time;
 <<SQLSTATE;
@@ -893,6 +908,7 @@ select text%text from t2 order by time;
 select text%string from t2 order by time;
 <<SQLSTATE;
 select text%blob from t2 order by time;
+<<SQLSTATE;
 -- string
 select string%int32 from t2 order by time;
 <<SQLSTATE;
@@ -913,6 +929,7 @@ select string%text from t2 order by time;
 select string%string from t2 order by time;
 <<SQLSTATE;
 select string%blob from t2 order by time;
+<<SQLSTATE;
 -- blob
 select blob%int32 from t2 order by time;
 <<SQLSTATE;
@@ -953,8 +970,10 @@ select int32,+int32,-int32 from t2 order by time;
 select int64,+int64,-int64 from t2 order by time;
 select float,+float,-float from t2 order by time;
 select double,+double,-double from t2 order by time;
--- TIMECHODB-978 select timestamp,+timestamp,-timestamp from t2 order by time;
--- TIMECHODB-978 <<SQLSTATE;
+
+-- TIMECHODB-978 (已修复)
+select timestamp,+timestamp as "正数",-timestamp as "负数" from t2 order by time;
+
 select boolean,+boolean,-boolean from t2 order by time;
 <<SQLSTATE;
 select date,+date,-date from t2 order by time;
@@ -1085,8 +1104,205 @@ select blob,atan(blob) from t2 order by time;
 
 
 --5-x. 复合sql补充
--- TIMECHODB-981 select int32,int32-999U888,int64,int64*888U777 from t2;
--- <<SQLSTATE;
+-- TIMECHODB-981 （不作修复）
+select int32,int32-999U888,int64,int64*888U777 from t2;
+
+
+--6. sinh(x)
+select int32, sinh(int32) as sinh_value from t2;
+select int64, sinh(int64) as sinh_value from t2;
+select float, sinh(float) as sinh_value from t2;
+select double, sinh(double) as sinh_value from t2;
+select sinh(boolean) from t2; <<SQLSTATE;
+select sinh(text) from t2; <<SQLSTATE;
+select sinh(string) from t2; <<SQLSTATE;
+select sinh(blob) from t2; <<SQLSTATE;
+select sinh(timestamp) from t2; <<SQLSTATE;
+select sinh(date) from t2; <<SQLSTATE;
+
+
+--7. cosh(x)
+select int32, cosh(int32) as cosh_value from t2;
+select int64, cosh(int64) as cosh_value from t2;
+select float, cosh(float) as cosh_value from t2;
+select double, cosh(double) as cosh_value from t2;
+select cosh(boolean) from t2; <<SQLSTATE;
+select cosh(text) from t2; <<SQLSTATE;
+select cosh(string) from t2; <<SQLSTATE;
+select cosh(blob) from t2; <<SQLSTATE;
+select cosh(timestamp) from t2; <<SQLSTATE;
+select cosh(date) from t2; <<SQLSTATE;
+
+
+--8. tanh(x)
+select int32, tanh(int32) as tanh_value from t2;
+select int64, tanh(int64) as tanh_value from t2;
+select float, tanh(float) as tanh_value from t2;
+select double, tanh(double) as tanh_value from t2;
+select tanh(boolean) from t2; <<SQLSTATE;
+select tanh(text) from t2; <<SQLSTATE;
+select tanh(string) from t2; <<SQLSTATE;
+select tanh(blob) from t2; <<SQLSTATE;
+select tanh(timestamp) from t2; <<SQLSTATE;
+select tanh(date) from t2; <<SQLSTATE;
+
+
+--9. degrees(x)
+select int32, degrees(int32) as degrees_value from t2;
+select int64, degrees(int64) as degrees_value from t2;
+select float, degrees(float) as degrees_value from t2;
+select double, degrees(double) as degrees_value from t2;
+select degrees(boolean) from t2; <<SQLSTATE;
+select degrees(text) from t2; <<SQLSTATE;
+select degrees(string) from t2; <<SQLSTATE;
+select degrees(blob) from t2; <<SQLSTATE;
+select degrees(timestamp) from t2; <<SQLSTATE;
+select degrees(date) from t2; <<SQLSTATE;
+
+--10. radians(x)
+select int32, radians(int32) as radians_value from t2;
+select int64, radians(int64) as radians_value from t2;
+select float, radians(float) as radians_value from t2;
+select double, radians(double) as radians_value from t2;
+select radians(boolean) from t2; <<SQLSTATE;
+select radians(text) from t2; <<SQLSTATE;
+select radians(string) from t2; <<SQLSTATE;
+select radians(blob) from t2; <<SQLSTATE;
+select radians(timestamp) from t2; <<SQLSTATE;
+select radians(date) from t2; <<SQLSTATE;
+
+
+--11. abs(x)
+select int32, abs(int32) as abs_value from t2;
+select int64, abs(int64) as abs_value from t2;
+select float, abs(float) as abs_value from t2;
+select double, abs(double) as abs_value from t2;
+select abs(boolean) from t2; <<SQLSTATE;
+select abs(text) from t2; <<SQLSTATE;
+select abs(string) from t2; <<SQLSTATE;
+select abs(blob) from t2; <<SQLSTATE;
+select abs(timestamp) from t2; <<SQLSTATE;
+select abs(date) from t2; <<SQLSTATE;
+
+
+--12. sign(x)
+select int32, sign(int32) as sign_value from t2;
+select int64, sign(int64) as sign_value from t2;
+select float, sign(float) as sign_value from t2;
+select double, sign(double) as sign_value from t2;
+select sign(boolean) from t2; <<SQLSTATE;
+select sign(text) from t2; <<SQLSTATE;
+select sign(string) from t2; <<SQLSTATE;
+select sign(blob) from t2; <<SQLSTATE;
+select sign(timestamp) from t2; <<SQLSTATE;
+select sign(date) from t2; <<SQLSTATE;
+
+
+--13. ceil(x)
+select int32, ceil(int32) as ceil_value from t2;
+select int64, ceil(int64) as ceil_value from t2;
+select float, ceil(float) as ceil_value from t2;
+select double, ceil(double) as ceil_value from t2;
+select ceil(boolean) from t2; <<SQLSTATE;
+select ceil(text) from t2; <<SQLSTATE;
+select ceil(string) from t2; <<SQLSTATE;
+select ceil(blob) from t2; <<SQLSTATE;
+select ceil(timestamp) from t2; <<SQLSTATE;
+select ceil(date) from t2; <<SQLSTATE;
+
+
+--14. floor(x)
+select int32, floor(int32) as floor_value from t2;
+select int64, floor(int64) as floor_value from t2;
+select float, floor(float) as floor_value from t2;
+select double, floor(double) as floor_value from t2;
+select floor(boolean) from t2; <<SQLSTATE;
+select floor(text) from t2; <<SQLSTATE;
+select floor(string) from t2; <<SQLSTATE;
+select floor(blob) from t2; <<SQLSTATE;
+select floor(timestamp) from t2; <<SQLSTATE;
+select floor(date) from t2; <<SQLSTATE;
+
+
+--15. exp(x)
+select int32, exp(int32) as exp_value from t2;
+select int64, exp(int64) as exp_value from t2;
+select float, exp(float) as exp_value from t2;
+select double, exp(double) as exp_value from t2;
+select exp(boolean) from t2; <<SQLSTATE;
+select exp(text) from t2; <<SQLSTATE;
+select exp(string) from t2; <<SQLSTATE;
+select exp(blob) from t2; <<SQLSTATE;
+select exp(timestamp) from t2; <<SQLSTATE;
+select exp(date) from t2; <<SQLSTATE;
+
+
+--16. ln(x)
+select int32, ln(int32) as ln_value from t2;
+select int64, ln(int64) as ln_value from t2;
+select float, ln(float) as ln_value from t2;
+select double, ln(double) as ln_value from t2;
+select ln(boolean) from t2; <<SQLSTATE;
+select ln(text) from t2; <<SQLSTATE;
+select ln(string) from t2; <<SQLSTATE;
+select ln(blob) from t2; <<SQLSTATE;
+select ln(timestamp) from t2; <<SQLSTATE;
+select ln(date) from t2; <<SQLSTATE;
+
+
+--17. log10(x)
+select int32, log10(int32) as log10_value from t2;
+select int64, log10(int64) as log10_value from t2;
+select float, log10(float) as log10_value from t2;
+select double, log10(double) as log10_value from t2;
+select log10(boolean) from t2; <<SQLSTATE;
+select log10(text) from t2; <<SQLSTATE;
+select log10(string) from t2; <<SQLSTATE;
+select log10(blob) from t2; <<SQLSTATE;
+select log10(timestamp) from t2; <<SQLSTATE;
+select log10(date) from t2; <<SQLSTATE;
+
+
+--18. round(x)
+select int32, round(int32) as round_value from t2;
+select int64, round(int64) as round_value from t2;
+select float, round(float) as round_value from t2;
+select double, round(double) as round_value from t2;
+select round(boolean) from t2; <<SQLSTATE;
+select round(text) from t2; <<SQLSTATE;
+select round(string) from t2; <<SQLSTATE;
+select round(blob) from t2; <<SQLSTATE;
+select round(timestamp) from t2; <<SQLSTATE;
+select round(date) from t2; <<SQLSTATE;
+
+
+--19. round(x, d) 
+select int32, round(int32,2) as round_value from t2;
+select int64, round(int64,2) as round_value from t2;
+select float, round(float,2) as round_value from t2;
+select double, round(double,2) as round_value from t2;
+
+
+--20. sqrt(x)
+select int32, sqrt(int32) as sqrt_value from t2;
+select int64, sqrt(int64) as sqrt_value from t2;
+select float, sqrt(float) as sqrt_value from t2;
+select double, sqrt(double) as sqrt_value from t2;
+select sqrt(boolean) from t2; <<SQLSTATE;
+select sqrt(text) from t2; <<SQLSTATE;
+select sqrt(string) from t2; <<SQLSTATE;
+select sqrt(blob) from t2; <<SQLSTATE;
+select sqrt(timestamp) from t2; <<SQLSTATE;
+select sqrt(date) from t2; <<SQLSTATE;
+
+
+--21. e() 
+select time,e() as e_contant from t2 order by time;
+
+
+--22. pi()
+select time, pi() as pi_contant from t2 order by time;
+
 
 --end. 清理数据: 删除数据库 
 drop database test_db;

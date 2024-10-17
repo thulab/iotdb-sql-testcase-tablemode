@@ -19,7 +19,7 @@ table_a              |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]37:desc Table_A
 STRICT{
 PASS
@@ -29,25 +29,25 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.2.16
+Elapsed Time: 0.2.9
 -- [1]49:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 2, 'd1', 'red', true, 'v2', 5, 121, 222.1, 12.2, false, '2022-10-01', 1724049989000, 'ertbsad', X'24ad' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.6
 -- [1]54:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 3, 'd1', 'yellow', true, 'v3', 13, 250, 1.1, 333.3, true, '2023-11-01', 1704046789000, 'zsefr345Der', X'a2cd' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 -- [1]59:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 4, 'd1', 'green', false, 'v2', 4, 6, 21.1, 44.2, false, '2023-09-01', 1703047789000, 'sdf', X'24' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 -- [1]64:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 5, 'd1', 'white', false, 'v1', 122, 110, 2.2, 9.9, false, '2022-11-01', 1701047739000, 'cfghesdgfaase', X'cd' )
 STRICT{
 0
@@ -59,13 +59,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 -- [1]74:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 7, 'd2', 'blue', true, 'v1', 0, 110, 22.2, 1.8, true, '2023-06-01', 1643046400000, 'test111', X'ac'  )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.52
+Elapsed Time: 0.0.62
 -- [1]79:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 8, 'd2', 'purple', true, 'v3', 555, 1001, 202.1, 1.2, false, '2002-10-01', 1653046400000, 'ioep11', X'abcdef' )
 STRICT{
 0
@@ -77,7 +77,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 -- [1]89:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 10, 'd2', 'red', false, 'v2', 111, 222, 22.5, 13.3, true, '2020-10-11', 1702277189000, 'sad', X'ae' )
 STRICT{
 0
@@ -89,13 +89,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 -- [1]99:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1702277189000, 'sad', X'ae' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]102:select * from Table_A
 STRICT{
@@ -351,7 +351,7 @@ _col0(INT32)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.14
+Elapsed Time: 0.0.10
 -- [1]152:select s7, s7 < '2022-12-12' from table_a
 STRICT{
 SQLSTATE : 701: Cannot apply operator: DATE < STRING
@@ -387,7 +387,7 @@ false            |true                |
 总数目：12
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.6
 
 -- [1]156:select s0, s0 != false from table_a
 STRICT{
@@ -419,7 +419,7 @@ false            |false               |
 总数目：12
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.7
 
 -- [1]157:select s0, s0 <> true from table_a
 STRICT{
@@ -451,7 +451,7 @@ false            |true                |
 总数目：12
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.6
 
 -- [1]158:select s0, s6, s0 != s6 from table_a
 STRICT{
@@ -483,7 +483,7 @@ false            |true             |true                |
 总数目：12
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.6
 
 -- [1]159:select s1, s1 = 'test' from table_a
 STRICT{
@@ -515,7 +515,7 @@ v3            |false               |
 总数目：12
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.6
 
 -- [1]160:select s1, s9, s1 = s9 from table_a
 STRICT{
@@ -547,7 +547,7 @@ v3            |ert             |false               |
 总数目：12
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.6
 
 -- [1]161:select s2, s3, s2 >= s3  from table_a
 STRICT{
@@ -579,7 +579,7 @@ null           |22             |null                |
 总数目：12
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.6
 
 -- [1]162:select s2, s4, s2 != s4  from table_a
 STRICT{
@@ -611,7 +611,7 @@ null           |2.5            |null                |
 总数目：12
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.7
 
 -- [1]163:select s2, s5, s2 > s5  from table_a
 STRICT{
@@ -643,7 +643,7 @@ null           |13.3            |null                |
 总数目：12
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.7
 
 -- [1]164:select s2, s8, s8 <= s2 from table_a
 STRICT{
@@ -719,7 +719,7 @@ null           |null                |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.8
 
 -- [1]166:select s2, s2 <= 1103.11 from table_a
 STRICT{
@@ -783,7 +783,7 @@ s3(INT64)      |s4(FLOAT)      |_col2(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 
 -- [1]168:select s3, s5, s3 = s5 from table_a
 STRICT{
@@ -859,7 +859,7 @@ s3(INT64)      |s8(TIMESTAMP)      |_col2(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 
 -- [1]170:select s4, s5, s4 < s5 from table_a
 STRICT{
@@ -891,7 +891,7 @@ s4(FLOAT)      |s5(DOUBLE)      |_col2(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 
 -- [1]171:select s4, s8, s4 > s8 from table_a
 STRICT{
@@ -935,7 +935,7 @@ s4(FLOAT)      |s8(TIMESTAMP)      |_col2(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.7
 
 -- [1]172:select s4, s4 < 11.1 from table_a
 STRICT{
@@ -967,7 +967,7 @@ s4(FLOAT)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.5
 
 -- [1]173:select s4, s4 >= 100 from table_a
 STRICT{
@@ -999,7 +999,7 @@ s4(FLOAT)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.9
 
 -- [1]174:select s4, s4 <= -11.1 from table_a
 STRICT{
@@ -1031,7 +1031,7 @@ s4(FLOAT)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.8
 
 -- [1]175:select s5, s8, s5 < s8 from table_a
 STRICT{
@@ -1107,7 +1107,7 @@ s5(DOUBLE)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.7
 
 -- [1]177:select s5, s5 >=  20 from table_a
 STRICT{
@@ -1139,7 +1139,7 @@ s5(DOUBLE)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 
 -- [1]178:select s6, s6 = false from table_a
 STRICT{
@@ -1171,7 +1171,7 @@ true             |false               |
 总数目：12
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.8
 
 -- [1]179:select s6, s6 != false from table_a
 STRICT{
@@ -1203,7 +1203,7 @@ true             |true                |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.5
 
 -- [1]180:select s7, s7 < CAST('2022-12-12' AS DATE) from table_a
 STRICT{
@@ -1235,7 +1235,7 @@ null          |null                |
 总数目：12
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.14
 
 -- [1]181:select s8, s8 = 100000 from table_a
 STRICT{
@@ -1279,7 +1279,7 @@ s8(TIMESTAMP)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.10
 
 -- [1]182:select s9, s9 > 'v1' from table_a
 STRICT{
@@ -1311,7 +1311,7 @@ ert             |false               |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 
 -- [1]183:select s9, s9 = '100' from table_a
 STRICT{
@@ -1387,7 +1387,7 @@ time(TIMESTAMP)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)
 总数目：12
 }
 
-Elapsed Time: 0.0.27
+Elapsed Time: 0.0.29
 
 -- [1]186:select time, device_id, s0, s6, s0 = s6 from table_a offset 2 limit 5
 STRICT{
@@ -1410,7 +1410,7 @@ time(TIMESTAMP)      |device_id(STRING)      |s0(BOOLEAN)      |s6(BOOLEAN)     
 总数目：5
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.8
 -- [1]190:drop database test_db
 STRICT{
 PASS
