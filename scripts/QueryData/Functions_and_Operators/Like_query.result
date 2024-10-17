@@ -1,0 +1,783 @@
+-- [1]9:create database test_db
+STRICT{
+PASS
+}
+-- [1]12:use test_db
+STRICT{
+PASS
+}
+-- [1]17:create table Table_A ( 	device_id STRING ID, 	color STRING ATTRIBUTE, 	s0 BOOLEAN MEASUREMENT, 	s1 TEXT MEASUREMENT, 	s2 INT32 MEASUREMENT, 	s3 INT64 MEASUREMENT, 	s4 FLOAT MEASUREMENT, 	s5 DOUBLE MEASUREMENT, 	s6 BOOLEAN MEASUREMENT, 	s7 DATE MEASUREMENT, 	s8 TIMESTAMP MEASUREMENT, 	s9 STRING MEASUREMENT, 	s10 BLOB MEASUREMENT )
+STRICT{
+PASS
+}
+
+-- [1]33:show tables
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+table_a              |INF                |
+总数目：1
+}
+
+Elapsed Time: 0.0.1
+-- [1]36:desc Table_A
+STRICT{
+PASS
+}
+-- [1]43:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 1, 'device_A1', 'red', false, 'China', 10, 100, 11.1, 8.8, true, '2021-10-01', 1633046400000, 'Smile', X'abcd' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.1.759
+-- [1]48:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 2, 'device_B2', 'black', true, 'America', 5, 121, 222.1, 12.2, false, '2022-10-01', 1724049989000, 'Sad', X'24ad' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.58
+-- [1]53:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 3, 'device_C3', 'yellow', true, 'Africa', 13, 250, 1.1, 333.3, true, '2023-11-01', 1704046789000, 'laugh', X'a2cd' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.13
+-- [1]58:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 4, 'device_D4', 'green', false, 'Europe', 4, 6, 21.1, 44.2, false, '2023-09-01', 1703047789000, 'Cry', X'24' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.13
+-- [1]63:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 5, 'device_E5', 'white', false, 'England', 122, 110, 2.2, 9.9, false, '2022-11-01', 1701047739000, 'LOVELY', X'cd' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.13
+-- [1]68:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 6, 'device_F6', 'orange', false, 'Canada', 8, 999, 123.1, 0.101, true, '2002-01-01', 1724049989000, 'Awkward', X'4d' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.10
+-- [1]73:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 7, 'device_AA', 'blue', true, 'Africa', 0, 110, 22.2, 1.8, true, '2023-06-01', 1643046400000, 'disappointING', X'ac'  )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.10
+-- [1]78:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 8, 'device_BB', 'purple', true, 'Australia', 555, 1001, 202.1, 1.2, false, '2002-10-01', 1653046400000, 'happy_and_satisfied', X'abcdef' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.10
+-- [1]83:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 9, 'device_CC', 'Green', false, 'Swiss', 1110, 888, 10.1, 11.1, true, '2023-11-11', 1699685189000, 'FRIENDly', X'ce' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.11
+-- [1]88:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 10, 'device_dd', 'Pink', false, 'Japan', 111, 222, 22.5, 13.3, true, '2020-10-11', 1702277189000, 'SOB', X'ae' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.10
+-- [1]93:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 11, 'device_Ee', 'Grey', null, 'South Korea', 111, 20, 2, 11.3, true, null, 1702277189000, 'unhappy', X'ae' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.12
+-- [1]98:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 12, 'device_fF', 'null', true, 'Singapore', null, 22, 2.5, 13.3, true, null, 1702277189000, 'sorrow', X'ae' )
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.10
+
+-- [1]101:select * from Table_A
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_dd              |Pink               |false            |Japan         |111            |222            |22.5           |13.3            |true             |2020-10-11    |2023-12-11T14:46:29|SOB             |0xae           |
+10+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_fF              |null               |true             |Singapore     |null           |22             |2.5            |13.3            |true             |null          |2023-12-11T14:46:29|sorrow          |0xae           |
+12+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_B2              |black              |true             |America       |5              |121            |222.1          |12.2            |false            |2022-10-01    |2024-08-19T14:46:29|Sad             |0x24ad         |
+02+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_F6              |orange             |false            |Canada        |8              |999            |123.1          |0.101           |true             |2002-01-01    |2024-08-19T14:46:29|Awkward         |0x4d           |
+06+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_BB              |purple             |true             |Australia     |555            |1001           |202.1          |1.2             |false            |2002-10-01    |2022-05-20T19:33:20|happy_and_satisf|0xabcdef       |
+08+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |ied             |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_D4              |green              |false            |Europe        |4              |6              |21.1           |44.2            |false            |2023-09-01    |2023-12-20T12:49:49|Cry             |0x24           |
+04+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_E5              |white              |false            |England       |122            |110            |2.2            |9.9             |false            |2022-11-01    |2023-11-27T09:15:39|LOVELY          |0xcd           |
+05+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_A1              |red                |false            |China         |10             |100            |11.1           |8.8             |true             |2021-10-01    |2021-10-01T08:00:00|Smile           |0xabcd         |
+01+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_AA              |blue               |true             |Africa        |0              |110            |22.2           |1.8             |true             |2023-06-01    |2022-01-25T01:46:40|disappointING   |0xac           |
+07+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_Ee              |Grey               |null             |South Korea   |111            |20             |2.0            |11.3            |true             |null          |2023-12-11T14:46:29|unhappy         |0xae           |
+11+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_C3              |yellow             |true             |Africa        |13             |250            |1.1            |333.3           |true             |2023-11-01    |2024-01-01T02:19:49|laugh           |0xa2cd         |
+03+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_CC              |Green              |false            |Swiss         |1110           |888            |10.1           |11.1            |true             |2023-11-11    |2023-11-11T14:46:29|FRIENDly        |0xce           |
+09+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：12
+}
+
+Elapsed Time: 0.0.28
+-- [1]105:select s0, s0 like '%al%' from table_a
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: BOOLEAN)
+}
+-- [1]106:select s2, s2 like '_2' from table_a
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: INT32)
+}
+-- [1]107:select s3, s3 like '%11' from table_a
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: INT64)
+}
+-- [1]108:select s4, s4 like '%2%' from table_a
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: FLOAT)
+}
+-- [1]109:select s5, s5 like '%2%' from table_a
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: DOUBLE)
+}
+-- [1]110:select s7, s7 like '%2020%' from table_a
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: DATE)
+}
+-- [1]111:select s8, s8 like '%1%' from table_a
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: TIMESTAMP)
+}
+-- [1]112:select s10, s10 like '%d' from table_a
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: BLOB)
+}
+
+-- [1]115:select * from table_a where s1 like '%ia'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_BB              |purple             |true             |Australia     |555            |1001           |202.1          |1.2             |false            |2002-10-01    |2022-05-20T19:33:20|happy_and_satisf|0xabcdef       |
+08+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |ied             |               |
+总数目：1
+}
+
+Elapsed Time: 0.0.79
+
+-- [1]116:select s1, s1 like '%ca' from table_a
+STRICT{
+s1(TEXT)      |_col1(BOOLEAN)      |
+----------------------------------
+Japan         |false               |
+----------------------------------
+Singapore     |false               |
+----------------------------------
+America       |true                |
+----------------------------------
+Canada        |false               |
+----------------------------------
+Australia     |false               |
+----------------------------------
+Europe        |false               |
+----------------------------------
+England       |false               |
+----------------------------------
+China         |false               |
+----------------------------------
+Africa        |true                |
+----------------------------------
+South Korea   |false               |
+----------------------------------
+Africa        |true                |
+----------------------------------
+Swiss         |false               |
+总数目：12
+}
+
+Elapsed Time: 0.0.32
+
+-- [1]117:select s9, s9 like 'S_i__' from table_a
+STRICT{
+s9(STRING)      |_col1(BOOLEAN)      |
+------------------------------------
+SOB             |false               |
+------------------------------------
+sorrow          |false               |
+------------------------------------
+Sad             |false               |
+------------------------------------
+Awkward         |false               |
+------------------------------------
+happy_and_satisf|false               |
+ied             |                    |
+------------------------------------
+Cry             |false               |
+------------------------------------
+LOVELY          |false               |
+------------------------------------
+Smile           |true                |
+------------------------------------
+disappointING   |false               |
+------------------------------------
+unhappy         |false               |
+------------------------------------
+laugh           |false               |
+------------------------------------
+FRIENDly        |false               |
+总数目：12
+}
+
+Elapsed Time: 0.0.27
+
+-- [1]118:select s9, s9 like '%\_%_%' from table_a limit 5
+STRICT{
+s9(STRING)      |_col1(BOOLEAN)      |
+------------------------------------
+SOB             |false               |
+------------------------------------
+sorrow          |false               |
+------------------------------------
+Sad             |false               |
+------------------------------------
+Awkward         |false               |
+------------------------------------
+happy_and_satisf|false               |
+ied             |                    |
+总数目：5
+}
+
+Elapsed Time: 0.0.33
+
+-- [1]119:select color, color like '%e%', s1, s1 like '_h_n_' from table_a
+STRICT{
+color(STRING)      |_col1(BOOLEAN)      |s1(TEXT)      |_col3(BOOLEAN)      |
+-------------------------------------------------------------------------
+Pink               |false               |Japan         |false               |
+-------------------------------------------------------------------------
+null               |false               |Singapore     |false               |
+-------------------------------------------------------------------------
+black              |false               |America       |false               |
+-------------------------------------------------------------------------
+orange             |true                |Canada        |false               |
+-------------------------------------------------------------------------
+purple             |true                |Australia     |false               |
+-------------------------------------------------------------------------
+green              |true                |Europe        |false               |
+-------------------------------------------------------------------------
+white              |true                |England       |false               |
+-------------------------------------------------------------------------
+red                |true                |China         |true                |
+-------------------------------------------------------------------------
+blue               |true                |Africa        |false               |
+-------------------------------------------------------------------------
+Grey               |true                |South Korea   |false               |
+-------------------------------------------------------------------------
+yellow             |true                |Africa        |false               |
+-------------------------------------------------------------------------
+Green              |true                |Swiss         |false               |
+总数目：12
+}
+
+Elapsed Time: 0.0.30
+
+-- [1]120:select device_id, device_id like 'a', s9, s9 like '%VE%' from table_a
+STRICT{
+device_id(STRING)      |_col1(BOOLEAN)      |s9(STRING)      |_col3(BOOLEAN)      |
+-------------------------------------------------------------------------------
+device_dd              |false               |SOB             |false               |
+-------------------------------------------------------------------------------
+device_fF              |false               |sorrow          |false               |
+-------------------------------------------------------------------------------
+device_B2              |false               |Sad             |false               |
+-------------------------------------------------------------------------------
+device_F6              |false               |Awkward         |false               |
+-------------------------------------------------------------------------------
+device_BB              |false               |happy_and_satisf|false               |
+                       |                    |ied             |                    |
+-------------------------------------------------------------------------------
+device_D4              |false               |Cry             |false               |
+-------------------------------------------------------------------------------
+device_E5              |false               |LOVELY          |true                |
+-------------------------------------------------------------------------------
+device_A1              |false               |Smile           |false               |
+-------------------------------------------------------------------------------
+device_AA              |false               |disappointING   |false               |
+-------------------------------------------------------------------------------
+device_Ee              |false               |unhappy         |false               |
+-------------------------------------------------------------------------------
+device_C3              |false               |laugh           |false               |
+-------------------------------------------------------------------------------
+device_CC              |false               |FRIENDly        |false               |
+总数目：12
+}
+
+Elapsed Time: 0.0.20
+
+-- [1]121:select color, color like '_l_e',s9, s9 like 'happy\_%' from table_a
+STRICT{
+color(STRING)      |_col1(BOOLEAN)      |s9(STRING)      |_col3(BOOLEAN)      |
+---------------------------------------------------------------------------
+Pink               |false               |SOB             |false               |
+---------------------------------------------------------------------------
+null               |false               |sorrow          |false               |
+---------------------------------------------------------------------------
+black              |false               |Sad             |false               |
+---------------------------------------------------------------------------
+orange             |false               |Awkward         |false               |
+---------------------------------------------------------------------------
+purple             |false               |happy_and_satisf|false               |
+                   |                    |ied             |                    |
+---------------------------------------------------------------------------
+green              |false               |Cry             |false               |
+---------------------------------------------------------------------------
+white              |false               |LOVELY          |false               |
+---------------------------------------------------------------------------
+red                |false               |Smile           |false               |
+---------------------------------------------------------------------------
+blue               |true                |disappointING   |false               |
+---------------------------------------------------------------------------
+Grey               |false               |unhappy         |false               |
+---------------------------------------------------------------------------
+yellow             |false               |laugh           |false               |
+---------------------------------------------------------------------------
+Green              |false               |FRIENDly        |false               |
+总数目：12
+}
+
+Elapsed Time: 0.0.23
+
+-- [1]124:select device_id, device_id not like '%e%', s9, s9 not like '%Y%' from table_a
+STRICT{
+device_id(STRING)      |_col1(BOOLEAN)      |s9(STRING)      |_col3(BOOLEAN)      |
+-------------------------------------------------------------------------------
+device_dd              |false               |SOB             |true                |
+-------------------------------------------------------------------------------
+device_fF              |false               |sorrow          |true                |
+-------------------------------------------------------------------------------
+device_B2              |false               |Sad             |true                |
+-------------------------------------------------------------------------------
+device_F6              |false               |Awkward         |true                |
+-------------------------------------------------------------------------------
+device_BB              |false               |happy_and_satisf|true                |
+                       |                    |ied             |                    |
+-------------------------------------------------------------------------------
+device_D4              |false               |Cry             |true                |
+-------------------------------------------------------------------------------
+device_E5              |false               |LOVELY          |false               |
+-------------------------------------------------------------------------------
+device_A1              |false               |Smile           |true                |
+-------------------------------------------------------------------------------
+device_AA              |false               |disappointING   |true                |
+-------------------------------------------------------------------------------
+device_Ee              |false               |unhappy         |true                |
+-------------------------------------------------------------------------------
+device_C3              |false               |laugh           |true                |
+-------------------------------------------------------------------------------
+device_CC              |false               |FRIENDly        |true                |
+总数目：12
+}
+
+Elapsed Time: 0.0.20
+
+-- [1]125:select device_id, device_id like '%B', color, color like '__ee_', s9, s9 not like '%ow' from table_a
+STRICT{
+device_id(STRING)      |_col1(BOOLEAN)      |color(STRING)      |_col3(BOOLEAN)      |s9(STRING)      |_col5(BOOLEAN)      |
+----------------------------------------------------------------------------------------------------------------------
+device_dd              |false               |Pink               |false               |SOB             |true                |
+----------------------------------------------------------------------------------------------------------------------
+device_fF              |false               |null               |false               |sorrow          |false               |
+----------------------------------------------------------------------------------------------------------------------
+device_B2              |false               |black              |false               |Sad             |true                |
+----------------------------------------------------------------------------------------------------------------------
+device_F6              |false               |orange             |false               |Awkward         |true                |
+----------------------------------------------------------------------------------------------------------------------
+device_BB              |true                |purple             |false               |happy_and_satisf|true                |
+                       |                    |                   |                    |ied             |                    |
+----------------------------------------------------------------------------------------------------------------------
+device_D4              |false               |green              |true                |Cry             |true                |
+----------------------------------------------------------------------------------------------------------------------
+device_E5              |false               |white              |false               |LOVELY          |true                |
+----------------------------------------------------------------------------------------------------------------------
+device_A1              |false               |red                |false               |Smile           |true                |
+----------------------------------------------------------------------------------------------------------------------
+device_AA              |false               |blue               |false               |disappointING   |true                |
+----------------------------------------------------------------------------------------------------------------------
+device_Ee              |false               |Grey               |false               |unhappy         |true                |
+----------------------------------------------------------------------------------------------------------------------
+device_C3              |false               |yellow             |false               |laugh           |true                |
+----------------------------------------------------------------------------------------------------------------------
+device_CC              |false               |Green              |true                |FRIENDly        |true                |
+总数目：12
+}
+
+Elapsed Time: 0.0.24
+
+-- [1]126:select s1, s1 not like '%E', s9, s9 not like '_o_' from table_a offset 3 limit 5
+STRICT{
+s1(TEXT)      |_col1(BOOLEAN)      |s9(STRING)      |_col3(BOOLEAN)      |
+----------------------------------------------------------------------
+Canada        |true                |Awkward         |true                |
+----------------------------------------------------------------------
+Australia     |true                |happy_and_satisf|true                |
+              |                    |ied             |                    |
+----------------------------------------------------------------------
+Europe        |true                |Cry             |true                |
+----------------------------------------------------------------------
+England       |true                |LOVELY          |true                |
+----------------------------------------------------------------------
+China         |true                |Smile           |true                |
+总数目：5
+}
+
+Elapsed Time: 0.0.29
+-- [1]130:select * from table_a where s2 like '%0%'
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: INT32)
+}
+-- [1]131:select * from table_a where s3 like '2%'
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: INT64)
+}
+-- [1]132:select * from table_a where s4 like '%5'
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: FLOAT)
+}
+-- [1]133:select * from table_a where s5 like '%11'
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: DOUBLE)
+}
+-- [1]134:select * from table_a where s6 like '%al%'
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: BOOLEAN)
+}
+-- [1]135:select * from table_a where s7 like '%2022%'
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: DATE)
+}
+-- [1]136:select * from table_a where s8 like '%2023-11-11%'
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: TIMESTAMP)
+}
+-- [1]137:select * from table_a where s10 like '0x__'
+STRICT{
+SQLSTATE : 701: Left side of LIKE expression must evaluate to TEXT or STRING Type (actual: BLOB)
+}
+
+-- [1]140:select * from table_a where s1 like 'E%'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_D4              |green              |false            |Europe        |4              |6              |21.1           |44.2            |false            |2023-09-01    |2023-12-20T12:49:49|Cry             |0x24           |
+04+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_E5              |white              |false            |England       |122            |110            |2.2            |9.9             |false            |2022-11-01    |2023-11-27T09:15:39|LOVELY          |0xcd           |
+05+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：2
+}
+
+Elapsed Time: 0.0.16
+
+-- [1]141:select * from table_a where s1 like 'C___a'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_A1              |red                |false            |China         |10             |100            |11.1           |8.8             |true             |2021-10-01    |2021-10-01T08:00:00|Smile           |0xabcd         |
+01+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：1
+}
+
+Elapsed Time: 0.0.24
+
+-- [1]142:select * from table_a where s1 like '%ca%'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_B2              |black              |true             |America       |5              |121            |222.1          |12.2            |false            |2022-10-01    |2024-08-19T14:46:29|Sad             |0x24ad         |
+02+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_AA              |blue               |true             |Africa        |0              |110            |22.2           |1.8             |true             |2023-06-01    |2022-01-25T01:46:40|disappointING   |0xac           |
+07+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_C3              |yellow             |true             |Africa        |13             |250            |1.1            |333.3           |true             |2023-11-01    |2024-01-01T02:19:49|laugh           |0xa2cd         |
+03+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：3
+}
+
+Elapsed Time: 0.0.17
+
+-- [1]143:select * from table_a where s9 like '%y'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_D4              |green              |false            |Europe        |4              |6              |21.1           |44.2            |false            |2023-09-01    |2023-12-20T12:49:49|Cry             |0x24           |
+04+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_Ee              |Grey               |null             |South Korea   |111            |20             |2.0            |11.3            |true             |null          |2023-12-11T14:46:29|unhappy         |0xae           |
+11+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_CC              |Green              |false            |Swiss         |1110           |888            |10.1           |11.1            |true             |2023-11-11    |2023-11-11T14:46:29|FRIENDly        |0xce           |
+09+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：3
+}
+
+Elapsed Time: 0.0.19
+
+-- [1]144:select * from table_a where s9 like 'happy\_%' ESCAPE '\'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_BB              |purple             |true             |Australia     |555            |1001           |202.1          |1.2             |false            |2002-10-01    |2022-05-20T19:33:20|happy_and_satisf|0xabcdef       |
+08+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |ied             |               |
+总数目：1
+}
+
+Elapsed Time: 0.0.16
+
+-- [1]145:select * from table_a where s9 like '_O_%'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_dd              |Pink               |false            |Japan         |111            |222            |22.5           |13.3            |true             |2020-10-11    |2023-12-11T14:46:29|SOB             |0xae           |
+10+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_E5              |white              |false            |England       |122            |110            |2.2            |9.9             |false            |2022-11-01    |2023-11-27T09:15:39|LOVELY          |0xcd           |
+05+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：2
+}
+
+Elapsed Time: 0.0.18
+
+-- [1]146:select * from table_a where device_id like 'device\_%B%' ESCAPE '\'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_B2              |black              |true             |America       |5              |121            |222.1          |12.2            |false            |2022-10-01    |2024-08-19T14:46:29|Sad             |0x24ad         |
+02+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_BB              |purple             |true             |Australia     |555            |1001           |202.1          |1.2             |false            |2002-10-01    |2022-05-20T19:33:20|happy_and_satisf|0xabcdef       |
+08+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |ied             |               |
+总数目：2
+}
+
+Elapsed Time: 0.0.13
+
+-- [1]147:select * from table_a where color like '%e%'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_F6              |orange             |false            |Canada        |8              |999            |123.1          |0.101           |true             |2002-01-01    |2024-08-19T14:46:29|Awkward         |0x4d           |
+06+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_BB              |purple             |true             |Australia     |555            |1001           |202.1          |1.2             |false            |2002-10-01    |2022-05-20T19:33:20|happy_and_satisf|0xabcdef       |
+08+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |ied             |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_D4              |green              |false            |Europe        |4              |6              |21.1           |44.2            |false            |2023-09-01    |2023-12-20T12:49:49|Cry             |0x24           |
+04+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_E5              |white              |false            |England       |122            |110            |2.2            |9.9             |false            |2022-11-01    |2023-11-27T09:15:39|LOVELY          |0xcd           |
+05+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_A1              |red                |false            |China         |10             |100            |11.1           |8.8             |true             |2021-10-01    |2021-10-01T08:00:00|Smile           |0xabcd         |
+01+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_AA              |blue               |true             |Africa        |0              |110            |22.2           |1.8             |true             |2023-06-01    |2022-01-25T01:46:40|disappointING   |0xac           |
+07+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_Ee              |Grey               |null             |South Korea   |111            |20             |2.0            |11.3            |true             |null          |2023-12-11T14:46:29|unhappy         |0xae           |
+11+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_C3              |yellow             |true             |Africa        |13             |250            |1.1            |333.3           |true             |2023-11-01    |2024-01-01T02:19:49|laugh           |0xa2cd         |
+03+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_CC              |Green              |false            |Swiss         |1110           |888            |10.1           |11.1            |true             |2023-11-11    |2023-11-11T14:46:29|FRIENDly        |0xce           |
+09+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：9
+}
+
+Elapsed Time: 0.0.13
+
+-- [1]148:select * from table_a where color like 'G_%y'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_Ee              |Grey               |null             |South Korea   |111            |20             |2.0            |11.3            |true             |null          |2023-12-11T14:46:29|unhappy         |0xae           |
+11+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：1
+}
+
+Elapsed Time: 0.0.12
+
+-- [1]149:select * from table_a where device_id like '%A%' and color like '__d'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_A1              |red                |false            |China         |10             |100            |11.1           |8.8             |true             |2021-10-01    |2021-10-01T08:00:00|Smile           |0xabcd         |
+01+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：1
+}
+
+Elapsed Time: 0.0.12
+
+-- [1]150:select * from table_a where s1 like '%ca' and s9 like '___gh'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_C3              |yellow             |true             |Africa        |13             |250            |1.1            |333.3           |true             |2023-11-01    |2024-01-01T02:19:49|laugh           |0xa2cd         |
+03+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：1
+}
+
+Elapsed Time: 0.0.15
+
+-- [1]151:select * from table_a where device_id like 'device\_%A_' ESCAPE '\' and s9 like '%ING'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_AA              |blue               |true             |Africa        |0              |110            |22.2           |1.8             |true             |2023-06-01    |2022-01-25T01:46:40|disappointING   |0xac           |
+07+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：1
+}
+
+Elapsed Time: 0.0.9
+
+-- [1]154:select * from table_a where s1 not like '%ca'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_dd              |Pink               |false            |Japan         |111            |222            |22.5           |13.3            |true             |2020-10-11    |2023-12-11T14:46:29|SOB             |0xae           |
+10+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_fF              |null               |true             |Singapore     |null           |22             |2.5            |13.3            |true             |null          |2023-12-11T14:46:29|sorrow          |0xae           |
+12+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_F6              |orange             |false            |Canada        |8              |999            |123.1          |0.101           |true             |2002-01-01    |2024-08-19T14:46:29|Awkward         |0x4d           |
+06+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_BB              |purple             |true             |Australia     |555            |1001           |202.1          |1.2             |false            |2002-10-01    |2022-05-20T19:33:20|happy_and_satisf|0xabcdef       |
+08+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |ied             |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_D4              |green              |false            |Europe        |4              |6              |21.1           |44.2            |false            |2023-09-01    |2023-12-20T12:49:49|Cry             |0x24           |
+04+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_E5              |white              |false            |England       |122            |110            |2.2            |9.9             |false            |2022-11-01    |2023-11-27T09:15:39|LOVELY          |0xcd           |
+05+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_A1              |red                |false            |China         |10             |100            |11.1           |8.8             |true             |2021-10-01    |2021-10-01T08:00:00|Smile           |0xabcd         |
+01+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_Ee              |Grey               |null             |South Korea   |111            |20             |2.0            |11.3            |true             |null          |2023-12-11T14:46:29|unhappy         |0xae           |
+11+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_CC              |Green              |false            |Swiss         |1110           |888            |10.1           |11.1            |true             |2023-11-11    |2023-11-11T14:46:29|FRIENDly        |0xce           |
+09+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：9
+}
+
+Elapsed Time: 0.0.12
+
+-- [1]155:select * from table_a where s1 not like '%ca' and s9 not like 'happy\_%' ESCAPE '\'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_dd              |Pink               |false            |Japan         |111            |222            |22.5           |13.3            |true             |2020-10-11    |2023-12-11T14:46:29|SOB             |0xae           |
+10+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_fF              |null               |true             |Singapore     |null           |22             |2.5            |13.3            |true             |null          |2023-12-11T14:46:29|sorrow          |0xae           |
+12+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_F6              |orange             |false            |Canada        |8              |999            |123.1          |0.101           |true             |2002-01-01    |2024-08-19T14:46:29|Awkward         |0x4d           |
+06+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_D4              |green              |false            |Europe        |4              |6              |21.1           |44.2            |false            |2023-09-01    |2023-12-20T12:49:49|Cry             |0x24           |
+04+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_E5              |white              |false            |England       |122            |110            |2.2            |9.9             |false            |2022-11-01    |2023-11-27T09:15:39|LOVELY          |0xcd           |
+05+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_A1              |red                |false            |China         |10             |100            |11.1           |8.8             |true             |2021-10-01    |2021-10-01T08:00:00|Smile           |0xabcd         |
+01+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_Ee              |Grey               |null             |South Korea   |111            |20             |2.0            |11.3            |true             |null          |2023-12-11T14:46:29|unhappy         |0xae           |
+11+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_CC              |Green              |false            |Swiss         |1110           |888            |10.1           |11.1            |true             |2023-11-11    |2023-11-11T14:46:29|FRIENDly        |0xce           |
+09+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：8
+}
+
+Elapsed Time: 0.0.16
+
+-- [1]156:select * from table_a where device_id not like '%F%' and s1 not like '%ca' and s9 not like 'happy\_%' ESCAPE '\'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_dd              |Pink               |false            |Japan         |111            |222            |22.5           |13.3            |true             |2020-10-11    |2023-12-11T14:46:29|SOB             |0xae           |
+10+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_D4              |green              |false            |Europe        |4              |6              |21.1           |44.2            |false            |2023-09-01    |2023-12-20T12:49:49|Cry             |0x24           |
+04+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_E5              |white              |false            |England       |122            |110            |2.2            |9.9             |false            |2022-11-01    |2023-11-27T09:15:39|LOVELY          |0xcd           |
+05+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_A1              |red                |false            |China         |10             |100            |11.1           |8.8             |true             |2021-10-01    |2021-10-01T08:00:00|Smile           |0xabcd         |
+01+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_Ee              |Grey               |null             |South Korea   |111            |20             |2.0            |11.3            |true             |null          |2023-12-11T14:46:29|unhappy         |0xae           |
+11+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_CC              |Green              |false            |Swiss         |1110           |888            |10.1           |11.1            |true             |2023-11-11    |2023-11-11T14:46:29|FRIENDly        |0xce           |
+09+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：6
+}
+
+Elapsed Time: 0.0.14
+
+-- [1]157:select * from table_a where color like '%i%' and s1 not like '__pan'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_E5              |white              |false            |England       |122            |110            |2.2            |9.9             |false            |2022-11-01    |2023-11-27T09:15:39|LOVELY          |0xcd           |
+05+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：1
+}
+
+Elapsed Time: 0.0.14
+
+-- [1]158:select * from table_a where device_id not like '%A%' and color not like '%ow%' and s1 not like '%S%' and s9 like 'S__'
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_dd              |Pink               |false            |Japan         |111            |222            |22.5           |13.3            |true             |2020-10-11    |2023-12-11T14:46:29|SOB             |0xae           |
+10+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|device_B2              |black              |true             |America       |5              |121            |222.1          |12.2            |false            |2022-10-01    |2024-08-19T14:46:29|Sad             |0x24ad         |
+02+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
+总数目：2
+}
+
+Elapsed Time: 0.0.15
+-- [1]161:drop database test_db
+STRICT{
+PASS
+}
