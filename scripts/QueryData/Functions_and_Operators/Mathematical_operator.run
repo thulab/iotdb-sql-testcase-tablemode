@@ -213,8 +213,7 @@ select blob+boolean from t2 order by time;
 <<SQLSTATE;
 select blob+text from t2 order by time;
 <<SQLSTATE;
-select blob+string from t2 order by time;
-<<SQLSTATE;
+select blob+string from t2 order by time;<<SQLSTATE;
 select blob+blob from t2 order by time;
 <<SQLSTATE;
 
@@ -1105,14 +1104,14 @@ select blob,atan(blob) from t2 order by time;
 
 --5-x. 复合sql补充
 -- TIMECHODB-981 （不作修复）
-select int32,int32-999U888,int64,int64*888U777 from t2;
+select int32,int32-999U888,int64,int64*888U777 from t2 order by time;
 
 
 --6. sinh(x)
-select int32, sinh(int32) as sinh_value from t2;
-select int64, sinh(int64) as sinh_value from t2;
-select float, sinh(float) as sinh_value from t2;
-select double, sinh(double) as sinh_value from t2;
+select int32, sinh(int32) as sinh_value from t2 order by time;
+select int64, sinh(int64) as sinh_value from t2 order by time;
+select float, sinh(float) as sinh_value from t2 order by time;
+select double, sinh(double) as sinh_value from t2 order by time;
 select sinh(boolean) from t2; <<SQLSTATE;
 select sinh(text) from t2; <<SQLSTATE;
 select sinh(string) from t2; <<SQLSTATE;
@@ -1122,10 +1121,10 @@ select sinh(date) from t2; <<SQLSTATE;
 
 
 --7. cosh(x)
-select int32, cosh(int32) as cosh_value from t2;
-select int64, cosh(int64) as cosh_value from t2;
-select float, cosh(float) as cosh_value from t2;
-select double, cosh(double) as cosh_value from t2;
+select int32, cosh(int32) as cosh_value from t2 order by time;
+select int64, cosh(int64) as cosh_value from t2 order by time;
+select float, cosh(float) as cosh_value from t2 order by time;
+select double, cosh(double) as cosh_value from t2 order by time;
 select cosh(boolean) from t2; <<SQLSTATE;
 select cosh(text) from t2; <<SQLSTATE;
 select cosh(string) from t2; <<SQLSTATE;
@@ -1135,10 +1134,10 @@ select cosh(date) from t2; <<SQLSTATE;
 
 
 --8. tanh(x)
-select int32, tanh(int32) as tanh_value from t2;
-select int64, tanh(int64) as tanh_value from t2;
-select float, tanh(float) as tanh_value from t2;
-select double, tanh(double) as tanh_value from t2;
+select int32, tanh(int32) as tanh_value from t2 order by time;
+select int64, tanh(int64) as tanh_value from t2 order by time;
+select float, tanh(float) as tanh_value from t2 order by time;
+select double, tanh(double) as tanh_value from t2 order by time;
 select tanh(boolean) from t2; <<SQLSTATE;
 select tanh(text) from t2; <<SQLSTATE;
 select tanh(string) from t2; <<SQLSTATE;
@@ -1148,10 +1147,10 @@ select tanh(date) from t2; <<SQLSTATE;
 
 
 --9. degrees(x)
-select int32, degrees(int32) as degrees_value from t2;
-select int64, degrees(int64) as degrees_value from t2;
-select float, degrees(float) as degrees_value from t2;
-select double, degrees(double) as degrees_value from t2;
+select int32, degrees(int32) as degrees_value from t2 order by time;
+select int64, degrees(int64) as degrees_value from t2 order by time;
+select float, degrees(float) as degrees_value from t2 order by time;
+select double, degrees(double) as degrees_value from t2 order by time;
 select degrees(boolean) from t2; <<SQLSTATE;
 select degrees(text) from t2; <<SQLSTATE;
 select degrees(string) from t2; <<SQLSTATE;
@@ -1160,10 +1159,10 @@ select degrees(timestamp) from t2; <<SQLSTATE;
 select degrees(date) from t2; <<SQLSTATE;
 
 --10. radians(x)
-select int32, radians(int32) as radians_value from t2;
-select int64, radians(int64) as radians_value from t2;
-select float, radians(float) as radians_value from t2;
-select double, radians(double) as radians_value from t2;
+select int32, radians(int32) as radians_value from t2 order by time;
+select int64, radians(int64) as radians_value from t2 order by time;
+select float, radians(float) as radians_value from t2 order by time;
+select double, radians(double) as radians_value from t2 order by time;
 select radians(boolean) from t2; <<SQLSTATE;
 select radians(text) from t2; <<SQLSTATE;
 select radians(string) from t2; <<SQLSTATE;
@@ -1173,10 +1172,10 @@ select radians(date) from t2; <<SQLSTATE;
 
 
 --11. abs(x)
-select int32, abs(int32) as abs_value from t2;
-select int64, abs(int64) as abs_value from t2;
-select float, abs(float) as abs_value from t2;
-select double, abs(double) as abs_value from t2;
+select int32, abs(int32) as abs_value from t2 order by time;
+select int64, abs(int64) as abs_value from t2 order by time;
+select float, abs(float) as abs_value from t2 order by time;
+select double, abs(double) as abs_value from t2 order by time;
 select abs(boolean) from t2; <<SQLSTATE;
 select abs(text) from t2; <<SQLSTATE;
 select abs(string) from t2; <<SQLSTATE;
@@ -1186,10 +1185,10 @@ select abs(date) from t2; <<SQLSTATE;
 
 
 --12. sign(x)
-select int32, sign(int32) as sign_value from t2;
-select int64, sign(int64) as sign_value from t2;
-select float, sign(float) as sign_value from t2;
-select double, sign(double) as sign_value from t2;
+select int32, sign(int32) as sign_value from t2 order by time;
+select int64, sign(int64) as sign_value from t2 order by time;
+select float, sign(float) as sign_value from t2 order by time;
+select double, sign(double) as sign_value from t2 order by time;
 select sign(boolean) from t2; <<SQLSTATE;
 select sign(text) from t2; <<SQLSTATE;
 select sign(string) from t2; <<SQLSTATE;
@@ -1199,10 +1198,10 @@ select sign(date) from t2; <<SQLSTATE;
 
 
 --13. ceil(x)
-select int32, ceil(int32) as ceil_value from t2;
-select int64, ceil(int64) as ceil_value from t2;
-select float, ceil(float) as ceil_value from t2;
-select double, ceil(double) as ceil_value from t2;
+select int32, ceil(int32) as ceil_value from t2 order by time;
+select int64, ceil(int64) as ceil_value from t2 order by time;
+select float, ceil(float) as ceil_value from t2 order by time;
+select double, ceil(double) as ceil_value from t2 order by time;
 select ceil(boolean) from t2; <<SQLSTATE;
 select ceil(text) from t2; <<SQLSTATE;
 select ceil(string) from t2; <<SQLSTATE;
@@ -1212,10 +1211,10 @@ select ceil(date) from t2; <<SQLSTATE;
 
 
 --14. floor(x)
-select int32, floor(int32) as floor_value from t2;
-select int64, floor(int64) as floor_value from t2;
-select float, floor(float) as floor_value from t2;
-select double, floor(double) as floor_value from t2;
+select int32, floor(int32) as floor_value from t2 order by time;
+select int64, floor(int64) as floor_value from t2 order by time;
+select float, floor(float) as floor_value from t2 order by time;
+select double, floor(double) as floor_value from t2 order by time;
 select floor(boolean) from t2; <<SQLSTATE;
 select floor(text) from t2; <<SQLSTATE;
 select floor(string) from t2; <<SQLSTATE;
@@ -1225,10 +1224,10 @@ select floor(date) from t2; <<SQLSTATE;
 
 
 --15. exp(x)
-select int32, exp(int32) as exp_value from t2;
-select int64, exp(int64) as exp_value from t2;
-select float, exp(float) as exp_value from t2;
-select double, exp(double) as exp_value from t2;
+select int32, exp(int32) as exp_value from t2 order by time;
+select int64, exp(int64) as exp_value from t2 order by time;
+select float, exp(float) as exp_value from t2 order by time;
+select double, exp(double) as exp_value from t2 order by time;
 select exp(boolean) from t2; <<SQLSTATE;
 select exp(text) from t2; <<SQLSTATE;
 select exp(string) from t2; <<SQLSTATE;
@@ -1238,10 +1237,10 @@ select exp(date) from t2; <<SQLSTATE;
 
 
 --16. ln(x)
-select int32, ln(int32) as ln_value from t2;
-select int64, ln(int64) as ln_value from t2;
-select float, ln(float) as ln_value from t2;
-select double, ln(double) as ln_value from t2;
+select int32, ln(int32) as ln_value from t2 order by time;
+select int64, ln(int64) as ln_value from t2 order by time;
+select float, ln(float) as ln_value from t2 order by time;
+select double, ln(double) as ln_value from t2 order by time;
 select ln(boolean) from t2; <<SQLSTATE;
 select ln(text) from t2; <<SQLSTATE;
 select ln(string) from t2; <<SQLSTATE;
@@ -1251,10 +1250,10 @@ select ln(date) from t2; <<SQLSTATE;
 
 
 --17. log10(x)
-select int32, log10(int32) as log10_value from t2;
-select int64, log10(int64) as log10_value from t2;
-select float, log10(float) as log10_value from t2;
-select double, log10(double) as log10_value from t2;
+select int32, log10(int32) as log10_value from t2 order by time;
+select int64, log10(int64) as log10_value from t2 order by time;
+select float, log10(float) as log10_value from t2 order by time;
+select double, log10(double) as log10_value from t2 order by time;
 select log10(boolean) from t2; <<SQLSTATE;
 select log10(text) from t2; <<SQLSTATE;
 select log10(string) from t2; <<SQLSTATE;
@@ -1264,10 +1263,10 @@ select log10(date) from t2; <<SQLSTATE;
 
 
 --18. round(x)
-select int32, round(int32) as round_value from t2;
-select int64, round(int64) as round_value from t2;
-select float, round(float) as round_value from t2;
-select double, round(double) as round_value from t2;
+select int32, round(int32) as round_value from t2 order by time;
+select int64, round(int64) as round_value from t2 order by time;
+select float, round(float) as round_value from t2 order by time;
+select double, round(double) as round_value from t2 order by time;
 select round(boolean) from t2; <<SQLSTATE;
 select round(text) from t2; <<SQLSTATE;
 select round(string) from t2; <<SQLSTATE;
@@ -1277,17 +1276,17 @@ select round(date) from t2; <<SQLSTATE;
 
 
 --19. round(x, d) 
-select int32, round(int32,2) as round_value from t2;
-select int64, round(int64,2) as round_value from t2;
-select float, round(float,2) as round_value from t2;
-select double, round(double,2) as round_value from t2;
+select int32, round(int32,2) as round_value from t2 order by time;
+select int64, round(int64,2) as round_value from t2 order by time;
+select float, round(float,2) as round_value from t2 order by time;
+select double, round(double,2) as round_value from t2 order by time;
 
 
 --20. sqrt(x)
-select int32, sqrt(int32) as sqrt_value from t2;
-select int64, sqrt(int64) as sqrt_value from t2;
-select float, sqrt(float) as sqrt_value from t2;
-select double, sqrt(double) as sqrt_value from t2;
+select int32, sqrt(int32) as sqrt_value from t2 order by time;
+select int64, sqrt(int64) as sqrt_value from t2 order by time;
+select float, sqrt(float) as sqrt_value from t2 order by time;
+select double, sqrt(double) as sqrt_value from t2 order by time;
 select sqrt(boolean) from t2; <<SQLSTATE;
 select sqrt(text) from t2; <<SQLSTATE;
 select sqrt(string) from t2; <<SQLSTATE;

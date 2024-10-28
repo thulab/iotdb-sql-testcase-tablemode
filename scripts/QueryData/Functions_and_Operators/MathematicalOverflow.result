@@ -31,31 +31,31 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.1.951
+Elapsed Time: 0.1.936
 -- [1]92:INSERT INTO table_sub ( time,device,type,int32,int32_1,int64,int64_1,double,float,timestamp,date )  values (1,'d1','t11',2147483647,-2147483648,9223372036854775807,-9223372036854775808,1797693134862315700,3402823470000000000,-9223372036854775808,'1000-01-01'), (2,'d2','t12',-2147483648,2147483647,-9223372036854775808,9223372036854775807,-1797693134862315700,1175494350000000000,9223372036854775807,'9999-12-31')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.22
 -- [1]99:INSERT INTO table_mul ( time,device,type,int32,int32_1,int64,int64_1,double,float) values (1,'d1','t11',2147483647,-2147483648,9223372036854775807,-9223372036854775808,1797693134862315700,3402823470000000000), (2,'d2','t12',-2147483648,2147483647,-9223372036854775808,9223372036854775807,-1797693134862315700,1175494350000000000)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.18
 -- [1]106:INSERT INTO table_div ( time,device,type,int32,int32_1,int64,int64_1,double,float) values (1,'d1','t11',1,2147483647,9223372036854775807,1,0.0,-0.0), (2,'d2','t12',-1,-2147483648,-9223372036854775808,-1,-0.0,0.0), (3,'d3','t13',0,-0,-0,0,-0.0,0.0)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.36
+Elapsed Time: 0.0.31
 -- [1]113:INSERT INTO table_negation ( time,device,type,int32,int64,double,float,timestamp) values (1,'d1','t11',2147483647,9223372036854775807,1.7976931348623157E+308,3.4028235E+38,9223372036854775807), (2,'d2','t12',-2147483648,-9223372036854775808,-4.9406564584124654E-324,-1.401298464324817E-45,-9223372036854775808), (3,'d3','t13',0,-0,-0.0,0.0,0)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.28
 
 -- [1]122:select * from table_add order by time
 STRICT{
@@ -69,89 +69,97 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：2
 }
 
-Elapsed Time: 0.0.9
--- [1]125:select int32 + int32 from table_add
+Elapsed Time: 0.0.23
+-- [1]125:select int32 + int32 from table_add where time = 1
+STRICT{
+SQLSTATE : 750: int Addition overflow: 2147483647 + 2147483647
+}
+-- [1]126:select int32 + int32 from table_add where time = 2
 STRICT{
 SQLSTATE : 750: int Addition overflow: -2147483648 + -2147483648
 }
--- [1]127:select int64 + int32 from table_add
+-- [1]127:select int64 + int32 from table_add where time = 1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00123_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Addition overflow: 9223372036854775807 + 2147483647
+}
+-- [1]128:select int64 + int32 from table_add where time = 2
 STRICT{
 SQLSTATE : 750: long Addition overflow: -9223372036854775808 + -2147483648
 }
--- [1]129:select date + int32 from table_add
+-- [1]129:select int32 + int64 from table_add where time = 1
 STRICT{
-SQLSTATE : 301: DriverTask 20241017_025249_01048_1.1.0.0 is aborted by  called
+SQLSTATE : 750: long Addition overflow: 2147483647 + 9223372036854775807
 }
--- [1]131:select timestamp + int32 from table_add
+-- [1]130:select int32 + int64 from table_add where time = 2
+STRICT{
+SQLSTATE : 750: long Addition overflow: -2147483648 + -9223372036854775808
+}
+-- [1]131:select date + int32 from table_add
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00131_1.1.0.0 is aborted by  called
+}
+-- [1]133:select int32 + date from table_add
+STRICT{
+SQLSTATE : 301: Year must be between 1000 and 9999.
+}
+-- [1]135:select timestamp + int32 from table_add where time = 1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00135_1.1.0.0 is aborted by  called
+}
+-- [1]136:select timestamp + int32 from table_add where time = 2
 STRICT{
 SQLSTATE : 750: long Addition overflow: -9223372036854775808 + -2147483648
 }
-
--- [1]133:select float + int32 from table_add
+-- [1]137:select int32 + timestamp from table_add where time = 1
 STRICT{
-_col0(FLOAT)      |
-------------------
-1.17549434E18     |
-------------------
-3.40282356E18     |
-总数目：2
+SQLSTATE : 750: long Addition overflow: 2147483647 + 9223372036854775807
 }
-
-Elapsed Time: 0.0.5
-
--- [1]134:select double + int32 from table_add
+-- [1]138:select int32 + timestamp from table_add where time = 2
 STRICT{
-_col0(DOUBLE)      |
--------------------
--1.7976931370097994|
-2E18               |
--------------------
-1.79769313700979942|
-E18                |
-总数目：2
+SQLSTATE : 750: long Addition overflow: -2147483648 + -9223372036854775808
 }
-
-Elapsed Time: 0.0.5
--- [1]137:select int64 + int64 from table_add
+-- [1]142:select int64 + int64 from table_add where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00143_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Addition overflow: 9223372036854775807 + 9223372036854775807
+}
+-- [1]143:select int64 + int64 from table_add where time =2
 STRICT{
 SQLSTATE : 750: long Addition overflow: -9223372036854775808 + -9223372036854775808
 }
--- [1]139:select date + int64 from table_add
+-- [1]144:select date + int64 from table_add where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00147_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Addition overflow: 99991231 + 9223372036854775807
+}
+-- [1]145:select date + int64 from table_add where time =2
 STRICT{
 SQLSTATE : 750: long Addition overflow: 10000126 + -9223372036854775808
 }
--- [1]141:select timestamp + int64 from table_add
+-- [1]146:select int64 + date from table_add where time =1
+STRICT{
+SQLSTATE : 750: long Addition overflow: 9223372036854775807 + 99991231
+}
+-- [1]147:select int64 + date from table_add where time =2
+STRICT{
+SQLSTATE : 750: long Addition overflow: -9223372036854775808 + 10000126
+}
+-- [1]148:select timestamp + int64 from table_add where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00155_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Addition overflow: 9223372036854775807 + 9223372036854775807
+}
+-- [1]149:select timestamp + int64 from table_add where time =2
+STRICT{
+SQLSTATE : 750: long Addition overflow: -9223372036854775808 + -9223372036854775808
+}
+-- [1]150:select int64 + timestamp from table_add where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00159_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Addition overflow: 9223372036854775807 + 9223372036854775807
+}
+-- [1]151:select int64 + timestamp from table_add where time =2
 STRICT{
 SQLSTATE : 750: long Addition overflow: -9223372036854775808 + -9223372036854775808
 }
 
--- [1]143:select float + int64 from table_add
-STRICT{
-_col0(FLOAT)      |
-------------------
--8.0478776E18     |
-------------------
-1.2626196E19      |
-总数目：2
-}
-
-Elapsed Time: 0.0.5
-
--- [1]144:select double + int64 from table_add
-STRICT{
-_col0(DOUBLE)      |
--------------------
--1.1021065171717091|
-E19                |
--------------------
-1.1021065171717091E|
-19                 |
-总数目：2
-}
-
-Elapsed Time: 0.0.6
-
--- [1]148:select * from table_sub order by time
+-- [1]155:select * from table_sub order by time
 STRICT{
 time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      |int32_1(INT32)      |int64(INT64)      |int64_1(INT64)      |double(DOUBLE)      |float(FLOAT)      |timestamp(TIMESTAMP)      |date(DATE)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -163,111 +171,133 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：2
 }
 
-Elapsed Time: 0.0.5
--- [1]151:select int32 - int32_1 from table_sub
+Elapsed Time: 0.0.11
+-- [1]158:select int32 - int32_1 from table_sub where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00165_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: int Subtraction overflow: 2147483647 - -2147483648
+}
+-- [1]159:select int32 - int32_1 from table_sub where time =2
 STRICT{
 SQLSTATE : 750: int Subtraction overflow: -2147483648 - 2147483647
 }
--- [1]153:select int64 - int32_1 from table_sub
+-- [1]160:select int32_1 - int32 from table_sub where time =1
+STRICT{
+SQLSTATE : 750: int Subtraction overflow: -2147483648 - 2147483647
+}
+-- [1]161:select int32_1 - int32 from table_sub where time =2
+STRICT{
+SQLSTATE : 750: int Subtraction overflow: 2147483647 - -2147483648
+}
+-- [1]162:select int64 - int32_1 from table_sub where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00173_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Subtraction overflow: 9223372036854775807 - -2147483648
+}
+-- [1]163:select int64 - int32_1 from table_sub where time =2
 STRICT{
 SQLSTATE : 750: long Subtraction overflow: -9223372036854775808 - 2147483647
 }
-
--- [1]155:select date - int32_1 from table_sub
+-- [1]164:select int32_1 - int64 from table_sub where time =1
 STRICT{
-_col0(DATE)      |
------------------
-9999-12-06       |
------------------
-1000-01-25       |
-总数目：2
+SQLSTATE : 750: long Subtraction overflow: -2147483648 - 9223372036854775807
 }
-
-Elapsed Time: 0.0.6
-
--- [1]156:select timestamp - int32_1 from table_sub
-STRICT{
-_col0(TIMESTAMP)      |
-----------------------
-+292278994-07-23T18:41|
-:32.160+08:00         |
-----------------------
--292275055-06-10T21:24|
-:10+08.840:05:43      |
-总数目：2
-}
-
-Elapsed Time: 0.0.6
-
--- [1]157:select float - int32_1 from table_sub
-STRICT{
-_col0(FLOAT)      |
-------------------
-1.17549434E18     |
-------------------
-3.40282356E18     |
-总数目：2
-}
-
-Elapsed Time: 0.0.6
-
--- [1]158:select double - int32_1 from table_sub
-STRICT{
-_col0(DOUBLE)      |
--------------------
--1.7976931370097994|
-2E18               |
--------------------
-1.79769313700979942|
-E18                |
-总数目：2
-}
-
-Elapsed Time: 0.0.5
--- [1]161:select int32_1 - int64 from table_sub
+-- [1]165:select int32_1 - int64 from table_sub where time =2
 STRICT{
 SQLSTATE : 750: long Subtraction overflow: 2147483647 - -9223372036854775808
 }
--- [1]163:select int64_1 - int64 from table_sub
+
+-- [1]166:select date - int32_1 from table_sub order by time
 STRICT{
-SQLSTATE : 750: long Subtraction overflow: 9223372036854775807 - -9223372036854775808
-}
--- [1]165:select cast(date as TIMESTAMP) - int64 from table_sub
-STRICT{
-SQLSTATE : 750: long Subtraction overflow: 253402185600000 - -9223372036854775808
-}
--- [1]167:select timestamp - int64 from table_sub
-STRICT{
-SQLSTATE : 750: long Subtraction overflow: 9223372036854775807 - -9223372036854775808
+_col0(DATE)      |
+-----------------
+1000-01-25       |
+-----------------
+9999-12-06       |
+总数目：2
 }
 
--- [1]169:select float - int64 from table_sub
+Elapsed Time: 0.0.11
+
+-- [1]167:select timestamp - int32_1 from table_sub order by time
+STRICT{
+_col0(TIMESTAMP)      |
+----------------------
+-292275055-06-10T21:24|
+:10+08.840:05:43      |
+----------------------
++292278994-07-23T18:41|
+:32.160+08:00         |
+总数目：2
+}
+
+Elapsed Time: 0.0.10
+
+-- [1]168:select float - int32_1 from table_sub order by time
 STRICT{
 _col0(FLOAT)      |
 ------------------
-1.0398867E19      |
+3.40282356E18     |
 ------------------
--5.8205485E18     |
+1.17549434E18     |
 总数目：2
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.10
 
--- [1]170:select double - int64 from table_sub
+-- [1]169:select double - int32_1 from table_sub order by time
 STRICT{
 _col0(DOUBLE)      |
 -------------------
-7.4256789019924603E|
-18                 |
--------------------
--7.4256789019924603|
+1.79769313700979942|
 E18                |
+-------------------
+-1.7976931370097994|
+2E18               |
 总数目：2
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.11
+-- [1]172:select int64_1 - int64 from table_sub where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00189_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Subtraction overflow: -9223372036854775808 - 9223372036854775807
+}
+-- [1]173:select int64_1 - int64 from table_sub where time =2
+STRICT{
+SQLSTATE : 750: long Subtraction overflow: 9223372036854775807 - -9223372036854775808
+}
+-- [1]174:select int64 - int64_1 from table_sub where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00193_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Subtraction overflow: 9223372036854775807 - -9223372036854775808
+}
+-- [1]175:select int64 - int64_1 from table_sub where time =2
+STRICT{
+SQLSTATE : 750: long Subtraction overflow: -9223372036854775808 - 9223372036854775807
+}
+-- [1]176:select cast(date as TIMESTAMP) - int64 from table_sub where time =1
+STRICT{
+SQLSTATE : 750: long Subtraction overflow: -30610253143000 - 9223372036854775807
+}
+-- [1]177:select cast(date as TIMESTAMP) - int64 from table_sub where time =2
+STRICT{
+SQLSTATE : 750: long Subtraction overflow: 253402185600000 - -9223372036854775808
+}
+-- [1]178:select int64 - cast(date as TIMESTAMP) from table_sub where time =1
+STRICT{
+SQLSTATE : 701: Cannot apply operator: INT64 - TIMESTAMP
+}
+-- [1]179:select int64 - cast(date as TIMESTAMP) from table_sub where time =2
+STRICT{
+SQLSTATE : 701: Cannot apply operator: INT64 - TIMESTAMP
+}
+-- [1]180:select timestamp - int64 from table_sub where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00203_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Subtraction overflow: -9223372036854775808 - 9223372036854775807
+}
+-- [1]181:select timestamp - int64 from table_sub where time =2
+STRICT{
+SQLSTATE : 750: long Subtraction overflow: 9223372036854775807 - -9223372036854775808
+}
 
--- [1]174:select * from table_mul order by time
+-- [1]185:select * from table_mul order by time
 STRICT{
 time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      |int32_1(INT32)      |int64(INT64)      |int64_1(INT64)      |double(DOUBLE)      |float(FLOAT)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -279,93 +309,81 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：2
 }
 
-Elapsed Time: 0.0.5
--- [1]177:select int32 * int32 from table_mul
+Elapsed Time: 0.0.12
+-- [1]188:select int32 * int32 from table_mul where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00209_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: int Multiplication overflow: 2147483647 * 2147483647
+}
+-- [1]189:select int32 * int32 from table_mul where time =2
 STRICT{
 SQLSTATE : 750: int Multiplication overflow: -2147483648 * -2147483648
 }
--- [1]179:select int32_1 * int32 from table_mul
+-- [1]190:select int32_1 * int32 from table_mul where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00213_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: int Multiplication overflow: -2147483648 * 2147483647
+}
+-- [1]191:select int32_1 * int32 from table_mul where time =2
 STRICT{
 SQLSTATE : 750: int Multiplication overflow: 2147483647 * -2147483648
 }
--- [1]181:select int64 * int32 from table_mul
+-- [1]192:select int32 * int32_1 from table_mul where time =1
+STRICT{
+SQLSTATE : 750: int Multiplication overflow: 2147483647 * -2147483648
+}
+-- [1]193:select int32 * int32_1 from table_mul where time =2
+STRICT{
+SQLSTATE : 750: int Multiplication overflow: -2147483648 * 2147483647
+}
+-- [1]194:select int64 * int32 from table_mul where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00221_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Multiplication overflow: 9223372036854775807 * 2147483647
+}
+-- [1]195:select int64 * int32 from table_mul where time =2
 STRICT{
 SQLSTATE : 750: long Multiplication overflow: -9223372036854775808 * -2147483648
 }
--- [1]183:select int64_1 * int32 from table_mul
+-- [1]196:select int32 * int64 from table_mul where time =1
 STRICT{
-SQLSTATE : 750: long Multiplication overflow: 9223372036854775807 * -2147483648
+SQLSTATE : 301: DriverTask 20241025_104749_00225_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Multiplication overflow: 2147483647 * 9223372036854775807
 }
-
--- [1]185:select float * int32 from table_mul
-STRICT{
-_col0(FLOAT)      |
-------------------
--2.524355E27      |
-------------------
-7.307508E27       |
-总数目：2
-}
-
-Elapsed Time: 0.0.6
-
--- [1]186:select double * int32 from table_mul
-STRICT{
-_col0(DOUBLE)      |
--------------------
-3.860516611238682E2|
-7                  |
--------------------
-3.8605166094409886E|
-27                 |
-总数目：2
-}
-
-Elapsed Time: 0.0.5
--- [1]189:select int32 * int64 from table_mul
+-- [1]197:select int32 * int64 from table_mul where time =2
 STRICT{
 SQLSTATE : 750: long Multiplication overflow: -2147483648 * -9223372036854775808
 }
--- [1]191:select int32_1 * int64 from table_mul
+-- [1]198:select int64_1 * int32 from table_mul where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00229_1.1.0.0 is aborted by  called
+}
+-- [1]199:select int64_1 * int32 from table_mul where time =2
+STRICT{
+SQLSTATE : 750: long Multiplication overflow: 9223372036854775807 * -2147483648
+}
+-- [1]203:select int32_1 * int64 from table_mul where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00233_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long Multiplication overflow: -2147483648 * 9223372036854775807
+}
+-- [1]204:select int32_1 * int64 from table_mul where time =2
 STRICT{
 SQLSTATE : 750: long Multiplication overflow: 2147483647 * -9223372036854775808
 }
--- [1]193:select int64 * int64 from table_mul
+-- [1]205:select int64 * int64 from table_mul where time =1
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104749_00237_1.1.0.0 is aborted by  called
+}
+-- [1]206:select int64 * int64 from table_mul where time =2
 STRICT{
 SQLSTATE : 750: long Multiplication overflow: -9223372036854775808 * -9223372036854775808
 }
--- [1]195:select int64_1 * int64 from table_mul
+-- [1]207:select int64_1 * int64 from table_mul where time =1
+STRICT{
+SQLSTATE : 750: long Multiplication overflow: -9223372036854775808 * 9223372036854775807
+}
+-- [1]208:select int64_1 * int64 from table_mul where time =2
 STRICT{
 SQLSTATE : 750: long Multiplication overflow: 9223372036854775807 * -9223372036854775808
 }
 
--- [1]197:select float * int64 from table_mul
-STRICT{
-_col0(FLOAT)      |
-------------------
--1.0842022E37     |
-------------------
-3.1385508E37      |
-总数目：2
-}
-
-Elapsed Time: 0.0.6
-
--- [1]198:select double * int64 from table_mul
-STRICT{
-_col0(DOUBLE)      |
--------------------
-1.6580792590934885E|
-37                 |
--------------------
-1.6580792590934885E|
-37                 |
-总数目：2
-}
-
-Elapsed Time: 0.0.4
-
--- [1]202:select * from table_div order by time
+-- [1]212:select * from table_div order by time
 STRICT{
 time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      |int32_1(INT32)      |int64(INT64)      |int64_1(INT64)      |double(DOUBLE)      |float(FLOAT)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -380,228 +398,13 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：3
 }
 
-Elapsed Time: 0.0.5
--- [1]205:select int32_1 / int32 from table_div where time = 2
+Elapsed Time: 0.0.8
+-- [1]215:select int32_1 / int32 from table_div where time = 2
 STRICT{
 SQLSTATE : 750: int overflow: -2147483648 / -1
 }
--- [1]207:select int64 / int32 from table_div where time=2
-STRICT{
-SQLSTATE : 750: long overflow: -9223372036854775808 / -1
-}
--- [1]211:select int64 / int32 from table_div where time = 2
-STRICT{
-SQLSTATE : 301: DriverTask 20241017_025249_01124_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long overflow: -9223372036854775808 / -1
-}
--- [1]213:select int64 / int64_1 from table_div where time =2
-STRICT{
-SQLSTATE : 301: DriverTask 20241017_025249_01126_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: long overflow: -9223372036854775808 / -1
-}
 
--- [1]217:select float / int32 from table_div where time=1
-STRICT{
-_col0(FLOAT)      |
-------------------
--0.0              |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]218:select float / int32 from table_div where time=3
-STRICT{
-_col0(FLOAT)      |
-------------------
-NaN               |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]219:select double / int32 from table_div where time=1
-STRICT{
-_col0(DOUBLE)      |
--------------------
-0.0                |
-总数目：1
-}
-
-Elapsed Time: 0.0.6
-
--- [1]220:select double / int32 from table_div where time=3
-STRICT{
-_col0(DOUBLE)      |
--------------------
-NaN                |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]221:select float / int64 from table_div where time=1
-STRICT{
-_col0(FLOAT)      |
-------------------
--0.0              |
-总数目：1
-}
-
-Elapsed Time: 0.0.6
-
--- [1]222:select float / int64 from table_div where time=3
-STRICT{
-_col0(FLOAT)      |
-------------------
-NaN               |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]223:select double / int64 from table_div where time=1
-STRICT{
-_col0(DOUBLE)      |
--------------------
-0.0                |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]224:select double / int64 from table_div where time=3
-STRICT{
-_col0(DOUBLE)      |
--------------------
-NaN                |
-总数目：1
-}
-
-Elapsed Time: 0.0.6
-
--- [1]225:select int32 / float from table_div where time=1
-STRICT{
-_col0(FLOAT)      |
-------------------
--Infinity         |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]226:select int32 / float from table_div where time=3
-STRICT{
-_col0(FLOAT)      |
-------------------
-NaN               |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]227:select int32 / double from table_div where time =1
-STRICT{
-_col0(DOUBLE)      |
--------------------
-Infinity           |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]228:select int32 / double from table_div where time =3
-STRICT{
-_col0(DOUBLE)      |
--------------------
-NaN                |
-总数目：1
-}
-
-Elapsed Time: 0.0.4
-
--- [1]229:select int64 / float from table_div where time =1
-STRICT{
-_col0(FLOAT)      |
-------------------
--Infinity         |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]230:select int64 / float from table_div where time =3
-STRICT{
-_col0(FLOAT)      |
-------------------
-NaN               |
-总数目：1
-}
-
-Elapsed Time: 0.0.6
-
--- [1]231:select int64 / double from table_div where time =1
-STRICT{
-_col0(DOUBLE)      |
--------------------
-Infinity           |
-总数目：1
-}
-
-Elapsed Time: 0.0.4
-
--- [1]232:select int64 / double from table_div where time =3
-STRICT{
-_col0(DOUBLE)      |
--------------------
-NaN                |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
--- [1]235:select int32_1 / int32 from table_div where time=2
-STRICT{
-SQLSTATE : 750: int overflow: -2147483648 / -1
-}
--- [1]237:select int64 / int32 from table_div where time=3
-STRICT{
-SQLSTATE : 751: Division by zero
-}
--- [1]239:select int64 / int64_1 from table_div where time =3
-STRICT{
-SQLSTATE : 751: Division by zero
-}
-
--- [1]244:select * from table_div order by time
-STRICT{
-time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      |int32_1(INT32)      |int64(INT64)      |int64_1(INT64)      |double(DOUBLE)      |float(FLOAT)      |
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|d1                  |t11               |1                 |2147483647          |922337203685477580|1                   |0.0                 |-0.0              |
-01+08:00             |                    |                  |                  |                    |7                 |                    |                    |                  |
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|d2                  |t12               |-1                |-2147483648         |-92233720368547758|-1                  |-0.0                |0.0               |
-02+08:00             |                    |                  |                  |                    |08                |                    |                    |                  |
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|d3                  |t13               |0                 |0                   |0                 |0                   |-0.0                |0.0               |
-03+08:00             |                    |                  |                  |                    |                  |                    |                    |                  |
-总数目：3
-}
-
-Elapsed Time: 0.0.5
-
--- [1]247:select -int32 from table_negation where time =1
-STRICT{
-_col0(INT32)      |
-------------------
--2147483647       |
-总数目：1
-}
-
-Elapsed Time: 0.0.6
--- [1]248:select -int32 from table_negation where time =2
-STRICT{
-SQLSTATE : 301: DriverTask 20241017_025249_01170_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: The -2147483648 is out of range of int.
-}
-
--- [1]250:select -int32 from table_negation where time =3
+-- [1]217:select int32 / int32_1 from table_div where time = 2
 STRICT{
 _col0(INT32)      |
 ------------------
@@ -609,116 +412,357 @@ _col0(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
+-- [1]218:select int64 / int32 from table_div where time=2
+STRICT{
+SQLSTATE : 750: long overflow: -9223372036854775808 / -1
+}
 
--- [1]253:select -int64 from table_negation where time =1
+-- [1]220:select int32 / int64 from table_div where time=2
 STRICT{
 _col0(INT64)      |
 ------------------
--92233720368547758|
-07                |
+0                 |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
--- [1]254:select -int64 from table_negation where time =2
+Elapsed Time: 0.0.7
+-- [1]223:select int64 / int64_1 from table_div where time =2
+STRICT{
+SQLSTATE : 750: long overflow: -9223372036854775808 / -1
+}
+
+-- [1]225:select int64_1 / int64 from table_div where time =2
+STRICT{
+_col0(INT64)      |
+------------------
+0                 |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]228:select float / int32 from table_div where time=1
+STRICT{
+_col0(FLOAT)      |
+------------------
+-0.0              |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]229:select float / int32 from table_div where time=3
+STRICT{
+_col0(FLOAT)      |
+------------------
+NaN               |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]230:select double / int32 from table_div where time=1
+STRICT{
+_col0(DOUBLE)      |
+-------------------
+0.0                |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]231:select double / int32 from table_div where time=3
+STRICT{
+_col0(DOUBLE)      |
+-------------------
+NaN                |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]232:select float / int64 from table_div where time=1
+STRICT{
+_col0(FLOAT)      |
+------------------
+-0.0              |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]233:select float / int64 from table_div where time=3
+STRICT{
+_col0(FLOAT)      |
+------------------
+NaN               |
+总数目：1
+}
+
+Elapsed Time: 0.0.8
+
+-- [1]234:select double / int64 from table_div where time=1
+STRICT{
+_col0(DOUBLE)      |
+-------------------
+0.0                |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]235:select double / int64 from table_div where time=3
+STRICT{
+_col0(DOUBLE)      |
+-------------------
+NaN                |
+总数目：1
+}
+
+Elapsed Time: 0.0.11
+
+-- [1]236:select int32 / float from table_div where time=1
+STRICT{
+_col0(FLOAT)      |
+------------------
+-Infinity         |
+总数目：1
+}
+
+Elapsed Time: 0.0.9
+
+-- [1]237:select int32 / float from table_div where time=3
+STRICT{
+_col0(FLOAT)      |
+------------------
+NaN               |
+总数目：1
+}
+
+Elapsed Time: 0.0.8
+
+-- [1]238:select int32 / double from table_div where time =1
+STRICT{
+_col0(DOUBLE)      |
+-------------------
+Infinity           |
+总数目：1
+}
+
+Elapsed Time: 0.0.8
+
+-- [1]239:select int32 / double from table_div where time =3
+STRICT{
+_col0(DOUBLE)      |
+-------------------
+NaN                |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]240:select int64 / float from table_div where time =1
+STRICT{
+_col0(FLOAT)      |
+------------------
+-Infinity         |
+总数目：1
+}
+
+Elapsed Time: 0.0.8
+
+-- [1]241:select int64 / float from table_div where time =3
+STRICT{
+_col0(FLOAT)      |
+------------------
+NaN               |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]242:select int64 / double from table_div where time =1
+STRICT{
+_col0(DOUBLE)      |
+-------------------
+Infinity           |
+总数目：1
+}
+
+Elapsed Time: 0.0.8
+
+-- [1]243:select int64 / double from table_div where time =3
+STRICT{
+_col0(DOUBLE)      |
+-------------------
+NaN                |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+-- [1]246:select int32_1 / int32 from table_div where time=3
+STRICT{
+SQLSTATE : 751: Division by zero
+}
+-- [1]248:select int64 / int32 from table_div where time=3
+STRICT{
+SQLSTATE : 751: Division by zero
+}
+-- [1]250:select int64 / int64_1 from table_div where time =3
+STRICT{
+SQLSTATE : 751: Division by zero
+}
+
+-- [1]255:select * from table_div order by time
+STRICT{
+time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      |int32_1(INT32)      |int64(INT64)      |int64_1(INT64)      |double(DOUBLE)      |float(FLOAT)      |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d1                  |t11               |1                 |2147483647          |922337203685477580|1                   |0.0                 |-0.0              |
+01+08:00             |                    |                  |                  |                    |7                 |                    |                    |                  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d2                  |t12               |-1                |-2147483648         |-92233720368547758|-1                  |-0.0                |0.0               |
+02+08:00             |                    |                  |                  |                    |08                |                    |                    |                  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d3                  |t13               |0                 |0                   |0                 |0                   |-0.0                |0.0               |
+03+08:00             |                    |                  |                  |                    |                  |                    |                    |                  |
+总数目：3
+}
+
+Elapsed Time: 0.0.9
+
+-- [1]258:select int32, -int32 as nega_result from table_negation where time =1
+STRICT{
+int32(INT32)      |nega_result(INT32)      |
+------------------------------------------
+2147483647        |-2147483647             |
+总数目：1
+}
+
+Elapsed Time: 0.0.10
+-- [1]259:select -int32 from table_negation where time =2
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104750_00301_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: The -2147483648 is out of range of int.
+}
+
+-- [1]261:select int32, -int32 as nega_result from table_negation where time =3
+STRICT{
+int32(INT32)      |nega_result(INT32)      |
+------------------------------------------
+0                 |0                       |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]264:select int64, -int64 as nega_result from table_negation where time =1
+STRICT{
+int64(INT64)      |nega_result(INT64)      |
+------------------------------------------
+922337203685477580|-9223372036854775807    |
+7                 |                        |
+总数目：1
+}
+
+Elapsed Time: 0.0.8
+-- [1]265:select -int64 from table_negation where time =2
+STRICT{
+SQLSTATE : 301: DriverTask 20241025_104750_00307_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: The -9223372036854775808 is out of range of long.
+}
+
+-- [1]267:select int64, -int64 as nega_result from table_negation where time =3
+STRICT{
+int64(INT64)      |nega_result(INT64)      |
+------------------------------------------
+0                 |0                       |
+总数目：1
+}
+
+Elapsed Time: 0.0.8
+
+-- [1]270:select double, -double as nega_result from table_negation where time =1
+STRICT{
+double(DOUBLE)      |nega_result(DOUBLE)      |
+---------------------------------------------
+1.7976931348623157E3|-1.7976931348623157E308  |
+08                  |                         |
+总数目：1
+}
+
+Elapsed Time: 0.0.9
+
+-- [1]271:select double, -double as nega_result from table_negation where time =2
+STRICT{
+double(DOUBLE)      |nega_result(DOUBLE)      |
+---------------------------------------------
+-4.9E-324           |4.9E-324                 |
+总数目：1
+}
+
+Elapsed Time: 0.0.11
+
+-- [1]272:select double, -double as nega_result from table_negation where time =3
+STRICT{
+double(DOUBLE)      |nega_result(DOUBLE)      |
+---------------------------------------------
+-0.0                |0.0                      |
+总数目：1
+}
+
+Elapsed Time: 0.0.10
+
+-- [1]275:select float, -float as nega_result from table_negation where time =1
+STRICT{
+float(FLOAT)      |nega_result(FLOAT)      |
+------------------------------------------
+3.4028235E38      |-3.4028235E38           |
+总数目：1
+}
+
+Elapsed Time: 0.0.11
+
+-- [1]276:select float, -float as nega_result from table_negation where time =2
+STRICT{
+float(FLOAT)      |nega_result(FLOAT)      |
+------------------------------------------
+-1.4E-45          |1.4E-45                 |
+总数目：1
+}
+
+Elapsed Time: 0.0.11
+
+-- [1]277:select float, -float as nega_result from table_negation where time =3
+STRICT{
+float(FLOAT)      |nega_result(FLOAT)      |
+------------------------------------------
+0.0               |-0.0                    |
+总数目：1
+}
+
+Elapsed Time: 0.0.10
+
+-- [1]280:select timestamp, -timestamp as nega_result from table_negation where time =1
+STRICT{
+timestamp(TIMESTAMP)      |nega_result(TIMESTAMP)      |
+------------------------------------------------------
++292278994-08-17T15:12:55.|-292275055-05-17T00:52:47+08|
+807+08:00                 |.193:05:43                  |
+总数目：1
+}
+
+Elapsed Time: 0.0.11
+-- [1]281:select -timestamp from table_negation where time =2
 STRICT{
 SQLSTATE : 750: The -9223372036854775808 is out of range of long.
 }
 
--- [1]256:select -int64 from table_negation where time =3
+-- [1]283:select timestamp, -timestamp as nega_result from table_negation where time =3
 STRICT{
-_col0(INT64)      |
-------------------
-0                 |
+timestamp(TIMESTAMP)      |nega_result(TIMESTAMP)      |
+------------------------------------------------------
+1970-01-01T08:00:00.000+08|1970-01-01T08:00:00.000+08:0|
+:00                       |0                           |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
-
--- [1]259:select -double from table_negation where time =1
-STRICT{
-_col0(DOUBLE)      |
--------------------
--1.7976931348623157|
-E308               |
-总数目：1
-}
-
-Elapsed Time: 0.0.6
-
--- [1]260:select -double from table_negation where time =2
-STRICT{
-_col0(DOUBLE)      |
--------------------
-4.9E-324           |
-总数目：1
-}
-
-Elapsed Time: 0.0.6
-
--- [1]261:select -double from table_negation where time =3
-STRICT{
-_col0(DOUBLE)      |
--------------------
-0.0                |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]264:select -float from table_negation where time =1
-STRICT{
-_col0(FLOAT)      |
-------------------
--3.4028235E38     |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]265:select -float from table_negation where time =2
-STRICT{
-_col0(FLOAT)      |
-------------------
-1.4E-45           |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]266:select -float from table_negation where time =3
-STRICT{
-_col0(FLOAT)      |
-------------------
--0.0              |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]269:select -timestamp from table_negation where time =1
-STRICT{
-_col0(TIMESTAMP)      |
-----------------------
--292275055-05-17T00:52|
-:47+08.193:05:43      |
-总数目：1
-}
-
-Elapsed Time: 0.0.6
--- [1]270:select -timestamp from table_negation where time =2
-STRICT{
-SQLSTATE : 301: DriverTask 20241017_025249_01194_1.1.0.0 is aborted by org.apache.iotdb.commons.exception.IoTDBRuntimeException: The -9223372036854775808 is out of range of long.
-}
-
--- [1]272:select -timestamp from table_negation where time =3
-STRICT{
-_col0(TIMESTAMP)      |
-----------------------
-1970-01-01T08:00:00.00|
-0+08:00               |
-总数目：1
-}
-
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.10

@@ -98,6 +98,12 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 12, 'd1', null, true, 'Singapore', null, 22, 2.5, 13.3, true, null, 1702277189000, ' sorrow', X'ae'
 );
  
+INSERT INTO Table_A(
+time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
+) values(
+13, 'deVice', 'RED', true, 'Thailand', 1, 22, 2.5, 13.3, true, '2022-10-11', 1702277189000, 'Thailand', X'ae'
+);
+
 --7. 原始数据查询：
 select * from Table_A order by time;
 
@@ -113,10 +119,21 @@ select length(s7) from table_a; <<SQLSTATE;
 select length(s8) from table_a; <<SQLSTATE;
 select length(s10) from table_a; <<SQLSTATE;
 --8.2 支持的数据类型（TEXT | STRING）
-select device_id, length(device_id) from table_a;
-select color, length(color) from table_a;
-select s1, length(s1) from table_a;
-select s9, length(s9) from table_a;
+select device_id, length(device_id) as length_result from table_a;
+select device_id, length(trim(device_id)) as length_result from table_a;
+select device_id, length(replace(device_id,' ', '')) as length_result from table_a;
+
+select color, length(color) as length_result from table_a;
+select color, length(trim(color)) as length_result from table_a;
+select color, length(replace(color,' ', '')) as length_result from table_a;
+
+select s1, length(s1) as length_result from table_a;
+select s1, length(trim(s1)) as length_result from table_a;
+select s1, length(replace(s1,' ', '')) as length_result from table_a;
+
+select s9, length(s9) as length_result from table_a;
+select s9, length(trim(s9)) as length_result from table_a;
+select s9, length(replace(s9,' ', '')) as length_result from table_a;
 
 --9.upper
 --9.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -130,10 +147,10 @@ select upper(s7) from table_a; <<SQLSTATE;
 select upper(s8) from table_a; <<SQLSTATE;
 select upper(s10) from table_a; <<SQLSTATE;
 --9.2 支持的数据类型（TEXT | STRING）
-select device_id, upper(device_id) from table_a;
-select color, upper(color) from table_a;
-select s1, upper(s1) from table_a;
-select s9, upper(s9) from table_a;
+select device_id, upper(device_id) as upper_result from table_a;
+select color, upper(color) as upper_result from table_a;
+select s1, upper(s1) as upper_result from table_a;
+select s9, upper(s9) as upper_result from table_a;
 
 --10. lower
 --10.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -147,12 +164,12 @@ select lower(s7) from table_a; <<SQLSTATE;
 select lower(s8) from table_a; <<SQLSTATE;
 select lower(s10) from table_a; <<SQLSTATE;
 --10.2 支持的数据类型（TEXT | STRING）
-select device_id, lower(device_id) from table_a;
-select color, lower(color) from table_a;
-select s1, lower(s1) from table_a;
-select s9, lower(s9) from table_a;
+select device_id, lower(device_id) as lower_result from table_a;
+select color, lower(color) as lower_result from table_a;
+select s1, lower(s1) as lower_result from table_a;
+select s9, lower(s9) as lower_result from table_a;
 
---11. trim
+--11. trim（保留字）
 --11.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
 select trim() from table_a; <<SQLSTATE;
 select trim(s2) from table_a; <<SQLSTATE;
@@ -164,27 +181,41 @@ select trim(s7) from table_a; <<SQLSTATE;
 select trim(s8) from table_a; <<SQLSTATE;
 select trim(s10) from table_a; <<SQLSTATE;
 --11.2 支持的数据类型（TEXT | STRING）
-select time, device_id, trim(device_id) from table_a;
-select time, color, trim(color) from table_a;
-select time, s1, trim(s1) from table_a;
-select time, s9, trim(s9) from table_a;
-select s1, s9, trim(BOTH s1 FROM s9) from table_a;
-select s1, s9, trim(BOTH s9 FROM s1) from table_a;
+--11.2.1 去除两端的空格
+select time, device_id, trim(device_id) as trim_result from table_a;
+select time, color, trim(color) as trim_result from table_a;
+select time, s1, trim(s1) as trim_result from table_a;
+select time, s9, trim(s9) as trim_result from table_a;
+--11.2.2 去除指定字符
+select s1, s9, trim(BOTH s1 FROM s9) as trim_result from table_a;
+select s1, s9, trim(BOTH s9 FROM s1) as trim_result from table_a;
+select device_id, trim(BOTH '1' FROM device_id) as trim_result from table_a;
 select device_id, trim('device' FROM device_id) as trim_result from table_a;
-select color, trim('k' FROM color) as trim_result from table_a;
+select color, trim(BOTH 'e' FROM color) as trim_result from table_a;
+select color, trim('G' FROM color) as trim_result from table_a;
+select s1, trim(BOTH 'A' FROM s1) as trim_result from table_a;
 select s1, trim('ca' FROM s1) as trim_result from table_a;
+select s9, trim(BOTH 'S' FROM s9) as trim_result from table_a;
 select s9, trim('d' FROM s9) as trim_result from table_a;
+--11.2.3 去除开头的空格
 select device_id, trim(LEADING FROM device_id) as trim_result from table_a;
+select device_id, trim(LEADING ' ' FROM device_id) as trim_result from table_a;
 select color, trim(LEADING FROM color) as trim_result from table_a;
+select color, trim(LEADING ' ' FROM color) as trim_result from table_a;
 select s1, trim(LEADING FROM s1) as trim_result from table_a;
+select s1, trim(LEADING ' ' FROM s1) as trim_result from table_a;
 select s9, trim(LEADING FROM s9) as trim_result from table_a;
-select device_id, trim(TRAILING from device_id) from table_a;
-select color, trim(TRAILING from color) from table_a;
-select s1, trim(TRAILING from s1) from table_a;
-select s9, trim(TRAILING from s9) from table_a;
+select s9, trim(LEADING ' ' FROM s9) as trim_result from table_a;
+--11.2.4 去除结尾的空格
+select device_id, trim(TRAILING from device_id) as trim_result from table_a;
+select color, trim(TRAILING from color) as trim_result from table_a;
+select s1, trim(TRAILING from s1) as trim_result from table_a;
+select s9, trim(TRAILING from s9) as trim_result from table_a;
+--11.2.5 组合测试
 select s1, trim(LEADING FROM s1) as result1, s9, trim(s9) as result2 from table_a;
-select s1, trim(s1, 'ca') as result1, s9, trim('ppy' FROM s9) as result2 from table_a;
-select device_id, color, s1, s9, trim(BOTH device_id FROM s9) as result1, trim(TRAILING s9 FROM s1) as result2 from table_a;
+select s1, trim(TRAILING 'ca' FROM lower(s1)) as trim_result1, s9, trim(LEADING 'S' FROM upper(s9)) as trim_result2 from table_a;
+select s1, trim(s1, 'ca') as result1, s9, trim('disS' FROM s9) as result2 from table_a;
+select device_id, upper(color) as uppper_result, s1, s9, trim(BOTH device_id FROM s9) as result1, trim(TRAILING s9 FROM s1) as result2 from table_a;
 select color, trim(LEADING 'GE' FROM upper(color)) as result1, s9, trim(TRAILING 'dgh' FROM lower(s9)) as result2 from table_a;
 
 --12. strpos:返回子字符串在指定字符串中的位置
@@ -216,10 +247,10 @@ select starts_with(s7) from table_a; <<SQLSTATE;
 select starts_with(s8) from table_a; <<SQLSTATE;
 select starts_with(s10) from table_a; <<SQLSTATE;
 --13.2 支持的数据类型（TEXT | STRING）
-select device_id, starts_with(device_id, 'device') as starts_end_result from table_a;
-select color, starts_with(color, 'Gr') as starts_end_result from table_a;
-select s1, starts_with(s1, 'A') as starts_end_result from table_a;
-select s9, starts_with(s9, 'S') as starts_end_result from table_a;
+select device_id, starts_with(device_id, 'device') as starts_with_result from table_a;
+select color, starts_with(color, 'Gr') as starts_with_result from table_a;
+select s1, starts_with(s1, 'A') as starts_with_result from table_a;
+select s9, starts_with(s9, 'S') as starts_with_result from table_a;
 
 --14. ends_with
 -14.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -236,7 +267,7 @@ select ends_with(s10) from table_a; <<SQLSTATE;
 select device_id, ends_with(device_id, '1') as ends_with_result from table_a;
 select color, ends_with(color, 'een') as ends_with_result from table_a;
 select s1, ends_with(s1, 'ca') as ends_with_result from table_a;
-select s9, ends_with(s9, 'd') as ends_with_result from table_a;
+select s9, ends_with(trim(s9), 'd') as ends_with_result from table_a;
 
 --15. concat：CONCAT 函数将联接两个表达式并返回生成的表达式
 -15.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -252,10 +283,10 @@ select concat(s1,s10) from table_a; <<SQLSTATE;
 --15.2 支持的数据类型（TEXT | STRING）
 select device_id, color, concat(device_id, color) as concat_result from table_a;
 select s1, s9, concat(s1, s9) as concat_result from table_a;
-select s1,s9,concat(s1 || s9) from table_a; <<SQLSTATE;
+select s1, s9, concat(s1 || s9) from table_a; <<SQLSTATE;
 select s1, s9, device_id, color, concat(s1 || s9, device_id || color) as concat_result from table_a;
 
---16. strcmp
+--16. strcmp：用于比较两个字符串
 -16.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
 select strcmp() from table_a; <<SQLSTATE;
 select strcmp(s1,s2) from table_a; <<SQLSTATE;

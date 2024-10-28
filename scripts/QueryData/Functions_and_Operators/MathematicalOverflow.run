@@ -122,80 +122,90 @@ time,device,type,int32,int64,double,float,timestamp) values
 select * from table_add order by time;
 
 --5.1 INT32 (Addition:+)
-select int32 + int32 from table_add;
-<<SQLSTATE;
-select int64 + int32 from table_add;
-<<SQLSTATE;
+select int32 + int32 from table_add where time = 1; <<SQLSTATE;
+select int32 + int32 from table_add where time = 2; <<SQLSTATE;
+select int64 + int32 from table_add where time = 1; <<SQLSTATE;
+select int64 + int32 from table_add where time = 2;<<SQLSTATE;
+select int32 + int64 from table_add where time = 1; <<SQLSTATE;
+select int32 + int64 from table_add where time = 2; <<SQLSTATE;
 select date + int32 from table_add;
 <<SQLSTATE;
-select timestamp + int32 from table_add;
+select int32 + date from table_add;
 <<SQLSTATE;
-select float + int32 from table_add;
-select double + int32 from table_add;
+select timestamp + int32 from table_add where time = 1; <<SQLSTATE;
+select timestamp + int32 from table_add where time = 2; <<SQLSTATE;
+select int32 + timestamp from table_add where time = 1; <<SQLSTATE;
+select int32 + timestamp from table_add where time = 2; <<SQLSTATE;
+
 
 --5.2 INT64 (Addition:+)
-select int64 + int64 from table_add;
-<<SQLSTATE;
-select date + int64 from table_add;
-<<SQLSTATE;
-select timestamp + int64 from table_add;
-<<SQLSTATE;
-select float + int64 from table_add;
-select double + int64 from table_add;
+select int64 + int64 from table_add where time =1; <<SQLSTATE;
+select int64 + int64 from table_add where time =2; <<SQLSTATE;
+select date + int64 from table_add where time =1; <<SQLSTATE;
+select date + int64 from table_add where time =2; <<SQLSTATE;
+select int64 + date from table_add where time =1; <<SQLSTATE;
+select int64 + date from table_add where time =2; <<SQLSTATE;
+select timestamp + int64 from table_add where time =1; <<SQLSTATE;
+select timestamp + int64 from table_add where time =2; <<SQLSTATE;
+select int64 + timestamp from table_add where time =1; <<SQLSTATE;
+select int64 + timestamp from table_add where time =2; <<SQLSTATE;
 
 
 --6.0 Subtraction 减法运算，溢出Check
 select * from table_sub order by time;
 
 --6.1 INT32 (Subtraction:-)
-select int32 - int32_1 from table_sub;
-<<SQLSTATE;
-select int64 - int32_1 from table_sub;
-<<SQLSTATE;
-select date - int32_1 from table_sub;
-select timestamp - int32_1 from table_sub;
-select float - int32_1 from table_sub;
-select double - int32_1 from table_sub;
+select int32 - int32_1 from table_sub where time =1; <<SQLSTATE;
+select int32 - int32_1 from table_sub where time =2; <<SQLSTATE;
+select int32_1 - int32 from table_sub where time =1; <<SQLSTATE;
+select int32_1 - int32 from table_sub where time =2; <<SQLSTATE;
+select int64 - int32_1 from table_sub where time =1; <<SQLSTATE;
+select int64 - int32_1 from table_sub where time =2; <<SQLSTATE;
+select int32_1 - int64 from table_sub where time =1; <<SQLSTATE;
+select int32_1 - int64 from table_sub where time =2; <<SQLSTATE;
+select date - int32_1 from table_sub order by time;
+select timestamp - int32_1 from table_sub order by time;
+select float - int32_1 from table_sub order by time;
+select double - int32_1 from table_sub order by time;
 
 --6.2 INT64 (Subtraction:-)
-select int32_1 - int64 from table_sub;
-<<SQLSTATE;
-select int64_1 - int64 from table_sub;
-<<SQLSTATE;
-select cast(date as TIMESTAMP) - int64 from table_sub;
-<<SQLSTATE;
-select timestamp - int64 from table_sub; 
-<<SQLSTATE;
-select float - int64 from table_sub;
-select double - int64 from table_sub;
+select int64_1 - int64 from table_sub where time =1; <<SQLSTATE;
+select int64_1 - int64 from table_sub where time =2; <<SQLSTATE;
+select int64 - int64_1 from table_sub where time =1; <<SQLSTATE;
+select int64 - int64_1 from table_sub where time =2;<<SQLSTATE;
+select cast(date as TIMESTAMP) - int64 from table_sub where time =1; <<SQLSTATE;
+select cast(date as TIMESTAMP) - int64 from table_sub where time =2; <<SQLSTATE;
+select int64 - cast(date as TIMESTAMP) from table_sub where time =1; <<SQLSTATE;
+select int64 - cast(date as TIMESTAMP) from table_sub where time =2; <<SQLSTATE;
+select timestamp - int64 from table_sub where time =1; <<SQLSTATE; 
+select timestamp - int64 from table_sub where time =2; <<SQLSTATE;
 
 
 --7.0 Multiplication 乘法运算，溢出Check
 select * from table_mul order by time;
 
 --7.1 INT32 (Multiplication: X)
-select int32 * int32 from table_mul;
-<<SQLSTATE;
-select int32_1 * int32 from table_mul; 
-<<SQLSTATE;
-select int64 * int32 from table_mul;
-<<SQLSTATE;
-select int64_1 * int32 from table_mul;
-<<SQLSTATE;
-select float * int32 from table_mul;
-select double * int32 from table_mul;
+select int32 * int32 from table_mul where time =1; <<SQLSTATE;
+select int32 * int32 from table_mul where time =2;<<SQLSTATE;
+select int32_1 * int32 from table_mul where time =1; <<SQLSTATE; 
+select int32_1 * int32 from table_mul where time =2; <<SQLSTATE;
+select int32 * int32_1 from table_mul where time =1; <<SQLSTATE;
+select int32 * int32_1 from table_mul where time =2; <<SQLSTATE;
+select int64 * int32 from table_mul where time =1; <<SQLSTATE;
+select int64 * int32 from table_mul where time =2; <<SQLSTATE;
+select int32 * int64 from table_mul where time =1; <<SQLSTATE;
+select int32 * int64 from table_mul where time =2; <<SQLSTATE;
+select int64_1 * int32 from table_mul where time =1; <<SQLSTATE;
+select int64_1 * int32 from table_mul where time =2; <<SQLSTATE;
+
 
 --7.2 INT64 (Multiplication: X)
-select int32 * int64 from table_mul;
-<<SQLSTATE;
-select int32_1 * int64 from table_mul;
-<<SQLSTATE;
-select int64 * int64 from table_mul;
-<<SQLSTATE;
-select int64_1 * int64 from table_mul;
-<<SQLSTATE;
-select float * int64 from table_mul;
-select double * int64 from table_mul;
+select int32_1 * int64 from table_mul where time =1; <<SQLSTATE;
+select int32_1 * int64 from table_mul where time =2; <<SQLSTATE;
+select int64 * int64 from table_mul where time =1; <<SQLSTATE;
+select int64 * int64 from table_mul where time =2; <<SQLSTATE;
+select int64_1 * int64 from table_mul where time =1; <<SQLSTATE;
+select int64_1 * int64 from table_mul where time =2; <<SQLSTATE;
 
 
 --8.0 Division 除法运算，溢出Check
@@ -204,14 +214,15 @@ select * from table_div order by time;
 --8.1 INT32 (Division: / )
 select int32_1 / int32 from table_div where time = 2;
 <<SQLSTATE;
+select int32 / int32_1 from table_div where time = 2;
 select int64 / int32 from table_div where time=2;
 <<SQLSTATE;
+select int32 / int64 from table_div where time=2;
 
 --8.2 INT64 (Division: / )
-select int64 / int32 from table_div where time = 2;
-<<SQLSTATE;
 select int64 / int64_1 from table_div where time =2;
 <<SQLSTATE;
+select int64_1 / int64 from table_div where time =2;
 
 --8.3 特殊场景：结果为infinity | 0.0 | -0.0 | NaN
 select float / int32 from table_div where time=1;
@@ -232,7 +243,7 @@ select int64 / double from table_div where time =1;
 select int64 / double from table_div where time =3;
 
 --8.4 除数不能为0
-select int32_1 / int32 from table_div where time=2;
+select int32_1 / int32 from table_div where time=3;
 <<SQLSTATE;
 select int64 / int32 from table_div where time=3;
 <<SQLSTATE;
@@ -244,32 +255,32 @@ select int64 / int64_1 from table_div where time =3;
 select * from table_div order by time;
 
 --9.1 INT32 (NEGATION: - )
-select -int32 from table_negation where time =1;
+select int32, -int32 as nega_result from table_negation where time =1;
 select -int32 from table_negation where time =2;
 <<SQLSTATE;
-select -int32 from table_negation where time =3;
+select int32, -int32 as nega_result from table_negation where time =3;
 
 --9.2 INT64 (NEGATION: - )
-select -int64 from table_negation where time =1;
+select int64, -int64 as nega_result from table_negation where time =1;
 select -int64 from table_negation where time =2;
 <<SQLSTATE;
-select -int64 from table_negation where time =3;
+select int64, -int64 as nega_result from table_negation where time =3;
 
 --9.3 DOUBLE (NEGATION: - )
-select -double from table_negation where time =1;
-select -double from table_negation where time =2;
-select -double from table_negation where time =3;
+select double, -double as nega_result from table_negation where time =1;
+select double, -double as nega_result from table_negation where time =2;
+select double, -double as nega_result from table_negation where time =3;
 
 --9.4 FLOAT (NEGATION: - )
-select -float from table_negation where time =1;
-select -float from table_negation where time =2;
-select -float from table_negation where time =3;
+select float, -float as nega_result from table_negation where time =1;
+select float, -float as nega_result from table_negation where time =2;
+select float, -float as nega_result from table_negation where time =3;
 
 --9.5 TIMESTAMP (NEGATION: - )
-select -timestamp from table_negation where time =1;
+select timestamp, -timestamp as nega_result from table_negation where time =1;
 select -timestamp from table_negation where time =2;
 <<SQLSTATE;
-select -timestamp from table_negation where time =3;
+select timestamp, -timestamp as nega_result from table_negation where time =3;
 
 --10. 清理数据: 删除数据库 
 drop database test_db;

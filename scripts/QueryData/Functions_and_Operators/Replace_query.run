@@ -103,10 +103,11 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ); 
 
 --7. 原始数据查询：
-select * from Table_A;
+select * from Table_A order by time;
 
 --8. REPLACE 数据查询
 --8.1 不支持的数据类型查询
+select replace() from table_a; <<SQLSTATE;
 select s2, replace(s2,'1','2') from table_a; <<SQLSTATE;
 select s3, replace(s3,'3','2') from table_a; <<SQLSTATE;
 select s4, replace(s4,'3','1') from table_a; <<SQLSTATE;
@@ -117,15 +118,23 @@ select s8, replace(s8,'110','111') from table_a; <<SQLSTATE;
 select s10, replace(s10,'d','a') from table_a; <<SQLSTATE;
 
 --8.2 支持的数据类型查询【TEXT | STRING】
+--8.2.1 replace 参数校验
 select s1, replace(s1,'e', a) from table_a; <<SQLSTATE;
 select s1, replace(s1,1,'a') from table_a; <<SQLSTATE;
 select s1, replace(s1,'a',false) from table_a; <<SQLSTATE;
-select s9, replace(s9,'s','S') from table_a;
-select s9, replace(s9,'ry') from table_a;
-select s1, replace(s1,'ca'), s9, replace(s9,'pp') from table_a offset 3 limit 9;
-select device_Id, replace(device_id,'device'), color, replace(color,'red','blue'), s1, replace(s1,'e','E'), s9, replace(s9,'a','A') from table_a;
-select time, device_Id, replace(device_id,'C','c') as d_, color, replace(color,'e','E') as Col, s1, replace(s1,'an','AN') as s_1, s9, replace(s9,'ING','ing') as s_9 from table_a where time > 1 and time < 9;
-select time, device_id, replace(s1,'device','d'), s1, replace(s1, 'ca'), s9, replace(s9,'LOVELY','lovely') from table_a order by time desc;
+--8.2.2 replace 移除字符查询
+select s1, replace(s1, 'S') as replace_result from table_a order by time;
+select s9, replace(s9,'ry') as replace_result from table_a order by time;
+select device_id, replace(device_id, 'device_') as replace_result from table_a order by time;
+select color, replace(color, 'Gr') as replace_result from table_a order by time;
+--8.2.3 replace 部分替换查询
+select s1, replace(s1,'ca','CA') as replace_result from table_a order by time;
+select s9, replace(s9,'un','') as replace_result from table_a order by time;
+--8.2.4 组合测试
+select s1, replace(s1,'ca') as result1, s9, replace(s9,'pp') as result2 from table_a order by time offset 3 limit 9;
+select device_Id, replace(device_id,'device') as result1, color, replace(color,'red','blue') as result2, s1, replace(s1,'e','E') as result3, s9, replace(s9,'a','A') as result4 from table_a order by time;
+select time, device_Id, replace(device_id,'C','c') as d_, color, replace(color,'e','E') as Col, s1, replace(s1,'an','AN') as s_1, s9, replace(s9,'ING','ing') as s_9 from table_a where time > 1 and time < 9 order by time;
+select time, device_id, replace(s1,'device','d') as result1, s1, replace(s1, 'ca')as result2, s9, replace(s9,'LOVELY','lovely') as result3 from table_a order by time desc;
 
 --9. 数据清理：删除数据库
 drop database test_db;
