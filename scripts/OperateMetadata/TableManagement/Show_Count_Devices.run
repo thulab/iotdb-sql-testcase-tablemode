@@ -32,8 +32,15 @@ INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维�
 INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(1, 'hebei', '2000','7','2','5');
 INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(1, 'shanghai', '3000','3','1','15');
 INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(2, 'beijing', '1001','1','2','3');
-INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(2, 'hebei', '2000','7','2','5');
+INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(2, 'hebei', '2030','7','2','5');
 INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(2, 'shanghai', '3010','3','1','15');
+INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(3, 'beijing', '1004','1','1','1');
+INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(3, 'hebei', '2001','7','2','10');
+INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(3, 'hebei', '3010','3','4','11');
+INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(4, 'beijing', '1003','1','3','13');
+INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(4, 'beijing', '2002','7','2','3');
+INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期" ) values(4, 'shanghai', '3011','3','2','20');
+
 --7. 查看devices信息
 show devices from device_type_0;
 show devices from device_type_0 where "地区"='hebei';
@@ -41,8 +48,15 @@ show devices from device_type_0 where "地区"='beijing' and "型号"='1';
 show devices from device_type_0 where "厂号"='1001';
 show devices from device_type_0 where "设备号" = '1' or "型号" = '2';
 show devices from device_type_0 where "设备号" > "型号";
+show devices from device_type_0 where "设备号" > "型号" offset 0 limit 1;
 show devices from device_type_0 where "维修周期" <= '15';
 show devices from device_type_0 where "地区" = 'beijing' and "厂号" in ('1001', '1005') or "型号" = '1';
+show devices from device_type_0 limit 5;
+show devices from device_type_0 offset 3 limit 5;
+show devices from device_type_0 where "地区" = 'beijing' limit 3;
+show devices from device_type_0 where "地区" = 'beijing' limit 3 offset 2;
+show devices from device_type_0 where "地区" = 'beijing' and "厂号" in ('1001', '1005') or "型号" = '1' offset 0 limit ALL;
+show devices from device_type_0 where "地区" = 'beijing' and "厂号" in ('1001', '1005') or "型号" = '1' offset 100000000000 limit 100000000000;
 
 --8，统计devices信息
 count devices from device_type_0;
@@ -52,6 +66,7 @@ count devices from device_type_0 where "地区"='beijing' or "厂号" like '%000
 count devices from device_type_0 where "设备号" > "型号";
 count devices from device_type_0 where "地区" = 'beijing' and "厂号" in ('1001', '1005') or "型号" = '1';
 count devices from device_type_0 where "维修周期" >= '10';
+
 
 --9. 清理数据：
 drop database test_db;
