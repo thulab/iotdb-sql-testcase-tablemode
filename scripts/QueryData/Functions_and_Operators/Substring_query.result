@@ -195,7 +195,7 @@ SQLSTATE : 701: Scalar function substring only accepts two or three arguments an
 }
 -- [1]125:select s1, substring(s1 from 100) as substring_result from table_a
 STRICT{
-SQLSTATE : 301: DriverTask 20241025_104757_01203_1.1.0.0 is aborted by org.apache.iotdb.db.exception.sql.SemanticException: Argument exception,the scalar function substring beginPosition must not be greater than the string length
+SQLSTATE : 701: Argument exception,the scalar function substring beginPosition must not be greater than the string length
 }
 
 -- [1]126:select s1, substring(s1 from -1) as substring_result from table_a order by time
@@ -514,7 +514,7 @@ SQLSTATE : 701: Argument exception,the scalar function substring length must not
 }
 -- [1]139:select s9, substring(s9 from 10 for 5) as substring_result from table_a
 STRICT{
-SQLSTATE : 301: DriverTask 20241025_104757_01226_1.1.0.0 is aborted by org.apache.iotdb.db.exception.sql.SemanticException: Argument exception,the scalar function substring beginPosition must not be greater than the string length
+SQLSTATE : 701: Argument exception,the scalar function substring beginPosition must not be greater than the string length
 }
 
 -- [1]140:select s1, substring(s1 from 0 for 0) as substring_result from table_a order by time
@@ -587,7 +587,7 @@ null            |null                          |
 Elapsed Time: 0.0.6
 -- [1]142:select s9, substring(s9 from 10 for 5) as substring_result from table_a
 STRICT{
-SQLSTATE : 301: DriverTask 20241025_104757_01232_1.1.0.0 is aborted by org.apache.iotdb.db.exception.sql.SemanticException: Argument exception,the scalar function substring beginPosition must not be greater than the string length
+SQLSTATE : 701: Argument exception,the scalar function substring beginPosition must not be greater than the string length
 }
 -- [1]144:select substring(s1,-2,-1) from table_a
 STRICT{

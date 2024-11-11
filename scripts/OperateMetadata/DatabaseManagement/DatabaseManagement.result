@@ -367,7 +367,7 @@ SQLSTATE : 500: Unknown database test
 }
 -- [1]181:desc table1
 STRICT{
-SQLSTATE : 550: Table 'test.table1' does not exist.
+SQLSTATE : 500: Unknown database test
 }
 -- [1]185:create database test
 STRICT{
