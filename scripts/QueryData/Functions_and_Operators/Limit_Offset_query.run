@@ -52,9 +52,9 @@ INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维�
 
 --7. limit  | offset 
 --7.1 基本limit查询
-select * from device_type_0 order by time;
-select * from device_type_0 order by time limit 10;
-select time, "温度", "排量" from device_type_0 order by time desc limit 5;
+select * from device_type_0 order by time,"地区" asc;
+select * from device_type_0 order by time,"地区" asc limit 10;
+select time, "温度", "排量" from device_type_0 order by time desc,"地区" asc limit 5;
 select * from device_type_0 limit 0;
 select * from device_type_0 limit -1; 
 <<SQLSTATE;
@@ -64,14 +64,14 @@ select * from device_type_0 limit 11.1;
 <<SQLSTATE;
 
 --7.2 offset 
-select * from device_type_0 order by time offset 5;
-select * from device_type_0 order by time offset 0;
+select * from device_type_0 order by time,"地区" asc offset 5;
+select * from device_type_0 order by time,"地区" asc offset 0;
 select * from device_type_0 offset -1;
 <<SQLSTATE;
 
 --7.3 limit + offset 结合使用
-select * from device_type_0  order by time offset 2 limit 10;
-select time, "型号", "温度" from device_type_0 order by time offset 3 limit 5;
+select * from device_type_0  order by time,"地区" asc offset 2 limit 10;
+select time, "型号", "温度" from device_type_0 order by time,"地区" asc offset 3 limit 5;
 
 --7.4 where(时间过滤) + limit + offset
 select * from device_type_0 where time > 2 and time< 10 order by time offset 3 limit 5;
