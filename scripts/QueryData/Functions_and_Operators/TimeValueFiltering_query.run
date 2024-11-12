@@ -46,12 +46,12 @@ INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维�
 INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维修周期", "温度", "排量") values(15, 'shanghai', '3010', '3', '1', '15', 88, 1700);
 
 --7. where【时间过滤 | 值过滤】
-select * from device_type_0;
-select * from device_type_0 where time > 3 and time < 20;
-select * from device_type_0 where "温度" >= 85 and "排量" > 1500;
-select time,"温度" from device_type_0 where time >= 10 and "排量" > 1300;
-select time,"地区","维修周期","排量" from device_type_0 where "厂号" = '2000' and "温度" < 85 and time < 5;
-select "温度" from device_type_0 where "地区"='beijing' and time >= 1 and time < 10;
+select * from device_type_0 order by time;
+select * from device_type_0 where time > 3 and time < 20 order by time;
+select * from device_type_0 where "温度" >= 85 and "排量" > 1500 order by time;
+select time,"温度" from device_type_0 where time >= 10 and "排量" > 1300 order by time;
+select time,"地区","维修周期","排量" from device_type_0 where "厂号" = '2000' and "温度" < 85 and time < 5 order by time;
+select "温度" from device_type_0 where "地区"='beijing' and time >= 1 and time < 10 order by time;
 
 --8. 清理数据：删除数据库
 drop database test_db;

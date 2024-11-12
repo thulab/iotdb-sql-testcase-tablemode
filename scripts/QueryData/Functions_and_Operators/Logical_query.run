@@ -99,7 +99,7 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 );
  
 --7. 原始数据查询：
-select * from Table_A;
+select * from Table_A order by time;
 
 --8. 逻辑运算符查询：and | or | not
 --8.1 非 BOOLEAN 数据类型执行逻辑运算
@@ -152,12 +152,12 @@ select s10, s6, s10 or s6 from Table_A; <<SQLSTATE;
 select s10, not s10 from Table_A; <<SQLSTATE;
 
 --8.2 BOOLEAN 数据类型执行逻辑计算
-select s0, s6, s0 and s6 from Table_A;
-select s0, s6, s0 or s6 from Table_A;
-select s0, not s0 from Table_A;
+select s0, s6, s0 and s6 from Table_A order by time;
+select s0, s6, s0 or s6 from Table_A order by time;
+select s0, not s0 from Table_A order by time;
 select device_id, s0, not s0, s6, not s6 from table_a order by device_id desc;
-select time, s0, not s0, s6, not s6 from table_a where time > 1 and time < 10;
-select s0, not s0, s6, not s6 from table_a offset 2 limit 5;
+select time, s0, not s0, s6, not s6 from table_a where time > 1 and time < 10 order by time;
+select s0, not s0, s6, not s6 from table_a order by time offset 2 limit 5;
 
 --9.清理数据：删除数据库
 drop database test_db;

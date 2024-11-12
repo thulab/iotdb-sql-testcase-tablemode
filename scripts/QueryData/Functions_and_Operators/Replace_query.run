@@ -135,6 +135,7 @@ select s1, replace(s1,'ca') as result1, s9, replace(s9,'pp') as result2 from tab
 select device_Id, replace(device_id,'device') as result1, color, replace(color,'red','blue') as result2, s1, replace(s1,'e','E') as result3, s9, replace(s9,'a','A') as result4 from table_a order by time;
 select time, device_Id, replace(device_id,'C','c') as d_, color, replace(color,'e','E') as Col, s1, replace(s1,'an','AN') as s_1, s9, replace(s9,'ING','ing') as s_9 from table_a where time > 1 and time < 9 order by time;
 select time, device_id, replace(s1,'device','d') as result1, s1, replace(s1, 'ca')as result2, s9, replace(s9,'LOVELY','lovely') as result3 from table_a order by time desc;
+select time, device_id, length(replace(device_id,'device','D')) as length_result from table_a order by time;
 
 --9. 数据清理：删除数据库
 drop database test_db;

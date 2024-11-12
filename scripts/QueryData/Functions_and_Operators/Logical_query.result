@@ -29,7 +29,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.1.992
+Elapsed Time: 0.2.18
 -- [1]49:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 2, 'd1', 'red', true, 'v2', 5, 121, 222.1, 12.2, false, '2022-10-01', 1724049989000, 'ertbsad', X'24ad' )
 STRICT{
 0
@@ -41,7 +41,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 -- [1]59:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 4, 'd1', 'green', false, 'v2', 4, 6, 21.1, 44.2, false, '2023-09-01', 1703047789000, 'sdf', X'24' )
 STRICT{
 0
@@ -53,25 +53,25 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 -- [1]69:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 6, 'd1', 'orange', false, 'v3', 8, 999, 123.1, 0.101, true, '2002-01-01', 1724049989000, 'ert', X'4d' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]74:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 7, 'd2', 'blue', true, 'v1', 0, 110, 22.2, 1.8, true, '2023-06-01', 1643046400000, 'test111', X'ac'  )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.49
+Elapsed Time: 0.0.51
 -- [1]79:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 8, 'd2', 'purple', true, 'v3', 555, 1001, 202.1, 1.2, false, '2002-10-01', 1653046400000, 'ioep11', X'abcdef' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 -- [1]84:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 9, 'd2', 'blue', false, 'v1', 1110, 888, 10.1, 11.1, true, '2023-11-11', 1699685189000, 'ueu', X'ce' )
 STRICT{
 0
@@ -89,7 +89,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.1
 -- [1]99:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1702277189000, 'sad', X'ae' )
 STRICT{
 0
@@ -97,7 +97,7 @@ STRICT{
 
 Elapsed Time: 0.0.2
 
--- [1]102:select * from Table_A
+-- [1]102:select * from Table_A order by time
 STRICT{
 time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -139,7 +139,7 @@ time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)   
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 -- [1]106:select time, s6, time and s6 from Table_A
 STRICT{
 SQLSTATE : 701: Logical expression term must evaluate to a BOOLEAN (actual: TIMESTAMP)
@@ -285,7 +285,7 @@ STRICT{
 SQLSTATE : 701: Value of logical NOT expression must evaluate to a BOOLEAN (actual: BLOB)
 }
 
--- [1]155:select s0, s6, s0 and s6 from Table_A
+-- [1]155:select s0, s6, s0 and s6 from Table_A order by time
 STRICT{
 s0(BOOLEAN)      |s6(BOOLEAN)      |_col2(BOOLEAN)      |
 ------------------------------------------------------
@@ -315,9 +315,9 @@ true             |true             |true                |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
--- [1]156:select s0, s6, s0 or s6 from Table_A
+-- [1]156:select s0, s6, s0 or s6 from Table_A order by time
 STRICT{
 s0(BOOLEAN)      |s6(BOOLEAN)      |_col2(BOOLEAN)      |
 ------------------------------------------------------
@@ -347,9 +347,9 @@ true             |true             |true                |
 总数目：12
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.6
 
--- [1]157:select s0, not s0 from Table_A
+-- [1]157:select s0, not s0 from Table_A order by time
 STRICT{
 s0(BOOLEAN)      |_col1(BOOLEAN)      |
 -------------------------------------
@@ -379,7 +379,7 @@ true             |false               |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]158:select device_id, s0, not s0, s6, not s6 from table_a order by device_id desc
 STRICT{
@@ -411,9 +411,9 @@ d1                     |false            |true                |true             
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
--- [1]159:select time, s0, not s0, s6, not s6 from table_a where time > 1 and time < 10
+-- [1]159:select time, s0, not s0, s6, not s6 from table_a where time > 1 and time < 10 order by time
 STRICT{
 time(TIMESTAMP)      |s0(BOOLEAN)      |_col2(BOOLEAN)      |s6(BOOLEAN)      |_col4(BOOLEAN)      |
 -----------------------------------------------------------------------------------------------
@@ -443,9 +443,9 @@ time(TIMESTAMP)      |s0(BOOLEAN)      |_col2(BOOLEAN)      |s6(BOOLEAN)      |_
 总数目：8
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
--- [1]160:select s0, not s0, s6, not s6 from table_a offset 2 limit 5
+-- [1]160:select s0, not s0, s6, not s6 from table_a order by time offset 2 limit 5
 STRICT{
 s0(BOOLEAN)      |_col1(BOOLEAN)      |s6(BOOLEAN)      |_col3(BOOLEAN)      |
 --------------------------------------------------------------------------
@@ -461,4 +461,4 @@ true             |false               |true             |false               |
 总数目：5
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6

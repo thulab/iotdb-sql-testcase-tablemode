@@ -99,16 +99,16 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 );
  
 --7. 原始数据查询：
-select * from Table_A;
+select * from Table_A order by time;
 
 --8. 数据查询：DIFF
 --8.1 支持的数据类型Diff查询
-select s2, diff(s2) from table_a;
-select s3, diff(s3) from table_a;
-select s4, diff(s4) from table_a;
-select s5, diff(s5) from table_a;
-select s8, diff(s8) from table_a;
-SELECT s4, DIFF(s4, false),s5, DIFF(s5, true) from table_a offset 3 limit 5;
+select s2, diff(s2) from table_a order by time;
+select s3, diff(s3) from table_a order by time;
+select s4, diff(s4) from table_a order by time;
+select s5, diff(s5) from table_a order by time;
+select s8, diff(s8) from table_a order by time;
+select s4, diff(s4, false),s5, diff(s5, true) from table_a order by time offset 3 limit 5;
 
 --8.2 不支持的数据类型Diff查询
 select s1, diff(s1) from table_a; <<SQLSTATE;

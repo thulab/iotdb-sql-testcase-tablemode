@@ -99,7 +99,7 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 );
  
 --7. 原始数据查询：
-select * from Table_A;
+select * from Table_A order by time;
 
 --8. 比较运算符查询【> | < | <= | >= | = | != | <>】
 --8.1 不支持的数据类型进行比较运算查询
@@ -148,42 +148,42 @@ select s8, s8 != '1' from table_a; <<SQLSTATE;
 select s8, s8 <> false from table_a; <<SQLSTATE;
 select s9, s10, s9 > s10 from table_a; <<SQLSTATE;
 select s9, s9 > false  from table_a; <<SQLSTATE;
-select 10, s10 > x'2d' from table_a;
+select s10, s10 > x'2d' from table_a order by time;
 select s7, s7 < '2022-12-12' from table_a; <<SQLSTATE;
 
 --8.2 支持的数据类型进行比较运算查询
-select s0, s0 = false from table_a;
-select s0, s0 != false from table_a;
-select s0, s0 <> true from table_a;
-select s0, s6, s0 != s6 from table_a;
-select s1, s1 = 'test' from table_a;
-select s1, s9, s1 = s9 from table_a;
-select s2, s3, s2 >= s3  from table_a;
-select s2, s4, s2 != s4  from table_a;
-select s2, s5, s2 > s5  from table_a;
-select s2, s8, s8 <= s2 from table_a;
-select s2, s2 < 100 from table_a;
-select s2, s2 <= 1103.11 from table_a;
-select s3, s4, s3 != s4 from table_a;
-select s3, s5, s3 = s5 from table_a;
-select s3, s8, s3 < s8 from table_a;
-select s4, s5, s4 < s5 from table_a;
-select s4, s8, s4 > s8 from table_a;
-select s4, s4 < 11.1 from table_a;
-select s4, s4 >= 100 from table_a;
-select s4, s4 <= -11.1 from table_a;
-select s5, s8, s5 < s8 from table_a;
-select s5, s5 <> 10.1 from table_a;
-select s5, s5 >=  20 from table_a;
-select s6, s6 = false from table_a;
-select s6, s6 != false from table_a;
-select s7, s7 < CAST('2022-12-12' AS DATE) from table_a;
-select s8, s8 = 100000 from table_a;
-select s9, s9 > 'v1' from table_a;
-select s9, s9 = '100' from table_a;
+select s0, s0 = false from table_a order by time;
+select s0, s0 != false from table_a order by time;
+select s0, s0 <> true from table_a order by time;
+select s0, s6, s0 != s6 from table_a order by time;
+select s1, s1 = 'test' from table_a order by time;
+select s1, s9, s1 = s9 from table_a order by time;
+select s2, s3, s2 >= s3  from table_a order by time;
+select s2, s4, s2 != s4  from table_a order by time;
+select s2, s5, s2 > s5  from table_a order by time;
+select s2, s8, s8 <= s2 from table_a order by time;
+select s2, s2 < 100 from table_a order by time;
+select s2, s2 <= 1103.11 from table_a order by time;
+select s3, s4, s3 != s4 from table_a order by time;
+select s3, s5, s3 = s5 from table_a order by time;
+select s3, s8, s3 < s8 from table_a order by time;
+select s4, s5, s4 < s5 from table_a order by time;
+select s4, s8, s4 > s8 from table_a order by time;
+select s4, s4 < 11.1 from table_a order by time;
+select s4, s4 >= 100 from table_a order by time;
+select s4, s4 <= -11.1 from table_a order by time;
+select s5, s8, s5 < s8 from table_a order by time;
+select s5, s5 <> 10.1 from table_a order by time;
+select s5, s5 >=  20 from table_a order by time;
+select s6, s6 = false from table_a order by time;
+select s6, s6 != false from table_a order by time;
+select s7, s7 < CAST('2022-12-12' AS DATE) from table_a order by time;
+select s8, s8 = 100000 from table_a order by time;
+select s9, s9 > 'v1' from table_a order by time;
+select s9, s9 = '100' from table_a order by time;
 
-select time, s2, s3, s4, s5, s5 > s4-(s3-s2)+1 from table_a;
-select time, device_id, s0, s6, s0 = s6 from table_a offset 2 limit 5;
+select time, s2, s3, s4, s5, s5 > s4-(s3-s2)+1 from table_a order by time;
+select time, device_id, s0, s6, s0 = s6 from table_a order by time offset 2 limit 5;
 
 
 --9.清理数据：

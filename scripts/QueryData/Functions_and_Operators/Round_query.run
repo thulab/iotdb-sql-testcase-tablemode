@@ -98,7 +98,7 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 );
  
 --7. 原始数据查询：
-select * from Table_A;
+select * from Table_A order by time;
 
 --8. ROUND 数据查询
 --8.1 不支持ROUND 数据查询的数据类型
@@ -110,16 +110,16 @@ select s9, round(s9) from table_a; <<SQLSTATE;
 select s10, round(s10) from table_a; <<SQLSTATE;
 
 --8.2 支持ROUND 数据查询的数据类型
-select s2, round(s2) from table_a;
-select s3, round(s3) from table_a;
-select s3, round(s3,-2) from table_a;
-select s4, round(s4) from table_a;
-select s4, round(s4,-1) from table_a;
-select s5, round(s5) from table_a;
-select s5, round(s5,-1) from table_a;
-select s5, round(s5,0) from table_a;
-select s5, round(s5,1) from table_a;
-select s5, round(s5,2) from table_a;
+select s2, round(s2) from table_a order by time;
+select s3, round(s3) from table_a order by time;
+select s3, round(s3,-2) from table_a order by time;
+select s4, round(s4) from table_a order by time;
+select s4, round(s4,-1) from table_a order by time;
+select s5, round(s5) from table_a order by time;
+select s5, round(s5,-1) from table_a order by time;
+select s5, round(s5,0) from table_a order by time;
+select s5, round(s5,1) from table_a order by time;
+select s5, round(s5,2) from table_a order by time;
 
 
 --9. 清理数据：
