@@ -193,16 +193,16 @@ select s8, cast(s8 as BLOB) from (select * from table_a order by time);
 --8.9 STRING 数据类型转换其他数据类型
 select s9, cast(s9 as BOOLEAN) from (select * from table_a order by time); <<SQLSTATE;
 select s9, cast(s9 as TEXT) from (select * from table_a order by time);
-select s9, cast(s9 as INT32) from (select * table_a order by time); <<SQLSTATE;
+select s9, cast(s9 as INT32) from (select * from table_a order by time); <<SQLSTATE;
 select s9, cast(s9 as INT64) from (select * from table_a order by time); <<SQLSTATE;
 select s9, cast(s9 as FLOAT) from (select * from table_a order by time); <<SQLSTATE;
 select s9, cast(s9 as DOUBLE) from (select * from table_a order by time); <<SQLSTATE;
 select s9, cast(s9 as DATE) from (select * from table_a order by time); <<SQLSTATE;
-select s9, cast(s9 as TIMESTAMP) from (select * table_a order by time); <<SQLSTATE;
+select s9, cast(s9 as TIMESTAMP) from (select * from  table_a order by time); <<SQLSTATE;
 select s9, cast(s9 as BLOB) from (select * from table_a order by time);
 
 --8.10 BLOB 数据类型转换其他数据类型
-select s10, cast(s10 as BOOLEAN) from (select * table_a order by time); <<SQLSTATE;
+select s10, cast(s10 as BOOLEAN) from (select * from table_a order by time); <<SQLSTATE;
 select s10, cast(s10 as TEXT) from (select * from table_a order by time);
 select s9, cast(s9 as INT32) from (select * from table_a order by time); <<SQLSTATE;
 select s9, cast(s9 as INT64) from (select * from table_a order by time); <<SQLSTATE;
