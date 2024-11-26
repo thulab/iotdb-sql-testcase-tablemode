@@ -1,0 +1,685 @@
+-- [1]8:drop database db1
+STRICT{
+SQLSTATE : 500: Database db1 doesn't exist
+EXPECT:PASS
+}
+-- [1]10:create database db1
+STRICT{
+PASS
+}
+-- [1]11:create database db2
+STRICT{
+PASS
+}
+-- [1]13:create table db1.t_1()
+STRICT{
+PASS
+}
+-- [1]14:create table db1.t_3_2() with (TTL=10086000)
+STRICT{
+PASS
+}
+-- [1]15:use db1
+STRICT{
+PASS
+}
+-- [1]16:create table t_2()
+STRICT{
+PASS
+}
+-- [1]17:create table if not exists t_2()
+STRICT{
+PASS
+}
+-- [1]18:create table t_3() with (TTL=DEFAULT)
+STRICT{
+PASS
+}
+-- [1]19:create table t_4("~!?`%" id, "%~!?`" ATTRIBUTE, "?%~!`" INT32)
+STRICT{
+PASS
+}
+-- [1]20:create table t_5("+-*/\" id,"+-*\/" attribute, "-+*/\" DOUBLE)
+STRICT{
+PASS
+}
+-- [1]21:create table t_6(".,:?|" id,".,!:|?" attribute, ".,|:?" BOOLEAN)
+STRICT{
+PASS
+}
+-- [1]22:create table t_7("a""b" id,"ab""bc" attribute, "abc""bcd" INT64)
+STRICT{
+PASS
+}
+-- [1]23:create table t_8("""" id,"""""" attribute, """""""" int32)
+STRICT{
+PASS
+}
+-- [1]24:create table t_9(time int32)
+STRICT{
+SQLSTATE : 701: Columns in table shall not share the same name time.
+}
+-- [1]26:create table t_10(time id)
+STRICT{
+SQLSTATE : 701: Columns in table shall not share the same name time.
+}
+-- [1]28:create table t_11(time attribute)
+STRICT{
+SQLSTATE : 701: Columns in table shall not share the same name time.
+}
+-- [1]30:create table t_12(中文 id)
+STRICT{
+SQLSTATE : 700: line 1:19: mismatched input '中'. Expecting: ')', <identifier>
+}
+-- [1]32:create table t_13("中文" id)
+STRICT{
+PASS
+}
+-- [1]33:create table t_14(中文 ATTRIBUTE)
+STRICT{
+SQLSTATE : 700: line 1:19: mismatched input '中'. Expecting: ')', <identifier>
+}
+-- [1]35:create table t_15("中文" ATTRIBUTE)
+STRICT{
+PASS
+}
+-- [1]36:create table t_16(中文 int32)
+STRICT{
+SQLSTATE : 700: line 1:19: mismatched input '中'. Expecting: ')', <identifier>
+}
+-- [1]38:create table t_17("中文" int32)
+STRICT{
+PASS
+}
+
+-- [1]41:show tables
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t_2                  |INF                |
+----------------------------------------
+t_1                  |INF                |
+----------------------------------------
+t_17                 |INF                |
+----------------------------------------
+t_4                  |INF                |
+----------------------------------------
+t_3                  |INF                |
+----------------------------------------
+t_6                  |INF                |
+----------------------------------------
+t_5                  |INF                |
+----------------------------------------
+t_8                  |INF                |
+----------------------------------------
+t_7                  |INF                |
+----------------------------------------
+t_3_2                |10086000           |
+----------------------------------------
+t_15                 |INF                |
+----------------------------------------
+t_13                 |INF                |
+Total line number =12
+}
+
+Elapsed Time: 0.0.8
+
+-- [1]42:show tables from db1
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t_2                  |INF                |
+----------------------------------------
+t_1                  |INF                |
+----------------------------------------
+t_17                 |INF                |
+----------------------------------------
+t_4                  |INF                |
+----------------------------------------
+t_3                  |INF                |
+----------------------------------------
+t_6                  |INF                |
+----------------------------------------
+t_5                  |INF                |
+----------------------------------------
+t_8                  |INF                |
+----------------------------------------
+t_7                  |INF                |
+----------------------------------------
+t_3_2                |10086000           |
+----------------------------------------
+t_15                 |INF                |
+----------------------------------------
+t_13                 |INF                |
+Total line number =12
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]43:show tables in db1
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t_2                  |INF                |
+----------------------------------------
+t_1                  |INF                |
+----------------------------------------
+t_17                 |INF                |
+----------------------------------------
+t_4                  |INF                |
+----------------------------------------
+t_3                  |INF                |
+----------------------------------------
+t_6                  |INF                |
+----------------------------------------
+t_5                  |INF                |
+----------------------------------------
+t_8                  |INF                |
+----------------------------------------
+t_7                  |INF                |
+----------------------------------------
+t_3_2                |10086000           |
+----------------------------------------
+t_15                 |INF                |
+----------------------------------------
+t_13                 |INF                |
+Total line number =12
+}
+
+Elapsed Time: 0.0.1
+-- [1]44:use db2
+STRICT{
+PASS
+}
+
+-- [1]45:show tables in db1
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t_2                  |INF                |
+----------------------------------------
+t_1                  |INF                |
+----------------------------------------
+t_17                 |INF                |
+----------------------------------------
+t_4                  |INF                |
+----------------------------------------
+t_3                  |INF                |
+----------------------------------------
+t_6                  |INF                |
+----------------------------------------
+t_5                  |INF                |
+----------------------------------------
+t_8                  |INF                |
+----------------------------------------
+t_7                  |INF                |
+----------------------------------------
+t_3_2                |10086000           |
+----------------------------------------
+t_15                 |INF                |
+----------------------------------------
+t_13                 |INF                |
+Total line number =12
+}
+
+Elapsed Time: 0.0.0
+-- [1]48:use db1
+STRICT{
+PASS
+}
+-- [1]49:desc t_1
+STRICT{
+PASS
+}
+-- [1]50:use db2
+STRICT{
+PASS
+}
+-- [1]52:DESCRIBE db1.t_1
+STRICT{
+PASS
+}
+-- [1]55:use db1
+STRICT{
+PASS
+}
+-- [1]56:desc t_1
+STRICT{
+PASS
+}
+-- [1]58:ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_id ID
+STRICT{
+PASS
+}
+-- [1]59:ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_id ID
+STRICT{
+PASS
+}
+-- [1]60:ALTER TABLE t_1 ADD COLUMN new_id ID
+STRICT{
+SQLSTATE : 552: Column 'new_id' already exist
+}
+-- [1]62:ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_ab ATTRIBUTE
+STRICT{
+PASS
+}
+-- [1]63:ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_ab ATTRIBUTE
+STRICT{
+PASS
+}
+-- [1]64:ALTER TABLE t_1 ADD COLUMN new_ab ATTRIBUTE
+STRICT{
+SQLSTATE : 552: Column 'new_ab' already exist
+}
+-- [1]66:ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_mm string
+STRICT{
+PASS
+}
+-- [1]67:ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_mm string
+STRICT{
+PASS
+}
+-- [1]68:ALTER TABLE t_1 ADD COLUMN new_mm string
+STRICT{
+SQLSTATE : 552: Column 'new_mm' already exist
+}
+-- [1]69:use db2
+STRICT{
+PASS
+}
+-- [1]71:ALTER TABLE db1.t_1 ADD COLUMN new_mm2 string
+STRICT{
+PASS
+}
+-- [1]71:use db1
+STRICT{
+PASS
+}
+-- [1]72:desc t_1
+STRICT{
+PASS
+}
+-- [1]75:alter table t_1 drop column if exists new_id
+STRICT{
+SQLSTATE : 305: internal error. statemachine throws a runtime exception: org.apache.iotdb.db.exception.sql.SemanticException: Dropping id or time column is not supported.
+}
+-- [1]78:alter table t_1 drop column time
+STRICT{
+SQLSTATE : 305: internal error. statemachine throws a runtime exception: org.apache.iotdb.db.exception.sql.SemanticException: Dropping id or time column is not supported.
+}
+-- [1]81:alter table t_1 drop column new_ab
+STRICT{
+PASS
+}
+-- [1]82:alter table t_1 drop column new_ab
+STRICT{
+SQLSTATE : 616: Column new_ab in table 'db1.t_1' does not exist.
+}
+-- [1]84:alter table t_1 drop column if exists new_ab
+STRICT{
+PASS
+}
+-- [1]85:desc t_1
+STRICT{
+PASS
+}
+-- [1]87:alter table t_1 drop column new_mm
+STRICT{
+PASS
+}
+-- [1]88:alter table t_1 drop column new_mm
+STRICT{
+SQLSTATE : 616: Column new_mm in table 'db1.t_1' does not exist.
+}
+-- [1]90:alter table t_1 drop column if exists new_mm
+STRICT{
+PASS
+}
+-- [1]91:desc t_1
+STRICT{
+PASS
+}
+-- [1]92:use db2
+STRICT{
+PASS
+}
+-- [1]93:alter table db1.t_1 drop column if exists new_mm2
+STRICT{
+PASS
+}
+-- [1]94:desc db1.t_1
+STRICT{
+PASS
+}
+-- [1]95:use db1
+STRICT{
+PASS
+}
+-- [1]99:ALTER TABLE t_1 set properties TTL=3600
+STRICT{
+PASS
+}
+
+-- [1]99:show tables
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t_2                  |INF                |
+----------------------------------------
+t_1                  |3600               |
+----------------------------------------
+t_17                 |INF                |
+----------------------------------------
+t_4                  |INF                |
+----------------------------------------
+t_3                  |INF                |
+----------------------------------------
+t_6                  |INF                |
+----------------------------------------
+t_5                  |INF                |
+----------------------------------------
+t_8                  |INF                |
+----------------------------------------
+t_7                  |INF                |
+----------------------------------------
+t_3_2                |10086000           |
+----------------------------------------
+t_15                 |INF                |
+----------------------------------------
+t_13                 |INF                |
+Total line number =12
+}
+
+Elapsed Time: 0.0.3
+-- [1]101:use db2
+STRICT{
+PASS
+}
+-- [1]103:ALTER TABLE db1.t_1 set properties TTL=9600
+STRICT{
+PASS
+}
+
+-- [1]103:show tables in db1
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t_2                  |INF                |
+----------------------------------------
+t_1                  |9600               |
+----------------------------------------
+t_17                 |INF                |
+----------------------------------------
+t_4                  |INF                |
+----------------------------------------
+t_3                  |INF                |
+----------------------------------------
+t_6                  |INF                |
+----------------------------------------
+t_5                  |INF                |
+----------------------------------------
+t_8                  |INF                |
+----------------------------------------
+t_7                  |INF                |
+----------------------------------------
+t_3_2                |10086000           |
+----------------------------------------
+t_15                 |INF                |
+----------------------------------------
+t_13                 |INF                |
+Total line number =12
+}
+
+Elapsed Time: 0.0.3
+-- [1]104:use db1
+STRICT{
+PASS
+}
+-- [1]107:ALTER TABLE db1.t_1 set properties TTL='inf'
+STRICT{
+PASS
+}
+-- [1]108:drop database if exists db1
+STRICT{
+PASS
+}
+-- [1]109:drop database if exists db2
+STRICT{
+PASS
+}
+-- [1]110:drop database if exists db3
+STRICT{
+PASS
+}
+-- [1]115:create database db1
+STRICT{
+PASS
+}
+-- [1]116:create database db2
+STRICT{
+PASS
+}
+-- [1]117:create database db3
+STRICT{
+PASS
+}
+-- [1]119:create table db1.t_3(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]120:use db1
+STRICT{
+PASS
+}
+-- [1]121:create table t_1(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]122:create table t_2(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]123:create table t_4(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]124:create table db2.t_3(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]125:use db2
+STRICT{
+PASS
+}
+-- [1]126:create table t_1(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]127:create table t_2(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]128:create table t_4(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]129:create table db3.t_3(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]130:use db3
+STRICT{
+PASS
+}
+-- [1]131:create table t_1(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]132:create table t_2(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]133:create table t_4(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT)
+STRICT{
+PASS
+}
+-- [1]136:INSERT INTO db1.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.284
+-- [1]137:INSERT INTO db1.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.139
+-- [1]138:INSERT INTO db1.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.28
+-- [1]139:INSERT INTO db1.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.29
+-- [1]140:INSERT INTO db2.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.282
+-- [1]141:INSERT INTO db2.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.153
+-- [1]142:INSERT INTO db2.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.31
+-- [1]143:INSERT INTO db2.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.27
+-- [1]144:INSERT INTO db3.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.382
+-- [1]145:INSERT INTO db3.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.162
+-- [1]146:INSERT INTO db3.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.31
+-- [1]147:INSERT INTO db3.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.32
+-- [1]147:flush
+STRICT{
+PASS
+}
+-- [1]149:drop table db1.t_1
+STRICT{
+PASS
+}
+-- [1]150:use  db1
+STRICT{
+PASS
+}
+-- [1]151:drop table t_2
+STRICT{
+PASS
+}
+-- [1]152:drop table db1.t_3
+STRICT{
+PASS
+}
+-- [1]153:drop table IF EXISTS t_4
+STRICT{
+PASS
+}
+-- [1]155:DROP TABLE IF EXISTS t_4
+STRICT{
+PASS
+}
+-- [1]155:drop table db2.t_1
+STRICT{
+PASS
+}
+-- [1]156:use  db2
+STRICT{
+PASS
+}
+-- [1]157:drop table t_2
+STRICT{
+PASS
+}
+-- [1]158:drop table db2.t_3
+STRICT{
+PASS
+}
+-- [1]159:drop table IF EXISTS t_4
+STRICT{
+PASS
+}
+-- [1]161:DROP TABLE IF EXISTS t_4
+STRICT{
+PASS
+}
+-- [1]161:drop table db3.t_1
+STRICT{
+PASS
+}
+-- [1]162:use  db3
+STRICT{
+PASS
+}
+-- [1]163:drop table t_2
+STRICT{
+PASS
+}
+-- [1]164:drop table db3.t_3
+STRICT{
+PASS
+}
+-- [1]165:drop table IF EXISTS t_4
+STRICT{
+PASS
+}
+-- [1]167:DROP TABLE IF EXISTS t_4
+STRICT{
+PASS
+}
+-- [1]169:drop database if exists db1
+STRICT{
+PASS
+}
+-- [1]170:drop database if exists db2
+STRICT{
+PASS
+}
+-- [1]171:drop database if exists db3
+STRICT{
+PASS
+}
