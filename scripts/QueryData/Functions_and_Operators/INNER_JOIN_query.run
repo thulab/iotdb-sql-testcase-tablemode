@@ -300,6 +300,66 @@ where
 s.time=t.time and t.time=c.time and c.time=g.time 
 group by s.student_id, t.teacher_id, c.course_name;
 
+select s.time,
+	   s.student_id as s_id, s.name as s_name, s.date_of_birth as s_birth,
+	   t.teacher_id as t_id, t.course_id as t_c_id,
+       c.course_name as c_name,
+       g.grade_id as g_id, g.score as score 
+from 
+students s, teachers t, courses c, grades g
+where
+s.time=t.time AND c.time=g.time AND s.time=c.time 
+order by s.student_id, t.teacher_id, c.course_id,g.grade_id;
+
+select s.time,
+	   count(s.student_id) as s_id_count,
+	   count(t.teacher_id) as t_id_count,
+       count(c.course_id) as c_name_count,
+       avg(g.score) as score_count, sum(g.score) as score_sum
+from 
+students s, teachers t, courses c, grades g
+where
+s.time=t.time AND c.time=g.time AND s.time=c.time 
+group by s.time order by time offset 2 limit 1;
+
+select s.region, s.name,
+	   t.teacher_id,
+	   c.course_name,
+	   g.score,
+	   case
+	   		when g.score =100 then 'Excellent'
+	   		when g.score >=85 then 'Great'
+	   		when g.score >=60 then 'Not Bad'
+	   		else 'Keep Going'
+	   end as grade,
+	   case
+	   		when avg(g.score) > 60 then 'PASS'
+	   		else 'FAIL'
+	   	end as status
+from students s, teachers t, courses c, grades g
+where
+s.time=c.time and c.time=g.time and s.region='haidian'
+group by s.region, s.name, t.teacher_id, c.course_name, g.score;
+<<SQLSTATE;
+
+select s.region, s.name,
+	   t.teacher_id,
+	   c.course_name,
+	   g.score,
+	   case
+	   		when g.score =100 then 'Excellent'
+	   		when g.score >=85 then 'Great'
+	   		when g.score >=60 then 'Not Bad'
+	   		else 'Keep Going'
+	   end as grade,
+	   case
+	   		when avg(g.score) > 60 then 'PASS'
+	   		else 'FAIL'
+	   	end as status
+from students s, teachers t, courses c, grades g
+where
+s.time=t.time and t.time=c.time and c.time=g.time and s.region='haidian'
+group by s.region, s.name, t.teacher_id, c.course_name, g.score;
 
 -- 清理数据： 删除数据库 
 drop database test_db;

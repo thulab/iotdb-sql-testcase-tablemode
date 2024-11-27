@@ -15,7 +15,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.2.23
+Elapsed Time: 0.2.116
 
 -- [1]51:select int32 from t1 where int32 between 300 and 700 order by time
 STRICT{
@@ -31,7 +31,7 @@ int32(INT32)      |
 总数目：4
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.8
 
 -- [1]52:select int64 from t1 where int64 between 300000000000 and 700000000000 order by time
 STRICT{
@@ -47,7 +47,7 @@ int64(INT64)      |
 总数目：4
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]53:select double from t1 where double between 3.33 and 8.89 order by time
 STRICT{
@@ -65,7 +65,7 @@ double(DOUBLE)      |
 总数目：5
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]54:select float from t1 where float between 3.33 and 8.88 order by time
 STRICT{
@@ -83,7 +83,7 @@ float(FLOAT)      |
 总数目：5
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.5
 
 -- [1]55:select boolean from t1 where boolean between false and true order by time
 STRICT{
@@ -109,7 +109,7 @@ true                  |
 总数目：9
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]56:select text from t1 where text between '2.22' and '4.44' order by time
 STRICT{
@@ -123,7 +123,7 @@ text(TEXT)      |
 总数目：3
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.4
 
 -- [1]57:select string from t1 where string between '2.22' and '4.44' order by time
 STRICT{
@@ -137,7 +137,7 @@ string(STRING)      |
 总数目：3
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.5
 
 -- [1]58:select blob from t1 where blob between X'32DCD5' and X'62DCD5' order by time
 STRICT{
@@ -208,7 +208,7 @@ int32(INT32)      |
 总数目：5
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.4
 
 -- [1]65:select int64 from t1 where int64 not between 300000000000 and 700000000000 order by time
 STRICT{
@@ -226,7 +226,7 @@ int64(INT64)      |
 总数目：5
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]66:select double from t1 where double not between 3.33 and 8.89 order by time
 STRICT{
@@ -242,7 +242,7 @@ double(DOUBLE)      |
 总数目：4
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.4
 
 -- [1]67:select float from t1 where float not between 3.33 and 8.88 order by time
 STRICT{
@@ -262,7 +262,7 @@ float(FLOAT)      |
 总数目：6
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]68:select boolean from t1 where boolean not between false and true order by time
 STRICT{
@@ -286,7 +286,7 @@ text(TEXT)      |
 总数目：4
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]70:select string from t1 where string not between '2.22' and '4.44' order by time
 STRICT{
@@ -306,7 +306,7 @@ string(STRING)      |
 总数目：6
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]71:select blob from t1 where blob between X'32DCD5' and X'62DCD5' order by time
 STRICT{
@@ -322,7 +322,7 @@ blob(BLOB)      |
 总数目：4
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]72:select blob from t1 where blob not between X'32DCD5' and X'62DCD5' order by time
 STRICT{
@@ -340,7 +340,7 @@ blob(BLOB)      |
 总数目：5
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]73:select timestamp from t1 where timestamp not between 1 and 3 order by time
 STRICT{
@@ -428,7 +428,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]80:select * from t1 where int32 between 222 and 666 order by time offset 2 limit 3
 STRICT{
@@ -445,7 +445,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]85:select * from t1 where int32 is null order by time
 STRICT{
@@ -456,7 +456,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.3
 
 -- [1]86:select * from t1 where int64 is null order by time
 STRICT{
@@ -467,7 +467,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]87:select * from t1 where double is null order by time
 STRICT{
@@ -478,7 +478,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]88:select * from t1 where float is null order by time
 STRICT{
@@ -489,7 +489,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]89:select * from t1 where boolean is null order by time
 STRICT{
@@ -511,7 +511,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]91:select * from t1 where string is null order by time
 STRICT{
@@ -522,7 +522,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.4
 
 -- [1]92:select * from t1 where blob is null order by time
 STRICT{
@@ -533,7 +533,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]93:select * from t1 where timestamp is null order by time
 STRICT{
@@ -544,7 +544,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]94:select * from t1 where date is null order by time
 STRICT{
@@ -555,7 +555,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]96:select * from t1 where int32 is not null order by time
 STRICT{
@@ -590,7 +590,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：9
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]97:select * from t1 where int64 is not null order by time
 STRICT{
@@ -625,7 +625,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：9
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]98:select * from t1 where double is not null order by time
 STRICT{
@@ -660,7 +660,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：9
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]99:select * from t1 where float is not null order by time
 STRICT{
@@ -695,7 +695,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：9
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.4
 
 -- [1]100:select * from t1 where boolean is not null order by time
 STRICT{
@@ -730,7 +730,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：9
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.3
 
 -- [1]101:select * from t1 where text is not null order by time
 STRICT{
@@ -765,7 +765,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：9
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]102:select * from t1 where string is not null order by time
 STRICT{
@@ -800,7 +800,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：9
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]103:select * from t1 where blob is not null order by time
 STRICT{
@@ -870,7 +870,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：9
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]105:select * from t1 where date is not null order by time
 STRICT{
@@ -916,7 +916,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]108:select * from t1 where int32 is not null order by time limit 3
 STRICT{
@@ -933,7 +933,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：3
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]109:select * from t1 where int32 is null order by time offset 2 limit 3
 STRICT{
@@ -941,7 +941,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]110:select * from t1 where int32 is not null order by time offset 2 limit 3
 STRICT{
@@ -977,7 +977,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]117:select * from t1 where int32 in (222,333,444) order by time
 STRICT{
@@ -994,7 +994,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：3
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.10
 
 -- [1]118:select * from t1 where int64 in (111111111111,333333333333,444444444444) order by time
 STRICT{
@@ -1011,7 +1011,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]119:select * from t1 where double in (1.1111111,2.2222222,4.4444444) order by time
 STRICT{
@@ -1028,7 +1028,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]120:select * from t1 where float in (1.11,2.22,3.33) order by time
 STRICT{
@@ -1045,7 +1045,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]121:select * from t1 where boolean in (true,false) order by time
 STRICT{
@@ -1080,7 +1080,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：9
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]122:select * from t1 where text in ('1.11','2.22','3.33') order by time
 STRICT{
@@ -1097,7 +1097,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]123:select * from t1 where string in ('1.11','2.22','3.33') order by time
 STRICT{
@@ -1164,7 +1164,7 @@ date(DATE)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]130:select * from t1 where int32 not in (222,333,444) order by time
 STRICT{
@@ -1190,7 +1190,33 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：6
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.4
+
+-- [1]131:select * from t1 where int64 not in (111111111111,333333333333,444444444444) order by time
+STRICT{
+time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      |int64(INT64)      |double(DOUBLE)      |float(FLOAT)      |boolean(BOOLEAN)      |text(TEXT)      |string(STRING)      |blob(BLOB)      |timestamp(TIMESTAMP)      |date(DATE)      |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d5                  |t5                |555               |555555555555      |5.5555555           |5.55              |null                  |5.55            |5.55                |0x52dcd5        |1970-01-01T08:00:00.005+08|1970-01-05      |
+05+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d6                  |t6                |666               |666666666666      |6.6666666           |6.66              |true                  |null            |6.66                |0x62dcd5        |1970-01-01T08:00:00.006+08|1970-01-06      |
+06+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d7                  |t7                |777               |777777777777      |7.7777777           |7.77              |false                 |7.77            |null                |0x72dcd5        |1970-01-01T08:00:00.007+08|1970-01-07      |
+07+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d8                  |t8                |888               |888888888888      |8.8888888           |8.88              |true                  |8.88            |8.88                |null            |1970-01-01T08:00:00.008+08|1970-01-08      |
+08+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d9                  |t9                |999               |999999999999      |9.9999999           |9.99              |false                 |9.99            |9.99                |0x92dcd5        |null                      |1970-01-09      |
+09+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |                          |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d10                 |t10               |1000              |1000000000000     |10.0000001          |10.01             |true                  |10.01           |10.01               |0x102dcd62      |1970-01-01T08:00:00.011+08|null            |
+10+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+总数目：6
+}
+
+Elapsed Time: 0.0.4
 
 -- [1]132:select * from t1 where double not in (1.1111111,2.2222222,4.4444444) order by time
 STRICT{
@@ -1216,7 +1242,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：6
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]133:select * from t1 where float not in (1.11,2.22,3.33) order by time
 STRICT{
@@ -1242,7 +1268,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：6
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.4
 
 -- [1]134:select * from t1 where boolean not in (true,false) order by time
 STRICT{
@@ -1276,7 +1302,7 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：6
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]136:select * from t1 where string not in ('1.11','2.22','3.33') order by time
 STRICT{
@@ -1329,11 +1355,32 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 }
 
 Elapsed Time: 0.0.4
+
 -- [1]138:select * from t1 where timestamp not in (1,2,3) order by time
 STRICT{
-SQLSTATE : 301: class org.apache.iotdb.db.queryengine.plan.relational.sql.ast.LongLiteral cannot be cast to class org.apache.iotdb.db.queryengine.plan.relational.sql.ast.GenericLiteral (org.apache.iotdb.db.queryengine.plan.relational.sql.ast.LongLiteral and org.apache.iotdb.db.queryengine.plan.relational.sql.ast.GenericLiteral are in unnamed module of loader 'app')
-EXPECT:PASS
+time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      |int64(INT64)      |double(DOUBLE)      |float(FLOAT)      |boolean(BOOLEAN)      |text(TEXT)      |string(STRING)      |blob(BLOB)      |timestamp(TIMESTAMP)      |date(DATE)      |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d4                  |t4                |444               |444444444444      |4.4444444           |null              |true                  |4.44            |4.44                |0x42dcd5        |1970-01-01T08:00:00.004+08|1970-01-04      |
+04+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d5                  |t5                |555               |555555555555      |5.5555555           |5.55              |null                  |5.55            |5.55                |0x52dcd5        |1970-01-01T08:00:00.005+08|1970-01-05      |
+05+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d6                  |t6                |666               |666666666666      |6.6666666           |6.66              |true                  |null            |6.66                |0x62dcd5        |1970-01-01T08:00:00.006+08|1970-01-06      |
+06+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d7                  |t7                |777               |777777777777      |7.7777777           |7.77              |false                 |7.77            |null                |0x72dcd5        |1970-01-01T08:00:00.007+08|1970-01-07      |
+07+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d8                  |t8                |888               |888888888888      |8.8888888           |8.88              |true                  |8.88            |8.88                |null            |1970-01-01T08:00:00.008+08|1970-01-08      |
+08+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d10                 |t10               |1000              |1000000000000     |10.0000001          |10.01             |true                  |10.01           |10.01               |0x102dcd62      |1970-01-01T08:00:00.011+08|null            |
+10+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+总数目：6
 }
+
+Elapsed Time: 0.0.4
 -- [1]139:select * from t1 where date not in ('1970-01-03','1970-01-04','1970-01-05') order by time
 STRICT{
 SQLSTATE : 701: IN value and list items must be the same type or coercible to a common type. Cannot find common type between DATE and STRING, all types (without duplicates): [DATE, STRING]
@@ -1359,7 +1406,7 @@ date(DATE)      |
 总数目：7
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]143:select * from t1 where int64 in (111111111111,333333333333,444444444444) order by time limit 3
 STRICT{
@@ -1378,6 +1425,23 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 
 Elapsed Time: 0.0.4
 
+-- [1]144:select * from t1 where int64 not in (111111111111,333333333333,444444444444) order by time limit 3
+STRICT{
+time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      |int64(INT64)      |double(DOUBLE)      |float(FLOAT)      |boolean(BOOLEAN)      |text(TEXT)      |string(STRING)      |blob(BLOB)      |timestamp(TIMESTAMP)      |date(DATE)      |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d5                  |t5                |555               |555555555555      |5.5555555           |5.55              |null                  |5.55            |5.55                |0x52dcd5        |1970-01-01T08:00:00.005+08|1970-01-05      |
+05+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d6                  |t6                |666               |666666666666      |6.6666666           |6.66              |true                  |null            |6.66                |0x62dcd5        |1970-01-01T08:00:00.006+08|1970-01-06      |
+06+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d7                  |t7                |777               |777777777777      |7.7777777           |7.77              |false                 |7.77            |null                |0x72dcd5        |1970-01-01T08:00:00.007+08|1970-01-07      |
+07+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+总数目：3
+}
+
+Elapsed Time: 0.0.5
+
 -- [1]145:select * from t1 where int64 in (111111111111,333333333333,444444444444) order by time offset 2 limit 3
 STRICT{
 time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      |int64(INT64)      |double(DOUBLE)      |float(FLOAT)      |boolean(BOOLEAN)      |text(TEXT)      |string(STRING)      |blob(BLOB)      |timestamp(TIMESTAMP)      |date(DATE)      |
@@ -1387,7 +1451,24 @@ time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
+
+-- [1]146:select * from t1 where int64 not in (111111111111,333333333333,444444444444) order by time offset 2 limit 3
+STRICT{
+time(TIMESTAMP)      |device(STRING)      |type(STRING)      |int32(INT32)      |int64(INT64)      |double(DOUBLE)      |float(FLOAT)      |boolean(BOOLEAN)      |text(TEXT)      |string(STRING)      |blob(BLOB)      |timestamp(TIMESTAMP)      |date(DATE)      |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d7                  |t7                |777               |777777777777      |7.7777777           |7.77              |false                 |7.77            |null                |0x72dcd5        |1970-01-01T08:00:00.007+08|1970-01-07      |
+07+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d8                  |t8                |888               |888888888888      |8.8888888           |8.88              |true                  |8.88            |8.88                |null            |1970-01-01T08:00:00.008+08|1970-01-08      |
+08+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |:00                       |                |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d9                  |t9                |999               |999999999999      |9.9999999           |9.99              |false                 |9.99            |9.99                |0x92dcd5        |null                      |1970-01-09      |
+09+08:00             |                    |                  |                  |                  |                    |                  |                      |                |                    |                |                          |                |
+总数目：3
+}
+
+Elapsed Time: 0.0.4
 
 -- [1]150:select int32 from t1 where int32 in (9000-8000)
 STRICT{
@@ -1423,4 +1504,4 @@ int32(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
