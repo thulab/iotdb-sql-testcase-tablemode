@@ -3891,3 +3891,51 @@ show tables;
 --- 81.4 删除数据库
 drop database test;
 
+
+-- 82.FILL
+-- 82.1. 创建数据库
+create database FILL;
+<<SQLSTATE;
+create database db.FILL;
+<<SQLSTATE;
+create database test;
+-- result:1
+show databases;
+
+-- 82.2.指定使用的数据库
+use test; 
+
+-- 82.3.元数据
+-- 82.3.1 表名
+create table FILL 
+(
+	device_id STRING ID,
+	s1 BOOLEAN MEASUREMENT,
+	s2 INT32 MEASUREMENT
+);
+<<SQLSTATE;
+-- 82.3.2 标识符列
+create table table_01 
+(
+	FILL STRING ID
+);
+<<SQLSTATE;
+-- 82.3.3 属性列
+create table table_02
+(
+    FILL STRING ATTRIBUTE
+);
+<<SQLSTATE;
+-- 82.3.4 物理量列
+create table table_03 
+(
+	FILL INT32 MEASUREMENT
+);
+<<SQLSTATE;
+
+-- 82.3.5 show
+show tables;
+
+--- 82.4 删除数据库
+drop database test;
+

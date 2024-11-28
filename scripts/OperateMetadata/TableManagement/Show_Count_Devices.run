@@ -57,6 +57,8 @@ show devices from device_type_0 where "地区" = 'beijing' limit 3;
 show devices from device_type_0 where "地区" = 'beijing' limit 3 offset 2;
 show devices from device_type_0 where "地区" = 'beijing' and "厂号" in ('1001', '1005') or "型号" = '1' offset 0 limit ALL;
 show devices from device_type_0 where "地区" = 'beijing' and "厂号" in ('1001', '1005') or "型号" = '1' offset 100000000000 limit 100000000000;
+ show devices from device_type_0 where "地区" = 'shanghai' or "设备号" = '3000';
+show devices from device_type_0 where "地区" = 'shanghai' or "设备号" = '3000' offset 1 limit 2;
 
 --8，统计devices信息
 count devices from device_type_0;
