@@ -1,14 +1,12 @@
 -- 连接数据库
 connect root/root;
 -- 清除数据库
-drop database test;
+drop database if exists db1;
 <<NULL;
 
 -- 1. 以下为 Delete Data Statement
-drop database if exists db1;
 create database if not exists db1;
 use db1;
-
 -- 1.1. 全表删除
 create table t1(country id,region id, city id, device id, ab1 ATTRIBUTE, s1 int32, s2 float, s3 boolean, s4 string);
 INSERT INTO t1(time,country,region,city,device,ab1,s1,s2,s3,s4) values

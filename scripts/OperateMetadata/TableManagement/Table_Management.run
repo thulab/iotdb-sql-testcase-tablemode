@@ -1,14 +1,15 @@
 -- 连接数据库
 connect root/root;
 -- 清除数据库
-drop database test;
+drop database if exists db1;
+<<NULL;
+drop database if exists db2;
+<<NULL;
+drop database if exists db3;
 <<NULL;
 
+-- table management
 -- 1. 以下为 createTableStatement
-drop database if exists db1;
-drop database if exists db2;
-drop database if exists db3;
-
 create database db1;
 create database db2;
 
