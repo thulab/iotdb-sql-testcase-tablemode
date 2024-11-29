@@ -25,7 +25,7 @@ employees            |INF                |
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]43:desc employees
 STRICT{
 PASS
@@ -39,13 +39,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.226
+Elapsed Time: 0.1.945
 -- [1]51:insert into employees( time, department_id, remark, name, gender, status, employee_id, salary, date_of_birth, contac_info) values (1706698230000, 'D001', 'great', 'John', 'Male', true, 0012, 8822, '1985-06-15', '130-1002-1334')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.39
+Elapsed Time: 0.0.82
 -- [1]54:insert into employees( time, department_id, remark, name, gender, status, employee_id, salary, date_of_birth, contac_info) values (1708868070000, 'D002', 'excellent', 'Nancy', 'Female', true, 0112, 10002, '1983-08-15', '135-1302-1354')
 STRICT{
 0
@@ -57,7 +57,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.9
 -- [1]60:insert into employees( time, department_id, remark, name, gender, status, employee_id, salary, date_of_birth, contac_info) values (1719754343000, 'D003', 'great', 'Linda', 'Female', false, 0212, 5600, '1995-06-15', '150-2003-1355')
 STRICT{
 0
@@ -69,7 +69,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.6
 -- [1]67:insert into departments( time, department_id, dep_description, dep_name, dep_phone, dep_status, dep_member) values (1706698230000, 'D001', 'goods','销售部', '010-2271-2120', false, 0012)
 STRICT{
 0
@@ -81,19 +81,19 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 -- [1]73:insert into departments( time, department_id, dep_description, dep_name, dep_phone, dep_status, dep_member) values (1711437332000, 'D002', 'service','客服部', '010-2077-2520', true, 2012)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 -- [1]76:insert into departments( time, department_id, dep_description, dep_name, dep_phone, dep_status, dep_member) values (1719754343000, 'D003', 'IT','研发部', '010-3272-2310', true, 0212)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.16
 
 -- [1]80:select * from employees order by time
 STRICT{
@@ -116,7 +116,7 @@ time(TIMESTAMP)      |department_id(STRING)      |remark(STRING)      |name(TEXT
 总数目：5
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
 -- [1]81:select * from departments order by time
 STRICT{
@@ -139,7 +139,7 @@ time(TIMESTAMP)      |department_id(STRING)      |dep_description(STRING)      |
 总数目：5
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 -- [1]85:select name from employees where department_id IN (select department_id FROM departments WHERE department_id = 'D002')
 STRICT{
 SQLSTATE : 701: Only TableSubquery is supported now
@@ -165,7 +165,7 @@ D003                       |Linda           |5600.0                  |
 总数目：5
 }
 
-Elapsed Time: 0.0.18
+Elapsed Time: 0.0.8
 
 -- [1]96:select department_id, dep_member from(select department_id, dep_description, dep_member from departments where dep_name='客服部') where dep_description='service'
 STRICT{
@@ -177,7 +177,7 @@ D002                       |2012                   |
 总数目：2
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.5
 
 -- [1]98:select department_id, dep_member, avg_members from(select department_id, dep_member, AVG(dep_member) as avg_members from departments group by department_id,dep_member) as subquery where dep_member = avg_members
 STRICT{
@@ -195,7 +195,7 @@ D003                       |212                    |212.0                    |
 总数目：5
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.7
 
 -- [1]100:select department_id, name, remark from (select department_id,remark,name,employee_id,salary from employees) where salary > 8000 order by department_id
 STRICT{
@@ -209,25 +209,25 @@ D002                       |Nancy           |good                |
 
 Elapsed Time: 0.0.5
 
--- [1]102:select department_id, name, gender, remark, salary from (select department_id, employee_id, name, gender, remark,salary from (select * from employees)) where salary > 5000 and salary < 6000
+-- [1]102:select department_id, name, gender, remark, salary from (select department_id, employee_id, name, gender, remark,salary from (select * from employees order by time)) where salary > 5000 and salary < 6000
 STRICT{
 department_id(STRING)      |name(TEXT)      |gender(TEXT)      |remark(STRING)      |salary(DOUBLE)      |
 -----------------------------------------------------------------------------------------------------
-D003                       |Linda           |Female            |great               |5600.0              |
------------------------------------------------------------------------------------------------------
 D001                       |Mary            |Female            |great               |5500.22             |
+-----------------------------------------------------------------------------------------------------
+D003                       |Linda           |Female            |great               |5600.0              |
 总数目：2
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
--- [1]104:select name, remark from(select department_id, name, gender, remark, salary from (select department_id, employee_id, name, gender, remark,salary from (select * from employees))) where salary > 5000 and salary < 6000
+-- [1]104:select name, remark from(select department_id, name, gender, remark, salary from (select department_id, employee_id, name, gender, remark,salary from (select * from employees order by time))) where salary > 5000 and salary < 6000
 STRICT{
 name(TEXT)      |remark(STRING)      |
 ------------------------------------
-Linda           |great               |
-------------------------------------
 Mary            |great               |
+------------------------------------
+Linda           |great               |
 总数目：2
 }
 
@@ -237,14 +237,14 @@ Elapsed Time: 0.0.6
 STRICT{
 name(TEXT)      |
 ----------------
-Linda           |
-----------------
 Mary            |
 ----------------
 John            |
+----------------
+Linda           |
 ----------------
 Jack            |
 总数目：4
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.8

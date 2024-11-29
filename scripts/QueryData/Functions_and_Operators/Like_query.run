@@ -112,18 +112,19 @@ select s8, s8 like '%1%' from table_a; <<SQLSTATE;
 select s10, s10 like '%d' from table_a; <<SQLSTATE;
 
 --8.2 TEXT | String 数据类型匹配查询
-select * from table_a where s1 like '%ia';
-select s1, s1 like '%ca' as like_result from table_a;
-select s9, s9 like 'S_i__' as like_result from table_a;
-select s9, s9 like '%\_%_%' as like_result from table_a limit 5;
-select color, color like '%e%', s1, s1 like '_h_n_' as like_result from table_a;
-select device_id, device_id like 'a', s9, s9 like '%VE%' as like_result from table_a;
-select color, color like '_l_e',s9, s9 like 'happy\_%' as like_result from table_a;
+select * from table_a where s1 like '%ia' order by time;
+select s1, s1 like '%ca' as like_result from table_a order by time;
+select s9, s9 like 'S_i__' as like_result from table_a order by time;
+select s9, s9 like '%\_%_%' as like_result from table_a order by time limit 5;
+select color, color like '%e%', s1, s1 like '_h_n_' as like_result from table_a order by time;
+select device_id, device_id like 'a', s9, s9 like '%VE%' as like_result from table_a order by time;
+select color, color like '_l_e',s9, s9 like 'happy\_%' as like_result from table_a order by time;
 
 --8.3 NOT LIKE 查询：TEXT | String 数据类型匹配查询
-select device_id, device_id not like '%e%' as like_result1, s9, s9 not like '%Y%' as like_result2 from table_a;
-select device_id, device_id like '%B' as like_result1, color, color like '__ee_' as like_result2, s9, s9 not like '%ow' as like_result3 from table_a;
-select s1, s1 not like '%E' as like_result1, s9, s9 not like '_o_' as like_result2 from table_a offset 3 limit 5;
+select device_id, device_id not like '%e%' as like_result1, s9, s9 not like '%Y%' as like_result2 
+	from table_a order by time;
+select device_id, device_id like '%B' as like_result1, color, color like '__ee_' as like_result2, s9, s9 not like '%ow' as like_result3 from table_a order by time;
+select s1, s1 not like '%E' as like_result1, s9, s9 not like '_o_' as like_result2 from table_a order by time offset 3 limit 5;
 
 --9. LIKE查询（V2.0.0.1起新语法）
 --9.1 非TEXT|String 数据类型匹配查询
@@ -137,25 +138,25 @@ select * from table_a where s8 like '%2023-11-11%'; <<SQLSTATE;
 select * from table_a where s10 like '0x__'; <<SQLSTATE;
 
 --9.2 TEXT | String 数据类型匹配查询
-select * from table_a where s1 like 'E%'; 
-select * from table_a where s1 like 'C___a';
-select * from table_a where s1 like '%ca%';
-select * from table_a where s9 like '%y';
-select * from table_a where s9 like 'happy\_%' ESCAPE '\';
-select * from table_a where s9 like '_O_%';
-select * from table_a where device_id like 'device\_%B%' ESCAPE '\';
-select * from table_a where color like '%e%';
-select * from table_a where color like 'G_%y';
-select * from table_a where device_id like '%A%' and color like '__d';
-select * from table_a where s1 like '%ca' and s9 like '___gh';
-select * from table_a where device_id like 'device\_%A_' ESCAPE '\' and s9 like '%ING';
+select * from table_a where s1 like 'E%' order by time; 
+select * from table_a where s1 like 'C___a' order by time;
+select * from table_a where s1 like '%ca%' order by time;
+select * from table_a where s9 like '%y' order by time;
+select * from table_a where s9 like 'happy\_%' ESCAPE '\' order by time;
+select * from table_a where s9 like '_O_%' order by time;
+select * from table_a where device_id like 'device\_%B%' ESCAPE '\' order by time;
+select * from table_a where color like '%e%' order by time;
+select * from table_a where color like 'G_%y' order by time;
+select * from table_a where device_id like '%A%' and color like '__d' order by time;
+select * from table_a where s1 like '%ca' and s9 like '___gh' order by time;
+select * from table_a where device_id like 'device\_%A_' ESCAPE '\' and s9 like '%ING' order by time;
 
 --9.3 NOT LIKE 查询：TEXT | String 数据类型匹配查询
-select * from table_a where s1 not like '%ca';
-select * from table_a where s1 not like '%ca' and s9 not like 'happy\_%' ESCAPE '\';
-select * from table_a where device_id not like '%F%' and s1 not like '%ca' and s9 not like 'happy\_%' ESCAPE '\';
-select * from table_a where color like '%i%' and s1 not like '__pan';
-select * from table_a where device_id not like '%A%' and color not like '%ow%' and s1 not like '%S%' and s9 like 'S__';
+select * from table_a where s1 not like '%ca' order by time;
+select * from table_a where s1 not like '%ca' and s9 not like 'happy\_%' ESCAPE '\' order by time;
+select * from table_a where device_id not like '%F%' and s1 not like '%ca' and s9 not like 'happy\_%' ESCAPE '\' order by time;
+select * from table_a where color like '%i%' and s1 not like '__pan' order by time;
+select * from table_a where device_id not like '%A%' and color not like '%ow%' and s1 not like '%S%' and s9 like 'S__' order by time;
 
 --10.regexp_like 查询
 select * from table_a where REGEXP_LIKE(); <<SQLSTATE;
@@ -167,11 +168,11 @@ select * from table_a where REGEXP_LIKE(s9, '^a.*', 'i'); <<SQLSTATE;
 select REGEXP_LIKE(s1,'^a.*', 'c') from table_a; <<SQLSTATE;
 
 -- 返回以“A”开头的
-select * from table_a where REGEXP_LIKE(s1, '^A.*');
+select * from table_a where REGEXP_LIKE(s1, '^A.*') order by time;
 
 -- 返回以“s”开头的
-select * from table_a where REGEXP_LIKE(s9, '^s.*');
-select time, device_id, s1, s9 from table_a where REGEXP_LIKE(color, '^gr.*$');
+select * from table_a where REGEXP_LIKE(s9, '^s.*') order by time;
+select time, device_id, s1, s9 from table_a where REGEXP_LIKE(color, '^gr.*$') order by time;
 select s1, regexp_like(s1,'^S.*') as regexp_like_result from table_a order by time;
 select s9, regexp_like(s9,'^[Ss].*') as regexp_like_result from table_a order by time;
 
@@ -179,7 +180,7 @@ select s9, regexp_like(s9,'^[Ss].*') as regexp_like_result from table_a order by
 select time, device_id, s1 from table_a where REGEXP_LIKE(s1,'^.{2,5}$') order by time;
 select time, device_id, color, s1, s9 from table_a where REGEXP_LIKE(color, '^[A-Z].*') order by time;
 
-select device_id, regexp_like(device_id,'^device.*') as regexp_like_result1, color, regexp_like(color,'^.{4,6}$') as regexp_like_result2 from table_a;
+select device_id, regexp_like(device_id,'^device.*') as regexp_like_result1, color, regexp_like(color,'^.{4,6}$') as regexp_like_result2 from table_a order by time;
 
 --11. 清理数据：
 drop database test_db;

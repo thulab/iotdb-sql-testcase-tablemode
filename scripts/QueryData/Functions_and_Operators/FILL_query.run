@@ -112,17 +112,17 @@ select time, blob from table_1 FILL METHOD LINEAR order by time;
 
 --8.1.2 支持的数据类型
 select time, int32 from table_1 order by time;
-select time, int32 from table_1 FILL METHOD LINEAR order by time;
+select time, int32 from (select * from table_1 order by time) FILL METHOD LINEAR;
 select time, int64 from table_1 order by time;
-select time, int64 from table_1 FILL METHOD LINEAR order by time;
+select time, int64 from (select * from table_1 order by time) FILL METHOD LINEAR;
 select time, float from table_1 order by time;
-select time, float from table_1 FILL METHOD LINEAR order by time;
+select time, float from  (select * from table_1 order by time) FILL METHOD LINEAR;
 select time, double from table_1 order by time;
-select time, double from table_1 FILL METHOD LINEAR order by time;
+select time, double from  (select * from table_1 order by time) FILL METHOD LINEAR;
 select time, timestamp from table_1 order by time;
-select time, timestamp from table_1 FILL METHOD LINEAR order by time;
+select time, timestamp from  (select * from table_1 order by time) FILL METHOD LINEAR;
 select time, date from table_1 order by time;
-select time, date from table_1 FILL METHOD LINEAR order by time;
+select time, date from  (select * from table_1 order by time) FILL METHOD LINEAR;
 
 select time, region_id, device_id, model_id, int64 from table_1
     where time >= 0 and time <= 30000 and device_id='d2' and model_id='V3' order by time;
@@ -131,8 +131,8 @@ select time, region_id, device_id, model_id, int64 from table_1
       FILL METHOD LINEAR TIME_COLUMN 1 order by time;
 
 select time, device_id, timestamp, date, int32, int64, float, double from table_1 order by time;
-select time, device_id, timestamp, date, int32, int64, float, double from table_1
-  FILL METHOD LINEAR TIME_COLUMN 3 FILL_GROUP 2 order by time;
+select time, device_id, timestamp, date, int32, int64, float, double from (select * from table_1 order by time)
+  FILL METHOD LINEAR TIME_COLUMN 3 FILL_GROUP 2;
 
 --8.1.3 指定列不是TIMESTAMP数据类型，抛出异常
 select int32, float from table_1 FILL METHOD LINEAR order by time;
@@ -149,8 +149,8 @@ select time, device_id, timestamp, date, int32, int64, float, double from table_
 
 --8.2 previous（当前数据类型均支持）
 select * from table_1 order by time;
-select * from table_1 FILL METHOD PREVIOUS order by time;
-select * from table_1 FILL METHOD PREVIOUS FILL_GROUP 3 order by time;
+select * from (select * from table_1 order by time) FILL METHOD PREVIOUS;
+select * from (select * from table_1 order by time) FILL METHOD PREVIOUS FILL_GROUP 3;
 
 select time, boolean, float from table_1 where time >= 1000 and time < 50000 order by time;
 select time, boolean, float from (select time, boolean, float from table_1 order by time)
@@ -228,9 +228,9 @@ select time, device_id, region_id, string, date from table_1
 
 --8.3.2 数据类型与输入常量不同，不会填充空值，保持原有数据
 select time, blob from table_1 order by time;
-select time, blob from table_1 FILL METHOD CONSTANT false order by time;
+select time, blob from (select * from table_1 order by time) FILL METHOD CONSTANT false ;
 select time, date from table_1 order by time;
-select time, date from table_1 FILL METHOD CONSTANT true order by time;
+select time, date from (select * from table_1 order by time) FILL METHOD CONSTANT true;
 
 
 -- 清理数据： 删除数据库 

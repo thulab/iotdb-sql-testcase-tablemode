@@ -56,6 +56,7 @@ update table_attr set "型号" = 'AA8738',"型号" = 'AA12445'; <<SQLSTATE;
 update table_attr set "型号" = 'AA818'，AA819'; <<SQLSTATE;
 --8.5 将所有型号更新为同一值
 update table_attr set "型号" = '110';
+show devices from table_attr;
 update table_attr set "维修周期" = '16' where "城市" = 'tianjin';
 show devices from table_attr where "城市" = 'tianjin';
 update table_attr set "型号" = '2332' where "城市" = 'shanghai' and "工厂" = 'S8773';
@@ -66,8 +67,9 @@ update table_attr set "型号" = "工厂" where "城市" = 'beijing' and substri
 show devices from table_attr where "城市" = 'beijing';
 update table_attr set "维修周期" = substring("型号", 1, 2) where "维修周期" <> substring("型号", 1, 1) and "城市" = 'shanghai';
 show devices from table_attr where "城市" = 'shanghai';
-update table_attr set "维修周期" = cast("型号" as int32) where "城市" = 'shanghai' and "区县" = 'huangpu';
-show devices from table_attr where "城市" = 'shanghai' and "区县" = 'huangpu';
+update table_attr set "维修周期" = cast("型号" as int32) where "城市" = 'shanghai' and "区县" = 'huangpu'; <<SQLSTATE;
+update table_attr set "维修周期" = '90' where "工厂" = 'S294v';
+show devices from table_attr where  "工厂" = 'S294v';
 
 --清理数据：
 drop database test_db;

@@ -8,7 +8,7 @@ STRICT{
 CurrentSqlDialect(STRING)      |
 -------------------------------
 TABLE                          |
-Total line number =1
+总数目：1
 }
 
 Elapsed Time: 0.0.13
@@ -18,7 +18,7 @@ STRICT{
 CurrentUser(STRING)      |
 -------------------------
 root                     |
-Total line number =1
+总数目：1
 }
 
 Elapsed Time: 0.0.1
@@ -28,7 +28,7 @@ STRICT{
 CurrentDatabase(STRING)      |
 -----------------------------
 null                         |
-Total line number =1
+总数目：1
 }
 
 Elapsed Time: 0.0.1
@@ -42,7 +42,7 @@ STRICT{
 CurrentDatabase(STRING)      |
 -----------------------------
 test                         |
-Total line number =1
+总数目：1
 }
 
 Elapsed Time: 0.0.1

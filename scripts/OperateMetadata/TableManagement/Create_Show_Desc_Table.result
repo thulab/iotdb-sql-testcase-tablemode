@@ -58,7 +58,7 @@ PASS
 }
 -- [1]70:create table data.table2(time timestamp ID, sensor_1 INT64 MEASUREMENT, sensor_2 FLOAT MEASUREMENT)
 STRICT{
-SQLSTATE : 701: Columns in table shall not share the same name time.
+SQLSTATE : 701: The time column category shall be bounded with column name 'time'.
 }
 -- [1]74:create table data.table3(device INT64 ID, area STRING ATTRIBUTE, sensor_1 INT64 MEASUREMENT, sensor_2 FLOAT MEASUREMENT)
 STRICT{
@@ -88,11 +88,11 @@ SQLSTATE : 701: Table property 'format' is currently not allowed.
 
 -- [1]92:show databases
 STRICT{
-Database(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
-----------------------------------------------------------------------------------------------------------------------------
-data                |1                                   |1                                 |604800000                         |
-----------------------------------------------------------------------------------------------------------------------------
-test_db             |1                                   |1                                 |604800000                         |
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+data                |INF                |1                                   |1                                 |604800000                         |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+test_db             |INF                |1                                   |1                                 |604800000                         |
 总数目：2
 }
 
