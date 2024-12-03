@@ -1,0 +1,330 @@
+-- [1]12:create database test_db
+STRICT{
+PASS
+}
+-- [1]14:create database test with (ttl=86400000)
+STRICT{
+PASS
+}
+
+-- [1]16:show databases details
+STRICT{
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |Model(TEXT)      |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+test                |86400000           |1                                   |1                                 |604800000                         |TABLE            |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+test_db             |INF                |1                                   |1                                 |604800000                         |TABLE            |
+总数目：2
+}
+
+Elapsed Time: 0.0.11
+-- [1]19:use test_db
+STRICT{
+PASS
+}
+-- [1]25:create table table_0 (    	device_id STRING ID, 	float DOUBLE MEASUREMENT, 	text TEXT MEASUREMENT )
+STRICT{
+PASS
+}
+-- [1]32:create table table_1 (    	device_id STRING ID, 	text TEXT MEASUREMENT, 	float FLOAT MEASUREMENT )
+STRICT{
+PASS
+}
+-- [1]41:create table table_2 (    	device_id STRING ID,     model_id STRING ATTRIBUTE, 	boolean BOOLEAN MEASUREMENT, 	int64 INT64 MEASUREMENT, 	double DOUBLE MEASUREMENT ) with (TTL=10000)
+STRICT{
+PASS
+}
+-- [1]48:create table table_3(device_id string ID, int32 INT32 measurement) with (ttl='inf')
+STRICT{
+PASS
+}
+-- [1]49:create table table_4(device_id string ID, int32 INT32 measurement) with (ttl='INF')
+STRICT{
+PASS
+}
+-- [1]50:create table table_5(device_id string ID, int32 INT32 measurement) with (ttl=default)
+STRICT{
+PASS
+}
+-- [1]51:create table table_6(device_id string ID, int32 INT32 measurement) with (ttl=9999999999)
+STRICT{
+PASS
+}
+
+-- [1]54:show tables
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+table_1              |INF                |
+----------------------------------------
+table_2              |10000              |
+----------------------------------------
+table_3              |INF                |
+----------------------------------------
+table_4              |INF                |
+----------------------------------------
+table_5              |INF                |
+----------------------------------------
+table_6              |9999999999         |
+----------------------------------------
+table_0              |INF                |
+总数目：7
+}
+
+Elapsed Time: 0.0.2
+-- [1]57:desc table_2
+STRICT{
+PASS
+}
+-- [1]64:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 1, 1.1)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.197
+-- [1]66:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 2, 2.1)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.7
+-- [1]68:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 3, 3.1)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.2
+-- [1]70:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 4, 2.1)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.3
+-- [1]72:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 5, 3.1)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]74:select count(*) as count_result from table_2
+STRICT{
+count_result(INT64)      |
+-------------------------
+5                        |
+总数目：1
+}
+
+Elapsed Time: 0.0.8
+
+-- [1]76:select count(*) as count_result from table_2
+STRICT{
+count_result(INT64)      |
+-------------------------
+3                        |
+总数目：1
+}
+
+Elapsed Time: 0.0.11
+-- [1]80:alter table if exists table_1 set properties ttl=3600000
+STRICT{
+PASS
+}
+
+-- [1]81:show tables
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+table_1              |3600000            |
+----------------------------------------
+table_2              |10000              |
+----------------------------------------
+table_3              |INF                |
+----------------------------------------
+table_4              |INF                |
+----------------------------------------
+table_5              |INF                |
+----------------------------------------
+table_6              |9999999999         |
+----------------------------------------
+table_0              |INF                |
+总数目：7
+}
+
+Elapsed Time: 0.0.1
+-- [1]82:alter table table_1 set properties ttl=9223372036854775807
+STRICT{
+PASS
+}
+
+-- [1]83:show tables
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+table_1              |9223372036854775807|
+----------------------------------------
+table_2              |10000              |
+----------------------------------------
+table_3              |INF                |
+----------------------------------------
+table_4              |INF                |
+----------------------------------------
+table_5              |INF                |
+----------------------------------------
+table_6              |9999999999         |
+----------------------------------------
+table_0              |INF                |
+总数目：7
+}
+
+Elapsed Time: 0.0.1
+-- [1]84:alter table table_1 set properties ttl='INF'
+STRICT{
+PASS
+}
+
+-- [1]85:show tables
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+table_1              |INF                |
+----------------------------------------
+table_2              |10000              |
+----------------------------------------
+table_3              |INF                |
+----------------------------------------
+table_4              |INF                |
+----------------------------------------
+table_5              |INF                |
+----------------------------------------
+table_6              |9999999999         |
+----------------------------------------
+table_0              |INF                |
+总数目：7
+}
+
+Elapsed Time: 0.0.1
+-- [1]88:alter table table_1 set properties ttl=0.001
+STRICT{
+SQLSTATE : 701: ttl value must be a LongLiteral, but now is DoubleLiteral, value: 1E-3
+}
+-- [1]90:alter table table_1 set properties ttl=0.000001
+STRICT{
+SQLSTATE : 701: ttl value must be a LongLiteral, but now is DoubleLiteral, value: 1E-6
+}
+-- [1]92:alter table table_1 set properties ttl=-1000
+STRICT{
+SQLSTATE : 701: ttl value must be equal to or greater than 0, but now is: -1000
+}
+-- [1]94:alter table table_1 set properties ttl=9223372036854775808
+STRICT{
+SQLSTATE : 700: line 1:40: Invalid numeric literal: 9223372036854775808
+}
+-- [1]99:ALTER TABLE table_2 drop column double
+STRICT{
+SQLSTATE : 701: Drop column is unsupported yet.
+}
+-- [1]99:desc table_2
+STRICT{
+PASS
+}
+
+-- [1]100:show tables
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+table_1              |INF                |
+----------------------------------------
+table_2              |10000              |
+----------------------------------------
+table_3              |INF                |
+----------------------------------------
+table_4              |INF                |
+----------------------------------------
+table_5              |INF                |
+----------------------------------------
+table_6              |9999999999         |
+----------------------------------------
+table_0              |INF                |
+总数目：7
+}
+
+Elapsed Time: 0.0.0
+-- [1]103:use test
+STRICT{
+PASS
+}
+-- [1]106:create table t1(device_id string ID, int32 INT32 measurement)
+STRICT{
+PASS
+}
+-- [1]107:create table t2(device_id string ID, int32 INT32 measurement) with (ttl=60000)
+STRICT{
+PASS
+}
+-- [1]108:create table t3(device_id string ID, int32 INT32 measurement) with (ttl=3600000)
+STRICT{
+PASS
+}
+
+-- [1]111:show tables
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t1                   |86400000           |
+----------------------------------------
+t2                   |60000              |
+----------------------------------------
+t3                   |3600000            |
+总数目：3
+}
+
+Elapsed Time: 0.0.1
+-- [1]115:insert into t1(time, device_id, int32) values(now(),'d1',1)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.179
+
+-- [1]118:select count(*) as count_result from t1
+STRICT{
+count_result(INT64)      |
+-------------------------
+1                        |
+总数目：1
+}
+
+Elapsed Time: 0.0.10
+-- [1]121:insert into t2(time, device_id, int32) values(now(),'d1',1)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.54
+
+-- [1]124:select count(*) as count_result from t2
+STRICT{
+count_result(INT64)      |
+-------------------------
+1                        |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+-- [1]127:insert into t3(time, device_id, int32) values(now(),'d1',1)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.9
+
+-- [1]130:select count(*) as count_result from t3
+STRICT{
+count_result(INT64)      |
+-------------------------
+1                        |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
