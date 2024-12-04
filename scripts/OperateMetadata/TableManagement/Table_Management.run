@@ -74,11 +74,13 @@ ALTER TABLE db1.t_1 ADD COLUMN new_mm2 string;
 use db1;
 desc t_1;
 -- 4.2 drop
--- TIMECHODB-1154
+alter table t_1 drop column new_id;
+<<SQLSTATE;
 alter table t_1 drop column if exists new_id;
 <<SQLSTATE;
--- TIMECHODB-1154
 alter table t_1 drop column time;
+<<SQLSTATE;
+alter table t_1 drop column if exists time;
 <<SQLSTATE;
 
 alter table t_1 drop column new_ab;

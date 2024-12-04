@@ -11,19 +11,20 @@ use db1;
 create table t1(country id,region id, city id, device id, ab1 ATTRIBUTE, s1 int32, s2 float, s3 boolean, s4 string);
 INSERT INTO t1(time,country,region,city,device,ab1,s1,s2,s3,s4) values
 (100,'china','hebei','shijiazhuang','d1','ab1',1,1,1,1),
-(200,'china','hebei','shijiazhuang','d2','ab2',1,1,1,1),
+(200,null,'hebei','shijiazhuang','d2','ab2',1,1,1,1),
 (300,'china','beijing','beijing','d1','ab3',1,1,1,1),
 (400,'china','tianjin','tianjin','d1','ab4',1,1,1,1),
-(500,'china','sichuan','chengdu','d1','ab5',1,1,1,1),
+(500,'china','sichuan','chengdu','d1',null,1,1,1,1),
 (600,'china','zhejiang','hangzhou','d1','ab6',1,1,1,1),
 (700,'japan','dao','tokyo','d1','ab7',1,1,1,1),
-(800,'canada','tronto','shijiazhuang','d1','ab8',1,1,1,1),
+(800,'canada','tronto','shijiazhuang','d1','ab8',null,1,1,1),
 (900,'usa','ca','oldmountain','d1','ab9',1,1,1,1),
-(1000,'tailand','','mangu','d1','ab10',1,1,1,1),
+(1000,'tailand',null,'mangu','d1','ab10',1,1,1,1),
 (1100,'china','hebei','','d1','ab11',1,1,1,1),
 (1200,'','hebei','','d1','ab12',1,1,1,1),
 (1300,'china','','','d1','ab13',1,1,1,1);
-
+flush;
+<<NULL;
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
 delete from t1;
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
@@ -34,18 +35,20 @@ drop table t1;
 create table t1(country id,region id, city id, device id, ab1 ATTRIBUTE, s1 int32, s2 float, s3 boolean, s4 string);
 INSERT INTO t1(time,country,region,city,device,ab1,s1,s2,s3,s4) values
 (100,'china','hebei','shijiazhuang','d1','ab1',1,1,1,1),
-(200,'china','hebei','shijiazhuang','d2','ab2',1,1,1,1),
+(200,NULL,'hebei','shijiazhuang','d2','ab2',1,1,1,1),
 (300,'china','beijing','beijing','d1','ab3',1,1,1,1),
 (400,'china','tianjin','tianjin','d1','ab4',1,1,1,1),
-(500,'china','sichuan','chengdu','d1','ab5',1,1,1,1),
+(500,'china','sichuan','chengdu','d1',null,1,1,1,1),
 (600,'china','zhejiang','hangzhou','d1','ab6',1,1,1,1),
 (700,'japan','dao','tokyo','d1','ab7',1,1,1,1),
-(800,'canada','tronto','shijiazhuang','d1','ab8',1,1,1,1),
+(800,'canada','tronto','shijiazhuang','d1','ab8',null,1,1,1),
 (900,'usa','ca','oldmountain','d1','ab9',1,1,1,1),
-(1000,'tailand','','mangu','d1','ab10',1,1,1,1),
+(1000,'tailand',null,'mangu','d1','ab10',1,1,1,1),
 (1100,'china','hebei','','d1','ab11',1,1,1,1),
 (1200,'','hebei','','d1','ab12',1,1,1,1),
 (1300,'china','','','d1','ab13',1,1,1,1);
+flush;
+<<NULL;
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
 delete from t1 where time < 110;
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
@@ -72,18 +75,20 @@ drop table t1;
 create table t1(country id,region id, city id, device id, ab1 ATTRIBUTE, s1 int32, s2 float, s3 boolean, s4 string);
 INSERT INTO t1(time,country,region,city,device,ab1,s1,s2,s3,s4) values
 (100,'china','hebei','shijiazhuang','d1','ab1',1,1,1,1),
-(200,'china','hebei','shijiazhuang','d2','ab2',1,1,1,1),
+(200,null,'hebei','shijiazhuang','d2','ab2',1,1,1,1),
 (300,'china','beijing','beijing','d1','ab3',1,1,1,1),
 (400,'china','tianjin','tianjin','d1','ab4',1,1,1,1),
-(500,'china','sichuan','chengdu','d1','ab5',1,1,1,1),
+(500,'china','sichuan','chengdu','d1',null,1,1,1,1),
 (600,'china','zhejiang','hangzhou','d1','ab6',1,1,1,1),
 (700,'japan','dao','tokyo','d1','ab7',1,1,1,1),
-(800,'canada','tronto','shijiazhuang','d1','ab8',1,1,1,1),
+(800,'canada','tronto','shijiazhuang','d1','ab8',null,1,1,1),
 (900,'usa','ca','oldmountain','d1','ab9',1,1,1,1),
-(1000,'tailand','','mangu','d1','ab10',1,1,1,1),
+(1000,'tailand',null,'mangu','d1','ab10',1,1,1,1),
 (1100,'china','hebei','','d1','ab11',1,1,1,1),
 (1200,'','hebei','','d1','ab12',1,1,1,1),
 (1300,'china','','','d1','ab13',1,1,1,1);
+flush;
+<<NULL;
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
 delete from t1 where country='japan';
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
@@ -93,8 +98,8 @@ delete from t1 where country='china' and region='hebei' and time > 99 and time <
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
 delete from t1 where country='china';
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
--- TIMECHODB-1160, is null is not support, will be clean all data.
 delete from t1 where region is null;
+delete from t1 where country='';
 delete from t1 where country > 0;
 <<SQLSTATE;
 delete from t1 where ab1 > 0;
@@ -107,18 +112,20 @@ drop table t1;
 create table t1(country id,region id, city id, device id, ab1 ATTRIBUTE, s1 int32, s2 float, s3 boolean, s4 string);
 INSERT INTO t1(time,country,region,city,device,ab1,s1,s2,s3,s4) values
 (100,'china','hebei','shijiazhuang','d1','ab1',1,1,1,1),
-(200,'china','hebei','shijiazhuang','d2','ab2',1,1,1,1),
+(200,null,'hebei','shijiazhuang','d2','ab2',1,1,1,1),
 (300,'china','beijing','beijing','d1','ab3',1,1,1,1),
 (400,'china','tianjin','tianjin','d1','ab4',1,1,1,1),
-(500,'china','sichuan','chengdu','d1','ab5',1,1,1,1),
+(500,'china','sichuan','chengdu','d1',null,1,1,1,1),
 (600,'china','zhejiang','hangzhou','d1','ab6',1,1,1,1),
 (700,'japan','dao','tokyo','d1','ab7',1,1,1,1),
-(800,'canada','tronto','shijiazhuang','d1','ab8',1,1,1,1),
+(800,'canada','tronto','shijiazhuang','d1','ab8',null,1,1,1),
 (900,'usa','ca','oldmountain','d1','ab9',1,1,1,1),
-(1000,'tailand','','mangu','d1','ab10',1,1,1,1),
+(1000,'tailand',null,'mangu','d1','ab10',1,1,1,1),
 (1100,'china','hebei','','d1','ab11',1,1,1,1),
 (1200,'','hebei','','d1','ab12',1,1,1,1),
 (1300,'china','','','d1','ab13',1,1,1,1);
+flush;
+<<NULL;
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
 DELETE FROM t1 WHERE (country='tailand' OR region='dao') AND (time > 99 AND time < 250);
 drop table t1;
@@ -127,18 +134,20 @@ drop table t1;
 create table t1(country id,region id, city id, device id, ab1 ATTRIBUTE, s1 int32, s2 float, s3 boolean, s4 string);
 INSERT INTO t1(time,country,region,city,device,ab1,s1,s2,s3,s4) values
 (100,'china','hebei','shijiazhuang','d1','ab1',1,1,1,1),
-(200,'china','hebei','shijiazhuang','d2','ab2',1,1,1,1),
+(200,null,'hebei','shijiazhuang','d2','ab2',1,1,1,1),
 (300,'china','beijing','beijing','d1','ab3',1,1,1,1),
 (400,'china','tianjin','tianjin','d1','ab4',1,1,1,1),
-(500,'china','sichuan','chengdu','d1','ab5',1,1,1,1),
+(500,'china','sichuan','chengdu','d1',null,1,1,1,1),
 (600,'china','zhejiang','hangzhou','d1','ab6',1,1,1,1),
 (700,'japan','dao','tokyo','d1','ab7',1,1,1,1),
-(800,'canada','tronto','shijiazhuang','d1','ab8',1,1,1,1),
+(800,'canada','tronto','shijiazhuang','d1','ab8',null,1,1,1),
 (900,'usa','ca','oldmountain','d1','ab9',1,1,1,1),
-(1000,'tailand','','mangu','d1','ab10',1,1,1,1),
+(1000,'tailand',null,'mangu','d1','ab10',1,1,1,1),
 (1100,'china','hebei','','d1','ab11',1,1,1,1),
 (1200,'','hebei','','d1','ab12',1,1,1,1),
 (1300,'china','','','d1','ab13',1,1,1,1);
+flush;
+<<NULL;
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
 delete devices from t1 where country='china';
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
