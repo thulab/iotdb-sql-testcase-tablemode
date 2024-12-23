@@ -29,14 +29,14 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.2.35
+Elapsed Time: 0.1.30
 -- [1]48:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 2, 'd1', 'red', true, 'v2', 5, 121, 222.1, 12.2, false, '2022-10-01', 1724049989000, 'ertbsad', X'24ad' )
 STRICT{
 0
 }
 
 Elapsed Time: 0.0.4
--- [1]53:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 3, 'd1', 'yellow', true, 'v3', 13, 250, 1.1, 333.3, true, '2023-11-01', 1704046789000, 'zsefr345Der', X'a2cd' )
+-- [1]53:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 3, 'd1', 'yellow', true, 'v3', 13, 250, 1.1, 333.3, true, '2023-11-01', 1724046789000, 'zsefr345Der', X'a2cd' )
 STRICT{
 0
 }
@@ -47,55 +47,55 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]63:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 5, 'd1', 'white', false, 'v1', 122, 110, 2.2, 9.9, false, '2022-11-01', 1701047739000, 'cfghesdgfaase', X'cd' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
--- [1]68:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 6, 'd1', 'orange', false, 'v3', 8, 999, 123.1, 0.101, true, '2002-01-01', 1724049989000, 'ert', X'4d' )
+Elapsed Time: 0.0.4
+-- [1]68:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 6, 'd1', 'orange', false, 'v3', 8, 999, 123.1, 0.101, true, '2002-01-01', 1724049089000, 'ert', X'4d' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]73:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 7, 'd2', 'blue', true, 'v1', 0, 110, 22.2, 1.8, true, '2023-06-01', 1643046400000, 'test111', X'ac'  )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.50
+Elapsed Time: 0.0.70
 -- [1]78:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 8, 'd2', 'purple', true, 'v3', 555, 1001, 202.1, 1.2, false, '2002-10-01', 1653046400000, 'ioep11', X'abcdef' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.4
 -- [1]83:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 9, 'd2', 'blue', false, 'v1', 1110, 888, 10.1, 11.1, true, '2023-11-11', 1699685189000, 'ueu', X'ce' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
--- [1]88:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 10, 'd2', 'red', false, 'v2', 111, 222, 22.5, 13.3, true, '2020-10-11', 1702277189000, 'sad', X'ae' )
+Elapsed Time: 0.0.2
+-- [1]88:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 10, 'd2', 'red', false, 'v2', 111, 222, 22.5, 13.3, true, '2020-10-11', 1702277179000, 'sad', X'ae' )
 STRICT{
 0
 }
 
 Elapsed Time: 0.0.2
--- [1]93:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 11, 'd2', 'red', null, 'v2', 111, 20, 2, 11.3, true, null, 1702277189000, 'sad', X'ae' )
+-- [1]93:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 11, 'd2', 'red', null, 'v2', 111, 20, 2, 11.3, true, null, 1702277199000, 'sad', X'ae' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.0
--- [1]98:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1702277189000, 'sad', X'ae' )
+Elapsed Time: 0.0.1
+-- [1]98:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1712277189000, 'sad', X'ae' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 
 -- [1]101:select * from Table_A order by time
 STRICT{
@@ -107,7 +107,7 @@ time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)   
 1970-01-01T08:00:00.0|d1                     |orange             |true             |v2            |5              |121            |222.1          |12.2            |false            |2022-10-01    |2024-08-19T14:46:29|ertbsad         |0x24ad         |
 02+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|d1                     |orange             |true             |v3            |13             |250            |1.1            |333.3           |true             |2023-11-01    |2024-01-01T02:19:49|zsefr345Der     |0xa2cd         |
+1970-01-01T08:00:00.0|d1                     |orange             |true             |v3            |13             |250            |1.1            |333.3           |true             |2023-11-01    |2024-08-19T13:53:09|zsefr345Der     |0xa2cd         |
 03+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1970-01-01T08:00:00.0|d1                     |orange             |false            |v2            |4              |6              |21.1           |44.2            |false            |2023-09-01    |2023-12-20T12:49:49|sdf             |0x24           |
@@ -116,7 +116,7 @@ time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)   
 1970-01-01T08:00:00.0|d1                     |orange             |false            |v1            |122            |110            |2.2            |9.9             |false            |2022-11-01    |2023-11-27T09:15:39|cfghesdgfaase   |0xcd           |
 05+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|d1                     |orange             |false            |v3            |8              |999            |123.1          |0.101           |true             |2002-01-01    |2024-08-19T14:46:29|ert             |0x4d           |
+1970-01-01T08:00:00.0|d1                     |orange             |false            |v3            |8              |999            |123.1          |0.101           |true             |2002-01-01    |2024-08-19T14:31:29|ert             |0x4d           |
 06+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1970-01-01T08:00:00.0|d2                     |null               |true             |v1            |0              |110            |22.2           |1.8             |true             |2023-06-01    |2022-01-25T01:46:40|test111         |0xac           |
@@ -128,18 +128,18 @@ time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s0(BOOLEAN)   
 1970-01-01T08:00:00.0|d2                     |null               |false            |v1            |1110           |888            |10.1           |11.1            |true             |2023-11-11    |2023-11-11T14:46:29|ueu             |0xce           |
 09+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|d2                     |null               |false            |v2            |111            |222            |22.5           |13.3            |true             |2020-10-11    |2023-12-11T14:46:29|sad             |0xae           |
+1970-01-01T08:00:00.0|d2                     |null               |false            |v2            |111            |222            |22.5           |13.3            |true             |2020-10-11    |2023-12-11T14:46:19|sad             |0xae           |
 10+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|d2                     |null               |null             |v2            |111            |20             |2.0            |11.3            |true             |null          |2023-12-11T14:46:29|sad             |0xae           |
+1970-01-01T08:00:00.0|d2                     |null               |null             |v2            |111            |20             |2.0            |11.3            |true             |null          |2023-12-11T14:46:39|sad             |0xae           |
 11+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|d2                     |null               |true             |v2            |null           |22             |2.5            |13.3            |true             |null          |2023-12-11T14:46:29|sad             |0xae           |
+1970-01-01T08:00:00.0|d2                     |null               |true             |v2            |null           |22             |2.5            |13.3            |true             |null          |2024-04-05T08:33:09|sad             |0xae           |
 12+08:00             |                       |                   |                 |              |               |               |               |                |                 |              |.000+08:00         |                |               |
 总数目：12
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.4
 
 -- [1]105:select s0, cast(s0 as TEXT) from table_a order by time
 STRICT{
@@ -171,7 +171,7 @@ true             |true             |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]106:select s0, cast(s0 as INT32) from table_a order by time
 STRICT{
@@ -203,7 +203,7 @@ true             |1                 |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]107:select s0, cast(s0 as INT64) from table_a order by time
 STRICT{
@@ -267,7 +267,7 @@ true             |1                 |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]109:select s0, cast(s0 as FLOAT) from table_a order by time
 STRICT{
@@ -299,7 +299,7 @@ true             |1.0               |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]110:select s0, cast(s0 as DOUBLE) from table_a order by time
 STRICT{
@@ -331,7 +331,7 @@ true             |1.0                |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]111:select s0, cast(s0 as DATE) from table_a order by time
 STRICT{
@@ -406,7 +406,7 @@ true             |1970-01-01T08:00:00.00|
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]113:select s0, cast(s0 as STRING) from table_a order by time
 STRICT{
@@ -530,7 +530,7 @@ v2            |v2                 |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]125:select s1, cast(s1 as BLOB) from table_a order by time
 STRICT{
@@ -562,7 +562,7 @@ v2            |0x7632           |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.4
 
 -- [1]128:select s2, cast(s2 as BOOLEAN) from table_a order by time
 STRICT{
@@ -594,7 +594,7 @@ null           |null                |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.3
 
 -- [1]129:select s2, cast(s2 as TEXT) from table_a order by time
 STRICT{
@@ -626,7 +626,7 @@ null           |null             |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.4
 
 -- [1]130:select s2, cast(s2 as INT64) from table_a order by time
 STRICT{
@@ -658,7 +658,7 @@ null           |null              |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.3
 
 -- [1]131:select s2, cast(s2 as FLOAT) from table_a order by time
 STRICT{
@@ -690,7 +690,7 @@ null           |null              |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]132:select s2, cast(s2 as DOUBLE) from table_a order by time
 STRICT{
@@ -722,7 +722,7 @@ null           |null               |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]133:select s2, cast(s2 as DATE) from table_a order by time
 STRICT{
@@ -754,7 +754,7 @@ null           |null             |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]134:select s2, cast(s2 as TIMESTAMP) from table_a order by time
 STRICT{
@@ -797,7 +797,7 @@ null           |null                  |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]135:select s2, cast(s2 as STRING) from table_a order by time
 STRICT{
@@ -893,7 +893,7 @@ s3(INT64)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]140:select s3, cast(s3 as TEXT) from table_a order by time
 STRICT{
@@ -925,7 +925,7 @@ s3(INT64)      |_col1(TEXT)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]141:select s3, cast(s3 as INT32) from table_a order by time
 STRICT{
@@ -957,7 +957,7 @@ s3(INT64)      |_col1(INT32)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]142:select s3, cast(s3 as FLOAT) from table_a order by time
 STRICT{
@@ -989,7 +989,7 @@ s3(INT64)      |_col1(FLOAT)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]143:select s3, cast(s3 as DOUBLE) from table_a order by time
 STRICT{
@@ -1021,7 +1021,7 @@ s3(INT64)      |_col1(DOUBLE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.4
 
 -- [1]144:select s3, cast(s3 as DATE) from table_a order by time
 STRICT{
@@ -1053,7 +1053,7 @@ s3(INT64)      |_col1(DATE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.4
 
 -- [1]145:select s3, cast(s3 as TIMESTAMP) from table_a order by time
 STRICT{
@@ -1097,7 +1097,7 @@ s3(INT64)      |_col1(TIMESTAMP)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]146:select s3, cast(s3 as STRING) from table_a order by time
 STRICT{
@@ -1129,7 +1129,7 @@ s3(INT64)      |_col1(STRING)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]147:select s3, cast(s3 as BLOB) from table_a order by time
 STRICT{
@@ -1173,7 +1173,7 @@ s3(INT64)      |_col1(BLOB)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]150:select s4, cast(s4 as BOOLEAN) from table_a order by time
 STRICT{
@@ -1269,7 +1269,7 @@ s4(FLOAT)      |_col1(INT32)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]153:select s4, cast(s4 as INT64) from table_a order by time
 STRICT{
@@ -1301,7 +1301,7 @@ s4(FLOAT)      |_col1(INT64)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.4
 
 -- [1]154:select s4, cast(s4 as DOUBLE) from table_a order by time
 STRICT{
@@ -1333,7 +1333,7 @@ s4(FLOAT)      |_col1(DOUBLE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.4
 
 -- [1]155:select s4, cast(s4 as DATE) from table_a order by time
 STRICT{
@@ -1365,7 +1365,7 @@ s4(FLOAT)      |_col1(DATE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]156:select s4, cast(s4 as TIMESTAMP) from table_a order by time
 STRICT{
@@ -1409,7 +1409,7 @@ s4(FLOAT)      |_col1(TIMESTAMP)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]157:select s4, cast(s4 as STRING) from table_a order by time
 STRICT{
@@ -1441,7 +1441,7 @@ s4(FLOAT)      |_col1(STRING)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]158:select s4, cast(s4 as BLOB) from table_a order by time
 STRICT{
@@ -1473,7 +1473,7 @@ s4(FLOAT)      |_col1(BLOB)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]161:select s5, cast(s5 as BOOLEAN) from table_a order by time
 STRICT{
@@ -1505,7 +1505,7 @@ s5(DOUBLE)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.3
 
 -- [1]162:select s5, cast(s5 as TEXT) from table_a order by time
 STRICT{
@@ -1537,7 +1537,7 @@ s5(DOUBLE)      |_col1(TEXT)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]163:select s5, cast(s5 as INT32) from table_a order by time
 STRICT{
@@ -1569,7 +1569,7 @@ s5(DOUBLE)      |_col1(INT32)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]164:select s5, cast(s5 as INT64) from table_a order by time
 STRICT{
@@ -1601,7 +1601,7 @@ s5(DOUBLE)      |_col1(INT64)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]165:select s5, cast(s5 as FLOAT) from table_a order by time
 STRICT{
@@ -1633,7 +1633,7 @@ s5(DOUBLE)      |_col1(FLOAT)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]166:select s5, cast(s5 as DATE) from table_a order by time
 STRICT{
@@ -1665,7 +1665,7 @@ s5(DOUBLE)      |_col1(DATE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.4
 
 -- [1]167:select s5, cast(s5 as TIMESTAMP) from table_a order by time
 STRICT{
@@ -1709,7 +1709,7 @@ s5(DOUBLE)      |_col1(TIMESTAMP)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]168:select s5, cast(s5 as STRING) from table_a order by time
 STRICT{
@@ -1741,7 +1741,7 @@ s5(DOUBLE)      |_col1(STRING)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]169:select s5, cast(s5 as BLOB) from table_a order by time
 STRICT{
@@ -1785,7 +1785,7 @@ s5(DOUBLE)      |_col1(BLOB)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]172:select s7, cast(s7 as BOOLEAN) from table_a order by s7
 STRICT{
@@ -1849,7 +1849,7 @@ null          |null             |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]174:select s7, cast(s7 as INT32) from table_a order by s7
 STRICT{
@@ -1881,7 +1881,7 @@ null          |null              |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]175:select s7, cast(s7 as INT64) from table_a order by s7
 STRICT{
@@ -1913,7 +1913,7 @@ null          |null              |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]176:select s7, cast(s7 as FLOAT) from table_a order by s7
 STRICT{
@@ -1945,7 +1945,7 @@ null          |null              |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]177:select s7, cast(s7 as DOUBLE) from table_a order by s7
 STRICT{
@@ -2083,7 +2083,7 @@ null          |null             |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]183:select s8, cast(s8 as BOOLEAN) from table_a order by s8
 STRICT{
@@ -2104,22 +2104,22 @@ s8(TIMESTAMP)      |_col1(BOOLEAN)      |
 2023-11-27T09:15:39|true                |
 .000+08:00         |                    |
 ---------------------------------------
-2023-12-11T14:46:29|true                |
+2023-12-11T14:46:19|true                |
 .000+08:00         |                    |
 ---------------------------------------
-2023-12-11T14:46:29|true                |
-.000+08:00         |                    |
----------------------------------------
-2023-12-11T14:46:29|true                |
+2023-12-11T14:46:39|true                |
 .000+08:00         |                    |
 ---------------------------------------
 2023-12-20T12:49:49|true                |
 .000+08:00         |                    |
 ---------------------------------------
-2024-01-01T02:19:49|true                |
+2024-04-05T08:33:09|true                |
 .000+08:00         |                    |
 ---------------------------------------
-2024-08-19T14:46:29|true                |
+2024-08-19T13:53:09|true                |
+.000+08:00         |                    |
+---------------------------------------
+2024-08-19T14:31:29|true                |
 .000+08:00         |                    |
 ---------------------------------------
 2024-08-19T14:46:29|true                |
@@ -2127,7 +2127,7 @@ s8(TIMESTAMP)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]184:select s8, cast(s8 as TEXT) from table_a order by s8
 STRICT{
@@ -2148,22 +2148,22 @@ s8(TIMESTAMP)      |_col1(TEXT)      |
 2023-11-27T09:15:39|2023-11-27T09:15:|
 .000+08:00         |39               |
 ------------------------------------
-2023-12-11T14:46:29|2023-12-11T14:46:|
-.000+08:00         |29               |
+2023-12-11T14:46:19|2023-12-11T14:46:|
+.000+08:00         |19               |
 ------------------------------------
-2023-12-11T14:46:29|2023-12-11T14:46:|
-.000+08:00         |29               |
-------------------------------------
-2023-12-11T14:46:29|2023-12-11T14:46:|
-.000+08:00         |29               |
+2023-12-11T14:46:39|2023-12-11T14:46:|
+.000+08:00         |39               |
 ------------------------------------
 2023-12-20T12:49:49|2023-12-20T12:49:|
 .000+08:00         |49               |
 ------------------------------------
-2024-01-01T02:19:49|2024-01-01T02:19:|
-.000+08:00         |49               |
+2024-04-05T08:33:09|2024-04-05T08:33:|
+.000+08:00         |09               |
 ------------------------------------
-2024-08-19T14:46:29|2024-08-19T14:46:|
+2024-08-19T13:53:09|2024-08-19T13:53:|
+.000+08:00         |09               |
+------------------------------------
+2024-08-19T14:31:29|2024-08-19T14:31:|
 .000+08:00         |29               |
 ------------------------------------
 2024-08-19T14:46:29|2024-08-19T14:46:|
@@ -2174,7 +2174,7 @@ s8(TIMESTAMP)      |_col1(TEXT)      |
 Elapsed Time: 0.0.3
 -- [1]185:select s8, cast(s8 as INT32) from table_a order by s8
 STRICT{
-SQLSTATE : 701: long value 1643046400000 is out of range of integer value.
+SQLSTATE : 701: long value 1633046400000 is out of range of integer value.
 }
 
 -- [1]186:select s8, cast(s8 as INT64) from table_a order by s8
@@ -2196,22 +2196,22 @@ s8(TIMESTAMP)      |_col1(INT64)      |
 2023-11-27T09:15:39|1701047739000     |
 .000+08:00         |                  |
 -------------------------------------
-2023-12-11T14:46:29|1702277189000     |
+2023-12-11T14:46:19|1702277179000     |
 .000+08:00         |                  |
 -------------------------------------
-2023-12-11T14:46:29|1702277189000     |
-.000+08:00         |                  |
--------------------------------------
-2023-12-11T14:46:29|1702277189000     |
+2023-12-11T14:46:39|1702277199000     |
 .000+08:00         |                  |
 -------------------------------------
 2023-12-20T12:49:49|1703047789000     |
 .000+08:00         |                  |
 -------------------------------------
-2024-01-01T02:19:49|1704046789000     |
+2024-04-05T08:33:09|1712277189000     |
 .000+08:00         |                  |
 -------------------------------------
-2024-08-19T14:46:29|1724049989000     |
+2024-08-19T13:53:09|1724046789000     |
+.000+08:00         |                  |
+-------------------------------------
+2024-08-19T14:31:29|1724049089000     |
 .000+08:00         |                  |
 -------------------------------------
 2024-08-19T14:46:29|1724049989000     |
@@ -2219,7 +2219,7 @@ s8(TIMESTAMP)      |_col1(INT64)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]187:select s8, cast(s8 as FLOAT) from table_a order by s8
 STRICT{
@@ -2240,22 +2240,22 @@ s8(TIMESTAMP)      |_col1(FLOAT)      |
 2023-11-27T09:15:39|1.7010477E12      |
 .000+08:00         |                  |
 -------------------------------------
-2023-12-11T14:46:29|1.70227715E12     |
+2023-12-11T14:46:19|1.70227715E12     |
 .000+08:00         |                  |
 -------------------------------------
-2023-12-11T14:46:29|1.70227715E12     |
-.000+08:00         |                  |
--------------------------------------
-2023-12-11T14:46:29|1.70227715E12     |
+2023-12-11T14:46:39|1.70227715E12     |
 .000+08:00         |                  |
 -------------------------------------
 2023-12-20T12:49:49|1.70304773E12     |
 .000+08:00         |                  |
 -------------------------------------
-2024-01-01T02:19:49|1.70404676E12     |
+2024-04-05T08:33:09|1.71227716E12     |
 .000+08:00         |                  |
 -------------------------------------
-2024-08-19T14:46:29|1.72405005E12     |
+2024-08-19T13:53:09|1.72404677E12     |
+.000+08:00         |                  |
+-------------------------------------
+2024-08-19T14:31:29|1.72404913E12     |
 .000+08:00         |                  |
 -------------------------------------
 2024-08-19T14:46:29|1.72405005E12     |
@@ -2263,7 +2263,7 @@ s8(TIMESTAMP)      |_col1(FLOAT)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]188:select s8, cast(s8 as DOUBLE) from table_a order by s8
 STRICT{
@@ -2284,22 +2284,22 @@ s8(TIMESTAMP)      |_col1(DOUBLE)      |
 2023-11-27T09:15:39|1.701047739E12     |
 .000+08:00         |                   |
 --------------------------------------
-2023-12-11T14:46:29|1.702277189E12     |
+2023-12-11T14:46:19|1.702277179E12     |
 .000+08:00         |                   |
 --------------------------------------
-2023-12-11T14:46:29|1.702277189E12     |
-.000+08:00         |                   |
---------------------------------------
-2023-12-11T14:46:29|1.702277189E12     |
+2023-12-11T14:46:39|1.702277199E12     |
 .000+08:00         |                   |
 --------------------------------------
 2023-12-20T12:49:49|1.703047789E12     |
 .000+08:00         |                   |
 --------------------------------------
-2024-01-01T02:19:49|1.704046789E12     |
+2024-04-05T08:33:09|1.712277189E12     |
 .000+08:00         |                   |
 --------------------------------------
-2024-08-19T14:46:29|1.724049989E12     |
+2024-08-19T13:53:09|1.724046789E12     |
+.000+08:00         |                   |
+--------------------------------------
+2024-08-19T14:31:29|1.724049089E12     |
 .000+08:00         |                   |
 --------------------------------------
 2024-08-19T14:46:29|1.724049989E12     |
@@ -2328,22 +2328,22 @@ s8(TIMESTAMP)      |_col1(DATE)      |
 2023-11-27T09:15:39|2023-11-27       |
 .000+08:00         |                 |
 ------------------------------------
-2023-12-11T14:46:29|2023-12-11       |
+2023-12-11T14:46:19|2023-12-11       |
 .000+08:00         |                 |
 ------------------------------------
-2023-12-11T14:46:29|2023-12-11       |
-.000+08:00         |                 |
-------------------------------------
-2023-12-11T14:46:29|2023-12-11       |
+2023-12-11T14:46:39|2023-12-11       |
 .000+08:00         |                 |
 ------------------------------------
 2023-12-20T12:49:49|2023-12-20       |
 .000+08:00         |                 |
 ------------------------------------
-2024-01-01T02:19:49|2024-01-01       |
+2024-04-05T08:33:09|2024-04-05       |
 .000+08:00         |                 |
 ------------------------------------
-2024-08-19T14:46:29|2024-08-19       |
+2024-08-19T13:53:09|2024-08-19       |
+.000+08:00         |                 |
+------------------------------------
+2024-08-19T14:31:29|2024-08-19       |
 .000+08:00         |                 |
 ------------------------------------
 2024-08-19T14:46:29|2024-08-19       |
@@ -2351,7 +2351,7 @@ s8(TIMESTAMP)      |_col1(DATE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]190:select s8, cast(s8 as STRING) from table_a order by s8
 STRICT{
@@ -2372,22 +2372,22 @@ s8(TIMESTAMP)      |_col1(STRING)      |
 2023-11-27T09:15:39|2023-11-27T09:15:39|
 .000+08:00         |                   |
 --------------------------------------
-2023-12-11T14:46:29|2023-12-11T14:46:29|
+2023-12-11T14:46:19|2023-12-11T14:46:19|
 .000+08:00         |                   |
 --------------------------------------
-2023-12-11T14:46:29|2023-12-11T14:46:29|
-.000+08:00         |                   |
---------------------------------------
-2023-12-11T14:46:29|2023-12-11T14:46:29|
+2023-12-11T14:46:39|2023-12-11T14:46:39|
 .000+08:00         |                   |
 --------------------------------------
 2023-12-20T12:49:49|2023-12-20T12:49:49|
 .000+08:00         |                   |
 --------------------------------------
-2024-01-01T02:19:49|2024-01-01T02:19:49|
+2024-04-05T08:33:09|2024-04-05T08:33:09|
 .000+08:00         |                   |
 --------------------------------------
-2024-08-19T14:46:29|2024-08-19T14:46:29|
+2024-08-19T13:53:09|2024-08-19T13:53:09|
+.000+08:00         |                   |
+--------------------------------------
+2024-08-19T14:31:29|2024-08-19T14:31:29|
 .000+08:00         |                   |
 --------------------------------------
 2024-08-19T14:46:29|2024-08-19T14:46:29|
@@ -2395,7 +2395,7 @@ s8(TIMESTAMP)      |_col1(STRING)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]191:select s8, cast(s8 as BLOB) from table_a order by s8
 STRICT{
@@ -2416,22 +2416,22 @@ s8(TIMESTAMP)      |_col1(BLOB)      |
 2023-11-27T09:15:39|0x0000018c0e58a27|
 .000+08:00         |8                |
 ------------------------------------
-2023-12-11T14:46:29|0x0000018c57a08d8|
+2023-12-11T14:46:19|0x0000018c57a0667|
 .000+08:00         |8                |
 ------------------------------------
-2023-12-11T14:46:29|0x0000018c57a08d8|
-.000+08:00         |8                |
-------------------------------------
-2023-12-11T14:46:29|0x0000018c57a08d8|
+2023-12-11T14:46:39|0x0000018c57a0b49|
 .000+08:00         |8                |
 ------------------------------------
 2023-12-20T12:49:49|0x0000018c858ef9c|
 .000+08:00         |8                |
 ------------------------------------
-2024-01-01T02:19:49|0x0000018cc11a818|
+2024-04-05T08:33:09|0x0000018eabac718|
 .000+08:00         |8                |
 ------------------------------------
-2024-08-19T14:46:29|0x0000019169631d8|
+2024-08-19T13:53:09|0x000001916932498|
+.000+08:00         |8                |
+------------------------------------
+2024-08-19T14:31:29|0x00000191695561e|
 .000+08:00         |8                |
 ------------------------------------
 2024-08-19T14:46:29|0x0000019169631d8|
@@ -2439,10 +2439,10 @@ s8(TIMESTAMP)      |_col1(BLOB)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 -- [1]194:select s9, cast(s9 as BOOLEAN) from table_a order by s9
 STRICT{
-SQLSTATE : 701: Invalid text input for boolean type: test111
+SQLSTATE : 701: Invalid text input for boolean type: abcd
 }
 
 -- [1]195:select s9, cast(s9 as TEXT) from table_a order by s9
@@ -2475,7 +2475,7 @@ zsefr345Der     |zsefr345Der      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 -- [1]196:select s9, cast(s9 as INT32) from table_a order by s9
 STRICT{
 SQLSTATE : 701: Cannot cast abcd to INT32 type
@@ -2486,11 +2486,11 @@ SQLSTATE : 701: Cannot cast abcd to INT64 type
 }
 -- [1]198:select s9, cast(s9 as FLOAT) from table_a order by s9
 STRICT{
-SQLSTATE : 701: Cannot cast test111 to FLOAT type
+SQLSTATE : 701: Cannot cast abcd to FLOAT type
 }
 -- [1]199:select s9, cast(s9 as DOUBLE) from table_a order by s9
 STRICT{
-SQLSTATE : 701: Cannot cast abcd to DOUBLE type
+SQLSTATE : 701: Cannot cast test111 to DOUBLE type
 }
 -- [1]200:select s9, cast(s9 as DATE) from table_a order by s9
 STRICT{
@@ -2533,7 +2533,7 @@ zsefr345Der     |0x7a7365667233343|
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 -- [1]205:select s10, cast(s10 as BOOLEAN) from table_a order by s10
 STRICT{
 SQLSTATE : 701: Invalid text input for boolean type: ��
@@ -2569,18 +2569,18 @@ s10(BLOB)      |_col1(TEXT)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 -- [1]207:select s10, cast(s10 as INT32) from table_a order by s10
 STRICT{
 SQLSTATE : 701: Cannot cast �� to INT32 type
 }
 -- [1]208:select s10, cast(s10 as INT64) from table_a order by s10
 STRICT{
-SQLSTATE : 701: Cannot cast � to INT64 type
+SQLSTATE : 701: Cannot cast �� to INT64 type
 }
 -- [1]209:select s10, cast(s10 as FLOAT) from table_a order by s10
 STRICT{
-SQLSTATE : 701: Cannot cast � to FLOAT type
+SQLSTATE : 701: Cannot cast �� to FLOAT type
 }
 -- [1]210:select s10, cast(s10 as DOUBLE) from table_a order by s10
 STRICT{
@@ -2588,7 +2588,7 @@ SQLSTATE : 701: Cannot cast �� to DOUBLE type
 }
 -- [1]211:select s10, cast(s10 as DATE) from table_a order by s10
 STRICT{
-SQLSTATE : 701: Cannot cast � to DATE type
+SQLSTATE : 701: Cannot cast �� to DATE type
 }
 -- [1]212:select s10, cast(s10 as TIMESTAMP) from table_a order by s10
 STRICT{
@@ -2625,4 +2625,4 @@ s10(BLOB)      |_col1(BLOB)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3

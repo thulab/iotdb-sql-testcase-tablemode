@@ -43,6 +43,7 @@ show cluster details;
 <<CHECKCODE;
 show confignodes;
 show datanodes;
+<<CHECKCODE;
 show regions;
 <<CHECKCODE;
 show schema regions;

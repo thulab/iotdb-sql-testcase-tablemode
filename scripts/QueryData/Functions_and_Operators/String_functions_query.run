@@ -236,7 +236,7 @@ select s1, strpos(s1,'a') as strpos_result from table_a;
 select s9, strpos(s9,'y') as strpos_result from table_a;
 
 --13. starts_with:检查一个字符串是否以一个指定的前缀开头
--13.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
+--13.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
 select starts_with() from table_a; <<SQLSTATE;
 select starts_with(s2) from table_a; <<SQLSTATE;
 select starts_with(s3) from table_a; <<SQLSTATE;
@@ -253,7 +253,7 @@ select s1, starts_with(s1, 'A') as starts_with_result from table_a;
 select s9, starts_with(s9, 'S') as starts_with_result from table_a;
 
 --14. ends_with
--14.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
+--14.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
 select ends_with() from table_a; <<SQLSTATE;
 select ends_with(s2) from table_a; <<SQLSTATE;
 select ends_with(s3) from table_a; <<SQLSTATE;
@@ -270,7 +270,7 @@ select s1, ends_with(s1, 'ca') as ends_with_result from table_a;
 select s9, ends_with(trim(s9), 'd') as ends_with_result from table_a;
 
 --15. concat：CONCAT 函数将联接两个表达式并返回生成的表达式
--15.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
+--15.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
 select concat() from table_a; <<SQLSTATE;
 select concat(s1,s2) from table_a; <<SQLSTATE;
 select concat(s1,s3) from table_a; <<SQLSTATE;
@@ -287,7 +287,7 @@ select s1, s9, concat(s1 || s9) from table_a; <<SQLSTATE;
 select s1, s9, device_id, color, concat(s1 || s9, device_id || color) as concat_result from table_a;
 
 --16. strcmp：用于比较两个字符串
--16.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
+--16.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
 select strcmp() from table_a; <<SQLSTATE;
 select strcmp(s1,s2) from table_a; <<SQLSTATE;
 select strcmp(s1,s3) from table_a; <<SQLSTATE;

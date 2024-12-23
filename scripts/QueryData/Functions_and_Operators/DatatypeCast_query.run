@@ -49,7 +49,7 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-3, 'd1', 'yellow', true, 'v3', 13, 250, 1.1, 333.3, true, '2023-11-01', 1704046789000, 'zsefr345Der', X'a2cd'
+3, 'd1', 'yellow', true, 'v3', 13, 250, 1.1, 333.3, true, '2023-11-01', 1724046789000, 'zsefr345Der', X'a2cd'
 );
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
@@ -64,7 +64,7 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-6, 'd1', 'orange', false, 'v3', 8, 999, 123.1, 0.101, true, '2002-01-01', 1724049989000, 'ert', X'4d'
+6, 'd1', 'orange', false, 'v3', 8, 999, 123.1, 0.101, true, '2002-01-01', 1724049089000, 'ert', X'4d'
 );
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
@@ -84,17 +84,17 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-10, 'd2', 'red', false, 'v2', 111, 222, 22.5, 13.3, true, '2020-10-11', 1702277189000, 'sad', X'ae'
+10, 'd2', 'red', false, 'v2', 111, 222, 22.5, 13.3, true, '2020-10-11', 1702277179000, 'sad', X'ae'
 );
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-11, 'd2', 'red', null, 'v2', 111, 20, 2, 11.3, true, null, 1702277189000, 'sad', X'ae'
+11, 'd2', 'red', null, 'v2', 111, 20, 2, 11.3, true, null, 1702277199000, 'sad', X'ae'
 );
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1702277189000, 'sad', X'ae'
+12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1712277189000, 'sad', X'ae'
 );
  
 --7. 原始数据查询：

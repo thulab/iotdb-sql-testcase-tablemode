@@ -8,17 +8,17 @@ STRICT{
 CurrentSqlDialect(STRING)      |
 -------------------------------
 TABLE                          |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.1
 
 -- [1]15:SHOW CURRENT_USER
 STRICT{
 CurrentUser(STRING)      |
 -------------------------
 root                     |
-总数目：1
+鎬绘暟鐩細1
 }
 
 Elapsed Time: 0.0.1
@@ -28,7 +28,7 @@ STRICT{
 CurrentDatabase(STRING)      |
 -----------------------------
 null                         |
-总数目：1
+鎬绘暟鐩細1
 }
 
 Elapsed Time: 0.0.1
@@ -42,10 +42,10 @@ STRICT{
 CurrentDatabase(STRING)      |
 -----------------------------
 test                         |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]25:SHOW VERSION
 STRICT{
 PASS

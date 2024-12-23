@@ -6,6 +6,8 @@ connect root/root;
 --0.清理数据：
 drop database test_db;
 <<NULL;
+drop database test;
+<<NULL;
 
 --1. 创建数据库
 --1.1 不带TTL的数据库

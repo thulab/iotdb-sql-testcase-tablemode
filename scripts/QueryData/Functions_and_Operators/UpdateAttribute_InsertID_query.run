@@ -38,7 +38,7 @@ update t1 set model_id='model_01';
 --8. 查询数据，然后插入ID数值，最后查询数据
 select * from t1;
 insert into t1(time,device_id) values(1,'d1');
-select * from t1;
+select * from t1 order by device_id;
 select * from t1 where device_id is null; 
 
 --清理数据：

@@ -29,7 +29,7 @@ insert into table_1(time, model_id, int32) values(2, '', 2);
 flush;
 
 --8. 查询数据
-select * from table_1;
+select * from table_1 order by time;
 
 --9. 删除表，再创建表
 drop table table_1;
@@ -40,7 +40,7 @@ create table table_1(device_id string ID, model_id string ID, int32 INT32 measur
 insert into table_1(time, device_id, int32) values(1, 'd1', 1);
 insert into table_1(time, model_id, int32) values(2, '', 2);
 flush;
-select * from table_1;
+select * from table_1 order by time;
 
 --清理数据：
 drop database test_db;

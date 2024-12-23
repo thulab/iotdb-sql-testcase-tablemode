@@ -37,12 +37,12 @@ insert into table_a1(time,device_id,color,s1,s2) values(11,'d2','blue',11,11.1);
 insert into table_a1(time,device_id,color,s1) values(20,'d3','green',21);
 
 --7. 数据查询
-select * from table_a1;
+select * from table_a1 order by time;
 select time,s2,s3 from table_a1 where device_id='d1';
 select s1,s2 from table_a1 where device_id='d2';
 select time,s1,s3 from table_a1 where device_id='d3';
 select s1, s2, s3 from table_a1 where color='blue';
-select time, s1, s2, s3 from table_a1 where  time >= 10 and time <= 20;
+select time, s1, s2, s3 from table_a1 where  time >= 10 and time <= 20 order by time;
 
 
 --8. 清理数据：删除数据库
