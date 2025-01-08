@@ -6,7 +6,7 @@ PASS
 STRICT{
 PASS
 }
--- [1]16:create table table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT)
+-- [1]16:create table table1(device_id STRING TAG, color STRING ATTRIBUTE, s1 TEXT FIELD, s2 INT32 FIELD)
 STRICT{
 SQLSTATE : 701: database is not specified
 }
@@ -14,15 +14,15 @@ SQLSTATE : 701: database is not specified
 STRICT{
 PASS
 }
--- [1]30:create table device_type_1 (     "地区" STRING ID,     "厂号" STRING ID,     "设备号" STRING ID,     "温度" FLOAT MEASUREMENT,     "排量" DOUBLE MEASUREMENT ) with (TTL=3600000)
+-- [1]30:create table device_type_1 (     "地区" STRING TAG,     "厂号" STRING TAG,     "设备号" STRING TAG,     "温度" FLOAT FIELD,     "排量" DOUBLE FIELD ) with (TTL=3600000)
 STRICT{
 PASS
 }
--- [1]42:create table device_type_2 (     "地区" STRING ID,     "厂号" STRING ID,     "设备号" STRING ID,     "型号" STRING ATTRIBUTE,     "温度" FLOAT MEASUREMENT,     "排量" DOUBLE MEASUREMENT ) with (TTL=3600000)
+-- [1]42:create table device_type_2 (     "地区" STRING TAG,     "厂号" STRING TAG,     "设备号" STRING TAG,     "型号" STRING ATTRIBUTE,     "温度" FLOAT FIELD,     "排量" DOUBLE FIELD ) with (TTL=3600000)
 STRICT{
 PASS
 }
--- [1]55:create table device_type_3 (     "地区" STRING ID,     "厂号" STRING ID,     "设备号" STRING ID,     "型号" STRING ATTRIBUTE,     "温度" FLOAT MEASUREMENT,     "排量" DOUBLE MEASUREMENT, 	"维修周期" DATE MEASUREMENT )
+-- [1]55:create table device_type_3 (     "地区" STRING TAG,     "厂号" STRING TAG,     "设备号" STRING TAG,     "型号" STRING ATTRIBUTE,     "温度" FLOAT FIELD,     "排量" DOUBLE FIELD, 	"维修周期" DATE FIELD )
 STRICT{
 PASS
 }
@@ -39,54 +39,99 @@ device_type_1        |3600000            |
 总数目：3
 }
 
-Elapsed Time: 0.0.2
--- [1]61:describe device_type_1
+Elapsed Time: 0.0.1
+
+-- [1]59:show tables details
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |Status(TEXT)      |
+----------------------------------------------------------
+device_type_3        |INF                |USING             |
+----------------------------------------------------------
+device_type_2        |3600000            |USING             |
+----------------------------------------------------------
+device_type_1        |3600000            |USING             |
+总数目：3
+}
+
+Elapsed Time: 0.0.3
+
+-- [1]60:show tables details from test_db
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |Status(TEXT)      |
+----------------------------------------------------------
+device_type_3        |INF                |USING             |
+----------------------------------------------------------
+device_type_2        |3600000            |USING             |
+----------------------------------------------------------
+device_type_1        |3600000            |USING             |
+总数目：3
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]61:show tables details in test_db
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |Status(TEXT)      |
+----------------------------------------------------------
+device_type_3        |INF                |USING             |
+----------------------------------------------------------
+device_type_2        |3600000            |USING             |
+----------------------------------------------------------
+device_type_1        |3600000            |USING             |
+总数目：3
+}
+
+Elapsed Time: 0.0.1
+-- [1]64:describe device_type_1
 STRICT{
 PASS
 }
--- [1]62:desc device_type_2
+-- [1]65:desc device_type_2
 STRICT{
 PASS
 }
--- [1]63:desc device_type_3
+-- [1]66:desc device_type_3
 STRICT{
 PASS
 }
--- [1]67:create table data.table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT, s3 INT64 MEASUREMENT, s4 FLOAT MEASUREMENT, s5 DOUBLE MEASUREMENT, s6 BOOLEAN MEASUREMENT, s7 DATE MEASUREMENT, s8 TIMESTAMP MEASUREMENT, s9 STRING MEASUREMENT, s10 BLOB MEASUREMENT)
+-- [1]67:describe device_type_3 details
 STRICT{
 PASS
 }
--- [1]70:create table data.table2(time timestamp ID, sensor_1 INT64 MEASUREMENT, sensor_2 FLOAT MEASUREMENT)
+-- [1]72:create table data.table1( device_id STRING TAG, color STRING ATTRIBUTE, s1 TEXT FIELD, s2 INT32 FIELD, s3 INT64 FIELD, s4 FLOAT FIELD, s5 DOUBLE FIELD, s6 BOOLEAN FIELD, s7 DATE FIELD, s8 TIMESTAMP FIELD, s9 STRING FIELD, s10 BLOB FIELD )
+STRICT{
+PASS
+}
+-- [1]77:create table data.table2(time timestamp TAG, sensor_1 INT64 FIELD, sensor_2 FLOAT FIELD)
 STRICT{
 SQLSTATE : 701: The time column category shall be bounded with column name 'time'.
 }
--- [1]74:create table data.table3(device INT64 ID, area STRING ATTRIBUTE, sensor_1 INT64 MEASUREMENT, sensor_2 FLOAT MEASUREMENT)
+-- [1]81:create table data.table3(device INT64 TAG, area STRING ATTRIBUTE, sensor_1 INT64 FIELD, sensor_2 FLOAT FIELD)
 STRICT{
-SQLSTATE : 701: DataType of ID Column should only be STRING, current is INT64
+SQLSTATE : 701: DataType of TAG Column should only be STRING, current is INT64
 }
--- [1]76:create table data.table4(device STRING ID, area TEXT ATTRIBUTE, sensor_1 INT64 MEASUREMENT, sensor_2 FLOAT MEASUREMENT)
+-- [1]83:create table data.table4(device STRING TAG, area TEXT ATTRIBUTE, sensor_1 INT64 FIELD, sensor_2 FLOAT FIELD)
 STRICT{
 SQLSTATE : 701: DataType of ATTRIBUTE Column should only be STRING, current is TEXT
 }
--- [1]80:create table data.table5(device STRING, area STRING, sensor_1 INT64, sensor_2 FLOAT)
+-- [1]87:create table data.table5(device STRING, area STRING, sensor_1 INT64, sensor_2 FLOAT)
 STRICT{
 PASS
 }
--- [1]83:create table data.table6(device ID, area ATTRIBUTE, sensor_1 DOUBLE MEASUREMENT, sensor_2 BOOLEAN MEASUREMENT)
-STRICT{
-PASS
-EXPECT:FAIL
-}
--- [1]87:create table data.table7(device STRING ID, area STRING ATTRIBUTE, s1 BOOLEAN MEASUREMENT, s2 INT32 MEASUREMENT) with (TTL=3600000)
+-- [1]90:create table data.table6(device TAG, area ATTRIBUTE, sensor_1 DOUBLE FIELD, sensor_2 BOOLEAN FIELD)
 STRICT{
 PASS
 }
--- [1]88:create table data.table7(device STRING ID, area STRING ATTRIBUTE, s1 BOOLEAN MEASUREMENT, s2 INT32 MEASUREMENT) with (format='ORC')
+-- [1]93:create table data.table7(device STRING TAG, area STRING ATTRIBUTE, s1 BOOLEAN FIELD, s2 INT32 FIELD) with (TTL=3600000)
+STRICT{
+PASS
+}
+-- [1]94:create table data.table7(device STRING TAG, area STRING ATTRIBUTE, s1 BOOLEAN FIELD, s2 INT32 FIELD) with (format='ORC')
 STRICT{
 SQLSTATE : 701: Table property 'format' is currently not allowed.
 }
 
--- [1]92:show databases
+-- [1]98:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,9 +143,9 @@ test_db             |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
--- [1]93:show tables from test_db
+-- [1]99:show tables from test_db
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -114,7 +159,7 @@ device_type_1        |3600000            |
 
 Elapsed Time: 0.0.1
 
--- [1]94:show tables from data
+-- [1]100:show tables from data
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -130,7 +175,7 @@ table6               |INF                |
 
 Elapsed Time: 0.0.1
 
--- [1]95:show tables in test_db
+-- [1]101:show tables in test_db
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -144,7 +189,7 @@ device_type_1        |3600000            |
 
 Elapsed Time: 0.0.1
 
--- [1]96:show tables in data
+-- [1]102:show tables in data
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -159,19 +204,19 @@ table6               |INF                |
 }
 
 Elapsed Time: 0.0.0
--- [1]99:desc data.table1
+-- [1]105:desc data.table1
 STRICT{
 PASS
 }
--- [1]100:desc data.table5
+-- [1]106:desc data.table5
 STRICT{
 PASS
 }
--- [1]101:desc test_db.device_type_1
+-- [1]107:desc test_db.device_type_1
 STRICT{
 PASS
 }
--- [1]102:desc test_db.device_type_2
+-- [1]108:desc test_db.device_type_2
 STRICT{
 PASS
 }

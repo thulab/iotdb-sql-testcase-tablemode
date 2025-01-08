@@ -15,11 +15,11 @@ use test_db;
 --3. 创建表
 create table Table_A1
 (
-   device_id STRING ID,
+   device_id STRING TAG,
    color STRING ATTRIBUTE,
-   s1 INT32 MEASUREMENT,
-   s2 FLOAT MEASUREMENT,
-   s3 BOOLEAN MEASUREMENT
+   s1 INT32 FIELD,
+   s2 FLOAT FIELD,
+   s3 BOOLEAN FIELD
 );
 
 --4. 查看表

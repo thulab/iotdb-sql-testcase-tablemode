@@ -24,33 +24,33 @@ use test_db;
 --3.1 不设置TTL
 create table table_0
 (
-   	device_id STRING ID,
-	float DOUBLE MEASUREMENT,
-	text TEXT MEASUREMENT
+   	device_id STRING TAG,
+	float DOUBLE FIELD,
+	text TEXT FIELD
 );
 
 create table table_1
 (
-   	device_id STRING ID,
-	text TEXT MEASUREMENT,
-	float FLOAT MEASUREMENT
+   	device_id STRING TAG,
+	text TEXT FIELD,
+	float FLOAT FIELD
 );
 
 --3.2 设置TTL
 create table table_2
 (
-   	device_id STRING ID,
+   	device_id STRING TAG,
     model_id STRING ATTRIBUTE,
-	boolean BOOLEAN MEASUREMENT,
-	int64 INT64 MEASUREMENT,
-	double DOUBLE MEASUREMENT
+	boolean BOOLEAN FIELD,
+	int64 INT64 FIELD,
+	double DOUBLE FIELD
 )
 with
 (TTL=10000);
-create table table_3(device_id string ID, int32 INT32 measurement) with (ttl='inf');
-create table table_4(device_id string ID, int32 INT32 measurement) with (ttl='INF');
-create table table_5(device_id string ID, int32 INT32 measurement) with (ttl=default);
-create table table_6(device_id string ID, int32 INT32 measurement) with (ttl=9999999999);
+create table table_3(device_id string TAG, int32 INT32 FIELD) with (ttl='inf');
+create table table_4(device_id string TAG, int32 INT32 FIELD) with (ttl='INF');
+create table table_5(device_id string TAG, int32 INT32 FIELD) with (ttl=default);
+create table table_6(device_id string TAG, int32 INT32 FIELD) with (ttl=9999999999);
 
 --4. 查看表
 show tables;
@@ -105,9 +105,9 @@ show tables;
 use test;
 
 --10. 创建表
-create table t1(device_id string ID, int32 INT32 measurement);
-create table t2(device_id string ID, int32 INT32 measurement) with (ttl=60000);
-create table t3(device_id string ID, int32 INT32 measurement) with (ttl=3600000);
+create table t1(device_id string TAG, int32 INT32 FIELD);
+create table t2(device_id string TAG, int32 INT32 FIELD) with (ttl=60000);
+create table t3(device_id string TAG, int32 INT32 FIELD) with (ttl=3600000);
 
 --11. 查看数据库test里面的table表信息
 show tables;

@@ -21,16 +21,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.60
+Elapsed Time: 0.0.1
 -- [1]18:use test
 STRICT{
 PASS
 }
--- [1]24:create table ALTER  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]24:create table ALTER  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'ALTER'. Expecting: 'IF', <identifier>
 }
--- [1]33:create table table_01  ( 	ALTER STRING ID )
+-- [1]33:create table table_01  ( 	ALTER STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ALTER'. Expecting: ')', <identifier>
 }
@@ -38,7 +38,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'ALTER'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'ALTER'. Expecting: ')', <identifier>
 }
--- [1]45:create table table_03  ( 	ALTER INT32 MEASUREMENT )
+-- [1]45:create table table_03  ( 	ALTER INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ALTER'. Expecting: ')', <identifier>
 }
@@ -49,7 +49,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.0
 -- [1]52:drop database test
 STRICT{
 PASS
@@ -77,16 +77,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.0
 -- [1]66:use test
 STRICT{
 PASS
 }
--- [1]72:create table AND  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]72:create table AND  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'AND'. Expecting: 'IF', <identifier>
 }
--- [1]81:create table table_01  ( 	AND STRING ID )
+-- [1]81:create table table_01  ( 	AND STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'AND'. Expecting: ')', <identifier>
 }
@@ -94,7 +94,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'AND'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'AND'. Expecting: ')', <identifier>
 }
--- [1]93:create table table_03  ( 	AND INT32 MEASUREMENT )
+-- [1]93:create table table_03  ( 	AND INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'AND'. Expecting: ')', <identifier>
 }
@@ -105,7 +105,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]100:drop database test
 STRICT{
 PASS
@@ -138,11 +138,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]120:create table AS  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]120:create table AS  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'AS'. Expecting: 'IF', <identifier>
 }
--- [1]129:create table table_01  ( 	AS STRING ID )
+-- [1]129:create table table_01  ( 	AS STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'AS'. Expecting: ')', <identifier>
 }
@@ -150,7 +150,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'AS'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'AS'. Expecting: ')', <identifier>
 }
--- [1]141:create table table_03  ( 	AS INT32 MEASUREMENT )
+-- [1]141:create table table_03  ( 	AS INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'AS'. Expecting: ')', <identifier>
 }
@@ -189,16 +189,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]162:use test
 STRICT{
 PASS
 }
--- [1]168:create table BETWEEN  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]168:create table BETWEEN  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'BETWEEN'. Expecting: 'IF', <identifier>
 }
--- [1]177:create table table_01  ( 	BETWEEN STRING ID )
+-- [1]177:create table table_01  ( 	BETWEEN STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'BETWEEN'. Expecting: ')', <identifier>
 }
@@ -206,7 +206,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'BETWEEN'. Expecting: ')', <identifi
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'BETWEEN'. Expecting: ')', <identifier>
 }
--- [1]189:create table table_03  ( 	BETWEEN INT32 MEASUREMENT )
+-- [1]189:create table table_03  ( 	BETWEEN INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'BETWEEN'. Expecting: ')', <identifier>
 }
@@ -217,7 +217,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]196:drop database test
 STRICT{
 PASS
@@ -250,11 +250,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]216:create table BY  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]216:create table BY  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'BY'. Expecting: 'IF', <identifier>
 }
--- [1]225:create table table_01  ( 	BY STRING ID )
+-- [1]225:create table table_01  ( 	BY STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'BY'. Expecting: ')', <identifier>
 }
@@ -262,7 +262,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'BY'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'BY'. Expecting: ')', <identifier>
 }
--- [1]237:create table table_03  ( 	BY INT32 MEASUREMENT )
+-- [1]237:create table table_03  ( 	BY INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'BY'. Expecting: ')', <identifier>
 }
@@ -273,7 +273,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]244:drop database test
 STRICT{
 PASS
@@ -301,16 +301,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]258:use test
 STRICT{
 PASS
 }
--- [1]264:create table CASE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]264:create table CASE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CASE'. Expecting: 'IF', <identifier>
 }
--- [1]273:create table table_01  ( 	CASE STRING ID )
+-- [1]273:create table table_01  ( 	CASE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CASE'. Expecting: ')', <identifier>
 }
@@ -318,7 +318,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CASE'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CASE'. Expecting: ')', <identifier>
 }
--- [1]285:create table table_03  ( 	CASE INT32 MEASUREMENT )
+-- [1]285:create table table_03  ( 	CASE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CASE'. Expecting: ')', <identifier>
 }
@@ -329,7 +329,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]292:drop database test
 STRICT{
 PASS
@@ -357,16 +357,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]306:use test
 STRICT{
 PASS
 }
--- [1]312:create table CAST  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]312:create table CAST  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CAST'. Expecting: 'IF', <identifier>
 }
--- [1]321:create table table_01  ( 	CAST STRING ID )
+-- [1]321:create table table_01  ( 	CAST STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CAST'. Expecting: ')', <identifier>
 }
@@ -374,7 +374,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CAST'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CAST'. Expecting: ')', <identifier>
 }
--- [1]333:create table table_03  ( 	CAST INT32 MEASUREMENT )
+-- [1]333:create table table_03  ( 	CAST INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CAST'. Expecting: ')', <identifier>
 }
@@ -385,7 +385,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]340:drop database test
 STRICT{
 PASS
@@ -413,16 +413,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]354:use test
 STRICT{
 PASS
 }
--- [1]360:create table CONSTRAINT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]360:create table CONSTRAINT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CONSTRAINT'. Expecting: 'IF', <identifier>
 }
--- [1]369:create table table_01  ( 	CONSTRAINT STRING ID )
+-- [1]369:create table table_01  ( 	CONSTRAINT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CONSTRAINT'. Expecting: ')', <identifier>
 }
@@ -430,7 +430,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CONSTRAINT'. Expecting: ')', <ident
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CONSTRAINT'. Expecting: ')', <identifier>
 }
--- [1]381:create table table_03  ( 	CONSTRAINT INT32 MEASUREMENT )
+-- [1]381:create table table_03  ( 	CONSTRAINT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CONSTRAINT'. Expecting: ')', <identifier>
 }
@@ -441,7 +441,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]388:drop database test
 STRICT{
 PASS
@@ -469,16 +469,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]402:use test
 STRICT{
 PASS
 }
--- [1]408:create table CREATE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]408:create table CREATE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CREATE'. Expecting: 'IF', <identifier>
 }
--- [1]417:create table table_01  ( 	CREATE STRING ID )
+-- [1]417:create table table_01  ( 	CREATE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CREATE'. Expecting: ')', <identifier>
 }
@@ -486,7 +486,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CREATE'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CREATE'. Expecting: ')', <identifier>
 }
--- [1]429:create table table_03  ( 	CREATE INT32 MEASUREMENT )
+-- [1]429:create table table_03  ( 	CREATE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CREATE'. Expecting: ')', <identifier>
 }
@@ -497,7 +497,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]436:drop database test
 STRICT{
 PASS
@@ -525,16 +525,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]450:use test
 STRICT{
 PASS
 }
--- [1]456:create table CROSS  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]456:create table CROSS  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CROSS'. Expecting: 'IF', <identifier>
 }
--- [1]465:create table table_01  ( 	CROSS STRING ID )
+-- [1]465:create table table_01  ( 	CROSS STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CROSS'. Expecting: ')', <identifier>
 }
@@ -542,7 +542,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CROSS'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CROSS'. Expecting: ')', <identifier>
 }
--- [1]477:create table table_03  ( 	CROSS INT32 MEASUREMENT )
+-- [1]477:create table table_03  ( 	CROSS INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CROSS'. Expecting: ')', <identifier>
 }
@@ -553,7 +553,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]484:drop database test
 STRICT{
 PASS
@@ -586,11 +586,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]504:create table CUBE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]504:create table CUBE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CUBE'. Expecting: 'IF', <identifier>
 }
--- [1]513:create table table_01  ( 	CUBE STRING ID )
+-- [1]513:create table table_01  ( 	CUBE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CUBE'. Expecting: ')', <identifier>
 }
@@ -598,7 +598,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CUBE'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CUBE'. Expecting: ')', <identifier>
 }
--- [1]525:create table table_03  ( 	CUBE INT32 MEASUREMENT )
+-- [1]525:create table table_03  ( 	CUBE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CUBE'. Expecting: ')', <identifier>
 }
@@ -609,7 +609,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]532:drop database test
 STRICT{
 PASS
@@ -637,16 +637,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]546:use test
 STRICT{
 PASS
 }
--- [1]552:create table CURRENT_CATALOG  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]552:create table CURRENT_CATALOG  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_CATALOG'. Expecting: 'IF', <identifier>
 }
--- [1]561:create table table_01  ( 	CURRENT_CATALOG STRING ID )
+-- [1]561:create table table_01  ( 	CURRENT_CATALOG STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_CATALOG'. Expecting: ')', <identifier>
 }
@@ -654,7 +654,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_CATALOG'. Expecting: ')', <
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CURRENT_CATALOG'. Expecting: ')', <identifier>
 }
--- [1]573:create table table_03  ( 	CURRENT_CATALOG INT32 MEASUREMENT )
+-- [1]573:create table table_03  ( 	CURRENT_CATALOG INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_CATALOG'. Expecting: ')', <identifier>
 }
@@ -693,16 +693,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]594:use test
 STRICT{
 PASS
 }
--- [1]600:create table CURRENT_DATE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]600:create table CURRENT_DATE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_DATE'. Expecting: 'IF', <identifier>
 }
--- [1]609:create table table_01  ( 	CURRENT_DATE STRING ID )
+-- [1]609:create table table_01  ( 	CURRENT_DATE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_DATE'. Expecting: ')', <identifier>
 }
@@ -710,7 +710,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_DATE'. Expecting: ')', <ide
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CURRENT_DATE'. Expecting: ')', <identifier>
 }
--- [1]621:create table table_03  ( 	CURRENT_DATE INT32 MEASUREMENT )
+-- [1]621:create table table_03  ( 	CURRENT_DATE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_DATE'. Expecting: ')', <identifier>
 }
@@ -754,11 +754,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]648:create table CURRENT_PATH  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]648:create table CURRENT_PATH  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_PATH'. Expecting: 'IF', <identifier>
 }
--- [1]657:create table table_01  ( 	CURRENT_PATH STRING ID )
+-- [1]657:create table table_01  ( 	CURRENT_PATH STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_PATH'. Expecting: ')', <identifier>
 }
@@ -766,7 +766,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_PATH'. Expecting: ')', <ide
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CURRENT_PATH'. Expecting: ')', <identifier>
 }
--- [1]669:create table table_03  ( 	CURRENT_PATH INT32 MEASUREMENT )
+-- [1]669:create table table_03  ( 	CURRENT_PATH INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_PATH'. Expecting: ')', <identifier>
 }
@@ -777,7 +777,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]676:drop database test
 STRICT{
 PASS
@@ -810,11 +810,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]696:create table CURRENT_ROLE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]696:create table CURRENT_ROLE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_ROLE'. Expecting: 'IF', <identifier>
 }
--- [1]705:create table table_01  ( 	CURRENT_ROLE STRING ID )
+-- [1]705:create table table_01  ( 	CURRENT_ROLE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_ROLE'. Expecting: ')', <identifier>
 }
@@ -822,7 +822,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_ROLE'. Expecting: ')', <ide
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CURRENT_ROLE'. Expecting: ')', <identifier>
 }
--- [1]717:create table table_03  ( 	CURRENT_ROLE INT32 MEASUREMENT )
+-- [1]717:create table table_03  ( 	CURRENT_ROLE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_ROLE'. Expecting: ')', <identifier>
 }
@@ -866,11 +866,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]744:create table CURRENT_SCHEMA  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]744:create table CURRENT_SCHEMA  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_SCHEMA'. Expecting: 'IF', <identifier>
 }
--- [1]753:create table table_01  ( 	CURRENT_SCHEMA STRING ID )
+-- [1]753:create table table_01  ( 	CURRENT_SCHEMA STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_SCHEMA'. Expecting: ')', <identifier>
 }
@@ -878,7 +878,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_SCHEMA'. Expecting: ')', <i
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CURRENT_SCHEMA'. Expecting: ')', <identifier>
 }
--- [1]765:create table table_03  ( 	CURRENT_SCHEMA INT32 MEASUREMENT )
+-- [1]765:create table table_03  ( 	CURRENT_SCHEMA INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_SCHEMA'. Expecting: ')', <identifier>
 }
@@ -922,11 +922,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]792:create table CURRENT_TIME  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]792:create table CURRENT_TIME  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_TIME'. Expecting: 'IF', <identifier>
 }
--- [1]801:create table table_01  ( 	CURRENT_TIME STRING ID )
+-- [1]801:create table table_01  ( 	CURRENT_TIME STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_TIME'. Expecting: ')', <identifier>
 }
@@ -934,7 +934,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_TIME'. Expecting: ')', <ide
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CURRENT_TIME'. Expecting: ')', <identifier>
 }
--- [1]813:create table table_03  ( 	CURRENT_TIME INT32 MEASUREMENT )
+-- [1]813:create table table_03  ( 	CURRENT_TIME INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_TIME'. Expecting: ')', <identifier>
 }
@@ -973,16 +973,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]834:use test
 STRICT{
 PASS
 }
--- [1]840:create table CURRENT_TIMESTAMP  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]840:create table CURRENT_TIMESTAMP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_TIMESTAMP'. Expecting: 'IF', <identifier>
 }
--- [1]849:create table table_01  ( 	CURRENT_TIMESTAMP STRING ID )
+-- [1]849:create table table_01  ( 	CURRENT_TIMESTAMP STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_TIMESTAMP'. Expecting: ')', <identifier>
 }
@@ -990,7 +990,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_TIMESTAMP'. Expecting: ')',
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CURRENT_TIMESTAMP'. Expecting: ')', <identifier>
 }
--- [1]861:create table table_03  ( 	CURRENT_TIMESTAMP INT32 MEASUREMENT )
+-- [1]861:create table table_03  ( 	CURRENT_TIMESTAMP INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_TIMESTAMP'. Expecting: ')', <identifier>
 }
@@ -1001,7 +1001,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]868:drop database test
 STRICT{
 PASS
@@ -1029,16 +1029,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]882:use test
 STRICT{
 PASS
 }
--- [1]888:create table CURRENT_USER  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]888:create table CURRENT_USER  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_USER'. Expecting: 'IF', <identifier>
 }
--- [1]897:create table table_01  ( 	CURRENT_USER STRING ID )
+-- [1]897:create table table_01  ( 	CURRENT_USER STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_USER'. Expecting: ')', <identifier>
 }
@@ -1046,7 +1046,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_USER'. Expecting: ')', <ide
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'CURRENT_USER'. Expecting: ')', <identifier>
 }
--- [1]909:create table table_03  ( 	CURRENT_USER INT32 MEASUREMENT )
+-- [1]909:create table table_03  ( 	CURRENT_USER INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'CURRENT_USER'. Expecting: ')', <identifier>
 }
@@ -1090,11 +1090,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]936:create table DEALLOCATE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]936:create table DEALLOCATE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'DEALLOCATE'. Expecting: 'IF', <identifier>
 }
--- [1]945:create table table_01  ( 	DEALLOCATE STRING ID )
+-- [1]945:create table table_01  ( 	DEALLOCATE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'DEALLOCATE'. Expecting: ')', <identifier>
 }
@@ -1102,7 +1102,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'DEALLOCATE'. Expecting: ')', <ident
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'DEALLOCATE'. Expecting: ')', <identifier>
 }
--- [1]957:create table table_03  ( 	DEALLOCATE INT32 MEASUREMENT )
+-- [1]957:create table table_03  ( 	DEALLOCATE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'DEALLOCATE'. Expecting: ')', <identifier>
 }
@@ -1113,7 +1113,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]964:drop database test
 STRICT{
 PASS
@@ -1141,16 +1141,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]978:use test
 STRICT{
 PASS
 }
--- [1]984:create table DELETE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]984:create table DELETE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'DELETE'. Expecting: 'IF', <identifier>
 }
--- [1]993:create table table_01  ( 	DELETE STRING ID )
+-- [1]993:create table table_01  ( 	DELETE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'DELETE'. Expecting: ')', <identifier>
 }
@@ -1158,7 +1158,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'DELETE'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'DELETE'. Expecting: ')', <identifier>
 }
--- [1]1005:create table table_03  ( 	DELETE INT32 MEASUREMENT )
+-- [1]1005:create table table_03  ( 	DELETE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'DELETE'. Expecting: ')', <identifier>
 }
@@ -1202,11 +1202,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1032:create table DESCRIBE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1032:create table DESCRIBE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'DESCRIBE'. Expecting: 'IF', <identifier>
 }
--- [1]1041:create table table_01  ( 	DESCRIBE STRING ID )
+-- [1]1041:create table table_01  ( 	DESCRIBE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'DESCRIBE'. Expecting: ')', <identifier>
 }
@@ -1214,7 +1214,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'DESCRIBE'. Expecting: ')', <identif
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'DESCRIBE'. Expecting: ')', <identifier>
 }
--- [1]1053:create table table_03  ( 	DESCRIBE INT32 MEASUREMENT )
+-- [1]1053:create table table_03  ( 	DESCRIBE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'DESCRIBE'. Expecting: ')', <identifier>
 }
@@ -1225,7 +1225,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1060:drop database test
 STRICT{
 PASS
@@ -1258,11 +1258,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1080:create table DISTINCT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1080:create table DISTINCT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'DISTINCT'. Expecting: 'IF', <identifier>
 }
--- [1]1089:create table table_01  ( 	DISTINCT STRING ID )
+-- [1]1089:create table table_01  ( 	DISTINCT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'DISTINCT'. Expecting: ')', <identifier>
 }
@@ -1270,7 +1270,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'DISTINCT'. Expecting: ')', <identif
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'DISTINCT'. Expecting: ')', <identifier>
 }
--- [1]1101:create table table_03  ( 	DISTINCT INT32 MEASUREMENT )
+-- [1]1101:create table table_03  ( 	DISTINCT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'DISTINCT'. Expecting: ')', <identifier>
 }
@@ -1281,7 +1281,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]1108:drop database test
 STRICT{
 PASS
@@ -1314,11 +1314,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1128:create table DROP  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1128:create table DROP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'DROP'. Expecting: 'IF', <identifier>
 }
--- [1]1137:create table table_01  ( 	DROP STRING ID )
+-- [1]1137:create table table_01  ( 	DROP STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'DROP'. Expecting: ')', <identifier>
 }
@@ -1326,7 +1326,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'DROP'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'DROP'. Expecting: ')', <identifier>
 }
--- [1]1149:create table table_03  ( 	DROP INT32 MEASUREMENT )
+-- [1]1149:create table table_03  ( 	DROP INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'DROP'. Expecting: ')', <identifier>
 }
@@ -1337,7 +1337,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1156:drop database test
 STRICT{
 PASS
@@ -1370,11 +1370,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1176:create table ELSE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1176:create table ELSE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'ELSE'. Expecting: 'IF', <identifier>
 }
--- [1]1185:create table table_01  ( 	ELSE STRING ID )
+-- [1]1185:create table table_01  ( 	ELSE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ELSE'. Expecting: ')', <identifier>
 }
@@ -1382,7 +1382,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'ELSE'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'ELSE'. Expecting: ')', <identifier>
 }
--- [1]1197:create table table_03  ( 	ELSE INT32 MEASUREMENT )
+-- [1]1197:create table table_03  ( 	ELSE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ELSE'. Expecting: ')', <identifier>
 }
@@ -1393,7 +1393,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1204:drop database test
 STRICT{
 PASS
@@ -1426,11 +1426,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1224:create table END  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1224:create table END  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'END'. Expecting: 'IF', <identifier>
 }
--- [1]1233:create table table_01  ( 	END STRING ID )
+-- [1]1233:create table table_01  ( 	END STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'END'. Expecting: ')', <identifier>
 }
@@ -1438,7 +1438,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'END'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'END'. Expecting: ')', <identifier>
 }
--- [1]1245:create table table_03  ( 	END INT32 MEASUREMENT )
+-- [1]1245:create table table_03  ( 	END INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'END'. Expecting: ')', <identifier>
 }
@@ -1449,7 +1449,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1252:drop database test
 STRICT{
 PASS
@@ -1482,11 +1482,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1272:create table ESCAPE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1272:create table ESCAPE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'ESCAPE'. Expecting: 'IF', <identifier>
 }
--- [1]1281:create table table_01  ( 	ESCAPE STRING ID )
+-- [1]1281:create table table_01  ( 	ESCAPE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ESCAPE'. Expecting: ')', <identifier>
 }
@@ -1494,7 +1494,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'ESCAPE'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'ESCAPE'. Expecting: ')', <identifier>
 }
--- [1]1293:create table table_03  ( 	ESCAPE INT32 MEASUREMENT )
+-- [1]1293:create table table_03  ( 	ESCAPE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ESCAPE'. Expecting: ')', <identifier>
 }
@@ -1505,7 +1505,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1300:drop database test
 STRICT{
 PASS
@@ -1533,16 +1533,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1314:use test
 STRICT{
 PASS
 }
--- [1]1320:create table EXCEPT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1320:create table EXCEPT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'EXCEPT'. Expecting: 'IF', <identifier>
 }
--- [1]1329:create table table_01  ( 	EXCEPT STRING ID )
+-- [1]1329:create table table_01  ( 	EXCEPT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'EXCEPT'. Expecting: ')', <identifier>
 }
@@ -1550,7 +1550,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'EXCEPT'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'EXCEPT'. Expecting: ')', <identifier>
 }
--- [1]1341:create table table_03  ( 	EXCEPT INT32 MEASUREMENT )
+-- [1]1341:create table table_03  ( 	EXCEPT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'EXCEPT'. Expecting: ')', <identifier>
 }
@@ -1589,16 +1589,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1362:use test
 STRICT{
 PASS
 }
--- [1]1368:create table EXISTS  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1368:create table EXISTS  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'EXISTS'. Expecting: 'IF', <identifier>
 }
--- [1]1377:create table table_01  ( 	EXISTS STRING ID )
+-- [1]1377:create table table_01  ( 	EXISTS STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'EXISTS'. Expecting: ')', <identifier>
 }
@@ -1606,7 +1606,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'EXISTS'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'EXISTS'. Expecting: ')', <identifier>
 }
--- [1]1389:create table table_03  ( 	EXISTS INT32 MEASUREMENT )
+-- [1]1389:create table table_03  ( 	EXISTS INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'EXISTS'. Expecting: ')', <identifier>
 }
@@ -1650,11 +1650,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1416:create table EXTRACT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1416:create table EXTRACT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'EXTRACT'. Expecting: 'IF', <identifier>
 }
--- [1]1425:create table table_01  ( 	EXTRACT STRING ID )
+-- [1]1425:create table table_01  ( 	EXTRACT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'EXTRACT'. Expecting: ')', <identifier>
 }
@@ -1662,7 +1662,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'EXTRACT'. Expecting: ')', <identifi
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'EXTRACT'. Expecting: ')', <identifier>
 }
--- [1]1437:create table table_03  ( 	EXTRACT INT32 MEASUREMENT )
+-- [1]1437:create table table_03  ( 	EXTRACT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'EXTRACT'. Expecting: ')', <identifier>
 }
@@ -1673,7 +1673,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1444:drop database test
 STRICT{
 PASS
@@ -1701,16 +1701,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]1458:use test
 STRICT{
 PASS
 }
--- [1]1464:create table FALSE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1464:create table FALSE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'FALSE'. Expecting: 'IF', <identifier>
 }
--- [1]1473:create table table_01  ( 	FALSE STRING ID )
+-- [1]1473:create table table_01  ( 	FALSE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'FALSE'. Expecting: ')', <identifier>
 }
@@ -1718,7 +1718,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'FALSE'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'FALSE'. Expecting: ')', <identifier>
 }
--- [1]1485:create table table_03  ( 	FALSE INT32 MEASUREMENT )
+-- [1]1485:create table table_03  ( 	FALSE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'FALSE'. Expecting: ')', <identifier>
 }
@@ -1729,7 +1729,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1492:drop database test
 STRICT{
 PASS
@@ -1757,16 +1757,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]1506:use test
 STRICT{
 PASS
 }
--- [1]1512:create table FOR  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1512:create table FOR  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'FOR'. Expecting: 'IF', <identifier>
 }
--- [1]1521:create table table_01  ( 	FOR STRING ID )
+-- [1]1521:create table table_01  ( 	FOR STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'FOR'. Expecting: ')', <identifier>
 }
@@ -1774,7 +1774,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'FOR'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'FOR'. Expecting: ')', <identifier>
 }
--- [1]1533:create table table_03  ( 	FOR INT32 MEASUREMENT )
+-- [1]1533:create table table_03  ( 	FOR INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'FOR'. Expecting: ')', <identifier>
 }
@@ -1818,11 +1818,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1560:create table FROM  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1560:create table FROM  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'FROM'. Expecting: 'IF', <identifier>
 }
--- [1]1569:create table table_01  ( 	FROM STRING ID )
+-- [1]1569:create table table_01  ( 	FROM STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'FROM'. Expecting: ')', <identifier>
 }
@@ -1830,7 +1830,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'FROM'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'FROM'. Expecting: ')', <identifier>
 }
--- [1]1581:create table table_03  ( 	FROM INT32 MEASUREMENT )
+-- [1]1581:create table table_03  ( 	FROM INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'FROM'. Expecting: ')', <identifier>
 }
@@ -1841,7 +1841,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]1588:drop database test
 STRICT{
 PASS
@@ -1869,16 +1869,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1602:use test
 STRICT{
 PASS
 }
--- [1]1608:create table FULL  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1608:create table FULL  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'FULL'. Expecting: 'IF', <identifier>
 }
--- [1]1617:create table table_01  ( 	FULL STRING ID )
+-- [1]1617:create table table_01  ( 	FULL STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'FULL'. Expecting: ')', <identifier>
 }
@@ -1886,7 +1886,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'FULL'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'FULL'. Expecting: ')', <identifier>
 }
--- [1]1629:create table table_03  ( 	FULL INT32 MEASUREMENT )
+-- [1]1629:create table table_03  ( 	FULL INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'FULL'. Expecting: ')', <identifier>
 }
@@ -1925,16 +1925,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1650:use test
 STRICT{
 PASS
 }
--- [1]1656:create table GROUP  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1656:create table GROUP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'GROUP'. Expecting: 'IF', <identifier>
 }
--- [1]1665:create table table_01  ( 	GROUP STRING ID )
+-- [1]1665:create table table_01  ( 	GROUP STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'GROUP'. Expecting: ')', <identifier>
 }
@@ -1942,7 +1942,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'GROUP'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'GROUP'. Expecting: ')', <identifier>
 }
--- [1]1677:create table table_03  ( 	GROUP INT32 MEASUREMENT )
+-- [1]1677:create table table_03  ( 	GROUP INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'GROUP'. Expecting: ')', <identifier>
 }
@@ -1981,16 +1981,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1698:use test
 STRICT{
 PASS
 }
--- [1]1704:create table GROUPING  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1704:create table GROUPING  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'GROUPING'. Expecting: 'IF', <identifier>
 }
--- [1]1713:create table table_01  ( 	GROUPING STRING ID )
+-- [1]1713:create table table_01  ( 	GROUPING STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'GROUPING'. Expecting: ')', <identifier>
 }
@@ -1998,7 +1998,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'GROUPING'. Expecting: ')', <identif
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'GROUPING'. Expecting: ')', <identifier>
 }
--- [1]1725:create table table_03  ( 	GROUPING INT32 MEASUREMENT )
+-- [1]1725:create table table_03  ( 	GROUPING INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'GROUPING'. Expecting: ')', <identifier>
 }
@@ -2009,7 +2009,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1732:drop database test
 STRICT{
 PASS
@@ -2042,11 +2042,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1752:create table HAVING  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1752:create table HAVING  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'HAVING'. Expecting: 'IF', <identifier>
 }
--- [1]1761:create table table_01  ( 	HAVING STRING ID )
+-- [1]1761:create table table_01  ( 	HAVING STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'HAVING'. Expecting: ')', <identifier>
 }
@@ -2054,7 +2054,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'HAVING'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'HAVING'. Expecting: ')', <identifier>
 }
--- [1]1773:create table table_03  ( 	HAVING INT32 MEASUREMENT )
+-- [1]1773:create table table_03  ( 	HAVING INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'HAVING'. Expecting: ')', <identifier>
 }
@@ -2065,7 +2065,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1780:drop database test
 STRICT{
 PASS
@@ -2093,16 +2093,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1794:use test
 STRICT{
 PASS
 }
--- [1]1800:create table IN  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1800:create table IN  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'IN'. Expecting: 'IF', <identifier>
 }
--- [1]1809:create table table_01  ( 	IN STRING ID )
+-- [1]1809:create table table_01  ( 	IN STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'IN'. Expecting: ')', <identifier>
 }
@@ -2110,7 +2110,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'IN'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'IN'. Expecting: ')', <identifier>
 }
--- [1]1821:create table table_03  ( 	IN INT32 MEASUREMENT )
+-- [1]1821:create table table_03  ( 	IN INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'IN'. Expecting: ')', <identifier>
 }
@@ -2121,7 +2121,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1828:drop database test
 STRICT{
 PASS
@@ -2149,16 +2149,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1842:use test
 STRICT{
 PASS
 }
--- [1]1848:create table INNER  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1848:create table INNER  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'INNER'. Expecting: 'IF', <identifier>
 }
--- [1]1857:create table table_01  ( 	INNER STRING ID )
+-- [1]1857:create table table_01  ( 	INNER STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'INNER'. Expecting: ')', <identifier>
 }
@@ -2166,7 +2166,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'INNER'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'INNER'. Expecting: ')', <identifier>
 }
--- [1]1869:create table table_03  ( 	INNER INT32 MEASUREMENT )
+-- [1]1869:create table table_03  ( 	INNER INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'INNER'. Expecting: ')', <identifier>
 }
@@ -2177,7 +2177,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1876:drop database test
 STRICT{
 PASS
@@ -2210,11 +2210,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1896:create table INSERT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1896:create table INSERT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'INSERT'. Expecting: 'IF', <identifier>
 }
--- [1]1905:create table table_01  ( 	INSERT STRING ID )
+-- [1]1905:create table table_01  ( 	INSERT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'INSERT'. Expecting: ')', <identifier>
 }
@@ -2222,7 +2222,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'INSERT'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'INSERT'. Expecting: ')', <identifier>
 }
--- [1]1917:create table table_03  ( 	INSERT INT32 MEASUREMENT )
+-- [1]1917:create table table_03  ( 	INSERT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'INSERT'. Expecting: ')', <identifier>
 }
@@ -2261,16 +2261,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]1938:use test
 STRICT{
 PASS
 }
--- [1]1944:create table INTERSECT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1944:create table INTERSECT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'INTERSECT'. Expecting: 'IF', <identifier>
 }
--- [1]1953:create table table_01  ( 	INTERSECT STRING ID )
+-- [1]1953:create table table_01  ( 	INTERSECT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'INTERSECT'. Expecting: ')', <identifier>
 }
@@ -2278,7 +2278,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'INTERSECT'. Expecting: ')', <identi
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'INTERSECT'. Expecting: ')', <identifier>
 }
--- [1]1965:create table table_03  ( 	INTERSECT INT32 MEASUREMENT )
+-- [1]1965:create table table_03  ( 	INTERSECT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'INTERSECT'. Expecting: ')', <identifier>
 }
@@ -2289,7 +2289,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]1972:drop database test
 STRICT{
 PASS
@@ -2322,11 +2322,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]1992:create table INTO  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]1992:create table INTO  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'INTO'. Expecting: 'IF', <identifier>
 }
--- [1]2001:create table table_01  ( 	INTO STRING ID )
+-- [1]2001:create table table_01  ( 	INTO STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'INTO'. Expecting: ')', <identifier>
 }
@@ -2334,7 +2334,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'INTO'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'INTO'. Expecting: ')', <identifier>
 }
--- [1]2013:create table table_03  ( 	INTO INT32 MEASUREMENT )
+-- [1]2013:create table table_03  ( 	INTO INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'INTO'. Expecting: ')', <identifier>
 }
@@ -2345,7 +2345,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2020:drop database test
 STRICT{
 PASS
@@ -2378,11 +2378,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]2040:create table IS  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2040:create table IS  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'IS'. Expecting: 'IF', <identifier>
 }
--- [1]2049:create table table_01  ( 	IS STRING ID )
+-- [1]2049:create table table_01  ( 	IS STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'IS'. Expecting: ')', <identifier>
 }
@@ -2390,7 +2390,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'IS'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'IS'. Expecting: ')', <identifier>
 }
--- [1]2061:create table table_03  ( 	IS INT32 MEASUREMENT )
+-- [1]2061:create table table_03  ( 	IS INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'IS'. Expecting: ')', <identifier>
 }
@@ -2401,7 +2401,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2068:drop database test
 STRICT{
 PASS
@@ -2429,16 +2429,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]2082:use test
 STRICT{
 PASS
 }
--- [1]2088:create table JOIN  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2088:create table JOIN  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'JOIN'. Expecting: 'IF', <identifier>
 }
--- [1]2097:create table table_01  ( 	JOIN STRING ID )
+-- [1]2097:create table table_01  ( 	JOIN STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JOIN'. Expecting: ')', <identifier>
 }
@@ -2446,7 +2446,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'JOIN'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'JOIN'. Expecting: ')', <identifier>
 }
--- [1]2109:create table table_03  ( 	JOIN INT32 MEASUREMENT )
+-- [1]2109:create table table_03  ( 	JOIN INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JOIN'. Expecting: ')', <identifier>
 }
@@ -2490,11 +2490,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]2136:create table JSON_ARRAY  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2136:create table JSON_ARRAY  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'JSON_ARRAY'. Expecting: 'IF', <identifier>
 }
--- [1]2145:create table table_01  ( 	JSON_ARRAY STRING ID )
+-- [1]2145:create table table_01  ( 	JSON_ARRAY STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_ARRAY'. Expecting: ')', <identifier>
 }
@@ -2502,7 +2502,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'JSON_ARRAY'. Expecting: ')', <ident
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'JSON_ARRAY'. Expecting: ')', <identifier>
 }
--- [1]2157:create table table_03  ( 	JSON_ARRAY INT32 MEASUREMENT )
+-- [1]2157:create table table_03  ( 	JSON_ARRAY INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_ARRAY'. Expecting: ')', <identifier>
 }
@@ -2513,7 +2513,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2164:drop database test
 STRICT{
 PASS
@@ -2541,16 +2541,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2178:use test
 STRICT{
 PASS
 }
--- [1]2184:create table JSON_EXISTS  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2184:create table JSON_EXISTS  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'JSON_EXISTS'. Expecting: 'IF', <identifier>
 }
--- [1]2193:create table table_01  ( 	JSON_EXISTS STRING ID )
+-- [1]2193:create table table_01  ( 	JSON_EXISTS STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_EXISTS'. Expecting: ')', <identifier>
 }
@@ -2558,7 +2558,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'JSON_EXISTS'. Expecting: ')', <iden
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'JSON_EXISTS'. Expecting: ')', <identifier>
 }
--- [1]2205:create table table_03  ( 	JSON_EXISTS INT32 MEASUREMENT )
+-- [1]2205:create table table_03  ( 	JSON_EXISTS INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_EXISTS'. Expecting: ')', <identifier>
 }
@@ -2569,7 +2569,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2212:drop database test
 STRICT{
 PASS
@@ -2597,16 +2597,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2226:use test
 STRICT{
 PASS
 }
--- [1]2232:create table JSON_OBJECT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2232:create table JSON_OBJECT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'JSON_OBJECT'. Expecting: 'IF', <identifier>
 }
--- [1]2241:create table table_01  ( 	JSON_OBJECT STRING ID )
+-- [1]2241:create table table_01  ( 	JSON_OBJECT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_OBJECT'. Expecting: ')', <identifier>
 }
@@ -2614,7 +2614,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'JSON_OBJECT'. Expecting: ')', <iden
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'JSON_OBJECT'. Expecting: ')', <identifier>
 }
--- [1]2253:create table table_03  ( 	JSON_OBJECT INT32 MEASUREMENT )
+-- [1]2253:create table table_03  ( 	JSON_OBJECT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_OBJECT'. Expecting: ')', <identifier>
 }
@@ -2653,16 +2653,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2274:use test
 STRICT{
 PASS
 }
--- [1]2280:create table JSON_QUERY  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2280:create table JSON_QUERY  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'JSON_QUERY'. Expecting: 'IF', <identifier>
 }
--- [1]2289:create table table_01  ( 	JSON_QUERY STRING ID )
+-- [1]2289:create table table_01  ( 	JSON_QUERY STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_QUERY'. Expecting: ')', <identifier>
 }
@@ -2670,7 +2670,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'JSON_QUERY'. Expecting: ')', <ident
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'JSON_QUERY'. Expecting: ')', <identifier>
 }
--- [1]2301:create table table_03  ( 	JSON_QUERY INT32 MEASUREMENT )
+-- [1]2301:create table table_03  ( 	JSON_QUERY INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_QUERY'. Expecting: ')', <identifier>
 }
@@ -2681,7 +2681,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2308:drop database test
 STRICT{
 PASS
@@ -2709,16 +2709,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]2322:use test
 STRICT{
 PASS
 }
--- [1]2328:create table JSON_TABLE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2328:create table JSON_TABLE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'JSON_TABLE'. Expecting: 'IF', <identifier>
 }
--- [1]2337:create table table_01  ( 	JSON_TABLE STRING ID )
+-- [1]2337:create table table_01  ( 	JSON_TABLE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_TABLE'. Expecting: ')', <identifier>
 }
@@ -2726,7 +2726,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'JSON_TABLE'. Expecting: ')', <ident
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'JSON_TABLE'. Expecting: ')', <identifier>
 }
--- [1]2349:create table table_03  ( 	JSON_TABLE INT32 MEASUREMENT )
+-- [1]2349:create table table_03  ( 	JSON_TABLE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_TABLE'. Expecting: ')', <identifier>
 }
@@ -2770,11 +2770,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]2376:create table JSON_VALUE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2376:create table JSON_VALUE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'JSON_VALUE'. Expecting: 'IF', <identifier>
 }
--- [1]2385:create table table_01  ( 	JSON_VALUE STRING ID )
+-- [1]2385:create table table_01  ( 	JSON_VALUE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_VALUE'. Expecting: ')', <identifier>
 }
@@ -2782,7 +2782,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'JSON_VALUE'. Expecting: ')', <ident
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'JSON_VALUE'. Expecting: ')', <identifier>
 }
--- [1]2397:create table table_03  ( 	JSON_VALUE INT32 MEASUREMENT )
+-- [1]2397:create table table_03  ( 	JSON_VALUE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'JSON_VALUE'. Expecting: ')', <identifier>
 }
@@ -2821,16 +2821,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2418:use test
 STRICT{
 PASS
 }
--- [1]2424:create table LEFT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2424:create table LEFT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'LEFT'. Expecting: 'IF', <identifier>
 }
--- [1]2433:create table table_01  ( 	LEFT STRING ID )
+-- [1]2433:create table table_01  ( 	LEFT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'LEFT'. Expecting: ')', <identifier>
 }
@@ -2838,7 +2838,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'LEFT'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'LEFT'. Expecting: ')', <identifier>
 }
--- [1]2445:create table table_03  ( 	LEFT INT32 MEASUREMENT )
+-- [1]2445:create table table_03  ( 	LEFT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'LEFT'. Expecting: ')', <identifier>
 }
@@ -2882,11 +2882,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]2472:create table LIKE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2472:create table LIKE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'LIKE'. Expecting: 'IF', <identifier>
 }
--- [1]2481:create table table_01  ( 	LIKE STRING ID )
+-- [1]2481:create table table_01  ( 	LIKE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'LIKE'. Expecting: ')', <identifier>
 }
@@ -2894,7 +2894,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'LIKE'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'LIKE'. Expecting: ')', <identifier>
 }
--- [1]2493:create table table_03  ( 	LIKE INT32 MEASUREMENT )
+-- [1]2493:create table table_03  ( 	LIKE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'LIKE'. Expecting: ')', <identifier>
 }
@@ -2933,16 +2933,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]2514:use test
 STRICT{
 PASS
 }
--- [1]2520:create table LISTAGG  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2520:create table LISTAGG  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'LISTAGG'. Expecting: 'IF', <identifier>
 }
--- [1]2529:create table table_01  ( 	LISTAGG STRING ID )
+-- [1]2529:create table table_01  ( 	LISTAGG STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'LISTAGG'. Expecting: ')', <identifier>
 }
@@ -2950,7 +2950,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'LISTAGG'. Expecting: ')', <identifi
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'LISTAGG'. Expecting: ')', <identifier>
 }
--- [1]2541:create table table_03  ( 	LISTAGG INT32 MEASUREMENT )
+-- [1]2541:create table table_03  ( 	LISTAGG INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'LISTAGG'. Expecting: ')', <identifier>
 }
@@ -2961,7 +2961,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2548:drop database test
 STRICT{
 PASS
@@ -2994,11 +2994,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]2568:create table LOCALTIME  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2568:create table LOCALTIME  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'LOCALTIME'. Expecting: 'IF', <identifier>
 }
--- [1]2577:create table table_01  ( 	LOCALTIME STRING ID )
+-- [1]2577:create table table_01  ( 	LOCALTIME STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'LOCALTIME'. Expecting: ')', <identifier>
 }
@@ -3006,7 +3006,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'LOCALTIME'. Expecting: ')', <identi
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'LOCALTIME'. Expecting: ')', <identifier>
 }
--- [1]2589:create table table_03  ( 	LOCALTIME INT32 MEASUREMENT )
+-- [1]2589:create table table_03  ( 	LOCALTIME INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'LOCALTIME'. Expecting: ')', <identifier>
 }
@@ -3017,7 +3017,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2596:drop database test
 STRICT{
 PASS
@@ -3050,11 +3050,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]2616:create table LOCALTIMESTAMP  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2616:create table LOCALTIMESTAMP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'LOCALTIMESTAMP'. Expecting: 'IF', <identifier>
 }
--- [1]2625:create table table_01  ( 	LOCALTIMESTAMP STRING ID )
+-- [1]2625:create table table_01  ( 	LOCALTIMESTAMP STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'LOCALTIMESTAMP'. Expecting: ')', <identifier>
 }
@@ -3062,7 +3062,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'LOCALTIMESTAMP'. Expecting: ')', <i
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'LOCALTIMESTAMP'. Expecting: ')', <identifier>
 }
--- [1]2637:create table table_03  ( 	LOCALTIMESTAMP INT32 MEASUREMENT )
+-- [1]2637:create table table_03  ( 	LOCALTIMESTAMP INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'LOCALTIMESTAMP'. Expecting: ')', <identifier>
 }
@@ -3101,16 +3101,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]2658:use test
 STRICT{
 PASS
 }
--- [1]2664:create table NATURAL  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2664:create table NATURAL  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'NATURAL'. Expecting: 'IF', <identifier>
 }
--- [1]2673:create table table_01  ( 	NATURAL STRING ID )
+-- [1]2673:create table table_01  ( 	NATURAL STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'NATURAL'. Expecting: ')', <identifier>
 }
@@ -3118,7 +3118,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'NATURAL'. Expecting: ')', <identifi
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'NATURAL'. Expecting: ')', <identifier>
 }
--- [1]2685:create table table_03  ( 	NATURAL INT32 MEASUREMENT )
+-- [1]2685:create table table_03  ( 	NATURAL INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'NATURAL'. Expecting: ')', <identifier>
 }
@@ -3129,7 +3129,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2692:drop database test
 STRICT{
 PASS
@@ -3157,16 +3157,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2706:use test
 STRICT{
 PASS
 }
--- [1]2712:create table NORMALIZE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2712:create table NORMALIZE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'NORMALIZE'. Expecting: 'IF', <identifier>
 }
--- [1]2721:create table table_01  ( 	NORMALIZE STRING ID )
+-- [1]2721:create table table_01  ( 	NORMALIZE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'NORMALIZE'. Expecting: ')', <identifier>
 }
@@ -3174,7 +3174,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'NORMALIZE'. Expecting: ')', <identi
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'NORMALIZE'. Expecting: ')', <identifier>
 }
--- [1]2733:create table table_03  ( 	NORMALIZE INT32 MEASUREMENT )
+-- [1]2733:create table table_03  ( 	NORMALIZE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'NORMALIZE'. Expecting: ')', <identifier>
 }
@@ -3185,7 +3185,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2740:drop database test
 STRICT{
 PASS
@@ -3218,11 +3218,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]2760:create table NOT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2760:create table NOT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'NOT'. Expecting: 'IF', <identifier>
 }
--- [1]2769:create table table_01  ( 	NOT STRING ID )
+-- [1]2769:create table table_01  ( 	NOT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'NOT'. Expecting: ')', <identifier>
 }
@@ -3230,7 +3230,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'NOT'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'NOT'. Expecting: ')', <identifier>
 }
--- [1]2781:create table table_03  ( 	NOT INT32 MEASUREMENT )
+-- [1]2781:create table table_03  ( 	NOT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'NOT'. Expecting: ')', <identifier>
 }
@@ -3269,16 +3269,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2802:use test
 STRICT{
 PASS
 }
--- [1]2808:create table NULL  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2808:create table NULL  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'NULL'. Expecting: 'IF', <identifier>
 }
--- [1]2817:create table table_01  ( 	NULL STRING ID )
+-- [1]2817:create table table_01  ( 	NULL STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'NULL'. Expecting: ')', <identifier>
 }
@@ -3286,7 +3286,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'NULL'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'NULL'. Expecting: ')', <identifier>
 }
--- [1]2829:create table table_03  ( 	NULL INT32 MEASUREMENT )
+-- [1]2829:create table table_03  ( 	NULL INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'NULL'. Expecting: ')', <identifier>
 }
@@ -3297,7 +3297,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2836:drop database test
 STRICT{
 PASS
@@ -3330,11 +3330,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]2856:create table ON  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2856:create table ON  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'ON'. Expecting: 'IF', <identifier>
 }
--- [1]2865:create table table_01  ( 	ON STRING ID )
+-- [1]2865:create table table_01  ( 	ON STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ON'. Expecting: ')', <identifier>
 }
@@ -3342,7 +3342,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'ON'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'ON'. Expecting: ')', <identifier>
 }
--- [1]2877:create table table_03  ( 	ON INT32 MEASUREMENT )
+-- [1]2877:create table table_03  ( 	ON INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ON'. Expecting: ')', <identifier>
 }
@@ -3386,11 +3386,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]2904:create table OR  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2904:create table OR  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'OR'. Expecting: 'IF', <identifier>
 }
--- [1]2913:create table table_01  ( 	OR STRING ID )
+-- [1]2913:create table table_01  ( 	OR STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'OR'. Expecting: ')', <identifier>
 }
@@ -3398,7 +3398,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'OR'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'OR'. Expecting: ')', <identifier>
 }
--- [1]2925:create table table_03  ( 	OR INT32 MEASUREMENT )
+-- [1]2925:create table table_03  ( 	OR INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'OR'. Expecting: ')', <identifier>
 }
@@ -3409,7 +3409,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]2932:drop database test
 STRICT{
 PASS
@@ -3437,16 +3437,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]2946:use test
 STRICT{
 PASS
 }
--- [1]2952:create table ORDER  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]2952:create table ORDER  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'ORDER'. Expecting: 'IF', <identifier>
 }
--- [1]2961:create table table_01  ( 	ORDER STRING ID )
+-- [1]2961:create table table_01  ( 	ORDER STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ORDER'. Expecting: ')', <identifier>
 }
@@ -3454,7 +3454,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'ORDER'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'ORDER'. Expecting: ')', <identifier>
 }
--- [1]2973:create table table_03  ( 	ORDER INT32 MEASUREMENT )
+-- [1]2973:create table table_03  ( 	ORDER INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ORDER'. Expecting: ')', <identifier>
 }
@@ -3465,7 +3465,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]2980:drop database test
 STRICT{
 PASS
@@ -3498,11 +3498,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]3000:create table OUTER  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3000:create table OUTER  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'OUTER'. Expecting: 'IF', <identifier>
 }
--- [1]3009:create table table_01  ( 	OUTER STRING ID )
+-- [1]3009:create table table_01  ( 	OUTER STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'OUTER'. Expecting: ')', <identifier>
 }
@@ -3510,7 +3510,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'OUTER'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'OUTER'. Expecting: ')', <identifier>
 }
--- [1]3021:create table table_03  ( 	OUTER INT32 MEASUREMENT )
+-- [1]3021:create table table_03  ( 	OUTER INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'OUTER'. Expecting: ')', <identifier>
 }
@@ -3521,7 +3521,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3028:drop database test
 STRICT{
 PASS
@@ -3549,16 +3549,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]3042:use test
 STRICT{
 PASS
 }
--- [1]3048:create table PREPARE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3048:create table PREPARE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'PREPARE'. Expecting: 'IF', <identifier>
 }
--- [1]3057:create table table_01  ( 	PREPARE STRING ID )
+-- [1]3057:create table table_01  ( 	PREPARE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'PREPARE'. Expecting: ')', <identifier>
 }
@@ -3566,7 +3566,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'PREPARE'. Expecting: ')', <identifi
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'PREPARE'. Expecting: ')', <identifier>
 }
--- [1]3069:create table table_03  ( 	PREPARE INT32 MEASUREMENT )
+-- [1]3069:create table table_03  ( 	PREPARE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'PREPARE'. Expecting: ')', <identifier>
 }
@@ -3577,7 +3577,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3076:drop database test
 STRICT{
 PASS
@@ -3610,11 +3610,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]3096:create table RECURSIVE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3096:create table RECURSIVE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'RECURSIVE'. Expecting: 'IF', <identifier>
 }
--- [1]3105:create table table_01  ( 	RECURSIVE STRING ID )
+-- [1]3105:create table table_01  ( 	RECURSIVE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'RECURSIVE'. Expecting: ')', <identifier>
 }
@@ -3622,7 +3622,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'RECURSIVE'. Expecting: ')', <identi
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'RECURSIVE'. Expecting: ')', <identifier>
 }
--- [1]3117:create table table_03  ( 	RECURSIVE INT32 MEASUREMENT )
+-- [1]3117:create table table_03  ( 	RECURSIVE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'RECURSIVE'. Expecting: ')', <identifier>
 }
@@ -3633,7 +3633,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3124:drop database test
 STRICT{
 PASS
@@ -3661,16 +3661,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]3138:use test
 STRICT{
 PASS
 }
--- [1]3144:create table RIGHT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3144:create table RIGHT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'RIGHT'. Expecting: 'IF', <identifier>
 }
--- [1]3153:create table table_01  ( 	RIGHT STRING ID )
+-- [1]3153:create table table_01  ( 	RIGHT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'RIGHT'. Expecting: ')', <identifier>
 }
@@ -3678,7 +3678,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'RIGHT'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'RIGHT'. Expecting: ')', <identifier>
 }
--- [1]3165:create table table_03  ( 	RIGHT INT32 MEASUREMENT )
+-- [1]3165:create table table_03  ( 	RIGHT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'RIGHT'. Expecting: ')', <identifier>
 }
@@ -3717,16 +3717,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]3186:use test
 STRICT{
 PASS
 }
--- [1]3192:create table ROLLUP  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3192:create table ROLLUP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'ROLLUP'. Expecting: 'IF', <identifier>
 }
--- [1]3201:create table table_01  ( 	ROLLUP STRING ID )
+-- [1]3201:create table table_01  ( 	ROLLUP STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ROLLUP'. Expecting: ')', <identifier>
 }
@@ -3734,7 +3734,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'ROLLUP'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'ROLLUP'. Expecting: ')', <identifier>
 }
--- [1]3213:create table table_03  ( 	ROLLUP INT32 MEASUREMENT )
+-- [1]3213:create table table_03  ( 	ROLLUP INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'ROLLUP'. Expecting: ')', <identifier>
 }
@@ -3773,16 +3773,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3234:use test
 STRICT{
 PASS
 }
--- [1]3240:create table SELECT  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3240:create table SELECT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'SELECT'. Expecting: 'IF', <identifier>
 }
--- [1]3249:create table table_01  ( 	SELECT STRING ID )
+-- [1]3249:create table table_01  ( 	SELECT STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'SELECT'. Expecting: ')', <identifier>
 }
@@ -3790,7 +3790,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'SELECT'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'SELECT'. Expecting: ')', <identifier>
 }
--- [1]3261:create table table_03  ( 	SELECT INT32 MEASUREMENT )
+-- [1]3261:create table table_03  ( 	SELECT INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'SELECT'. Expecting: ')', <identifier>
 }
@@ -3801,7 +3801,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3268:drop database test
 STRICT{
 PASS
@@ -3829,16 +3829,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3282:use test
 STRICT{
 PASS
 }
--- [1]3288:create table SKIP  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3288:create table SKIP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'SKIP'. Expecting: 'IF', <identifier>
 }
--- [1]3297:create table table_01  ( 	SKIP STRING ID )
+-- [1]3297:create table table_01  ( 	SKIP STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'SKIP'. Expecting: ')', <identifier>
 }
@@ -3846,7 +3846,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'SKIP'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'SKIP'. Expecting: ')', <identifier>
 }
--- [1]3309:create table table_03  ( 	SKIP INT32 MEASUREMENT )
+-- [1]3309:create table table_03  ( 	SKIP INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'SKIP'. Expecting: ')', <identifier>
 }
@@ -3857,7 +3857,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3316:drop database test
 STRICT{
 PASS
@@ -3885,16 +3885,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]3330:use test
 STRICT{
 PASS
 }
--- [1]3336:create table TABLE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3336:create table TABLE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'TABLE'. Expecting: 'IF', <identifier>
 }
--- [1]3345:create table table_01  ( 	TABLE STRING ID )
+-- [1]3345:create table table_01  ( 	TABLE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'TABLE'. Expecting: ')', <identifier>
 }
@@ -3902,7 +3902,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'TABLE'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'TABLE'. Expecting: ')', <identifier>
 }
--- [1]3357:create table table_03  ( 	TABLE INT32 MEASUREMENT )
+-- [1]3357:create table table_03  ( 	TABLE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'TABLE'. Expecting: ')', <identifier>
 }
@@ -3941,16 +3941,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3378:use test
 STRICT{
 PASS
 }
--- [1]3384:create table THEN  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3384:create table THEN  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'THEN'. Expecting: 'IF', <identifier>
 }
--- [1]3393:create table table_01  ( 	THEN STRING ID )
+-- [1]3393:create table table_01  ( 	THEN STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'THEN'. Expecting: ')', <identifier>
 }
@@ -3958,7 +3958,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'THEN'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'THEN'. Expecting: ')', <identifier>
 }
--- [1]3405:create table table_03  ( 	THEN INT32 MEASUREMENT )
+-- [1]3405:create table table_03  ( 	THEN INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'THEN'. Expecting: ')', <identifier>
 }
@@ -3969,7 +3969,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3412:drop database test
 STRICT{
 PASS
@@ -4002,11 +4002,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]3432:create table TRIM  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3432:create table TRIM  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'TRIM'. Expecting: 'IF', <identifier>
 }
--- [1]3441:create table table_01  ( 	TRIM STRING ID )
+-- [1]3441:create table table_01  ( 	TRIM STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'TRIM'. Expecting: ')', <identifier>
 }
@@ -4014,7 +4014,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'TRIM'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'TRIM'. Expecting: ')', <identifier>
 }
--- [1]3453:create table table_03  ( 	TRIM INT32 MEASUREMENT )
+-- [1]3453:create table table_03  ( 	TRIM INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'TRIM'. Expecting: ')', <identifier>
 }
@@ -4053,16 +4053,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3474:use test
 STRICT{
 PASS
 }
--- [1]3480:create table TRUE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3480:create table TRUE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'TRUE'. Expecting: 'IF', <identifier>
 }
--- [1]3489:create table table_01  ( 	TRUE STRING ID )
+-- [1]3489:create table table_01  ( 	TRUE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'TRUE'. Expecting: ')', <identifier>
 }
@@ -4070,7 +4070,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'TRUE'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'TRUE'. Expecting: ')', <identifier>
 }
--- [1]3501:create table table_03  ( 	TRUE INT32 MEASUREMENT )
+-- [1]3501:create table table_03  ( 	TRUE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'TRUE'. Expecting: ')', <identifier>
 }
@@ -4114,11 +4114,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]3528:create table UESCAPE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3528:create table UESCAPE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'UESCAPE'. Expecting: 'IF', <identifier>
 }
--- [1]3537:create table table_01  ( 	UESCAPE STRING ID )
+-- [1]3537:create table table_01  ( 	UESCAPE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'UESCAPE'. Expecting: ')', <identifier>
 }
@@ -4126,7 +4126,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'UESCAPE'. Expecting: ')', <identifi
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'UESCAPE'. Expecting: ')', <identifier>
 }
--- [1]3549:create table table_03  ( 	UESCAPE INT32 MEASUREMENT )
+-- [1]3549:create table table_03  ( 	UESCAPE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'UESCAPE'. Expecting: ')', <identifier>
 }
@@ -4137,7 +4137,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3556:drop database test
 STRICT{
 PASS
@@ -4165,16 +4165,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3570:use test
 STRICT{
 PASS
 }
--- [1]3576:create table UNION  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3576:create table UNION  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'UNION'. Expecting: 'IF', <identifier>
 }
--- [1]3585:create table table_01  ( 	UNION STRING ID )
+-- [1]3585:create table table_01  ( 	UNION STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'UNION'. Expecting: ')', <identifier>
 }
@@ -4182,7 +4182,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'UNION'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'UNION'. Expecting: ')', <identifier>
 }
--- [1]3597:create table table_03  ( 	UNION INT32 MEASUREMENT )
+-- [1]3597:create table table_03  ( 	UNION INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'UNION'. Expecting: ')', <identifier>
 }
@@ -4193,7 +4193,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.0
 -- [1]3604:drop database test
 STRICT{
 PASS
@@ -4226,11 +4226,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]3624:create table UNNEST  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3624:create table UNNEST  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'UNNEST'. Expecting: 'IF', <identifier>
 }
--- [1]3633:create table table_01  ( 	UNNEST STRING ID )
+-- [1]3633:create table table_01  ( 	UNNEST STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'UNNEST'. Expecting: ')', <identifier>
 }
@@ -4238,7 +4238,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'UNNEST'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'UNNEST'. Expecting: ')', <identifier>
 }
--- [1]3645:create table table_03  ( 	UNNEST INT32 MEASUREMENT )
+-- [1]3645:create table table_03  ( 	UNNEST INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'UNNEST'. Expecting: ')', <identifier>
 }
@@ -4282,11 +4282,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]3672:create table USING  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3672:create table USING  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'USING'. Expecting: 'IF', <identifier>
 }
--- [1]3681:create table table_01  ( 	USING STRING ID )
+-- [1]3681:create table table_01  ( 	USING STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'USING'. Expecting: ')', <identifier>
 }
@@ -4294,7 +4294,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'USING'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'USING'. Expecting: ')', <identifier>
 }
--- [1]3693:create table table_03  ( 	USING INT32 MEASUREMENT )
+-- [1]3693:create table table_03  ( 	USING INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'USING'. Expecting: ')', <identifier>
 }
@@ -4305,7 +4305,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3700:drop database test
 STRICT{
 PASS
@@ -4333,16 +4333,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]3714:use test
 STRICT{
 PASS
 }
--- [1]3720:create table VALUES  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3720:create table VALUES  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'VALUES'. Expecting: 'IF', <identifier>
 }
--- [1]3729:create table table_01  ( 	VALUES STRING ID )
+-- [1]3729:create table table_01  ( 	VALUES STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'VALUES'. Expecting: ')', <identifier>
 }
@@ -4350,7 +4350,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'VALUES'. Expecting: ')', <identifie
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'VALUES'. Expecting: ')', <identifier>
 }
--- [1]3741:create table table_03  ( 	VALUES INT32 MEASUREMENT )
+-- [1]3741:create table table_03  ( 	VALUES INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'VALUES'. Expecting: ')', <identifier>
 }
@@ -4394,11 +4394,11 @@ Elapsed Time: 0.0.1
 STRICT{
 PASS
 }
--- [1]3768:create table WHEN  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3768:create table WHEN  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'WHEN'. Expecting: 'IF', <identifier>
 }
--- [1]3777:create table table_01  ( 	WHEN STRING ID )
+-- [1]3777:create table table_01  ( 	WHEN STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'WHEN'. Expecting: ')', <identifier>
 }
@@ -4406,7 +4406,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'WHEN'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'WHEN'. Expecting: ')', <identifier>
 }
--- [1]3789:create table table_03  ( 	WHEN INT32 MEASUREMENT )
+-- [1]3789:create table table_03  ( 	WHEN INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'WHEN'. Expecting: ')', <identifier>
 }
@@ -4445,16 +4445,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]3810:use test
 STRICT{
 PASS
 }
--- [1]3816:create table WHERE  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3816:create table WHERE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'WHERE'. Expecting: 'IF', <identifier>
 }
--- [1]3825:create table table_01  ( 	WHERE STRING ID )
+-- [1]3825:create table table_01  ( 	WHERE STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'WHERE'. Expecting: ')', <identifier>
 }
@@ -4462,7 +4462,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'WHERE'. Expecting: ')', <identifier
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'WHERE'. Expecting: ')', <identifier>
 }
--- [1]3837:create table table_03  ( 	WHERE INT32 MEASUREMENT )
+-- [1]3837:create table table_03  ( 	WHERE INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'WHERE'. Expecting: ')', <identifier>
 }
@@ -4473,7 +4473,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]3844:drop database test
 STRICT{
 PASS
@@ -4501,16 +4501,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]3858:use test
 STRICT{
 PASS
 }
--- [1]3864:create table WITH  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3864:create table WITH  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'WITH'. Expecting: 'IF', <identifier>
 }
--- [1]3873:create table table_01  ( 	WITH STRING ID )
+-- [1]3873:create table table_01  ( 	WITH STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'WITH'. Expecting: ')', <identifier>
 }
@@ -4518,7 +4518,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'WITH'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'WITH'. Expecting: ')', <identifier>
 }
--- [1]3885:create table table_03  ( 	WITH INT32 MEASUREMENT )
+-- [1]3885:create table table_03  ( 	WITH INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'WITH'. Expecting: ')', <identifier>
 }
@@ -4557,16 +4557,16 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]3906:use test
 STRICT{
 PASS
 }
--- [1]3912:create table FILL  ( 	device_id STRING ID, 	s1 BOOLEAN MEASUREMENT, 	s2 INT32 MEASUREMENT )
+-- [1]3912:create table FILL  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:14: mismatched input 'FILL'. Expecting: 'IF', <identifier>
 }
--- [1]3921:create table table_01  ( 	FILL STRING ID )
+-- [1]3921:create table table_01  ( 	FILL STRING TAG )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'FILL'. Expecting: ')', <identifier>
 }
@@ -4574,7 +4574,7 @@ SQLSTATE : 700: line 1:27: mismatched input 'FILL'. Expecting: ')', <identifier>
 STRICT{
 SQLSTATE : 700: line 1:29: mismatched input 'FILL'. Expecting: ')', <identifier>
 }
--- [1]3933:create table table_03  ( 	FILL INT32 MEASUREMENT )
+-- [1]3933:create table table_03  ( 	FILL INT32 FIELD )
 STRICT{
 SQLSTATE : 700: line 1:27: mismatched input 'FILL'. Expecting: ')', <identifier>
 }

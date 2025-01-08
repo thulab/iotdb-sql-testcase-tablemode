@@ -15,7 +15,7 @@ use test_db;
 --3. 创建表
 create table table_add
 (
-    "device" STRING ID,
+    "device" STRING TAG,
     "type" STRING ATTRIBUTE,
     "int32" INT32,
 	"int32_1" INT32,
@@ -28,7 +28,7 @@ create table table_add
 
 create table table_sub
 (
-    "device" STRING ID,
+    "device" STRING TAG,
     "type" STRING ATTRIBUTE,
     "int32" INT32,
 	"int32_1" INT32,
@@ -42,7 +42,7 @@ create table table_sub
 
 create table table_mul
 (
-    "device" STRING ID,
+    "device" STRING TAG,
     "type" STRING ATTRIBUTE,
     "int32" INT32,
 	"int32_1" INT32,
@@ -54,7 +54,7 @@ create table table_mul
 
 create table table_div
 (
-    "device" STRING ID,
+    "device" STRING TAG,
     "type" STRING ATTRIBUTE,
     "int32" INT32,
 	"int32_1" INT32,
@@ -66,7 +66,7 @@ create table table_div
 
 create table table_negation
 (
-    "device" STRING ID,
+    "device" STRING TAG,
     "type" STRING ATTRIBUTE,
     "int32" INT32,
     "int64" INT64,

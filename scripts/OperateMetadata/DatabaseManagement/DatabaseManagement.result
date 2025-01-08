@@ -16,11 +16,11 @@ information_schema  |INF                |null                                |nu
 sgcc                |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 ln                  |INF                |1                                   |1                                 |604800000                         |
-总数目：2
+总数目：3
 }
 
-Elapsed Time: 0.0.57
--- [1]20:USE ln
+Elapsed Time: 0.0.59
+-- [1]19:use ln
 STRICT{
 PASS
 }
@@ -49,154 +49,178 @@ information_schema  |INF                |null                                |nu
 总数目：1
 }
 
-Elapsed Time: 0.0.4
--- [1]45:CREATE DATABASE "`test1`"
-STRICT{
-PASS
-}
--- [1]46:CREATE DATABASE "123"
-STRICT{
-PASS
-}
--- [1]47:CREATE DATABASE "数据库"
-STRICT{
-PASS
-}
+Elapsed Time: 0.0.3
 -- [1]48:CREATE DATABASE _
 STRICT{
 PASS
 }
+-- [1]49:CREATE DATABASE ABC
+STRICT{
+PASS
+}
+-- [1]49:create database data
+STRICT{
+PASS
+}
+-- [1]51:CREATE DATABASE test001
+STRICT{
+PASS
+}
 
--- [1]49:SHOW DATABASES
+-- [1]52:SHOW DATABASES
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 information_schema  |INF                |null                                |null                              |null                              |
 -----------------------------------------------------------------------------------------------------------------------------------------------
-123                 |INF                |1                                   |1                                 |604800000                         |
+test001             |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
-`test1`             |INF                |1                                   |1                                 |604800000                         |
+abc                 |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
-数据库                 |INF                |1                                   |1                                 |604800000                         |
+data                |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 _                   |INF                |1                                   |1                                 |604800000                         |
 总数目：5
 }
 
 Elapsed Time: 0.0.2
--- [1]51:create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"
+-- [1]54:create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"
 STRICT{
 PASS
 }
--- [1]52:create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop12345"
+-- [1]55:create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop12345"
 STRICT{
 SQLSTATE : 509: qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop12345 is not a legal path, because the length of database name shall not exceed 64
 }
 
--- [1]55:SHOW DATABASES
+-- [1]58:SHOW DATABASES
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 information_schema  |INF                |null                                |null                              |null                              |
 -----------------------------------------------------------------------------------------------------------------------------------------------
-123                 |INF                |1                                   |1                                 |604800000                         |
+abc                 |INF                |1                                   |1                                 |604800000                         |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+data                |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 qwertyuiop1234567890|INF                |1                                   |1                                 |604800000                         |
 一二三四五六七八九十qwertyuio|                   |                                    |                                  |                                  |
 p1234567890qwertyui|                   |                                    |                                  |                                  |
 op1234              |                   |                                    |                                  |                                  |
 -----------------------------------------------------------------------------------------------------------------------------------------------
-`test1`             |INF                |1                                   |1                                 |604800000                         |
------------------------------------------------------------------------------------------------------------------------------------------------
-数据库                 |INF                |1                                   |1                                 |604800000                         |
+test001             |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 _                   |INF                |1                                   |1                                 |604800000                         |
 总数目：6
 }
 
-Elapsed Time: 0.0.1
--- [1]57:create database root
+Elapsed Time: 0.0.2
+-- [1]60:create database root
 STRICT{
 PASS
 }
--- [1]58:create database time
+-- [1]61:create database time
 STRICT{
 PASS
 }
--- [1]59:create database timestamp
+-- [1]62:create database timestamp
 STRICT{
 PASS
 }
--- [1]63:CREATE DATABASE "sgcc.1W_测试_1"
+-- [1]66:CREATE DATABASE "`test1`"
+STRICT{
+PASS
+}
+-- [1]67:CREATE DATABASE "123"
+STRICT{
+PASS
+}
+-- [1]68:CREATE DATABASE "数据库"
+STRICT{
+PASS
+}
+-- [1]71:CREATE DATABASE "sgcc.1W_测试_1"
 STRICT{
 SQLSTATE : 509: sgcc.1w_测试_1 is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]64:CREATE DATABASE "123w.24h"
+-- [1]73:CREATE DATABASE "123w.24h"
 STRICT{
 SQLSTATE : 509: 123w.24h is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]65:CREATE DATABASE "win&one"
+-- [1]75:CREATE DATABASE "win&one"
 STRICT{
 SQLSTATE : 509: win&one is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]66:CREATE DATABASE ``
+-- [1]77:CREATE DATABASE ``
 STRICT{
 SQLSTATE : 700: line 1:17: backquoted identifiers are not supported; use double quotes to quote identifiers
 }
--- [1]68:CREATE DATABASE 存储
+-- [1]79:CREATE DATABASE 存储
 STRICT{
 SQLSTATE : 700: line 1:17: mismatched input '存'. Expecting: 'IF', <identifier>
 }
--- [1]70:CREATE DATABASE "sgcc.w-s1"
+-- [1]81:CREATE DATABASE "sgcc.w-s1"
 STRICT{
 SQLSTATE : 509: sgcc.w-s1 is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]71:create database .
+-- [1]82:create database .
 STRICT{
 SQLSTATE : 700: line 1:17: mismatched input '.'. Expecting: 'IF', <identifier>
 }
--- [1]73:create database "."
+-- [1]84:create database "."
 STRICT{
 SQLSTATE : 509: . is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]75:create database "`.`"
+-- [1]86:create database "`.`"
 STRICT{
 SQLSTATE : 509: `.` is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]78:CREATE DATABASE "db."
+-- [1]89:CREATE DATABASE "db."
 STRICT{
 SQLSTATE : 509: db. is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]80:CREATE DATABASE "a.b"
+-- [1]91:CREATE DATABASE "a.b"
 STRICT{
 SQLSTATE : 509: a.b is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]82:CREATE DATABASE "'data'"
+-- [1]93:CREATE DATABASE "'data'"
 STRICT{
 SQLSTATE : 509: 'data' is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]84:CREATE DATABASE ""test2""
+-- [1]95:CREATE DATABASE ""
 STRICT{
 SQLSTATE : 700: line 1:17: Zero-length delimited identifier not allowed
 }
--- [1]86:CREATE DATABASE "````x.\"
+-- [1]97:CREATE DATABASE ""test2""
+STRICT{
+SQLSTATE : 700: line 1:17: Zero-length delimited identifier not allowed
+}
+-- [1]99:CREATE DATABASE "````x.\"
 STRICT{
 SQLSTATE : 509: ````x.\ is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]88:CREATE DATABASE "D/?<|>&%$#@()"
+-- [1]101:CREATE DATABASE "D/?<|>&%$#@()"
 STRICT{
 SQLSTATE : 509: d/?<|>&%$#@() is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
--- [1]90:CREATE DATABASE "s//"
+-- [1]103:CREATE DATABASE "s//"
 STRICT{
 SQLSTATE : 509: s// is not a legal path, because the database name can only contain english or chinese characters, numbers, backticks and underscores.
 }
 
--- [1]94:SHOW DATABASES
+-- [1]108:SHOW DATABASES
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 information_schema  |INF                |null                                |null                              |null                              |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+abc                 |INF                |1                                   |1                                 |604800000                         |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+data                |INF                |1                                   |1                                 |604800000                         |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+test001             |INF                |1                                   |1                                 |604800000                         |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+`test1`             |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 123                 |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -209,55 +233,21 @@ root                |INF                |1                                   |1 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 time                |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
-`test1`             |INF                |1                                   |1                                 |604800000                         |
------------------------------------------------------------------------------------------------------------------------------------------------
 数据库                 |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 _                   |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 timestamp           |INF                |1                                   |1                                 |604800000                         |
-总数目：9
+总数目：12
 }
 
-Elapsed Time: 0.0.2
--- [1]97:DROP DATABASE root
-STRICT{
-PASS
-}
--- [1]98:DROP DATABASE time
-STRICT{
-PASS
-}
--- [1]99:DROP DATABASE timestamp
-STRICT{
-PASS
-}
--- [1]100:DROP DATABASE "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"
-STRICT{
-PASS
-}
--- [1]101:DROP DATABASE "`test1`"
-STRICT{
-PASS
-}
--- [1]102:DROP DATABASE "123"
-STRICT{
-PASS
-}
--- [1]103:DROP DATABASE "数据库"
-STRICT{
-PASS
-}
--- [1]104:DROP DATABASE _
-STRICT{
-PASS
-}
--- [1]113:CREATE DATABASE db
+Elapsed Time: 0.0.3
+-- [1]130:CREATE DATABASE db
 STRICT{
 PASS
 }
 
--- [1]114:SHOW DATABASES
+-- [1]131:SHOW DATABASES
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -268,12 +258,12 @@ db                  |INF                |1                                   |1 
 }
 
 Elapsed Time: 0.0.2
--- [1]117:CREATE DATABASE DB
+-- [1]134:CREATE DATABASE DB
 STRICT{
 SQLSTATE : 501: Database db already exists
 }
 
--- [1]121:SHOW DATABASES
+-- [1]138:SHOW DATABASES
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -284,16 +274,16 @@ db                  |INF                |1                                   |1 
 }
 
 Elapsed Time: 0.0.2
--- [1]134:CREATE DATABASE TEST
+-- [1]151:CREATE DATABASE TEST
 STRICT{
 PASS
 }
--- [1]137:DROP DATABASE data
+-- [1]154:DROP DATABASE data
 STRICT{
 SQLSTATE : 500: Database data doesn't exist
 }
 
--- [1]139:SHOW DATABASES
+-- [1]156:SHOW DATABASES
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -304,20 +294,20 @@ test                |INF                |1                                   |1 
 }
 
 Elapsed Time: 0.0.2
--- [1]142:DROP DATABASE test
+-- [1]159:DROP DATABASE test
 STRICT{
 PASS
 }
--- [1]147:insert into INSERT INTO table1(time,device_id,s1) values(2, 'd1', 'test')
+-- [1]164:insert into INSERT INTO table1(time,device_id,s1) values(2, 'd1', 'test')
 STRICT{
 SQLSTATE : 700: line 1:13: mismatched input 'INSERT'. Expecting: <identifier>
 }
--- [1]157:create database test
+-- [1]174:create database test
 STRICT{
 PASS
 }
 
--- [1]158:show databases
+-- [1]175:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -328,16 +318,16 @@ test                |INF                |1                                   |1 
 }
 
 Elapsed Time: 0.0.2
--- [1]159:use test
+-- [1]176:use test
 STRICT{
 PASS
 }
--- [1]162:create table table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT, s3 INT64 MEASUREMENT, s4 FLOAT MEASUREMENT, s5 DOUBLE MEASUREMENT, s6 BOOLEAN MEASUREMENT, s7 DATE MEASUREMENT, s8 TIMESTAMP MEASUREMENT, s9 STRING MEASUREMENT, s10 BLOB MEASUREMENT)
+-- [1]179:create table table1(device_id STRING TAG, color STRING ATTRIBUTE, s1 TEXT FIELD, s2 INT32 FIELD, s3 INT64 FIELD, s4 FLOAT FIELD, s5 DOUBLE FIELD, s6 BOOLEAN FIELD, s7 DATE FIELD, s8 TIMESTAMP FIELD, s9 STRING FIELD, s10 BLOB FIELD)
 STRICT{
 PASS
 }
 
--- [1]165:show tables from test
+-- [1]182:show tables from test
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -345,19 +335,19 @@ table1               |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.16
--- [1]166:desc table1
+Elapsed Time: 0.0.20
+-- [1]183:desc table1
 STRICT{
 PASS
 }
--- [1]170:INSERT INTO table1(time,device_id,color,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10) values(1, 'd1', 'red', 'abcd', 1, 1, 1, 1, true, '2021-10-01', 1633046400000, 'abcd', X'abcd')
+-- [1]187:INSERT INTO table1(time,device_id,color,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10) values(1, 'd1', 'red', 'abcd', 1, 1, 1, 1, true, '2021-10-01', 1633046400000, 'abcd', X'abcd')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.725
+Elapsed Time: 0.0.734
 
--- [1]172:select * from table1
+-- [1]189:select * from table1
 STRICT{
 time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -366,13 +356,13 @@ time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s1(TEXT)      
 总数目：1
 }
 
-Elapsed Time: 0.0.209
--- [1]175:drop database test
+Elapsed Time: 0.0.198
+-- [1]192:drop database test
 STRICT{
 PASS
 }
 
--- [1]178:show databases
+-- [1]195:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -381,24 +371,24 @@ information_schema  |INF                |null                                |nu
 }
 
 Elapsed Time: 0.0.2
--- [1]179:show tables from test
+-- [1]196:show tables from test
 STRICT{
 SQLSTATE : 500: Unknown database test
 }
--- [1]181:desc table1
+-- [1]198:desc table1
 STRICT{
 SQLSTATE : 500: Unknown database test
 }
--- [1]185:create database test
+-- [1]202:create database test
 STRICT{
 PASS
 }
--- [1]186:create table table1(device_id STRING ID, color STRING ATTRIBUTE, s1 TEXT MEASUREMENT, s2 INT32 MEASUREMENT, s3 INT64 MEASUREMENT, s4 FLOAT MEASUREMENT, s5 DOUBLE MEASUREMENT, s6 BOOLEAN MEASUREMENT, s7 DATE MEASUREMENT, s8 TIMESTAMP MEASUREMENT, s9 STRING MEASUREMENT, s10 BLOB MEASUREMENT)
+-- [1]203:create table table1(device_id STRING TAG, color STRING ATTRIBUTE, s1 TEXT FIELD, s2 INT32 FIELD, s3 INT64 FIELD, s4 FLOAT FIELD, s5 DOUBLE FIELD, s6 BOOLEAN FIELD, s7 DATE FIELD, s8 TIMESTAMP FIELD, s9 STRING FIELD, s10 BLOB FIELD)
 STRICT{
 PASS
 }
 
--- [1]189:show databases
+-- [1]206:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -410,7 +400,7 @@ test                |INF                |1                                   |1 
 
 Elapsed Time: 0.0.2
 
--- [1]190:show tables from test
+-- [1]207:show tables from test
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -419,46 +409,155 @@ table1               |INF                |
 }
 
 Elapsed Time: 0.0.2
--- [1]191:desc table1
+-- [1]208:desc table1
 STRICT{
 PASS
 }
 
--- [1]194:select * from table1
+-- [1]211:select * from table1
 STRICT{
 time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.13
--- [1]212:CREATE DATABASE test_DB1
+Elapsed Time: 0.0.12
+-- [1]231:CREATE DATABASE test_DB1
 STRICT{
 PASS
 }
--- [1]213:CREATE DATABASE test_DB2
+-- [1]232:CREATE DATABASE test_DB2 with (ttl=86400000)
 STRICT{
 PASS
 }
--- [1]214:CREATE DATABASE test_DB3 IF NOT EXISTS
+-- [1]233:CREATE DATABASE IF NOT EXISTS test_DB3 with (TTL='INF')
 STRICT{
-SQLSTATE : 700: line 1:26: mismatched input 'IF'. Expecting: 'WITH', <EOF>
-EXPECT:PASS
+PASS
+}
+-- [1]234:CREATE DATABASE IF NOT EXISTS test_DB4 with (TTL='INF',TIME_PARTITION_INTERVAL=604800000,SCHEMA_REGION_GROUP_NUM=1,DATA_REGION_GROUP_NUM=2)
+STRICT{
+PASS
 }
 
--- [1]216:show databases
+-- [1]236:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 information_schema  |INF                |null                                |null                              |null                              |
 -----------------------------------------------------------------------------------------------------------------------------------------------
+test_db3            |INF                |1                                   |1                                 |604800000                         |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+test_db4            |INF                |1                                   |1                                 |604800000                         |
+-----------------------------------------------------------------------------------------------------------------------------------------------
 test_db1            |INF                |1                                   |1                                 |604800000                         |
 -----------------------------------------------------------------------------------------------------------------------------------------------
-test_db2            |INF                |1                                   |1                                 |604800000                         |
-总数目：3
+test_db2            |86400000           |1                                   |1                                 |604800000                         |
+总数目：5
 }
 
 Elapsed Time: 0.0.2
--- [1]219:count databases
+
+-- [1]237:show databases details
+STRICT{
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |SchemaRegionGroupNum(INT32)      |DataRegionGroupNum(INT32)      |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+information_schema  |INF                |null                                |null                              |null                              |null                             |null                           |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+test_db3            |INF                |1                                   |1                                 |604800000                         |0                                |0                              |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+test_db4            |INF                |1                                   |1                                 |604800000                         |0                                |0                              |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+test_db1            |INF                |1                                   |1                                 |604800000                         |0                                |0                              |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+test_db2            |86400000           |1                                   |1                                 |604800000                         |0                                |0                              |
+总数目：5
+}
+
+Elapsed Time: 0.0.2
+-- [1]240:count databases
 STRICT{
 SQLSTATE : 700: line 1:7: mismatched input 'databases'. Expecting: 'DEVICES', 'TIMEPARTITION', 'TIMESLOTID'
+}
+
+-- [1]257:show databases
+STRICT{
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+information_schema  |INF                |null                                |null                              |null                              |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]258:show databases details
+STRICT{
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |SchemaRegionGroupNum(INT32)      |DataRegionGroupNum(INT32)      |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+information_schema  |INF                |null                                |null                              |null                              |null                             |null                           |
+总数目：1
+}
+
+Elapsed Time: 0.0.1
+-- [1]261:drop database information_schema
+STRICT{
+SQLSTATE : 701: The database 'information_schema' can only be queried
+}
+-- [1]271:create database TEST
+STRICT{
+PASS
+}
+
+-- [1]274:show databases
+STRICT{
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+information_schema  |INF                |null                                |null                              |null                              |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+test                |INF                |1                                   |1                                 |604800000                         |
+总数目：2
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]275:show databases details
+STRICT{
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |SchemaRegionGroupNum(INT32)      |DataRegionGroupNum(INT32)      |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+information_schema  |INF                |null                                |null                              |null                              |null                             |null                           |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+test                |INF                |1                                   |1                                 |604800000                         |0                                |0                              |
+总数目：2
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]279:SHOW CURRENT_DATABASE
+STRICT{
+CurrentDatabase(STRING)      |
+-----------------------------
+test                         |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+-- [1]281:use TEST
+STRICT{
+PASS
+}
+
+-- [1]285:SHOW CURRENT_DATABASE
+STRICT{
+CurrentDatabase(STRING)      |
+-----------------------------
+test                         |
+总数目：1
+}
+
+Elapsed Time: 0.0.1
+-- [1]287:drop database TEST
+STRICT{
+PASS
+}
+-- [1]290:create table t1(device_id STRING TAG, model_id STRING ATTRIBUTE, boolean BOOLEAN FIELD)
+STRICT{
+SQLSTATE : 500: Unknown database test
 }

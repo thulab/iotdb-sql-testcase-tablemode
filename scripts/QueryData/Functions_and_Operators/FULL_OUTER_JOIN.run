@@ -16,34 +16,34 @@ use test_db;
 --3. 创建表
 create table students
 (
-    region STRING ID,
-	student_id INT32 MEASUREMENT,
-	name STRING MEASUREMENT,
-	genders text MEASUREMENT,
-    date_of_birth DATE MEASUREMENT 
+    region STRING TAG,
+	student_id INT32 FIELD,
+	name STRING FIELD,
+	genders text FIELD,
+    date_of_birth DATE FIELD 
 );
 
 create table teachers
 (
-    region STRING ID,
-	teacher_id INT32 MEASUREMENT,
-    course_id INT32 MEASUREMENT,
-    age INT32 MEASUREMENT
+    region STRING TAG,
+	teacher_id INT32 FIELD,
+    course_id INT32 FIELD,
+    age INT32 FIELD
 );
 
 create table courses
 (
-    course_id STRING ID,
-	course_name STRING MEASUREMENT,
-	teacher_id INT32 MEASUREMENT
+    course_id STRING TAG,
+	course_name STRING FIELD,
+	teacher_id INT32 FIELD
 );
 
 create table grades
 (
-    grade_id STRING ID,
-	course_id INT32 MEASUREMENT,
-	student_id INT32 MEASUREMENT,
-	score INT32 MEASUREMENT
+    grade_id STRING TAG,
+	course_id INT32 FIELD,
+	student_id INT32 FIELD,
+	score INT32 FIELD
 );
 
 --4. 查看表
@@ -104,7 +104,6 @@ select s.name,s.genders,s.date_of_birth,
 	   t.teacher_id, t.course_id
 from students s 
 FULL JOIN teachers t USING(region);
-<<SQLSTATE;
 
 select 
      s.name, s.gengers, s.date_of_birth,

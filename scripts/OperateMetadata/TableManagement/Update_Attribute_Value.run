@@ -14,13 +14,13 @@ use test_db;
 --3. 创建表
 create table table_attr
 (
-    "城市" STRING ID,
-    "区县" STRING ID,
-    "工厂" STRING ID,
+    "城市" STRING TAG,
+    "区县" STRING TAG,
+    "工厂" STRING TAG,
     "型号" STRING ATTRIBUTE,
     "维修周期" STRING ATTRIBUTE,
-    temperature FLOAT MEASUREMENT,
-    status BOOLEAN MEASUREMENT
+    temperature FLOAT FIELD,
+    status BOOLEAN FIELD
 );
 
 --4. 查看表

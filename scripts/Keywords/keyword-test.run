@@ -21,15 +21,15 @@ use test;
 -- 1.3.1 表名
 create table ALTER 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 1.3.2 标识符列
 create table table_01 
 (
-	ALTER STRING ID
+	ALTER STRING TAG
 );
 <<SQLSTATE;
 -- 1.3.3 属性列
@@ -41,7 +41,7 @@ create table table_02
 -- 1.3.4 物理量列
 create table table_03 
 (
-	ALTER INT32 MEASUREMENT
+	ALTER INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -69,15 +69,15 @@ use test;
 -- 2.3.1 表名
 create table AND 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 2.3.2 标识符列
 create table table_01 
 (
-	AND STRING ID
+	AND STRING TAG
 );
 <<SQLSTATE;
 -- 2.3.3 属性列
@@ -89,7 +89,7 @@ create table table_02
 -- 2.3.4 物理量列
 create table table_03 
 (
-	AND INT32 MEASUREMENT
+	AND INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -117,15 +117,15 @@ use test;
 -- 3.3.1 表名
 create table AS 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 3.3.2 标识符列
 create table table_01 
 (
-	AS STRING ID
+	AS STRING TAG
 );
 <<SQLSTATE;
 -- 3.3.3 属性列
@@ -137,7 +137,7 @@ create table table_02
 -- 3.3.4 物理量列
 create table table_03 
 (
-	AS INT32 MEASUREMENT
+	AS INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -165,15 +165,15 @@ use test;
 -- 4.3.1 表名
 create table BETWEEN 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 4.3.2 标识符列
 create table table_01 
 (
-	BETWEEN STRING ID
+	BETWEEN STRING TAG
 );
 <<SQLSTATE;
 -- 4.3.3 属性列
@@ -185,7 +185,7 @@ create table table_02
 -- 4.3.4 物理量列
 create table table_03 
 (
-	BETWEEN INT32 MEASUREMENT
+	BETWEEN INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -213,15 +213,15 @@ use test;
 -- 5.3.1 表名
 create table BY 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 5.3.2 标识符列
 create table table_01 
 (
-	BY STRING ID
+	BY STRING TAG
 );
 <<SQLSTATE;
 -- 5.3.3 属性列
@@ -233,7 +233,7 @@ create table table_02
 -- 5.3.4 物理量列
 create table table_03 
 (
-	BY INT32 MEASUREMENT
+	BY INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -261,15 +261,15 @@ use test;
 -- 6.3.1 表名
 create table CASE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 6.3.2 标识符列
 create table table_01 
 (
-	CASE STRING ID
+	CASE STRING TAG
 );
 <<SQLSTATE;
 -- 6.3.3 属性列
@@ -281,7 +281,7 @@ create table table_02
 -- 6.3.4 物理量列
 create table table_03 
 (
-	CASE INT32 MEASUREMENT
+	CASE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -309,15 +309,15 @@ use test;
 -- 7.3.1 表名
 create table CAST 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 7.3.2 标识符列
 create table table_01 
 (
-	CAST STRING ID
+	CAST STRING TAG
 );
 <<SQLSTATE;
 -- 7.3.3 属性列
@@ -329,7 +329,7 @@ create table table_02
 -- 7.3.4 物理量列
 create table table_03 
 (
-	CAST INT32 MEASUREMENT
+	CAST INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -357,15 +357,15 @@ use test;
 -- 8.3.1 表名
 create table CONSTRAINT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 8.3.2 标识符列
 create table table_01 
 (
-	CONSTRAINT STRING ID
+	CONSTRAINT STRING TAG
 );
 <<SQLSTATE;
 -- 8.3.3 属性列
@@ -377,7 +377,7 @@ create table table_02
 -- 8.3.4 物理量列
 create table table_03 
 (
-	CONSTRAINT INT32 MEASUREMENT
+	CONSTRAINT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -405,15 +405,15 @@ use test;
 -- 9.3.1 表名
 create table CREATE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 9.3.2 标识符列
 create table table_01 
 (
-	CREATE STRING ID
+	CREATE STRING TAG
 );
 <<SQLSTATE;
 -- 9.3.3 属性列
@@ -425,7 +425,7 @@ create table table_02
 -- 9.3.4 物理量列
 create table table_03 
 (
-	CREATE INT32 MEASUREMENT
+	CREATE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -453,15 +453,15 @@ use test;
 -- 10.3.1 表名
 create table CROSS 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 10.3.2 标识符列
 create table table_01 
 (
-	CROSS STRING ID
+	CROSS STRING TAG
 );
 <<SQLSTATE;
 -- 10.3.3 属性列
@@ -473,7 +473,7 @@ create table table_02
 -- 10.3.4 物理量列
 create table table_03 
 (
-	CROSS INT32 MEASUREMENT
+	CROSS INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -501,15 +501,15 @@ use test;
 -- 11.3.1 表名
 create table CUBE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 11.3.2 标识符列
 create table table_01 
 (
-	CUBE STRING ID
+	CUBE STRING TAG
 );
 <<SQLSTATE;
 -- 11.3.3 属性列
@@ -521,7 +521,7 @@ create table table_02
 -- 11.3.4 物理量列
 create table table_03 
 (
-	CUBE INT32 MEASUREMENT
+	CUBE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -549,15 +549,15 @@ use test;
 -- 12.3.1 表名
 create table CURRENT_CATALOG 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 12.3.2 标识符列
 create table table_01 
 (
-	CURRENT_CATALOG STRING ID
+	CURRENT_CATALOG STRING TAG
 );
 <<SQLSTATE;
 -- 12.3.3 属性列
@@ -569,7 +569,7 @@ create table table_02
 -- 12.3.4 物理量列
 create table table_03 
 (
-	CURRENT_CATALOG INT32 MEASUREMENT
+	CURRENT_CATALOG INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -597,15 +597,15 @@ use test;
 -- 13.3.1 表名
 create table CURRENT_DATE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 13.3.2 标识符列
 create table table_01 
 (
-	CURRENT_DATE STRING ID
+	CURRENT_DATE STRING TAG
 );
 <<SQLSTATE;
 -- 13.3.3 属性列
@@ -617,7 +617,7 @@ create table table_02
 -- 13.3.4 物理量列
 create table table_03 
 (
-	CURRENT_DATE INT32 MEASUREMENT
+	CURRENT_DATE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -645,15 +645,15 @@ use test;
 -- 14.3.1 表名
 create table CURRENT_PATH 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 14.3.2 标识符列
 create table table_01 
 (
-	CURRENT_PATH STRING ID
+	CURRENT_PATH STRING TAG
 );
 <<SQLSTATE;
 -- 14.3.3 属性列
@@ -665,7 +665,7 @@ create table table_02
 -- 14.3.4 物理量列
 create table table_03 
 (
-	CURRENT_PATH INT32 MEASUREMENT
+	CURRENT_PATH INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -693,15 +693,15 @@ use test;
 -- 15.3.1 表名
 create table CURRENT_ROLE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 15.3.2 标识符列
 create table table_01 
 (
-	CURRENT_ROLE STRING ID
+	CURRENT_ROLE STRING TAG
 );
 <<SQLSTATE;
 -- 15.3.3 属性列
@@ -713,7 +713,7 @@ create table table_02
 -- 15.3.4 物理量列
 create table table_03 
 (
-	CURRENT_ROLE INT32 MEASUREMENT
+	CURRENT_ROLE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -741,15 +741,15 @@ use test;
 -- 16.3.1 表名
 create table CURRENT_SCHEMA 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 16.3.2 标识符列
 create table table_01 
 (
-	CURRENT_SCHEMA STRING ID
+	CURRENT_SCHEMA STRING TAG
 );
 <<SQLSTATE;
 -- 16.3.3 属性列
@@ -761,7 +761,7 @@ create table table_02
 -- 16.3.4 物理量列
 create table table_03 
 (
-	CURRENT_SCHEMA INT32 MEASUREMENT
+	CURRENT_SCHEMA INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -789,15 +789,15 @@ use test;
 -- 17.3.1 表名
 create table CURRENT_TIME 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 17.3.2 标识符列
 create table table_01 
 (
-	CURRENT_TIME STRING ID
+	CURRENT_TIME STRING TAG
 );
 <<SQLSTATE;
 -- 17.3.3 属性列
@@ -809,7 +809,7 @@ create table table_02
 -- 17.3.4 物理量列
 create table table_03 
 (
-	CURRENT_TIME INT32 MEASUREMENT
+	CURRENT_TIME INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -837,15 +837,15 @@ use test;
 -- 18.3.1 表名
 create table CURRENT_TIMESTAMP 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 18.3.2 标识符列
 create table table_01 
 (
-	CURRENT_TIMESTAMP STRING ID
+	CURRENT_TIMESTAMP STRING TAG
 );
 <<SQLSTATE;
 -- 18.3.3 属性列
@@ -857,7 +857,7 @@ create table table_02
 -- 18.3.4 物理量列
 create table table_03 
 (
-	CURRENT_TIMESTAMP INT32 MEASUREMENT
+	CURRENT_TIMESTAMP INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -885,15 +885,15 @@ use test;
 -- 19.3.1 表名
 create table CURRENT_USER 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 19.3.2 标识符列
 create table table_01 
 (
-	CURRENT_USER STRING ID
+	CURRENT_USER STRING TAG
 );
 <<SQLSTATE;
 -- 19.3.3 属性列
@@ -905,7 +905,7 @@ create table table_02
 -- 19.3.4 物理量列
 create table table_03 
 (
-	CURRENT_USER INT32 MEASUREMENT
+	CURRENT_USER INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -933,15 +933,15 @@ use test;
 -- 20.3.1 表名
 create table DEALLOCATE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 20.3.2 标识符列
 create table table_01 
 (
-	DEALLOCATE STRING ID
+	DEALLOCATE STRING TAG
 );
 <<SQLSTATE;
 -- 20.3.3 属性列
@@ -953,7 +953,7 @@ create table table_02
 -- 20.3.4 物理量列
 create table table_03 
 (
-	DEALLOCATE INT32 MEASUREMENT
+	DEALLOCATE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -981,15 +981,15 @@ use test;
 -- 21.3.1 表名
 create table DELETE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 21.3.2 标识符列
 create table table_01 
 (
-	DELETE STRING ID
+	DELETE STRING TAG
 );
 <<SQLSTATE;
 -- 21.3.3 属性列
@@ -1001,7 +1001,7 @@ create table table_02
 -- 21.3.4 物理量列
 create table table_03 
 (
-	DELETE INT32 MEASUREMENT
+	DELETE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1029,15 +1029,15 @@ use test;
 -- 22.3.1 表名
 create table DESCRIBE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 22.3.2 标识符列
 create table table_01 
 (
-	DESCRIBE STRING ID
+	DESCRIBE STRING TAG
 );
 <<SQLSTATE;
 -- 22.3.3 属性列
@@ -1049,7 +1049,7 @@ create table table_02
 -- 22.3.4 物理量列
 create table table_03 
 (
-	DESCRIBE INT32 MEASUREMENT
+	DESCRIBE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1077,15 +1077,15 @@ use test;
 -- 23.3.1 表名
 create table DISTINCT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 23.3.2 标识符列
 create table table_01 
 (
-	DISTINCT STRING ID
+	DISTINCT STRING TAG
 );
 <<SQLSTATE;
 -- 23.3.3 属性列
@@ -1097,7 +1097,7 @@ create table table_02
 -- 23.3.4 物理量列
 create table table_03 
 (
-	DISTINCT INT32 MEASUREMENT
+	DISTINCT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1125,15 +1125,15 @@ use test;
 -- 24.3.1 表名
 create table DROP 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 24.3.2 标识符列
 create table table_01 
 (
-	DROP STRING ID
+	DROP STRING TAG
 );
 <<SQLSTATE;
 -- 24.3.3 属性列
@@ -1145,7 +1145,7 @@ create table table_02
 -- 24.3.4 物理量列
 create table table_03 
 (
-	DROP INT32 MEASUREMENT
+	DROP INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1173,15 +1173,15 @@ use test;
 -- 25.3.1 表名
 create table ELSE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 25.3.2 标识符列
 create table table_01 
 (
-	ELSE STRING ID
+	ELSE STRING TAG
 );
 <<SQLSTATE;
 -- 25.3.3 属性列
@@ -1193,7 +1193,7 @@ create table table_02
 -- 25.3.4 物理量列
 create table table_03 
 (
-	ELSE INT32 MEASUREMENT
+	ELSE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1221,15 +1221,15 @@ use test;
 -- 26.3.1 表名
 create table END 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 26.3.2 标识符列
 create table table_01 
 (
-	END STRING ID
+	END STRING TAG
 );
 <<SQLSTATE;
 -- 26.3.3 属性列
@@ -1241,7 +1241,7 @@ create table table_02
 -- 26.3.4 物理量列
 create table table_03 
 (
-	END INT32 MEASUREMENT
+	END INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1269,15 +1269,15 @@ use test;
 -- 27.3.1 表名
 create table ESCAPE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 27.3.2 标识符列
 create table table_01 
 (
-	ESCAPE STRING ID
+	ESCAPE STRING TAG
 );
 <<SQLSTATE;
 -- 27.3.3 属性列
@@ -1289,7 +1289,7 @@ create table table_02
 -- 27.3.4 物理量列
 create table table_03 
 (
-	ESCAPE INT32 MEASUREMENT
+	ESCAPE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1317,15 +1317,15 @@ use test;
 -- 28.3.1 表名
 create table EXCEPT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 28.3.2 标识符列
 create table table_01 
 (
-	EXCEPT STRING ID
+	EXCEPT STRING TAG
 );
 <<SQLSTATE;
 -- 28.3.3 属性列
@@ -1337,7 +1337,7 @@ create table table_02
 -- 28.3.4 物理量列
 create table table_03 
 (
-	EXCEPT INT32 MEASUREMENT
+	EXCEPT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1365,15 +1365,15 @@ use test;
 -- 29.3.1 表名
 create table EXISTS 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 29.3.2 标识符列
 create table table_01 
 (
-	EXISTS STRING ID
+	EXISTS STRING TAG
 );
 <<SQLSTATE;
 -- 29.3.3 属性列
@@ -1385,7 +1385,7 @@ create table table_02
 -- 29.3.4 物理量列
 create table table_03 
 (
-	EXISTS INT32 MEASUREMENT
+	EXISTS INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1413,15 +1413,15 @@ use test;
 -- 30.3.1 表名
 create table EXTRACT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 30.3.2 标识符列
 create table table_01 
 (
-	EXTRACT STRING ID
+	EXTRACT STRING TAG
 );
 <<SQLSTATE;
 -- 30.3.3 属性列
@@ -1433,7 +1433,7 @@ create table table_02
 -- 30.3.4 物理量列
 create table table_03 
 (
-	EXTRACT INT32 MEASUREMENT
+	EXTRACT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1461,15 +1461,15 @@ use test;
 -- 31.3.1 表名
 create table FALSE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 31.3.2 标识符列
 create table table_01 
 (
-	FALSE STRING ID
+	FALSE STRING TAG
 );
 <<SQLSTATE;
 -- 31.3.3 属性列
@@ -1481,7 +1481,7 @@ create table table_02
 -- 31.3.4 物理量列
 create table table_03 
 (
-	FALSE INT32 MEASUREMENT
+	FALSE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1509,15 +1509,15 @@ use test;
 -- 32.3.1 表名
 create table FOR 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 32.3.2 标识符列
 create table table_01 
 (
-	FOR STRING ID
+	FOR STRING TAG
 );
 <<SQLSTATE;
 -- 32.3.3 属性列
@@ -1529,7 +1529,7 @@ create table table_02
 -- 32.3.4 物理量列
 create table table_03 
 (
-	FOR INT32 MEASUREMENT
+	FOR INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1557,15 +1557,15 @@ use test;
 -- 33.3.1 表名
 create table FROM 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 33.3.2 标识符列
 create table table_01 
 (
-	FROM STRING ID
+	FROM STRING TAG
 );
 <<SQLSTATE;
 -- 33.3.3 属性列
@@ -1577,7 +1577,7 @@ create table table_02
 -- 33.3.4 物理量列
 create table table_03 
 (
-	FROM INT32 MEASUREMENT
+	FROM INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1605,15 +1605,15 @@ use test;
 -- 34.3.1 表名
 create table FULL 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 34.3.2 标识符列
 create table table_01 
 (
-	FULL STRING ID
+	FULL STRING TAG
 );
 <<SQLSTATE;
 -- 34.3.3 属性列
@@ -1625,7 +1625,7 @@ create table table_02
 -- 34.3.4 物理量列
 create table table_03 
 (
-	FULL INT32 MEASUREMENT
+	FULL INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1653,15 +1653,15 @@ use test;
 -- 35.3.1 表名
 create table GROUP 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 35.3.2 标识符列
 create table table_01 
 (
-	GROUP STRING ID
+	GROUP STRING TAG
 );
 <<SQLSTATE;
 -- 35.3.3 属性列
@@ -1673,7 +1673,7 @@ create table table_02
 -- 35.3.4 物理量列
 create table table_03 
 (
-	GROUP INT32 MEASUREMENT
+	GROUP INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1701,15 +1701,15 @@ use test;
 -- 36.3.1 表名
 create table GROUPING 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 36.3.2 标识符列
 create table table_01 
 (
-	GROUPING STRING ID
+	GROUPING STRING TAG
 );
 <<SQLSTATE;
 -- 36.3.3 属性列
@@ -1721,7 +1721,7 @@ create table table_02
 -- 36.3.4 物理量列
 create table table_03 
 (
-	GROUPING INT32 MEASUREMENT
+	GROUPING INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1749,15 +1749,15 @@ use test;
 -- 37.3.1 表名
 create table HAVING 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 37.3.2 标识符列
 create table table_01 
 (
-	HAVING STRING ID
+	HAVING STRING TAG
 );
 <<SQLSTATE;
 -- 37.3.3 属性列
@@ -1769,7 +1769,7 @@ create table table_02
 -- 37.3.4 物理量列
 create table table_03 
 (
-	HAVING INT32 MEASUREMENT
+	HAVING INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1797,15 +1797,15 @@ use test;
 -- 38.3.1 表名
 create table IN 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 38.3.2 标识符列
 create table table_01 
 (
-	IN STRING ID
+	IN STRING TAG
 );
 <<SQLSTATE;
 -- 38.3.3 属性列
@@ -1817,7 +1817,7 @@ create table table_02
 -- 38.3.4 物理量列
 create table table_03 
 (
-	IN INT32 MEASUREMENT
+	IN INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1845,15 +1845,15 @@ use test;
 -- 39.3.1 表名
 create table INNER 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 39.3.2 标识符列
 create table table_01 
 (
-	INNER STRING ID
+	INNER STRING TAG
 );
 <<SQLSTATE;
 -- 39.3.3 属性列
@@ -1865,7 +1865,7 @@ create table table_02
 -- 39.3.4 物理量列
 create table table_03 
 (
-	INNER INT32 MEASUREMENT
+	INNER INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1893,15 +1893,15 @@ use test;
 -- 40.3.1 表名
 create table INSERT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 40.3.2 标识符列
 create table table_01 
 (
-	INSERT STRING ID
+	INSERT STRING TAG
 );
 <<SQLSTATE;
 -- 40.3.3 属性列
@@ -1913,7 +1913,7 @@ create table table_02
 -- 40.3.4 物理量列
 create table table_03 
 (
-	INSERT INT32 MEASUREMENT
+	INSERT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1941,15 +1941,15 @@ use test;
 -- 41.3.1 表名
 create table INTERSECT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 41.3.2 标识符列
 create table table_01 
 (
-	INTERSECT STRING ID
+	INTERSECT STRING TAG
 );
 <<SQLSTATE;
 -- 41.3.3 属性列
@@ -1961,7 +1961,7 @@ create table table_02
 -- 41.3.4 物理量列
 create table table_03 
 (
-	INTERSECT INT32 MEASUREMENT
+	INTERSECT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -1989,15 +1989,15 @@ use test;
 -- 42.3.1 表名
 create table INTO 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 42.3.2 标识符列
 create table table_01 
 (
-	INTO STRING ID
+	INTO STRING TAG
 );
 <<SQLSTATE;
 -- 42.3.3 属性列
@@ -2009,7 +2009,7 @@ create table table_02
 -- 42.3.4 物理量列
 create table table_03 
 (
-	INTO INT32 MEASUREMENT
+	INTO INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2037,15 +2037,15 @@ use test;
 -- 43.3.1 表名
 create table IS 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 43.3.2 标识符列
 create table table_01 
 (
-	IS STRING ID
+	IS STRING TAG
 );
 <<SQLSTATE;
 -- 43.3.3 属性列
@@ -2057,7 +2057,7 @@ create table table_02
 -- 43.3.4 物理量列
 create table table_03 
 (
-	IS INT32 MEASUREMENT
+	IS INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2085,15 +2085,15 @@ use test;
 -- 44.3.1 表名
 create table JOIN 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 44.3.2 标识符列
 create table table_01 
 (
-	JOIN STRING ID
+	JOIN STRING TAG
 );
 <<SQLSTATE;
 -- 44.3.3 属性列
@@ -2105,7 +2105,7 @@ create table table_02
 -- 44.3.4 物理量列
 create table table_03 
 (
-	JOIN INT32 MEASUREMENT
+	JOIN INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2133,15 +2133,15 @@ use test;
 -- 45.3.1 表名
 create table JSON_ARRAY 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 45.3.2 标识符列
 create table table_01 
 (
-	JSON_ARRAY STRING ID
+	JSON_ARRAY STRING TAG
 );
 <<SQLSTATE;
 -- 45.3.3 属性列
@@ -2153,7 +2153,7 @@ create table table_02
 -- 45.3.4 物理量列
 create table table_03 
 (
-	JSON_ARRAY INT32 MEASUREMENT
+	JSON_ARRAY INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2181,15 +2181,15 @@ use test;
 -- 46.3.1 表名
 create table JSON_EXISTS 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 46.3.2 标识符列
 create table table_01 
 (
-	JSON_EXISTS STRING ID
+	JSON_EXISTS STRING TAG
 );
 <<SQLSTATE;
 -- 46.3.3 属性列
@@ -2201,7 +2201,7 @@ create table table_02
 -- 46.3.4 物理量列
 create table table_03 
 (
-	JSON_EXISTS INT32 MEASUREMENT
+	JSON_EXISTS INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2229,15 +2229,15 @@ use test;
 -- 47.3.1 表名
 create table JSON_OBJECT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 47.3.2 标识符列
 create table table_01 
 (
-	JSON_OBJECT STRING ID
+	JSON_OBJECT STRING TAG
 );
 <<SQLSTATE;
 -- 47.3.3 属性列
@@ -2249,7 +2249,7 @@ create table table_02
 -- 47.3.4 物理量列
 create table table_03 
 (
-	JSON_OBJECT INT32 MEASUREMENT
+	JSON_OBJECT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2277,15 +2277,15 @@ use test;
 -- 48.3.1 表名
 create table JSON_QUERY 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 48.3.2 标识符列
 create table table_01 
 (
-	JSON_QUERY STRING ID
+	JSON_QUERY STRING TAG
 );
 <<SQLSTATE;
 -- 48.3.3 属性列
@@ -2297,7 +2297,7 @@ create table table_02
 -- 48.3.4 物理量列
 create table table_03 
 (
-	JSON_QUERY INT32 MEASUREMENT
+	JSON_QUERY INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2325,15 +2325,15 @@ use test;
 -- 49.3.1 表名
 create table JSON_TABLE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 49.3.2 标识符列
 create table table_01 
 (
-	JSON_TABLE STRING ID
+	JSON_TABLE STRING TAG
 );
 <<SQLSTATE;
 -- 49.3.3 属性列
@@ -2345,7 +2345,7 @@ create table table_02
 -- 49.3.4 物理量列
 create table table_03 
 (
-	JSON_TABLE INT32 MEASUREMENT
+	JSON_TABLE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2373,15 +2373,15 @@ use test;
 -- 50.3.1 表名
 create table JSON_VALUE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 50.3.2 标识符列
 create table table_01 
 (
-	JSON_VALUE STRING ID
+	JSON_VALUE STRING TAG
 );
 <<SQLSTATE;
 -- 50.3.3 属性列
@@ -2393,7 +2393,7 @@ create table table_02
 -- 50.3.4 物理量列
 create table table_03 
 (
-	JSON_VALUE INT32 MEASUREMENT
+	JSON_VALUE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2421,15 +2421,15 @@ use test;
 -- 51.3.1 表名
 create table LEFT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 51.3.2 标识符列
 create table table_01 
 (
-	LEFT STRING ID
+	LEFT STRING TAG
 );
 <<SQLSTATE;
 -- 51.3.3 属性列
@@ -2441,7 +2441,7 @@ create table table_02
 -- 51.3.4 物理量列
 create table table_03 
 (
-	LEFT INT32 MEASUREMENT
+	LEFT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2469,15 +2469,15 @@ use test;
 -- 52.3.1 表名
 create table LIKE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 52.3.2 标识符列
 create table table_01 
 (
-	LIKE STRING ID
+	LIKE STRING TAG
 );
 <<SQLSTATE;
 -- 52.3.3 属性列
@@ -2489,7 +2489,7 @@ create table table_02
 -- 52.3.4 物理量列
 create table table_03 
 (
-	LIKE INT32 MEASUREMENT
+	LIKE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2517,15 +2517,15 @@ use test;
 -- 53.3.1 表名
 create table LISTAGG 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 53.3.2 标识符列
 create table table_01 
 (
-	LISTAGG STRING ID
+	LISTAGG STRING TAG
 );
 <<SQLSTATE;
 -- 53.3.3 属性列
@@ -2537,7 +2537,7 @@ create table table_02
 -- 53.3.4 物理量列
 create table table_03 
 (
-	LISTAGG INT32 MEASUREMENT
+	LISTAGG INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2565,15 +2565,15 @@ use test;
 -- 54.3.1 表名
 create table LOCALTIME 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 54.3.2 标识符列
 create table table_01 
 (
-	LOCALTIME STRING ID
+	LOCALTIME STRING TAG
 );
 <<SQLSTATE;
 -- 54.3.3 属性列
@@ -2585,7 +2585,7 @@ create table table_02
 -- 54.3.4 物理量列
 create table table_03 
 (
-	LOCALTIME INT32 MEASUREMENT
+	LOCALTIME INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2613,15 +2613,15 @@ use test;
 -- 55.3.1 表名
 create table LOCALTIMESTAMP 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 55.3.2 标识符列
 create table table_01 
 (
-	LOCALTIMESTAMP STRING ID
+	LOCALTIMESTAMP STRING TAG
 );
 <<SQLSTATE;
 -- 55.3.3 属性列
@@ -2633,7 +2633,7 @@ create table table_02
 -- 55.3.4 物理量列
 create table table_03 
 (
-	LOCALTIMESTAMP INT32 MEASUREMENT
+	LOCALTIMESTAMP INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2661,15 +2661,15 @@ use test;
 -- 56.3.1 表名
 create table NATURAL 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 56.3.2 标识符列
 create table table_01 
 (
-	NATURAL STRING ID
+	NATURAL STRING TAG
 );
 <<SQLSTATE;
 -- 56.3.3 属性列
@@ -2681,7 +2681,7 @@ create table table_02
 -- 56.3.4 物理量列
 create table table_03 
 (
-	NATURAL INT32 MEASUREMENT
+	NATURAL INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2709,15 +2709,15 @@ use test;
 -- 57.3.1 表名
 create table NORMALIZE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 57.3.2 标识符列
 create table table_01 
 (
-	NORMALIZE STRING ID
+	NORMALIZE STRING TAG
 );
 <<SQLSTATE;
 -- 57.3.3 属性列
@@ -2729,7 +2729,7 @@ create table table_02
 -- 57.3.4 物理量列
 create table table_03 
 (
-	NORMALIZE INT32 MEASUREMENT
+	NORMALIZE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2757,15 +2757,15 @@ use test;
 -- 58.3.1 表名
 create table NOT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 58.3.2 标识符列
 create table table_01 
 (
-	NOT STRING ID
+	NOT STRING TAG
 );
 <<SQLSTATE;
 -- 58.3.3 属性列
@@ -2777,7 +2777,7 @@ create table table_02
 -- 58.3.4 物理量列
 create table table_03 
 (
-	NOT INT32 MEASUREMENT
+	NOT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2805,15 +2805,15 @@ use test;
 -- 59.3.1 表名
 create table NULL 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 59.3.2 标识符列
 create table table_01 
 (
-	NULL STRING ID
+	NULL STRING TAG
 );
 <<SQLSTATE;
 -- 59.3.3 属性列
@@ -2825,7 +2825,7 @@ create table table_02
 -- 59.3.4 物理量列
 create table table_03 
 (
-	NULL INT32 MEASUREMENT
+	NULL INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2853,15 +2853,15 @@ use test;
 -- 60.3.1 表名
 create table ON 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 60.3.2 标识符列
 create table table_01 
 (
-	ON STRING ID
+	ON STRING TAG
 );
 <<SQLSTATE;
 -- 60.3.3 属性列
@@ -2873,7 +2873,7 @@ create table table_02
 -- 60.3.4 物理量列
 create table table_03 
 (
-	ON INT32 MEASUREMENT
+	ON INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2901,15 +2901,15 @@ use test;
 -- 61.3.1 表名
 create table OR 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 61.3.2 标识符列
 create table table_01 
 (
-	OR STRING ID
+	OR STRING TAG
 );
 <<SQLSTATE;
 -- 61.3.3 属性列
@@ -2921,7 +2921,7 @@ create table table_02
 -- 61.3.4 物理量列
 create table table_03 
 (
-	OR INT32 MEASUREMENT
+	OR INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2949,15 +2949,15 @@ use test;
 -- 62.3.1 表名
 create table ORDER 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 62.3.2 标识符列
 create table table_01 
 (
-	ORDER STRING ID
+	ORDER STRING TAG
 );
 <<SQLSTATE;
 -- 62.3.3 属性列
@@ -2969,7 +2969,7 @@ create table table_02
 -- 62.3.4 物理量列
 create table table_03 
 (
-	ORDER INT32 MEASUREMENT
+	ORDER INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -2997,15 +2997,15 @@ use test;
 -- 63.3.1 表名
 create table OUTER 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 63.3.2 标识符列
 create table table_01 
 (
-	OUTER STRING ID
+	OUTER STRING TAG
 );
 <<SQLSTATE;
 -- 63.3.3 属性列
@@ -3017,7 +3017,7 @@ create table table_02
 -- 63.3.4 物理量列
 create table table_03 
 (
-	OUTER INT32 MEASUREMENT
+	OUTER INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3045,15 +3045,15 @@ use test;
 -- 64.3.1 表名
 create table PREPARE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 64.3.2 标识符列
 create table table_01 
 (
-	PREPARE STRING ID
+	PREPARE STRING TAG
 );
 <<SQLSTATE;
 -- 64.3.3 属性列
@@ -3065,7 +3065,7 @@ create table table_02
 -- 64.3.4 物理量列
 create table table_03 
 (
-	PREPARE INT32 MEASUREMENT
+	PREPARE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3093,15 +3093,15 @@ use test;
 -- 65.3.1 表名
 create table RECURSIVE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 65.3.2 标识符列
 create table table_01 
 (
-	RECURSIVE STRING ID
+	RECURSIVE STRING TAG
 );
 <<SQLSTATE;
 -- 65.3.3 属性列
@@ -3113,7 +3113,7 @@ create table table_02
 -- 65.3.4 物理量列
 create table table_03 
 (
-	RECURSIVE INT32 MEASUREMENT
+	RECURSIVE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3141,15 +3141,15 @@ use test;
 -- 66.3.1 表名
 create table RIGHT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 66.3.2 标识符列
 create table table_01 
 (
-	RIGHT STRING ID
+	RIGHT STRING TAG
 );
 <<SQLSTATE;
 -- 66.3.3 属性列
@@ -3161,7 +3161,7 @@ create table table_02
 -- 66.3.4 物理量列
 create table table_03 
 (
-	RIGHT INT32 MEASUREMENT
+	RIGHT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3189,15 +3189,15 @@ use test;
 -- 67.3.1 表名
 create table ROLLUP 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 67.3.2 标识符列
 create table table_01 
 (
-	ROLLUP STRING ID
+	ROLLUP STRING TAG
 );
 <<SQLSTATE;
 -- 67.3.3 属性列
@@ -3209,7 +3209,7 @@ create table table_02
 -- 67.3.4 物理量列
 create table table_03 
 (
-	ROLLUP INT32 MEASUREMENT
+	ROLLUP INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3237,15 +3237,15 @@ use test;
 -- 68.3.1 表名
 create table SELECT 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 68.3.2 标识符列
 create table table_01 
 (
-	SELECT STRING ID
+	SELECT STRING TAG
 );
 <<SQLSTATE;
 -- 68.3.3 属性列
@@ -3257,7 +3257,7 @@ create table table_02
 -- 68.3.4 物理量列
 create table table_03 
 (
-	SELECT INT32 MEASUREMENT
+	SELECT INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3285,15 +3285,15 @@ use test;
 -- 69.3.1 表名
 create table SKIP 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 69.3.2 标识符列
 create table table_01 
 (
-	SKIP STRING ID
+	SKIP STRING TAG
 );
 <<SQLSTATE;
 -- 69.3.3 属性列
@@ -3305,7 +3305,7 @@ create table table_02
 -- 69.3.4 物理量列
 create table table_03 
 (
-	SKIP INT32 MEASUREMENT
+	SKIP INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3333,15 +3333,15 @@ use test;
 -- 70.3.1 表名
 create table TABLE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 70.3.2 标识符列
 create table table_01 
 (
-	TABLE STRING ID
+	TABLE STRING TAG
 );
 <<SQLSTATE;
 -- 70.3.3 属性列
@@ -3353,7 +3353,7 @@ create table table_02
 -- 70.3.4 物理量列
 create table table_03 
 (
-	TABLE INT32 MEASUREMENT
+	TABLE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3381,15 +3381,15 @@ use test;
 -- 71.3.1 表名
 create table THEN 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 71.3.2 标识符列
 create table table_01 
 (
-	THEN STRING ID
+	THEN STRING TAG
 );
 <<SQLSTATE;
 -- 71.3.3 属性列
@@ -3401,7 +3401,7 @@ create table table_02
 -- 71.3.4 物理量列
 create table table_03 
 (
-	THEN INT32 MEASUREMENT
+	THEN INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3429,15 +3429,15 @@ use test;
 -- 72.3.1 表名
 create table TRIM 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 72.3.2 标识符列
 create table table_01 
 (
-	TRIM STRING ID
+	TRIM STRING TAG
 );
 <<SQLSTATE;
 -- 72.3.3 属性列
@@ -3449,7 +3449,7 @@ create table table_02
 -- 72.3.4 物理量列
 create table table_03 
 (
-	TRIM INT32 MEASUREMENT
+	TRIM INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3477,15 +3477,15 @@ use test;
 -- 73.3.1 表名
 create table TRUE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 73.3.2 标识符列
 create table table_01 
 (
-	TRUE STRING ID
+	TRUE STRING TAG
 );
 <<SQLSTATE;
 -- 73.3.3 属性列
@@ -3497,7 +3497,7 @@ create table table_02
 -- 73.3.4 物理量列
 create table table_03 
 (
-	TRUE INT32 MEASUREMENT
+	TRUE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3525,15 +3525,15 @@ use test;
 -- 74.3.1 表名
 create table UESCAPE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 74.3.2 标识符列
 create table table_01 
 (
-	UESCAPE STRING ID
+	UESCAPE STRING TAG
 );
 <<SQLSTATE;
 -- 74.3.3 属性列
@@ -3545,7 +3545,7 @@ create table table_02
 -- 74.3.4 物理量列
 create table table_03 
 (
-	UESCAPE INT32 MEASUREMENT
+	UESCAPE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3573,15 +3573,15 @@ use test;
 -- 75.3.1 表名
 create table UNION 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 75.3.2 标识符列
 create table table_01 
 (
-	UNION STRING ID
+	UNION STRING TAG
 );
 <<SQLSTATE;
 -- 75.3.3 属性列
@@ -3593,7 +3593,7 @@ create table table_02
 -- 75.3.4 物理量列
 create table table_03 
 (
-	UNION INT32 MEASUREMENT
+	UNION INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3621,15 +3621,15 @@ use test;
 -- 76.3.1 表名
 create table UNNEST 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 76.3.2 标识符列
 create table table_01 
 (
-	UNNEST STRING ID
+	UNNEST STRING TAG
 );
 <<SQLSTATE;
 -- 76.3.3 属性列
@@ -3641,7 +3641,7 @@ create table table_02
 -- 76.3.4 物理量列
 create table table_03 
 (
-	UNNEST INT32 MEASUREMENT
+	UNNEST INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3669,15 +3669,15 @@ use test;
 -- 77.3.1 表名
 create table USING 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 77.3.2 标识符列
 create table table_01 
 (
-	USING STRING ID
+	USING STRING TAG
 );
 <<SQLSTATE;
 -- 77.3.3 属性列
@@ -3689,7 +3689,7 @@ create table table_02
 -- 77.3.4 物理量列
 create table table_03 
 (
-	USING INT32 MEASUREMENT
+	USING INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3717,15 +3717,15 @@ use test;
 -- 78.3.1 表名
 create table VALUES 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 78.3.2 标识符列
 create table table_01 
 (
-	VALUES STRING ID
+	VALUES STRING TAG
 );
 <<SQLSTATE;
 -- 78.3.3 属性列
@@ -3737,7 +3737,7 @@ create table table_02
 -- 78.3.4 物理量列
 create table table_03 
 (
-	VALUES INT32 MEASUREMENT
+	VALUES INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3765,15 +3765,15 @@ use test;
 -- 79.3.1 表名
 create table WHEN 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 79.3.2 标识符列
 create table table_01 
 (
-	WHEN STRING ID
+	WHEN STRING TAG
 );
 <<SQLSTATE;
 -- 79.3.3 属性列
@@ -3785,7 +3785,7 @@ create table table_02
 -- 79.3.4 物理量列
 create table table_03 
 (
-	WHEN INT32 MEASUREMENT
+	WHEN INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3813,15 +3813,15 @@ use test;
 -- 80.3.1 表名
 create table WHERE 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 80.3.2 标识符列
 create table table_01 
 (
-	WHERE STRING ID
+	WHERE STRING TAG
 );
 <<SQLSTATE;
 -- 80.3.3 属性列
@@ -3833,7 +3833,7 @@ create table table_02
 -- 80.3.4 物理量列
 create table table_03 
 (
-	WHERE INT32 MEASUREMENT
+	WHERE INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3861,15 +3861,15 @@ use test;
 -- 81.3.1 表名
 create table WITH 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 81.3.2 标识符列
 create table table_01 
 (
-	WITH STRING ID
+	WITH STRING TAG
 );
 <<SQLSTATE;
 -- 81.3.3 属性列
@@ -3881,7 +3881,7 @@ create table table_02
 -- 81.3.4 物理量列
 create table table_03 
 (
-	WITH INT32 MEASUREMENT
+	WITH INT32 FIELD
 );
 <<SQLSTATE;
 
@@ -3909,15 +3909,15 @@ use test;
 -- 82.3.1 表名
 create table FILL 
 (
-	device_id STRING ID,
-	s1 BOOLEAN MEASUREMENT,
-	s2 INT32 MEASUREMENT
+	device_id STRING TAG,
+	s1 BOOLEAN FIELD,
+	s2 INT32 FIELD
 );
 <<SQLSTATE;
 -- 82.3.2 标识符列
 create table table_01 
 (
-	FILL STRING ID
+	FILL STRING TAG
 );
 <<SQLSTATE;
 -- 82.3.3 属性列
@@ -3929,7 +3929,7 @@ create table table_02
 -- 82.3.4 物理量列
 create table table_03 
 (
-	FILL INT32 MEASUREMENT
+	FILL INT32 FIELD
 );
 <<SQLSTATE;
 

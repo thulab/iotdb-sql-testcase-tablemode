@@ -13,7 +13,7 @@ create database test_db;
 use test_db;
 
 --3. 创建表
-create table table_1(device_id string ID, model_id string ID, int32 INT32 measurement);
+create table table_1(device_id string TAG, model_id string TAG, int32 INT32 FIELD);
 
 --4. 查看表
 show tables;
@@ -34,7 +34,7 @@ select * from table_1 order by time;
 --9. 删除表，再创建表
 drop table table_1;
 show tables;
-create table table_1(device_id string ID, model_id string ID, int32 INT32 measurement);
+create table table_1(device_id string TAG, model_id string TAG, int32 INT32 FIELD);
 
 --10. 重复上面的操作：插入数据，然后执行数据查询
 insert into table_1(time, device_id, int32) values(1, 'd1', 1);

@@ -6,7 +6,7 @@ PASS
 STRICT{
 PASS
 }
--- [1]17:create table Table_A ( 	device_id STRING ID, 	color STRING ATTRIBUTE, 	s0 BOOLEAN MEASUREMENT, 	s1 TEXT MEASUREMENT, 	s2 INT32 MEASUREMENT, 	s3 INT64 MEASUREMENT, 	s4 FLOAT MEASUREMENT, 	s5 DOUBLE MEASUREMENT, 	s6 BOOLEAN MEASUREMENT, 	s7 DATE MEASUREMENT, 	s8 TIMESTAMP MEASUREMENT, 	s9 STRING MEASUREMENT, 	s10 BLOB MEASUREMENT )
+-- [1]17:create table Table_A ( 	device_id STRING TAG, 	color STRING ATTRIBUTE, 	s0 BOOLEAN FIELD, 	s1 TEXT FIELD, 	s2 INT32 FIELD, 	s3 INT64 FIELD, 	s4 FLOAT FIELD, 	s5 DOUBLE FIELD, 	s6 BOOLEAN FIELD, 	s7 DATE FIELD, 	s8 TIMESTAMP FIELD, 	s9 STRING FIELD, 	s10 BLOB FIELD )
 STRICT{
 PASS
 }
@@ -29,7 +29,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.1.30
+Elapsed Time: 0.2.23
 -- [1]48:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 2, 'd1', 'red', true, 'v2', 5, 121, 222.1, 12.2, false, '2022-10-01', 1724049989000, 'ertbsad', X'24ad' )
 STRICT{
 0
@@ -47,13 +47,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]63:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 5, 'd1', 'white', false, 'v1', 122, 110, 2.2, 9.9, false, '2022-11-01', 1701047739000, 'cfghesdgfaase', X'cd' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 -- [1]68:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 6, 'd1', 'orange', false, 'v3', 8, 999, 123.1, 0.101, true, '2002-01-01', 1724049089000, 'ert', X'4d' )
 STRICT{
 0
@@ -65,19 +65,19 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.70
+Elapsed Time: 0.0.50
 -- [1]78:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 8, 'd2', 'purple', true, 'v3', 555, 1001, 202.1, 1.2, false, '2002-10-01', 1653046400000, 'ioep11', X'abcdef' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 -- [1]83:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 9, 'd2', 'blue', false, 'v1', 1110, 888, 10.1, 11.1, true, '2023-11-11', 1699685189000, 'ueu', X'ce' )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.7
 -- [1]88:INSERT INTO Table_A( time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10 ) values( 10, 'd2', 'red', false, 'v2', 111, 222, 22.5, 13.3, true, '2020-10-11', 1702277179000, 'sad', X'ae' )
 STRICT{
 0
@@ -171,7 +171,7 @@ true             |true             |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]106:select s0, cast(s0 as INT32) from table_a order by time
 STRICT{
@@ -203,7 +203,7 @@ true             |1                 |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]107:select s0, cast(s0 as INT64) from table_a order by time
 STRICT{
@@ -235,7 +235,7 @@ true             |1                 |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]108:select s0, cast(s0 as INT64) from table_a order by time
 STRICT{
@@ -267,7 +267,7 @@ true             |1                 |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]109:select s0, cast(s0 as FLOAT) from table_a order by time
 STRICT{
@@ -299,7 +299,7 @@ true             |1.0               |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]110:select s0, cast(s0 as DOUBLE) from table_a order by time
 STRICT{
@@ -331,7 +331,7 @@ true             |1.0                |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]111:select s0, cast(s0 as DATE) from table_a order by time
 STRICT{
@@ -406,7 +406,7 @@ true             |1970-01-01T08:00:00.00|
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]113:select s0, cast(s0 as STRING) from table_a order by time
 STRICT{
@@ -438,7 +438,7 @@ true             |true               |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]114:select s0, cast(s0 as BLOB) from table_a order by time
 STRICT{
@@ -470,7 +470,7 @@ true             |0x01             |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 -- [1]117:select s1, cast(s1 as BOOLEAN) from table_a
 STRICT{
 SQLSTATE : 701: Invalid text input for boolean type: v1
@@ -562,7 +562,7 @@ v2            |0x7632           |
 总数目：12
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]128:select s2, cast(s2 as BOOLEAN) from table_a order by time
 STRICT{
@@ -594,7 +594,7 @@ null           |null                |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 
 -- [1]129:select s2, cast(s2 as TEXT) from table_a order by time
 STRICT{
@@ -658,7 +658,7 @@ null           |null              |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]131:select s2, cast(s2 as FLOAT) from table_a order by time
 STRICT{
@@ -690,7 +690,7 @@ null           |null              |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5
 
 -- [1]132:select s2, cast(s2 as DOUBLE) from table_a order by time
 STRICT{
@@ -754,7 +754,7 @@ null           |null             |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]134:select s2, cast(s2 as TIMESTAMP) from table_a order by time
 STRICT{
@@ -797,7 +797,7 @@ null           |null                  |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]135:select s2, cast(s2 as STRING) from table_a order by time
 STRICT{
@@ -893,7 +893,7 @@ s3(INT64)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 
 -- [1]140:select s3, cast(s3 as TEXT) from table_a order by time
 STRICT{
@@ -925,7 +925,7 @@ s3(INT64)      |_col1(TEXT)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]141:select s3, cast(s3 as INT32) from table_a order by time
 STRICT{
@@ -957,7 +957,7 @@ s3(INT64)      |_col1(INT32)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]142:select s3, cast(s3 as FLOAT) from table_a order by time
 STRICT{
@@ -989,7 +989,7 @@ s3(INT64)      |_col1(FLOAT)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]143:select s3, cast(s3 as DOUBLE) from table_a order by time
 STRICT{
@@ -1097,7 +1097,7 @@ s3(INT64)      |_col1(TIMESTAMP)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]146:select s3, cast(s3 as STRING) from table_a order by time
 STRICT{
@@ -1129,7 +1129,7 @@ s3(INT64)      |_col1(STRING)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]147:select s3, cast(s3 as BLOB) from table_a order by time
 STRICT{
@@ -1173,7 +1173,7 @@ s3(INT64)      |_col1(BLOB)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]150:select s4, cast(s4 as BOOLEAN) from table_a order by time
 STRICT{
@@ -1365,7 +1365,7 @@ s4(FLOAT)      |_col1(DATE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]156:select s4, cast(s4 as TIMESTAMP) from table_a order by time
 STRICT{
@@ -1409,7 +1409,7 @@ s4(FLOAT)      |_col1(TIMESTAMP)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]157:select s4, cast(s4 as STRING) from table_a order by time
 STRICT{
@@ -1441,7 +1441,7 @@ s4(FLOAT)      |_col1(STRING)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]158:select s4, cast(s4 as BLOB) from table_a order by time
 STRICT{
@@ -1473,7 +1473,7 @@ s4(FLOAT)      |_col1(BLOB)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]161:select s5, cast(s5 as BOOLEAN) from table_a order by time
 STRICT{
@@ -1505,7 +1505,7 @@ s5(DOUBLE)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5
 
 -- [1]162:select s5, cast(s5 as TEXT) from table_a order by time
 STRICT{
@@ -1709,7 +1709,7 @@ s5(DOUBLE)      |_col1(TIMESTAMP)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]168:select s5, cast(s5 as STRING) from table_a order by time
 STRICT{
@@ -1741,7 +1741,7 @@ s5(DOUBLE)      |_col1(STRING)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]169:select s5, cast(s5 as BLOB) from table_a order by time
 STRICT{
@@ -1849,7 +1849,7 @@ null          |null             |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]174:select s7, cast(s7 as INT32) from table_a order by s7
 STRICT{
@@ -1913,7 +1913,7 @@ null          |null              |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]176:select s7, cast(s7 as FLOAT) from table_a order by s7
 STRICT{
@@ -1945,7 +1945,7 @@ null          |null              |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]177:select s7, cast(s7 as DOUBLE) from table_a order by s7
 STRICT{
@@ -2083,7 +2083,7 @@ null          |null             |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]183:select s8, cast(s8 as BOOLEAN) from table_a order by s8
 STRICT{
@@ -2127,7 +2127,7 @@ s8(TIMESTAMP)      |_col1(BOOLEAN)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.9
 
 -- [1]184:select s8, cast(s8 as TEXT) from table_a order by s8
 STRICT{
@@ -2171,7 +2171,7 @@ s8(TIMESTAMP)      |_col1(TEXT)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 -- [1]185:select s8, cast(s8 as INT32) from table_a order by s8
 STRICT{
 SQLSTATE : 701: long value 1633046400000 is out of range of integer value.
@@ -2307,7 +2307,7 @@ s8(TIMESTAMP)      |_col1(DOUBLE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]189:select s8, cast(s8 as DATE) from table_a order by s8
 STRICT{
@@ -2351,7 +2351,7 @@ s8(TIMESTAMP)      |_col1(DATE)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]190:select s8, cast(s8 as STRING) from table_a order by s8
 STRICT{
@@ -2395,7 +2395,7 @@ s8(TIMESTAMP)      |_col1(STRING)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]191:select s8, cast(s8 as BLOB) from table_a order by s8
 STRICT{
@@ -2439,10 +2439,10 @@ s8(TIMESTAMP)      |_col1(BLOB)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 -- [1]194:select s9, cast(s9 as BOOLEAN) from table_a order by s9
 STRICT{
-SQLSTATE : 701: Invalid text input for boolean type: abcd
+SQLSTATE : 701: Invalid text input for boolean type: test111
 }
 
 -- [1]195:select s9, cast(s9 as TEXT) from table_a order by s9
@@ -2475,7 +2475,7 @@ zsefr345Der     |zsefr345Der      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 -- [1]196:select s9, cast(s9 as INT32) from table_a order by s9
 STRICT{
 SQLSTATE : 701: Cannot cast abcd to INT32 type
@@ -2494,7 +2494,7 @@ SQLSTATE : 701: Cannot cast test111 to DOUBLE type
 }
 -- [1]200:select s9, cast(s9 as DATE) from table_a order by s9
 STRICT{
-SQLSTATE : 701: Cannot cast test111 to DATE type
+SQLSTATE : 701: Cannot cast abcd to DATE type
 }
 -- [1]201:select s9, cast(s9 as TIMESTAMP) from table_a order by s9
 STRICT{
@@ -2536,7 +2536,7 @@ zsefr345Der     |0x7a7365667233343|
 Elapsed Time: 0.0.4
 -- [1]205:select s10, cast(s10 as BOOLEAN) from table_a order by s10
 STRICT{
-SQLSTATE : 701: Invalid text input for boolean type: ��
+SQLSTATE : 701: Invalid text input for boolean type: �
 }
 
 -- [1]206:select s10, cast(s10 as TEXT) from table_a order by s10
@@ -2569,7 +2569,7 @@ s10(BLOB)      |_col1(TEXT)      |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.9
 -- [1]207:select s10, cast(s10 as INT32) from table_a order by s10
 STRICT{
 SQLSTATE : 701: Cannot cast �� to INT32 type

@@ -10,11 +10,11 @@ PASS
 STRICT{
 PASS
 }
--- [1]11:create table table_1(id1 STRING ID, attr1 STRING ATTRIBUTE, m1 INT32 MEASUREMENT)
+-- [1]11:create table table_1(id1 STRING TAG, attr1 STRING ATTRIBUTE, m1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]12:create table table_2(id1 STRING ID, attr1 STRING ATTRIBUTE, m1 INT32 MEASUREMENT) with (TTL=DEFAULT)
+-- [1]12:create table table_2(id1 STRING TAG, attr1 STRING ATTRIBUTE, m1 INT32 FIELD) with (TTL=DEFAULT)
 STRICT{
 PASS
 }
@@ -22,23 +22,23 @@ PASS
 STRICT{
 PASS
 }
--- [1]14:create table table_1(id1 STRING ID, attr1 STRING ATTRIBUTE, m1 INT32 MEASUREMENT)
+-- [1]14:create table table_1(id1 STRING TAG, attr1 STRING ATTRIBUTE, m1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]15:create table table_2(id1 STRING ID, attr1 STRING ATTRIBUTE, m1 INT32 MEASUREMENT) with (TTL='INF')
+-- [1]15:create table table_2(id1 STRING TAG, attr1 STRING ATTRIBUTE, m1 INT32 FIELD) with (TTL='INF')
 STRICT{
 PASS
 }
--- [1]16:create table table_3(id1 STRING ID, attr1 STRING ATTRIBUTE, m1 INT32 MEASUREMENT) with (TTL=DEFAULT)
+-- [1]16:create table table_3(id1 STRING TAG, attr1 STRING ATTRIBUTE, m1 INT32 FIELD) with (TTL=DEFAULT)
 STRICT{
 PASS
 }
--- [1]17:create table table_4(id1 STRING ID, attr1 STRING ATTRIBUTE, m1 INT32 MEASUREMENT) with (TTL=360000)
+-- [1]17:create table table_4(id1 STRING TAG, attr1 STRING ATTRIBUTE, m1 INT32 FIELD) with (TTL=360000)
 STRICT{
 PASS
 }
--- [1]21:alter table table_1 add column m2 FLOAT MEASUREMENT
+-- [1]21:alter table table_1 add column m2 FLOAT FIELD
 STRICT{
 PASS
 }
@@ -54,7 +54,7 @@ PASS
 STRICT{
 PASS
 }
--- [1]25:alter table table_1 add column id2 STRING ID
+-- [1]25:alter table table_1 add column id2 STRING TAG
 STRICT{
 PASS
 }
@@ -62,39 +62,39 @@ PASS
 STRICT{
 PASS
 }
--- [1]28:alter table table_1 add column m3 BOOLEAN MEASUREMENT
+-- [1]28:alter table table_1 add column m3 BOOLEAN FIELD
 STRICT{
 PASS
 }
--- [1]29:alter table table_1 add column m4 INT32 MEASUREMENT
+-- [1]29:alter table table_1 add column m4 INT32 FIELD
 STRICT{
 PASS
 }
--- [1]30:alter table table_1 add column m5 INT64 MEASUREMENT
+-- [1]30:alter table table_1 add column m5 INT64 FIELD
 STRICT{
 PASS
 }
--- [1]31:alter table table_1 add column m6 DOUBLE MEASUREMENT
+-- [1]31:alter table table_1 add column m6 DOUBLE FIELD
 STRICT{
 PASS
 }
--- [1]32:alter table table_1 add column m7 DATE MEASUREMENT
+-- [1]32:alter table table_1 add column m7 DATE FIELD
 STRICT{
 PASS
 }
--- [1]33:alter table table_1 add column m8 TEXT MEASUREMENT
+-- [1]33:alter table table_1 add column m8 TEXT FIELD
 STRICT{
 PASS
 }
--- [1]34:alter table table_1 add column m9 STRING MEASUREMENT
+-- [1]34:alter table table_1 add column m9 STRING FIELD
 STRICT{
 PASS
 }
--- [1]35:alter table table_1 add column m10 BLOB MEASUREMENT
+-- [1]35:alter table table_1 add column m10 BLOB FIELD
 STRICT{
 PASS
 }
--- [1]36:alter table table_1 add column m11 TIMESTAMP MEASUREMENT
+-- [1]36:alter table table_1 add column m11 TIMESTAMP FIELD
 STRICT{
 PASS
 }
@@ -102,7 +102,7 @@ PASS
 STRICT{
 PASS
 }
--- [1]39:alter table test2.table_1 add column m2 FLOAT MEASUREMENT
+-- [1]39:alter table test2.table_1 add column m2 FLOAT FIELD
 STRICT{
 PASS
 }
@@ -110,7 +110,7 @@ PASS
 STRICT{
 PASS
 }
--- [1]41:alter table test2.table_1 add column id2 ID
+-- [1]41:alter table test2.table_1 add column id2 TAG
 STRICT{
 PASS
 }
@@ -118,11 +118,11 @@ PASS
 STRICT{
 PASS
 }
--- [1]44:alter table table_1 add column if not exists m12 FLOAT MEASUREMENT
+-- [1]44:alter table table_1 add column if not exists m12 FLOAT FIELD
 STRICT{
 PASS
 }
--- [1]45:alter table table_1 add column if not exists m12 FLOAT MEASUREMENT
+-- [1]45:alter table table_1 add column if not exists m12 FLOAT FIELD
 STRICT{
 PASS
 }
@@ -134,11 +134,11 @@ PASS
 STRICT{
 PASS
 }
--- [1]48:alter table table_1 add column if not exists id4 ID
+-- [1]48:alter table table_1 add column if not exists id4 TAG
 STRICT{
 PASS
 }
--- [1]49:alter table table_1 add column if not exists id4 ID
+-- [1]49:alter table table_1 add column if not exists id4 TAG
 STRICT{
 PASS
 }
@@ -146,11 +146,11 @@ PASS
 STRICT{
 PASS
 }
--- [1]53:ALTER table TABLE_1 ADD COLUMN M13 float measurement
+-- [1]53:ALTER table TABLE_1 ADD COLUMN M13 float FIELD
 STRICT{
 PASS
 }
--- [1]54:alter table table_1 add column "1234567890" BOOLEAN MEASUREMENT
+-- [1]54:alter table table_1 add column "1234567890" BOOLEAN FIELD
 STRICT{
 PASS
 }
@@ -158,11 +158,11 @@ PASS
 STRICT{
 PASS
 }
--- [1]56:alter table table_1 add column "123456780" ID
+-- [1]56:alter table table_1 add column "123456780" TAG
 STRICT{
 PASS
 }
--- [1]57:alter table table_1 add column "没问" INT32 MEASUREMENT
+-- [1]57:alter table table_1 add column "没问" INT32 FIELD
 STRICT{
 PASS
 }
@@ -170,19 +170,19 @@ PASS
 STRICT{
 PASS
 }
--- [1]59:alter table table_1 add column "没问题" ID
+-- [1]59:alter table table_1 add column "没问题" TAG
 STRICT{
 PASS
 }
--- [1]60:alter table table_1 add column "table" INT64 MEASUREMENT
+-- [1]60:alter table table_1 add column "table" INT64 FIELD
 STRICT{
 PASS
 }
--- [1]61:alter table table_1 add column "add" DOUBLE MEASUREMENT
+-- [1]61:alter table table_1 add column "add" DOUBLE FIELD
 STRICT{
 PASS
 }
--- [1]62:alter table table_1 add column timestamp DATE MEASUREMENT
+-- [1]62:alter table table_1 add column timestamp DATE FIELD
 STRICT{
 PASS
 }
@@ -190,27 +190,27 @@ PASS
 STRICT{
 SQLSTATE : 701: DataType of ATTRIBUTE Column should only be STRING, current is TEXT
 }
--- [1]66:alter table table_1 add column id2 INT32 ID
+-- [1]66:alter table table_1 add column id2 INT32 TAG
 STRICT{
-SQLSTATE : 701: DataType of ID Column should only be STRING, current is INT32
+SQLSTATE : 701: DataType of TAG Column should only be STRING, current is INT32
 }
--- [1]68:alter table table_1 add column 123 TEXT MEASUREMENT
+-- [1]68:alter table table_1 add column 123 TEXT FIELD
 STRICT{
 SQLSTATE : 700: line 1:32: mismatched input '123'. Expecting: 'IF', <identifier>
 }
--- [1]70:alter table table_1 add column 没问题 STRING MEASUREMENT
+-- [1]70:alter table table_1 add column 没问题 STRING FIELD
 STRICT{
 SQLSTATE : 700: line 1:32: mismatched input '没'. Expecting: 'IF', <identifier>
 }
--- [1]72:alter table table_1 add column create DOUBLE MEASUREMENT
+-- [1]72:alter table table_1 add column create DOUBLE FIELD
 STRICT{
 SQLSTATE : 700: line 1:32: mismatched input 'create'. Expecting: 'IF', <identifier>
 }
--- [1]74:alter table table_1 add column m13 MEASUREMENT
+-- [1]74:alter table table_1 add column m13 FIELD
 STRICT{
-SQLSTATE : 701: Unknown type: MEASUREMENT
+SQLSTATE : 701: Unknown type: FIELD
 }
--- [1]76:alter table table_1 add column m2 BLOB MEASUREMENT
+-- [1]76:alter table table_1 add column m2 BLOB FIELD
 STRICT{
 SQLSTATE : 552: Column 'm2' already exist
 }

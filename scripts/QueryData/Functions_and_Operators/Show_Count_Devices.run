@@ -14,9 +14,9 @@ use test_db;
 --3. 创建表
 create table device_type_0
 (
-    "地区" STRING ID,
-    "厂号" STRING ID,
-    "设备号" STRING ID,
+    "地区" STRING TAG,
+    "厂号" STRING TAG,
+    "设备号" STRING TAG,
     "型号" STRING ATTRIBUTE,
     "维修周期" STRING ATTRIBUTE
 );

@@ -17,7 +17,7 @@ use test_db;
 --3. 创建表 t1
 create table t1
 (
-    "device" STRING ID,
+    "device" STRING TAG,
     "type" STRING ATTRIBUTE,
     "int32" INT32,
     "int64" INT64,

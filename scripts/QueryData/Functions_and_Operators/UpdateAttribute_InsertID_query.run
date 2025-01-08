@@ -16,10 +16,10 @@ use test_db;
 --3. 创建表
 create table t1
 (
-   	device_id STRING ID,
+   	device_id STRING TAG,
     model_id STRING ATTRIBUTE,
-	boolean BOOLEAN MEASUREMENT,
-	int64 INT64 MEASUREMENT
+	boolean BOOLEAN FIELD,
+	int64 INT64 FIELD
 );
 
 --4. 查看表

@@ -6,7 +6,7 @@ PASS
 STRICT{
 PASS
 }
--- [1]16:create table table_1(device_id string ID, model_id string ID, int32 INT32 measurement)
+-- [1]16:create table table_1(device_id string TAG, model_id string TAG, int32 INT32 FIELD)
 STRICT{
 PASS
 }
@@ -29,13 +29,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.1.944
+Elapsed Time: 0.2.38
 -- [1]26:insert into table_1(time, model_id, int32) values(2, '', 2)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.60
+Elapsed Time: 0.0.50
 -- [1]29:flush
 STRICT{
 PASS
@@ -53,7 +53,7 @@ time(TIMESTAMP)      |device_id(STRING)      |model_id(STRING)      |int32(INT32
 总数目：2
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.10
 -- [1]35:drop table table_1
 STRICT{
 PASS
@@ -65,8 +65,8 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
--- [1]37:create table table_1(device_id string ID, model_id string ID, int32 INT32 measurement)
+Elapsed Time: 0.0.1
+-- [1]37:create table table_1(device_id string TAG, model_id string TAG, int32 INT32 FIELD)
 STRICT{
 PASS
 }
@@ -75,13 +75,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.3
 -- [1]41:insert into table_1(time, model_id, int32) values(2, '', 2)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.3
 -- [1]42:flush
 STRICT{
 PASS
@@ -99,4 +99,4 @@ time(TIMESTAMP)      |device_id(STRING)      |model_id(STRING)      |int32(INT32
 总数目：2
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.9

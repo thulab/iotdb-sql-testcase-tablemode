@@ -18,19 +18,19 @@ use test_db;
 --3. 创建表
 create table table_1
 (
-    region_id STRING ID,
-   	device_id STRING ID,
+    region_id STRING TAG,
+   	device_id STRING TAG,
     model_id STRING ATTRIBUTE,
-	boolean BOOLEAN MEASUREMENT,
-	text TEXT MEASUREMENT,
-	string STRING MEASUREMENT,
-	date DATE MEASUREMENT,
-	timestamp TIMESTAMP MEASUREMENT,
-	blob BLOB MEASUREMENT,
-	int32 INT32 MEASUREMENT,
-	int64 INT64 MEASUREMENT,
-	float FLOAT MEASUREMENT,
-	double DOUBLE MEASUREMENT
+	boolean BOOLEAN FIELD,
+	text TEXT FIELD,
+	string STRING FIELD,
+	date DATE FIELD,
+	timestamp TIMESTAMP FIELD,
+	blob BLOB FIELD,
+	int32 INT32 FIELD,
+	int64 INT64 FIELD,
+	float FLOAT FIELD,
+	double DOUBLE FIELD
 );
 
 --4. 查看表
@@ -115,6 +115,7 @@ select count(*) as count_result from table_1 where int64 is null;
 select count(*) as count_result from table_1 where int64 is not null;
 select count(*) as count_result from table_1 where int64 <> null;
 select count(*) as count_result from table_1 where int64 != null;
+select count(*) as count_result from table_1 where int64 = null;
 
 --9. 聚合函数：sum(支持数值类型的数据类型)
 --9.1 非数值的数据类型校验

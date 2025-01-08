@@ -15,13 +15,13 @@ use test_db;
 --3. 创建表
 create table device_type_0
 (
-    "地区" STRING ID,
-    "厂号" STRING ID,
-    "设备号" STRING ID,
+    "地区" STRING TAG,
+    "厂号" STRING TAG,
+    "设备号" STRING TAG,
     "型号" STRING ATTRIBUTE,
     "维修周期" STRING ATTRIBUTE,
-	"温度" FLOAT MEASUREMENT,
-    "排量" DOUBLE MEASUREMENT 
+	"温度" FLOAT FIELD,
+    "排量" DOUBLE FIELD 
 );
 
 --4. 查看表

@@ -1,3 +1,5 @@
+//表管理：创建表 | 查看表 | 查看表的列 | 修改表 | 删除表
+
 -- 连接数据库
 connect root/root;
 -- 清除数据库
@@ -19,20 +21,20 @@ use db1;
 create table t_2();
 create table if not exists t_2();
 create table t_3() with (TTL=DEFAULT);
-create table t_4("~!?`%" id, "%~!?`" ATTRIBUTE, "?%~!`" INT32);
-create table t_5("+-*/\" id,"+-*\/" attribute, "-+*/\" DOUBLE);
-create table t_6(".,:?|" id,".,!:|?" attribute, ".,|:?" BOOLEAN);
-create table t_7("a""b" id,"ab""bc" attribute, "abc""bcd" INT64);
-create table t_8("""" id,"""""" attribute, """""""" int32);
+create table t_4("~!?`%" TAG, "%~!?`" ATTRIBUTE, "?%~!`" INT32);
+create table t_5("+-*/\" TAG,"+-*\/" attribute, "-+*/\" DOUBLE);
+create table t_6(".,:?|" TAG,".,!:|?" attribute, ".,|:?" BOOLEAN);
+create table t_7("a""b" TAG,"ab""bc" attribute, "abc""bcd" INT64);
+create table t_8("""" TAG,"""""" attribute, """""""" int32);
 create table t_9(time int32);
 <<SQLSTATE;
-create table t_10(time id);
+create table t_10(time TAG);
 <<SQLSTATE;
 create table t_11(time attribute);
 <<SQLSTATE;
-create table t_12(中文 id);
+create table t_12(中文 TAG);
 <<SQLSTATE;
-create table t_13("中文" id);
+create table t_13("中文" TAG);
 create table t_14(中文 ATTRIBUTE);
 <<SQLSTATE;
 create table t_15("中文" ATTRIBUTE);
@@ -57,9 +59,9 @@ DESCRIBE db1.t_1;
 -- 4.1 add
 use db1;
 desc t_1;
-ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_id ID;
-ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_id ID;
-ALTER TABLE t_1 ADD COLUMN new_id ID;
+ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_id TAG;
+ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_id TAG;
+ALTER TABLE t_1 ADD COLUMN new_id TAG;
 <<SQLSTATE;
 ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_ab ATTRIBUTE;
 ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_ab ATTRIBUTE;
@@ -84,18 +86,19 @@ alter table t_1 drop column if exists time;
 <<SQLSTATE;
 
 alter table t_1 drop column new_ab;
-alter table t_1 drop column new_ab;
 <<SQLSTATE;
 alter table t_1 drop column if exists new_ab;
+<<SQLSTATE;
 desc t_1;
 
 alter table t_1 drop column new_mm;
-alter table t_1 drop column new_mm;
 <<SQLSTATE;
 alter table t_1 drop column if exists new_mm;
+<<SQLSTATE;
 desc t_1;
 use db2;
 alter table db1.t_1 drop column if exists new_mm2;
+<<SQLSTATE;
 desc db1.t_1;
 use db1;
 
@@ -121,21 +124,21 @@ create database db1;
 create database db2;
 create database db3;
 -- 创建表
-create table db1.t_3(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
+create table db1.t_3(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
 use db1;
-create table t_1(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
-create table t_2(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
-create table t_4(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
-create table db2.t_3(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
+create table t_1(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
+create table t_2(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
+create table t_4(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
+create table db2.t_3(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
 use db2;
-create table t_1(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
-create table t_2(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
-create table t_4(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
-create table db3.t_3(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
+create table t_1(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
+create table t_2(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
+create table t_4(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
+create table db3.t_3(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
 use db3;
-create table t_1(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
-create table t_2(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
-create table t_4(id1 ID, ab1 ATTRIBUTE, mm1 INT32 MEASUREMENT);
+create table t_1(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
+create table t_2(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
+create table t_4(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD);
 -- 写数据库
 INSERT INTO db1.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555');
 INSERT INTO db1.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555');

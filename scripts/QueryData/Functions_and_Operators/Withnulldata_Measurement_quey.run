@@ -14,12 +14,12 @@ use test_db;
 --3. 创建表
 create table table_withnull_data
 (
-	region_id STRING ID,
-	device_id STRING ID,
+	region_id STRING TAG,
+	device_id STRING TAG,
 	color STRING ATTRIBUTE,
 	type STRING ATTRIBUTE,
-	s1 BOOLEAN MEASUREMENT,
-	s2 FLOAT MEASUREMENT
+	s1 BOOLEAN FIELD,
+	s2 FLOAT FIELD
 );
 
 --4. 查看表

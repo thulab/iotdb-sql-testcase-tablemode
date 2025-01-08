@@ -17,34 +17,35 @@ use test_db;
 --3. 创建表
 create table students
 (
-    region STRING ID,
-	student_id INT32 MEASUREMENT,
-	name STRING MEASUREMENT,
-	genders text MEASUREMENT,
-    date_of_birth DATE MEASUREMENT 
+    region STRING TAG,
+	student_id INT32 FIELD,
+	name STRING FIELD,
+	genders text FIELD,
+    date_of_birth DATE FIELD 
 );
 
 create table teachers
 (
-    region STRING ID,
-	teacher_id INT32 MEASUREMENT,
-    course_id INT32 MEASUREMENT,
-    age INT32 MEASUREMENT
+    region STRING TAG,
+	teacher_id INT32 FIELD,
+    course_id INT32 FIELD,
+    age INT32 FIELD
 );
 
 create table courses
 (
-    course_id STRING ID,
-	course_name STRING MEASUREMENT,
-	teacher_id INT32 MEASUREMENT
+    course_region STRING TAG,
+    course_id INT32 FIELD,
+    course_name STRING FIELD,
+    teacher_id INT32 FIELD
 );
 
 create table grades
 (
-    grade_id STRING ID,
-	course_id INT32 MEASUREMENT,
-	student_id INT32 MEASUREMENT,
-	score INT32 MEASUREMENT
+    grade_id STRING TAG,
+	course_id INT32 FIELD,
+	student_id INT32 FIELD,
+	score INT32 FIELD
 );
 
 --4. 查看表
@@ -102,7 +103,7 @@ select * from grades order by time;
 
 --8. 显式指定连接条件
 
---8.1 非 Time列的等值多表查询（暂不支持）
+--8.1 非 Time列的等值多表查询
 select  
     s.name as student_name,
     c.course_name,
@@ -115,7 +116,6 @@ INNER JOIN
     courses c on g.course_id = c.course_id
 ORDER BY 
     s.student_id;
- <<SQLSTATE;
 
  --8.2 Time列的等值连接 JOIN + ON 连接
 select 
@@ -340,7 +340,6 @@ from students s, teachers t, courses c, grades g
 where
 s.time=c.time and c.time=g.time and s.region='haidian'
 group by s.region, s.name, t.teacher_id, c.course_name, g.score;
-<<SQLSTATE;
 
 select s.region, s.name,
 	   t.teacher_id,

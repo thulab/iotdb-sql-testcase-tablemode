@@ -6,7 +6,7 @@ PASS
 STRICT{
 PASS
 }
--- [1]19:create table t1 (    	device_id STRING ID,     model_id STRING ATTRIBUTE, 	boolean BOOLEAN MEASUREMENT, 	int64 INT64 MEASUREMENT )
+-- [1]19:create table t1 (    	device_id STRING TAG,     model_id STRING ATTRIBUTE, 	boolean BOOLEAN FIELD, 	int64 INT64 FIELD )
 STRICT{
 PASS
 }
@@ -29,7 +29,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.2.384
+Elapsed Time: 0.2.573
 
 -- [1]33:select * from t1
 STRICT{
@@ -40,13 +40,13 @@ time(TIMESTAMP)      |device_id(STRING)      |model_id(STRING)      |boolean(BOO
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.16
 -- [1]36:update t1 set model_id='model_01'
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 
 -- [1]39:select * from t1
 STRICT{
@@ -57,13 +57,13 @@ time(TIMESTAMP)      |device_id(STRING)      |model_id(STRING)      |boolean(BOO
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.4
 -- [1]40:insert into t1(time,device_id) values(1,'d1')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.70
+Elapsed Time: 0.0.95
 
 -- [1]41:select * from t1 order by device_id
 STRICT{
@@ -77,7 +77,7 @@ time(TIMESTAMP)      |device_id(STRING)      |model_id(STRING)      |boolean(BOO
 总数目：2
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]42:select * from t1 where device_id is null
 STRICT{
@@ -88,4 +88,4 @@ time(TIMESTAMP)      |device_id(STRING)      |model_id(STRING)      |boolean(BOO
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
