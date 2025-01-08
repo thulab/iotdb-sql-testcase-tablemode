@@ -11,7 +11,7 @@ TABLE                          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 
 -- [1]15:SHOW CURRENT_USER
 STRICT{
@@ -21,7 +21,7 @@ root                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 
 -- [1]18:SHOW CURRENT_DATABASE
 STRICT{
@@ -31,7 +31,7 @@ null                         |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]19:use test
 STRICT{
 PASS
