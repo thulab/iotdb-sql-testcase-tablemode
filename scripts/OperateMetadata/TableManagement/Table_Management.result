@@ -117,7 +117,7 @@ t_13                 |INF                |
 总数目：12
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.14
 
 -- [1]47:show tables from db1
 STRICT{
@@ -149,7 +149,7 @@ t_13                 |INF                |
 总数目：12
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 
 -- [1]48:show tables in db1
 STRICT{
@@ -181,7 +181,7 @@ t_13                 |INF                |
 总数目：12
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]49:use db2
 STRICT{
 PASS
@@ -296,66 +296,90 @@ PASS
 }
 -- [1]79:alter table t_1 drop column new_id
 STRICT{
-SQLSTATE : 701: Drop column is unsupported yet.
+SQLSTATE : 701: Dropping tag or time column is not supported.
 }
--- [1]81:alter table t_1 drop column if exists new_id
+-- [1]81:alter table if exists t_1 drop column new_id
 STRICT{
-SQLSTATE : 701: Drop column is unsupported yet.
+SQLSTATE : 701: Dropping tag or time column is not supported.
 }
--- [1]83:alter table t_1 drop column time
+-- [1]83:alter table t_1 drop column if exists new_id
 STRICT{
-SQLSTATE : 701: Drop column is unsupported yet.
+SQLSTATE : 701: Dropping tag or time column is not supported.
 }
--- [1]85:alter table t_1 drop column if exists time
+-- [1]85:alter table if exists t_1 drop column if exists new_id
 STRICT{
-SQLSTATE : 701: Drop column is unsupported yet.
+SQLSTATE : 701: Dropping tag or time column is not supported.
 }
--- [1]88:alter table t_1 drop column new_ab
+-- [1]88:alter table t_1 drop column time
 STRICT{
-SQLSTATE : 701: Drop column is unsupported yet.
+SQLSTATE : 701: Dropping tag or time column is not supported.
 }
--- [1]90:alter table t_1 drop column if exists new_ab
+-- [1]90:alter table if exists t_1 drop column time
 STRICT{
-SQLSTATE : 701: Drop column is unsupported yet.
+SQLSTATE : 701: Dropping tag or time column is not supported.
 }
--- [1]92:desc t_1
+-- [1]92:alter table t_1 drop column if exists time
 STRICT{
-PASS
+SQLSTATE : 701: Dropping tag or time column is not supported.
 }
--- [1]94:alter table t_1 drop column new_mm
+-- [1]94:alter table if exists t_1 drop column if exists time
 STRICT{
-SQLSTATE : 701: Drop column is unsupported yet.
+SQLSTATE : 701: Dropping tag or time column is not supported.
 }
--- [1]96:alter table t_1 drop column if exists new_mm
-STRICT{
-SQLSTATE : 701: Drop column is unsupported yet.
-}
--- [1]98:desc t_1
+-- [1]97:alter table t_1 drop column new_ab
 STRICT{
 PASS
 }
--- [1]99:use db2
+-- [1]98:alter table t_1 drop column new_ab
+STRICT{
+SQLSTATE : 616: Column new_ab in table 'db1.t_1' does not exist.
+}
+-- [1]100:alter table t_1 drop column if exists new_ab
 STRICT{
 PASS
 }
--- [1]100:alter table db1.t_1 drop column if exists new_mm2
-STRICT{
-SQLSTATE : 701: Drop column is unsupported yet.
-}
--- [1]102:desc db1.t_1
+-- [1]101:desc t_1
 STRICT{
 PASS
 }
--- [1]103:use db1
+-- [1]103:alter table t_1 drop column new_mm
 STRICT{
 PASS
 }
--- [1]107:ALTER TABLE t_1 set properties TTL=3600
+-- [1]104:alter table t_1 drop column new_mm
+STRICT{
+SQLSTATE : 616: Column new_mm in table 'db1.t_1' does not exist.
+}
+-- [1]106:alter table t_1 drop column if exists new_mm
+STRICT{
+PASS
+}
+-- [1]107:desc t_1
+STRICT{
+PASS
+}
+-- [1]108:use db2
+STRICT{
+PASS
+}
+-- [1]109:alter table db1.t_1 drop column if exists new_mm2
+STRICT{
+PASS
+}
+-- [1]110:desc db1.t_1
+STRICT{
+PASS
+}
+-- [1]111:use db1
+STRICT{
+PASS
+}
+-- [1]115:ALTER TABLE t_1 set properties TTL=3600
 STRICT{
 PASS
 }
 
--- [1]107:show tables
+-- [1]115:show tables
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -385,17 +409,17 @@ t_13                 |INF                |
 总数目：12
 }
 
-Elapsed Time: 0.0.2
--- [1]109:use db2
+Elapsed Time: 0.0.1
+-- [1]117:use db2
 STRICT{
 PASS
 }
--- [1]111:ALTER TABLE db1.t_1 set properties TTL=9600
+-- [1]119:ALTER TABLE db1.t_1 set properties TTL=9600
 STRICT{
 PASS
 }
 
--- [1]111:show tables in db1
+-- [1]119:show tables in db1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -426,255 +450,255 @@ t_13                 |INF                |
 }
 
 Elapsed Time: 0.0.2
--- [1]112:use db1
+-- [1]120:use db1
 STRICT{
 PASS
 }
--- [1]115:ALTER TABLE db1.t_1 set properties TTL='inf'
+-- [1]123:ALTER TABLE db1.t_1 set properties TTL='inf'
 STRICT{
 PASS
 }
--- [1]116:drop database if exists db1
+-- [1]124:drop database if exists db1
 STRICT{
 PASS
 }
--- [1]117:drop database if exists db2
+-- [1]125:drop database if exists db2
 STRICT{
 PASS
 }
--- [1]118:drop database if exists db3
+-- [1]126:drop database if exists db3
 STRICT{
 PASS
 }
--- [1]123:create database db1
+-- [1]131:create database db1
 STRICT{
 PASS
 }
--- [1]124:create database db2
+-- [1]132:create database db2
 STRICT{
 PASS
 }
--- [1]125:create database db3
+-- [1]133:create database db3
 STRICT{
 PASS
 }
--- [1]127:create table db1.t_3(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]135:create table db1.t_3(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]128:use db1
+-- [1]136:use db1
 STRICT{
 PASS
 }
--- [1]129:create table t_1(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]137:create table t_1(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]130:create table t_2(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]138:create table t_2(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]131:create table t_4(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]139:create table t_4(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]132:create table db2.t_3(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]140:create table db2.t_3(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]133:use db2
+-- [1]141:use db2
 STRICT{
 PASS
 }
--- [1]134:create table t_1(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]142:create table t_1(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]135:create table t_2(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]143:create table t_2(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]136:create table t_4(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]144:create table t_4(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]137:create table db3.t_3(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]145:create table db3.t_3(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]138:use db3
+-- [1]146:use db3
 STRICT{
 PASS
 }
--- [1]139:create table t_1(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]147:create table t_1(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]140:create table t_2(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]148:create table t_2(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]141:create table t_4(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
+-- [1]149:create table t_4(id1 TAG, ab1 ATTRIBUTE, mm1 INT32 FIELD)
 STRICT{
 PASS
 }
--- [1]144:INSERT INTO db1.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+-- [1]152:INSERT INTO db1.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.272
--- [1]145:INSERT INTO db1.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.305
+-- [1]153:INSERT INTO db1.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.82
--- [1]146:INSERT INTO db1.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.139
+-- [1]154:INSERT INTO db1.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.16
--- [1]147:INSERT INTO db1.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.29
+-- [1]155:INSERT INTO db1.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.17
--- [1]148:INSERT INTO db2.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.26
+-- [1]156:INSERT INTO db2.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.311
--- [1]149:INSERT INTO db2.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.357
+-- [1]157:INSERT INTO db2.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.103
--- [1]150:INSERT INTO db2.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.134
+-- [1]158:INSERT INTO db2.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.18
--- [1]151:INSERT INTO db2.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.28
+-- [1]159:INSERT INTO db2.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
--- [1]152:INSERT INTO db3.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.25
+-- [1]160:INSERT INTO db3.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.263
--- [1]153:INSERT INTO db3.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.253
+-- [1]161:INSERT INTO db3.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.93
--- [1]154:INSERT INTO db3.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.129
+-- [1]162:INSERT INTO db3.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.9
--- [1]155:INSERT INTO db3.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
+Elapsed Time: 0.0.27
+-- [1]163:INSERT INTO db3.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
--- [1]155:flush
+Elapsed Time: 0.0.37
+-- [1]163:flush
 STRICT{
 PASS
 }
--- [1]157:drop table db1.t_1
+-- [1]165:drop table db1.t_1
 STRICT{
 PASS
 }
--- [1]158:use  db1
+-- [1]166:use  db1
 STRICT{
 PASS
 }
--- [1]159:drop table t_2
+-- [1]167:drop table t_2
 STRICT{
 PASS
 }
--- [1]160:drop table db1.t_3
+-- [1]168:drop table db1.t_3
 STRICT{
 PASS
 }
--- [1]161:drop table IF EXISTS t_4
+-- [1]169:drop table IF EXISTS t_4
 STRICT{
 PASS
 }
--- [1]163:DROP TABLE IF EXISTS t_4
+-- [1]171:DROP TABLE IF EXISTS t_4
 STRICT{
 PASS
 }
--- [1]163:drop table db2.t_1
+-- [1]171:drop table db2.t_1
 STRICT{
 PASS
 }
--- [1]164:use  db2
+-- [1]172:use  db2
 STRICT{
 PASS
 }
--- [1]165:drop table t_2
+-- [1]173:drop table t_2
 STRICT{
 PASS
 }
--- [1]166:drop table db2.t_3
+-- [1]174:drop table db2.t_3
 STRICT{
 PASS
 }
--- [1]167:drop table IF EXISTS t_4
+-- [1]175:drop table IF EXISTS t_4
 STRICT{
 PASS
 }
--- [1]169:DROP TABLE IF EXISTS t_4
+-- [1]177:DROP TABLE IF EXISTS t_4
 STRICT{
 PASS
 }
--- [1]169:drop table db3.t_1
+-- [1]177:drop table db3.t_1
 STRICT{
 PASS
 }
--- [1]170:use  db3
+-- [1]178:use  db3
 STRICT{
 PASS
 }
--- [1]171:drop table t_2
+-- [1]179:drop table t_2
 STRICT{
 PASS
 }
--- [1]172:drop table db3.t_3
+-- [1]180:drop table db3.t_3
 STRICT{
 PASS
 }
--- [1]173:drop table IF EXISTS t_4
+-- [1]181:drop table IF EXISTS t_4
 STRICT{
 PASS
 }
--- [1]175:DROP TABLE IF EXISTS t_4
+-- [1]183:DROP TABLE IF EXISTS t_4
 STRICT{
 PASS
 }
--- [1]177:drop database if exists db1
+-- [1]185:drop database if exists db1
 STRICT{
 PASS
 }
--- [1]178:drop database if exists db2
+-- [1]186:drop database if exists db2
 STRICT{
 PASS
 }
--- [1]179:drop database if exists db3
+-- [1]187:drop database if exists db3
 STRICT{
 PASS
 }

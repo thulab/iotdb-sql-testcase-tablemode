@@ -78,27 +78,35 @@ desc t_1;
 -- 4.2 drop
 alter table t_1 drop column new_id;
 <<SQLSTATE;
+alter table if exists t_1 drop column new_id;
+<<SQLSTATE;
 alter table t_1 drop column if exists new_id;
 <<SQLSTATE;
+alter table if exists t_1 drop column if exists new_id;
+<<SQLSTATE;
+
 alter table t_1 drop column time;
+<<SQLSTATE;
+alter table if exists t_1 drop column time;
 <<SQLSTATE;
 alter table t_1 drop column if exists time;
 <<SQLSTATE;
+alter table if exists t_1 drop column if exists time;
+<<SQLSTATE;
 
+alter table t_1 drop column new_ab;
 alter table t_1 drop column new_ab;
 <<SQLSTATE;
 alter table t_1 drop column if exists new_ab;
-<<SQLSTATE;
 desc t_1;
 
 alter table t_1 drop column new_mm;
+alter table t_1 drop column new_mm;
 <<SQLSTATE;
 alter table t_1 drop column if exists new_mm;
-<<SQLSTATE;
 desc t_1;
 use db2;
 alter table db1.t_1 drop column if exists new_mm2;
-<<SQLSTATE;
 desc db1.t_1;
 use db1;
 

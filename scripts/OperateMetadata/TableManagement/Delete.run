@@ -127,7 +127,7 @@ INSERT INTO t1(time,country,region,city,device,ab1,s1,s2,s3,s4) values
 flush;
 <<NULL;
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
-DELETE FROM t1 WHERE (country='tailand' OR region='dao') AND (time > 99 AND time < 250);
+DELETE FROM t1 WHERE (country='tailand' OR region='dao') AND (time > 505 AND time < 1201);
 drop table t1;
 
 -- 2. Delete Devices Statement
@@ -150,11 +150,9 @@ flush;
 <<NULL;
 select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
 delete devices from t1 where country='china';
-<<SQLSTATE;
--- select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
+select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
 delete devices from t1 where country='canada' or region='ca';
-<<SQLSTATE;
--- select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
+select time,country,region,city,device,ab1,s1,s2,s3,s4 from t1 order by time;
 delete devices from t1 where bbbbbb='cccccc';
 <<SQLSTATE;
 
