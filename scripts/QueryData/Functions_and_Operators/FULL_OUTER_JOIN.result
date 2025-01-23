@@ -228,7 +228,7 @@ Helen             |女                  |2016-01-22               |1005         
 Elapsed Time: 0.0.15
 -- [1]109:select       s.name, s.gengers, s.date_of_birth,      t.teacher_id, t.course_id from      students s FULL JOIN teachers t ON s.region = t.region
 STRICT{
-SQLSTATE : 701: Column 's.gengers' cannot be resolved
+SQLSTATE : 616: Column 's.gengers' cannot be resolved.
 }
 
 -- [1]118:select  	s.name,s.genders, 	g.course_id, g.score from  	students s 	FULL JOIN grades g ON s.time=g.time

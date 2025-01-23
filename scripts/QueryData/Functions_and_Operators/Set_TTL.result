@@ -83,31 +83,31 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.1.850
+Elapsed Time: 0.1.866
 -- [1]68:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 2, 2.1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 -- [1]70:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 3, 3.1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]72:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 4, 2.1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]74:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 5, 3.1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]76:select count(*) as count_result from table_2
 STRICT{
@@ -117,7 +117,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.13
 
 -- [1]78:select count(*) as count_result from table_2
 STRICT{
@@ -127,7 +127,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 -- [1]82:alter table if exists table_1 set properties ttl=3600000
 STRICT{
 PASS
@@ -179,7 +179,7 @@ table_0              |INF                |
 总数目：7
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]86:alter table table_1 set properties ttl='INF'
 STRICT{
 PASS
@@ -224,7 +224,7 @@ SQLSTATE : 700: line 1:40: Invalid numeric literal: 9223372036854775808
 }
 -- [1]101:ALTER TABLE table_2 drop column double
 STRICT{
-SQLSTATE : 701: Drop column is unsupported yet.
+PASS
 }
 -- [1]101:desc table_2
 STRICT{
@@ -287,7 +287,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.240
+Elapsed Time: 0.0.280
 
 -- [1]120:select count(*) as count_result from t1
 STRICT{
@@ -297,13 +297,13 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.8
 -- [1]123:insert into t2(time, device_id, int32) values(now(),'d1',1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.69
+Elapsed Time: 0.0.73
 
 -- [1]126:select count(*) as count_result from t2
 STRICT{
@@ -313,13 +313,13 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5
 -- [1]129:insert into t3(time, device_id, int32) values(now(),'d1',1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.10
 
 -- [1]132:select count(*) as count_result from t3
 STRICT{
@@ -329,4 +329,4 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5

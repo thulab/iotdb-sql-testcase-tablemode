@@ -339,7 +339,7 @@ select s.region, s.name,
 from students s, teachers t, courses c, grades g
 where
 s.time=c.time and c.time=g.time and s.region='haidian'
-group by s.region, s.name, t.teacher_id, c.course_name, g.score;
+group by s.region, s.name, t.teacher_id, c.course_name, g.score order by s.name,t.teacher_id;
 
 select s.region, s.name,
 	   t.teacher_id,

@@ -187,7 +187,7 @@ SQLSTATE : 701: Scalar function replace only accepts two or three arguments and 
 }
 -- [1]122:select s1, replace(s1,'e', a) from table_a
 STRICT{
-SQLSTATE : 701: Column 'a' cannot be resolved
+SQLSTATE : 616: Column 'a' cannot be resolved
 }
 -- [1]123:select s1, replace(s1,1,'a') from table_a
 STRICT{

@@ -40,14 +40,14 @@ INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维�
 --7. 原始数据查询
 --7.1 需指定一个测点列才有返回结果，否则空列表
 select * from device_type_0 order by time;
-select "型号", time, "温度", "维修周期" from device_type_0 order by time;
+select "型号", time, "温度", "维修周期" from device_type_0 order by "型号",time;
 select "地区", "厂号", "温度" from device_type_0;
 select time, "地区", "厂号", "设备号", "型号", "维修周期" from device_type_0 order by time;
 select time, "温度" from test_db.device_type_0 order by time;
 
 --7.2 order by 排序
 select * from device_type_0 order by time desc,"厂号" desc;
-select * from device_type_0 order by "地区" asc;
+select * from device_type_0 order by time, "地区","厂号" asc;
 select * from device_type_0 order by "温度" asc, "排量" desc;
 
 --8. 清理数据：删除数据库

@@ -75,8 +75,8 @@ select date_bim(1y1d,time,2022-10-12 12:00:00) from table_1; <<SQLSTATE;
 select time, date_bin(1h,time) as date_bin_result1, timestamp, date_bin(2d,timestamp) as date_bin_result2 from table_1 order by time;
 select time, date_bin(1Day,time,1970-01-01 00:00:00) as date_bin_result from table_1 order by time;
 select timestamp, date_bin(1h, timestamp) as date_bin_result, count(timestamp) as timestamp_count from table_1 group by timestamp order by date_bin_result;
-select time, date_bin(3week,time,2022-12-01 00:00:00) as date_bin_result1, timestamp, date_bin(24h,timestamp,2022-12-01 00:00:00) as date_bin_result2 from table_1 offset 2 limit 5;
-select time, date_bin(3w,time,2022-12-01 00:00:00) as date_bin_result1, timestamp, date_bin(3600m,timestamp,2022-12-01 00:00:00) as date_bin_result2 from table_1 offset 1 limit 1;
+select time, date_bin(3week,time,2022-12-01 00:00:00) as date_bin_result1, timestamp, date_bin(24h,timestamp,2022-12-01 00:00:00) as date_bin_result2 from table_1 order by time offset 2 limit 5;
+select time, date_bin(3w,time,2022-12-01 00:00:00) as date_bin_result1, timestamp, date_bin(3600m,timestamp,2022-12-01 00:00:00) as date_bin_result2 from table_1 order by time offset 1 limit 1;
 select date_bin(5ms, time) as time, region_id, int32, int64, avg(float) as avg_value from table_1 where time >= 2 and time < 1 GROUP BY 1,2,3,4;
 
 --8.1 不支持的数据类型

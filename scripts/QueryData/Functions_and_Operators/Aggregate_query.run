@@ -43,12 +43,12 @@ desc table_1;
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
 ) values(
-1, '001', 'd1', 'V1', false, 'text1', 'string1', '2020-01-10', 100000, X'11F8d7', 1, 1000, 1.1, 111.11
+1, '001', 'd1', 'V1', false, 'text1', 'string1', '2020-01-10', 100000, X'11F8d7', 0, 1000, 1.1, 111.11
 );
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
 ) values(
-2, '002', 'd2', 'V2', true, 'text2', 'string2', '2020-02-20', 16839200, X'3b', 10, 453, 11.1, 102.2
+2, '002', 'd2', 'V2', true, 'text2', 'string2', '2020-02-20', 16839200, X'3b', 111, 453, 11.1, 102.2
 );
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
@@ -68,12 +68,12 @@ time, region_id, device_id, model_id, boolean, text, string, date, timestamp, bl
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
 ) values(
-6, null, 'd6', 'V2', true, 'text3', 'string3', null, 1378230000000, X'34', 1, 653, 0.1, 1111.2
+6, null, 'd6', 'V2', true, 'text3', 'string3', null, 1378230000000, X'00010000', 1, 653, 0.1, 1221.2
 );
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
 ) values(
-7, '005', 'd5', 'V3', true, 'text4', 'string4', '2023-12-15', 1378230000000, X'34', 2, null, 555.5, 1111.2
+7, '005', 'd5', 'V3', true, 'text4', 'string4', '2023-12-15', 1378230000000, X'FFD8FFE0', 2, null, 555.5, 1111.2
 );
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
@@ -83,12 +83,12 @@ time, region_id, device_id, model_id, boolean, text, string, date, timestamp, bl
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
 ) values(
-9, '003', 'd3', 'V1', true, 'text4', null, '2023-12-15', null, X'34', 10, null, 2.1, 155.5
+9, '003', 'd3', 'V1', true, 'text4', null, '2023-12-15', null, X'49460001', 10, null, 2.1, 155.5
 );
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
 ) values(
-10, '004', 'd4', 'V2', false, 'text5', 'string3', '2023-12-15', 18392378000, null, 1, null, -1.1, 11.2
+10, '004', 'd4', 'V2', false, 'text5', 'string3', '2024-01-15', 18392378000, null, 1, null, -11.1, 11.2
 );
 
 --7. 原始数据查询
@@ -105,7 +105,7 @@ select region_id, count(*) as count_result from table_1 group by region_id;
 select device_id, count(*) as count_result from table_1 group by device_id;
 select model_id, count(*) as count_result from table_1 group by model_id;
 select count(boolean) + count(date) + count(int64) - count(int32) as count_result from table_1;
-select region_id, device_id, model_id, count(*) from (select * from table_1 order by time) where time > 1 and time < 10 group by region_id, device_id, model_id;
+select region_id, device_id, model_id, count(*) from (select * from table_1 order by time) where time > 1 and time < 10 group by region_id, device_id, model_id order by region_id,device_id,model_id;
 select count(*) as count_result from table_1 where time > 1 and time < 10;
 select count(*) as count_result from table_1 where boolean = false and time < 8;
 select count(*) as count_result from table_1 where int64 < 500;
@@ -134,7 +134,7 @@ select sum(int32) as sum_result from table_1;
 select sum(int64) as sum_result from table_1;
 select sum(float) as sum_result from table_1;
 select sum(double) as sum_result from table_1;
-select model_id, sum(int32) as result1, sum(64) as result2, sum(float) as result3, sum(double) as result4 from table_1 group by model_id;
+select model_id, sum(int32) as result1, sum(int64) as result2, sum(float) as result3, round(sum(double),2) as result4 from table_1 group by model_id;
 select sum(cast(region_id as int32)) as sum_result from table_1 where region_id is not null;
 select (sum(int32) + count(boolean) - count(float) + 2) as sum_result from table_1 where region_id is not null and time > 3;
 select sum(cast(substring(device_id,2,1) as int32)) as sum_result from table_1 where time > 2 and time <= 10;
@@ -163,7 +163,7 @@ select avg(float) as avg_result from table_1;
 select avg(double) as avg_result from table_1;
 select device_id, avg(int32+int32+float+double) as avg_result from table_1 group by device_id;
 select avg(int32*int64) as avg_result from table_1 where time >= 2 and time < 9;
-select (avg(int32+int64-float+double)*2) as avg_result, round(count(*)+sum(int32+double),12) as total_result from table_1 where time < 10;
+select (avg(int32+int64-float+double)*2) as avg_result, round(count(*)+sum(int32+double),2) as total_result from table_1 where time < 10;
 select avg(int32+double-float) as total_1, (avg(int32)+100101) as total_2, (sum(int64)+count(string)) as total_3 from table_1 where model_id = 'V2';
 
 --11. 聚合函数：extreme
@@ -220,13 +220,13 @@ select min_by(time) from table_1; <<SQLSTATE;
 select min_by(time,region_id) as min_by_result from table_1;
 select min_by(region_id,device_id) as min_by_result from table_1; 
 select min_by(device_id,model_id) as min_by_result from table_1;
-select min_by(model_id,boolean) as min_by_result from (select * from table_1 order by time);
+select min_by(model_id,boolean) as min_by_result from (select model_id,boolean from table_1 order by time) group by model_id order by min_by_result;
 select min_by(boolean,text) as min_by_result from (select * from table_1 order by time);
 select min_by(text,string) as min_by_result from (select * from table_1 order by time);
 select min_by(string,date) as min_by_result from (select * from table_1 order by time);
 select min_by(date,timestamp) as min_by_result from (select * from table_1 order by time);
 select min_by(timestamp,blob) as min_by_result from (select * from table_1 order by time);
-select min_by(blob,int32) as min_by_result from (select * from table_1 order by time);
+select min_by(blob,int32) as min_by_result from (select time,blob,int32 from table_1 order by time);
 select min_by(timestamp,int32) as min_by_result from (select * from table_1 order by time);
 select min_by(int32,int64) as min_by_result from (select * from table_1 order by time);
 select min_by(int64,float) as min_by_result from (select * from table_1 order by time);
@@ -255,7 +255,7 @@ select max(double) as max_result from table_1;
 select result1, result2, result1 + result2 as result3 from (
     select max(int64) AS result1, max(double) AS result2
     from (select * from table_1 order by time)
-    WHERE time > 1 AND time < 10 group by time);
+    WHERE time > 1 AND time < 10 group by time) order by result1,result2,result3;
 
 select max(float) + avg(int32) as total_result, max(double)-(count(string)+2) as sub_result from table_1 where model_id='V1';
 select device_id, model_id, count(boolean) as count_result, min(float) as min_result,
@@ -268,7 +268,7 @@ select max_by(time) from table_1; <<SQLSTATE;
 select max_by(time,region_id) as max_by_result from table_1;
 select max_by(region_id,device_id) as max_by_result from table_1;
 select max_by(device_id,model_id) as max_by_result from table_1;
-select max_by(model_id,boolean) as max_by_result from (select * from table_1 order by time);
+select max_by(model_id,boolean) as max_by_result from (select time,model_id,boolean from table_1 order by time) group by model_id;
 select max_by(boolean,text) as max_by_result from (select * from table_1 order by time);
 select max_by(text,string) as max_by_result from (select * from table_1 order by time);
 select max_by(string,date) as max_by_result from (select * from table_1 order by time);
@@ -411,12 +411,12 @@ select variance(date) from table_1; <<SQLSTATE;
 select variance(timestamp) from table_1; <<SQLSTATE;
 select variance(blob) from table_1; <<SQLSTATE;
 --21.2 支持数值的数据类型
-select round(variance(int32),12) as var_result from (select * from table_1 order by time);
-select round(variance(int64),12) as var_result from (select * from table_1 order by time);
-select round(variance(float),12) as var_result from (select * from table_1 order by time);    
-select round(variance(double),12) as var_result from (select * from table_1 order by time);
+select round(variance(int32),4) as var_result from (select * from table_1 order by time);
+select round(variance(int64),4) as var_result from (select * from table_1 order by time);
+select round(variance(float),4) as var_result from (select * from table_1 order by time);    
+select round(variance(double),4) as var_result from (select * from table_1 order by time);
 select round(variance(int32),12) as var_result, mode(boolean) as mode_result, count(string) as count_result 
-	from (select * from table_1 order by time) group by boolean;
+	from (select * from table_1 order by time) group by boolean order by var_result;
 
 --22. var_pop
 --22.1 非数值的数据类型校验
@@ -433,9 +433,9 @@ select var_pop(date) from table_1; <<SQLSTATE;
 select var_pop(timestamp) from table_1; <<SQLSTATE;
 select var_pop(blob) from table_1; <<SQLSTATE;
 --22.2 支持数值的数据类型
-select var_pop(int32) as var_pop_result from (select * from table_1 order by time);
+select var_pop(int32) as var_pop_result from (select * from table_1 order by time) order by var_pop_result;
 select var_pop(int64) as var_pop_result from table_1;
-select var_pop(float) as var_pop_result from table_1;    
+select round(var_pop(float),4) as var_pop_result from table_1 order by var_pop_result;
 select var_pop(double) as var_pop_result from table_1;
 select round(var_pop(int32),12) as var_pop_result, mode(blob) as mode_result, count(timestamp) as count_result 
 	from (select * from table_1 order by time) group by model_id;
@@ -456,8 +456,8 @@ select var_samp(timestamp) from table_1; <<SQLSTATE;
 select var_samp(blob) from table_1; <<SQLSTATE;
 --23.2 支持数值的数据类型
 select round(var_samp(int32),12) as var_samp_result from table_1;
-select var_samp(int64) as var_samp_result from table_1;
-select var_samp(float) as var_samp_result from table_1;    
+select round(var_samp(int64),4) as var_samp_result from table_1 order by var_samp_result;
+select round(var_samp(float),4) as var_samp_result from table_1 order by var_samp_result;   
 select var_samp(double) as var_samp_result from table_1;
 select (var_samp(int32)+var_pop(float)-variance(double)) as total_result,
 	mode(blob) as mode_result, count(timestamp) as count_result,

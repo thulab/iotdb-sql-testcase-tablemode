@@ -75,7 +75,7 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-8, 'd2', 'purple', true, 'v3', 555, 1001, 202.1, 1.2, false, '2002-10-01', 1653046400000, 'ioep11', X'abcdef'
+8, 'd2', 'purple', true, 'v3', 555, 1001, 202.1, 1.2, false, '2002-10-01', 1653046500000, 'ioep11', X'abcdef'
 );
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
@@ -90,12 +90,12 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-11, 'd2', 'red', null, 'v2', 111, 20, 2, 11.3, true, null, 1702277189000, 'sad', X'ae'
+11, 'd2', 'red', null, 'v2', 111, 20, 2, 11.3, true, null, 1702277199000, 'sad', X'ae'
 );
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1702277189000, 'sad', X'ae'
+12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1702277299000, 'sad', X'ae'
 );
  
 --7. 原始数据查询：
@@ -103,12 +103,12 @@ select * from Table_A order by time;
 
 --8. 数据查询：DIFF
 --8.1 支持的数据类型Diff查询
-select s2, diff(s2) from table_a order by time;
-select s3, diff(s3) from table_a order by time;
-select s4, diff(s4) from table_a order by time;
-select s5, diff(s5) from table_a order by time;
-select s8, diff(s8) from table_a order by time;
-select s4, diff(s4, false),s5, diff(s5, true) from table_a order by time offset 3 limit 5;
+select s2, diff(s2) as diff_result from table_a order by s2;
+select s3, diff(s3) as diff_result from table_a order by s3;
+select s4, diff(s4) as diff_result from table_a order by s4;
+select s5, diff(s5) as diff_result from table_a order by s5;
+select s8, diff(s8) as diff_result from table_a order by s8;
+select s4, diff(s4, false) as diff_result01,s5, diff(s5, true) as diff_result01 from table_a order by time,s4,s5 offset 3 limit 5;
 
 --8.2 不支持的数据类型Diff查询
 select s1, diff(s1) from table_a; <<SQLSTATE;

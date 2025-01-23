@@ -19,48 +19,48 @@ table_1              |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]40:desc table_1
 STRICT{
 PASS
 }
--- [1]46:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 1, '001', 'd1', 'V1', false, 'text1', 'string1', '2020-01-10', 100000, X'11F8d7', 1, 1000, 1.1, 111.11 )
+-- [1]46:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 1, '001', 'd1', 'V1', false, 'text1', 'string1', '2020-01-10', 100000, X'11F8d7', 0, 1000, 1.1, 111.11 )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.245
--- [1]51:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 2, '002', 'd2', 'V2', true, 'text2', 'string2', '2020-02-20', 16839200, X'3b', 10, 453, 11.1, 102.2 )
+Elapsed Time: 0.2.10
+-- [1]51:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 2, '002', 'd2', 'V2', true, 'text2', 'string2', '2020-02-20', 16839200, X'3b', 111, 453, 11.1, 102.2 )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.61
+Elapsed Time: 0.0.52
 -- [1]56:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 3, '003', 'd3', 'V3', true, 'text2', 'string2', '2021-12-20', 116839200000, X'6728', 1, 123, 5.2, 333.3 )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.10
 -- [1]61:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 4, '004', 'd4', 'V4', false, 'text3', 'string3', '2022-06-11', 86700000, X'4b98', 2, 239, null, 666.66 )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.7
 -- [1]66:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 5, '005', 'd5', 'V3', false, 'text4', 'string2', '2023-12-15', 1378230000000, X'34', 10, 653, -1.1, 1111.2 )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.15
--- [1]71:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 6, null, 'd6', 'V2', true, 'text3', 'string3', null, 1378230000000, X'34', 1, 653, 0.1, 1111.2 )
+Elapsed Time: 0.0.8
+-- [1]71:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 6, null, 'd6', 'V2', true, 'text3', 'string3', null, 1378230000000, X'00010000', 1, 653, 0.1, 1221.2 )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.7
--- [1]76:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 7, '005', 'd5', 'V3', true, 'text4', 'string4', '2023-12-15', 1378230000000, X'34', 2, null, 555.5, 1111.2 )
+Elapsed Time: 0.0.8
+-- [1]76:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 7, '005', 'd5', 'V3', true, 'text4', 'string4', '2023-12-15', 1378230000000, X'FFD8FFE0', 2, null, 555.5, 1111.2 )
 STRICT{
 0
 }
@@ -71,28 +71,28 @@ STRICT{
 0
 }
 
+Elapsed Time: 0.0.10
+-- [1]86:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 9, '003', 'd3', 'V1', true, 'text4', null, '2023-12-15', null, X'49460001', 10, null, 2.1, 155.5 )
+STRICT{
+0
+}
+
 Elapsed Time: 0.0.5
--- [1]86:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 9, '003', 'd3', 'V1', true, 'text4', null, '2023-12-15', null, X'34', 10, null, 2.1, 155.5 )
+-- [1]91:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 10, '004', 'd4', 'V2', false, 'text5', 'string3', '2024-01-15', 18392378000, null, 1, null, -11.1, 11.2 )
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
--- [1]91:insert into table_1( time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double ) values( 10, '004', 'd4', 'V2', false, 'text5', 'string3', '2023-12-15', 18392378000, null, 1, null, -1.1, 11.2 )
-STRICT{
-0
-}
-
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]95:select * from table_1 order by time
 STRICT{
 time(TIMESTAMP)      |region_id(STRING)      |device_id(STRING)      |model_id(STRING)      |boolean(BOOLEAN)      |text(TEXT)      |string(STRING)      |date(DATE)      |timestamp(TIMESTAMP)      |blob(BLOB)      |int32(INT32)      |int64(INT64)      |float(FLOAT)      |double(DOUBLE)      |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|001                    |d1                     |V1                    |false                 |text1           |string1             |2020-01-10      |1970-01-01T08:01:40.000+08|0x11f8d7        |1                 |1000              |1.1               |111.11              |
+1970-01-01T08:00:00.0|001                    |d1                     |V1                    |false                 |text1           |string1             |2020-01-10      |1970-01-01T08:01:40.000+08|0x11f8d7        |0                 |1000              |1.1               |111.11              |
 01+08:00             |                       |                       |                      |                      |                |                    |                |:00                       |                |                  |                  |                  |                    |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|002                    |d2                     |V2                    |true                  |text2           |string2             |2020-02-20      |1970-01-01T12:40:39.200+08|0x3b            |10                |453               |11.1              |102.2               |
+1970-01-01T08:00:00.0|002                    |d2                     |V2                    |true                  |text2           |string2             |2020-02-20      |1970-01-01T12:40:39.200+08|0x3b            |111               |453               |11.1              |102.2               |
 02+08:00             |                       |                       |                      |                      |                |                    |                |:00                       |                |                  |                  |                  |                    |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1970-01-01T08:00:00.0|003                    |d3                     |V1                    |true                  |text2           |string2             |2021-12-20      |1973-09-14T15:20:00.000+08|0x6728          |1                 |123               |5.2               |333.3               |
@@ -104,24 +104,24 @@ time(TIMESTAMP)      |region_id(STRING)      |device_id(STRING)      |model_id(S
 1970-01-01T08:00:00.0|005                    |d5                     |V3                    |false                 |text4           |string2             |2023-12-15      |2013-09-04T01:40:00.000+08|0x34            |10                |653               |-1.1              |1111.2              |
 05+08:00             |                       |                       |                      |                      |                |                    |                |:00                       |                |                  |                  |                  |                    |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|null                   |d6                     |V2                    |true                  |text3           |string3             |null            |2013-09-04T01:40:00.000+08|0x34            |1                 |653               |0.1               |1111.2              |
+1970-01-01T08:00:00.0|null                   |d6                     |V2                    |true                  |text3           |string3             |null            |2013-09-04T01:40:00.000+08|0x00010000      |1                 |653               |0.1               |1221.2              |
 06+08:00             |                       |                       |                      |                      |                |                    |                |:00                       |                |                  |                  |                  |                    |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|005                    |d5                     |V3                    |true                  |text4           |string4             |2023-12-15      |2013-09-04T01:40:00.000+08|0x34            |2                 |null              |555.5             |1111.2              |
+1970-01-01T08:00:00.0|005                    |d5                     |V3                    |true                  |text4           |string4             |2023-12-15      |2013-09-04T01:40:00.000+08|0xffd8ffe0      |2                 |null              |555.5             |1111.2              |
 07+08:00             |                       |                       |                      |                      |                |                    |                |:00                       |                |                  |                  |                  |                    |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1970-01-01T08:00:00.0|002                    |d3                     |V1                    |true                  |text2           |string5             |null            |2013-09-04T01:40:00.000+08|0x34            |2                 |653               |13.13             |null                |
 08+08:00             |                       |                       |                      |                      |                |                    |                |:00                       |                |                  |                  |                  |                    |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|003                    |d3                     |V1                    |true                  |text4           |null                |2023-12-15      |null                      |0x34            |10                |null              |2.1               |155.5               |
+1970-01-01T08:00:00.0|003                    |d3                     |V1                    |true                  |text4           |null                |2023-12-15      |null                      |0x49460001      |10                |null              |2.1               |155.5               |
 09+08:00             |                       |                       |                      |                      |                |                    |                |                          |                |                  |                  |                  |                    |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|004                    |d4                     |V2                    |false                 |text5           |string3             |2023-12-15      |1970-08-02T04:59:38.000+08|null            |1                 |null              |-1.1              |11.2                |
+1970-01-01T08:00:00.0|004                    |d4                     |V2                    |false                 |text5           |string3             |2024-01-15      |1970-08-02T04:59:38.000+08|null            |1                 |null              |-11.1             |11.2                |
 10+08:00             |                       |                       |                      |                      |                |                    |                |:00                       |                |                  |                  |                  |                    |
 总数目：10
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
 
 -- [1]98:select count() from table_1
 STRICT{
@@ -131,7 +131,7 @@ _col0(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.7
 
 -- [1]99:select count(*) as count_result from table_1
 STRICT{
@@ -141,7 +141,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]100:select count(time) as count1, count(region_id) as count2, count(device_id) as count3, count(model_id) as count4 from table_1
 STRICT{
@@ -151,7 +151,7 @@ count1(INT64)      |count2(INT64)      |count3(INT64)      |count4(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.7
 
 -- [1]101:select count(boolean) as count1, count(text) as count2, count(string) as count3, count(date) as count4, count(timestamp) as count5 from table_1
 STRICT{
@@ -161,7 +161,7 @@ count1(INT64)      |count2(INT64)      |count3(INT64)      |count4(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.8
 
 -- [1]102:select count(blob) as count1, count(int32) as count2, count(int64) as count3, count(float) as count4, count(double) as count5 from table_1
 STRICT{
@@ -171,7 +171,7 @@ count1(INT64)      |count2(INT64)      |count3(INT64)      |count4(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.7
 
 -- [1]103:select count(model_id) as count1, count(boolean) as count2 from table_1 group by model_id
 STRICT{
@@ -185,7 +185,7 @@ count1(INT64)      |count2(INT64)      |
 总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.9
 
 -- [1]104:select region_id, count(*) as count_result from table_1 group by region_id
 STRICT{
@@ -205,7 +205,7 @@ null                   |1                        |
 总数目：6
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.7
 
 -- [1]105:select device_id, count(*) as count_result from table_1 group by device_id
 STRICT{
@@ -225,7 +225,7 @@ d6                     |1                        |
 总数目：6
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.7
 
 -- [1]106:select model_id, count(*) as count_result from table_1 group by model_id
 STRICT{
@@ -239,7 +239,7 @@ V3                    |2                        |
 总数目：3
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.7
 
 -- [1]107:select count(boolean) + count(date) + count(int64) - count(int32) as count_result from table_1
 STRICT{
@@ -249,15 +249,11 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.10
 
--- [1]108:select region_id, device_id, model_id, count(*) from (select * from table_1 order by time) where time > 1 and time < 10 group by region_id, device_id, model_id
+-- [1]108:select region_id, device_id, model_id, count(*) from (select * from table_1 order by time) where time > 1 and time < 10 group by region_id, device_id, model_id order by region_id,device_id,model_id
 STRICT{
 region_id(STRING)      |device_id(STRING)      |model_id(STRING)      |_col3(INT64)      |
---------------------------------------------------------------------------------------
-null                   |d6                     |V2                    |1                 |
---------------------------------------------------------------------------------------
-004                    |d4                     |V2                    |1                 |
 --------------------------------------------------------------------------------------
 002                    |d2                     |V2                    |1                 |
 --------------------------------------------------------------------------------------
@@ -265,11 +261,15 @@ null                   |d6                     |V2                    |1        
 --------------------------------------------------------------------------------------
 003                    |d3                     |V1                    |2                 |
 --------------------------------------------------------------------------------------
+004                    |d4                     |V2                    |1                 |
+--------------------------------------------------------------------------------------
 005                    |d5                     |V3                    |2                 |
+--------------------------------------------------------------------------------------
+null                   |d6                     |V2                    |1                 |
 总数目：6
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.10
 
 -- [1]109:select count(*) as count_result from table_1 where time > 1 and time < 10
 STRICT{
@@ -279,7 +279,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.7
 
 -- [1]110:select count(*) as count_result from table_1 where boolean = false and time < 8
 STRICT{
@@ -289,7 +289,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.10
 
 -- [1]111:select count(*) as count_result from table_1 where int64 < 500
 STRICT{
@@ -299,7 +299,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.7
 
 -- [1]112:select count(float) as count_float, count(double) as count_double from table_1
 STRICT{
@@ -309,7 +309,7 @@ count_float(INT64)      |count_double(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]113:select (count(float)) * count(int32)+2 as count1, count(double+1) as count2 from table_1
 STRICT{
@@ -319,7 +319,7 @@ count1(INT64)      |count2(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.11
 
 -- [1]114:select count(*) as count_result from table_1 where int64 is null
 STRICT{
@@ -329,7 +329,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.10
 
 -- [1]115:select count(*) as count_result from table_1 where int64 is not null
 STRICT{
@@ -339,7 +339,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
 
 -- [1]116:select count(*) as count_result from table_1 where int64 <> null
 STRICT{
@@ -349,7 +349,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
 
 -- [1]117:select count(*) as count_result from table_1 where int64 != null
 STRICT{
@@ -359,7 +359,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.7
 
 -- [1]118:select count(*) as count_result from table_1 where int64 = null
 STRICT{
@@ -369,7 +369,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.10
 -- [1]122:select sum() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [sum] should only have one argument
@@ -415,11 +415,11 @@ SQLSTATE : 701: Aggregate functions [sum] only support numeric data types [INT32
 STRICT{
 sum_result(DOUBLE)      |
 ------------------------
-40.0                    |
+140.0                   |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.7
 
 -- [1]134:select sum(int64) as sum_result from table_1
 STRICT{
@@ -429,41 +429,41 @@ sum_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.7
 
 -- [1]135:select sum(float) as sum_result from table_1
 STRICT{
 sum_result(DOUBLE)      |
 ------------------------
-586.0300001874566       |
+576.0299998298287       |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]136:select sum(double) as sum_result from table_1
 STRICT{
 sum_result(DOUBLE)      |
 ------------------------
-4713.57                 |
+4823.57                 |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
--- [1]137:select model_id, sum(int32) as result1, sum(64) as result2, sum(float) as result3, sum(double) as result4 from table_1 group by model_id
+-- [1]137:select model_id, sum(int32) as result1, sum(int64) as result2, sum(float) as result3, round(sum(double),2) as result4 from table_1 group by model_id
 STRICT{
 model_id(STRING)      |result1(DOUBLE)      |result2(DOUBLE)      |result3(DOUBLE)      |result4(DOUBLE)      |
 ----------------------------------------------------------------------------------------------------------
-V1                    |14.0                 |256.0                |21.52999985218048    |599.91               |
+V1                    |13.0                 |1776.0               |21.52999985218048    |599.91               |
 ----------------------------------------------------------------------------------------------------------
-V2                    |14.0                 |256.0                |10.100000359117985   |1891.2600000000002   |
+V2                    |115.0                |1345.0               |0.10000000149011612  |2001.26              |
 ----------------------------------------------------------------------------------------------------------
-V3                    |12.0                 |128.0                |554.3999999761581    |2222.4               |
+V3                    |12.0                 |653.0                |554.3999999761581    |2222.4               |
 总数目：3
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.10
 
 -- [1]138:select sum(cast(region_id as int32)) as sum_result from table_1 where region_id is not null
 STRICT{
@@ -473,7 +473,7 @@ sum_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.11
 
 -- [1]139:select (sum(int32) + count(boolean) - count(float) + 2) as sum_result from table_1 where region_id is not null and time > 3
 STRICT{
@@ -483,7 +483,7 @@ sum_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.13
 
 -- [1]140:select sum(cast(substring(device_id,2,1) as int32)) as sum_result from table_1 where time > 2 and time <= 10
 STRICT{
@@ -493,47 +493,47 @@ sum_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.10
 
 -- [1]141:select sum(int32 + int64 + float + double) as sum_result from table_1
 STRICT{
 sum_result(DOUBLE)      |
 ------------------------
-5690.4099786376955      |
+5900.409948120117       |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.7
 
 -- [1]142:select device_id, sum(int32) as result1, sum(int64) as result2, sum(float) as result3, sum(double) as result4 from table_1 group by device_id
 STRICT{
 device_id(STRING)      |result1(DOUBLE)      |result2(DOUBLE)      |result3(DOUBLE)      |result4(DOUBLE)      |
 -----------------------------------------------------------------------------------------------------------
-d1                     |1.0                  |1000.0               |1.100000023841858    |111.11               |
+d1                     |0.0                  |1000.0               |1.100000023841858    |111.11               |
 -----------------------------------------------------------------------------------------------------------
-d2                     |10.0                 |453.0                |11.100000381469727   |102.2                |
+d2                     |111.0                |453.0                |11.100000381469727   |102.2                |
 -----------------------------------------------------------------------------------------------------------
 d3                     |13.0                 |776.0                |20.429999828338623   |488.8                |
 -----------------------------------------------------------------------------------------------------------
-d4                     |3.0                  |239.0                |-1.100000023841858   |677.86               |
+d4                     |3.0                  |239.0                |-11.100000381469727  |677.86               |
 -----------------------------------------------------------------------------------------------------------
 d5                     |12.0                 |653.0                |554.3999999761581    |2222.4               |
 -----------------------------------------------------------------------------------------------------------
-d6                     |1.0                  |653.0                |0.10000000149011612  |1111.2               |
+d6                     |1.0                  |653.0                |0.10000000149011612  |1221.2               |
 总数目：6
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
 
 -- [1]143:select sum(int32 * float) as total_1, (count(text)+sum(double-int64)) as total_2 from table_1 where time <= 8
 STRICT{
 total_1(DOUBLE)      |total_2(DOUBLE)      |
 ------------------------------------------
-1243.660000063479    |322.6700000000001    |
+2363.660097695887    |432.6700000000001    |
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.10
 -- [1]144:select (sum(double-int32)*2-11) as result1, sum(sum(int64)+ count(string)) as result2 from table_1 group by device_id
 STRICT{
 SQLSTATE : 701: Cannot nest aggregations inside aggregation 'sum': [sum(int64), count(string)]
@@ -583,11 +583,11 @@ SQLSTATE : 701: Aggregate functions [avg] only support numeric data types [INT32
 STRICT{
 avg_result(DOUBLE)      |
 ------------------------
-4.0                     |
+14.0                    |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 
 -- [1]161:select avg(int64) as avg_result from table_1
 STRICT{
@@ -597,77 +597,77 @@ avg_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 
 -- [1]162:select avg(float) as avg_result from table_1
 STRICT{
 avg_result(DOUBLE)      |
 ------------------------
-65.11444446527295       |
+64.00333331442542       |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 
 -- [1]163:select avg(double) as avg_result from table_1
 STRICT{
 avg_result(DOUBLE)      |
 ------------------------
-523.73                  |
+535.9522222222222       |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]164:select device_id, avg(int32+int32+float+double) as avg_result from table_1 group by device_id
 STRICT{
 device_id(STRING)      |avg_result(DOUBLE)      |
 -----------------------------------------------
-d1                     |114.20999990463257      |
+d1                     |112.21000002384186      |
 -----------------------------------------------
-d2                     |133.30000038146972      |
+d2                     |335.3000061035156       |
 -----------------------------------------------
 d3                     |259.0500000953674       |
 -----------------------------------------------
-d4                     |12.099999976158141      |
+d4                     |2.0999996185302727      |
 -----------------------------------------------
 d5                     |1400.3999998092652      |
 -----------------------------------------------
-d6                     |1113.2999999046326      |
+d6                     |1223.2999999046326      |
 总数目：6
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.8
 
 -- [1]165:select avg(int32*int64) as avg_result from table_1 where time >= 2 and time < 9
 STRICT{
 avg_result(DOUBLE)      |
 ------------------------
-2270.0                  |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]166:select (avg(int32+int64-float+double)*2) as avg_result, round(count(*)+sum(int32+double),12) as total_result from table_1 where time < 10
-STRICT{
-avg_result(DOUBLE)      |total_result(DOUBLE)      |
---------------------------------------------------
-2263.044008544922       |4748.37                   |
+9895.5                  |
 总数目：1
 }
 
 Elapsed Time: 0.0.8
 
+-- [1]166:select (avg(int32+int64-float+double)*2) as avg_result, round(count(*)+sum(int32+double),2) as total_result from table_1 where time < 10
+STRICT{
+avg_result(DOUBLE)      |total_result(DOUBLE)      |
+--------------------------------------------------
+2347.044020751953       |4958.37                   |
+总数目：1
+}
+
+Elapsed Time: 0.0.11
+
 -- [1]167:select avg(int32+double-float) as total_1, (avg(int32)+100101) as total_2, (sum(int64)+count(string)) as total_3 from table_1 where model_id = 'V2'
 STRICT{
 total_1(DOUBLE)      |total_2(DOUBLE)      |total_3(DOUBLE)      |
 ---------------------------------------------------------------
-408.8333332136274    |100104.5             |1349.0               |
+482.49999999950336   |100129.75            |1349.0               |
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.8
 -- [1]171:select extreme() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [extreme] should only have one argument
@@ -717,11 +717,11 @@ SQLSTATE : 701: Aggregate functions [extreme] only support numeric data types [I
 STRICT{
 extreme_result(INT32)      |
 ---------------------------
-10                         |
+111                        |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.8
 
 -- [1]184:select extreme(int64) as extreme_result from table_1
 STRICT{
@@ -731,7 +731,7 @@ extreme_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]185:select extreme(float) as extreme_result from table_1
 STRICT{
@@ -741,27 +741,27 @@ extreme_result(FLOAT)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
 
 -- [1]186:select extreme(double) as extreme_result from table_1
 STRICT{
 extreme_result(DOUBLE)      |
 ----------------------------
-1111.2                      |
+1221.2                      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]187:select extreme(int32) as result1, extreme(int64) as result2, extreme(float) as result3, extreme(double) as result4 from table_1 where time > 3 and time < 10
 STRICT{
 result1(INT32)      |result2(INT64)      |result3(FLOAT)      |result4(DOUBLE)      |
 ---------------------------------------------------------------------------------
-10                  |653                 |555.5               |1111.2               |
+10                  |653                 |555.5               |1221.2               |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.9
 
 -- [1]188:select extreme(int32) + avg(int64) as sum_result, extreme(double)-(count(string)+2) as sub_result from table_1 where device_id='d3'
 STRICT{
@@ -771,7 +771,7 @@ sum_result(DOUBLE)      |sub_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.8
 -- [1]191:select min() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [min] should only have one argument
@@ -786,7 +786,7 @@ min_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]193:select min(region_id) as min_result from table_1
 STRICT{
@@ -796,7 +796,7 @@ min_result(STRING)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 
 -- [1]194:select min(device_id) as min_result from table_1
 STRICT{
@@ -806,7 +806,7 @@ d1                      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5
 
 -- [1]195:select min(model_id) as min_result from table_1
 STRICT{
@@ -816,7 +816,7 @@ V1                      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]196:select min(boolean) as min_result from table_1
 STRICT{
@@ -826,7 +826,7 @@ false                    |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]197:select min(text) as min_result from table_1
 STRICT{
@@ -836,7 +836,7 @@ text1                 |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.8
 
 -- [1]198:select min(string) as min_result from table_1
 STRICT{
@@ -856,7 +856,7 @@ min_result(DATE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]200:select min(timestamp) as min_result from table_1
 STRICT{
@@ -867,27 +867,27 @@ min_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]201:select min(blob) as min_result from table_1
 STRICT{
 min_result(BLOB)      |
 ----------------------
-0x11f8d7              |
+0x00010000            |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]202:select min(int32) as min_result from table_1
 STRICT{
 min_result(INT32)      |
 -----------------------
-1                      |
+0                      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]203:select min(int64) as min_result from table_1
 STRICT{
@@ -897,17 +897,17 @@ min_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]204:select min(float) as min_result from table_1
 STRICT{
 min_result(FLOAT)      |
 -----------------------
--1.1                   |
+-11.1                  |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]205:select min(double) as min_result from table_1
 STRICT{
@@ -917,7 +917,7 @@ min_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]208:select result1, result2, result1 + result2 as result3 from (     select min(int32) AS result1, min(int64) AS result2     from table_1     WHERE time > 3 AND time < 10 )
 STRICT{
@@ -927,7 +927,7 @@ result1(INT32)      |result2(INT64)      |result3(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.43
 
 -- [1]211:select min(int64) + avg(int64) as total_result, min(double)-(count(string)+2) as sub_result from table_1 where device_id='d3'
 STRICT{
@@ -937,7 +937,7 @@ total_result(DOUBLE)      |sub_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
 
 -- [1]212:select device_id, model_id, count(boolean) as count_result, min(float) as min_result, avg(int64) as avg_result  	from table_1 where time > 3 and time < 10 and model_id='V1' group by device_id,model_id
 STRICT{
@@ -947,7 +947,7 @@ d3                     |V1                    |2                        |2.1    
 总数目：1
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.7
 
 -- [1]214:select region_id, device_id, min(boolean),min(text),min(string),min(date),min(timestamp),min(blob) 	from table_1 group by region_id, device_id order by region_id
 STRICT{
@@ -962,7 +962,7 @@ region_id(STRING)      |device_id(STRING)      |_col2(BOOLEAN)      |_col3(TEXT)
 002                    |d3                     |true                |text2            |string5            |null             |2013-09-04T01:40:00.00|0x34             |
                        |                       |                    |                 |                   |                 |0+08:00               |                 |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-003                    |d3                     |true                |text2            |string2            |2021-12-20       |1973-09-14T15:20:00.00|0x34             |
+003                    |d3                     |true                |text2            |string2            |2021-12-20       |1973-09-14T15:20:00.00|0x49460001       |
                        |                       |                    |                 |                   |                 |0+08:00               |                 |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 004                    |d4                     |false               |text3            |string3            |2022-06-11       |1970-01-02T08:05:00.00|0x4b98           |
@@ -971,7 +971,7 @@ region_id(STRING)      |device_id(STRING)      |_col2(BOOLEAN)      |_col3(TEXT)
 005                    |d5                     |false               |text4            |string2            |2023-12-15       |2013-09-04T01:40:00.00|0x34             |
                        |                       |                    |                 |                   |                 |0+08:00               |                 |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-null                   |d6                     |true                |text3            |string3            |null             |2013-09-04T01:40:00.00|0x34             |
+null                   |d6                     |true                |text3            |string3            |null             |2013-09-04T01:40:00.00|0x00010000       |
                        |                       |                    |                 |                   |                 |0+08:00               |                 |
 总数目：7
 }
@@ -994,7 +994,7 @@ min_by_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 
 -- [1]221:select min_by(region_id,device_id) as min_by_result from table_1
 STRICT{
@@ -1014,17 +1014,21 @@ d1                         |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
--- [1]223:select min_by(model_id,boolean) as min_by_result from (select * from table_1 order by time)
+-- [1]223:select min_by(model_id,boolean) as min_by_result from (select model_id,boolean from table_1 order by time) group by model_id order by min_by_result
 STRICT{
 min_by_result(STRING)      |
 ---------------------------
+V1                         |
+---------------------------
+V2                         |
+---------------------------
 V3                         |
-总数目：1
+总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
 
 -- [1]224:select min_by(boolean,text) as min_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1034,7 +1038,7 @@ false                       |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]225:select min_by(text,string) as min_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1044,7 +1048,7 @@ text1                    |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]226:select min_by(string,date) as min_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1054,7 +1058,7 @@ string1                    |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]227:select min_by(date,timestamp) as min_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1064,29 +1068,9 @@ min_by_result(DATE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
 -- [1]228:select min_by(timestamp,blob) as min_by_result from (select * from table_1 order by time)
-STRICT{
-min_by_result(TIMESTAMP)      |
-------------------------------
-1970-01-01T08:01:40.000+08:00 |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]229:select min_by(blob,int32) as min_by_result from (select * from table_1 order by time)
-STRICT{
-min_by_result(BLOB)      |
--------------------------
-0x34                     |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]230:select min_by(timestamp,int32) as min_by_result from (select * from table_1 order by time)
 STRICT{
 min_by_result(TIMESTAMP)      |
 ------------------------------
@@ -1094,7 +1078,27 @@ min_by_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
+
+-- [1]229:select min_by(blob,int32) as min_by_result from (select time,blob,int32 from table_1 order by time)
+STRICT{
+min_by_result(BLOB)      |
+-------------------------
+0x11f8d7                 |
+总数目：1
+}
+
+Elapsed Time: 0.0.6
+
+-- [1]230:select min_by(timestamp,int32) as min_by_result from (select * from table_1 order by time)
+STRICT{
+min_by_result(TIMESTAMP)      |
+------------------------------
+1970-01-01T08:01:40.000+08:00 |
+总数目：1
+}
+
+Elapsed Time: 0.0.6
 
 -- [1]231:select min_by(int32,int64) as min_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1120,11 +1124,11 @@ Elapsed Time: 0.0.5
 STRICT{
 min_by_result(FLOAT)      |
 --------------------------
--1.1                      |
+-11.1                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
 -- [1]234:select min_by(double,time) as min_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1140,10 +1144,10 @@ Elapsed Time: 0.0.5
 STRICT{
 str_result(TIMESTAMP)      |device_result(TIMESTAMP)      |bool_result(TIMESTAMP)      |int64_result(TIMESTAMP)      |count_result(INT64)      |avg_result(DOUBLE)      |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.001+08:|1970-01-01T08:00:00.001+08:00 |1970-01-01T08:00:00.001+08:0|1970-01-01T08:00:00.001+08:00|1                        |112.11                  |
+1970-01-01T08:00:00.001+08:|1970-01-01T08:00:00.001+08:00 |1970-01-01T08:00:00.001+08:0|1970-01-01T08:00:00.001+08:00|1                        |111.11                  |
 00                         |                              |0                           |                             |                         |                        |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.002+08:|1970-01-01T08:00:00.002+08:00 |1970-01-01T08:00:00.002+08:0|1970-01-01T08:00:00.002+08:00|1                        |112.2                   |
+1970-01-01T08:00:00.002+08:|1970-01-01T08:00:00.002+08:00 |1970-01-01T08:00:00.002+08:0|1970-01-01T08:00:00.002+08:00|1                        |213.2                   |
 00                         |                              |0                           |                             |                         |                        |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1970-01-01T08:00:00.003+08:|1970-01-01T08:00:00.008+08:00 |1970-01-01T08:00:00.008+08:0|1970-01-01T08:00:00.003+08:00|3                        |249.9                   |
@@ -1155,12 +1159,12 @@ str_result(TIMESTAMP)      |device_result(TIMESTAMP)      |bool_result(TIMESTAMP
 1970-01-01T08:00:00.005+08:|1970-01-01T08:00:00.005+08:00 |1970-01-01T08:00:00.005+08:0|1970-01-01T08:00:00.005+08:00|2                        |1117.2                  |
 00                         |                              |0                           |                             |                         |                        |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.006+08:|1970-01-01T08:00:00.006+08:00 |1970-01-01T08:00:00.006+08:0|1970-01-01T08:00:00.006+08:00|1                        |1112.2                  |
+1970-01-01T08:00:00.006+08:|1970-01-01T08:00:00.006+08:00 |1970-01-01T08:00:00.006+08:0|1970-01-01T08:00:00.006+08:00|1                        |1222.2                  |
 00                         |                              |0                           |                             |                         |                        |
 总数目：6
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.9
 -- [1]239:select max() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [max] should only have one argument
@@ -1185,7 +1189,7 @@ max_result(STRING)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.5
 
 -- [1]242:select max(device_id) as max_result from table_1
 STRICT{
@@ -1215,7 +1219,7 @@ true                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.10
 
 -- [1]245:select max(text) as max_result from table_1
 STRICT{
@@ -1235,17 +1239,17 @@ string5                 |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]247:select max(date) as max_result from table_1
 STRICT{
 max_result(DATE)      |
 ----------------------
-2023-12-15            |
+2024-01-15            |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5
 
 -- [1]248:select max(timestamp) as max_result from table_1
 STRICT{
@@ -1262,21 +1266,21 @@ Elapsed Time: 0.0.4
 STRICT{
 max_result(BLOB)      |
 ----------------------
-0x6728                |
+0xffd8ffe0            |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
 
 -- [1]250:select max(int32) as max_result from table_1
 STRICT{
 max_result(INT32)      |
 -----------------------
-10                     |
+111                    |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5
 
 -- [1]251:select max(int64) as max_result from table_1
 STRICT{
@@ -1286,7 +1290,7 @@ max_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]252:select max(float) as max_result from table_1
 STRICT{
@@ -1296,51 +1300,51 @@ max_result(FLOAT)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]253:select max(double) as max_result from table_1
 STRICT{
 max_result(DOUBLE)      |
 ------------------------
-1111.2                  |
+1221.2                  |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
--- [1]256:select result1, result2, result1 + result2 as result3 from (     select max(int64) AS result1, max(double) AS result2     from (select * from table_1 order by time)     WHERE time > 1 AND time < 10 group by time)
+-- [1]256:select result1, result2, result1 + result2 as result3 from (     select max(int64) AS result1, max(double) AS result2     from (select * from table_1 order by time)     WHERE time > 1 AND time < 10 group by time) order by result1,result2,result3
 STRICT{
 result1(INT64)      |result2(DOUBLE)      |result3(DOUBLE)      |
 --------------------------------------------------------------
-653                 |1111.2               |1764.2               |
+123                 |333.3                |456.3                |
 --------------------------------------------------------------
 239                 |666.66               |905.66               |
 --------------------------------------------------------------
 453                 |102.2                |555.2                |
 --------------------------------------------------------------
+653                 |1111.2               |1764.2               |
+--------------------------------------------------------------
+653                 |1221.2               |1874.2               |
+--------------------------------------------------------------
 653                 |null                 |null                 |
 --------------------------------------------------------------
-123                 |333.3                |456.3                |
---------------------------------------------------------------
 null                |155.5                |null                 |
---------------------------------------------------------------
-653                 |1111.2               |1764.2               |
 --------------------------------------------------------------
 null                |1111.2               |null                 |
 总数目：8
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.10
 
 -- [1]260:select max(float) + avg(int32) as total_result, max(double)-(count(string)+2) as sub_result from table_1 where model_id='V1'
 STRICT{
 total_result(DOUBLE)      |sub_result(DOUBLE)      |
 --------------------------------------------------
-16.630000114440918        |328.3                   |
+16.380000114440918        |328.3                   |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 
 -- [1]261:select device_id, model_id, count(boolean) as count_result, min(float) as min_result, 	avg(int64) as avg_result, max(int32+int64) as max_result 		from table_1 where time > 3 and time < 10 and model_id='V1' group by device_id,model_id
 STRICT{
@@ -1350,7 +1354,7 @@ d3                     |V1                    |2                        |2.1    
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.8
 -- [1]266:select max_by() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [max_by] should only have two arguments
@@ -1368,7 +1372,7 @@ max_by_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]269:select max_by(region_id,device_id) as max_by_result from table_1
 STRICT{
@@ -1378,7 +1382,7 @@ null                       |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5
 
 -- [1]270:select max_by(device_id,model_id) as max_by_result from table_1
 STRICT{
@@ -1388,17 +1392,21 @@ d5                         |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
--- [1]271:select max_by(model_id,boolean) as max_by_result from (select * from table_1 order by time)
+-- [1]271:select max_by(model_id,boolean) as max_by_result from (select time,model_id,boolean from table_1 order by time) group by model_id
 STRICT{
 max_by_result(STRING)      |
 ---------------------------
+V1                         |
+---------------------------
+V2                         |
+---------------------------
 V3                         |
-总数目：1
+总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
 -- [1]272:select max_by(boolean,text) as max_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1418,7 +1426,7 @@ text2                    |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
 -- [1]274:select max_by(string,date) as max_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1438,17 +1446,17 @@ null                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
 -- [1]276:select max_by(timestamp,blob) as max_by_result from (select * from table_1 order by time)
 STRICT{
 max_by_result(TIMESTAMP)      |
 ------------------------------
-1973-09-14T15:20:00.000+08:00 |
+2013-09-04T01:40:00.000+08:00 |
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.5
 
 -- [1]277:select max_by(timestamp,int32) as max_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1458,7 +1466,7 @@ max_by_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
 -- [1]278:select max_by(blob,int32) as max_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1468,17 +1476,17 @@ max_by_result(BLOB)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]279:select max_by(int32,int64) as max_by_result from (select * from table_1 order by time)
 STRICT{
 max_by_result(INT32)      |
 --------------------------
-1                         |
+0                         |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]280:select max_by(int64,float) as max_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1488,7 +1496,7 @@ null                      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.7
 
 -- [1]281:select max_by(float,double) as max_by_result from (select * from table_1 order by time)
 STRICT{
@@ -1514,10 +1522,10 @@ Elapsed Time: 0.0.5
 STRICT{
 str_result(TIMESTAMP)      |device_result(TIMESTAMP)      |bool_result(TIMESTAMP)      |int64_result(TIMESTAMP)      |count_result(INT64)      |avg_result(DOUBLE)      |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.001+08:|1970-01-01T08:00:00.001+08:00 |1970-01-01T08:00:00.001+08:0|1970-01-01T08:00:00.001+08:00|1                        |112.11                  |
+1970-01-01T08:00:00.001+08:|1970-01-01T08:00:00.001+08:00 |1970-01-01T08:00:00.001+08:0|1970-01-01T08:00:00.001+08:00|1                        |111.11                  |
 00                         |                              |0                           |                             |                         |                        |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.002+08:|1970-01-01T08:00:00.002+08:00 |1970-01-01T08:00:00.002+08:0|1970-01-01T08:00:00.002+08:00|1                        |112.2                   |
+1970-01-01T08:00:00.002+08:|1970-01-01T08:00:00.002+08:00 |1970-01-01T08:00:00.002+08:0|1970-01-01T08:00:00.002+08:00|1                        |213.2                   |
 00                         |                              |0                           |                             |                         |                        |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1970-01-01T08:00:00.008+08:|1970-01-01T08:00:00.008+08:00 |1970-01-01T08:00:00.009+08:0|1970-01-01T08:00:00.008+08:00|3                        |249.9                   |
@@ -1529,12 +1537,12 @@ str_result(TIMESTAMP)      |device_result(TIMESTAMP)      |bool_result(TIMESTAMP
 1970-01-01T08:00:00.007+08:|1970-01-01T08:00:00.005+08:00 |1970-01-01T08:00:00.007+08:0|1970-01-01T08:00:00.005+08:00|2                        |1117.2                  |
 00                         |                              |0                           |                             |                         |                        |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.006+08:|1970-01-01T08:00:00.006+08:00 |1970-01-01T08:00:00.006+08:0|1970-01-01T08:00:00.006+08:00|1                        |1112.2                  |
+1970-01-01T08:00:00.006+08:|1970-01-01T08:00:00.006+08:00 |1970-01-01T08:00:00.006+08:0|1970-01-01T08:00:00.006+08:00|1                        |1222.2                  |
 00                         |                              |0                           |                             |                         |                        |
 总数目：6
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.8
 -- [1]287:select last() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [last] should only have two arguments
@@ -1549,7 +1557,7 @@ last_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]289:select last(region_id) as last_result from table_1
 STRICT{
@@ -1579,7 +1587,7 @@ V2                       |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]292:select last(boolean) as last_result from table_1
 STRICT{
@@ -1589,7 +1597,7 @@ false                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.5
 
 -- [1]293:select last(text) as last_result from table_1
 STRICT{
@@ -1599,7 +1607,7 @@ text5                  |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5
 
 -- [1]294:select last(string) as last_result from table_1
 STRICT{
@@ -1609,13 +1617,13 @@ string3                  |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]295:select last(date) as last_result from table_1
 STRICT{
 last_result(DATE)      |
 -----------------------
-2023-12-15             |
+2024-01-15             |
 总数目：1
 }
 
@@ -1630,17 +1638,17 @@ last_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]297:select last(blob) as last_result from table_1
 STRICT{
 last_result(BLOB)      |
 -----------------------
-0x34                   |
+0x49460001             |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]298:select last(int32) as last_result from table_1
 STRICT{
@@ -1650,7 +1658,7 @@ last_result(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]299:select last(int64) as last_result from table_1
 STRICT{
@@ -1666,7 +1674,7 @@ Elapsed Time: 0.0.4
 STRICT{
 last_result(FLOAT)      |
 ------------------------
--1.1                    |
+-11.1                   |
 总数目：1
 }
 
@@ -1680,7 +1688,7 @@ last_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 
 -- [1]303:select last(timestamp) as result1,max_by(double,int64) as result2,min_by(int32,time) as result3, 	avg((int32+float)-2) as result4 ,count(double-(int32+1)) as result5  		from table_1 group by device_id order by device_id offset 2 limit 2
 STRICT{
@@ -1689,12 +1697,12 @@ result1(TIMESTAMP)      |result2(DOUBLE)      |result3(INT32)      |result4(DOUB
 2013-09-04T01:40:00.000+|null                 |1                   |9.143333435058594    |2                   |
 08:00                   |                     |                    |                     |                    |
 ----------------------------------------------------------------------------------------------------------
-1970-08-02T04:59:38.000+|666.66               |2                   |-2.0999999046325684  |2                   |
+1970-08-02T04:59:38.000+|666.66               |2                   |-12.100000381469727  |2                   |
 08:00                   |                     |                    |                     |                    |
 总数目：2
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.10
 -- [1]308:select last_by() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [last_by] should only have three arguments
@@ -1712,7 +1720,7 @@ last_by_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]311:select last_by(region_id,device_id) as last_by_result from table_1
 STRICT{
@@ -1722,7 +1730,7 @@ last_by_result(STRING)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]312:select last_by(device_id,model_id) as last_by_result from table_1
 STRICT{
@@ -1732,7 +1740,7 @@ d4                          |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.7
 
 -- [1]313:select last_by(model_id,boolean) as last_by_result from table_1
 STRICT{
@@ -1742,7 +1750,7 @@ V2                          |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]314:select last_by(boolean,text) as last_by_result from table_1
 STRICT{
@@ -1772,13 +1780,13 @@ string3                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]317:select last_by(date,timestamp) as last_by_result from table_1
 STRICT{
 last_by_result(DATE)      |
 --------------------------
-2023-12-15                |
+2024-01-15                |
 总数目：1
 }
 
@@ -1792,7 +1800,7 @@ null                           |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]319:select last_by(blob,int32) as last_by_result from table_1
 STRICT{
@@ -1812,7 +1820,7 @@ last_by_result(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]321:select last_by(int64,float) as last_by_result from table_1
 STRICT{
@@ -1828,11 +1836,11 @@ Elapsed Time: 0.0.4
 STRICT{
 last_by_result(FLOAT)      |
 ---------------------------
--1.1                       |
+-11.1                      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]323:select last_by(double,time) as last_by_result from table_1
 STRICT{
@@ -1842,19 +1850,19 @@ last_by_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]325:select last_by(blob,timestamp) as result1, max_by(double,int64) as result2,  		min_by(int32,time) as result3, avg((int32+float)-2) as result4 ,  		count(double-(int32+1)) as result5,(max(int32)+min(float)-last(double)) as result6   			from table_1 group by device_id order by device_id offset 1 limit 2
 STRICT{
 result1(BLOB)      |result2(DOUBLE)      |result3(INT32)      |result4(DOUBLE)      |result5(INT64)      |result6(DOUBLE)      |
 --------------------------------------------------------------------------------------------------------------------------
-0x3b               |102.2                |10                  |19.100000381469727   |1                   |-81.09999961853028   |
+0x3b               |102.2                |111                 |120.0999984741211    |1                   |19.89999847412109    |
 --------------------------------------------------------------------------------------------------------------------------
 0x34               |null                 |1                   |9.143333435058594    |2                   |-143.39999961853027  |
 总数目：2
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.11
 -- [1]331:select first() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [first] should only have two arguments
@@ -1898,7 +1906,7 @@ V1                        |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5
 
 -- [1]336:select first(boolean) as first_result from table_1
 STRICT{
@@ -1908,7 +1916,7 @@ false                      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]337:select first(text) as first_result from table_1
 STRICT{
@@ -1918,7 +1926,7 @@ text1                   |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]338:select first(string) as first_result from table_1
 STRICT{
@@ -1928,7 +1936,7 @@ string1                   |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]339:select first(date) as first_result from table_1
 STRICT{
@@ -1938,7 +1946,7 @@ first_result(DATE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]340:select first(timestamp) as first_result from table_1
 STRICT{
@@ -1958,17 +1966,17 @@ first_result(BLOB)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]342:select first(int32) as first_result from table_1
 STRICT{
 first_result(INT32)      |
 -------------------------
-1                        |
+0                        |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]343:select first(int64) as first_result from table_1
 STRICT{
@@ -1988,7 +1996,7 @@ first_result(FLOAT)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]345:select first(double) as first_result from table_1
 STRICT{
@@ -1998,7 +2006,7 @@ first_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]347:select first(timestamp) as result1, last_by(time,device_id) as result2, 	max_by(double,int64) as result3, min_by(int32,time) as result4, 	avg((int32+float)-2) as result5 ,count(double-(int32+1)) as result6  		from table_1 group by time,device_id order by time offset 2 limit 2
 STRICT{
@@ -2050,7 +2058,7 @@ d1                           |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]358:select first_by(model_id,boolean) as first_by_result from table_1
 STRICT{
@@ -2060,7 +2068,7 @@ V1                           |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]359:select first_by(boolean,text) as first_by_result from table_1
 STRICT{
@@ -2080,7 +2088,7 @@ text1                      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]361:select first_by(string,date) as first_by_result from table_1
 STRICT{
@@ -2110,7 +2118,7 @@ first_by_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]364:select first_by(blob,int32) as first_by_result from table_1
 STRICT{
@@ -2120,17 +2128,17 @@ first_by_result(BLOB)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 
 -- [1]365:select first_by(int32,int64) as first_by_result from table_1
 STRICT{
 first_by_result(INT32)      |
 ----------------------------
-1                           |
+0                           |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]366:select first_by(int64,float) as first_by_result from table_1
 STRICT{
@@ -2150,7 +2158,7 @@ first_by_result(FLOAT)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]368:select first_by(double,time) as first_by_result from table_1
 STRICT{
@@ -2160,7 +2168,7 @@ first_by_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]370:select first_by(boolean,device_id) as result1,last_by(boolean,string) as result2 from table_1 group by time,device_id
 STRICT{
@@ -2188,13 +2196,13 @@ true                  |true                  |
 总数目：10
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.9
 
 -- [1]372:select first_by(timestamp,device_id) as result1,last_by(boolean,string) as result2, max_by(double,int64) as result3,  		min_by(int32,time) as result4, avg((int32+float)-2) as result5 ,  		count(double-(int32+1)) as result6,(max(int32)+min(float)-last(double)) as result7   			from table_1 group by time,device_id order by time, device_id offset 1 limit 2
 STRICT{
 result1(TIMESTAMP)      |result2(BOOLEAN)      |result3(DOUBLE)      |result4(INT32)      |result5(DOUBLE)      |result6(INT64)      |result7(DOUBLE)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T12:40:39.200+|true                  |102.2                |10                  |19.100000381469727   |1                   |-81.09999961853028   |
+1970-01-01T12:40:39.200+|true                  |102.2                |111                 |120.0999984741211    |1                   |19.89999847412109    |
 08:00                   |                      |                     |                    |                     |                    |                     |
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 1973-09-14T15:20:00.000+|true                  |333.3                |1                   |4.199999809265137    |1                   |-327.1000001907349   |
@@ -2202,7 +2210,7 @@ result1(TIMESTAMP)      |result2(BOOLEAN)      |result3(DOUBLE)      |result4(IN
 总数目：2
 }
 
-Elapsed Time: 0.0.14
+Elapsed Time: 0.0.17
 -- [1]378:select mode() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [mode] should only have one argument
@@ -2221,7 +2229,7 @@ mode_result(TIMESTAMP)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.5
 
 -- [1]381:select mode(region_id) as mode_result from table_1
 STRICT{
@@ -2231,7 +2239,7 @@ mode_result(STRING)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]382:select mode(device_id) as mode_result from table_1
 STRICT{
@@ -2312,7 +2320,7 @@ mode_result(BLOB)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]390:select mode(int32) as mode_result from table_1
 STRICT{
@@ -2338,7 +2346,7 @@ Elapsed Time: 0.0.4
 STRICT{
 mode_result(FLOAT)      |
 ------------------------
--1.1                    |
+2.1                     |
 总数目：1
 }
 
@@ -2352,7 +2360,7 @@ mode_result(DOUBLE)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]395:select (mode(int32) + mode(float)) as mul_result, 	   count(*) as count_result, last(boolean) as last_bool, first(double) as first_text 	   		 from table_1 group by time,device_id order by device_id offset 2 limit 3
 STRICT{
@@ -2366,7 +2374,7 @@ mul_result(FLOAT)      |count_result(INT64)      |last_bool(BOOLEAN)      |first
 总数目：3
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.15
 -- [1]401:select variance() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [variance] should only have one argument
@@ -2416,53 +2424,53 @@ STRICT{
 SQLSTATE : 701: Aggregate functions [variance] only support numeric data types [INT32, INT64, FLOAT, DOUBLE]
 }
 
--- [1]414:select round(variance(int32),12) as var_result from (select * from table_1 order by time)
+-- [1]414:select round(variance(int32),4) as var_result from (select * from table_1 order by time)
 STRICT{
 var_result(DOUBLE)      |
 ------------------------
-17.333333333333         |
+1175.1111               |
+总数目：1
+}
+
+Elapsed Time: 0.0.7
+
+-- [1]415:select round(variance(int64),4) as var_result from (select * from table_1 order by time)
+STRICT{
+var_result(DOUBLE)      |
+------------------------
+86993.4762              |
 总数目：1
 }
 
 Elapsed Time: 0.0.6
 
--- [1]415:select round(variance(int64),12) as var_result from (select * from table_1 order by time)
+-- [1]416:select round(variance(float),4) as var_result from (select * from table_1 order by time)
 STRICT{
 var_result(DOUBLE)      |
 ------------------------
-86993.47619047617       |
+34020.6384              |
+总数目：1
+}
+
+Elapsed Time: 0.0.5
+
+-- [1]417:select round(variance(double),4) as var_result from (select * from table_1 order by time)
+STRICT{
+var_result(DOUBLE)      |
+------------------------
+247284.7084             |
 总数目：1
 }
 
 Elapsed Time: 0.0.6
 
--- [1]416:select round(variance(float),12) as var_result from (select * from table_1 order by time)
-STRICT{
-var_result(DOUBLE)      |
-------------------------
-33843.99112588215       |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]417:select round(variance(double),12) as var_result from (select * from table_1 order by time)
-STRICT{
-var_result(DOUBLE)      |
-------------------------
-229784.83895            |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
-
--- [1]418:select round(variance(int32),12) as var_result, mode(boolean) as mode_result, count(string) as count_result  	from (select * from table_1 order by time) group by boolean
+-- [1]418:select round(variance(int32),12) as var_result, mode(boolean) as mode_result, count(string) as count_result  	from (select * from table_1 order by time) group by boolean order by var_result
 STRICT{
 var_result(DOUBLE)      |mode_result(BOOLEAN)      |count_result(INT64)      |
 ---------------------------------------------------------------------------
-19.466666666667         |true                      |5                        |
+20.916666666667         |false                     |4                        |
 ---------------------------------------------------------------------------
-19.0                    |false                     |4                        |
+1948.566666666667       |true                      |5                        |
 总数目：2
 }
 
@@ -2516,11 +2524,11 @@ STRICT{
 SQLSTATE : 701: Aggregate functions [var_pop] only support numeric data types [INT32, INT64, FLOAT, DOUBLE]
 }
 
--- [1]436:select var_pop(int32) as var_pop_result from (select * from table_1 order by time)
+-- [1]436:select var_pop(int32) as var_pop_result from (select * from table_1 order by time) order by var_pop_result
 STRICT{
 var_pop_result(DOUBLE)      |
 ----------------------------
-15.6                        |
+1057.6                      |
 总数目：1
 }
 
@@ -2536,21 +2544,21 @@ var_pop_result(DOUBLE)      |
 
 Elapsed Time: 0.0.4
 
--- [1]438:select var_pop(float) as var_pop_result from table_1
+-- [1]438:select round(var_pop(float),4) as var_pop_result from table_1 order by var_pop_result
 STRICT{
 var_pop_result(DOUBLE)      |
 ----------------------------
-30083.547667450803          |
+30240.5674                  |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]439:select var_pop(double) as var_pop_result from table_1
 STRICT{
 var_pop_result(DOUBLE)      |
 ----------------------------
-204253.19017777778          |
+219808.62968395062          |
 总数目：1
 }
 
@@ -2560,15 +2568,15 @@ Elapsed Time: 0.0.4
 STRICT{
 var_pop_result(DOUBLE)      |mode_result(BLOB)      |count_result(INT64)      |
 ----------------------------------------------------------------------------
-14.25                       |0x34                   |3                        |
+15.6875                     |0x6728                 |3                        |
 ----------------------------------------------------------------------------
-14.25                       |0x34                   |4                        |
+2255.1875                   |0x3b                   |4                        |
 ----------------------------------------------------------------------------
 16.0                        |0x34                   |2                        |
 总数目：3
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.8
 -- [1]445:select var_samp() from table_1
 STRICT{
 SQLSTATE : 701: Aggregate functions [var_samp] should only have one argument
@@ -2622,49 +2630,49 @@ SQLSTATE : 701: Aggregate functions [var_samp] only support numeric data types [
 STRICT{
 var_samp_result(DOUBLE)      |
 -----------------------------
-17.333333333333              |
+1175.111111111111            |
+总数目：1
+}
+
+Elapsed Time: 0.0.6
+
+-- [1]459:select round(var_samp(int64),4) as var_samp_result from table_1 order by var_samp_result
+STRICT{
+var_samp_result(DOUBLE)      |
+-----------------------------
+86993.4762                   |
+总数目：1
+}
+
+Elapsed Time: 0.0.6
+
+-- [1]460:select round(var_samp(float),4) as var_samp_result from table_1 order by var_samp_result
+STRICT{
+var_samp_result(DOUBLE)      |
+-----------------------------
+34020.6384                   |
 总数目：1
 }
 
 Elapsed Time: 0.0.5
 
--- [1]459:select var_samp(int64) as var_samp_result from table_1
-STRICT{
-var_samp_result(DOUBLE)      |
------------------------------
-86993.47619047618            |
-总数目：1
-}
-
-Elapsed Time: 0.0.4
-
--- [1]460:select var_samp(float) as var_samp_result from table_1
-STRICT{
-var_samp_result(DOUBLE)      |
------------------------------
-33843.99112588215            |
-总数目：1
-}
-
-Elapsed Time: 0.0.4
-
 -- [1]461:select var_samp(double) as var_samp_result from table_1
 STRICT{
 var_samp_result(DOUBLE)      |
 -----------------------------
-229784.83895                 |
+247284.70839444446           |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.9
 
 -- [1]462:select (var_samp(int32)+var_pop(float)-variance(double)) as total_result, 	mode(blob) as mode_result, count(timestamp) as count_result, 	first(text) as first_result  	from table_1 group by model_id
 STRICT{
 total_result(DOUBLE)      |mode_result(BLOB)      |count_result(INT64)      |first_result(TEXT)      |
 --------------------------------------------------------------------------------------------------
--13783.991780683813       |0x34                   |3                        |text1                   |
+-13782.075114017147       |0x6728                 |3                        |text1                   |
 --------------------------------------------------------------------------------------------------
--265135.91734241          |0x34                   |4                        |text2                   |
+-311935.900672132         |0x3b                   |4                        |text2                   |
 --------------------------------------------------------------------------------------------------
 77482.89000663519         |0x34                   |2                        |text4                   |
 总数目：3
@@ -2724,11 +2732,11 @@ SQLSTATE : 701: Aggregate functions [stddev] only support numeric data types [IN
 STRICT{
 stddev_result(DOUBLE)      |
 ---------------------------
-4.163331998932265          |
+34.27989368581984          |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]483:select stddev(int64) as stddev_result from table_1
 STRICT{
@@ -2744,17 +2752,17 @@ Elapsed Time: 0.0.4
 STRICT{
 stddev_result(DOUBLE)      |
 ---------------------------
-183.967364295633           |
+184.446844253109           |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.4
 
 -- [1]485:select stddev(double) as stddev_result from table_1
 STRICT{
 stddev_result(DOUBLE)      |
 ---------------------------
-479.358778943288           |
+497.2772952734163          |
 总数目：1
 }
 
@@ -2764,9 +2772,9 @@ Elapsed Time: 0.0.4
 STRICT{
 total_result(DOUBLE)      |mode_result(BLOB)      |count_result(INT64)      |first_result(BOOLEAN)      |
 -----------------------------------------------------------------------------------------------------
--13381.421088878256       |0x34                   |3                        |true                       |
+-13383.337755544922       |0x6728                 |3                        |true                       |
 -----------------------------------------------------------------------------------------------------
--264967.97789367294       |0x34                   |4                        |false                      |
+-317743.7945567283        |0x3b                   |4                        |false                      |
 -----------------------------------------------------------------------------------------------------
 null                      |0x34                   |2                        |true                       |
 总数目：3
@@ -2826,11 +2834,11 @@ SQLSTATE : 701: Aggregate functions [stddev_pop] only support numeric data types
 STRICT{
 stddev_pop_result(DOUBLE)      |
 -------------------------------
-3.9496835316262997             |
+32.52076259868455              |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]507:select stddev_pop(int64) as stddev_pop_result from table_1
 STRICT{
@@ -2846,7 +2854,7 @@ Elapsed Time: 0.0.4
 STRICT{
 stddev_pop_result(DOUBLE)      |
 -------------------------------
-173.446094413944               |
+173.89815245311                |
 总数目：1
 }
 
@@ -2856,19 +2864,19 @@ Elapsed Time: 0.0.5
 STRICT{
 stddev_pop_result(DOUBLE)      |
 -------------------------------
-451.9437909494695              |
+468.83753015725034             |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.9
 
 -- [1]510:select (stddev_pop(int64)+ stddev(int64)-var_pop(float)-variance(double)-var_samp(int32)*2) as total_result, 	mode(text) as mode_result, count(string) as count_result, 	last(boolean) as first_result  	from table_1 group by model_id
 STRICT{
 total_result(DOUBLE)      |mode_result(TEXT)      |count_result(INT64)      |first_result(BOOLEAN)      |
 -----------------------------------------------------------------------------------------------------
--13083.284317755415       |text2                  |3                        |true                       |
+-13087.117651088749       |text2                  |3                        |true                       |
 -----------------------------------------------------------------------------------------------------
--264877.11534017534       |text3                  |4                        |false                      |
+-320744.84867712006       |text3                  |4                        |false                      |
 -----------------------------------------------------------------------------------------------------
 null                      |text4                  |2                        |true                       |
 总数目：3
@@ -2928,11 +2936,11 @@ SQLSTATE : 701: Aggregate functions [stddev_samp] only support numeric data type
 STRICT{
 stddev_samp_result(DOUBLE)      |
 --------------------------------
-4.163331998932265               |
+34.27989368581984               |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]531:select stddev_samp(int64) as stddev_samp_result from table_1
 STRICT{
@@ -2948,17 +2956,17 @@ Elapsed Time: 0.0.4
 STRICT{
 stddev_samp_result(DOUBLE)      |
 --------------------------------
-183.967364295633                |
+184.446844253109                |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
 -- [1]533:select stddev_samp(double) as stddev_samp_result from table_1
 STRICT{
 stddev_samp_result(DOUBLE)      |
 --------------------------------
-479.358778943288                |
+497.2772952734163               |
 总数目：1
 }
 
@@ -2968,12 +2976,12 @@ Elapsed Time: 0.0.4
 STRICT{
 total_result(DOUBLE)      |mode_result(DATE)      |count_result(INT64)      |first_result(STRING)      |
 ----------------------------------------------------------------------------------------------------
--13748.99664849183        |2021-12-20             |4                        |string5                   |
+-13750.913315158496       |2021-12-20             |4                        |string5                   |
 ----------------------------------------------------------------------------------------------------
--264719.24056950305       |2022-06-11             |4                        |string3                   |
+-317552.7476178765        |2022-06-11             |4                        |string3                   |
 ----------------------------------------------------------------------------------------------------
 null                      |2023-12-15             |2                        |string4                   |
 总数目：3
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.7

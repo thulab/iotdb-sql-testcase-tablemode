@@ -184,9 +184,9 @@ select time, device_id, color, s1, s9 from table_a where REGEXP_LIKE(color, '^[A
 select device_id, regexp_like(device_id,'^device.*') as regexp_like_result1, color, regexp_like(color,'^.{4,6}$') as regexp_like_result2 from table_a order by time;
 
 --14. 标识列ID含有中文的
-select * from table_a where region like '%广州%';
-select * from table_a where region like '_京';
-select * from table_a where region like '上%';
+select * from table_a where region like '%广州%' order by time,device_id;
+select * from table_a where region like '_京' order by time,device_id;
+select * from table_a where region like '上%' order by time,device_id;
 
 -- 清理数据：
 drop database test_db;

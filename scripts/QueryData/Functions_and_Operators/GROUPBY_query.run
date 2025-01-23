@@ -94,7 +94,7 @@ select count(*) as count_value, min(int32) as min_value from table_1;
 select region_id, max(double) as max_value from table_1 group by region_id;
 select model_id, 2+(last(int32)+ first(double)) as total_value from table_1 group by model_id;
 select time, text, blob, max_by(float,time) as max_by_value,first_by(double,time) as first_by_value
-	from table_1 group by time,text,blob;
+	from table_1 group by time,text,blob order by time;
 select region_id,device_id,model_id from table_1 group by region_id,device_id,model_id order by region_id;
 select device_id, mode(region_id) as mode_result, 11+(avg(int32)+variance(int64)) as total_result,
 	first(text) as first_result, last(blob) as last_result from table_1 group by device_id;
@@ -110,11 +110,11 @@ select device_id, count(string), avg(int64) from table_1 group by 0; <<SQLSTATE;
 select region_id, device_id, model_id, count(double), avg(int64) from table_1 group by 5; <<SQLSTATE;
 select region_id, device_id, model_id, count(double), avg(int64) from table_1 group by 6; <<SQLSTATE;
 
-select region_id, timestamp, avg(int64+double) as avg_value from table_1 group by 1,timestamp;
+select region_id, timestamp, avg(int64+double) as avg_value from table_1 group by 1,timestamp order by region_id,timestamp;
 select device_id, last(string) as last_value, last_by(time,int32) as last_by_value from table_1 group by device_id; 
 select region_id, device_id, model_id, count(*) as count_value, avg(int64) as avg_value
-	from table_1 group by region_id,device_id,3;
-select region_id,device_id,count(*) as count_result from table_1 group by 1,2;
+	from table_1 group by region_id,device_id,3 order by region_id,device_id,model_id;
+select region_id,device_id,count(*) as count_result from table_1 group by 1,2 order by region_id,device_id;
 select date_bin(2ms,time) as date_bin_result, device_id, model_id, avg(double-int64) as avg_result 
 	from table_1 where time > 1 and time < 10 group by 1,2,3 offset 2 limit 5;
 select date_bin(5ms,time) as date_bin_result, device_id, model_id, avg(double-int64) as avg_result,boolean 
@@ -144,7 +144,7 @@ select count(*) as count_result, avg(double), first_by(boolean,time), last(times
 select count(*) as count_result, avg(double) as avg_result, first_by(boolean,time) as first_by_result, last(timestamp) as last_result from table_1 where time > 2 and time <= 9 group by model_id;
 
 --9. 仅支持count聚合函数使用*
-select count(*) as count_result from table_1 group by timestamp;
+select count(*) as count_result from table_1 group by timestamp order by count_result;
 select avg(*) as avg_result from table_1 group by boolean; <<SQLSTATE;
 select extreme(*) as extreme_result from table_1 group by time; <<SQLSTATE;
 select variance(*) as var_result from table_1 group by timestamp; <<SQLSTATE;

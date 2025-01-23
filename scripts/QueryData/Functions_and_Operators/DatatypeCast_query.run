@@ -59,7 +59,7 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-5, 'd1', 'white', false, 'v1', 122, 110, 2.2, 9.9, false, '2022-11-01', 1701047739000, 'cfghesdgfaase', X'cd'
+5, 'd1', 'white', false, 'v1', 122, 110, 2.2, 9.9, false, '2022-11-01', 1701047739000, 'cfghesdgfaase', X'57415645 '
 );
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
@@ -69,7 +69,7 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-7, 'd2', 'blue', true, 'v1', 0, 110, 22.2, 1.8, true, '2023-06-01', 1643046400000, 'test111', X'ac'
+7, 'd2', 'blue', true, 'v1', 0, 110, 22.2, 1.8, true, '2023-06-01', 1643046400000, 'test111', X'49460001 '
  );
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
@@ -79,12 +79,12 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-9, 'd2', 'blue', false, 'v1', 1110, 888, 10.1, 11.1, true, '2023-11-11', 1699685189000, 'ueu', X'ce'
+9, 'd2', 'blue', false, 'v1', 1110, 888, 10.1, 11.1, true, '2023-11-11', 1699685189000, 'ueu', X'FFD8FFE0 '
 );
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-10, 'd2', 'red', false, 'v2', 111, 222, 22.5, 13.3, true, '2020-10-11', 1702277179000, 'sad', X'ae'
+10, 'd2', 'red', false, 'v2', 111, 222, 22.5, 13.3, true, '2020-10-11', 1702277179000, 'sad', X'666D7420'
 );
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
@@ -94,7 +94,7 @@ time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 INSERT INTO Table_A(
 time, device_id, color, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10
 ) values(
-12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1712277189000, 'sad', X'ae'
+12, 'd2', 'null', true, 'v2', null, 22, 2.5, 13.3, true, null, 1712277189000, 'sad', X'01010000 '
 );
  
 --7. 原始数据查询：
@@ -182,7 +182,7 @@ select s7, cast(s7 as BLOB) from table_a order by s7;
 --8.8 TIMESTAMP 数据类型转换其他数据类型
 select s8, cast(s8 as BOOLEAN) from table_a order by s8;
 select s8, cast(s8 as TEXT) from table_a order by s8;
-select s8, cast(s8 as INT32) from table_a order by s8; <<SQLSTATE;
+select time,device_id,cast(s8 as INT32) from table_a group by time,device_id,s8; <<SQLSTATE;
 select s8, cast(s8 as INT64) from table_a order by s8;
 select s8, cast(s8 as FLOAT) from table_a order by s8;
 select s8, cast(s8 as DOUBLE) from table_a order by s8;
@@ -191,26 +191,26 @@ select s8, cast(s8 as STRING) from table_a order by s8;
 select s8, cast(s8 as BLOB) from table_a order by s8;
 
 --8.9 STRING 数据类型转换其他数据类型
-select s9, cast(s9 as BOOLEAN) from table_a order by s9; <<SQLSTATE;
-select s9, cast(s9 as TEXT) from table_a order by s9;
-select s9, cast(s9 as INT32) from table_a order by s9; <<SQLSTATE;
-select s9, cast(s9 as INT64) from table_a order by s9; <<SQLSTATE;
-select s9, cast(s9 as FLOAT) from table_a order by s9; <<SQLSTATE;
-select s9, cast(s9 as DOUBLE) from table_a order by s9; <<SQLSTATE;
-select s9, cast(s9 as DATE) from table_a order by s9; <<SQLSTATE;
-select s9, cast(s9 as TIMESTAMP) from table_a order by s9; <<SQLSTATE;
-select s9, cast(s9 as BLOB) from table_a order by s9;
+select time,device_id,cast(s9 as BOOLEAN) from table_a group by time,device_id,s9; <<SQLSTATE;
+select time,device_id,cast(s9 as TEXT) from table_a group by time,device_id;
+select time,device_id,cast(s9 as INT32) from table_a group by time,device_id,s9; <<SQLSTATE;
+select time,device_id,cast(s9 as INT64) from table_a group by time,device_id,s9; <<SQLSTATE;
+select time,device_id,cast(s9 as FLOAT) from table_a group by time,device_id,s9; <<SQLSTATE;
+select time,device_id,cast(s9 as DOUBLE) from table_a group by time,device_id,s9; <<SQLSTATE;
+select time,device_id,cast(s9 as DATE) from table_a group by time,device_id,s9; <<SQLSTATE;
+select time,device_id,cast(s9 as TIMESTAMP) from table_a group by time,device_id,s9; <<SQLSTATE;
+select time,device_id,cast(s9 as BLOB) from table_a group by time,device_id,s9;
 
 --8.10 BLOB 数据类型转换其他数据类型
-select s10, cast(s10 as BOOLEAN) from table_a order by s10; <<SQLSTATE;
-select s10, cast(s10 as TEXT) from table_a order by s10;
-select s10, cast(s10 as INT32) from table_a order by s10; <<SQLSTATE;
-select s10, cast(s10 as INT64) from table_a order by s10; <<SQLSTATE;
-select s10, cast(s10 as FLOAT) from table_a order by s10; <<SQLSTATE;
-select s10, cast(s10 as DOUBLE) from table_a order by s10; <<SQLSTATE;
-select s10, cast(s10 as DATE) from table_a order by s10; <<SQLSTATE;
-select s10, cast(s10 as TIMESTAMP) from table_a order by s10; <<SQLSTATE;
-select s10, cast(s10 as BLOB) from table_a order by s10;
+select time,device_id,cast(s10 as BOOLEAN) from table_a group by time,device_id,s10; <<SQLSTATE;
+select time,device_id,cast(s10 as TEXT) from table_a group by time,device_id,s10;
+select time,device_id,cast(s10 as INT32) from table_a group by time,device_id,s10; <<SQLSTATE;
+select time,device_id,cast(s10 as INT64) from table_a group by time,device_id,s10; <<SQLSTATE;
+select time,device_id,cast(s10 as FLOAT) from table_a group by time,device_id,s10; <<SQLSTATE;
+select time,device_id,cast(s10 as DOUBLE) from table_a group by time,device_id,s10; <<SQLSTATE;
+select time,device_id,cast(s10 as DATE) from table_a group by time,device_id,s10; <<SQLSTATE;
+select time,device_id,cast(s10 as TIMESTAMP) from table_a group by time,device_id,s10; <<SQLSTATE;
+select time,device_id,cast(s10 as BLOB) from table_a group by time,device_id,s10;
 
 --9. 清理数据：
 drop database test_db;
