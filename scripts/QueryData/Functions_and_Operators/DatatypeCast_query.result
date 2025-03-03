@@ -2519,7 +2519,7 @@ time(TIMESTAMP)      |device_id(STRING)      |_col2(BLOB)      |
 Elapsed Time: 0.0.12
 -- [1]205:select time,device_id,cast(s10 as BOOLEAN) from table_a group by time,device_id,s10
 STRICT{
-SQLSTATE : 701: Invalid text input for boolean type: ��
+SQLSTATE : 701: Invalid text input for boolean type: 0xabcd
 }
 
 -- [1]206:select time,device_id,cast(s10 as TEXT) from table_a group by time,device_id,s10
@@ -2567,27 +2567,27 @@ time(TIMESTAMP)      |device_id(STRING)      |_col2(TEXT)      |
 Elapsed Time: 0.0.13
 -- [1]207:select time,device_id,cast(s10 as INT32) from table_a group by time,device_id,s10
 STRICT{
-SQLSTATE : 701: Cannot cast �� to INT32 type
+SQLSTATE : 701: Cannot cast 0xabcd to INT32 type
 }
 -- [1]208:select time,device_id,cast(s10 as INT64) from table_a group by time,device_id,s10
 STRICT{
-SQLSTATE : 701: Cannot cast �� to INT64 type
+SQLSTATE : 701: Cannot cast 0xabcd to INT64 type
 }
 -- [1]209:select time,device_id,cast(s10 as FLOAT) from table_a group by time,device_id,s10
 STRICT{
-SQLSTATE : 701: Cannot cast �� to FLOAT type
+SQLSTATE : 701: Cannot cast 0xabcd to FLOAT type
 }
 -- [1]210:select time,device_id,cast(s10 as DOUBLE) from table_a group by time,device_id,s10
 STRICT{
-SQLSTATE : 701: Cannot cast �� to DOUBLE type
+SQLSTATE : 701: Cannot cast 0xabcd to DOUBLE type
 }
 -- [1]211:select time,device_id,cast(s10 as DATE) from table_a group by time,device_id,s10
 STRICT{
-SQLSTATE : 701: Cannot cast �� to DATE type
+SQLSTATE : 701: Cannot cast 0xabcd to DATE type
 }
 -- [1]212:select time,device_id,cast(s10 as TIMESTAMP) from table_a group by time,device_id,s10
 STRICT{
-SQLSTATE : 301: Text '��+08:00' could not be parsed, unparsed text found at index 0
+SQLSTATE : 301: Text '0xabcd+08:00' could not be parsed, unparsed text found at index 0
 }
 
 -- [1]213:select time,device_id,cast(s10 as BLOB) from table_a group by time,device_id,s10

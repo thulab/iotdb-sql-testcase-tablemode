@@ -114,11 +114,11 @@ beijing         |haidian         |B8dj9387        |1001            |25          
 Elapsed Time: 0.0.4
 -- [1]49:update table01 set "城市" = 'shenzhen'
 STRICT{
-SQLSTATE : 701: Table 'test_db.table01' does not exist.
+SQLSTATE : 550: Table 'test_db.table01' does not exist.
 }
 -- [1]51:update table_attr set "地区" = 'shenzhen'
 STRICT{
-SQLSTATE : 701: Column '地区' cannot be resolved
+SQLSTATE : 616: Column '地区' cannot be resolved
 }
 -- [1]53:update table_attr set "城市" = 'guangzhou'
 STRICT{

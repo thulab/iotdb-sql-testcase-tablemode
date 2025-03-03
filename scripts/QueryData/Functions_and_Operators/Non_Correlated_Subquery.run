@@ -81,9 +81,8 @@ select * from employees order by time;
 select * from departments order by time;
 
 --8. 非关联子查询
---8.1 列子查询（不支持）
+--8.1 列子查询
 select name from employees where department_id IN (select department_id FROM departments WHERE department_id = 'D002');
-<<SQLSTATE;
 
 --8.2 标量子查询
 select name from employees where salary = (select max(salary) from employees);

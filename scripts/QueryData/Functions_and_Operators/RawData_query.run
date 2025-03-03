@@ -41,7 +41,7 @@ INSERT INTO device_type_0(time, "地区", "厂号","设备号", "型号", "维�
 --7.1 需指定一个测点列才有返回结果，否则空列表
 select * from device_type_0 order by time;
 select "型号", time, "温度", "维修周期" from device_type_0 order by "型号",time;
-select "地区", "厂号", "温度" from device_type_0;
+select "地区", "厂号", "温度" from device_type_0 order by "地区";
 select time, "地区", "厂号", "设备号", "型号", "维修周期" from device_type_0 order by time;
 select time, "温度" from test_db.device_type_0 order by time;
 

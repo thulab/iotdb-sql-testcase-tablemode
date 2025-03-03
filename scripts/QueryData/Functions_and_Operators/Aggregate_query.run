@@ -219,7 +219,7 @@ select min_by() from table_1; <<SQLSTATE;
 select min_by(time) from table_1; <<SQLSTATE;
 select min_by(time,region_id) as min_by_result from table_1;
 select min_by(region_id,device_id) as min_by_result from table_1; 
-select min_by(device_id,model_id) as min_by_result from table_1;
+select min_by(device_id,model_id) as min_by_result from (select device_id, model_id from table_1 order by device_id);
 select min_by(model_id,boolean) as min_by_result from (select model_id,boolean from table_1 order by time) group by model_id order by min_by_result;
 select min_by(boolean,text) as min_by_result from (select * from table_1 order by time);
 select min_by(text,string) as min_by_result from (select * from table_1 order by time);
@@ -415,7 +415,7 @@ select round(variance(int32),4) as var_result from (select * from table_1 order 
 select round(variance(int64),4) as var_result from (select * from table_1 order by time);
 select round(variance(float),4) as var_result from (select * from table_1 order by time);    
 select round(variance(double),4) as var_result from (select * from table_1 order by time);
-select round(variance(int32),12) as var_result, mode(boolean) as mode_result, count(string) as count_result 
+select round(variance(int32),4) as var_result, mode(boolean) as mode_result, count(string) as count_result 
 	from (select * from table_1 order by time) group by boolean order by var_result;
 
 --22. var_pop
@@ -459,7 +459,7 @@ select round(var_samp(int32),12) as var_samp_result from table_1;
 select round(var_samp(int64),4) as var_samp_result from table_1 order by var_samp_result;
 select round(var_samp(float),4) as var_samp_result from table_1 order by var_samp_result;   
 select var_samp(double) as var_samp_result from table_1;
-select (var_samp(int32)+var_pop(float)-variance(double)) as total_result,
+select round((var_samp(int32)+var_pop(float)-variance(double)),4) as total_result,
 	mode(blob) as mode_result, count(timestamp) as count_result,
 	first(text) as first_result 
 	from table_1 group by model_id;

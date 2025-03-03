@@ -32,7 +32,7 @@ insert into table_1(time, device_id, model_id, float) values(3,'d2','m2',3.3);
 
 --7. 数据查询
 select * from table_1 order by time;
-select count(*) from table_1 group by device_id;
+select count(*) as count_result from table_1 group by device_id order by count_result;
 
 --8. show query 查询
 show query processlist;
