@@ -119,21 +119,21 @@ select length(s7) from table_a; <<SQLSTATE;
 select length(s8) from table_a; <<SQLSTATE;
 select length(s10) from table_a; <<SQLSTATE;
 --8.2 支持的数据类型（TEXT | STRING）
-select device_id, length(device_id) as length_result from table_a;
-select device_id, length(trim(device_id)) as length_result from table_a;
-select device_id, length(replace(device_id,' ', '')) as length_result from table_a;
+select device_id, length(device_id) as length_result from table_a order by device_id,length_result;
+select device_id, length(trim(device_id)) as length_result from table_a order by device_id,length_result;
+select device_id, length(replace(device_id,' ', '')) as length_result from table_a order by device_id,length_result;
 
-select color, length(color) as length_result from table_a;
-select color, length(trim(color)) as length_result from table_a;
-select color, length(replace(color,' ', '')) as length_result from table_a;
+select color, length(color) as length_result from table_a order by length_result,color;
+select color, length(trim(color)) as length_result from table_a order by length_result,color;
+select color, length(replace(color,' ', '')) as length_result from table_a order by length_result,color;
 
-select s1, length(s1) as length_result from table_a;
-select s1, length(trim(s1)) as length_result from table_a;
-select s1, length(replace(s1,' ', '')) as length_result from table_a;
+select s1, length(s1) as length_result from table_a order by length_result,s1;
+select s1, length(trim(s1)) as length_result from table_a order by length_result,s1;
+select s1, length(replace(s1,' ', '')) as length_result from table_a order by length_result,s1;
 
-select s9, length(s9) as length_result from table_a;
-select s9, length(trim(s9)) as length_result from table_a;
-select s9, length(replace(s9,' ', '')) as length_result from table_a;
+select s9, length(s9) as length_result from table_a order by length_result,s9;
+select s9, length(trim(s9)) as length_result from table_a order by length_result,s9;
+select s9, length(replace(s9,' ', '')) as length_result from table_a order by length_result,s9;
 
 --9.upper
 --9.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -147,10 +147,10 @@ select upper(s7) from table_a; <<SQLSTATE;
 select upper(s8) from table_a; <<SQLSTATE;
 select upper(s10) from table_a; <<SQLSTATE;
 --9.2 支持的数据类型（TEXT | STRING）
-select device_id, upper(device_id) as upper_result from table_a;
-select color, upper(color) as upper_result from table_a;
-select s1, upper(s1) as upper_result from table_a;
-select s9, upper(s9) as upper_result from table_a;
+select device_id, upper(device_id) as upper_result from table_a order by upper_result,device_id;
+select color, upper(color) as upper_result from table_a order by upper_result,color;
+select s1, upper(s1) as upper_result from table_a order by upper_result,s1;
+select s9, upper(s9) as upper_result from table_a order by upper_result,s9;
 
 --10. lower
 --10.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -164,10 +164,10 @@ select lower(s7) from table_a; <<SQLSTATE;
 select lower(s8) from table_a; <<SQLSTATE;
 select lower(s10) from table_a; <<SQLSTATE;
 --10.2 支持的数据类型（TEXT | STRING）
-select device_id, lower(device_id) as lower_result from table_a;
-select color, lower(color) as lower_result from table_a;
-select s1, lower(s1) as lower_result from table_a;
-select s9, lower(s9) as lower_result from table_a;
+select device_id, lower(device_id) as lower_result from table_a order by lower_result,device_id;
+select color, lower(color) as lower_result from table_a order by lower_result,color;
+select s1, lower(s1) as lower_result from table_a order by lower_result,s1;
+select s9, lower(s9) as lower_result from table_a order by lower_result,s9;
 
 --11. trim（保留字）
 --11.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -182,41 +182,41 @@ select trim(s8) from table_a; <<SQLSTATE;
 select trim(s10) from table_a; <<SQLSTATE;
 --11.2 支持的数据类型（TEXT | STRING）
 --11.2.1 去除两端的空格
-select time, device_id, trim(device_id) as trim_result from table_a;
-select time, color, trim(color) as trim_result from table_a;
-select time, s1, trim(s1) as trim_result from table_a;
-select time, s9, trim(s9) as trim_result from table_a;
+select time, device_id, trim(device_id) as trim_result from table_a order by time;
+select time, color, trim(color) as trim_result from table_a order by time;
+select time, s1, trim(s1) as trim_result from table_a order by time;
+select time, s9, trim(s9) as trim_result from table_a order by time;
 --11.2.2 去除指定字符
-select s1, s9, trim(BOTH s1 FROM s9) as trim_result from table_a;
-select s1, s9, trim(BOTH s9 FROM s1) as trim_result from table_a;
-select device_id, trim(BOTH '1' FROM device_id) as trim_result from table_a;
-select device_id, trim('device' FROM device_id) as trim_result from table_a;
-select color, trim(BOTH 'e' FROM color) as trim_result from table_a;
-select color, trim('G' FROM color) as trim_result from table_a;
-select s1, trim(BOTH 'A' FROM s1) as trim_result from table_a;
-select s1, trim('ca' FROM s1) as trim_result from table_a;
-select s9, trim(BOTH 'S' FROM s9) as trim_result from table_a;
-select s9, trim('d' FROM s9) as trim_result from table_a;
+select s1, s9, trim(BOTH s1 FROM s9) as trim_result from table_a order by s1,s9;
+select s1, s9, trim(BOTH s9 FROM s1) as trim_result from table_a order by s1,s9;
+select device_id, trim(BOTH '1' FROM device_id) as trim_result from table_a order by trim_result,device_id;
+select device_id, trim('device' FROM device_id) as trim_result from table_a order by trim_result,device_id;
+select color, trim(BOTH 'e' FROM color) as trim_result from table_a order by trim_result,color;
+select color, trim('G' FROM color) as trim_result from table_a order by trim_result,color;
+select s1, trim(BOTH 'A' FROM s1) as trim_result from table_a order by trim_result,s1;
+select s1, trim('ca' FROM s1) as trim_result from table_a order by trim_result,s1;
+select s9, trim(BOTH 'S' FROM s9) as trim_result from table_a order by trim_result,s9;
+select s9, trim('d' FROM s9) as trim_result from table_a order by trim_result,s9;
 --11.2.3 去除开头的空格
-select device_id, trim(LEADING FROM device_id) as trim_result from table_a;
-select device_id, trim(LEADING ' ' FROM device_id) as trim_result from table_a;
-select color, trim(LEADING FROM color) as trim_result from table_a;
-select color, trim(LEADING ' ' FROM color) as trim_result from table_a;
-select s1, trim(LEADING FROM s1) as trim_result from table_a;
-select s1, trim(LEADING ' ' FROM s1) as trim_result from table_a;
-select s9, trim(LEADING FROM s9) as trim_result from table_a;
-select s9, trim(LEADING ' ' FROM s9) as trim_result from table_a;
+select device_id, trim(LEADING FROM device_id) as trim_result from table_a order by trim_result,device_id;
+select device_id, trim(LEADING ' ' FROM device_id) as trim_result from table_a order by trim_result,device_id;
+select color, trim(LEADING FROM color) as trim_result from table_a order by trim_result,color;
+select color, trim(LEADING ' ' FROM color) as trim_result from table_a order by trim_result,color;
+select s1, trim(LEADING FROM s1) as trim_result from table_a order by trim_result,s1;
+select s1, trim(LEADING ' ' FROM s1) as trim_result from table_a order by trim_result,s1;
+select s9, trim(LEADING FROM s9) as trim_result from table_a order by trim_result,s9;
+select s9, trim(LEADING ' ' FROM s9) as trim_result from table_a order by trim_result,s9;
 --11.2.4 去除结尾的空格
-select device_id, trim(TRAILING from device_id) as trim_result from table_a;
-select color, trim(TRAILING from color) as trim_result from table_a;
-select s1, trim(TRAILING from s1) as trim_result from table_a;
-select s9, trim(TRAILING from s9) as trim_result from table_a;
+select device_id, trim(TRAILING from device_id) as trim_result from table_a order by trim_result,device_id ;
+select color, trim(TRAILING from color) as trim_result from table_a order by trim_result,color;
+select s1, trim(TRAILING from s1) as trim_result from table_a order by trim_result,s1;
+select s9, trim(TRAILING from s9) as trim_result from table_a order by trim_result,s9 ;
 --11.2.5 组合测试
-select s1, trim(LEADING FROM s1) as result1, s9, trim(s9) as result2 from table_a;
-select s1, trim(TRAILING 'ca' FROM lower(s1)) as trim_result1, s9, trim(LEADING 'S' FROM upper(s9)) as trim_result2 from table_a;
-select s1, trim(s1, 'ca') as result1, s9, trim('disS' FROM s9) as result2 from table_a;
-select device_id, upper(color) as uppper_result, s1, s9, trim(BOTH device_id FROM s9) as result1, trim(TRAILING s9 FROM s1) as result2 from table_a;
-select color, trim(LEADING 'GE' FROM upper(color)) as result1, s9, trim(TRAILING 'dgh' FROM lower(s9)) as result2 from table_a;
+select s1, trim(LEADING FROM s1) as result1, s9, trim(s9) as result2 from table_a order by result1,result2;
+select s1, trim(TRAILING 'ca' FROM lower(s1)) as trim_result1, s9, trim(LEADING 'S' FROM upper(s9)) as trim_result2 from table_a order by trim_result1,trim_result2;
+select s1, trim(s1, 'ca') as result1, s9, trim('disS' FROM s9) as result2 from table_a order by result1,result2;
+select device_id, upper(color) as uppper_result, s1, s9, trim(BOTH device_id FROM s9) as result1, trim(TRAILING s9 FROM s1) as result2 from table_a order by uppper_result,result1,result2;
+select color, trim(LEADING 'GE' FROM upper(color)) as result1, s9, trim(TRAILING 'dgh' FROM lower(s9)) as result2 from table_a order by result1,result2;
 
 --12. strpos:返回子字符串在指定字符串中的位置
 --12.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -230,10 +230,10 @@ select strpos(s7) from table_a; <<SQLSTATE;
 select strpos(s8) from table_a; <<SQLSTATE;
 select strpos(s10) from table_a; <<SQLSTATE;
 --12.2 支持的数据类型（TEXT | STRING）
-select device_id, strpos(device_id,'ice') as strpos_result from table_a;
-select color, strpos(color,'e') as strpos_result from table_a;
-select s1, strpos(s1,'a') as strpos_result from table_a;
-select s9, strpos(s9,'y') as strpos_result from table_a;
+select device_id, strpos(device_id,'ice') as strpos_result from table_a order by device_id,strpos_result;
+select color, strpos(color,'e') as strpos_result from table_a order by color,strpos_result;
+select s1, strpos(s1,'a') as strpos_result from table_a order by s1,strpos_result;
+select s9, strpos(s9,'y') as strpos_result from table_a order by s9,strpos_result;
 
 --13. starts_with:检查一个字符串是否以一个指定的前缀开头
 --13.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -247,10 +247,10 @@ select starts_with(s7) from table_a; <<SQLSTATE;
 select starts_with(s8) from table_a; <<SQLSTATE;
 select starts_with(s10) from table_a; <<SQLSTATE;
 --13.2 支持的数据类型（TEXT | STRING）
-select device_id, starts_with(device_id, 'device') as starts_with_result from table_a;
-select color, starts_with(color, 'Gr') as starts_with_result from table_a;
-select s1, starts_with(s1, 'A') as starts_with_result from table_a;
-select s9, starts_with(s9, 'S') as starts_with_result from table_a;
+select device_id, starts_with(device_id, 'device') as starts_with_result from table_a order by device_id;
+select color, starts_with(color, 'Gr') as starts_with_result from table_a order by color;
+select s1, starts_with(s1, 'A') as starts_with_result from table_a order by s1;
+select s9, starts_with(s9, 'S') as starts_with_result from table_a order by s9;
 
 --14. ends_with
 --14.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -264,10 +264,10 @@ select ends_with(s7) from table_a; <<SQLSTATE;
 select ends_with(s8) from table_a; <<SQLSTATE;
 select ends_with(s10) from table_a; <<SQLSTATE;
 --14.2 支持的数据类型（TEXT | STRING）
-select device_id, ends_with(device_id, '1') as ends_with_result from table_a;
-select color, ends_with(color, 'een') as ends_with_result from table_a;
-select s1, ends_with(s1, 'ca') as ends_with_result from table_a;
-select s9, ends_with(trim(s9), 'd') as ends_with_result from table_a;
+select device_id, ends_with(device_id, '1') as ends_with_result from table_a order by device_id;
+select color, ends_with(color, 'een') as ends_with_result from table_a order by color;
+select s1, ends_with(s1, 'ca') as ends_with_result from table_a order by s1;
+select s9, ends_with(trim(s9), 'd') as ends_with_result from table_a order by s9;
 
 --15. concat：CONCAT 函数将联接两个表达式并返回生成的表达式
 --15.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -281,10 +281,10 @@ select concat(s1,s7) from table_a; <<SQLSTATE;
 select concat(s1,s8) from table_a; <<SQLSTATE;
 select concat(s1,s10) from table_a; <<SQLSTATE;
 --15.2 支持的数据类型（TEXT | STRING）
-select device_id, color, concat(device_id, color) as concat_result from table_a;
-select s1, s9, concat(s1, s9) as concat_result from table_a;
+select device_id, color, concat(device_id, color) as concat_result from table_a order by concat_result,device_id,color;
+select s1, s9, concat(s1, s9) as concat_result from table_a order by concat_result,s1,s9;
 select s1, s9, concat(s1 || s9) from table_a; <<SQLSTATE;
-select s1, s9, device_id, color, concat(s1 || s9, device_id || color) as concat_result from table_a;
+select s1, s9, device_id, color, concat(s1 || s9, device_id || color) as concat_result from table_a order by concat_result,s1,s9,device_id,color;
 
 --16. strcmp：用于比较两个字符串
 --16.1 不支持的使用方式以及不支持的数据类型（INT32 | INT64 | FLOAT | DOUBLE | BOOLEAN | DATE | TIMESTAMP | BLOB）进行验证
@@ -299,11 +299,11 @@ select strcmp(s1,s8) from table_a; <<SQLSTATE;
 select strcmp(s1,s10) from table_a; <<SQLSTATE;
 select device_id,s1,s9, strcmp(s9,s1,device_id) from table_a; <<SQLSTATE;
 --16.2 支持的数据类型（TEXT | STRING）
-select s1, s9, strcmp(s1,s9) as strcmp_result from table_a;
-select device_id, color, strcmp(device_id,color) as strcmp_result from table_a;
-select device_id,s1, strcmp(device_id,s1) as strcmp_result from table_a;
-select s9,s1, strcmp(s9,s1) as strcmp_result from table_a;
-select s9,color,strcmp(s9,color) as strcmp_result from table_a;
+select s1, s9, strcmp(s1,s9) as strcmp_result from table_a order by s1,s9;
+select device_id, color, strcmp(device_id,color) as strcmp_result from table_a order by device_id,color;
+select device_id,s1, strcmp(device_id,s1) as strcmp_result from table_a order by device_id,s1;
+select s9,s1, strcmp(s9,s1) as strcmp_result from table_a order by s9,s1;
+select s9,color,strcmp(s9,color) as strcmp_result from table_a order by s9,color;
 
 --17. 数据清理：删除数据库
 drop database test_db;

@@ -148,7 +148,7 @@ select * from t1 where int64 not in (111111111111,333333333333,444444444444) ord
 
 --5.4 复合sql补充
 select int32 from t1 where int32 in (9000-8000);
-select int32 from t1 where int32 between int32-100 and int32+100;
+select int32 from t1 where int32 between int32-100 and int32+100 order by int32;
 
 
 --6. 清理数据: 删除数据库 
