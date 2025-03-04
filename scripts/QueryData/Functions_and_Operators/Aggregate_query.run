@@ -219,7 +219,7 @@ select min_by() from table_1; <<SQLSTATE;
 select min_by(time) from table_1; <<SQLSTATE;
 select min_by(time,region_id) as min_by_result from table_1;
 select min_by(region_id,device_id) as min_by_result from table_1; 
-select min_by(device_id,model_id) as min_by_result from (select device_id, model_id from table_1 order by device_id);
+select min_by(device_id,model_id) as min_by_result from (select device_id, model_id from table_1 order by device_id,model_id);
 select min_by(model_id,boolean) as min_by_result from (select model_id,boolean from table_1 order by time) group by model_id order by min_by_result;
 select min_by(boolean,text) as min_by_result from (select * from table_1 order by time);
 select min_by(text,string) as min_by_result from (select * from table_1 order by time);
