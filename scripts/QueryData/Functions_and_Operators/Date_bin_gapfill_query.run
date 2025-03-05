@@ -95,7 +95,7 @@ select * from table_1 order by time;
 --8. date_bin_gapfill查询
 --8.1 不与group fil 结合使用，不会报错
 select date_bin_gapfill(2ms,time) as fill_result,date from table_1 where time > 1 and time < 10 order by time desc offset 2 limit 5;
-select date_bin_gapfill(2ms,time) as result from (select * from table_1 order by time) where time > 1 and time < 10;
+select time,date_bin_gapfill(2ms,time) as result from table_1 where time > 1 and time < 10 order by time;
 
 --8.2 仅与group by 搭配使用，才会有gapfill 功能
 select date_bin_gapfill(2ms,time) as result from (select * from table_1 order by time) where time > 1 and time < 10 group by 1;
