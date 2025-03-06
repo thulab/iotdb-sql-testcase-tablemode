@@ -19,73 +19,73 @@ table_withnull_data  |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
--- [1]29:desc table_withnull_data
+Elapsed Time: 0.0.54
+-- [1]30:desc table_withnull_data
 STRICT{
 PASS
 }
--- [1]32:insert into table_withnull_data(time,region_id, device_id, color, type, s1, s2) values(1, '1111', 'D1', 'Red', 'T-1111', false, 11.1)
+-- [1]33:insert into table_withnull_data(time,region_id, device_id, color, type, s1, s2) values(1, '1111', 'D1', 'Red', 'T-1111', false, 11.1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.231
--- [1]33:insert into table_withnull_data(time,region_id, device_id, color, type, s1) values(2, '2222', 'D2', 'White', 'T-2222', true)
+Elapsed Time: 0.0.851
+-- [1]34:insert into table_withnull_data(time,region_id, device_id, color, type, s1) values(2, '2222', 'D2', 'White', 'T-2222', true)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.55
--- [1]34:insert into table_withnull_data(time,region_id, device_id, color, type, s2) values(3, '3333', 'D3', 'Green', 'T-3333', 12.2)
+Elapsed Time: 0.0.90
+-- [1]35:insert into table_withnull_data(time,region_id, device_id, color, type, s2) values(3, '3333', 'D3', 'Green', 'T-3333', 12.2)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.22
+-- [1]36:insert into table_withnull_data(time,region_id, device_id, color, type, s1) values(4, null, 'D4', 'Blue', 'T-4444',false)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.15
+-- [1]37:insert into table_withnull_data(time,region_id, device_id, color, type, s2) values(5, '5555', 'D5', 'Yellow', 'T-5555',18.9)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.14
+-- [1]38:insert into table_withnull_data(time,region_id, device_id, color, type, s1, s2) values(6, '6666', 'D1', 'Purple', 'T-6666', false, 22.2)
 STRICT{
 0
 }
 
 Elapsed Time: 0.0.13
--- [1]35:insert into table_withnull_data(time,region_id, device_id, color, type) values(4, null, 'D4', 'Blue', 'T-4444')
+-- [1]39:insert into table_withnull_data(time,region_id, device_id, color, type, s1) values(7, '7777', null, 'Grey', 'T-4444', true)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.8
--- [1]36:insert into table_withnull_data(time,region_id, device_id, color, type) values(5, '5555', 'D5', 'Yellow', 'T-5555')
+Elapsed Time: 0.0.12
+-- [1]40:insert into table_withnull_data(time,region_id, device_id, color, type, s2) values(8, '8888', 'D4', 'Black', 'T-5555', 3.3)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.6
--- [1]37:insert into table_withnull_data(time,region_id, device_id, color, type, s1, s2) values(6, '6666', 'D1', 'Purple', 'T-6666', false, 22.2)
+Elapsed Time: 0.0.13
+-- [1]41:insert into table_withnull_data(time,region_id, device_id, color, type, s2) values(9, '9999', 'D1', 'Brown', null, 0.0)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.8
--- [1]38:insert into table_withnull_data(time,region_id, device_id, color, type, s1) values(7, '7777', null, 'Grey', 'T-4444', true)
+Elapsed Time: 0.0.14
+-- [1]42:insert into table_withnull_data(time,region_id, device_id, color, type, s1) values(10, '10000', 'D3', 'Orange', 'T-6666',false)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.9
--- [1]39:insert into table_withnull_data(time,region_id, device_id, color, type, s2) values(8, '8888', 'D4', 'Black', 'T-5555', 3.3)
-STRICT{
-0
-}
+Elapsed Time: 0.0.14
 
-Elapsed Time: 0.0.6
--- [1]40:insert into table_withnull_data(time,region_id, device_id, color, type, s2) values(9, '9999', 'D1', 'Brown', null, 0.0)
-STRICT{
-0
-}
-
-Elapsed Time: 0.0.7
--- [1]41:insert into table_withnull_data(time,region_id, device_id, color, type) values(10, '10000', 'D3', 'Orange', 'T-6666')
-STRICT{
-0
-}
-
-Elapsed Time: 0.0.10
-
--- [1]44:show devices from table_withnull_data
+-- [1]45:show devices from table_withnull_data
 STRICT{
 region_id(STRING)      |device_id(STRING)      |color(STRING)      |type(STRING)      |
 -----------------------------------------------------------------------------------
@@ -111,9 +111,9 @@ null                   |D4                     |Blue               |T-4444      
 总数目：10
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.83
 
--- [1]47:select * from table_withnull_data order by time
+-- [1]48:select * from table_withnull_data order by time
 STRICT{
 time(TIMESTAMP)      |region_id(STRING)      |device_id(STRING)      |color(STRING)      |type(STRING)      |s1(BOOLEAN)      |s2(FLOAT)      |
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -126,10 +126,10 @@ time(TIMESTAMP)      |region_id(STRING)      |device_id(STRING)      |color(STRI
 1970-01-01T08:00:00.0|3333                   |D3                     |Green              |T-3333            |null             |12.2           |
 03+08:00             |                       |                       |                   |                  |                 |               |
 ----------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|null                   |D4                     |Blue               |T-4444            |null             |null           |
+1970-01-01T08:00:00.0|null                   |D4                     |Blue               |T-4444            |false            |null           |
 04+08:00             |                       |                       |                   |                  |                 |               |
 ----------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|5555                   |D5                     |Yellow             |T-5555            |null             |null           |
+1970-01-01T08:00:00.0|5555                   |D5                     |Yellow             |T-5555            |null             |18.9           |
 05+08:00             |                       |                       |                   |                  |                 |               |
 ----------------------------------------------------------------------------------------------------------------------------------------
 1970-01-01T08:00:00.0|6666                   |D1                     |Purple             |T-6666            |false            |22.2           |
@@ -144,14 +144,14 @@ time(TIMESTAMP)      |region_id(STRING)      |device_id(STRING)      |color(STRI
 1970-01-01T08:00:00.0|9999                   |D1                     |Brown              |null              |null             |0.0            |
 09+08:00             |                       |                       |                   |                  |                 |               |
 ----------------------------------------------------------------------------------------------------------------------------------------
-1970-01-01T08:00:00.0|10000                  |D3                     |Orange             |T-6666            |null             |null           |
+1970-01-01T08:00:00.0|10000                  |D3                     |Orange             |T-6666            |false            |null           |
 10+08:00             |                       |                       |                   |                  |                 |               |
 总数目：10
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.226
 
--- [1]48:select time from table_withnull_data order by time
+-- [1]49:select time from table_withnull_data order by time
 STRICT{
 time(TIMESTAMP)      |
 ---------------------
@@ -187,9 +187,9 @@ time(TIMESTAMP)      |
 总数目：10
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.46
 
--- [1]49:select region_id from table_withnull_data order by time
+-- [1]50:select region_id from table_withnull_data order by time
 STRICT{
 region_id(STRING)      |
 -----------------------
@@ -215,9 +215,9 @@ null                   |
 总数目：10
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.74
 
--- [1]50:select device_id from table_withnull_data order by time
+-- [1]51:select device_id from table_withnull_data order by time
 STRICT{
 device_id(STRING)      |
 -----------------------
@@ -243,9 +243,9 @@ D3                     |
 总数目：10
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.31
 
--- [1]51:select device_id from table_withnull_data group by device_id order by device_id
+-- [1]52:select device_id from table_withnull_data group by device_id order by device_id
 STRICT{
 device_id(STRING)      |
 -----------------------
@@ -263,9 +263,9 @@ null                   |
 总数目：6
 }
 
-Elapsed Time: 0.0.14
+Elapsed Time: 0.0.82
 
--- [1]52:select time, region_id as "区域号", device_id as "设备号", color as "色系" from table_withnull_data order by time
+-- [1]53:select time, region_id as "区域号", device_id as "设备号", color as "色系" from table_withnull_data order by time
 STRICT{
 time(TIMESTAMP)      |区域号(STRING)      |设备号(STRING)      |色系(STRING)      |
 -----------------------------------------------------------------------
@@ -301,9 +301,9 @@ time(TIMESTAMP)      |区域号(STRING)      |设备号(STRING)      |色系(STR
 总数目：10
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.25
 
--- [1]53:select region_id as "区域号", device_id as "设备号", color as "色系" from table_withnull_data where time > 2 and time < 9 order by time
+-- [1]54:select region_id as "区域号", device_id as "设备号", color as "色系" from table_withnull_data where time > 2 and time < 9 order by time
 STRICT{
 区域号(STRING)      |设备号(STRING)      |色系(STRING)      |
 --------------------------------------------------
@@ -321,9 +321,9 @@ null             |D4               |Blue            |
 总数目：6
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.48
 
--- [1]54:select time, region_id as "区域号" from table_withnull_data where time <= 5  order by time offset 1 limit 2
+-- [1]55:select time, region_id as "区域号" from table_withnull_data where time <= 5  order by time offset 1 limit 2
 STRICT{
 time(TIMESTAMP)      |区域号(STRING)      |
 --------------------------------------
@@ -335,9 +335,9 @@ time(TIMESTAMP)      |区域号(STRING)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.28
 
--- [1]55:select time, device_id, color from table_withnull_data where device_id = 'D1' order by time
+-- [1]56:select time, device_id, color from table_withnull_data where device_id = 'D1' order by time
 STRICT{
 time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |
 ---------------------------------------------------------------
@@ -352,9 +352,9 @@ time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |
 总数目：3
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.23
 
--- [1]56:select time, device_id, color from table_withnull_data where device_id = 'D1' order by time limit 1 offset 1
+-- [1]57:select time, device_id, color from table_withnull_data where device_id = 'D1' order by time limit 1 offset 1
 STRICT{
 time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |
 ---------------------------------------------------------------
@@ -363,21 +363,25 @@ time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.21
 
--- [1]57:select device_id, color, s1 from table_withnull_data where s1 = false order by time
+-- [1]58:select device_id, color, s1 from table_withnull_data where s1 = false order by time
 STRICT{
 device_id(STRING)      |color(STRING)      |s1(BOOLEAN)      |
 -----------------------------------------------------------
 D1                     |Red                |false            |
 -----------------------------------------------------------
+D4                     |Blue               |false            |
+-----------------------------------------------------------
 D1                     |Purple             |false            |
-总数目：2
+-----------------------------------------------------------
+D3                     |Orange             |false            |
+总数目：4
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.62
 
--- [1]58:select time, device_id from table_withnull_data where time >=3 and time < 6 and device_id='D3' order by time
+-- [1]59:select time, device_id from table_withnull_data where time >=3 and time < 6 and device_id='D3' order by time
 STRICT{
 time(TIMESTAMP)      |device_id(STRING)      |
 --------------------------------------------
@@ -386,9 +390,9 @@ time(TIMESTAMP)      |device_id(STRING)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.24
 
--- [1]59:select time, region_id from table_withnull_data where time >=3 and time < 7 and color = 'Green' order by time
+-- [1]60:select time, region_id from table_withnull_data where time >=3 and time < 7 and color = 'Green' order by time
 STRICT{
 time(TIMESTAMP)      |region_id(STRING)      |
 --------------------------------------------
@@ -397,8 +401,8 @@ time(TIMESTAMP)      |region_id(STRING)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
--- [1]63:drop database test_db
+Elapsed Time: 0.0.24
+-- [1]64:drop database test_db
 STRICT{
 PASS
 }
