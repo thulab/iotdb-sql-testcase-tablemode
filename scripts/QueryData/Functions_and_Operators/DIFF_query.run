@@ -103,12 +103,12 @@ select * from Table_A order by time;
 
 --8. 数据查询：DIFF
 --8.1 支持的数据类型Diff查询
-select time,s2, diff(s2) as diff_result from (select time,s2 from table_a order by time,s2) order by time,s2,diff_result;
-select time,s3, diff(s3) as diff_result from (select time,s3 from table_a order by time) order by time,s3,diff_result;
-select time,s4, diff(s4) as diff_result from (select time,s4 from table_a order by time) order by time,s4,diff_result;
-select time,s5, diff(s5) as diff_result from (select time,s5 from table_a order by time) order by time,s5,diff_result;
-select time,s8, diff(s8) as diff_result from (select time,s8 from table_a order by time) order by time,s8,diff_result;
-select time,s4, diff(s4, false) as diff_result01,s5, diff(s5, true) as diff_result02 from (select time,s4,s5 from table_a order by time,s4,s5) order by time,s4,diff_result01,s5,diff_result02 offset 3 limit 5;
+select time,s2, diff(s2) as diff_result from (select time,s2 from table_a order by time,device_id,s2) order by time,s2,diff_result;
+select time,s3, diff(s3) as diff_result from (select time,s3 from table_a order by time,device_id,s2) order by time,s3,diff_result;
+select time,s4, diff(s4) as diff_result from (select time,s4 from table_a order by time,device_id,s2) order by time,s4,diff_result;
+select time,s5, diff(s5) as diff_result from (select time,s5 from table_a order by time,device_id,s2) order by time,s5,diff_result;
+select time,s8, diff(s8) as diff_result from (select time,s8 from table_a order by time,device_id,s2) order by time,s8,diff_result;
+select time,s4, diff(s4, false) as diff_result01,s5, diff(s5, true) as diff_result02 from (select time,s4,s5 from table_a order by time,device_id,s4,s5) order by time,s4,diff_result01,s5,diff_result02 offset 3 limit 5;
 
 --8.2 不支持的数据类型Diff查询
 select s1, diff(s1) from table_a; <<SQLSTATE;
