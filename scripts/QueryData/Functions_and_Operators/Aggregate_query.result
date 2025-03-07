@@ -2363,8 +2363,14 @@ mode_result(DOUBLE)      |
 Elapsed Time: 0.0.10
 -- [1]395:select (mode(int32) + mode(float)) as mul_result, 	   count(*) as count_result, last(boolean) as last_bool, first(double) as first_text 	   		 from table_1 group by time,device_id order by device_id offset 2 limit 3
 STRICT{
-SQLSTATE : 301: org.apache.tsfile.read.common.block.column.DoubleColumn
-EXPECT:PASS
+mul_result(FLOAT)      |count_result(INT64)      |last_bool(BOOLEAN)      |first_text(DOUBLE)      |
+------------------------------------------------------------------------------------------------
+6.2                    |1                        |true                    |333.3                   |
+------------------------------------------------------------------------------------------------
+12.1                   |1                        |true                    |155.5                   |
+------------------------------------------------------------------------------------------------
+15.13                  |1                        |true                    |null                    |
+总数目：3
 }
 -- [1]401:select variance() from table_1
 STRICT{
