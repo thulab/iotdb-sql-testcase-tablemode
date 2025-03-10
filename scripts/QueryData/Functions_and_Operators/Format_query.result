@@ -15,31 +15,31 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.224
+Elapsed Time: 0.0.259
 -- [1]13:insert into test_t1(time,tag1,attr1,s1,s9,s2,s5) values(2,'%f','%f','%f','%f',1.0123456,1.012345678901234)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.72
+Elapsed Time: 0.0.68
 -- [1]14:insert into test_t1(time,tag1,attr1,s1,s9,s2,s5) values(3,'%f','%f','%f','%f',-1.0123456,-1.012345678901234)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.11
 -- [1]15:insert into test_t1(time,tag1,attr1,s1,s9,s2,s5) values(4,'%f','%f','%f','%f',3.4E38,1.7E308)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]16:insert into test_t1(time,tag1,attr1,s1,s9,s2,s5) values(5,'%f','%f','%f','%f',-3.4E38,-1.7E308)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.4
 -- [1]17:insert into test_t1(time,tag1,attr1,s1,s9,s2,s5) values(6,'%f','%f','%f','%f',0.0,0.0)
 STRICT{
 0
@@ -51,19 +51,19 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.9
 -- [1]20:insert into test_t1(time,tag1,attr1,s1,s9,s3,s8) values(8,'%d','%d','%d','%d',-1234567890,-1234567890)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]21:insert into test_t1(time,tag1,attr1,s1,s9,s3,s8) values(9,'%d','%d','%d','%d',2147483647,9223372036854775807)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.1
 -- [1]22:insert into test_t1(time,tag1,attr1,s1,s9,s3,s8) values(10,'%d','%d','%d','%d',-2147483648,-9223372036854775808)
 STRICT{
 0
@@ -75,13 +75,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]25:insert into test_t1(time,tag1,attr1,s1,s9,s4,s6) values(12,'%tY','%tY','%tY','%tY','2000-01-01','2000-01-01T00:00:00.000+08:00')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.9
 -- [1]26:insert into test_t1(time,tag1,attr1,s1,s9,s4,s6) values(13,'%tY','%tY','%tY','%tY','1000-01-01','1677-09-21T08:18:26+08.145224192:05:43')
 STRICT{
 0
@@ -99,7 +99,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.1
 -- [1]30:insert into test_t1(time,tag1,attr1,s1,s9) values(16,'%s','%s','1234567890','1234567890')
 STRICT{
 0
@@ -111,13 +111,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]32:insert into test_t1(time,tag1,attr1,s1,s9) values(18,'%s','%s','1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$^&*()_+{}|:<>?','1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*()_+{}|:<>?1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*()_+{}|:<>?')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]33:insert into test_t1(time,tag1,attr1,s1,s9) values(19,'%s','%s','','')
 STRICT{
 0
@@ -129,7 +129,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.12
 
 -- [1]38:select format('%2.2f',s2),format('%2.2f',s5) from test_t1 order by time
 STRICT{
@@ -208,10 +208,10 @@ nu                 |nu                 |
 nu                 |nu                 |
 --------------------------------------
 nu                 |nu                 |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.21
+Elapsed Time: 0.0.33
 
 -- [1]39:select format('%200.200f',s2),format('%200.200f',s5) from test_t1 order by time
 STRICT{
@@ -510,10 +510,10 @@ l                  |l                  |
                   |                  |
                nul|               nul|
 l                  |l                  |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.11
 
 -- [1]40:select format('%10.10f',s2),format('%10.10f',s5) from test_t1 order by time
 STRICT{
@@ -592,10 +592,10 @@ _col0(STRING)      |_col1(STRING)      |
       null         |      null         |
 --------------------------------------
       null         |      null         |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.9
 
 -- [1]41:select format('%.0f',s2),format('%.0f',s5) from test_t1 order by time
 STRICT{
@@ -660,10 +660,10 @@ _col0(STRING)      |_col1(STRING)      |
 --------------------------------------
 --------------------------------------
 --------------------------------------
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.9
 
 -- [1]42:select format('%f',s2),format('%f',s5) from test_t1 order by time
 STRICT{
@@ -742,7 +742,7 @@ null               |null               |
 null               |null               |
 --------------------------------------
 null               |null               |
-总数目：20
+鎬绘暟鐩細20
 }
 
 Elapsed Time: 0.0.8
@@ -830,10 +830,10 @@ null,null          |
 null,null          |
 -------------------
 null,null          |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.11
 
 -- [1]44:select format('%-200f',s2),format('%0200f',s5) from test_t1 order by time
 STRICT{
@@ -1110,10 +1110,10 @@ null               |                   |
                   |                  |
                   |               nul|
                    |l                  |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.10
 
 -- [1]47:select format('%1d',s3),format('%1d',s8) from test_t1 order by time
 STRICT{
@@ -1159,10 +1159,10 @@ null               |null               |
 null               |null               |
 --------------------------------------
 null               |null               |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.17
 
 -- [1]48:select format('%100d',s3),format('%100d',s8) from test_t1 order by time
 STRICT{
@@ -1307,10 +1307,10 @@ _col0(STRING)      |_col1(STRING)      |
                   |                  |
                   |                  |
      null          |     null          |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.8
 
 -- [1]49:select format('%10d',s3),format('%10d',s8) from test_t1 order by time
 STRICT{
@@ -1356,10 +1356,10 @@ _col0(STRING)      |_col1(STRING)      |
       null         |      null         |
 --------------------------------------
       null         |      null         |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.8
 
 -- [1]50:select format('%01d',s3),format('%01d',s8) from test_t1 order by time
 STRICT{
@@ -1405,10 +1405,10 @@ null               |null               |
 null               |null               |
 --------------------------------------
 null               |null               |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.9
 
 -- [1]51:select format('%0100d',s3),format('%0100d',s8) from test_t1 order by time
 STRICT{
@@ -1553,10 +1553,10 @@ _col0(STRING)      |_col1(STRING)      |
                   |                  |
                   |                  |
      null          |     null          |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.8
 
 -- [1]52:select format('%010d',s3),format('%010d',s8) from test_t1 order by time
 STRICT{
@@ -1602,7 +1602,7 @@ _col0(STRING)      |_col1(STRING)      |
       null         |      null         |
 --------------------------------------
       null         |      null         |
-总数目：20
+鎬绘暟鐩細20
 }
 
 Elapsed Time: 0.0.8
@@ -1654,10 +1654,10 @@ null,null          |
 null,null          |
 -------------------
 null,null          |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.9
 
 -- [1]54:select format('%1$-100d,%2$0100d',s3,s8) from test_t1 order by time
 STRICT{
@@ -1922,7 +1922,7 @@ null               |
                   |
                 nu|
 ll                 |
-总数目：20
+鎬绘暟鐩細20
 }
 
 Elapsed Time: 0.0.9
@@ -1931,9 +1931,10 @@ Elapsed Time: 0.0.9
 STRICT{
 _col0(STRING)      |_col1(STRING)      |
 --------------------------------------
-星期六 星期六 一月 一月 01/01|星期六 星期六 一月 一月 01/01|
-/00 1 2000-01-01 0|/00 1 2000-01-01 0|
-01 01 00 2000      |01 01 00 2000      |
+Saturday Sat Januar|Saturday Sat Januar|
+y Jan 01/01/00 1 2|y Jan 01/01/00 1 2|
+000-01-01 001 01 0|000-01-01 001 01 0|
+0 2000             |0 2000             |
 --------------------------------------
 null null null null|null null null null|
  null null null nu| null null null nu|
@@ -1975,29 +1976,25 @@ null null null null|null null null null|
  null null null nu| null null null nu|
 ll null null null  |ll null null null  |
 --------------------------------------
-星期六 星期六 一月 一月 01/01|星期六 星期六 一月 一月 01/01|
-/00 1 2000-01-01 0|/00 1 2000-01-01 0|
-01 01 00 2000      |01 01 00 2000      |
+Saturday Sat Januar|Saturday Sat Januar|
+y Jan 01/01/00 1 2|y Jan 01/01/00 1 2|
+000-01-01 001 01 0|000-01-01 001 01 0|
+0 2000             |0 2000             |
 --------------------------------------
-星期三 星期三 一月 一月 01/01|星期二 星期二 九月 九月 09/21|
-/00 1 1000-01-01 0|/77 21 1677-09-21 |
-01 01 00 1000      |264 09 77 1677     |
+Wednesday Wed Janua|Tuesday Tue Septemb|
+ry Jan 01/01/00 1 |er Sep 09/21/77 21|
+1000-01-01 001 01 | 1677-09-21 264 09|
+00 1000            | 77 1677           |
 --------------------------------------
-星期五 星期五 十二月 十二月 12/|星期六 星期六 四月 四月 04/12|
-31/99 31 9999-12-3|/62 12 2262-04-12 |
-1 365 12 99 9999   |102 04 62 2262     |
+Friday Fri December|Saturday Sat April |
+ Dec 12/31/99 31 9|Apr 04/12/62 12 22|
+999-12-31 365 12 9|62-04-12 102 04 62|
+9 9999             | 2262              |
 --------------------------------------
-星期四 星期四 一月 一月 01/01|星期四 星期四 一月 一月 01/01|
-/70 1 1970-01-01 0|/70 1 1970-01-01 0|
-01 01 70 1970      |01 01 70 1970      |
---------------------------------------
-null null null null|null null null null|
- null null null nu| null null null nu|
-ll null null null  |ll null null null  |
---------------------------------------
-null null null null|null null null null|
- null null null nu| null null null nu|
-ll null null null  |ll null null null  |
+Thursday Thu Januar|Thursday Thu Januar|
+y Jan 01/01/70 1 1|y Jan 01/01/70 1 1|
+970-01-01 001 01 7|970-01-01 001 01 7|
+0 1970             |0 1970             |
 --------------------------------------
 null null null null|null null null null|
  null null null nu| null null null nu|
@@ -2010,22 +2007,30 @@ ll null null null  |ll null null null  |
 null null null null|null null null null|
  null null null nu| null null null nu|
 ll null null null  |ll null null null  |
-总数目：20
+--------------------------------------
+null null null null|null null null null|
+ null null null nu| null null null nu|
+ll null null null  |ll null null null  |
+--------------------------------------
+null null null null|null null null null|
+ null null null nu| null null null nu|
+ll null null null  |ll null null null  |
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.14
 
 -- [1]58:select format('%1$tH %1$tI %1$tk %1$tl %1$tM %1$tS %1$tL %1$tN %1$tp %1$tz %1$tZ  %1$ts %1$tQ %1$tR %1$tT %1$tr %1$tc',s6) from test_t1 order by time
 STRICT{
 _col0(STRING)      |
 -------------------
 00 12 0 12 00 00 00|
-0 000000000 上午 +08|
+0 000000000 am +08|
 00 CST  946656000 |
 946656000000 00:00|
  00:00:00 12:00:00|
- 上午 星期六 一月 01 00:0|
-0:00 CST 2000      |
+ AM Sat Jan 01 00:|
+00:00 CST 2000     |
 -------------------
 null null null null|
  null null null nu|
@@ -2088,36 +2093,36 @@ ll null null null |
 ll null null       |
 -------------------
 00 12 0 12 00 00 00|
-0 000000000 上午 +08|
+0 000000000 am +08|
 00 CST  946656000 |
 946656000000 00:00|
  00:00:00 12:00:00|
- 上午 星期六 一月 01 00:0|
-0:00 CST 2000      |
+ AM Sat Jan 01 00:|
+00:00 CST 2000     |
 -------------------
 08 08 8 8 24 09 000|
- 000000000 上午 +080|
+ 000000000 am +080|
 5 CST  -9223371694|
  -9223371694000 08|
 :24 08:24:09 08:24|
-:09 上午 星期二 九月 21 0|
-8:24:09 CST 1677   |
+:09 AM Tue Sep 21 |
+08:24:09 CST 1677  |
 -------------------
 07 07 7 7 47 16 854|
- 854000000 上午 +080|
+ 854000000 am +080|
 0 CST  9223372036 |
 9223372036854 07:4|
 7 07:47:16 07:47:1|
-6 上午 星期六 四月 12 07:|
-47:16 CST 2262     |
+6 AM Sat Apr 12 07|
+:47:16 CST 2262    |
 -------------------
 00 12 0 12 00 00 00|
-0 000000000 上午 +08|
+0 000000000 am +08|
 00 CST  -28800 -28|
 800000 00:00 00:00|
-:00 12:00:00 上午 星期|
-四 一月 01 00:00:00 C|
-ST 1970            |
+:00 12:00:00 AM Th|
+u Jan 01 00:00:00 |
+CST 1970           |
 -------------------
 null null null null|
  null null null nu|
@@ -2148,10 +2153,10 @@ null null null null|
 ll null null null |
  null null null nu|
 ll null null       |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.8
 
 -- [1]59:select format('%1$-200tY, %2$200tY',s4, s6) from test_t1 order by time
 STRICT{
@@ -2636,10 +2641,10 @@ null               |
                   |
                   |
  null              |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.8
 
 -- [1]62:select format('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s',tag1, attr1, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10) from test_t1 order by time
 STRICT{
@@ -2861,10 +2866,10 @@ null, null, null, n|
 ull, null, null, n|
 ull, null, null, n|
 ull, null, null    |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.8
 
 -- [1]63:select format('%1$-10s, %2$10s, %3$-10s, %4$10s, %5$-10s, %6$10s, %7$-10s, %8$10s, %9$-10s, %10$10s, %11$-10s, %12$10s',tag1, attr1, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10) from test_t1 order by time
 STRICT{
@@ -3159,10 +3164,10 @@ ull      ,       n|
 ull, null      ,  |
      null, null   |
    ,       null    |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.8
 
 -- [1]66:select format('%s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%',tag1, attr1, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10) from test_t1 order by time
 STRICT{
@@ -3396,10 +3401,10 @@ null%, null%, null%|
 ll%, null%, null%,|
  null%, null%, nul|
 l%, null%          |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.7
 
 -- [1]67:select format('%1$-10s%%, %2$10s%%, %3$-10s%%, %4$10s%%, %5$-10s%%, %6$10s%%, %7$-10s%%, %8$10s%%, %9$-10s%%, %10$10s%%, %11$-10s%%, %12$10s%%',tag1, attr1, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10) from test_t1 order by time
 STRICT{
@@ -3708,7 +3713,7 @@ ll%, null      %, |
      %,       null|
 %, null      %,   |
     null%          |
-总数目：20
+鎬绘暟鐩細20
 }
 
 Elapsed Time: 0.0.8
@@ -3718,7 +3723,7 @@ SQLSTATE : 701: Invalid format string: %f (IllegalFormatConversion: f != org.apa
 }
 -- [1]72:select format('%f %d',s1) from test_t1 order by time
 STRICT{
-SQLSTATE : 701: Invalid format string: %f %d (MissingFormatArgument: Format specifier '%d')
+SQLSTATE : 701: Invalid format string: %f %d (IllegalFormatConversion: f != org.apache.tsfile.utils.Binary)
 }
 -- [1]74:select format('%f') from test_t1 order by time
 STRICT{
@@ -3846,10 +3851,10 @@ null, null, null, n|
 ull, null, null, n|
 ull, null, null, n|
 ull, null, null    |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.17
 
 -- [1]81:select format('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s',tag1, attr1, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10) from test_t1 order by time
 STRICT{
@@ -4071,7 +4076,7 @@ null, null, null, n|
 ull, null, null, n|
 ull, null, null, n|
 ull, null, null    |
-总数目：20
+鎬绘暟鐩細20
 }
 
 Elapsed Time: 0.0.7
@@ -4322,10 +4327,10 @@ null, null, null, n|
 ull, null, null, n|
 ull, null, null, n|
 ull, null, null    |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 
 -- [1]83:select format('%s, %1$d',s3) from test_t1 order by time
 STRICT{
@@ -4374,10 +4379,10 @@ null, null         |
 null, null         |
 -------------------
 null, null         |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 
 -- [1]86:select format('%s',format('%s',format('%s',s1))) from test_t1 order by time
 STRICT{
@@ -4467,10 +4472,10 @@ ASDFGHJKLZXCVBNM~!|
 -------------------
 -------------------
 null               |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.6
 
 -- [1]89:select format(tag1,s2,s3,s4,s1,s2) from test_t1 where time = 1
 STRICT{
@@ -4479,10 +4484,10 @@ _col0(STRING)      |
 1.100000 1 2000 %f |
 %d %tY %s %s%% 1.1|
 %                  |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 
 -- [1]90:select format(s1,s2,s3,s4,s1,s2) from test_t1 where time = 1
 STRICT{
@@ -4491,30 +4496,30 @@ _col0(STRING)      |
 1.100000 1 2000 %f |
 %d %tY %s %s%% 1.1|
 %                  |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.6
 
 -- [1]91:select format(tag1,s2) from test_t1 where time = 2
 STRICT{
 _col0(STRING)      |
 -------------------
 1.012346           |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 
 -- [1]92:select format(attr1,s5) from test_t1 where time = 3
 STRICT{
 _col0(STRING)      |
 -------------------
 -1.012346          |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.6
 
 -- [1]93:select format(s1,s2) from test_t1 where time = 4
 STRICT{
@@ -4523,10 +4528,10 @@ _col0(STRING)      |
 3399999952144364200|
 000000000000000000|
 00.000000          |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 
 -- [1]94:select format(s9,s5) from test_t1 where time = 5
 STRICT{
@@ -4550,40 +4555,40 @@ _col0(STRING)      |
 000000000000000000|
 000000000000000000|
 000.000000         |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.5
 
 -- [1]95:select format(tag1,s3) from test_t1 where time = 7
 STRICT{
 _col0(STRING)      |
 -------------------
 1234567890         |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.5
 
 -- [1]96:select format(attr1,s8) from test_t1 where time = 8
 STRICT{
 _col0(STRING)      |
 -------------------
 -1234567890        |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.11
 
 -- [1]97:select format(s1,s3) from test_t1 where time = 9
 STRICT{
 _col0(STRING)      |
 -------------------
 2147483647         |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.13
 
 -- [1]98:select format(s9,s8) from test_t1 where time = 10
 STRICT{
@@ -4591,37 +4596,37 @@ _col0(STRING)      |
 -------------------
 -922337203685477580|
 8                  |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.5
 
 -- [1]99:select format(tag1,s4) from test_t1 where time = 12
 STRICT{
 _col0(STRING)      |
 -------------------
 2000               |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.11
 
 -- [1]100:select format(attr1,s6) from test_t1 where time = 13
 STRICT{
 _col0(STRING)      |
 -------------------
 1677               |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.5
 
 -- [1]101:select format(s1,s4) from test_t1 where time = 14
 STRICT{
 _col0(STRING)      |
 -------------------
 9999               |
-总数目：1
+鎬绘暟鐩細1
 }
 
 Elapsed Time: 0.0.6
@@ -4631,20 +4636,20 @@ STRICT{
 _col0(STRING)      |
 -------------------
 1970               |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 
 -- [1]103:select format(tag1,s1) from test_t1 where time = 16
 STRICT{
 _col0(STRING)      |
 -------------------
 1234567890         |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.6
 
 -- [1]104:select format(attr1,s9) from test_t1 where time = 17
 STRICT{
@@ -4653,10 +4658,10 @@ _col0(STRING)      |
 qwertyuiopasdfghjkl|
 zxcvbnmQWERTYUIOPA|
 SDFGHJKLZXCVBNM    |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 
 -- [1]105:select format(s1,s1) from test_t1 where time = 18
 STRICT{
@@ -4707,46 +4712,46 @@ qwertyuiopasdfghjk|
 lzxcvbnmQWERTYUIOP|
 ASDFGHJKLZXCVBNM~!|
 @#$^&*()_+{}|:<>?  |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.11
 
 -- [1]106:select format(s9,s9) from test_t1 where time = 19
 STRICT{
 _col0(STRING)      |
 -------------------
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.6
 
 -- [1]107:select format(tag1,s1) from test_t1 where time = 20
 STRICT{
 _col0(STRING)      |
 -------------------
 null               |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 
 -- [1]108:select format(attr1,s9) from test_t1 where time = 20
 STRICT{
 _col0(STRING)      |
 -------------------
 null               |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.5
 
 -- [1]109:select format(s1,s1) from test_t1 where time = 20
 STRICT{
 _col0(STRING)      |
 -------------------
 null               |
-总数目：1
+鎬绘暟鐩細1
 }
 
 Elapsed Time: 0.0.5
@@ -4756,7 +4761,7 @@ STRICT{
 _col0(STRING)      |
 -------------------
 null               |
-总数目：1
+鎬绘暟鐩細1
 }
 
 Elapsed Time: 0.0.5
@@ -4838,20 +4843,20 @@ null           |nu                 |nu                 |
 null           |nu                 |nu                 |
 -----------------------------------------------------
 null           |nu                 |nu                 |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 
 -- [1]114:select format('%1d',count(s3)),format('%1d',count(s8)) from test_t1
 STRICT{
 _col0(STRING)      |_col1(STRING)      |
 --------------------------------------
 6                  |6                  |
-总数目：1
+鎬绘暟鐩細1
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.9
 
 -- [1]117:select FORMAT('%1d',s3),format('%1d',s8) from test_t1 order by time
 STRICT{
@@ -4897,10 +4902,10 @@ null               |null               |
 null               |null               |
 --------------------------------------
 null               |null               |
-总数目：20
+鎬绘暟鐩細20
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 -- [1]119:drop database test_db1
 STRICT{
 PASS
