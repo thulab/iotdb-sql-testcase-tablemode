@@ -78,12 +78,12 @@ time, region_id, device_id, model_id, boolean, text, string, date, timestamp, bl
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
 ) values(
-8, '002', 'd3', 'V1', true, 'text2', 'string5', null, 1378230000000, X'34', 2, 653, 13.13, null
+8, '002', 'd3', 'V5', true, 'text2', 'string5', null, 1378230000000, X'34', 2, 653, 13.13, null
 );
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
 ) values(
-9, '003', 'd3', 'V1', true, 'text4', null, '2023-12-15', null, X'49460001', 10, null, 2.1, 155.5
+9, '003', 'd3', 'V6', true, 'text4', null, '2023-12-15', null, X'49460001', 10, null, 2.1, 155.5
 );
 insert into table_1(
 time, region_id, device_id, model_id, boolean, text, string, date, timestamp, blob, int32, int64, float, double
