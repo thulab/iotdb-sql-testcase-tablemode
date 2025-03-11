@@ -67,13 +67,13 @@ select format('%s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%, %s%%,
 select format('%1$-10s%%, %2$10s%%, %3$-10s%%, %4$10s%%, %5$-10s%%, %6$10s%%, %7$-10s%%, %8$10s%%, %9$-10s%%, %10$10s%%, %11$-10s%%, %12$10s%%',tag1, attr1, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10) from test_t1 order by time;
 
 -- 异常情况
-select format('%f',s1) from test_t1 order by time;
+select format('%f',s1) from test_t1 where time = 1;
 <<SQLSTATE;
-select format('%f %d',s1) from test_t1 order by time;
+select format('%f %d',s1) from test_t1 where time = 1;
 <<SQLSTATE;
-select format('%f') from test_t1 order by time;
+select format('%f') from test_t1 where time = 1;
 <<SQLSTATE;
-select format(s1) from test_t1 order by time;
+select format(s1) from test_t1 where time = 1;
 <<SQLSTATE;
 
 --多个pattern
