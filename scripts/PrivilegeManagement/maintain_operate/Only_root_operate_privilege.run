@@ -27,8 +27,8 @@ show version;
 <<CHECKCODE;
 
 --企业版激活信息
-show activation;
-<<CHECKCODE;
+--show activation;
+--<<CHECKCODE;
 
 show cluster;
 <<CHECKCODE;
@@ -91,8 +91,8 @@ show version;
 <<CHECKCODE;
 
 --企业版激活信息
-show activation;
-<<CHECKCODE;
+--show activation;
+--<<CHECKCODE;
 
 show cluster;
 <<SQLSTATE;

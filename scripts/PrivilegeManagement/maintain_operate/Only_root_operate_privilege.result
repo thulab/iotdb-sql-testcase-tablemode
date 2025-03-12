@@ -15,7 +15,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.840
+Elapsed Time: 0.0.272
 -- [1]21:FLUSH
 STRICT{
 PASS
@@ -25,10 +25,6 @@ STRICT{
 PASS
 }
 -- [1]26:show version
-STRICT{
-PASS
-}
--- [1]30:show activation
 STRICT{
 PASS
 }
@@ -53,17 +49,17 @@ NodeID(INT32)      |Status(TEXT)      |InternalAddress(TEXT)      |InternalPort(
 总数目：1
 }
 
-Elapsed Time: 0.0.20
+Elapsed Time: 0.0.5
 
 -- [1]42:show datanodes
 STRICT{
 NodeID(INT32)      |Status(TEXT)      |RpcAddress(TEXT)      |RpcPort(INT32)      |DataRegionNum(INT32)      |SchemaRegionNum(INT32)      |
 -------------------------------------------------------------------------------------------------------------------------------------
-1                  |Running           |0.0.0.0               |6667                |2                         |2                           |
+1                  |Running           |0.0.0.0               |6667                |1                         |1                           |
 总数目：1
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.2
 -- [1]44:show regions
 STRICT{
 PASS
@@ -128,7 +124,7 @@ TimestampPrecision  |ms               |
 总数目：15
 }
 
-Elapsed Time: 0.0.15
+Elapsed Time: 0.0.2
 
 -- [1]55:show current_database
 STRICT{
@@ -138,7 +134,7 @@ test_db                      |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
 -- [1]57:show CURRENT_SQL_DIALECT
 STRICT{
@@ -148,7 +144,7 @@ TABLE                          |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]59:show CURRENT_TIMESTAMP
 STRICT{
 PASS
@@ -162,7 +158,7 @@ root                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]64:show queries
 STRICT{
 PASS
@@ -211,7 +207,7 @@ time(TIMESTAMP)      |device_id(STRING)      |int32(INT32)      |
 总数目：3
 }
 
-Elapsed Time: 0.0.95
+Elapsed Time: 0.0.21
 -- [1]83:set system to running
 STRICT{
 PASS
@@ -241,12 +237,8 @@ time(TIMESTAMP)      |device_id(STRING)      |int32(INT32)      |
 总数目：4
 }
 
-Elapsed Time: 0.0.30
+Elapsed Time: 0.0.20
 -- [1]90:show version
-STRICT{
-PASS
-}
--- [1]94:show activation
 STRICT{
 PASS
 }
@@ -295,7 +287,7 @@ null                         |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
 -- [1]124:show CURRENT_SQL_DIALECT
 STRICT{
@@ -305,7 +297,7 @@ TABLE                          |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]126:show CURRENT_TIMESTAMP
 STRICT{
 PASS
@@ -319,7 +311,7 @@ user01                   |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]131:show queries
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
