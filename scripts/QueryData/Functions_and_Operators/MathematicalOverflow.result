@@ -100,7 +100,7 @@ SQLSTATE : 752: Year must be between 1000 and 9999.
 }
 -- [1]133:select int32 + date from table_add
 STRICT{
-SQLSTATE : 301: Year must be between 1000 and 9999.
+SQLSTATE : 752: Year must be between 1000 and 9999.
 }
 -- [1]135:select timestamp + int32 from table_add where time = 1
 STRICT{
