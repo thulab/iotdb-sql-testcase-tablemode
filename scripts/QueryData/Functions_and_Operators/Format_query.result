@@ -3727,11 +3727,11 @@ SQLSTATE : 701: Invalid format string: %f %d (IllegalFormatConversion: f != org.
 }
 -- [1]74:select format('%f') from test_t1 where time = 1
 STRICT{
-SQLSTATE : 701: Scalar function format must have at least two arguments, and first argument must be char type.
+SQLSTATE : 701: Scalar function format must have at least two arguments, and first argument pattern must be TEXT or STRING type.
 }
 -- [1]76:select format(s1) from test_t1 where time = 1
 STRICT{
-SQLSTATE : 701: Scalar function format must have at least two arguments, and first argument must be char type.
+SQLSTATE : 701: Scalar function format must have at least two arguments, and first argument pattern must be TEXT or STRING type.
 }
 
 -- [1]80:select format('%1$d, %1$d, %1$d, %1$d, %1$d, %1$d, %1$d, %1$d, %1$d, %1$d, %1$d, %1$d',s3) from test_t1 order by time
