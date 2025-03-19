@@ -1,3 +1,4 @@
+
 //支持针对Time列的等值FULL OUTER JOIN
 // 返回左表和右表所有记录
 // 某个表中的记录没有与另外一个表中的记录匹配，返回null值
@@ -33,9 +34,10 @@ create table teachers
 
 create table courses
 (
-    course_id STRING TAG,
-	course_name STRING FIELD,
-	teacher_id INT32 FIELD
+    course_region STRING TAG,
+    course_id INT32 FIELD,
+    course_name STRING FIELD,
+    teacher_id INT32 FIELD
 );
 
 create table grades
@@ -73,12 +75,12 @@ insert into teachers(time,region,teacher_id,course_id,age) values
 (4,'chaoyang',1004,10000004,27),
 (5,'xicheng',1005,10000005,26);
 
-insert into courses(time,course_id,course_name,teacher_id) values
-(1,10000001,'数学',1001),
-(2,10000002,'语文',1002),
-(3,10000003,'英语',1003),
-(4,10000004,'体育',1004),
-(5,10000005,'历史',1005);
+insert into courses(time,course_region,course_id,course_name,teacher_id) values
+(1,'Math',10000001,'数学',1001),
+(2,'CHIN',10000002,'语文',1002),
+(3,'ENG',10000003,'英语',1003),
+(4,'PE',10000004,'体育',1004),
+(5,'HIST',10000005,'历史',1005);
 
 insert into grades(time,grade_id,course_id,student_id,score) values
 (1,1111,10000001,1,99),
@@ -98,22 +100,8 @@ select * from teachers order by time;
 select * from courses order by time;
 select * from grades order by time;
 
---8. 显式连接查询
---8.1 非 Time 列的等值全连接查询
-select s.name,s.genders,s.date_of_birth,
-	   t.teacher_id, t.course_id
-from students s 
-FULL JOIN teachers t USING(region);
 
-select 
-     s.name, s.gengers, s.date_of_birth,
-     t.teacher_id, t.course_id
-from
-     students s
-FULL JOIN teachers t ON s.region = t.region;
-<<SQLSTATE;
-
---8.2 ON连接：针对time列的等值表达式连接
+--8. ON连接：针对time列的等值表达式连接
 select 
 	s.name,s.genders,
 	g.course_id, g.score
@@ -188,13 +176,30 @@ FULL JOIN courses c ON c.time=t.time
 FULL JOIN grades g ON g.time=c.time
 where g.time > 1 and g.time < 4 order by c.course_id;
 
---8.3 多表全连接查询
-select time,
-	t1.student_id as stu_id, t1.name as stu_name,
-	t2.grade_id as grade, t2.score as stu_score
+--9. USING 全连接查询
+select * from students
+FULL OUTER JOIN
+	courses USING(time)
+FULL OUTER JOIN
+	grades USING(time)
+FULL OUTER JOIN
+	teachers USING(time);
+
+select
+	time,
+	s.student_id as stu_id,
+	s.name as s_name,
+	t.teacher_id as t_id,
+	c.course_name as c_cour_name,
+	g.score as g_score
 from 
-	students t1 FULL JOIN grades t2
-USING(time);
+	students s
+FULL JOIN 
+	teachers t USING(time)
+FULL JOIN 
+	courses c USING(time)
+FULL JOIN
+	grades g USING(time);
 
 select 
 	   s.name,
@@ -204,7 +209,9 @@ select
 from students s 
 FULL JOIN teachers t USING(time)
 FULL JOIN courses c USING(time)
-FULL JOIN grades g USING(time);
+FULL JOIN grades g USING(time)
+where time > 3 and time <9
+and g.score > 85;
 
 select 
 	   count(s.student_id) as count_student,
@@ -226,6 +233,104 @@ FULL OUTER JOIN courses c USING(time)
 FULL OUTER JOIN grades g USING(time)
 order by time, s.student_id, t.teacher_id;
 
+--10. 非 Time 列的等值全连接查询
+select * from courses c
+FULL OUTER JOIN
+	teachers USING(teacher_id)
+FULL OUTER JOIN
+	grades g ON c.course_id = g.course_id;
+	
+select s.name,s.genders,s.date_of_birth,
+	   t.teacher_id, t.course_id
+from students s 
+FULL JOIN teachers t USING(region);
+
+select 
+     s.name, s.genders, s.date_of_birth,
+     t.teacher_id, t.course_id
+from
+     students s
+FULL JOIN teachers t ON s.region = t.region;
+
+select * from students s
+FULL JOIN teachers t USING(time)
+where 
+	s.region = t.region;
+
+--11. 针对任意等值表达式的连接查询
+select * from students s, teachers t
+where s.time=t.time 
+	  and	
+	  s.region= t.region;
+	  
+select * from students s, grades g
+where s.time < g.time or s.student_id = g.student_id
+limit 5 offset 3;
+	  
+select * from students
+FULL OUTER JOIN
+	teachers USING(time,region)
+order by time;
+
+select c.course_id, count(*) as count_result from courses c, grades g
+where c.time < g.time 
+and g.grade_id='1115'
+group by c.course_id;
+
+select s.region,count(s.name) as count_name_result,
+count(t.teacher_id) as count_teacher_result,
+count(g.grade_id) as count_grade_result,
+max(g.score)+min(score) as score_total_result
+from students s, teachers t, grades g
+where s.time < g.time
+group by s.region;
+
+select
+	s.region as s_region,
+	s.name as s_name,
+	t.teacher_id as t_teacher_id,
+	c.course_id as c_course_id,
+	c.course_name as c_course_name,
+	g.grade_id as g_grade_id,
+	g.score as g_score
+from 
+	students s
+FULL OUTER JOIN 
+	teachers t ON s.region = t.region
+FULL OUTER JOIN 
+	courses c ON s.time= c.time
+FULL OUTER JOIN 
+	grades g USING (student_id)
+where 
+	s.time > 1 and s.time < 10
+	and
+	g.score > 80
+order by g.score;
+
+
+--12. 异常检查
+select * from 
+	students s
+FUll OUTER JOIN 
+	grades g ON s.time < g.time and s.student_id = g.student_id;
+<<SQLSTATE;
+
+select * from courses c
+FULL OUTER join	
+	grades g on c.time>g.time OR c.course_id = g.course_id;
+<<SQLSTATE;
+
+select c.course_region,count(c.course_id),
+count(t.teacher_id),count(t.age),
+count(g.student_id),last(g.score)
+from courses c
+FULL OUTER JOIN 
+	teachers t ON c.course_id = t.course_id and c.teacher_id = t.teacher_id
+FULL OUTER JOIN 
+	grades g ON c.time = min(g.time)
+where g.score > 85
+group by c.course_region;
+<<SQLSTATE;
 
 -- 清理数据： 删除数据库 
 drop database test_db;
