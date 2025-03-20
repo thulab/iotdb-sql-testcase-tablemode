@@ -236,9 +236,10 @@ order by time, s.student_id, t.teacher_id;
 --10. 非 Time 列的等值全连接查询
 select * from courses c
 FULL OUTER JOIN
-	teachers USING(teacher_id)
+	teachers t USING(teacher_id)
 FULL OUTER JOIN
-	grades g ON c.course_id = g.course_id;
+	grades g ON c.course_id = g.course_id
+order by c.time,t.time,g.time,g.student_id;
 	
 select s.name,s.genders,s.date_of_birth,
 	   t.teacher_id, t.course_id
@@ -265,6 +266,7 @@ where s.time=t.time
 	  
 select * from students s, grades g
 where s.time < g.time or s.student_id = g.student_id
+order by s.time,s.region,g.time
 limit 5 offset 3;
 	  
 select * from students
@@ -275,7 +277,8 @@ order by time;
 select c.course_id, count(*) as count_result from courses c, grades g
 where c.time < g.time 
 and g.grade_id='1115'
-group by c.course_id;
+group by c.course_id
+order by course_id,count_result;
 
 select s.region,count(s.name) as count_name_result,
 count(t.teacher_id) as count_teacher_result,
@@ -283,7 +286,8 @@ count(g.grade_id) as count_grade_result,
 max(g.score)+min(score) as score_total_result
 from students s, teachers t, grades g
 where s.time < g.time
-group by s.region;
+group by s.region
+order by s.region,count_name_result,count_teacher_result,count_grade_result;
 
 select
 	s.region as s_region,
