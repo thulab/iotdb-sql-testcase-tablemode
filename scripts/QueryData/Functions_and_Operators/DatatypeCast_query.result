@@ -497,7 +497,7 @@ SQLSTATE : 701: Cannot cast v1 to DATE type
 }
 -- [1]123:select s1, cast(s1 as TIMESTAMP) from table_a
 STRICT{
-SQLSTATE : 301: Text 'v1+08:00' could not be parsed, unparsed text found at index 0
+SQLSTATE : 701: Cannot cast v1 to TIMESTAMP type
 }
 
 -- [1]124:select s1, cast(s1 as STRING) from table_a order by time
@@ -2587,7 +2587,7 @@ SQLSTATE : 701: Cannot cast 0xabcd to DATE type
 }
 -- [1]212:select time,device_id,cast(s10 as TIMESTAMP) from table_a group by time,device_id,s10
 STRICT{
-SQLSTATE : 301: Text '0xabcd+08:00' could not be parsed, unparsed text found at index 0
+SQLSTATE : 701: Cannot cast 0xabcd to TIMESTAMP type
 }
 
 -- [1]213:select time,device_id,cast(s10 as BLOB) from table_a group by time,device_id,s10
