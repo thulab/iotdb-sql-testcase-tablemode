@@ -37,7 +37,7 @@ employees            |INF                |
 总数目：4
 }
 
-Elapsed Time: 0.0.53
+Elapsed Time: 0.0.52
 -- [1]62:desc employees
 STRICT{
 PASS
@@ -59,37 +59,37 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.823
+Elapsed Time: 0.0.858
 -- [1]72:insert into employees( time, department_id, remark, name, gender, status, employee_id, salary, date_of_birth, contac_info) values (2, 'D001', 'great', 'John', 'Male', true, 0012, 8822, '1985-06-15', '130-1002-1334')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.77
+Elapsed Time: 0.0.73
 -- [1]75:insert into employees( time, department_id, remark, name, gender, status, employee_id, salary, date_of_birth, contac_info) values (3, 'D002', 'excellent', 'Nancy', 'Female', true, 0112, 10002, '1983-08-15', '135-1302-1354')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.78
+Elapsed Time: 0.0.76
 -- [1]78:insert into employees( time, department_id, remark, name, gender, status, employee_id, salary, date_of_birth, contac_info) values (4, 'D002', 'good', 'Jack', 'Male', false, 12212, 7000, '1990-03-26', '138-1012-1353')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.17
 -- [1]81:insert into employees( time, department_id, remark, name, gender, status, employee_id, salary, date_of_birth, contac_info) values (5, 'D003', 'great', 'Linda', 'Female', false, 10212, 5600, '1995-06-15', '150-2003-1355')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.19
 -- [1]85:insert into departments( time, department_id, dep_description, dep_name, dep_phone, dep_status, dep_member) values (1, 'D001', 'goods','销售部', '010-2271-2120', false, 1223)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.15
 -- [1]88:insert into departments( time, department_id, dep_description, dep_name, dep_phone, dep_status, dep_member) values (2, 'D001', 'goods','销售部', '010-2271-2120', false, 0012)
 STRICT{
 0
@@ -101,13 +101,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.15
 -- [1]94:insert into departments( time, department_id, dep_description, dep_name, dep_phone, dep_status, dep_member) values (4, 'D002', 'service','客服部', '010-2077-2520', true, 2012)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.6
 -- [1]97:insert into departments( time, department_id, dep_description, dep_name, dep_phone, dep_status, dep_member) values (5, 'D003', 'IT','研发部', '010-3272-2310', true, 0212)
 STRICT{
 0
@@ -119,13 +119,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.42
+Elapsed Time: 0.0.38
 -- [1]112:insert into customers(time,customer_id, remark, customer_name, region, order_id) values (1, 'C111000111', 'A', 'Helen', 'Beijing', 22238472992), (2, 'C332113221', 'A', 'Mike', 'Shanghai', 111122223333), (3, 'C113344421', 'B', 'John', 'Hebei', 66788843922), (4, 'C223321123', 'A', 'Jack', 'Guangzhou', 7263722222), (5, 'C123532982', 'B', 'Amy', 'Tianjin', 222333445881)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.38
+Elapsed Time: 0.0.39
 
 -- [1]115:select * from employees order by time
 STRICT{
@@ -148,7 +148,7 @@ time(TIMESTAMP)      |department_id(STRING)      |remark(STRING)      |name(TEXT
 总数目：5
 }
 
-Elapsed Time: 0.0.224
+Elapsed Time: 0.0.216
 
 -- [1]116:select * from departments order by time
 STRICT{
@@ -171,7 +171,7 @@ time(TIMESTAMP)      |department_id(STRING)      |dep_description(STRING)      |
 总数目：5
 }
 
-Elapsed Time: 0.0.30
+Elapsed Time: 0.0.25
 
 -- [1]117:select * from orders order by time
 STRICT{
@@ -194,7 +194,7 @@ time(TIMESTAMP)      |customer_id(STRING)      |employee_id(INT32)      |project
 总数目：5
 }
 
-Elapsed Time: 0.0.27
+Elapsed Time: 0.0.24
 
 -- [1]118:select * from customers order by time
 STRICT{
@@ -217,7 +217,7 @@ time(TIMESTAMP)      |customer_id(STRING)      |remark(STRING)      |customer_na
 总数目：5
 }
 
-Elapsed Time: 0.0.27
+Elapsed Time: 0.0.22
 
 -- [1]122:select  	count((select max(salary) from employees where department_id='D002')) as count_salary_result 		from employees where department_id='D002'
 STRICT{
@@ -227,7 +227,7 @@ count_salary_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.143
+Elapsed Time: 0.0.144
 
 -- [1]128:select     employee_id,     name,     salary,     (select avg(salary) from employees) AS avg_salary FROM      employees order by employee_id
 STRICT{
@@ -245,7 +245,7 @@ employee_id(INT32)      |name(TEXT)      |salary(DOUBLE)      |avg_salary(DOUBLE
 总数目：5
 }
 
-Elapsed Time: 0.0.55
+Elapsed Time: 0.0.61
 
 -- [1]136:select 	order_amount +  		(select max(order_id) from orders where project_id= 'P3893001') 		as sum_result 		from orders where project_id= 'P3893001'
 STRICT{
@@ -257,23 +257,23 @@ sum_result(FLOAT)      |
 
 Elapsed Time: 0.0.83
 
--- [1]142:select 	department_id, 	dep_name, 	dep_phone, 	dep_member from  	departments where 	dep_member < (select max(dep_member) from departments)
+-- [1]142:select 	department_id, 	dep_name, 	dep_phone, 	dep_member from  	departments where 	dep_member < (select max(dep_member) from departments) order by department_id,dep_name,dep_member
 STRICT{
 department_id(STRING)      |dep_name(TEXT)      |dep_phone(TEXT)      |dep_member(INT32)      |
 -------------------------------------------------------------------------------------------
-D003                       |研发部                 |010-3272-2310        |212                    |
+D001                       |销售部                 |010-2271-2120        |12                     |
 -------------------------------------------------------------------------------------------
 D001                       |销售部                 |010-2271-2120        |1223                   |
 -------------------------------------------------------------------------------------------
-D001                       |销售部                 |010-2271-2120        |12                     |
--------------------------------------------------------------------------------------------
 D002                       |客服部                 |010-2077-2520        |112                    |
+-------------------------------------------------------------------------------------------
+D003                       |研发部                 |010-3272-2310        |212                    |
 总数目：4
 }
 
-Elapsed Time: 0.0.49
+Elapsed Time: 0.0.44
 
--- [1]152:select salary from employees 	where remark <> 'good' 		and salary >= (select min(salary) from employees where department_id='D001')
+-- [1]153:select salary from employees 	where remark <> 'good' 		and salary >= (select min(salary) from employees where department_id='D001')
 STRICT{
 salary(DOUBLE)      |
 --------------------
@@ -287,7 +287,7 @@ salary(DOUBLE)      |
 
 Elapsed Time: 0.0.44
 
--- [1]157:select customer_id, 	(select count(*) from orders 		where orders.order_id = customers.order_id) as order_count from 	customers
+-- [1]158:select customer_id, 	(select count(*) from orders 		where orders.order_id = customers.order_id) as order_count from 	customers
 STRICT{
 customer_id(STRING)      |order_count(INT64)      |
 -------------------------------------------------
@@ -303,21 +303,21 @@ C123532982               |1                       |
 总数目：5
 }
 
-Elapsed Time: 0.0.83
+Elapsed Time: 0.0.80
 
--- [1]163:select 	order_id, 	order_amount, 	(select avg(order_amount) from orders) as avg_order_amount from  	orders where  	order_amount > (select avg(order_amount) from orders)
+-- [1]164:select 	order_id, 	order_amount, 	(select avg(order_amount) from orders) as avg_order_amount from  	orders where  	order_amount > (select avg(order_amount) from orders) order by order_id
 STRICT{
 order_id(INT64)      |order_amount(FLOAT)      |avg_order_amount(DOUBLE)      |
 ----------------------------------------------------------------------------
-22238472992          |9999.9                   |5890.01005859375              |
-----------------------------------------------------------------------------
 7263722222           |8888.88                  |5890.01005859375              |
+----------------------------------------------------------------------------
+22238472992          |9999.9                   |5890.01005859375              |
 总数目：2
 }
 
-Elapsed Time: 0.0.34
+Elapsed Time: 0.0.35
 
--- [1]171:select      employee_id,     name,     salary,     department_id from      employees where      salary > (select avg(salary) from employees where department_id = employees.department_id)     and salary < (select max(salary) from employees)
+-- [1]173:select      employee_id,     name,     salary,     department_id from      employees where      salary > (select avg(salary) from employees where department_id = employees.department_id)     and salary < (select max(salary) from employees)
 STRICT{
 employee_id(INT32)      |name(TEXT)      |salary(DOUBLE)      |department_id(STRING)      |
 ---------------------------------------------------------------------------------------
@@ -325,9 +325,9 @@ employee_id(INT32)      |name(TEXT)      |salary(DOUBLE)      |department_id(STR
 总数目：1
 }
 
-Elapsed Time: 0.0.63
+Elapsed Time: 0.0.51
 
--- [1]184:select      project_id,     project_name,     order_amount FROM      orders WHERE      order_amount = (select min(order_amount) from orders)
+-- [1]186:select      project_id,     project_name,     order_amount FROM      orders WHERE      order_amount = (select min(order_amount) from orders)
 STRICT{
 project_id(STRING)      |project_name(STRING)      |order_amount(FLOAT)      |
 ---------------------------------------------------------------------------
@@ -337,7 +337,7 @@ P2002021                |table                     |1860.5                   |
 
 Elapsed Time: 0.0.30
 
--- [1]192:select  	customer_id, 	project_name, 	round(sum(order_amount),2) as total_amount from 	orders group by 	 	customer_id,project_name having 	sum(order_amount) + 1000 < (select max(order_amount)+min(order_amount) from orders)
+-- [1]194:select  	customer_id, 	project_name, 	round(sum(order_amount),2) as total_amount from 	orders group by 	 	customer_id,project_name having 	sum(order_amount) + 1000 < (select max(order_amount)+min(order_amount) from orders)
 STRICT{
 customer_id(STRING)      |project_name(STRING)      |total_amount(DOUBLE)      |
 -----------------------------------------------------------------------------
@@ -353,9 +353,9 @@ C332113221               |table                     |1860.5                    |
 总数目：5
 }
 
-Elapsed Time: 0.0.71
+Elapsed Time: 0.0.70
 
--- [1]204:select 	department_id, 	name, 	remark, 	salary, 	case  		when salary > (select avg(salary) from employees) then 'Above Average' 		else 'Below Average' 	end as comment from  	employees order by department_id,name
+-- [1]206:select 	department_id, 	name, 	remark, 	salary, 	case  		when salary > (select avg(salary) from employees) then 'Above Average' 		else 'Below Average' 	end as comment from  	employees order by department_id,name
 STRICT{
 department_id(STRING)      |name(TEXT)      |remark(STRING)      |salary(DOUBLE)      |comment(STRING)      |
 --------------------------------------------------------------------------------------------------------
@@ -371,9 +371,9 @@ D003                       |Linda           |great               |5600.0        
 总数目：5
 }
 
-Elapsed Time: 0.0.52
+Elapsed Time: 0.0.43
 
--- [1]218:select  	project_id, 	project_name, 	order_amount, 	round(order_amount - (select avg(order_amount) from orders),3) as amount_diff from 	orders order by 		amount_diff desc
+-- [1]220:select  	project_id, 	project_name, 	order_amount, 	round(order_amount - (select avg(order_amount) from orders),3) as amount_diff from 	orders order by 		amount_diff desc
 STRICT{
 project_id(STRING)      |project_name(STRING)      |order_amount(FLOAT)      |amount_diff(DOUBLE)      |
 ----------------------------------------------------------------------------------------------------
@@ -389,27 +389,27 @@ P2002021                |table                     |1860.5                   |-4
 总数目：5
 }
 
-Elapsed Time: 0.0.30
+Elapsed Time: 0.0.37
 
--- [1]231:select  	customer_id, 	remark from  	customers  where 	region = 'Beijing' and 	customer_id = (select customer_id from orders limit 1)
+-- [1]233:select  	customer_id, 	remark from  	customers  where 	region = 'Beijing' and 	customer_id = (select customer_id from orders limit 1)
 STRICT{
 customer_id(STRING)      |remark(STRING)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.77
--- [1]242:select 	time, 	dep_name, 	dep_member from  	departments where 	department_id = 'D001'  and  	time = (select time from employees)
+Elapsed Time: 0.0.76
+-- [1]244:select 	time, 	dep_name, 	dep_member from  	departments where 	department_id = 'D001'  and  	time = (select time from employees)
 STRICT{
 SQLSTATE : 701: Scalar sub-query has returned multiple rows.
 }
--- [1]256:insert into orders(time,employee_id) values 	(6, (select max(order_amount) from orders))
+-- [1]258:insert into orders(time,employee_id) values 	(6, (select max(order_amount) from orders))
 STRICT{
 SQLSTATE : 701: Unsupported expression: (SELECT max(order_amount)
 FROM
   orders
 )
 }
--- [1]260:delete from employees 	where department_id = (select department_id from employees)
+-- [1]262:delete from employees 	where department_id = (select department_id from employees)
 STRICT{
 SQLSTATE : 701: The right hand value of tag predicate must be a string: (SELECT department_id
 FROM
