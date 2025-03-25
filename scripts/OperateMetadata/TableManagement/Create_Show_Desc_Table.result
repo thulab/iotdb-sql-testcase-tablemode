@@ -45,11 +45,11 @@ Elapsed Time: 0.0.1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |Status(TEXT)      |Comment(TEXT)      |
 -----------------------------------------------------------------------------
-device_type_3        |INF                |USING             |                   |
+device_type_3        |INF                |USING             |null               |
 -----------------------------------------------------------------------------
-device_type_2        |3600000            |USING             |                   |
+device_type_2        |3600000            |USING             |null               |
 -----------------------------------------------------------------------------
-device_type_1        |3600000            |USING             |                   |
+device_type_1        |3600000            |USING             |null               |
 总数目：3
 }
 
@@ -59,11 +59,11 @@ Elapsed Time: 0.0.3
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |Status(TEXT)      |Comment(TEXT)      |
 -----------------------------------------------------------------------------
-device_type_3        |INF                |USING             |                   |
+device_type_3        |INF                |USING             |null               |
 -----------------------------------------------------------------------------
-device_type_2        |3600000            |USING             |                   |
+device_type_2        |3600000            |USING             |null               |
 -----------------------------------------------------------------------------
-device_type_1        |3600000            |USING             |                   |
+device_type_1        |3600000            |USING             |null               |
 总数目：3
 }
 
@@ -73,11 +73,11 @@ Elapsed Time: 0.0.1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |Status(TEXT)      |Comment(TEXT)      |
 -----------------------------------------------------------------------------
-device_type_3        |INF                |USING             |                   |
+device_type_3        |INF                |USING             |null               |
 -----------------------------------------------------------------------------
-device_type_2        |3600000            |USING             |                   |
+device_type_2        |3600000            |USING             |null               |
 -----------------------------------------------------------------------------
-device_type_1        |3600000            |USING             |                   |
+device_type_1        |3600000            |USING             |null               |
 总数目：3
 }
 
