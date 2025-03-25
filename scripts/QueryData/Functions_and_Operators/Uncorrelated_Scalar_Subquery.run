@@ -129,7 +129,8 @@ select
     salary,
     (select avg(salary) from employees) AS avg_salary
 FROM 
-    employees;
+    employees
+order by employee_id;
 	
 select
 	order_amount + 
@@ -210,7 +211,8 @@ select
 		else 'Below Average'
 	end as comment
 from 
-	employees;
+	employees
+order by department_id,name;
 	
 --8.5 在order by 子句中使用
 select 
