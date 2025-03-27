@@ -5,6 +5,10 @@ drop function pattern_match;
 <<NULL;
 
 --0.清理环境
+drop function contain_null;
+<<NULL;
+drop database test_udf_authentication;
+<<NULL;
 drop user user1;
 <<NULL;
 drop user user2;
@@ -108,3 +112,7 @@ DROP function contain_null;
 connect root/root;
 drop function contain_null;
 drop database test_udf_authentication;
+drop user user1;
+drop user user2;
+drop user user3;
+drop user user4;
