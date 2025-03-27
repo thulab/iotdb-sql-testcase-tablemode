@@ -88,7 +88,12 @@ SQLSTATE : 507: Fail to insert measurements [s0] caused by [The BOOLEAN should b
 }
 -- [1]48:desc datatypes.d_boolean
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+s0                    |BOOLEAN             |FIELD               |
+总数目：2
 }
 
 -- [1]49:select time,s0 from datatypes.d_boolean
@@ -194,7 +199,12 @@ SQLSTATE : 507: Fail to insert measurements [s0] caused by [data type is not con
 }
 -- [1]68:desc datatypes.d_INT32
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+s0                    |INT32               |FIELD               |
+总数目：2
 }
 
 -- [1]69:select time,s0 from datatypes.d_INT32
@@ -337,7 +347,12 @@ SQLSTATE : 701: The timestamp is unexpectedly large, you may forget to set the t
 }
 -- [1]110:desc datatypes.d_INT64
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+s0                    |INT64               |FIELD               |
+总数目：2
 }
 
 -- [1]111:select time,s0 from datatypes.d_INT64
@@ -599,7 +614,12 @@ SQLSTATE : 701: Input time format 1999-13-20 error. Input like yyyy-MM-dd HH:mm:
 }
 -- [1]192:desc datatypes.d_Timestamp
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+s0                    |TIMESTAMP           |FIELD               |
+总数目：2
 }
 
 -- [1]193:select time,s0 from datatypes.d_Timestamp
@@ -876,7 +896,12 @@ SQLSTATE : 507: Fail to insert measurements [s0] caused by [data type is not con
 }
 -- [1]236:desc datatypes.d_float
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+s0                    |FLOAT               |FIELD               |
+总数目：2
 }
 
 -- [1]237:select time,s0 from datatypes.d_float
@@ -1200,7 +1225,12 @@ SQLSTATE : 507: Fail to insert measurements [s0] caused by [data type is not con
 }
 -- [1]285:desc datatypes.d_double
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+s0                    |DOUBLE              |FIELD               |
+总数目：2
 }
 
 -- [1]286:select time,s0 from datatypes.d_double
@@ -1430,7 +1460,12 @@ SQLSTATE : 701: Input time format 1999-13-20 error. Input like yyyy-MM-dd HH:mm:
 }
 -- [1]329:desc datatypes.d_date
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+s0                    |DATE                |FIELD               |
+总数目：2
 }
 
 -- [1]330:select time,s0 from datatypes.d_date
@@ -1575,7 +1610,12 @@ STRICT{
 Elapsed Time: 0.0.1
 -- [1]356:desc datatypes.d_string
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+s0                    |STRING              |FIELD               |
+总数目：2
 }
 
 -- [1]357:select time,s0 from datatypes.d_string
@@ -1780,7 +1820,12 @@ STRICT{
 Elapsed Time: 0.0.1
 -- [1]382:desc datatypes.d_text
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+s0                    |TEXT                |FIELD               |
+总数目：2
 }
 
 -- [1]383:select time,s0 from datatypes.d_text
@@ -1975,7 +2020,12 @@ STRICT{
 Elapsed Time: 0.0.3
 -- [1]406:desc datatypes.d_blob
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+s0                    |BLOB                |FIELD               |
+总数目：2
 }
 
 -- [1]407:select time,s0 from datatypes.d_blob

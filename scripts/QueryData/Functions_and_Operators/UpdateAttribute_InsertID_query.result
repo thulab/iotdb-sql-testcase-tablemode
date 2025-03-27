@@ -22,7 +22,18 @@ t1                   |INF                |
 Elapsed Time: 0.0.2
 -- [1]29:desc t1
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+device_id             |STRING              |TAG                 |
+--------------------------------------------------------------
+model_id              |STRING              |ATTRIBUTE           |
+--------------------------------------------------------------
+boolean               |BOOLEAN             |FIELD               |
+--------------------------------------------------------------
+int64                 |INT64               |FIELD               |
+总数目：5
 }
 -- [1]32:insert into t1(time,model_id,boolean,int64) values(1,'m1',false,11)
 STRICT{

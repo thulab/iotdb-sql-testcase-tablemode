@@ -76,7 +76,20 @@ table_0              |INF                |
 Elapsed Time: 0.0.0
 -- [1]59:desc table_2
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+device_id             |STRING              |TAG                 |
+--------------------------------------------------------------
+model_id              |STRING              |ATTRIBUTE           |
+--------------------------------------------------------------
+boolean               |BOOLEAN             |FIELD               |
+--------------------------------------------------------------
+int64                 |INT64               |FIELD               |
+--------------------------------------------------------------
+double                |DOUBLE              |FIELD               |
+总数目：6
 }
 -- [1]66:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 1, 1.1)
 STRICT{
@@ -228,7 +241,18 @@ PASS
 }
 -- [1]101:desc table_2
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+device_id             |STRING              |TAG                 |
+--------------------------------------------------------------
+model_id              |STRING              |ATTRIBUTE           |
+--------------------------------------------------------------
+boolean               |BOOLEAN             |FIELD               |
+--------------------------------------------------------------
+int64                 |INT64               |FIELD               |
+总数目：5
 }
 
 -- [1]102:show tables

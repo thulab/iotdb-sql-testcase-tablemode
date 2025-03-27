@@ -22,7 +22,20 @@ table_a1             |INF                |
 Elapsed Time: 0.0.1
 -- [1]29:desc table_a1
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+device_id             |STRING              |TAG                 |
+--------------------------------------------------------------
+color                 |STRING              |ATTRIBUTE           |
+--------------------------------------------------------------
+s1                    |INT32               |FIELD               |
+--------------------------------------------------------------
+s2                    |FLOAT               |FIELD               |
+--------------------------------------------------------------
+s3                    |BOOLEAN             |FIELD               |
+总数目：6
 }
 -- [1]32:insert into table_a1(time,device_id,color,s1,s2,s3) values(1,'d1','red',1,1.1,false)
 STRICT{

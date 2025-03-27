@@ -224,7 +224,10 @@ PASS
 }
 -- [1]54:desc t_1
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+总数目：1
 }
 -- [1]55:use db2
 STRICT{
@@ -232,7 +235,10 @@ PASS
 }
 -- [1]57:DESCRIBE db1.t_1
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+总数目：1
 }
 -- [1]60:use db1
 STRICT{
@@ -240,7 +246,10 @@ PASS
 }
 -- [1]61:desc t_1
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+总数目：1
 }
 -- [1]63:ALTER TABLE t_1 ADD COLUMN IF NOT EXISTS new_id TAG
 STRICT{
@@ -292,7 +301,18 @@ PASS
 }
 -- [1]77:desc t_1
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+new_id                |STRING              |TAG                 |
+--------------------------------------------------------------
+new_ab                |STRING              |ATTRIBUTE           |
+--------------------------------------------------------------
+new_mm                |STRING              |FIELD               |
+--------------------------------------------------------------
+new_mm2               |STRING              |FIELD               |
+总数目：5
 }
 -- [1]79:alter table t_1 drop column new_id
 STRICT{
@@ -340,7 +360,16 @@ PASS
 }
 -- [1]101:desc t_1
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+new_id                |STRING              |TAG                 |
+--------------------------------------------------------------
+new_mm                |STRING              |FIELD               |
+--------------------------------------------------------------
+new_mm2               |STRING              |FIELD               |
+总数目：4
 }
 -- [1]103:alter table t_1 drop column new_mm
 STRICT{
@@ -356,7 +385,14 @@ PASS
 }
 -- [1]107:desc t_1
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+new_id                |STRING              |TAG                 |
+--------------------------------------------------------------
+new_mm2               |STRING              |FIELD               |
+总数目：3
 }
 -- [1]108:use db2
 STRICT{
@@ -368,7 +404,12 @@ PASS
 }
 -- [1]110:desc db1.t_1
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+new_id                |STRING              |TAG                 |
+总数目：2
 }
 -- [1]111:use db1
 STRICT{

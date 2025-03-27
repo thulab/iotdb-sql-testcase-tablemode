@@ -22,7 +22,16 @@ table_1              |INF                |
 Elapsed Time: 0.0.1
 -- [1]27:desc table_1
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+device_id             |STRING              |TAG                 |
+--------------------------------------------------------------
+model_id              |STRING              |ATTRIBUTE           |
+--------------------------------------------------------------
+float                 |FLOAT               |FIELD               |
+总数目：4
 }
 -- [1]30:insert into table_1(time, device_id, model_id, float) values(1,'d1','m1',1.1)
 STRICT{

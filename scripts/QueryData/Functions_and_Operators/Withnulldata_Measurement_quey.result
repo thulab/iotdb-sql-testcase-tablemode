@@ -22,7 +22,22 @@ table_withnull_data  |INF                |
 Elapsed Time: 0.0.54
 -- [1]30:desc table_withnull_data
 STRICT{
-PASS
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+region_id             |STRING              |TAG                 |
+--------------------------------------------------------------
+device_id             |STRING              |TAG                 |
+--------------------------------------------------------------
+color                 |STRING              |ATTRIBUTE           |
+--------------------------------------------------------------
+type                  |STRING              |ATTRIBUTE           |
+--------------------------------------------------------------
+s1                    |BOOLEAN             |FIELD               |
+--------------------------------------------------------------
+s2                    |FLOAT               |FIELD               |
+总数目：7
 }
 -- [1]33:insert into table_withnull_data(time,region_id, device_id, color, type, s1, s2) values(1, '1111', 'D1', 'Red', 'T-1111', false, 11.1)
 STRICT{
