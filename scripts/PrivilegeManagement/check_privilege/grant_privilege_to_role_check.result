@@ -1,45 +1,65 @@
--- [1]30:create user user01 'pass1234'
+-- [1]42:create user user01 'pass1234'
 STRICT{
 PASS
 }
--- [1]31:create user user02 'pass1234'
+-- [1]43:create user user02 'pass1234'
 STRICT{
 PASS
 }
--- [1]32:create user user03 'pass1234'
+-- [1]44:create user user03 'pass1234'
 STRICT{
 PASS
 }
--- [1]33:create user user04 'pass1234'
+-- [1]45:create user user04 'pass1234'
 STRICT{
 PASS
 }
--- [1]34:create user user05 'pass1234'
+-- [1]46:create user user05 'pass1234'
 STRICT{
 PASS
 }
--- [1]35:create user user06 'pass1234'
+-- [1]47:create user user06 'pass1234'
 STRICT{
 PASS
 }
--- [1]36:create user user07 'pass1234'
+-- [1]48:create role role01
 STRICT{
 PASS
 }
--- [1]37:create database test_db
+-- [1]49:create role role02
 STRICT{
 PASS
 }
--- [1]38:use test_db
+-- [1]50:create role role03
 STRICT{
 PASS
 }
--- [1]39:create table t1(ID TAG, int32 INT32)
+-- [1]51:create role role04
+STRICT{
+PASS
+}
+-- [1]52:create role role05
+STRICT{
+PASS
+}
+-- [1]53:create role role06
+STRICT{
+PASS
+}
+-- [1]54:create database test_db
+STRICT{
+PASS
+}
+-- [1]55:use test_db
+STRICT{
+PASS
+}
+-- [1]56:create table t1(ID TAG, int32 INT32)
 STRICT{
 PASS
 }
 
--- [1]40:show databases
+-- [1]57:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -49,9 +69,9 @@ test_db             |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.44
 
--- [1]41:show tables
+-- [1]58:show tables
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -59,9 +79,9 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.20
 
--- [1]42:desc t1
+-- [1]59:desc t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -73,15 +93,15 @@ int32                 |INT32               |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
--- [1]43:insert into t1(time, ID, int32) values(1, 'd1', 1)
+Elapsed Time: 0.0.15
+-- [1]60:insert into t1(time, ID, int32) values(1, 'd1', 1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.1.568
+Elapsed Time: 0.0.927
 
--- [1]44:select * from t1
+-- [1]61:select * from t1
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 -------------------------------------------------------
@@ -90,119 +110,195 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 总数目：1
 }
 
+Elapsed Time: 0.0.241
+-- [1]64:grant manage_user to role role01
+STRICT{
+PASS
+}
+-- [1]67:grant alter on any to role role02
+STRICT{
+PASS
+}
+-- [1]70:grant select on database test_db to role role03
+STRICT{
+PASS
+}
+-- [1]73:grant insert on table test_db.t1 to role role04
+STRICT{
+PASS
+}
+-- [1]76:grant insert on database db1 to role role05
+STRICT{
+PASS
+}
+-- [1]79:grant alter on table db1.t1 to role role06
+STRICT{
+PASS
+}
+-- [1]82:grant alter on table db1.t1 to role role06
+STRICT{
+PASS
+}
+
+-- [1]85:list privileges of role role01
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role01          |                 |MANAGE_USER           |false                     |
+总数目：1
+}
+
 Elapsed Time: 0.0.17
--- [1]47:grant manage_user to user user01
-STRICT{
-PASS
-}
--- [1]50:grant alter on any to user user02
-STRICT{
-PASS
-}
--- [1]53:grant select on database test_db to user user03
-STRICT{
-PASS
-}
--- [1]56:grant insert on table test_db.t1 to user user04
-STRICT{
-PASS
-}
--- [1]59:grant insert on database db1 to user user05
-STRICT{
-PASS
-}
--- [1]62:grant alter on table db1.t1 to user user06
-STRICT{
-PASS
-}
--- [1]65:grant alter on table db1.t1 to user user06
-STRICT{
-PASS
-}
--- [1]68:grant manage_role to user root
-STRICT{
-SQLSTATE : 803: Access Denied: Cannot grant/revoke privileges of admin user
-}
 
--- [1]72:list privileges of user user01
+-- [1]86:list privileges of role role02
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
-                |                 |MANAGE_USER           |false                     |
+role02          |*.*              |ALTER                 |false                     |
 总数目：1
 }
 
 Elapsed Time: 0.0.2
 
--- [1]73:list privileges of user user02
+-- [1]87:list privileges of role role03
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
-                |*.*              |ALTER                 |false                     |
+role03          |test_db.*        |SELECT                |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.8
+
+-- [1]88:list privileges of role role04
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role04          |test_db.t1       |INSERT                |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.4
+
+-- [1]89:list privileges of role role05
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role05          |db1.*            |INSERT                |false                     |
 总数目：1
 }
 
 Elapsed Time: 0.0.1
 
--- [1]74:list privileges of user user03
+-- [1]90:list privileges of role role06
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
-                |test_db.*        |SELECT                |false                     |
+role06          |db1.t1           |ALTER                 |false                     |
 总数目：1
 }
 
 Elapsed Time: 0.0.1
-
--- [1]75:list privileges of user user04
+-- [1]93:grant role role01 to user01
 STRICT{
-Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
----------------------------------------------------------------------------------
-                |test_db.t1       |INSERT                |false                     |
-总数目：1
+PASS
 }
-
-Elapsed Time: 0.0.1
-
--- [1]76:list privileges of user user05
+-- [1]94:grant role role02 to user02
 STRICT{
-Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
----------------------------------------------------------------------------------
-                |db1.*            |INSERT                |false                     |
-总数目：1
+PASS
 }
-
-Elapsed Time: 0.0.1
-
--- [1]77:list privileges of user user06
+-- [1]95:grant role role03 to user03
 STRICT{
-Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
----------------------------------------------------------------------------------
-                |db1.t1           |ALTER                 |false                     |
-总数目：1
+PASS
 }
-
-Elapsed Time: 0.0.1
-
--- [1]81:list privileges of user user01
+-- [1]96:grant role role04 to user04
 STRICT{
-Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
----------------------------------------------------------------------------------
-                |                 |MANAGE_USER           |false                     |
-总数目：1
+PASS
 }
-
-Elapsed Time: 0.0.2
--- [1]82:grant manage_user to user user07
+-- [1]97:grant role role05 to user05
 STRICT{
-SQLSTATE : 803: Access Denied: No permissions for this operation, please add grant option to privilege MANAGE_USER
+PASS
 }
--- [1]84:create user test_user 'pass1234'
+-- [1]98:grant role role06 to user06
 STRICT{
 PASS
 }
 
--- [1]85:list user
+-- [1]101:list privileges of user user01
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role01          |                 |MANAGE_USER           |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]102:list privileges of user user02
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role02          |*.*              |ALTER                 |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]103:list privileges of user user03
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role03          |test_db.*        |SELECT                |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]104:list privileges of user user04
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role04          |test_db.t1       |INSERT                |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]105:list privileges of user user05
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role05          |db1.*            |INSERT                |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]106:list privileges of user user06
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role06          |db1.t1           |ALTER                 |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]110:list privileges of user user01
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role01          |                 |MANAGE_USER           |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.3
+-- [1]111:create user test_user 'pass1234'
+STRICT{
+PASS
+}
+
+-- [1]112:list user
 STRICT{
 User(TEXT)      |
 ----------------
@@ -221,24 +317,22 @@ user04          |
 user05          |
 ----------------
 user06          |
-----------------
-user07          |
-总数目：9
+总数目：8
+}
+
+Elapsed Time: 0.0.3
+
+-- [1]116:list privileges of user user02
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role02          |*.*              |ALTER                 |false                     |
+总数目：1
 }
 
 Elapsed Time: 0.0.2
 
--- [1]89:list privileges of user user02
-STRICT{
-Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
----------------------------------------------------------------------------------
-                |*.*              |ALTER                 |false                     |
-总数目：1
-}
-
-Elapsed Time: 0.0.1
-
--- [1]90:show databases
+-- [1]117:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -248,13 +342,13 @@ test_db             |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
--- [1]91:use test_db
+Elapsed Time: 0.0.3
+-- [1]118:use test_db
 STRICT{
 PASS
 }
 
--- [1]92:show tables
+-- [1]119:show tables
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -262,9 +356,9 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
--- [1]93:desc t1
+-- [1]120:desc t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -277,12 +371,12 @@ int32                 |INT32               |FIELD               |
 }
 
 Elapsed Time: 0.0.2
--- [1]94:alter table t1 add column region ATTRIBUTE
+-- [1]121:alter table t1 add column region ATTRIBUTE
 STRICT{
 PASS
 }
 
--- [1]95:desc t1
+-- [1]122:desc t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -296,19 +390,19 @@ region                |STRING              |ATTRIBUTE           |
 总数目：4
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 
--- [1]99:list privileges of user user03
+-- [1]126:list privileges of user user03
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
-                |test_db.*        |SELECT                |false                     |
+role03          |test_db.*        |SELECT                |false                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
--- [1]100:show databases
+-- [1]127:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -318,13 +412,13 @@ test_db             |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
--- [1]101:use test_db
+Elapsed Time: 0.0.2
+-- [1]128:use test_db
 STRICT{
 PASS
 }
 
--- [1]102:show tables
+-- [1]129:show tables
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -334,7 +428,7 @@ t1                   |INF                |
 
 Elapsed Time: 0.0.1
 
--- [1]103:select * from t1
+-- [1]130:select * from t1
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |region(STRING)      |
 ---------------------------------------------------------------------------
@@ -343,19 +437,19 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |region(STRING)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.27
 
--- [1]107:list privileges of user user04
+-- [1]134:list privileges of user user04
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
-                |test_db.t1       |INSERT                |false                     |
+role04          |test_db.t1       |INSERT                |false                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
--- [1]108:show databases
+-- [1]135:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -365,13 +459,13 @@ test_db             |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
--- [1]109:use test_db
+Elapsed Time: 0.0.3
+-- [1]136:use test_db
 STRICT{
 PASS
 }
 
--- [1]110:show tables
+-- [1]137:show tables
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -379,33 +473,33 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
--- [1]111:insert into t1(time,id,region,int32) values(2,'d1','Beijing',2)
+Elapsed Time: 0.0.2
+-- [1]138:insert into t1(time,id,region,int32) values(2,'d1','Beijing',2)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.7
--- [1]115:create database db1
+Elapsed Time: 0.0.26
+-- [1]142:create database db1
 STRICT{
 PASS
 }
--- [1]116:create table db1.t1(ID TAG, boolean BOOLEAN)
+-- [1]143:create table db1.t1(ID TAG, boolean BOOLEAN)
 STRICT{
 PASS
 }
 
--- [1]120:list privileges of user user05
+-- [1]147:list privileges of user user05
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
-                |db1.*            |INSERT                |false                     |
+role05          |db1.*            |INSERT                |false                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 
--- [1]121:show databases
+-- [1]148:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -416,12 +510,12 @@ db1                 |INF                |1                                   |1 
 }
 
 Elapsed Time: 0.0.2
--- [1]122:use db1
+-- [1]149:use db1
 STRICT{
 PASS
 }
 
--- [1]123:show tables
+-- [1]150:show tables
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -431,7 +525,7 @@ t1                   |INF                |
 
 Elapsed Time: 0.0.1
 
--- [1]124:desc t1
+-- [1]151:desc t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -444,24 +538,24 @@ boolean               |BOOLEAN             |FIELD               |
 }
 
 Elapsed Time: 0.0.2
--- [1]125:insert into t1(time,id,boolean) values(1,'d1', false)
+-- [1]152:insert into t1(time,id,boolean) values(1,'d1', false)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.222
+Elapsed Time: 0.0.239
 
--- [1]129:list privileges of user user06
+-- [1]156:list privileges of user user06
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
-                |db1.t1           |ALTER                 |false                     |
+role06          |db1.t1           |ALTER                 |false                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 
--- [1]130:show databases
+-- [1]157:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -471,13 +565,13 @@ db1                 |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
--- [1]131:use db1
+Elapsed Time: 0.0.3
+-- [1]158:use db1
 STRICT{
 PASS
 }
 
--- [1]132:show tables
+-- [1]159:show tables
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -487,7 +581,7 @@ t1                   |INF                |
 
 Elapsed Time: 0.0.1
 
--- [1]133:desc t1
+-- [1]160:desc t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -500,12 +594,12 @@ boolean               |BOOLEAN             |FIELD               |
 }
 
 Elapsed Time: 0.0.1
--- [1]134:alter table t1 add column int32 INT32
+-- [1]161:alter table t1 add column int32 INT32
 STRICT{
 PASS
 }
 
--- [1]138:show databases
+-- [1]165:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -519,7 +613,7 @@ db1                 |INF                |1                                   |1 
 
 Elapsed Time: 0.0.2
 
--- [1]139:show tables from test_db
+-- [1]166:show tables from test_db
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -529,7 +623,7 @@ t1                   |INF                |
 
 Elapsed Time: 0.0.1
 
--- [1]140:show tables from db1
+-- [1]167:show tables from db1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -537,9 +631,9 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 
--- [1]141:desc test_db.t1
+-- [1]168:desc test_db.t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -555,7 +649,7 @@ region                |STRING              |ATTRIBUTE           |
 
 Elapsed Time: 0.0.1
 
--- [1]142:desc db1.t1
+-- [1]169:desc db1.t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -571,7 +665,7 @@ int32                 |INT32               |FIELD               |
 
 Elapsed Time: 0.0.1
 
--- [1]143:select * from test_db.t1
+-- [1]170:select * from test_db.t1
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |region(STRING)      |
 ---------------------------------------------------------------------------
@@ -585,7 +679,7 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |region(STRING)      |
 
 Elapsed Time: 0.0.18
 
--- [1]144:select * from db1.t1
+-- [1]171:select * from db1.t1
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |int32(INT32)      |
 -----------------------------------------------------------------------------
@@ -594,4 +688,4 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |int32(INT32)      
 总数目：1
 }
 
-Elapsed Time: 0.0.15
+Elapsed Time: 0.0.21
