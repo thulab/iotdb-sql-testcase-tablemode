@@ -70,7 +70,7 @@ create user testuser02_02 'pass1234';
 grant manage_user to user user03;
 <<SQLSTATE;
 
---6. 未有任何权限的角色user01，赋予用户user03后，执行相关权限操作
+--6. 未有任何权限的角色role01，赋予用户user03后，执行相关权限操作
 connect root/root;
 grant role role01 to user03;
 list user of role role01;
@@ -92,8 +92,8 @@ list role of user user04;
 connect user04/pass1234;
 list privileges of user user04;
 list role of user user04;
-grant manage_user to user testuser04;
 create user testuser04 'pass1234';
+grant manage_user to user testuser04;
 list user;
 
 connect testuser04/pass1234;

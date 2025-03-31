@@ -63,7 +63,7 @@ user05          |
 总数目：9
 }
 
-Elapsed Time: 0.0.46
+Elapsed Time: 0.0.43
 
 -- [1]48:list role
 STRICT{
@@ -83,7 +83,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.10
 -- [1]53:grant manage_user to user testuser01
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add grant option to privilege MANAGE_USER
@@ -101,7 +101,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 -- [1]63:grant manage_user to user testuser02
 STRICT{
 PASS
@@ -137,7 +137,7 @@ user03          |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 
 -- [1]77:list role of user user03
 STRICT{
@@ -147,7 +147,7 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]80:list role of user user03
 STRICT{
@@ -199,7 +199,7 @@ role02          |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
 -- [1]93:list privileges of user user04
 STRICT{
@@ -209,7 +209,7 @@ role02          |                 |MANAGE_USER           |true                  
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
 -- [1]94:list role of user user04
 STRICT{
@@ -219,13 +219,12 @@ role02          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
--- [1]95:grant manage_user to user testuser04
+Elapsed Time: 0.0.2
+-- [1]95:create user testuser04 'pass1234'
 STRICT{
-SQLSTATE : 804: No such user testuser04
-EXPECT:PASS
+PASS
 }
--- [1]96:create user testuser04 'pass1234'
+-- [1]96:grant manage_user to user testuser04
 STRICT{
 PASS
 }
@@ -263,20 +262,48 @@ Elapsed Time: 0.0.2
 -- [1]100:list privileges of user testuser04
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
-总数目：0
+---------------------------------------------------------------------------------
+                |                 |MANAGE_USER           |false                     |
+总数目：1
 }
 
 Elapsed Time: 0.0.2
 -- [1]101:create user testuser04_04 'pass1234'
 STRICT{
-SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege MANAGE_USER
-EXPECT:PASS
+PASS
 }
+
 -- [1]102:list user
 STRICT{
-SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege MANAGE_USER
-EXPECT:PASS
+User(TEXT)      |
+----------------
+root            |
+----------------
+testuser01      |
+----------------
+testuser02      |
+----------------
+testuser02_02   |
+----------------
+testuser03      |
+----------------
+testuser04      |
+----------------
+testuser04_04   |
+----------------
+user01          |
+----------------
+user02          |
+----------------
+user03          |
+----------------
+user04          |
+----------------
+user05          |
+总数目：12
 }
+
+Elapsed Time: 0.0.2
 -- [1]103:grant manage_user to user user05
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add grant option to privilege MANAGE_USER
