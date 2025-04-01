@@ -75,7 +75,7 @@ use db2;
 ALTER TABLE db1.t_1 ADD COLUMN new_mm2 string;
 use db1;
 desc t_1;
--- 4.2 drop
+-- 4.2 drop column
 alter table t_1 drop column new_id;
 <<SQLSTATE;
 alter table if exists t_1 drop column new_id;
@@ -108,9 +108,26 @@ desc t_1;
 use db2;
 alter table db1.t_1 drop column if exists new_mm2;
 desc db1.t_1;
-use db1;
+
+drop database if exists db100;
+create database db100;
+use db100;
+create table t2(s1 text field, s2 text field);
+insert into t2(time,s2) values(2,'t1');
+select s1,s2 from t2;
+alter table t2 drop column s2;
+flush;
+insert into t2(time,s1) values(3,'t2');
+insert into t2(time,s1) values(4,'t3');
+select s1 from t2;
+flush;
+insert into t2(time,s1) values(5,'t4');
+insert into t2(time,s1) values(6,'t5');
+select s1 from t2;
+drop database db100;
 
 -- 4.3 set
+use db1;
 ALTER TABLE t_1 set properties TTL=3600;
 show tables;
 
