@@ -120,7 +120,7 @@ select * from dba1.t1;
 // 18、删除数据
 delete from dba1.t1;
 <<SQLSTATE;
-drop table dab1.t1;
+drop table dba1.t1;
 <<SQLSTATE;
 connect root/root;
 select * from dba1.t1;

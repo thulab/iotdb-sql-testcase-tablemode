@@ -21,7 +21,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]21:create user u001 'pass1234'
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege MANAGE_USER
@@ -43,7 +43,7 @@ user_2          |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]29:alter user user_2 set password '1234'
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege MANAGE_USER
@@ -81,7 +81,7 @@ Role(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]51:list role
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege MANAGE_ROLE
@@ -119,7 +119,7 @@ Version(TEXT)      |BuildInfo(TEXT)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]73:create database dba2
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege CREATE ON DB:dba2
@@ -155,7 +155,7 @@ TableName(TEXT)      |TTL(ms)(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]87:drop database dba2
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DROP ON DB:dba2
@@ -179,7 +179,7 @@ dba1                |INF                |3                                   |2 
 总数目：2
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]98:create table dba1.t1(ID TAG, int32 INT32 FIELD)
 STRICT{
 PASS
@@ -207,7 +207,7 @@ int32                 |INT32               |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]102:alter table dba1.t1 add column boolean BOOLEAN
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege ALTER ON dba1.t1
@@ -243,7 +243,7 @@ int32                 |INT32               |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]113:insert into dba1.t1 values(1000,'d1',1)
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege INSERT ON dba1.t1
@@ -253,7 +253,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.998
+Elapsed Time: 0.0.334
 
 -- [1]117:select * from dba1.t1
 STRICT{
@@ -288,9 +288,9 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, please add pri
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON dba1.t1
 }
--- [1]130:drop table dab1.t1
+-- [1]130:drop table dba1.t1
 STRICT{
-SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DROP ON dab1.t1
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DROP ON dba1.t1
 }
 
 -- [1]133:select * from dba1.t1
@@ -302,4 +302,4 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.19
+Elapsed Time: 0.0.15
