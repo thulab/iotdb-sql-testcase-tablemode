@@ -12,7 +12,7 @@ drop database dba1;
 drop database dba2;
 <<NULL;
 
---1.普通用户仅授予MANAGE_USER权限的鉴权操作
+--1.普通用户授予MANAGE_USER和MANAGE_ROLE权限的鉴权操作
 // 1、创建用户
 create user user_1 'pass1234';
 list user;
