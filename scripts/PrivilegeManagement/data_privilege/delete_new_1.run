@@ -1,0 +1,107 @@
+// DELETE : 删除权限
+// 范围： 数据库
+// 允许用户删除该数据库范围内的数据
+
+
+--0. 准备环境
+connect root/root;
+
+
+-- 1. 范围：any，授权：用户
+connect root/root;
+drop database if exists db1;
+create database db1;
+create table db1.t1(id tag, s1 int32);
+insert into db1.t1(time,id,s1) values(1,'a',1),(2,'a',2),(3,'a',3),(4,'a',4),(5,'a',5),(6,'a',6),(7,'a',7),(8,'a',8),(9,'a',9);
+select time,s1 from db1.t1;
+
+create user user01 'pass1234';
+
+connect user01/pass1234;
+list privileges of user user01;
+delete from db1.t1 where time=1;
+<<SQLSTATE;
+delete from db1.t1;
+<<SQLSTATE;
+
+connect root/root;
+grant delete on ANY to user user01;
+
+connect user01/pass1234;
+list privileges of user user01;
+delete from db1.t1 where time=1;
+delete from db1.t1;
+
+connect root/root;
+select time,s1 from db1.t1;
+insert into db1.t1(time,id,s1) values(1,'a',1),(2,'a',2),(3,'a',3),(4,'a',4),(5,'a',5),(6,'a',6),(7,'a',7),(8,'a',8),(9,'a',9);
+revoke delete on any from user user01;
+
+connect user01/pass1234;
+list privileges of user user01;
+delete from db1.t1 where time=1;
+<<SQLSTATE;
+delete from db1.t1;
+<<SQLSTATE;
+
+connect root/root;
+select time,s1 from db1.t1;
+drop user user01;
+
+-- 2. 范围：any，授权：角色
+connect root/root;
+drop database if exists db1;
+create database db1;
+create table db1.t1(id tag, s1 int32);
+insert into db1.t1(time,id,s1) values(1,'a',1),(2,'a',2),(3,'a',3),(4,'a',4),(5,'a',5),(6,'a',6),(7,'a',7),(8,'a',8),(9,'a',9);
+select time,s1 from db1.t1;
+
+create user user01 'pass1234';
+create role role01;
+
+grant role role01 to user01;
+list user of role role01;
+
+connect user01/pass1234;
+list privileges of user user01;
+list role of user user01;
+delete from db1.t1 where time=1;
+<<SQLSTATE;
+delete from db1.t1;
+<<SQLSTATE;
+
+connect root/root;
+grant delete on ANY to role role01;
+
+connect user01/pass1234;
+list privileges of user user01;
+delete from db1.t1 where time=2;
+delete from db1.t1;
+
+connect root/root;
+select time,s1 from db1.t1;
+insert into db1.t1(time,id,s1) values(1,'a',1),(2,'a',2),(3,'a',3),(4,'a',4),(5,'a',5),(6,'a',6),(7,'a',7),(8,'a',8),(9,'a',9);
+revoke delete on any from role role01;
+
+connect user01/pass1234;
+list privileges of user user01;
+delete from db1.t1 where time=1;
+<<SQLSTATE;
+delete from db1.t1;
+<<SQLSTATE;
+
+connect root/root;
+select time,s1 from db1.t1;
+drop user user01;
+drop role role01;
+
+
+
+
+
+
+
+-- -1. end
+drop database if exists db1;
+
+
