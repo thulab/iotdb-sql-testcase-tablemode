@@ -27,7 +27,7 @@ user02          |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]28:list role
 STRICT{
@@ -37,7 +37,7 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 
 -- [1]29:list user of role role01
 STRICT{
@@ -47,7 +47,7 @@ user02          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]30:list role of user user02
 STRICT{
@@ -107,7 +107,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.1.606
+Elapsed Time: 0.1.450
 
 -- [1]38:select * from db1.t1
 STRICT{
@@ -118,13 +118,33 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.20
--- [1]40:create database db2
+Elapsed Time: 0.0.16
+
+-- [1]39:show devices from db1.t1
+STRICT{
+id(STRING)      |
+----------------
+d1              |
+总数目：1
+}
+
+Elapsed Time: 0.0.5
+
+-- [1]40:count devices from db1.t1
+STRICT{
+count(devices)(INT64)      |
+---------------------------
+1                          |
+总数目：1
+}
+
+Elapsed Time: 0.0.5
+-- [1]42:create database db2
 STRICT{
 PASS
 }
 
--- [1]41:show databases
+-- [1]43:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -136,13 +156,13 @@ db1                 |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.2
--- [1]42:create table db2.t1(ID TAG, status BOOLEAN)
+Elapsed Time: 0.0.1
+-- [1]44:create table db2.t1(ID TAG, status BOOLEAN)
 STRICT{
 PASS
 }
 
--- [1]43:show tables from db2
+-- [1]45:show tables from db2
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -152,7 +172,7 @@ t1                   |INF                |
 
 Elapsed Time: 0.0.2
 
--- [1]44:desc db2.t1
+-- [1]46:desc db2.t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -165,14 +185,14 @@ status                |BOOLEAN             |FIELD               |
 }
 
 Elapsed Time: 0.0.1
--- [1]45:insert into db2.t1(time, ID, status) values(1, 'd1', true)
+-- [1]47:insert into db2.t1(time, ID, status) values(1, 'd1', true)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.265
+Elapsed Time: 0.0.276
 
--- [1]46:select * from db2.t1
+-- [1]48:select * from db2.t1
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
@@ -183,23 +203,51 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 
 Elapsed Time: 0.0.17
 
--- [1]50:list privileges of user user01
+-- [1]49:show devices from db2.t1
+STRICT{
+id(STRING)      |
+----------------
+d1              |
+总数目：1
+}
+
+Elapsed Time: 0.0.3
+
+-- [1]50:count devices from db2.t1
+STRICT{
+count(devices)(INT64)      |
+---------------------------
+1                          |
+总数目：1
+}
+
+Elapsed Time: 0.0.4
+
+-- [1]54:list privileges of user user01
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
--- [1]51:select * from db1.t1
+Elapsed Time: 0.0.2
+-- [1]55:select * from db1.t1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
 }
--- [1]56:grant select on table db1.t1 to user user01
+-- [1]57:show devices from db1.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
+}
+-- [1]59:count devices from db1.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
+}
+-- [1]64:grant select on table db1.t1 to user user01
 STRICT{
 PASS
 }
 
--- [1]60:list privileges of user user01
+-- [1]68:list privileges of user user01
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
@@ -209,7 +257,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 
 Elapsed Time: 0.0.2
 
--- [1]61:show databases
+-- [1]69:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -219,9 +267,9 @@ db1                 |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.2
 
--- [1]62:show tables from db1
+-- [1]70:show tables from db1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -229,9 +277,9 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
--- [1]63:desc db1.t1
+-- [1]71:desc db1.t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -243,9 +291,9 @@ status                |BOOLEAN             |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
--- [1]64:select * from db1.t1
+-- [1]72:select * from db1.t1
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
@@ -254,21 +302,41 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.15
--- [1]65:select * from db2.t1
+Elapsed Time: 0.0.13
+
+-- [1]73:show devices from db1.t1
+STRICT{
+id(STRING)      |
+----------------
+d1              |
+总数目：1
+}
+
+Elapsed Time: 0.0.3
+
+-- [1]74:count devices from db1.t1
+STRICT{
+count(devices)(INT64)      |
+---------------------------
+1                          |
+总数目：1
+}
+
+Elapsed Time: 0.0.3
+-- [1]75:select * from db2.t1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
 }
 
--- [1]70:list privileges of user user02
+-- [1]80:list privileges of user user02
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
--- [1]71:list role of user user02
+-- [1]81:list role of user user02
 STRICT{
 Role(TEXT)      |
 ----------------
@@ -277,16 +345,24 @@ role01          |
 }
 
 Elapsed Time: 0.0.1
--- [1]72:select * from db1.t1
+-- [1]82:select * from db2.t1
 STRICT{
-SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
 }
--- [1]77:grant select on table db2.t1 to role role01
+-- [1]84:show devices from db2.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
+}
+-- [1]86:count devices from db2.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
+}
+-- [1]91:grant select on table db2.t1 to role role01
 STRICT{
 PASS
 }
 
--- [1]81:list privileges of user user02
+-- [1]95:list privileges of user user02
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
@@ -294,9 +370,9 @@ role01          |db2.t1           |SELECT                |false                 
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
--- [1]82:list role of user user02
+-- [1]96:list role of user user02
 STRICT{
 Role(TEXT)      |
 ----------------
@@ -304,9 +380,9 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 
--- [1]83:show databases
+-- [1]97:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -318,7 +394,7 @@ db2                 |INF                |1                                   |1 
 
 Elapsed Time: 0.0.2
 
--- [1]84:show tables from db2
+-- [1]98:show tables from db2
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -328,7 +404,7 @@ t1                   |INF                |
 
 Elapsed Time: 0.0.2
 
--- [1]85:desc db2.t1
+-- [1]99:desc db2.t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -341,7 +417,38 @@ status                |BOOLEAN             |FIELD               |
 }
 
 Elapsed Time: 0.0.2
--- [1]86:select * from db2.t1 select * from db1.t1
+
+-- [1]100:select * from db2.t1
 STRICT{
-SQLSTATE : 700: line 1:22: mismatched input 'select'. Expecting: ',', '.', 'AS', 'CROSS', 'EXCEPT', 'FILL', 'FULL', 'GROUP', 'HAVING', 'INNER', 'INTERSECT', 'JOIN', 'LEFT', 'LIMIT', 'NATURAL', 'OFFSET', 'ORDER', 'RIGHT', 'UNION', 'WHERE', <EOF>, <identifier>
+time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
+----------------------------------------------------------
+1970-01-01T08:00:00.0|d1              |true                 |
+01+08:00             |                |                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.11
+
+-- [1]101:show devices from db2.t1
+STRICT{
+id(STRING)      |
+----------------
+d1              |
+总数目：1
+}
+
+Elapsed Time: 0.0.3
+
+-- [1]102:count devices from db2.t1
+STRICT{
+count(devices)(INT64)      |
+---------------------------
+1                          |
+总数目：1
+}
+
+Elapsed Time: 0.0.4
+-- [1]103:select * from db1.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
 }

@@ -47,7 +47,7 @@ user04          |
 总数目：5
 }
 
-Elapsed Time: 0.0.43
+Elapsed Time: 0.0.42
 
 -- [1]38:list role
 STRICT{
@@ -89,7 +89,7 @@ user04          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]42:list role of user user04
 STRICT{
@@ -99,7 +99,7 @@ role02          |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]44:create database db1
 STRICT{
 PASS
@@ -115,7 +115,7 @@ db1                 |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.17
 -- [1]46:create table db1.t1(ID TAG, status BOOLEAN)
 STRICT{
 PASS
@@ -143,13 +143,13 @@ status                |BOOLEAN             |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.16
 -- [1]49:insert into db1.t1(time, ID, status) values(1, 'd1', false)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.854
+Elapsed Time: 0.0.794
 
 -- [1]50:select * from db1.t1
 STRICT{
@@ -160,13 +160,33 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.256
--- [1]52:create database db2
+Elapsed Time: 0.0.261
+
+-- [1]51:show devices from db1.t1
+STRICT{
+id(STRING)      |
+----------------
+d1              |
+总数目：1
+}
+
+Elapsed Time: 0.0.8
+
+-- [1]52:count devices from db1.t1
+STRICT{
+count(devices)(INT64)      |
+---------------------------
+1                          |
+总数目：1
+}
+
+Elapsed Time: 0.0.9
+-- [1]54:create database db2
 STRICT{
 PASS
 }
 
--- [1]53:show databases
+-- [1]55:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -178,13 +198,13 @@ db1                 |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.3
--- [1]54:create table db2.t1(ID TAG, status BOOLEAN)
+Elapsed Time: 0.0.2
+-- [1]56:create table db2.t1(ID TAG, status BOOLEAN)
 STRICT{
 PASS
 }
 
--- [1]55:show tables from db2
+-- [1]57:show tables from db2
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -194,7 +214,7 @@ t1                   |INF                |
 
 Elapsed Time: 0.0.2
 
--- [1]56:desc db2.t1
+-- [1]58:desc db2.t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -207,14 +227,14 @@ status                |BOOLEAN             |FIELD               |
 }
 
 Elapsed Time: 0.0.2
--- [1]57:insert into db2.t1(time, ID, status) values(1, 'd1', true)
+-- [1]59:insert into db2.t1(time, ID, status) values(1, 'd1', true)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.208
+Elapsed Time: 0.0.259
 
--- [1]58:select * from db2.t1
+-- [1]60:select * from db2.t1
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
@@ -223,25 +243,53 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.25
+Elapsed Time: 0.0.23
 
--- [1]62:list privileges of user user01
+-- [1]61:show devices from db2.t1
+STRICT{
+id(STRING)      |
+----------------
+d1              |
+总数目：1
+}
+
+Elapsed Time: 0.0.9
+
+-- [1]62:count devices from db2.t1
+STRICT{
+count(devices)(INT64)      |
+---------------------------
+1                          |
+总数目：1
+}
+
+Elapsed Time: 0.0.5
+
+-- [1]66:list privileges of user user01
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.5
--- [1]63:select * from db1.t1
+Elapsed Time: 0.0.4
+-- [1]67:select * from db1.t1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
 }
--- [1]68:grant select on database db1 to user user01
+-- [1]69:show devices from db1.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
+}
+-- [1]71:count devices from db1.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
+}
+-- [1]76:grant select on database db1 to user user01
 STRICT{
 PASS
 }
 
--- [1]72:list privileges of user user01
+-- [1]80:list privileges of user user01
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
@@ -251,7 +299,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 
 Elapsed Time: 0.0.2
 
--- [1]73:show databases
+-- [1]81:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -261,9 +309,9 @@ db1                 |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
--- [1]74:show tables from db1
+-- [1]82:show tables from db1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -271,9 +319,9 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 
--- [1]75:desc db1.t1
+-- [1]83:desc db1.t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -287,7 +335,7 @@ status                |BOOLEAN             |FIELD               |
 
 Elapsed Time: 0.0.2
 
--- [1]76:select * from db1.t1
+-- [1]84:select * from db1.t1
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
@@ -296,21 +344,41 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.22
--- [1]77:select * from db2.t1
+Elapsed Time: 0.0.18
+
+-- [1]85:show devices from db1.t1
+STRICT{
+id(STRING)      |
+----------------
+d1              |
+总数目：1
+}
+
+Elapsed Time: 0.0.4
+
+-- [1]86:count devices from db1.t1
+STRICT{
+count(devices)(INT64)      |
+---------------------------
+1                          |
+总数目：1
+}
+
+Elapsed Time: 0.0.5
+-- [1]87:select * from db2.t1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
 }
 
--- [1]82:list privileges of user user02
+-- [1]92:list privileges of user user02
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 
--- [1]83:list role of user user02
+-- [1]93:list role of user user02
 STRICT{
 Role(TEXT)      |
 ----------------
@@ -318,27 +386,35 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
--- [1]84:select * from db1.t1
+Elapsed Time: 0.0.1
+-- [1]94:select * from db2.t1
 STRICT{
-SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
 }
--- [1]89:grant select on database db1 to role role01
+-- [1]96:show devices from db2.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
+}
+-- [1]98:count devices from db2.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
+}
+-- [1]103:grant select on database db2 to role role01
 STRICT{
 PASS
 }
 
--- [1]93:list privileges of user user02
+-- [1]107:list privileges of user user02
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 ---------------------------------------------------------------------------------
-role01          |db1.*            |SELECT                |false                     |
+role01          |db2.*            |SELECT                |false                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 
--- [1]94:list role of user user02
+-- [1]108:list role of user user02
 STRICT{
 Role(TEXT)      |
 ----------------
@@ -348,19 +424,19 @@ role01          |
 
 Elapsed Time: 0.0.2
 
--- [1]95:show databases
+-- [1]109:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 information_schema  |INF                |null                                |null                              |null                              |
 -----------------------------------------------------------------------------------------------------------------------------------------------
-db1                 |INF                |1                                   |1                                 |604800000                         |
+db2                 |INF                |1                                   |1                                 |604800000                         |
 总数目：2
 }
 
 Elapsed Time: 0.0.3
 
--- [1]96:show tables from db1
+-- [1]110:show tables from db2
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -368,9 +444,9 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
--- [1]97:desc db1.t1
+-- [1]111:desc db2.t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -382,24 +458,44 @@ status                |BOOLEAN             |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
--- [1]98:select * from db1.t1
+-- [1]112:select * from db2.t1
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
-1970-01-01T08:00:00.0|d1              |false                |
+1970-01-01T08:00:00.0|d1              |true                 |
 01+08:00             |                |                     |
 总数目：1
 }
 
-Elapsed Time: 0.0.15
--- [1]99:select * from db2.t1
+Elapsed Time: 0.0.17
+
+-- [1]113:show devices from db2.t1
 STRICT{
-SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
+id(STRING)      |
+----------------
+d1              |
+总数目：1
 }
 
--- [1]104:list privileges of user user03
+Elapsed Time: 0.0.4
+
+-- [1]114:count devices from db2.t1
+STRICT{
+count(devices)(INT64)      |
+---------------------------
+1                          |
+总数目：1
+}
+
+Elapsed Time: 0.0.5
+-- [1]115:select * from db1.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
+}
+
+-- [1]120:list privileges of user user03
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 总数目：0
@@ -407,7 +503,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 
 Elapsed Time: 0.0.2
 
--- [1]105:show databases
+-- [1]121:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -417,7 +513,7 @@ information_schema  |INF                |null                                |nu
 
 Elapsed Time: 0.0.2
 
--- [1]106:show tables from information_schema
+-- [1]122:show tables from information_schema
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -441,57 +537,93 @@ pipes                |INF                |
 总数目：9
 }
 
-Elapsed Time: 0.0.4
--- [1]107:select * from information_schema.databases
+Elapsed Time: 0.0.6
+-- [1]123:select * from information_schema.databases
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]109:select * from information_schema.tables
+-- [1]125:show devices from information_schema.databases
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]111:select * from information_schema.pipe_plugins
+-- [1]127:select * from information_schema.tables
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]113:select * from information_schema.subscriptions
+-- [1]129:show devices from information_schema.tables
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]115:select * from information_schema.regions
+-- [1]131:select * from information_schema.pipe_plugins
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]117:select * from information_schema.columns
+-- [1]133:show devices from information_schema.pipe_plugins
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]119:select * from information_schema.topics
+-- [1]135:select * from information_schema.subscriptions
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]121:select * from information_schema.queries
+-- [1]137:show devices from information_schema.subscriptions
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]123:select * from information_schema.pipes
+-- [1]139:select * from information_schema.regions
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]128:grant select on database information_schema to user user03
+-- [1]141:show devices from information_schema.regions
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]143:select * from information_schema.columns
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]145:show devices from information_schema.columns
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]147:select * from information_schema.topics
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]149:show devices from information_schema.topics
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]151:select * from information_schema.queries
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]153:show devices from information_schema.queries
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]155:select * from information_schema.pipes
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]157:show devices from information_schema.pipes
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]162:grant select on database information_schema to user user03
 STRICT{
 SQLSTATE : 701: Cannot grant or revoke any privileges to information_schema
 }
 
--- [1]133:list privileges of user user04
+-- [1]167:list privileges of user user04
 STRICT{
 Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.1
 
--- [1]134:list role of user user04
+-- [1]168:list role of user user04
 STRICT{
 Role(TEXT)      |
 ----------------
@@ -499,9 +631,9 @@ role02          |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
--- [1]135:show databases
+-- [1]169:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -511,7 +643,7 @@ information_schema  |INF                |null                                |nu
 
 Elapsed Time: 0.0.2
 
--- [1]136:show tables from information_schema
+-- [1]170:show tables from information_schema
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -536,43 +668,79 @@ pipes                |INF                |
 }
 
 Elapsed Time: 0.0.1
--- [1]137:select * from information_schema.databases
+-- [1]171:select * from information_schema.databases
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]139:select * from information_schema.tables
+-- [1]173:show devices from information_schema.databases
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]141:select * from information_schema.pipe_plugins
+-- [1]175:select * from information_schema.tables
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]143:select * from information_schema.subscriptions
+-- [1]177:show devices from information_schema.tables
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]145:select * from information_schema.regions
+-- [1]179:select * from information_schema.pipe_plugins
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]147:select * from information_schema.columns
+-- [1]181:show devices from information_schema.pipe_plugins
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]149:select * from information_schema.topics
+-- [1]183:select * from information_schema.subscriptions
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]151:select * from information_schema.queries
+-- [1]185:show devices from information_schema.subscriptions
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]153:select * from information_schema.pipes
+-- [1]187:select * from information_schema.regions
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]158:grant select on database information_schema to role role02
+-- [1]189:show devices from information_schema.regions
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]191:select * from information_schema.columns
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]193:show devices from information_schema.columns
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]195:select * from information_schema.topics
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]197:show devices from information_schema.topics
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]199:select * from information_schema.queries
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]201:show devices from information_schema.queries
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]203:select * from information_schema.pipes
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]205:show devices from information_schema.pipes
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+}
+-- [1]210:grant select on database information_schema to role role02
 STRICT{
 SQLSTATE : 701: Cannot grant or revoke any privileges to information_schema
 }
