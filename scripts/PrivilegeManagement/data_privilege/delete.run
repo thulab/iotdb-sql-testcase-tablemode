@@ -283,7 +283,7 @@ select time,s1 from db1.t1;
 drop user user01;
 
 
--- 3-2. 范围：table，授权：用户
+-- 3-2. 范围：table，授权：角色
 connect root/root;
 drop database if exists db1;
 drop database if exists db2;
