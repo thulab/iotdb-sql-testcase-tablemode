@@ -1,6 +1,6 @@
 // DELETE : 删除权限
-// 范围： 数据库
-// 允许用户删除该数据库范围内的数据
+// 范围： ANY/数据库/table
+// 允许用户删除指定范围数据的权限
 
 
 --0. 准备环境
@@ -86,6 +86,7 @@ grant delete on ANY to role role01;
 
 connect user01/pass1234;
 list privileges of user user01;
+list role of user user01;
 delete from db1.t1 where time=2;
 delete from db1.t1;
 
@@ -96,6 +97,7 @@ revoke delete on any from role role01;
 
 connect user01/pass1234;
 list privileges of user user01;
+list role of user user01;
 delete from db1.t1 where time=1;
 <<SQLSTATE;
 delete from db1.t1;
@@ -196,6 +198,7 @@ grant delete on database db1 to role role01;
 
 connect user01/pass1234;
 list privileges of user user01;
+list role of user user01;
 delete from db1.t1 where time=2;
 delete from db1.t1;
 delete from db2.t1 where time=1;
@@ -210,6 +213,7 @@ revoke delete on database db1 from role role01;
 
 connect user01/pass1234;
 list privileges of user user01;
+list role of user user01;
 delete from db1.t1 where time=1;
 <<SQLSTATE;
 delete from db1.t1;
@@ -311,6 +315,7 @@ grant delete on table t2 to role role01;
 
 connect user01/pass1234;
 list privileges of user user01;
+list role of user user01;
 delete from db1.t1 where time=1;
 delete from db1.t1;
 delete from db1.t2 where time=1;
@@ -330,6 +335,7 @@ revoke delete on table t1 from role role01;
 
 connect user01/pass1234;
 list privileges of user user01;
+list role of user user01;
 delete from db1.t1 where time=1;
 <<SQLSTATE;
 delete from db1.t1;
