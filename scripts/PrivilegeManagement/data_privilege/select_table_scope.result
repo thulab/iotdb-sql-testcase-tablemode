@@ -1,0 +1,347 @@
+-- [1]21:create user user01 'pass1234'
+STRICT{
+PASS
+}
+-- [1]22:create user user02 'pass1234'
+STRICT{
+PASS
+}
+-- [1]24:create role role01
+STRICT{
+PASS
+}
+-- [1]25:grant role role01 to user02
+STRICT{
+PASS
+}
+
+-- [1]27:list user
+STRICT{
+User(TEXT)      |
+----------------
+root            |
+----------------
+user01          |
+----------------
+user02          |
+总数目：3
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]28:list role
+STRICT{
+Role(TEXT)      |
+----------------
+role01          |
+总数目：1
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]29:list user of role role01
+STRICT{
+User(TEXT)      |
+----------------
+user02          |
+总数目：1
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]30:list role of user user02
+STRICT{
+Role(TEXT)      |
+----------------
+role01          |
+总数目：1
+}
+
+Elapsed Time: 0.0.1
+-- [1]32:create database db1
+STRICT{
+PASS
+}
+
+-- [1]33:show databases
+STRICT{
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+information_schema  |INF                |null                                |null                              |null                              |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+db1                 |INF                |1                                   |1                                 |604800000                         |
+总数目：2
+}
+
+Elapsed Time: 0.0.2
+-- [1]34:create table db1.t1(ID TAG, status BOOLEAN)
+STRICT{
+PASS
+}
+
+-- [1]35:show tables from db1
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t1                   |INF                |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]36:desc db1.t1
+STRICT{
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+id                    |STRING              |TAG                 |
+--------------------------------------------------------------
+status                |BOOLEAN             |FIELD               |
+总数目：3
+}
+
+Elapsed Time: 0.0.2
+-- [1]37:insert into db1.t1(time, ID, status) values(1, 'd1', false)
+STRICT{
+0
+}
+
+Elapsed Time: 0.1.606
+
+-- [1]38:select * from db1.t1
+STRICT{
+time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
+----------------------------------------------------------
+1970-01-01T08:00:00.0|d1              |false                |
+01+08:00             |                |                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.20
+-- [1]40:create database db2
+STRICT{
+PASS
+}
+
+-- [1]41:show databases
+STRICT{
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+information_schema  |INF                |null                                |null                              |null                              |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+db2                 |INF                |1                                   |1                                 |604800000                         |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+db1                 |INF                |1                                   |1                                 |604800000                         |
+总数目：3
+}
+
+Elapsed Time: 0.0.2
+-- [1]42:create table db2.t1(ID TAG, status BOOLEAN)
+STRICT{
+PASS
+}
+
+-- [1]43:show tables from db2
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t1                   |INF                |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]44:desc db2.t1
+STRICT{
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+id                    |STRING              |TAG                 |
+--------------------------------------------------------------
+status                |BOOLEAN             |FIELD               |
+总数目：3
+}
+
+Elapsed Time: 0.0.1
+-- [1]45:insert into db2.t1(time, ID, status) values(1, 'd1', true)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.265
+
+-- [1]46:select * from db2.t1
+STRICT{
+time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
+----------------------------------------------------------
+1970-01-01T08:00:00.0|d1              |true                 |
+01+08:00             |                |                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.17
+
+-- [1]50:list privileges of user user01
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+总数目：0
+}
+
+Elapsed Time: 0.0.1
+-- [1]51:select * from db1.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
+}
+-- [1]56:grant select on table db1.t1 to user user01
+STRICT{
+PASS
+}
+
+-- [1]60:list privileges of user user01
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+                |db1.t1           |SELECT                |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]61:show databases
+STRICT{
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+information_schema  |INF                |null                                |null                              |null                              |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+db1                 |INF                |1                                   |1                                 |604800000                         |
+总数目：2
+}
+
+Elapsed Time: 0.0.4
+
+-- [1]62:show tables from db1
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t1                   |INF                |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]63:desc db1.t1
+STRICT{
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+id                    |STRING              |TAG                 |
+--------------------------------------------------------------
+status                |BOOLEAN             |FIELD               |
+总数目：3
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]64:select * from db1.t1
+STRICT{
+time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
+----------------------------------------------------------
+1970-01-01T08:00:00.0|d1              |false                |
+01+08:00             |                |                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.15
+-- [1]65:select * from db2.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
+}
+
+-- [1]70:list privileges of user user02
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+总数目：0
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]71:list role of user user02
+STRICT{
+Role(TEXT)      |
+----------------
+role01          |
+总数目：1
+}
+
+Elapsed Time: 0.0.1
+-- [1]72:select * from db1.t1
+STRICT{
+SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
+}
+-- [1]77:grant select on table db2.t1 to role role01
+STRICT{
+PASS
+}
+
+-- [1]81:list privileges of user user02
+STRICT{
+Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)      |
+---------------------------------------------------------------------------------
+role01          |db2.t1           |SELECT                |false                     |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]82:list role of user user02
+STRICT{
+Role(TEXT)      |
+----------------
+role01          |
+总数目：1
+}
+
+Elapsed Time: 0.0.1
+
+-- [1]83:show databases
+STRICT{
+Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+information_schema  |INF                |null                                |null                              |null                              |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+db2                 |INF                |1                                   |1                                 |604800000                         |
+总数目：2
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]84:show tables from db2
+STRICT{
+TableName(TEXT)      |TTL(ms)(TEXT)      |
+----------------------------------------
+t1                   |INF                |
+总数目：1
+}
+
+Elapsed Time: 0.0.2
+
+-- [1]85:desc db2.t1
+STRICT{
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+id                    |STRING              |TAG                 |
+--------------------------------------------------------------
+status                |BOOLEAN             |FIELD               |
+总数目：3
+}
+
+Elapsed Time: 0.0.2
+-- [1]86:select * from db2.t1 select * from db1.t1
+STRICT{
+SQLSTATE : 700: line 1:22: mismatched input 'select'. Expecting: ',', '.', 'AS', 'CROSS', 'EXCEPT', 'FILL', 'FULL', 'GROUP', 'HAVING', 'INNER', 'INTERSECT', 'JOIN', 'LEFT', 'LIMIT', 'NATURAL', 'OFFSET', 'ORDER', 'RIGHT', 'UNION', 'WHERE', <EOF>, <identifier>
+}
