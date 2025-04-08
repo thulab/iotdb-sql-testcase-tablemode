@@ -220,7 +220,7 @@ from
 --9. 特殊情况
 --9.1 where 过滤条件仅保留predicate为True的行
 --含有NULL，共计6个结果
-select customer_id from customers;
+select customer_id from customers order by customer_id;
 --IN查询之后，共计5个
 select customer_id from customers 
 	where customer_id

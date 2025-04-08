@@ -24,7 +24,7 @@ drop database if exists db1;
 create database db1;
 create table db1.t1(id tag, s1 int32);
 insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9);
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 
 create user user01 'pass1234';
 
@@ -45,7 +45,7 @@ list privileges of user user01;
 delete from db1.t1 where time=1;
 delete devices from db1.t1 where id='i';
 connect root/root;
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 connect user01/pass1234;
 delete from db1.t1;
 
@@ -64,7 +64,7 @@ delete from db1.t1;
 <<SQLSTATE;
 
 connect root/root;
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 drop user user01;
 
 -- 1-2. 范围：any，授权：角色
@@ -73,7 +73,7 @@ drop database if exists db1;
 create database db1;
 create table db1.t1(id tag, s1 int32);
 insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9);
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 
 create user user01 'pass1234';
 create role role01;
@@ -100,7 +100,7 @@ list role of user user01;
 delete from db1.t1 where time=2;
 delete devices from db1.t1 where id='i';
 connect root/root;
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 connect user01/pass1234;
 delete from db1.t1;
 
@@ -120,7 +120,7 @@ delete from db1.t1;
 <<SQLSTATE;
 
 connect root/root;
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 drop user user01;
 drop role role01;
 
@@ -135,8 +135,8 @@ insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,
 create database db2;
 create table db2.t1(id tag, s1 int32);
 insert into db2.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9);
-select time,s1 from db1.t1;
-select time,s1 from db2.t1;
+select time,s1 from db1.t1 order by time;
+select time,s1 from db2.t1 order by time;
 
 create user user01 'pass1234';
 
@@ -163,7 +163,7 @@ list privileges of user user01;
 delete from db1.t1 where time=1;
 delete devices from db1.t1 where id='i';
 connect root/root;
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 connect user01/pass1234;
 delete from db1.t1;
 delete from db2.t1 where time=1;
@@ -193,7 +193,7 @@ delete from db2.t1;
 <<SQLSTATE;
 
 connect root/root;
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 drop user user01;
 
 -- 2-2. 范围：db，授权：角色
@@ -206,8 +206,8 @@ insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,
 create database db2;
 create table db2.t1(id tag, s1 int32);
 insert into db2.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9);
-select time,s1 from db1.t1;
-select time,s1 from db2.t1;
+select time,s1 from db1.t1 order by time;
+select time,s1 from db2.t1 order by time;
 
 create user user01 'pass1234';
 create role role01;
@@ -240,7 +240,7 @@ list role of user user01;
 delete from db1.t1 where time=1;
 delete devices from db1.t1 where id='i';
 connect root/root;
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 connect user01/pass1234;
 delete from db1.t1;
 delete from db2.t1 where time=1;
@@ -272,7 +272,7 @@ delete from db2.t1;
 <<SQLSTATE;
 
 connect root/root;
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 drop user user01;
 drop role role01;
 
@@ -358,8 +358,8 @@ create table db1.t1(id tag, s1 int32);
 insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9);
 create table db1.t2(id tag, s1 int32);
 insert into db1.t2(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9);
-select time,s1 from db1.t1;
-select time,s1 from db1.t2;
+select time,s1 from db1.t1 order by time;
+select time,s1 from db1.t2 order by time;
 create database db2;
 create table db2.t1(id tag, s1 int32);
 insert into db2.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9);
@@ -412,7 +412,7 @@ delete from db2.t1;
 <<SQLSTATE;
 
 connect root/root;
-select time,s1 from db1.t1;
+select time,s1 from db1.t1 order by time;
 drop user user01;
 
 
