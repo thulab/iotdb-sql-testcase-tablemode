@@ -152,7 +152,8 @@ order by department_id,dep_name,dep_member;
 	
 select salary from employees
 	where remark <> 'good'
-		and salary >= (select min(salary) from employees where department_id='D001');
+		and salary >= (select min(salary) from employees where department_id='D001')
+order by salary;
 
 select customer_id,
 	(select count(*) from orders

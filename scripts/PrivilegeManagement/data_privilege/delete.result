@@ -23,7 +23,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.1.768
+Elapsed Time: 0.1.803
 
 -- [1]27:select time,s1 from db1.t1 order by time
 STRICT{
@@ -70,7 +70,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.11
 -- [1]33:delete from db1.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db1.t1
@@ -96,19 +96,19 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]45:delete from db1.t1 where time=1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.14
 -- [1]46:delete devices from db1.t1 where id='i'
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.106
+Elapsed Time: 0.0.118
 
 -- [1]48:select time,s1 from db1.t1 order by time
 STRICT{
@@ -137,13 +137,13 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：7
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.13
 -- [1]50:delete from db1.t1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 
 -- [1]53:select time,s1 from db1.t1
 STRICT{
@@ -216,7 +216,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.11
 -- [1]68:drop user user01
 STRICT{
 PASS
@@ -238,7 +238,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.2.39
+Elapsed Time: 0.2.65
 
 -- [1]76:select time,s1 from db1.t1 order by time
 STRICT{
@@ -273,7 +273,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.16
 -- [1]78:create user user01 'pass1234'
 STRICT{
 PASS
@@ -295,7 +295,7 @@ user01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.2
 
 -- [1]85:list privileges of user user01
 STRICT{
@@ -303,7 +303,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]86:list role of user user01
 STRICT{
@@ -339,7 +339,7 @@ role01          |*.*              |DELETE                |false                 
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]99:list role of user user01
 STRICT{
@@ -349,19 +349,19 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]100:delete from db1.t1 where time=2
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 -- [1]101:delete devices from db1.t1 where id='i'
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.33
+Elapsed Time: 0.0.60
 
 -- [1]103:select time,s1 from db1.t1 order by time
 STRICT{
@@ -390,13 +390,13 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：7
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.11
 -- [1]105:delete from db1.t1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 
 -- [1]108:select time,s1 from db1.t1
 STRICT{
@@ -404,13 +404,13 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.8
 -- [1]109:insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.14
 -- [1]110:revoke delete on any from role role01
 STRICT{
 PASS
@@ -432,7 +432,7 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]115:delete from db1.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db1.t1
@@ -479,7 +479,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.11
 -- [1]124:drop user user01
 STRICT{
 PASS
@@ -509,7 +509,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.2.43
+Elapsed Time: 0.2.79
 -- [1]135:create database db2
 STRICT{
 PASS
@@ -523,7 +523,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.272
+Elapsed Time: 0.0.498
 
 -- [1]138:select time,s1 from db1.t1 order by time
 STRICT{
@@ -558,7 +558,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.12
 
 -- [1]139:select time,s1 from db2.t1 order by time
 STRICT{
@@ -593,7 +593,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.13
 -- [1]141:create user user01 'pass1234'
 STRICT{
 PASS
@@ -605,7 +605,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]145:delete from db1.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db1.t1
@@ -643,19 +643,19 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.2
 -- [1]163:delete from db1.t1 where time=1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]164:delete devices from db1.t1 where id='i'
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.23
+Elapsed Time: 0.0.35
 
 -- [1]166:select time,s1 from db1.t1 order by time
 STRICT{
@@ -684,13 +684,13 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：7
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.11
 -- [1]168:delete from db1.t1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]169:delete from db2.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db2.t1
@@ -706,13 +706,13 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 -- [1]177:insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.16
 -- [1]178:revoke delete on database db1 from user user01
 STRICT{
 PASS
@@ -724,7 +724,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]182:delete from db1.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db1.t1
@@ -783,7 +783,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.9
 -- [1]197:drop user user01
 STRICT{
 PASS
@@ -809,7 +809,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.3.107
+Elapsed Time: 0.3.174
 -- [1]206:create database db2
 STRICT{
 PASS
@@ -823,7 +823,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.256
+Elapsed Time: 0.0.266
 
 -- [1]209:select time,s1 from db1.t1 order by time
 STRICT{
@@ -858,7 +858,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.12
 
 -- [1]210:select time,s1 from db2.t1 order by time
 STRICT{
@@ -893,7 +893,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.10
 -- [1]212:create user user01 'pass1234'
 STRICT{
 PASS
@@ -933,7 +933,7 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]221:delete from db1.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db1.t1
@@ -971,7 +971,7 @@ role01          |db1.*            |DELETE                |false                 
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]239:list role of user user01
 STRICT{
@@ -987,13 +987,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 -- [1]241:delete devices from db1.t1 where id='i'
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.23
+Elapsed Time: 0.0.54
 
 -- [1]243:select time,s1 from db1.t1 order by time
 STRICT{
@@ -1022,13 +1022,13 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：7
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.10
 -- [1]245:delete from db1.t1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]246:delete from db2.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db2.t1
@@ -1048,13 +1048,13 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.7
 -- [1]255:insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.14
 -- [1]256:revoke delete on database db1 from role role01
 STRICT{
 PASS
@@ -1076,7 +1076,7 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]261:delete from db1.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db1.t1
@@ -1135,7 +1135,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.10
 -- [1]276:drop user user01
 STRICT{
 PASS
@@ -1165,7 +1165,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.3.144
+Elapsed Time: 0.3.194
 -- [1]288:create table db1.t2(id tag, s1 int32)
 STRICT{
 PASS
@@ -1175,77 +1175,77 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.33
+Elapsed Time: 0.0.40
 
--- [1]290:select time,s1 from db1.t1
+-- [1]290:select time,s1 from db1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |s1(INT32)      |
-------------------------------------
-1970-01-01T08:00:00.0|2              |
-02+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|4              |
-04+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|6              |
-06+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|8              |
-08+08:00             |               |
 ------------------------------------
 1970-01-01T08:00:00.0|1              |
 01+08:00             |               |
 ------------------------------------
-1970-01-01T08:00:00.0|3              |
-03+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|5              |
-05+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|7              |
-07+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|9              |
-09+08:00             |               |
-总数目：9
-}
-
-Elapsed Time: 0.0.10
-
--- [1]291:select time,s1 from db1.t2
-STRICT{
-time(TIMESTAMP)      |s1(INT32)      |
-------------------------------------
 1970-01-01T08:00:00.0|2              |
 02+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|3              |
+03+08:00             |               |
 ------------------------------------
 1970-01-01T08:00:00.0|4              |
 04+08:00             |               |
 ------------------------------------
+1970-01-01T08:00:00.0|5              |
+05+08:00             |               |
+------------------------------------
 1970-01-01T08:00:00.0|6              |
 06+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|7              |
+07+08:00             |               |
 ------------------------------------
 1970-01-01T08:00:00.0|8              |
 08+08:00             |               |
 ------------------------------------
 1970-01-01T08:00:00.0|9              |
 09+08:00             |               |
+总数目：9
+}
+
+Elapsed Time: 0.0.12
+
+-- [1]291:select time,s1 from db1.t2 order by time
+STRICT{
+time(TIMESTAMP)      |s1(INT32)      |
 ------------------------------------
 1970-01-01T08:00:00.0|1              |
 01+08:00             |               |
 ------------------------------------
+1970-01-01T08:00:00.0|2              |
+02+08:00             |               |
+------------------------------------
 1970-01-01T08:00:00.0|3              |
 03+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|4              |
+04+08:00             |               |
 ------------------------------------
 1970-01-01T08:00:00.0|5              |
 05+08:00             |               |
 ------------------------------------
+1970-01-01T08:00:00.0|6              |
+06+08:00             |               |
+------------------------------------
 1970-01-01T08:00:00.0|7              |
 07+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|8              |
+08+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|9              |
+09+08:00             |               |
 总数目：9
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.9
 -- [1]292:create database db2
 STRICT{
 PASS
@@ -1259,11 +1259,23 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.292
+Elapsed Time: 0.0.319
 
 -- [1]295:select time,s1 from db2.t1
 STRICT{
 time(TIMESTAMP)      |s1(INT32)      |
+------------------------------------
+1970-01-01T08:00:00.0|2              |
+02+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|4              |
+04+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|6              |
+06+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|8              |
+08+08:00             |               |
 ------------------------------------
 1970-01-01T08:00:00.0|1              |
 01+08:00             |               |
@@ -1279,22 +1291,10 @@ time(TIMESTAMP)      |s1(INT32)      |
 ------------------------------------
 1970-01-01T08:00:00.0|9              |
 09+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|2              |
-02+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|4              |
-04+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|6              |
-06+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|8              |
-08+08:00             |               |
 总数目：9
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.12
 -- [1]297:create user user01 'pass1234'
 STRICT{
 PASS
@@ -1322,48 +1322,48 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]305:delete from db1.t1 where time=1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]306:delete devices from db1.t1 where id='i'
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.23
+Elapsed Time: 0.0.24
 
--- [1]308:select time,s1 from db1.t1
+-- [1]308:select time,s1 from db1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |s1(INT32)      |
 ------------------------------------
 1970-01-01T08:00:00.0|2              |
 02+08:00             |               |
 ------------------------------------
-1970-01-01T08:00:00.0|4              |
-04+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|6              |
-06+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|8              |
-08+08:00             |               |
-------------------------------------
 1970-01-01T08:00:00.0|3              |
 03+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|4              |
+04+08:00             |               |
 ------------------------------------
 1970-01-01T08:00:00.0|5              |
 05+08:00             |               |
 ------------------------------------
+1970-01-01T08:00:00.0|6              |
+06+08:00             |               |
+------------------------------------
 1970-01-01T08:00:00.0|7              |
 07+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|8              |
+08+08:00             |               |
 总数目：7
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.10
 -- [1]310:delete from db1.t1
 STRICT{
 0
@@ -1375,7 +1375,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]312:delete devices from db1.t2 where id='i'
 STRICT{
 0
@@ -1389,13 +1389,13 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 -- [1]316:delete from db1.t2
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.4
 -- [1]317:delete from db2.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db2.t1
@@ -1415,19 +1415,19 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.8
 -- [1]326:insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.12
 -- [1]327:insert into db1.t2(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.14
 -- [1]328:revoke delete on table db1.t1 from user user01
 STRICT{
 PASS
@@ -1447,7 +1447,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]334:delete from db1.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db1.t1
@@ -1473,40 +1473,40 @@ STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db1.t2
 }
 
--- [1]348:select time,s1 from db1.t1
+-- [1]348:select time,s1 from db1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |s1(INT32)      |
-------------------------------------
-1970-01-01T08:00:00.0|2              |
-02+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|4              |
-04+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|6              |
-06+08:00             |               |
-------------------------------------
-1970-01-01T08:00:00.0|8              |
-08+08:00             |               |
 ------------------------------------
 1970-01-01T08:00:00.0|1              |
 01+08:00             |               |
 ------------------------------------
+1970-01-01T08:00:00.0|2              |
+02+08:00             |               |
+------------------------------------
 1970-01-01T08:00:00.0|3              |
 03+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|4              |
+04+08:00             |               |
 ------------------------------------
 1970-01-01T08:00:00.0|5              |
 05+08:00             |               |
 ------------------------------------
+1970-01-01T08:00:00.0|6              |
+06+08:00             |               |
+------------------------------------
 1970-01-01T08:00:00.0|7              |
 07+08:00             |               |
+------------------------------------
+1970-01-01T08:00:00.0|8              |
+08+08:00             |               |
 ------------------------------------
 1970-01-01T08:00:00.0|9              |
 09+08:00             |               |
 总数目：9
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.9
 -- [1]349:drop user user01
 STRICT{
 PASS
@@ -1532,7 +1532,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.3.164
+Elapsed Time: 0.2.30
 -- [1]359:create table db1.t2(id tag, s1 int32)
 STRICT{
 PASS
@@ -1542,7 +1542,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.27
+Elapsed Time: 0.0.41
 
 -- [1]361:select time,s1 from db1.t1 order by time
 STRICT{
@@ -1626,7 +1626,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.194
+Elapsed Time: 0.0.334
 
 -- [1]366:select time,s1 from db2.t1
 STRICT{
@@ -1661,7 +1661,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.12
 -- [1]368:create user user01 'pass1234'
 STRICT{
 PASS
@@ -1683,7 +1683,7 @@ user01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]374:grant delete on table db1.t1 to role role01
 STRICT{
 PASS
@@ -1707,7 +1707,7 @@ role01          |db1.t2           |DELETE                |false                 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]380:list role of user user01
 STRICT{
@@ -1717,13 +1717,13 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]381:delete from db1.t1 where time=1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]382:delete from db1.t1
 STRICT{
 0
@@ -1735,13 +1735,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]384:delete from db1.t2
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 -- [1]385:delete from db2.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db2.t1
@@ -1757,19 +1757,19 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 -- [1]392:insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.14
+Elapsed Time: 0.0.9
 -- [1]393:insert into db1.t1(time,id,s1) values(1,'a',1),(2,'b',2),(3,'c',3),(4,'d',4),(5,'e',5),(6,'f',6),(7,'g',7),(8,'h',8),(9,'i',9)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]394:revoke delete on table db1.t1 from role role01
 STRICT{
 PASS
@@ -1801,7 +1801,7 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]401:delete from db1.t1 where time=1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON db1.t1
@@ -1860,7 +1860,7 @@ time(TIMESTAMP)      |s1(INT32)      |
 总数目：9
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.8
 -- [1]416:drop user user01
 STRICT{
 PASS
