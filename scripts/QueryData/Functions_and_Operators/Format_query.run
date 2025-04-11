@@ -111,7 +111,7 @@ select format(s9,s9) from test_t1 where time = 20;
 
 --与其他查询一起使用
 select s2,format('%2.2f',s2),format('%2.2f',s5) from test_t1 order by time;
-select format('%1d',count(s3)),format('%1d',count(s8)) from test_t1;
+select format('%1d',count(s3)),format('%1d',count(s8)) from test_t1 order by time;
 
 --大小写
 select FORMAT('%1d',s3),format('%1d',s8) from test_t1 order by time;

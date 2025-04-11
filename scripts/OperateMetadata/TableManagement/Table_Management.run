@@ -114,16 +114,16 @@ create database db100;
 use db100;
 create table t2(s1 text field, s2 text field);
 insert into t2(time,s2) values(2,'t1');
-select s1,s2 from t2;
+select s1,s2 from t2 order by time;
 alter table t2 drop column s2;
 flush;
 insert into t2(time,s1) values(3,'t2');
 insert into t2(time,s1) values(4,'t3');
-select s1 from t2;
+select s1 from t2 order by time;
 flush;
 insert into t2(time,s1) values(5,'t4');
 insert into t2(time,s1) values(6,'t5');
-select s1 from t2;
+select s1 from t2 order by time;
 drop database db100;
 
 -- 4.3 set

@@ -30,7 +30,7 @@ CREATE FUNCTION contain_null AS 'org.apache.iotdb.testcase.TestScalarFunction';
 // 展示UDF鉴权
 SHOW functions;
 // 执行UDF鉴权
-SELECT time, device_id, s1, s2, contain_null(s1, s2) as contain_null, contain_null(s1) as s1_isnull, contain_null(s2) as s2_isnull FROM t1;
+SELECT time, device_id, s1, s2, contain_null(s1, s2) as contain_null, contain_null(s1) as s1_isnull, contain_null(s2) as s2_isnull FROM t1 order by time;
 // 删除UDF鉴权
 DROP function contain_null;
 
@@ -59,7 +59,7 @@ CREATE FUNCTION contain_null AS 'org.apache.iotdb.testcase.TestScalarFunction';
 // 展示UDF鉴权
 SHOW functions;
 // 执行UDF鉴权
-SELECT time, device_id, s1, s2, contain_null(s1, s2) as contain_null, contain_null(s1) as s1_isnull, contain_null(s2) as s2_isnull FROM t1;
+SELECT time, device_id, s1, s2, contain_null(s1, s2) as contain_null, contain_null(s1) as s1_isnull, contain_null(s2) as s2_isnull FROM t1 order by time;
 // 删除UDF鉴权
 DROP function contain_null;
 <<SQLSTATE;
@@ -73,7 +73,7 @@ CREATE FUNCTION contain_null AS 'org.apache.iotdb.testcase.TestScalarFunction';
 // 展示UDF鉴权
 SHOW functions;
 // 执行UDF鉴权
-SELECT time, device_id, s1, s2, contain_null(s1, s2) as contain_null, contain_null(s1) as s1_isnull, contain_null(s2) as s2_isnull FROM t1;
+SELECT time, device_id, s1, s2, contain_null(s1, s2) as contain_null, contain_null(s1) as s1_isnull, contain_null(s2) as s2_isnull FROM t1 order by time;
 // 删除UDF鉴权
 DROP function contain_null;
 <<SQLSTATE;
@@ -87,7 +87,7 @@ CREATE FUNCTION contain_null AS 'org.apache.iotdb.testcase.TestScalarFunction';
 // 展示UDF鉴权
 SHOW functions;
 // 执行UDF鉴权
-SELECT time, device_id, s1, s2, contain_null(s1, s2) as contain_null, contain_null(s1) as s1_isnull, contain_null(s2) as s2_isnull FROM t1;
+SELECT time, device_id, s1, s2, contain_null(s1, s2) as contain_null, contain_null(s1) as s1_isnull, contain_null(s2) as s2_isnull FROM t1 order by time;
 // 删除UDF鉴权
 DROP function contain_null;
 <<SQLSTATE;
@@ -102,7 +102,7 @@ CREATE FUNCTION contain_null AS 'org.apache.iotdb.testcase.TestScalarFunction';
 // 展示UDF鉴权
 SHOW functions;
 // 执行UDF鉴权
-SELECT time, device_id, s1, s2, contain_null(s1, s2) as contain_null, contain_null(s1) as s1_isnull, contain_null(s2) as s2_isnull FROM t1;
+SELECT time, device_id, s1, s2, contain_null(s1, s2) as contain_null, contain_null(s1) as s1_isnull, contain_null(s2) as s2_isnull FROM t1 order by time;
 <<SQLSTATE;
 // 删除UDF鉴权
 DROP function contain_null;

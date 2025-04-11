@@ -46,7 +46,7 @@ insert into datatypes.d_boolean(time,s0) values (23,FaLse);
 insert into datatypes.d_boolean(time,s0) values (10000,true),(20000,false),(35000,-1.5),(30000,-1),(40000,0),(50000,1),(60000,1.5),(70000,'string'),(80000,'1989-06-15'),(90000,638323200000);
 <<SQLSTATE;
 desc datatypes.d_boolean;
-select time,s0 from datatypes.d_boolean;
+select time,s0 from datatypes.d_boolean order by time;
 
 
 
@@ -66,7 +66,7 @@ insert into datatypes.d_INT32(time,s0) values (2147483648,2147483648);
 insert into datatypes.d_INT32(time,s0) values (10000,true),(20000,false),(35000,-1.5),(30000,-1),(40000,0),(50000,1),(60000,1.5),(70000,'string'),(80000,'1989-06-15'),(90000,638323200000);
 <<SQLSTATE;
 desc datatypes.d_INT32;
-select time,s0 from datatypes.d_INT32;
+select time,s0 from datatypes.d_INT32 order by time;
 
 
 
@@ -108,7 +108,7 @@ insert into datatypes.d_INT64(time,s0) values (10000000000001,91);
 insert into datatypes.d_INT64(time,s0) values (9223372036854775807,9223372036854775807);
 <<SQLSTATE;
 desc datatypes.d_INT64;
-select time,s0 from datatypes.d_INT64;
+select time,s0 from datatypes.d_INT64 order by time;
 
 
 
@@ -190,7 +190,7 @@ insert into datatypes.d_Timestamp(time,s0) values (1999-04-31,1999-04-20);
 insert into datatypes.d_Timestamp(time,s0) values (1999-13-20,1999-12-20);
 <<SQLSTATE;
 desc datatypes.d_Timestamp;
-select time,s0 from datatypes.d_Timestamp;
+select time,s0 from datatypes.d_Timestamp order by time;
 
 
 
@@ -234,7 +234,7 @@ insert into datatypes.d_float(time,s0) values (2147483650,3.5028235e38);
 insert into datatypes.d_float(time,s0) values (10000,true),(20000,false),(35000,-1.5),(30000,-1),(40000,0),(50000,1),(60000,1.5),(70000,'string'),(80000,'1989-06-15'),(90000,638323200000);
 <<SQLSTATE;
 desc datatypes.d_float;
-select time,s0 from datatypes.d_float;
+select time,s0 from datatypes.d_float order by time;
 
 
 
@@ -283,7 +283,7 @@ insert into datatypes.d_double(time,s0) values (10000,true),(20000,false),(35000
 <<SQLSTATE;
 
 desc datatypes.d_double;
-select time,s0 from datatypes.d_double;
+select time,s0 from datatypes.d_double order by time;
 
 
 
@@ -327,7 +327,7 @@ insert into datatypes.d_date(time,s0) values (1999-04-31,'1999-04-20');
 insert into datatypes.d_date(time,s0) values (1999-13-20,'1999-12-20');
 <<SQLSTATE;
 desc datatypes.d_date;
-select time,s0 from datatypes.d_date;
+select time,s0 from datatypes.d_date order by time;
 
 
 
@@ -354,7 +354,7 @@ insert into datatypes.d_string(time,s0) values (1999-05-01,'IoTDB 支持两种�
 insert into datatypes.d_string(time,s0) values (10000,true),(20000,false),(35000,-1.5),(30000,-1),(40000,0),(50000,1),(60000,1.5),(70000,'string'),(80000,'1989-06-15'),(90000,638323200000);
 
 desc datatypes.d_string;
-select time,s0 from datatypes.d_string;
+select time,s0 from datatypes.d_string order by time;
 
 
 
@@ -380,7 +380,7 @@ insert into datatypes.d_text(time,s0) values (1999-05-01,'IoTDB 支持两种时�
 
 insert into datatypes.d_text(time,s0) values (10000,true),(20000,false),(35000,-1.5),(30000,-1),(40000,0),(50000,1),(60000,1.5),(70000,'string'),(80000,'1989-06-15'),(90000,638323200000);
 desc datatypes.d_text;
-select time,s0 from datatypes.d_text;
+select time,s0 from datatypes.d_text order by time;
 
 
 
@@ -404,7 +404,7 @@ insert into datatypes.d_blob(time,s0) values (1999-04-01 01:00:00,X'6f72672e6170
 insert into datatypes.d_blob(time,s0) values (1999-04-11 01:00:00,X'643c6e4d5629563033504f6c26383f41357a2a5a392a325e6951585e38364f6c53572425503070283c61325a4730245a676f4d45376d3e233e40462b53786b2a4c6e3251696f2965684873314b44773d5849764d24684d4977644d763657336975505378634c444f576948504b4a793335404371236153543053755556516d443923773f404a4f63297a766f42694e29596f4229383c764e413967495f372852516d34356c3c');
 
 desc datatypes.d_blob;
-select time,s0 from datatypes.d_blob;
+select time,s0 from datatypes.d_blob order by time;
 
 drop DATABASE datatypes;<<NULL;
 
