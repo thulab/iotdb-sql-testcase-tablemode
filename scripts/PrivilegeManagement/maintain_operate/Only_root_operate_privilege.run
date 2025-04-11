@@ -78,11 +78,11 @@ load configuration;
 set system to readonly;
 insert into test_db.t1(time,device_id,int32) values(4,'d1',12);
 <<SQLSTATE;
-select * from test_db.t1;
+select * from test_db.t1 order by time;
 
 set system to running;
 insert into test_db.t1(time,device_id,int32) values(4,'d1',12);
-select * from test_db.t1;
+select * from test_db.t1 order by time;
 
 --5.user01登录
 connect user01/pass1234;

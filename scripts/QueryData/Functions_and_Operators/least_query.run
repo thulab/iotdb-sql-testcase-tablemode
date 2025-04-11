@@ -85,7 +85,7 @@ select date_1, date_2, date_3, least(date_1,date_2,date_3) as least_result from 
 select boolean_1,boolean_2,least(boolean_1,boolean_2) from table9 order by boolean_1,boolean_2;
 
 --4.2 所有值都是NULL，则返回NULL
-select num1, num2, least(num1,num2) as least_result from null_table;
+select num1, num2, least(num1,num2) as least_result from null_table order by time;
 
 --4.3 异常场景SQL
 select least() as least_result from table1;

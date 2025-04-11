@@ -118,15 +118,15 @@ insert into dba1.t1 values(1000,'d1',1);
 <<SQLSTATE;
 connect root/root;
 insert into dba1.t1 values(1000,'d1',1);
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 connect user_1/pass1234;
 insert into dba1.t1 values(1000,'d2',2);
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 // 18、查询数据
 connect user_1/pass1234;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 <<SQLSTATE;
 // 19、删除数据
 delete from dba1.t1;
@@ -134,7 +134,7 @@ delete from dba1.t1;
 drop table dba1.t1;
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 
 --2.清理环境
 connect root/root;
@@ -234,21 +234,21 @@ insert into dba1.t1 values(1000,'d1',1);
 <<SQLSTATE;
 connect root/root;
 insert into dba1.t1 values(1000,'d1',1);
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 connect user_1/pass1234;
 insert into dba1.t1 values(1000,'d2',2);
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 // 18、查询数据
 connect user_1/pass1234;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 <<SQLSTATE;
 // 19、删除数据
 delete from dba1.t1;
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 connect user_1/pass1234;
 drop table dba1.t1;
 
@@ -344,21 +344,21 @@ insert into dba1.t1 values(1000,'d1',1);
 <<SQLSTATE;
 connect root/root;
 insert into dba1.t1 values(1000,'d1',1);
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 connect user_1/pass1234;
 insert into dba1.t1 values(1000,'d2',2);
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 // 18、查询数据
 connect user_1/pass1234;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 <<SQLSTATE;
 // 19、删除数据
 delete from dba1.t1;
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 connect user_1/pass1234;
 drop table dba1.t1;
 
@@ -452,25 +452,25 @@ show tables from dba1;
 desc dba1.t1;
 // 17、插入或更新数据
 insert into dba1.t1 values(1000,'d1',true);
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 connect user_1/pass1234;
 insert into dba1.t1 values(1000,'d1',false);
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 // 18、查询数据
 connect user_1/pass1234;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 <<SQLSTATE;
 // 19、删除数据
 delete from dba1.t1;
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 connect user_1/pass1234;
 drop table dba1.t1;
 
@@ -566,16 +566,16 @@ show tables from dba1;
 desc dba1.t1;
 // 17、插入或更新数据
 insert into dba1.t1 values(1000,'d1',true);
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 insert into dba1.t1 values(1000,'d1',false);
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 // 18、查询数据
 connect user_1/pass1234;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 // 19、删除数据
 delete from dba1.t1;
 <<SQLSTATE;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 drop table dba1.t1;
 
 
@@ -671,15 +671,15 @@ show tables from dba1;
 desc dba1.t1;
 // 17、插入或更新数据
 insert into dba1.t1 values(1000,'d1',true);
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 insert into dba1.t1 values(1000,'d1',false);
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 // 18、查询数据
 connect user_1/pass1234;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 // 19、删除数据
 delete from dba1.t1;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 drop table dba1.t1;
 drop database dba1;
 show databases;
@@ -739,7 +739,7 @@ alter table dba1.test_t1 add column int32 INT32 FIELD;
 <<SQLSTATE;
 insert into dba1.test_t1 values(1111,1111);
 <<SQLSTATE;
-select * from dba1.test_1;
+select * from dba1.test_1 order by time;
 <<SQLSTATE;
 delete from dba1.test_1;
 <<SQLSTATE;
@@ -803,7 +803,7 @@ create database dba1;
 create table dba1.test_t1();
 alter table dba1.test_t1 add column int32 INT32 FIELD;
 insert into dba1.test_t1 values(1111,1111);
-select * from dba1.test_t1;
+select * from dba1.test_t1 order by time;
 delete from dba1.test_t1;
 drop table dba1.test_t1;
 drop role has_auth_role;
@@ -846,7 +846,7 @@ create database dba1;
 create table dba1.test_t1();
 alter table dba1.test_t1 add column int32 INT32 FIELD;
 insert into dba1.test_t1 values(1111,1111);
-select * from dba1.test_t1;
+select * from dba1.test_t1 order by time;
 delete from dba1.test_t1;
 drop table dba1.test_t1;
 drop database dba1;
@@ -883,7 +883,7 @@ alter table dba1.test_t1 add column int32 INT32 FIELD;
 <<SQLSTATE;
 insert into dba1.test_t1 values(1111,1111);
 <<SQLSTATE;
-select * from dba1.test_t1;
+select * from dba1.test_t1 order by time;
 <<SQLSTATE;
 delete from dba1.test_t1;
 <<SQLSTATE;
@@ -916,7 +916,7 @@ create database dba1;
 create table dba1.test_t1();
 alter table dba1.test_t1 add column int32 INT32 FIELD;
 insert into dba1.test_t1 values(1111,1111);
-select * from dba1.test_t1;
+select * from dba1.test_t1 order by time;
 delete from dba1.test_t1;
 drop table dba1.test_t1;
 drop database dba1;
@@ -954,7 +954,7 @@ alter table dba1.test_t1 add column int32 INT32 FIELD;
 <<SQLSTATE;
 insert into dba1.test_t1 values(1111,1111);
 <<SQLSTATE;
-select * from dba1.test_t1;
+select * from dba1.test_t1 order by time;
 <<SQLSTATE;
 delete from dba1.test_t1;
 <<SQLSTATE;
@@ -991,7 +991,7 @@ create database dba1;
 create table dba1.test_t1();
 alter table dba1.test_t1 add column int32 INT32 FIELD;
 insert into dba1.test_t1 values(1111,1111);
-select * from dba1.test_t1;
+select * from dba1.test_t1 order by time;
 delete from dba1.test_t1;
 drop table dba1.test_t1;
 drop database dba1;
@@ -1023,7 +1023,7 @@ create database dba1;
 create table dba1.test_t1();
 alter table dba1.test_t1 add column int32 INT32 FIELD;
 insert into dba1.test_t1 values(1111,1111);
-select * from dba1.test_t1;
+select * from dba1.test_t1 order by time;
 delete from dba1.test_t1;
 drop table dba1.test_t1;
 drop database dba1;

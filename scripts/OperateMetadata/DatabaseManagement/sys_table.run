@@ -64,15 +64,15 @@ ALTER TABLE queries ADD COLUMN IF NOT EXISTS a TAG;
 <<SQLSTATE;
 
 --13. 系统表查询
-select * from information_schema.databases;
-select * from information_schema.databases where database like '%schema%';
-select * from information_schema.tables;
-select table_name from information_schema.tables where "ttl(ms)" = 'INF' and database = 'test';
-select * from information_schema.columns;
-select column_name from information_schema.columns where database = 'test' and table_name = 'table_1' and category = 'ATTRIBUTE' and datatype = 'STRING';
-select * from information_schema.queries;
+select * from information_schema.databases order by time;
+select * from information_schema.databases where database like '%schema%' order by time;
+select * from information_schema.tables order by time;
+select table_name from information_schema.tables where "ttl(ms)" = 'INF' and database = 'test' order by time;
+select * from information_schema.columns order by time;
+select column_name from information_schema.columns where database = 'test' and table_name = 'table_1' and category = 'ATTRIBUTE' and datatype = 'STRING' order by time;
+select * from information_schema.queries order by time;
 <<CHECKCODE;
-select * from information_schema.queries where elapsed_time > 0.01;
+select * from information_schema.queries where elapsed_time > 0.01 order by time;
 <<CHECKCODE;
 
 

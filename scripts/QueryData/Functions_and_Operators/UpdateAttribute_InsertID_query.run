@@ -30,16 +30,16 @@ desc t1;
 
 --6. 插入数据，然后查询数据
 insert into t1(time,model_id,boolean,int64) values(1,'m1',false,11);
-select * from t1;
+select * from t1 order by time;
 
 --7. 更新属性值
 update t1 set model_id='model_01';
 
 --8. 查询数据，然后插入ID数值，最后查询数据
-select * from t1;
+select * from t1 order by time;
 insert into t1(time,device_id,boolean) values(1,'d1',true);
 select * from t1 order by device_id;
-select * from t1 where device_id is null; 
+select * from t1 where device_id is null order by time; 
 
 --清理数据：
 drop database test_db;

@@ -42,7 +42,7 @@ desc table_name details;
 
 --6. 添加列并带有注释
 ALTER TABLE table_name ADD COLUMN column2 int32 COMMENT 'column_comment_2';
-select * from information_schema.columns where table_name='table_name';
+select * from information_schema.columns where table_name='table_name' order by time;
 desc table_name details;
 
 
@@ -60,20 +60,20 @@ show tables details;
 
 --8. 修改列注释
 COMMENT ON COLUMN table_name.status IS '状态';
-select * from information_schema.columns where table_name='table_name';
+select * from information_schema.columns where table_name='table_name' order by time;
 desc table_name details;
 COMMENT ON COLUMN table_name.status IS '';
-select * from information_schema.columns where table_name='table_name';
+select * from information_schema.columns where table_name='table_name' order by time;
 desc table_name details;
 COMMENT ON COLUMN table_name.status IS null;
-select * from information_schema.columns where table_name='table_name';
+select * from information_schema.columns where table_name='table_name' order by time;
 desc table_name details;
 
 
 --9. 通过系统表查询
-select * from information_schema.databases;
-select * from information_schema.tables;
-select * from information_schema.columns;
+select * from information_schema.databases order by time;
+select * from information_schema.tables order by time;
+select * from information_schema.columns order by time;
 
 
 -- 清理数据： 删除数据库 

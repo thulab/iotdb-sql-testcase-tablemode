@@ -186,7 +186,7 @@ desc table1;
 INSERT INTO table1(time,device_id,color,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10) values(1, 'd1', 'red', 'abcd', 1, 1, 1, 1, true, '2021-10-01', 1633046400000, 'abcd', X'abcd');
 
 --5.查询所有列的数据
-select * from table1;
+select * from table1 order by time;
 
 --6.删除数据库
 drop database test;
@@ -208,7 +208,7 @@ show tables from test;
 desc table1;
 
 --10.验证之前的数据是否还存在【空列表】
-select * from table1;
+select * from table1 order by time;
 
 --11.清理环境
 DROP DATABASE test;

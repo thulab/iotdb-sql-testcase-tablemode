@@ -35,7 +35,7 @@ create table db1.t1(ID TAG, status BOOLEAN);
 show tables from db1;
 desc db1.t1;
 insert into db1.t1(time, ID, status) values(1, 'd1', false);
-select * from db1.t1;
+select * from db1.t1 order by time;
 show devices from db1.t1;
 count devices from db1.t1;
 
@@ -45,14 +45,14 @@ create table db2.t1(ID TAG, status BOOLEAN);
 show tables from db2;
 desc db2.t1;
 insert into db2.t1(time, ID, status) values(1, 'd1', true);
-select * from db2.t1;
+select * from db2.t1 order by time;
 show devices from db2.t1;
 count devices from db2.t1;
 
 --2. 普通用户user01未授予【SELECT】权限，查询指定数据库下表中的数据
 connect user01/pass1234;
 list privileges of user user01;
-select * from db1.t1;
+select * from db1.t1 order by time;
 <<SQLSTATE;
 show devices from db1.t1;
 <<SQLSTATE;
@@ -69,17 +69,17 @@ list privileges of user user01;
 show databases;
 show tables from db1;
 desc db1.t1;
-select * from db1.t1;
+select * from db1.t1 order by time;
 show devices from db1.t1;
 count devices from db1.t1;
-select * from db2.t1;
+select * from db2.t1 order by time;
 <<SQLSTATE;
 
 --5. 角色role01未授予【SELECT】权限，关联角色role01的普通用户user02,查询指定数据库下表中的数据
 connect user02/pass1234;
 list privileges of user user02;
 list role of user user02;
-select * from db2.t1;
+select * from db2.t1 order by time;
 <<SQLSTATE;
 show devices from db2.t1;
 <<SQLSTATE;
@@ -97,10 +97,10 @@ list role of user user02;
 show databases;
 show tables from db2;
 desc db2.t1;
-select * from db2.t1;
+select * from db2.t1 order by time;
 show devices from db2.t1;
 count devices from db2.t1;
-select * from db1.t1;
+select * from db1.t1 order by time;
 <<SQLSTATE;
 
 --清理环境

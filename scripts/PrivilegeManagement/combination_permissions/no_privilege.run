@@ -115,15 +115,15 @@ insert into dba1.t1 values(1000,'d1',1);
 <<SQLSTATE;
 connect root/root;
 insert into dba1.t1 values(1000,'d1',1);
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 connect user_1/pass1234;
 insert into dba1.t1 values(1000,'d2',2);
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 // 17、查询数据
 connect user_1/pass1234;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 <<SQLSTATE;
 // 18、删除数据
 delete from dba1.t1;
@@ -131,7 +131,7 @@ delete from dba1.t1;
 drop table dba1.t1;
 <<SQLSTATE;
 connect root/root;
-select * from dba1.t1;
+select * from dba1.t1 order by time;
 
 --2.清理环境
 connect root/root;

@@ -89,7 +89,7 @@ select date_1, date_2, date_3, greatest(date_1,date_2,date_3) as greatest_result
 select boolean_1,boolean_2,greatest(boolean_1,boolean_2) from table9 order by boolean_1,boolean_2;
 
 --4.2 所有值都是NULL，则返回NULL
-select num1, num2, greatest(num1,num2) as greatest_result from null_table;
+select num1, num2, greatest(num1,num2) as greatest_result from null_table order by time;
 
 --4.3 异常场景SQL
 select greatest() as greatest_result from table1;

@@ -108,8 +108,8 @@ select * from t1 where int32 is null order by time limit 3;
 select * from t1 where int32 is not null order by time limit 3;
 select * from t1 where int32 is null order by time offset 2 limit 3;
 select * from t1 where int32 is not null order by time offset 2 limit 3;
-select * from t1 where int32 is null and int64 = 555555555555;
-select * from t1 where int32 is not null and int64 = 555555555555;
+select * from t1 where int32 is null and int64 = 555555555555 order by time;
+select * from t1 where int32 is not null and int64 = 555555555555 order by time;
 
 
 --5-3. 查询 -> 比较谓词: [not] in
@@ -147,7 +147,7 @@ select * from t1 where int64 not in (111111111111,333333333333,444444444444) ord
 
 
 --5.4 复合sql补充
-select int32 from t1 where int32 in (9000-8000);
+select int32 from t1 where int32 in (9000-8000) order by time;
 select int32 from t1 where int32 between int32-100 and int32+100 order by int32;
 
 
