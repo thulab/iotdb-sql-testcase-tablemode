@@ -115,18 +115,21 @@ show tables;
 --12. 插入数据
 --12.1 t1表
 insert into t1(time, device_id, int32) values(now(),'d1',1);
+sleep 1000;
 insert into t1(time, device_id, int32) values(now()-1d,'d1',2);
 <<CHECKCODE;
 select count(*) as count_result from t1;
 
 --12.2 t2表
 insert into t2(time, device_id, int32) values(now(),'d1',1);
+sleep 1000;
 insert into t2(time, device_id, int32) values(now()-1m,'d1',2);
 <<CHECKCODE;
 select count(*) as count_result from t2;
 
 --12.3 t3表
 insert into t3(time, device_id, int32) values(now(),'d1',1);
+sleep 1000;
 insert into t3(time, device_id, int32) values(now()-1h,'d1',2);
 <<CHECKCODE;
 select count(*) as count_result from t3;

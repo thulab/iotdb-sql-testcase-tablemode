@@ -73,7 +73,8 @@ table_0              |INF                |
 总数目：7
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
+
 -- [1]59:desc table_2
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
@@ -91,12 +92,14 @@ int64                 |INT64               |FIELD               |
 double                |DOUBLE              |FIELD               |
 总数目：6
 }
+
+Elapsed Time: 0.0.1
 -- [1]66:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 1, 1.1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.1.866
+Elapsed Time: 0.1.865
 -- [1]68:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 2, 2.1)
 STRICT{
 0
@@ -108,19 +111,19 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]72:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 4, 2.1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]74:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 5, 3.1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 
 -- [1]76:select count(*) as count_result from table_2
 STRICT{
@@ -130,7 +133,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.11
 
 -- [1]78:select count(*) as count_result from table_2
 STRICT{
@@ -140,7 +143,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.8
 -- [1]82:alter table if exists table_1 set properties ttl=3600000
 STRICT{
 PASS
@@ -239,6 +242,7 @@ SQLSTATE : 700: line 1:40: Invalid numeric literal: 9223372036854775808
 STRICT{
 PASS
 }
+
 -- [1]101:desc table_2
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
@@ -254,6 +258,8 @@ boolean               |BOOLEAN             |FIELD               |
 int64                 |INT64               |FIELD               |
 总数目：5
 }
+
+Elapsed Time: 0.0.1
 
 -- [1]102:show tables
 STRICT{
@@ -275,7 +281,7 @@ table_0              |INF                |
 总数目：7
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]105:use test
 STRICT{
 PASS
@@ -311,9 +317,41 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.280
+Elapsed Time: 0.0.169
 
--- [1]120:select count(*) as count_result from t1
+-- [1]121:select count(*) as count_result from t1
+STRICT{
+count_result(INT64)      |
+-------------------------
+1                        |
+总数目：1
+}
+
+Elapsed Time: 0.0.11
+-- [1]124:insert into t2(time, device_id, int32) values(now(),'d1',1)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.56
+
+-- [1]128:select count(*) as count_result from t2
+STRICT{
+count_result(INT64)      |
+-------------------------
+1                        |
+总数目：1
+}
+
+Elapsed Time: 0.0.10
+-- [1]131:insert into t3(time, device_id, int32) values(now(),'d1',1)
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.11
+
+-- [1]135:select count(*) as count_result from t3
 STRICT{
 count_result(INT64)      |
 -------------------------
@@ -322,35 +360,3 @@ count_result(INT64)      |
 }
 
 Elapsed Time: 0.0.8
--- [1]123:insert into t2(time, device_id, int32) values(now(),'d1',1)
-STRICT{
-0
-}
-
-Elapsed Time: 0.0.73
-
--- [1]126:select count(*) as count_result from t2
-STRICT{
-count_result(INT64)      |
--------------------------
-1                        |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
--- [1]129:insert into t3(time, device_id, int32) values(now(),'d1',1)
-STRICT{
-0
-}
-
-Elapsed Time: 0.0.10
-
--- [1]132:select count(*) as count_result from t3
-STRICT{
-count_result(INT64)      |
--------------------------
-1                        |
-总数目：1
-}
-
-Elapsed Time: 0.0.5
