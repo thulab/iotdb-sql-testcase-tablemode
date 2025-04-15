@@ -41,6 +41,7 @@ show databases;
 show tables;
 desc t1;
 insert into t1(time, ID, int32) values(1, 'd1', 1);
+flush;
 select * from t1 order by time;
 
 --2. root赋予普通用户user01关于不指定范围【MANAGE_USER]权限

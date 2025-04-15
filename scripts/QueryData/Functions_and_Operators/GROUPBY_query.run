@@ -90,7 +90,7 @@ select * from table_1 order by time;
 
 --8. group by 查询
 --8.1 聚合函数限制(聚合函数 + group by)
-select count(*) as count_value, min(int32) as min_value from table_1 order by time;
+select count(*) as count_value, min(int32) as min_value from table_1;
 select region_id, max(double) as max_value from table_1 group by region_id;
 select model_id, 2+(last(int32)+ first(double)) as total_value from table_1 group by model_id;
 select time, text, blob, max_by(float,time) as max_by_value,first_by(double,time) as first_by_value

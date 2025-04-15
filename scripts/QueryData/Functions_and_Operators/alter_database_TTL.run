@@ -30,11 +30,11 @@ desc t1;
 insert into t1(time,ID,int32) values(now(),'d1',1);
 
 --8. 聚合查询数据
-select count(*) as count_result from t1 order by time;
+select count(*) as count_result from t1;
 sleep 5000;
 
 --9. 再次聚合查询数据
-select count(*) as count_result from t1 order by time;
+select count(*) as count_result from t1;
 
 --10. 修改DB级别的TTL
 alter database test_db set properties ttl='INF';
@@ -49,11 +49,11 @@ show tables;
 insert into t1(time,ID,int32) values(now(),'d1',2);
 
 --14. 聚合查询数据
-select count(*) as count_result from t1 order by time;
+select count(*) as count_result from t1;
 sleep 5000;
 
 --15. 再次聚合查询数据
-select count(*) as count_result from t1 order by time;
+select count(*) as count_result from t1;
 
 --16. 创建新表t2 
 create table t2(ID TAG,boolean BOOLEAN);

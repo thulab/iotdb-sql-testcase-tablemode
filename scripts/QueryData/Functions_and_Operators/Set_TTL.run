@@ -73,9 +73,9 @@ insert into table_2(time, device_id, model_id, boolean, int64, double) values(no
 sleep 1000;
 insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 5, 3.1);
 sleep 1000;
-select count(*) as count_result from table_2 order by time;
+select count(*) as count_result from table_2;
 sleep 6000;
-select count(*) as count_result from table_2 order by time;
+select count(*) as count_result from table_2;
 
 --7.修改表，添加TTL
 --7.1 修改TTL成功
@@ -117,19 +117,19 @@ show tables;
 insert into t1(time, device_id, int32) values(now(),'d1',1);
 insert into t1(time, device_id, int32) values(now()-1d,'d1',2);
 <<CHECKCODE;
-select count(*) as count_result from t1 order by time;
+select count(*) as count_result from t1;
 
 --12.2 t2表
 insert into t2(time, device_id, int32) values(now(),'d1',1);
 insert into t2(time, device_id, int32) values(now()-1m,'d1',2);
 <<CHECKCODE;
-select count(*) as count_result from t2 order by time;
+select count(*) as count_result from t2;
 
 --12.3 t3表
 insert into t3(time, device_id, int32) values(now(),'d1',1);
 insert into t3(time, device_id, int32) values(now()-1h,'d1',2);
 <<CHECKCODE;
-select count(*) as count_result from t3 order by time;
+select count(*) as count_result from t3;
 
 
 --清理数据：
