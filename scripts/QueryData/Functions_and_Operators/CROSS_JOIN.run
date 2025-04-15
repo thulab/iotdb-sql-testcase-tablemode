@@ -113,7 +113,7 @@ CROSS JOIN courses c
 CROSS JOIN teachers t
 CROSS JOIN grades g
 where s.region='xicheng'
-order by s.time,g.time,c.course_region,c.course_id
+order by s.time,c.time,t.time,g.time,c.course_region,c.course_id
 limit 5 offset 5;
 
 select 
@@ -129,7 +129,7 @@ CROSS JOIN teachers t
 CROSS JOIN courses c
 CROSS JOIN grades g
 where s.region='haidian' and s.time > 1 and g.time < 10
-order by stu_score,t.teacher_region,t.teacher_id,c_id
+order by stu_score,teacher_region,teacher_id,c_id
 limit 6 offset 3;
 
 
