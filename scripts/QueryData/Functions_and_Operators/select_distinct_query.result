@@ -19,7 +19,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.45
 
 -- [1]34:desc t1
 STRICT{
@@ -51,43 +51,43 @@ date                  |DATE                |FIELD               |
 总数目：12
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.17
 -- [1]38:insert into t1( time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values (1,'D001',1,10,1.1,11.1,'RC1',false,'dog',X'49460001',1583053776000,'2020-03-01')
 STRICT{
 0
 }
 
-Elapsed Time: 0.3.359
+Elapsed Time: 0.0.725
 -- [1]42:insert into t1( time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values (2,'D002',2,20,2.2,22.2,'RC2',true,'cat',X'00010000',1614589776000,'2021-03-01')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.69
+Elapsed Time: 0.0.85
 -- [1]46:insert into t1( time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values (3,'D001',2,10,1.1,22.2,'RC2',false,'cat',X'49460001',1583053776000,'2020-03-01')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.58
 -- [1]50:insert into t1( time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values (3,'D002',2,20,2.2,22.2,'RC2',true,'cat',X'00010000',1614589776000,'2021-03-01')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 -- [1]54:insert into t1( time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values (4,'D003',2,20,2.2,22.2,'RC2',true,'cat',X'00010000',1614589776000,'2021-03-01')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.17
 -- [1]58:insert into t1( time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values (5,'D003',1,10,1.1,11.1,'RC1',false,'dog',X'49460001',1583053776000,'2020-03-01')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 
 -- [1]63:select * from t1 order by time
 STRICT{
@@ -113,7 +113,7 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |int64(INT64)      |flo
 总数目：6
 }
 
-Elapsed Time: 0.0.18
+Elapsed Time: 0.0.214
 
 -- [1]67:select distinct time from t1 order by time
 STRICT{
@@ -136,7 +136,7 @@ time(TIMESTAMP)      |
 总数目：5
 }
 
-Elapsed Time: 0.0.29
+Elapsed Time: 0.0.58
 
 -- [1]68:select distinct id from t1 order by id
 STRICT{
@@ -150,7 +150,7 @@ D003            |
 总数目：3
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.26
 
 -- [1]69:select distinct int32 from t1 order by int32
 STRICT{
@@ -162,7 +162,7 @@ int32(INT32)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.16
 
 -- [1]70:select distinct int64 from t1 order by int64
 STRICT{
@@ -174,7 +174,7 @@ int64(INT64)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.16
 
 -- [1]71:select distinct float from t1 order by float
 STRICT{
@@ -186,7 +186,7 @@ float(FLOAT)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.17
 
 -- [1]72:select distinct double from t1 order by double
 STRICT{
@@ -198,7 +198,7 @@ double(DOUBLE)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.15
 
 -- [1]73:select distinct text from t1 order by text
 STRICT{
@@ -210,7 +210,7 @@ RC2             |
 总数目：2
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.15
 
 -- [1]74:select distinct boolean from t1 order by boolean
 STRICT{
@@ -222,7 +222,7 @@ true                  |
 总数目：2
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.14
 
 -- [1]75:select distinct string from t1 order by string
 STRICT{
@@ -234,7 +234,7 @@ dog                 |
 总数目：2
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.15
 
 -- [1]76:select distinct blob from t1 order by blob
 STRICT{
@@ -246,7 +246,7 @@ blob(BLOB)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.12
 
 -- [1]77:select distinct timestamp from t1 order by timestamp
 STRICT{
@@ -260,7 +260,7 @@ timestamp(TIMESTAMP)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.20
 
 -- [1]78:select distinct date from t1 order by date
 STRICT{
@@ -272,7 +272,7 @@ date(DATE)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.15
 
 -- [1]81:select time from t1 group by time order by time
 STRICT{
@@ -295,7 +295,7 @@ time(TIMESTAMP)      |
 总数目：5
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.33
 
 -- [1]82:select id from t1 group by id order by id
 STRICT{
@@ -309,7 +309,7 @@ D003            |
 总数目：3
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.17
 
 -- [1]83:select int32 from t1 group by int32 order by int32
 STRICT{
@@ -321,7 +321,7 @@ int32(INT32)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.15
 
 -- [1]84:select int64 from t1 group by int64 order by int64
 STRICT{
@@ -333,7 +333,7 @@ int64(INT64)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.14
 
 -- [1]85:select float from t1 group by float order by float
 STRICT{
@@ -345,7 +345,7 @@ float(FLOAT)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.14
 
 -- [1]86:select double from t1 group by double order by double
 STRICT{
@@ -357,7 +357,7 @@ double(DOUBLE)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.14
 
 -- [1]87:select text from t1 group by text order by text
 STRICT{
@@ -369,7 +369,7 @@ RC2             |
 总数目：2
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.14
 
 -- [1]88:select boolean from t1 group by boolean order by boolean
 STRICT{
@@ -381,7 +381,7 @@ true                  |
 总数目：2
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.13
 
 -- [1]89:select string from t1 group by string order by string
 STRICT{
@@ -405,7 +405,7 @@ blob(BLOB)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.12
 
 -- [1]91:select timestamp from t1 group by timestamp order by timestamp
 STRICT{
@@ -419,7 +419,7 @@ timestamp(TIMESTAMP)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.10
 
 -- [1]92:select date from t1 group by date order by date
 STRICT{
@@ -431,7 +431,7 @@ date(DATE)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.11
 -- [1]95:select distinct ID from t1 order by time
 STRICT{
 SQLSTATE : 701: For SELECT DISTINCT, ORDER BY expressions must appear in select list
@@ -449,7 +449,7 @@ D003            |2                               |
 总数目：3
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.27
 
 -- [1]101:select time,id,date,count(distinct float), avg(distinct float) from t1 group by 1,2,3 order by 1,2,3
 STRICT{
@@ -475,7 +475,7 @@ time(TIMESTAMP)      |id(STRING)      |date(DATE)      |_col3(INT64)      |_col4
 总数目：6
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.19
 
 -- [1]103:select id, int64, double, timestamp, round(VAR_POP(distinct int64),1), round(VAR_POP(distinct double),1), round(VAR_POP(distinct int32),1), round(VAR_POP(distinct float),1) from t1 group by 1,2,3,4 order by 1,2,3,4
 STRICT{
@@ -498,7 +498,7 @@ D003            |20                |22.2                |2021-03-01T17:09:36.000
 总数目：5
 }
 
-Elapsed Time: 0.0.46
+Elapsed Time: 0.0.69
 
 -- [1]105:select time, count(distinct time), count(distinct id), count(distinct int32), count(distinct int64), count(distinct float), count(distinct double), count(distinct text), count(distinct boolean), count(distinct string), count(distinct blob), count(distinct timestamp), count(distinct date) from t1 group by 1 order by 1
 STRICT{
@@ -521,7 +521,7 @@ time(TIMESTAMP)      |_col1(INT64)      |_col2(INT64)      |_col3(INT64)      |_
 总数目：5
 }
 
-Elapsed Time: 0.0.18
+Elapsed Time: 0.0.19
 
 -- [1]107:select id, sum(distinct int32), sum(distinct int64), sum(distinct float), sum(distinct double) from t1 group by 1 order by 1
 STRICT{
@@ -535,7 +535,7 @@ D003            |3.0                |30.0               |3.3000000715255737 |33.
 总数目：3
 }
 
-Elapsed Time: 0.0.18
+Elapsed Time: 0.0.17
 
 -- [1]109:select id, avg(distinct int32), avg(distinct int64), avg(distinct float), avg(distinct double) from t1 group by 1 order by 1
 STRICT{
@@ -549,7 +549,7 @@ D003            |1.5                |15.0               |1.6500000357627869 |16.
 总数目：3
 }
 
-Elapsed Time: 0.0.15
+Elapsed Time: 0.0.13
 
 -- [1]111:select time, max(distinct time),max(distinct id), max(distinct int32), max(distinct int64), max(distinct float), max(distinct double), max(distinct text), max(distinct boolean), max(distinct string), max(distinct blob), max(distinct timestamp), max(distinct date) from t1 group by 1 order by 1
 STRICT{
@@ -572,7 +572,7 @@ time(TIMESTAMP)      |_col1(TIMESTAMP)      |_col2(STRING)      |_col3(INT32)   
 总数目：5
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.19
 
 -- [1]113:select time, min(distinct time),min(distinct id), min(distinct int32), min(distinct int64), min(distinct float), min(distinct double), min(distinct text), min(distinct boolean), min(distinct string), min(distinct blob), min(distinct timestamp), min(distinct date) from t1 group by 1 order by 1
 STRICT{
@@ -595,9 +595,9 @@ time(TIMESTAMP)      |_col1(TIMESTAMP)      |_col2(STRING)      |_col3(INT32)   
 总数目：5
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.23
 
--- [1]115:select time,first(distinct time), first(distinct id), first(distinct int32), first(distinct int64), first(distinct float), first(distinct double), first(distinct text), first(distinct boolean), first(distinct string), first(distinct blob), first(distinct timestamp), first(distinct date) from t1 group by 1 order by 1,2,3,4,5
+-- [1]115:select time,first(distinct time), first(distinct id), first(distinct int32), first(distinct int64), first(distinct float), first(distinct double), first(distinct text), first(distinct boolean), first(distinct string), first(distinct blob), first(distinct timestamp), first(distinct date) from t1 group by 1 order by 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 STRICT{
 time(TIMESTAMP)      |_col1(TIMESTAMP)      |_col2(STRING)      |_col3(INT32)      |_col4(INT64)      |_col5(FLOAT)      |_col6(DOUBLE)      |_col7(TEXT)      |_col8(BOOLEAN)      |_col9(STRING)      |_col10(BLOB)      |_col11(TIMESTAMP)      |_col12(DATE)      |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -618,9 +618,9 @@ time(TIMESTAMP)      |_col1(TIMESTAMP)      |_col2(STRING)      |_col3(INT32)   
 总数目：5
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.22
 
--- [1]117:select time,last(distinct time), last(distinct id), last(distinct int32), last(distinct int64), last(distinct float), last(distinct double), last(distinct text), last(distinct boolean), last(distinct string), last(distinct blob), last(distinct timestamp), last(distinct date) from t1 group by 1 order by 1,2,3,4,5
+-- [1]117:select time,last(distinct time), last(distinct id), last(distinct int32), last(distinct int64), last(distinct float), last(distinct double), last(distinct text), last(distinct boolean), last(distinct string), last(distinct blob), last(distinct timestamp), last(distinct date) from t1 group by 1 order by 1,2,3,4,5,6,7,8,9,10,11,12,13
 STRICT{
 time(TIMESTAMP)      |_col1(TIMESTAMP)      |_col2(STRING)      |_col3(INT32)      |_col4(INT64)      |_col5(FLOAT)      |_col6(DOUBLE)      |_col7(TEXT)      |_col8(BOOLEAN)      |_col9(STRING)      |_col10(BLOB)      |_col11(TIMESTAMP)      |_col12(DATE)      |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -641,7 +641,7 @@ time(TIMESTAMP)      |_col1(TIMESTAMP)      |_col2(STRING)      |_col3(INT32)   
 总数目：5
 }
 
-Elapsed Time: 0.0.15
+Elapsed Time: 0.0.20
 
 -- [1]119:select id, stddev(distinct int32), stddev(distinct int64), stddev(distinct float), stddev(distinct double) from t1 group by 1 order by 1
 STRICT{
@@ -655,7 +655,7 @@ D003            |0.7071067811865476 |7.0710678118654755 |0.7778174761639417 |7.8
 总数目：3
 }
 
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.18
 
 -- [1]121:select id, stddev_pop(distinct int32), stddev_pop(distinct int64), stddev_pop(distinct float), stddev_pop(distinct double) from t1 group by 1 order by 1
 STRICT{
@@ -669,7 +669,7 @@ D003            |0.5                |5.0                |0.550000011920929  |5.5
 总数目：3
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.13
 
 -- [1]123:select id, stddev_samp(distinct int32), stddev_samp(distinct int64), stddev_samp(distinct float), stddev_samp(distinct double) from t1 group by 1 order by 1
 STRICT{
@@ -697,7 +697,7 @@ D003            |0.5                |50.0               |0.605000026226044  |61.
 总数目：3
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.13
 
 -- [1]127:select id, var_pop(distinct int32), var_pop(distinct int64), var_pop(distinct float), var_pop(distinct double) from t1 group by 1 order by 1
 STRICT{
@@ -711,7 +711,7 @@ D003            |0.25               |25.0               |0.302500013113022  |30.
 总数目：3
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.13
 
 -- [1]128:select round(VAR_POP(distinct int32),1), round(VAR_POP(distinct int64),1), round(VAR_POP(distinct float),1), round(VAR_POP(distinct double),1) from t1
 STRICT{
@@ -735,7 +735,7 @@ D003            |0.2                |25.0               |0.3                |30.
 总数目：3
 }
 
-Elapsed Time: 0.0.14
+Elapsed Time: 0.0.15
 
 -- [1]131:select id, var_samp(distinct int32), var_samp(distinct int64), var_samp(distinct float), var_samp(distinct double) from t1 group by 1 order by 1
 STRICT{
@@ -749,7 +749,7 @@ D003            |0.5                |50.0               |0.605000026226044  |61.
 总数目：3
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.14
 
 -- [1]133:select id, extreme(distinct int32), extreme(distinct int64), extreme(distinct float), extreme(distinct double) from t1 group by 1 order by 1
 STRICT{
@@ -763,9 +763,9 @@ D003            |2                 |20                |2.2               |22.2  
 总数目：3
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.14
 
--- [1]135:select time, mode(distinct time), mode(distinct id), mode(distinct int32), mode(distinct int64), mode(distinct float), mode(distinct double), mode(distinct text), mode(distinct boolean), mode(distinct string), mode(distinct blob), mode(distinct timestamp), mode(distinct date) from t1 group by 1 order by 1,2,3,4,5,6
+-- [1]135:select time, mode(distinct time), mode(distinct id), mode(distinct int32), mode(distinct int64), mode(distinct float), mode(distinct double), mode(distinct text), mode(distinct boolean), mode(distinct string), mode(distinct blob), mode(distinct timestamp), mode(distinct date) from t1 group by 1 order by 1,2,3,4,5,6,7,8,9,10,11,12,13
 STRICT{
 time(TIMESTAMP)      |_col1(TIMESTAMP)      |_col2(STRING)      |_col3(INT32)      |_col4(INT64)      |_col5(FLOAT)      |_col6(DOUBLE)      |_col7(TEXT)      |_col8(BOOLEAN)      |_col9(STRING)      |_col10(BLOB)      |_col11(TIMESTAMP)      |_col12(DATE)      |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -786,7 +786,7 @@ time(TIMESTAMP)      |_col1(TIMESTAMP)      |_col2(STRING)      |_col3(INT32)   
 总数目：5
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.21
 
 -- [1]137:select id, min_by(distinct id, int32), min_by(distinct id, int64), min_by(distinct id, float), min_by(distinct id, double), min_by(distinct id, text), min_by(distinct id, boolean), min_by(distinct id, string), min_by(distinct id, blob), min_by(distinct id, timestamp), min_by(distinct id, date) from t1 group by 1 order by 1
 STRICT{
@@ -800,7 +800,7 @@ D003            |D003               |D003               |D003               |D00
 总数目：3
 }
 
-Elapsed Time: 0.0.18
+Elapsed Time: 0.0.19
 
 -- [1]139:select id, max_by(distinct time, int32), max_by(distinct time, int64), max_by(distinct time, float), max_by(distinct time, double) from t1 group by 1 order by 1
 STRICT{
@@ -831,7 +831,7 @@ D003            |D003               |D003               |D003               |D00
 总数目：3
 }
 
-Elapsed Time: 0.0.14
+Elapsed Time: 0.0.16
 
 -- [1]143:select id, last_by(distinct time, int32), last_by(distinct time, int64), last_by(distinct time, float), last_by(distinct time, double), last_by(distinct time, timestamp) from t1 group by 1 order by 1
 STRICT{
@@ -862,7 +862,7 @@ D003            |0                 |1                 |1                 |1     
 总数目：3
 }
 
-Elapsed Time: 0.0.18
+Elapsed Time: 0.0.21
 
 -- [1]147:select min_by(distinct time, int32), min_by(distinct time, int64), min_by(distinct time, float), min_by(distinct time, double) from t1 where id='D001'
 STRICT{
@@ -873,7 +873,7 @@ _col0(TIMESTAMP)      |_col1(TIMESTAMP)      |_col2(TIMESTAMP)      |_col3(TIMES
 总数目：1
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.17
 
 -- [1]149:select id, min_by(distinct time, int32), min_by(distinct time, int64), min_by(distinct time, float), min_by(distinct time, double), min_by(distinct time, timestamp) from t1 where id='D001' or id='D002' group by 1 order by 1
 STRICT{
@@ -887,7 +887,7 @@ D002            |1970-01-01T08:00:00.00|1970-01-01T08:00:00.00|1970-01-01T08:00:
 总数目：2
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.19
 
 -- [1]151:select max_by(distinct int32, int64), max_by(distinct time, int32), max_by(distinct time, float), max_by(distinct float, double), max_by(distinct time, timestamp) from t1 where id='D002'
 STRICT{
@@ -898,7 +898,7 @@ _col0(INT32)      |_col1(TIMESTAMP)      |_col2(TIMESTAMP)      |_col3(FLOAT)   
 总数目：1
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.10
 
 -- [1]153:select id, max_by(distinct time, int32), max_by(distinct time, int64), max_by(distinct time, double), max_by(distinct time, float) from t1 where id='D001' or id='D002' group by 1 order by 1
 STRICT{
@@ -912,7 +912,7 @@ D002            |1970-01-01T08:00:00.00|1970-01-01T08:00:00.00|1970-01-01T08:00:
 总数目：2
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.12
 
 -- [1]155:select id, first_by(distinct time, int32), first_by(distinct time, int64), first_by(distinct time, float), first_by(distinct time, double), first_by(distinct time, timestamp), first_by(distinct time, string) from t1 where id='D001' or id='D003' group by 1 order by 1
 STRICT{
@@ -926,7 +926,7 @@ D003            |1970-01-01T08:00:00.00|1970-01-01T08:00:00.00|1970-01-01T08:00:
 总数目：2
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.12
 
 -- [1]157:select id, last(distinct int32), last(distinct int64), last(distinct float), last(distinct double), last(distinct text), last(distinct string), last(distinct timestamp) from t1 where id='D002' or id='D003' group by 1 order by 1
 STRICT{
@@ -940,7 +940,7 @@ D003            |1                 |10                |1.1               |11.1  
 总数目：2
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.14
 
 -- [1]159:select id, last_by(distinct time, text), last_by(distinct time, string), last_by(distinct time, blob), last_by(distinct time, double), first_by(distinct time, int32) from t1 where id='D001' or id='D002' group by 1 order by 1
 STRICT{
@@ -954,7 +954,7 @@ D002            |1970-01-01T08:00:00.00|1970-01-01T08:00:00.00|1970-01-01T08:00:
 总数目：2
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.13
 
 -- [1]162:select distinct time,int32,double,text,string from t1 order by time
 STRICT{
@@ -977,7 +977,7 @@ time(TIMESTAMP)      |int32(INT32)      |double(DOUBLE)      |text(TEXT)      |s
 总数目：5
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.12
 -- [1]165:select count(distinct *) from t1
 STRICT{
 SQLSTATE : 700: line 1:23: mismatched input '*'. Expecting: <expression>
