@@ -13,7 +13,7 @@ user_1          |
 总数目：2
 }
 
-Elapsed Time: 0.0.14
+Elapsed Time: 0.0.1
 -- [1]39:grant manage_user to user user_1
 STRICT{
 PASS
@@ -39,7 +39,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]44:create user u001 'pass1234'
 STRICT{
 PASS
@@ -83,7 +83,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 -- [1]57:drop user u001
 STRICT{
 PASS
@@ -111,7 +111,7 @@ Role(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
 -- [1]64:list role
 STRICT{
@@ -133,7 +133,7 @@ Role(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]70:show queries
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
@@ -171,7 +171,7 @@ dba2                |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]85:create table dba1.t1(ID TAG, int32 INT32 FIELD)
 STRICT{
 PASS
@@ -283,9 +283,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.190
+Elapsed Time: 0.5.417
 
--- [1]121:select * from dba1.t1
+-- [1]121:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 -------------------------------------------------------
@@ -294,13 +294,13 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.15
 -- [1]123:insert into dba1.t1 values(1000,'d2',2)
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege INSERT ON dba1.t1
 }
 
--- [1]126:select * from dba1.t1
+-- [1]126:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 -------------------------------------------------------
@@ -309,8 +309,8 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.10
--- [1]129:select * from dba1.t1
+Elapsed Time: 0.0.8
+-- [1]129:select * from dba1.t1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON dba1.t1
 }
@@ -323,7 +323,7 @@ STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DROP ON dba1.t1
 }
 
--- [1]137:select * from dba1.t1
+-- [1]137:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 -------------------------------------------------------
@@ -332,7 +332,7 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.8
 -- [1]156:create user user_1 'pass1234'
 STRICT{
 PASS
@@ -348,7 +348,7 @@ user_1          |
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]158:grant manage_user to user user_1
 STRICT{
 PASS
@@ -398,7 +398,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]166:list privileges of user u001
 STRICT{
@@ -424,7 +424,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]177:drop user u001
 STRICT{
 PASS
@@ -440,7 +440,7 @@ user_1          |
 总数目：2
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.1
 -- [1]181:create role role_1
 STRICT{
 PASS
@@ -452,7 +452,7 @@ Role(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 
 -- [1]184:list role
 STRICT{
@@ -462,7 +462,7 @@ role_1          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]186:drop role role_1
 STRICT{
 PASS
@@ -512,7 +512,7 @@ dba2                |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]205:create table dba1.t1(ID TAG, int32 INT32 FIELD)
 STRICT{
 PASS
@@ -530,7 +530,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]208:show tables from dba2
 STRICT{
@@ -570,7 +570,7 @@ dba1                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.1
 -- [1]217:alter database dba1 set properties ttl=3600000
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege ALTER ON DB:dba1
@@ -608,7 +608,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
 -- [1]230:desc dba1.t1
 STRICT{
@@ -632,9 +632,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.204
+Elapsed Time: 0.0.276
 
--- [1]237:select * from dba1.t1
+-- [1]237:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 -------------------------------------------------------
@@ -643,13 +643,13 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.12
 -- [1]239:insert into dba1.t1 values(1000,'d2',2)
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege INSERT ON dba1.t1
 }
 
--- [1]242:select * from dba1.t1
+-- [1]242:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 -------------------------------------------------------
@@ -658,8 +658,8 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.13
--- [1]245:select * from dba1.t1
+Elapsed Time: 0.0.8
+-- [1]245:select * from dba1.t1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON dba1.t1
 }
@@ -668,7 +668,7 @@ STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON dba1.t1
 }
 
--- [1]251:select * from dba1.t1
+-- [1]251:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 -------------------------------------------------------
@@ -677,7 +677,7 @@ time(TIMESTAMP)      |id(STRING)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.7
 -- [1]253:drop table dba1.t1
 STRICT{
 PASS
@@ -753,7 +753,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]283:list privileges of user u001
 STRICT{
@@ -761,7 +761,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]287:alter user u001 set password '1234'
 STRICT{
 PASS
@@ -795,7 +795,7 @@ user_1          |
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]298:create role role_1
 STRICT{
 PASS
@@ -807,7 +807,7 @@ Role(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 
 -- [1]301:list role
 STRICT{
@@ -817,7 +817,7 @@ role_1          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]303:drop role role_1
 STRICT{
 PASS
@@ -829,7 +829,7 @@ Role(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]307:show queries
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
@@ -885,7 +885,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]325:show tables from dba2
 STRICT{
@@ -925,7 +925,7 @@ dba1                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]334:alter database dba1 set properties ttl=3600000
 STRICT{
 PASS
@@ -941,7 +941,7 @@ dba1                |3600000            |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]337:alter table dba1.t1 add column boolean BOOLEAN
 STRICT{
 PASS
@@ -963,7 +963,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]341:desc dba1.t1
 STRICT{
@@ -987,9 +987,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.718
+Elapsed Time: 0.0.684
 
--- [1]347:select * from dba1.t1
+-- [1]347:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -998,13 +998,13 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.18
+Elapsed Time: 0.0.11
 -- [1]349:insert into dba1.t1 values(1000,'d2',2)
 STRICT{
 SQLSTATE : 701: Measurement contains null or empty string: [id, null]
 }
 
--- [1]352:select * from dba1.t1
+-- [1]352:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -1013,8 +1013,8 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.10
--- [1]355:select * from dba1.t1
+Elapsed Time: 0.0.7
+-- [1]355:select * from dba1.t1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON dba1.t1
 }
@@ -1023,7 +1023,7 @@ STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON dba1.t1
 }
 
--- [1]361:select * from dba1.t1
+-- [1]361:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -1032,7 +1032,7 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.9
 -- [1]363:drop table dba1.t1
 STRICT{
 PASS
@@ -1096,7 +1096,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：6
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]392:create user u001 'pass1234'
 STRICT{
 PASS
@@ -1114,7 +1114,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.1
 
 -- [1]394:list privileges of user u001
 STRICT{
@@ -1122,7 +1122,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.5
 -- [1]398:alter user u001 set password '1234'
 STRICT{
 PASS
@@ -1140,7 +1140,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]405:drop user u001
 STRICT{
 PASS
@@ -1156,7 +1156,7 @@ user_1          |
 总数目：2
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.1
 -- [1]409:create role role_1
 STRICT{
 PASS
@@ -1178,7 +1178,7 @@ role_1          |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]414:drop role role_1
 STRICT{
 PASS
@@ -1228,7 +1228,7 @@ dba2                |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]433:create table dba1.t1(ID TAG, int32 INT32 FIELD)
 STRICT{
 PASS
@@ -1246,7 +1246,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]436:show tables from dba2
 STRICT{
@@ -1270,7 +1270,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]441:drop database dba2
 STRICT{
 PASS
@@ -1286,7 +1286,7 @@ dba1                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]445:alter database dba1 set properties ttl=3600000
 STRICT{
 PASS
@@ -1302,7 +1302,7 @@ dba1                |3600000            |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]448:alter table dba1.t1 add column boolean BOOLEAN
 STRICT{
 PASS
@@ -1338,19 +1338,19 @@ boolean               |BOOLEAN             |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.1
 -- [1]454:insert into dba1.t1 values(1000,'d1',true)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.718
--- [1]455:select * from dba1.t1
+Elapsed Time: 0.0.657
+-- [1]455:select * from dba1.t1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON dba1.t1
 }
 
--- [1]458:select * from dba1.t1
+-- [1]458:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -1359,19 +1359,19 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.13
 -- [1]460:insert into dba1.t1 values(1000,'d1',false)
 STRICT{
 0
 }
 
 Elapsed Time: 0.0.4
--- [1]461:select * from dba1.t1
+-- [1]461:select * from dba1.t1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON dba1.t1
 }
 
--- [1]464:select * from dba1.t1
+-- [1]464:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -1380,8 +1380,8 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.8
--- [1]467:select * from dba1.t1
+Elapsed Time: 0.0.9
+-- [1]467:select * from dba1.t1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON dba1.t1
 }
@@ -1390,7 +1390,7 @@ STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON dba1.t1
 }
 
--- [1]473:select * from dba1.t1
+-- [1]473:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -1399,7 +1399,7 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.9
 -- [1]475:drop table dba1.t1
 STRICT{
 PASS
@@ -1419,7 +1419,7 @@ user_1          |
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]497:grant manage_user to user user_1
 STRICT{
 PASS
@@ -1469,7 +1469,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：7
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]506:create user u001 'pass1234'
 STRICT{
 PASS
@@ -1487,7 +1487,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.2
 
 -- [1]508:list privileges of user u001
 STRICT{
@@ -1495,7 +1495,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]512:alter user u001 set password '1234'
 STRICT{
 PASS
@@ -1513,7 +1513,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]519:drop user u001
 STRICT{
 PASS
@@ -1529,7 +1529,7 @@ user_1          |
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]523:create role role_1
 STRICT{
 PASS
@@ -1563,7 +1563,7 @@ Role(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 -- [1]532:show queries
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
@@ -1659,7 +1659,7 @@ dba1                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]559:alter database dba1 set properties ttl=3600000
 STRICT{
 PASS
@@ -1717,9 +1717,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.715
+Elapsed Time: 0.0.731
 
--- [1]569:select * from dba1.t1
+-- [1]569:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -1728,7 +1728,7 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.13
 -- [1]570:insert into dba1.t1 values(1000,'d1',false)
 STRICT{
 0
@@ -1736,7 +1736,7 @@ STRICT{
 
 Elapsed Time: 0.0.3
 
--- [1]571:select * from dba1.t1
+-- [1]571:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -1745,9 +1745,9 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 
--- [1]574:select * from dba1.t1
+-- [1]574:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -1756,13 +1756,13 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 -- [1]576:delete from dba1.t1
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege DELETE ON dba1.t1
 }
 
--- [1]578:select * from dba1.t1
+-- [1]578:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -1771,7 +1771,7 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.6
 -- [1]579:drop table dba1.t1
 STRICT{
 PASS
@@ -1847,7 +1847,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：8
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]611:create user u001 'pass1234'
 STRICT{
 PASS
@@ -1891,7 +1891,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]624:drop user u001
 STRICT{
 PASS
@@ -1907,7 +1907,7 @@ user_1          |
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]628:create role role_1
 STRICT{
 PASS
@@ -1919,7 +1919,7 @@ Role(TEXT)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 
 -- [1]631:list role
 STRICT{
@@ -1997,7 +1997,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]655:show tables from dba2
 STRICT{
@@ -2021,7 +2021,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]660:drop database dba2
 STRICT{
 PASS
@@ -2037,7 +2037,7 @@ dba1                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]664:alter database dba1 set properties ttl=3600000
 STRICT{
 PASS
@@ -2089,15 +2089,15 @@ boolean               |BOOLEAN             |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.1
 -- [1]673:insert into dba1.t1 values(1000,'d1',true)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.626
+Elapsed Time: 0.0.622
 
--- [1]674:select * from dba1.t1
+-- [1]674:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -2106,15 +2106,26 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.18
+Elapsed Time: 0.0.12
 -- [1]675:insert into dba1.t1 values(1000,'d1',false)
 STRICT{
 0
 }
 
+Elapsed Time: 0.0.3
+
+-- [1]676:select * from dba1.t1 order by time
+STRICT{
+time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
+-----------------------------------------------------------
+1970-01-01T08:00:01.0|d1              |false                 |
+00+08:00             |                |                      |
+总数目：1
+}
+
 Elapsed Time: 0.0.7
 
--- [1]676:select * from dba1.t1
+-- [1]679:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 -----------------------------------------------------------
@@ -2123,32 +2134,21 @@ time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.11
-
--- [1]679:select * from dba1.t1
-STRICT{
-time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
------------------------------------------------------------
-1970-01-01T08:00:01.0|d1              |false                 |
-00+08:00             |                |                      |
-总数目：1
-}
-
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.7
 -- [1]681:delete from dba1.t1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.13
 
--- [1]682:select * from dba1.t1
+-- [1]682:select * from dba1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |boolean(BOOLEAN)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.7
 -- [1]683:drop table dba1.t1
 STRICT{
 PASS
@@ -2190,7 +2190,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
 -- [1]711:list privileges of role no_auth_role
 STRICT{
@@ -2255,7 +2255,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, please add pri
 STRICT{
 SQLSTATE : 701: Table test_t1 not found
 }
--- [1]742:select * from dba1.test_1
+-- [1]742:select * from dba1.test_1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON dba1.test_1
 }
@@ -2376,7 +2376,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]791:alter user user_1 set password '1234'
 STRICT{
 PASS
@@ -2434,9 +2434,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.269
+Elapsed Time: 0.0.247
 
--- [1]806:select * from dba1.test_t1
+-- [1]806:select * from dba1.test_t1 order by time
 STRICT{
 time(TIMESTAMP)      |int32(INT32)      |
 ---------------------------------------
@@ -2445,13 +2445,13 @@ time(TIMESTAMP)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.10
 -- [1]807:delete from dba1.test_t1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]808:drop table dba1.test_t1
 STRICT{
 PASS
@@ -2495,7 +2495,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：8
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]832:create user user_1 'pass1234'
 STRICT{
 PASS
@@ -2513,7 +2513,7 @@ user_1          |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]834:alter user user_1 set password '1234'
 STRICT{
 PASS
@@ -2569,9 +2569,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.919
+Elapsed Time: 0.0.953
 
--- [1]849:select * from dba1.test_t1
+-- [1]849:select * from dba1.test_t1 order by time
 STRICT{
 time(TIMESTAMP)      |int32(INT32)      |
 ---------------------------------------
@@ -2580,13 +2580,13 @@ time(TIMESTAMP)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.9
 -- [1]850:delete from dba1.test_t1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.2
 -- [1]851:drop table dba1.test_t1
 STRICT{
 PASS
@@ -2606,7 +2606,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]858:create user user_1 'pass1234'
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege MANAGE_USER
@@ -2663,7 +2663,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, please add pri
 STRICT{
 SQLSTATE : 701: Table test_t1 not found
 }
--- [1]886:select * from dba1.test_t1
+-- [1]886:select * from dba1.test_t1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON dba1.test_t1
 }
@@ -2714,7 +2714,7 @@ test_role1      |*.*              |DROP                  |false                 
 总数目：8
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
 -- [1]900:list privileges of user test_user1
 STRICT{
@@ -2814,9 +2814,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.880
+Elapsed Time: 0.0.900
 
--- [1]919:select * from dba1.test_t1
+-- [1]919:select * from dba1.test_t1 order by time
 STRICT{
 time(TIMESTAMP)      |int32(INT32)      |
 ---------------------------------------
@@ -2825,13 +2825,13 @@ time(TIMESTAMP)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.20
+Elapsed Time: 0.0.17
 -- [1]920:delete from dba1.test_t1
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]921:drop table dba1.test_t1
 STRICT{
 PASS
@@ -2859,7 +2859,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]929:create user user_1 'pass1234'
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege MANAGE_USER
@@ -2916,7 +2916,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, please add pri
 STRICT{
 SQLSTATE : 701: Table test_t1 not found
 }
--- [1]957:select * from dba1.test_t1
+-- [1]957:select * from dba1.test_t1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON dba1.test_t1
 }
@@ -3009,7 +3009,7 @@ test_role1      |
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
 -- [1]983:drop role test_role
 STRICT{
 PASS
@@ -3043,9 +3043,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.759
+Elapsed Time: 0.0.794
 
--- [1]994:select * from dba1.test_t1
+-- [1]994:select * from dba1.test_t1 order by time
 STRICT{
 time(TIMESTAMP)      |int32(INT32)      |
 ---------------------------------------
@@ -3054,7 +3054,7 @@ time(TIMESTAMP)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.15
+Elapsed Time: 0.0.11
 -- [1]995:delete from dba1.test_t1
 STRICT{
 0
@@ -3138,7 +3138,7 @@ test_role1      |
 总数目：2
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]1015:drop role test_role
 STRICT{
 PASS
@@ -3172,9 +3172,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.890
+Elapsed Time: 0.0.917
 
--- [1]1026:select * from dba1.test_t1
+-- [1]1026:select * from dba1.test_t1 order by time
 STRICT{
 time(TIMESTAMP)      |int32(INT32)      |
 ---------------------------------------
@@ -3183,7 +3183,7 @@ time(TIMESTAMP)      |int32(INT32)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.9
 -- [1]1027:delete from dba1.test_t1
 STRICT{
 0

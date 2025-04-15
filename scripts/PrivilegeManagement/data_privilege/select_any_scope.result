@@ -47,7 +47,7 @@ user04          |
 总数目：5
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]37:list role
 STRICT{
@@ -59,7 +59,7 @@ role02          |
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]38:list user of role role01
 STRICT{
@@ -69,7 +69,7 @@ user02          |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 
 -- [1]39:list role of user user02
 STRICT{
@@ -115,7 +115,7 @@ db1                 |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]45:create table db1.t1(ID TAG, status BOOLEAN)
 STRICT{
 PASS
@@ -143,15 +143,15 @@ status                |BOOLEAN             |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]48:insert into db1.t1(time, ID, status) values(1, 'd1', false)
 STRICT{
 0
 }
 
-Elapsed Time: 0.1.546
+Elapsed Time: 0.1.846
 
--- [1]49:select * from db1.t1
+-- [1]49:select * from db1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
@@ -160,7 +160,7 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.13
+Elapsed Time: 0.0.16
 
 -- [1]50:show devices from db1.t1
 STRICT{
@@ -170,7 +170,7 @@ d1              |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.4
 
 -- [1]51:count devices from db1.t1
 STRICT{
@@ -180,7 +180,7 @@ count(devices)(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.6
 -- [1]53:create database db2
 STRICT{
 PASS
@@ -198,7 +198,7 @@ db1                 |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]55:create table db2.t1(ID TAG, status BOOLEAN)
 STRICT{
 PASS
@@ -232,9 +232,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.180
+Elapsed Time: 0.0.308
 
--- [1]59:select * from db2.t1
+-- [1]59:select * from db2.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
@@ -253,7 +253,7 @@ d1              |
 总数目：1
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.7
 
 -- [1]61:count devices from db2.t1
 STRICT{
@@ -263,7 +263,7 @@ count(devices)(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]65:list privileges of user user01
 STRICT{
@@ -271,8 +271,8 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.2
--- [1]66:select * from db1.t1
+Elapsed Time: 0.0.4
+-- [1]66:select * from db1.t1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db1.t1
 }
@@ -297,7 +297,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.4
 
 -- [1]80:show databases
 STRICT{
@@ -311,7 +311,7 @@ db1                 |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.7
 
 -- [1]81:show tables from db1
 STRICT{
@@ -321,7 +321,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 
 -- [1]82:desc db1.t1
 STRICT{
@@ -335,9 +335,9 @@ status                |BOOLEAN             |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 
--- [1]83:select * from db1.t1
+-- [1]83:select * from db1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
@@ -346,7 +346,7 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.14
+Elapsed Time: 0.0.12
 
 -- [1]84:show devices from db1.t1
 STRICT{
@@ -376,7 +376,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]87:desc db2.t1
 STRICT{
@@ -390,9 +390,9 @@ status                |BOOLEAN             |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
--- [1]88:select * from db2.t1
+-- [1]88:select * from db2.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
@@ -401,7 +401,7 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.12
+Elapsed Time: 0.0.9
 
 -- [1]89:show devices from db2.t1
 STRICT{
@@ -411,7 +411,7 @@ d1              |
 总数目：1
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.3
 
 -- [1]90:count devices from db2.t1
 STRICT{
@@ -421,7 +421,7 @@ count(devices)(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 
 -- [1]94:list privileges of user user02
 STRICT{
@@ -429,7 +429,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 
 -- [1]95:list role of user user02
 STRICT{
@@ -439,8 +439,8 @@ role01          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
--- [1]96:select * from db2.t1
+Elapsed Time: 0.0.0
+-- [1]96:select * from db2.t1 order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, please add privilege SELECT ON db2.t1
 }
@@ -465,7 +465,7 @@ role01          |*.*              |SELECT                |false                 
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]110:list role of user user02
 STRICT{
@@ -499,7 +499,7 @@ t1                   |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 
 -- [1]113:desc db1.t1
 STRICT{
@@ -515,7 +515,7 @@ status                |BOOLEAN             |FIELD               |
 
 Elapsed Time: 0.0.1
 
--- [1]114:select * from db1.t1
+-- [1]114:select * from db1.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
@@ -524,7 +524,7 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.14
 
 -- [1]115:show devices from db1.t1
 STRICT{
@@ -534,7 +534,7 @@ d1              |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 
 -- [1]116:count devices from db1.t1
 STRICT{
@@ -570,7 +570,7 @@ status                |BOOLEAN             |FIELD               |
 
 Elapsed Time: 0.0.1
 
--- [1]120:select * from db2.t1
+-- [1]120:select * from db2.t1 order by time
 STRICT{
 time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 ----------------------------------------------------------
@@ -579,7 +579,7 @@ time(TIMESTAMP)      |id(STRING)      |status(BOOLEAN)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.8
+Elapsed Time: 0.0.11
 
 -- [1]121:show devices from db2.t1
 STRICT{
@@ -589,7 +589,7 @@ d1              |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]122:count devices from db2.t1
 STRICT{
@@ -599,7 +599,7 @@ count(devices)(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.4
 
 -- [1]126:list privileges of user user03
 STRICT{
@@ -617,7 +617,7 @@ information_schema  |INF                |null                                |nu
 总数目：1
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.5
 
 -- [1]128:show tables from information_schema
 STRICT{
@@ -643,8 +643,8 @@ pipes                |INF                |
 总数目：9
 }
 
-Elapsed Time: 0.0.0
--- [1]129:select * from information_schema.databases
+Elapsed Time: 0.0.2
+-- [1]129:select * from information_schema.databases order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -652,7 +652,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]133:select * from information_schema.tables
+-- [1]133:select * from information_schema.tables order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -660,7 +660,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]137:select * from information_schema.pipe_plugins
+-- [1]137:select * from information_schema.pipe_plugins order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -668,7 +668,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]141:select * from information_schema.subscriptions
+-- [1]141:select * from information_schema.subscriptions order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -676,7 +676,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]145:select * from information_schema.regions
+-- [1]145:select * from information_schema.regions order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -684,7 +684,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]149:select * from information_schema.columns
+-- [1]149:select * from information_schema.columns order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -692,7 +692,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]153:select * from information_schema.topics
+-- [1]153:select * from information_schema.topics order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -700,7 +700,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]157:select * from information_schema.queries
+-- [1]157:select * from information_schema.queries order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -708,7 +708,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]161:select * from information_schema.pipes
+-- [1]161:select * from information_schema.pipes order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -729,7 +729,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]173:show databases
 STRICT{
@@ -769,8 +769,8 @@ pipes                |INF                |
 总数目：9
 }
 
-Elapsed Time: 0.0.0
--- [1]175:select * from information_schema.databases
+Elapsed Time: 0.0.1
+-- [1]175:select * from information_schema.databases order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -778,7 +778,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]179:select * from information_schema.tables
+-- [1]179:select * from information_schema.tables order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -786,7 +786,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]183:select * from information_schema.pipe_plugins
+-- [1]183:select * from information_schema.pipe_plugins order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -794,7 +794,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]187:select * from information_schema.subscriptions
+-- [1]187:select * from information_schema.subscriptions order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -802,7 +802,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]191:select * from information_schema.regions
+-- [1]191:select * from information_schema.regions order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -810,7 +810,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]195:select * from information_schema.columns
+-- [1]195:select * from information_schema.columns order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -818,7 +818,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]199:select * from information_schema.topics
+-- [1]199:select * from information_schema.topics order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -826,7 +826,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]203:select * from information_schema.queries
+-- [1]203:select * from information_schema.queries order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -834,7 +834,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]207:select * from information_schema.pipes
+-- [1]207:select * from information_schema.pipes order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -849,7 +849,7 @@ Role(TEXT)      |Scope(TEXT)      |Privileges(TEXT)      |GrantOption(BOOLEAN)  
 总数目：0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]215:list role of user user04
 STRICT{
@@ -859,7 +859,7 @@ role02          |
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]216:show databases
 STRICT{
@@ -896,7 +896,7 @@ pipes                |INF                |
 }
 
 Elapsed Time: 0.0.1
--- [1]218:select * from information_schema.databases
+-- [1]218:select * from information_schema.databases order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -904,7 +904,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]222:select * from information_schema.tables
+-- [1]222:select * from information_schema.tables order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -912,7 +912,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]226:select * from information_schema.pipe_plugins
+-- [1]226:select * from information_schema.pipe_plugins order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -920,7 +920,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]230:select * from information_schema.subscriptions
+-- [1]230:select * from information_schema.subscriptions order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -928,7 +928,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]234:select * from information_schema.regions
+-- [1]234:select * from information_schema.regions order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -936,7 +936,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]238:select * from information_schema.columns
+-- [1]238:select * from information_schema.columns order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -944,7 +944,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]242:select * from information_schema.topics
+-- [1]242:select * from information_schema.topics order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -952,7 +952,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]246:select * from information_schema.queries
+-- [1]246:select * from information_schema.queries order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -960,7 +960,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]250:select * from information_schema.pipes
+-- [1]250:select * from information_schema.pipes order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -981,7 +981,7 @@ role02          |*.*              |SELECT                |false                 
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
 -- [1]262:list role of user user04
 STRICT{
@@ -1005,7 +1005,7 @@ db1                 |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.3
 
 -- [1]264:show tables from information_schema
 STRICT{
@@ -1031,8 +1031,8 @@ pipes                |INF                |
 总数目：9
 }
 
-Elapsed Time: 0.0.0
--- [1]265:select * from information_schema.databases
+Elapsed Time: 0.0.2
+-- [1]265:select * from information_schema.databases order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -1040,7 +1040,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]269:select * from information_schema.tables
+-- [1]269:select * from information_schema.tables order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -1048,7 +1048,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]273:select * from information_schema.pipe_plugins
+-- [1]273:select * from information_schema.pipe_plugins order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -1056,7 +1056,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]277:select * from information_schema.subscriptions
+-- [1]277:select * from information_schema.subscriptions order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -1064,7 +1064,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]281:select * from information_schema.regions
+-- [1]281:select * from information_schema.regions order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -1072,7 +1072,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]285:select * from information_schema.columns
+-- [1]285:select * from information_schema.columns order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -1080,7 +1080,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]289:select * from information_schema.topics
+-- [1]289:select * from information_schema.topics order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -1088,7 +1088,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]293:select * from information_schema.queries
+-- [1]293:select * from information_schema.queries order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
@@ -1096,7 +1096,7 @@ SQLSTATE : 803: Access Denied: No permissions for this operation, only root user
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }
--- [1]297:select * from information_schema.pipes
+-- [1]297:select * from information_schema.pipes order by time
 STRICT{
 SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
 }

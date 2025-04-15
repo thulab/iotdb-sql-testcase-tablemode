@@ -45,7 +45,7 @@ insert into t1 values(8,'d2','shanghai',8888,100,55.5,0.1,true,'text5','string1'
 select * from t1 order by time;
 
 --4. count_if 聚合查询
-select count_if(id is not null) as count_if_result from t1
+select count_if(id is not null) as count_if_result from t1;
 select id, count_if(id is not null) as count_if_result from t1 group by id order by id;
 select id, count_if(id is null) as count_if_result from t1 group by id order by id;
 

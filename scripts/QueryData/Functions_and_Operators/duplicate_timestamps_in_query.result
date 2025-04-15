@@ -15,7 +15,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.848
+Elapsed Time: 0.0.233
 -- [1]20:flush
 STRICT{
 PASS
@@ -25,13 +25,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.2
 -- [1]22:flush
 STRICT{
 PASS
 }
 
--- [1]25:select * from table1
+-- [1]25:select * from table1 order by time
 STRICT{
 time(TIMESTAMP)      |id1(STRING)      |s1(STRING)      |
 ------------------------------------------------------
@@ -43,4 +43,4 @@ time(TIMESTAMP)      |id1(STRING)      |s1(STRING)      |
 总数目：2
 }
 
-Elapsed Time: 0.0.230
+Elapsed Time: 0.0.13
