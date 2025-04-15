@@ -13,7 +13,6 @@ create database db.ALTER;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 1.2.指定使用的数据库
 use test; 
@@ -62,7 +61,6 @@ create database db.AND;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 2.2.指定使用的数据库
 use test; 
@@ -111,7 +109,6 @@ create database db.AS;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 3.2.指定使用的数据库
 use test; 
@@ -160,7 +157,6 @@ create database db.BETWEEN;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 4.2.指定使用的数据库
 use test; 
@@ -209,7 +205,6 @@ create database db.BY;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 5.2.指定使用的数据库
 use test; 
@@ -258,7 +253,6 @@ create database db.CASE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 6.2.指定使用的数据库
 use test; 
@@ -307,7 +301,6 @@ create database db.CAST;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 7.2.指定使用的数据库
 use test; 
@@ -356,7 +349,6 @@ create database db.CONSTRAINT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 8.2.指定使用的数据库
 use test; 
@@ -405,7 +397,6 @@ create database db.CREATE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 9.2.指定使用的数据库
 use test; 
@@ -454,7 +445,6 @@ create database db.CROSS;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 10.2.指定使用的数据库
 use test; 
@@ -503,7 +493,6 @@ create database db.CUBE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 11.2.指定使用的数据库
 use test; 
@@ -552,7 +541,6 @@ create database db.CURRENT_CATALOG;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 12.2.指定使用的数据库
 use test; 
@@ -601,7 +589,6 @@ create database db.CURRENT_DATE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 13.2.指定使用的数据库
 use test; 
@@ -650,7 +637,6 @@ create database db.CURRENT_PATH;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 14.2.指定使用的数据库
 use test; 
@@ -699,7 +685,6 @@ create database db.CURRENT_ROLE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 15.2.指定使用的数据库
 use test; 
@@ -748,7 +733,6 @@ create database db.CURRENT_SCHEMA;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 16.2.指定使用的数据库
 use test; 
@@ -797,7 +781,6 @@ create database db.CURRENT_TIME;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 17.2.指定使用的数据库
 use test; 
@@ -846,7 +829,6 @@ create database db.CURRENT_TIMESTAMP;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 18.2.指定使用的数据库
 use test; 
@@ -895,7 +877,6 @@ create database db.CURRENT_USER;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 19.2.指定使用的数据库
 use test; 
@@ -944,7 +925,6 @@ create database db.DEALLOCATE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 20.2.指定使用的数据库
 use test; 
@@ -993,7 +973,6 @@ create database db.DELETE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 21.2.指定使用的数据库
 use test; 
@@ -1042,7 +1021,6 @@ create database db.DESCRIBE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 22.2.指定使用的数据库
 use test; 
@@ -1091,7 +1069,6 @@ create database db.DISTINCT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 23.2.指定使用的数据库
 use test; 
@@ -1140,7 +1117,6 @@ create database db.DROP;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 24.2.指定使用的数据库
 use test; 
@@ -1189,7 +1165,6 @@ create database db.ELSE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 25.2.指定使用的数据库
 use test; 
@@ -1238,7 +1213,6 @@ create database db.END;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 26.2.指定使用的数据库
 use test; 
@@ -1287,7 +1261,6 @@ create database db.ESCAPE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 27.2.指定使用的数据库
 use test; 
@@ -1336,7 +1309,6 @@ create database db.EXCEPT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 28.2.指定使用的数据库
 use test; 
@@ -1385,7 +1357,6 @@ create database db.EXISTS;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 29.2.指定使用的数据库
 use test; 
@@ -1434,7 +1405,6 @@ create database db.EXTRACT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 30.2.指定使用的数据库
 use test; 
@@ -1483,7 +1453,6 @@ create database db.FALSE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 31.2.指定使用的数据库
 use test; 
@@ -1532,7 +1501,6 @@ create database db.FOR;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 32.2.指定使用的数据库
 use test; 
@@ -1581,7 +1549,6 @@ create database db.FROM;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 33.2.指定使用的数据库
 use test; 
@@ -1630,7 +1597,6 @@ create database db.FULL;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 34.2.指定使用的数据库
 use test; 
@@ -1679,7 +1645,6 @@ create database db.GROUP;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 35.2.指定使用的数据库
 use test; 
@@ -1728,7 +1693,6 @@ create database db.GROUPING;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 36.2.指定使用的数据库
 use test; 
@@ -1777,7 +1741,6 @@ create database db.HAVING;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 37.2.指定使用的数据库
 use test; 
@@ -1826,7 +1789,6 @@ create database db.IN;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 38.2.指定使用的数据库
 use test; 
@@ -1875,7 +1837,6 @@ create database db.INNER;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 39.2.指定使用的数据库
 use test; 
@@ -1924,7 +1885,6 @@ create database db.INSERT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 40.2.指定使用的数据库
 use test; 
@@ -1973,7 +1933,6 @@ create database db.INTERSECT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 41.2.指定使用的数据库
 use test; 
@@ -2022,7 +1981,6 @@ create database db.INTO;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 42.2.指定使用的数据库
 use test; 
@@ -2071,7 +2029,6 @@ create database db.IS;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 43.2.指定使用的数据库
 use test; 
@@ -2120,7 +2077,6 @@ create database db.JOIN;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 44.2.指定使用的数据库
 use test; 
@@ -2169,7 +2125,6 @@ create database db.JSON_ARRAY;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 45.2.指定使用的数据库
 use test; 
@@ -2218,7 +2173,6 @@ create database db.JSON_EXISTS;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 46.2.指定使用的数据库
 use test; 
@@ -2267,7 +2221,6 @@ create database db.JSON_OBJECT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 47.2.指定使用的数据库
 use test; 
@@ -2316,7 +2269,6 @@ create database db.JSON_QUERY;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 48.2.指定使用的数据库
 use test; 
@@ -2365,7 +2317,6 @@ create database db.JSON_TABLE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 49.2.指定使用的数据库
 use test; 
@@ -2414,7 +2365,6 @@ create database db.JSON_VALUE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 50.2.指定使用的数据库
 use test; 
@@ -2463,7 +2413,6 @@ create database db.LEFT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 51.2.指定使用的数据库
 use test; 
@@ -2512,7 +2461,6 @@ create database db.LIKE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 52.2.指定使用的数据库
 use test; 
@@ -2561,7 +2509,6 @@ create database db.LISTAGG;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 53.2.指定使用的数据库
 use test; 
@@ -2610,7 +2557,6 @@ create database db.LOCALTIME;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 54.2.指定使用的数据库
 use test; 
@@ -2659,7 +2605,6 @@ create database db.LOCALTIMESTAMP;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 55.2.指定使用的数据库
 use test; 
@@ -2708,7 +2653,6 @@ create database db.NATURAL;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 56.2.指定使用的数据库
 use test; 
@@ -2757,7 +2701,6 @@ create database db.NORMALIZE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 57.2.指定使用的数据库
 use test; 
@@ -2806,7 +2749,6 @@ create database db.NOT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 58.2.指定使用的数据库
 use test; 
@@ -2855,7 +2797,6 @@ create database db.NULL;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 59.2.指定使用的数据库
 use test; 
@@ -2904,7 +2845,6 @@ create database db.ON;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 60.2.指定使用的数据库
 use test; 
@@ -2953,7 +2893,6 @@ create database db.OR;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 61.2.指定使用的数据库
 use test; 
@@ -3002,7 +2941,6 @@ create database db.ORDER;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 62.2.指定使用的数据库
 use test; 
@@ -3051,7 +2989,6 @@ create database db.OUTER;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 63.2.指定使用的数据库
 use test; 
@@ -3100,7 +3037,6 @@ create database db.PREPARE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 64.2.指定使用的数据库
 use test; 
@@ -3149,7 +3085,6 @@ create database db.RECURSIVE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 65.2.指定使用的数据库
 use test; 
@@ -3198,7 +3133,6 @@ create database db.RIGHT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 66.2.指定使用的数据库
 use test; 
@@ -3247,7 +3181,6 @@ create database db.ROLLUP;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 67.2.指定使用的数据库
 use test; 
@@ -3296,7 +3229,6 @@ create database db.SELECT;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 68.2.指定使用的数据库
 use test; 
@@ -3345,7 +3277,6 @@ create database db.SKIP;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 69.2.指定使用的数据库
 use test; 
@@ -3394,7 +3325,6 @@ create database db.TABLE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 70.2.指定使用的数据库
 use test; 
@@ -3443,7 +3373,6 @@ create database db.THEN;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 71.2.指定使用的数据库
 use test; 
@@ -3492,7 +3421,6 @@ create database db.TRIM;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 72.2.指定使用的数据库
 use test; 
@@ -3541,7 +3469,6 @@ create database db.TRUE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 73.2.指定使用的数据库
 use test; 
@@ -3590,7 +3517,6 @@ create database db.UESCAPE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 74.2.指定使用的数据库
 use test; 
@@ -3639,7 +3565,6 @@ create database db.UNION;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 75.2.指定使用的数据库
 use test; 
@@ -3688,7 +3613,6 @@ create database db.UNNEST;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 76.2.指定使用的数据库
 use test; 
@@ -3737,7 +3661,6 @@ create database db.USING;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 77.2.指定使用的数据库
 use test; 
@@ -3786,7 +3709,6 @@ create database db.VALUES;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 78.2.指定使用的数据库
 use test; 
@@ -3835,7 +3757,6 @@ create database db.WHEN;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 79.2.指定使用的数据库
 use test; 
@@ -3884,7 +3805,6 @@ create database db.WHERE;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 80.2.指定使用的数据库
 use test; 
@@ -3933,7 +3853,6 @@ create database db.WITH;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 81.2.指定使用的数据库
 use test; 
@@ -3982,7 +3901,6 @@ create database db.FILL;
 create database test;
 -- result:1
 show databases;
-<<CHECKCODE;
 
 -- 82.2.指定使用的数据库
 use test; 
