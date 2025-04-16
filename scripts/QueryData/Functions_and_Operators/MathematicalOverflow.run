@@ -128,9 +128,9 @@ select int64 + int32 from table_add where time = 1; <<SQLSTATE;
 select int64 + int32 from table_add where time = 2;<<SQLSTATE;
 select int32 + int64 from table_add where time = 1; <<SQLSTATE;
 select int32 + int64 from table_add where time = 2; <<SQLSTATE;
-select date + int32 from table_add;
+select date + int32 from table_add order by time;
 <<SQLSTATE;
-select int32 + date from table_add;
+select int32 + date from table_add order by time;
 <<SQLSTATE;
 select timestamp + int32 from table_add where time = 1; <<SQLSTATE;
 select timestamp + int32 from table_add where time = 2; <<SQLSTATE;
@@ -215,9 +215,9 @@ select * from table_div order by time;
 select int32_1 / int32 from table_div where time = 2;
 <<SQLSTATE;
 select int32 / int32_1 from table_div where time = 2;
-select int64 / int32 from table_div where time=2;
+select int64 / int32 from table_div where time=2 order by time;
 <<SQLSTATE;
-select int32 / int64 from table_div where time=2;
+select int32 / int64 from table_div where time=2 order by time;
 
 --8.2 INT64 (Division: / )
 select int64 / int64_1 from table_div where time =2;
@@ -225,16 +225,16 @@ select int64 / int64_1 from table_div where time =2;
 select int64_1 / int64 from table_div where time =2;
 
 --8.3 特殊场景：结果为infinity | 0.0 | -0.0 | NaN
-select float / int32 from table_div where time=1;
-select float / int32 from table_div where time=3;
-select double / int32 from table_div where time=1;
-select double / int32 from table_div where time=3;
-select float / int64 from table_div where time=1;
-select float / int64 from table_div where time=3;
-select double / int64 from table_div where time=1;
-select double / int64 from table_div where time=3;
-select int32 / float from table_div where time=1;
-select int32 / float from table_div where time=3;
+select float / int32 from table_div where time=1 order by time;
+select float / int32 from table_div where time=3 order by time;
+select double / int32 from table_div where time=1 order by time;
+select double / int32 from table_div where time=3 order by time;
+select float / int64 from table_div where time=1 order by time;
+select float / int64 from table_div where time=3 order by time;
+select double / int64 from table_div where time=1 order by time;
+select double / int64 from table_div where time=3 order by time;
+select int32 / float from table_div where time=1 order by time;
+select int32 / float from table_div where time=3 order by time;
 select int32 / double from table_div where time =1;
 select int32 / double from table_div where time =3;
 select int64 / float from table_div where time =1;
@@ -243,9 +243,9 @@ select int64 / double from table_div where time =1;
 select int64 / double from table_div where time =3;
 
 --8.4 除数不能为0
-select int32_1 / int32 from table_div where time=3;
+select int32_1 / int32 from table_div where time=3 order by time;
 <<SQLSTATE;
-select int64 / int32 from table_div where time=3;
+select int64 / int32 from table_div where time=3 order by time;
 <<SQLSTATE;
 select int64 / int64_1 from table_div where time =3;
 <<SQLSTATE;

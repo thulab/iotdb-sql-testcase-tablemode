@@ -41,7 +41,8 @@ show databases;
 show tables;
 desc t1;
 insert into t1(time, ID, int32) values(1, 'd1', 1);
-select * from t1;
+flush;
+select * from t1 order by time;
 
 --2. root赋予普通用户user01关于不指定范围【MANAGE_USER]权限
 grant manage_user to user user01;
@@ -100,7 +101,7 @@ list privileges of user user03;
 show databases;
 use test_db;
 show tables;
-select * from t1;
+select * from t1 order by time;
 
 --14. 普通用户user04登录，执行相关权限操作
 connect user04/pass1234;
@@ -140,8 +141,8 @@ show tables from test_db;
 show tables from db1;
 desc test_db.t1;
 desc db1.t1;
-select * from test_db.t1;
-select * from db1.t1;
+select * from test_db.t1 order by time;
+select * from db1.t1 order by time;
 
 
 -- 清理环境

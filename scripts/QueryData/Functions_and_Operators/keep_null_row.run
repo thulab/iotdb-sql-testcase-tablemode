@@ -38,10 +38,10 @@ insert into table_a1(time,device_id,color,s1) values(20,'d3','green',21);
 
 --7. 数据查询
 select * from table_a1 order by time;
-select time,s2,s3 from table_a1 where device_id='d1';
-select s1,s2 from table_a1 where device_id='d2';
-select time,s1,s3 from table_a1 where device_id='d3';
-select s1, s2, s3 from table_a1 where color='blue';
+select time,s2,s3 from table_a1 where device_id='d1' order by time;
+select s1,s2 from table_a1 where device_id='d2' order by time;
+select time,s1,s3 from table_a1 where device_id='d3' order by time;
+select s1, s2, s3 from table_a1 where color='blue' order by time;
 select time, s1, s2, s3 from table_a1 where  time >= 10 and time <= 20 order by time;
 
 

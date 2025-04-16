@@ -5,3 +5,5 @@
 # macos
 .DS_Store
 
+# self
+*.out

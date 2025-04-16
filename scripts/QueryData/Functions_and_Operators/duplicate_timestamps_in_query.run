@@ -22,7 +22,7 @@ insert into table1 values(0, 'd1', 0);
 flush;
 
 --5.查询数据（问题现象：时间戳有相同个time结果）
-select * from table1;
+select * from table1 order by time;
 
 
 --6. 清理数据

@@ -117,7 +117,7 @@ t_13                 |INF                |
 总数目：12
 }
 
-Elapsed Time: 0.0.19
+Elapsed Time: 0.0.2
 
 -- [1]47:show tables from db1
 STRICT{
@@ -149,7 +149,7 @@ t_13                 |INF                |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.1
 
 -- [1]48:show tables in db1
 STRICT{
@@ -181,7 +181,7 @@ t_13                 |INF                |
 总数目：12
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.1
 -- [1]49:use db2
 STRICT{
 PASS
@@ -217,7 +217,7 @@ t_13                 |INF                |
 总数目：12
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.0
 -- [1]53:use db1
 STRICT{
 PASS
@@ -231,7 +231,7 @@ time                  |TIMESTAMP           |TIME                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.0
 -- [1]55:use db2
 STRICT{
 PASS
@@ -245,7 +245,7 @@ time                  |TIMESTAMP           |TIME                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]60:use db1
 STRICT{
 PASS
@@ -325,7 +325,7 @@ new_mm2               |STRING              |FIELD               |
 总数目：5
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.1
 -- [1]79:alter table t_1 drop column new_id
 STRICT{
 SQLSTATE : 701: Dropping tag or time column is not supported.
@@ -385,7 +385,7 @@ new_mm2               |STRING              |FIELD               |
 总数目：4
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 -- [1]103:alter table t_1 drop column new_mm
 STRICT{
 PASS
@@ -411,7 +411,7 @@ new_mm2               |STRING              |FIELD               |
 总数目：3
 }
 
-Elapsed Time: 0.0.6
+Elapsed Time: 0.0.4
 -- [1]108:use db2
 STRICT{
 PASS
@@ -431,7 +431,7 @@ new_id                |STRING              |TAG                 |
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]112:drop database if exists db100
 STRICT{
 PASS
@@ -453,9 +453,9 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.375
+Elapsed Time: 0.1.260
 
--- [1]117:select s1,s2 from t2
+-- [1]117:select s1,s2 from t2 order by time
 STRICT{
 s1(TEXT)      |s2(TEXT)      |
 ----------------------------
@@ -463,7 +463,7 @@ null          |t1            |
 总数目：1
 }
 
-Elapsed Time: 0.0.14
+Elapsed Time: 0.0.11
 -- [1]118:alter table t2 drop column s2
 STRICT{
 PASS
@@ -477,7 +477,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.10
+Elapsed Time: 0.0.3
 -- [1]121:insert into t2(time,s1) values(4,'t3')
 STRICT{
 0
@@ -485,7 +485,7 @@ STRICT{
 
 Elapsed Time: 0.0.1
 
--- [1]122:select s1 from t2
+-- [1]122:select s1 from t2 order by time
 STRICT{
 s1(TEXT)      |
 --------------
@@ -497,7 +497,7 @@ t3            |
 总数目：3
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.9
 -- [1]123:flush
 STRICT{
 PASS
@@ -507,15 +507,15 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.3
+Elapsed Time: 0.0.2
 -- [1]125:insert into t2(time,s1) values(6,'t5')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
--- [1]126:select s1 from t2
+-- [1]126:select s1 from t2 order by time
 STRICT{
 s1(TEXT)      |
 --------------
@@ -531,7 +531,7 @@ t5            |
 总数目：5
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.10
 -- [1]127:drop database db100
 STRICT{
 PASS
@@ -713,73 +713,73 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.330
+Elapsed Time: 0.0.169
 -- [1]170:INSERT INTO db1.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.129
+Elapsed Time: 0.0.76
 -- [1]171:INSERT INTO db1.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.28
+Elapsed Time: 0.0.10
 -- [1]172:INSERT INTO db1.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.30
+Elapsed Time: 0.0.9
 -- [1]173:INSERT INTO db2.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.426
+Elapsed Time: 0.0.256
 -- [1]174:INSERT INTO db2.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.174
+Elapsed Time: 0.0.74
 -- [1]175:INSERT INTO db2.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.36
+Elapsed Time: 0.0.10
 -- [1]176:INSERT INTO db2.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.31
+Elapsed Time: 0.0.7
 -- [1]177:INSERT INTO db3.t_1(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.444
+Elapsed Time: 0.0.252
 -- [1]178:INSERT INTO db3.t_2(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.186
+Elapsed Time: 0.0.87
 -- [1]179:INSERT INTO db3.t_3(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.42
+Elapsed Time: 0.0.13
 -- [1]180:INSERT INTO db3.t_4(time,id1,ab1,mm1) values(1,'id1','ab1','5555')
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.45
+Elapsed Time: 0.0.16
 -- [1]180:flush
 STRICT{
 PASS
