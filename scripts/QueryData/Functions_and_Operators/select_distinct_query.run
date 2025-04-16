@@ -44,19 +44,19 @@ time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values
 
 insert into t1(
 time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values
-(3,'D001',2,10,1.1,22.2,'RC2',false,'cat',X'49460001',1583053776000,'2020-03-01');
+(3,'D003',2,10,1.1,22.2,'RC2',false,'cat',X'49460001',1583053776000,'2020-03-01');
 
 insert into t1(
 time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values
-(3,'D002',2,20,2.2,22.2,'RC2',true,'cat',X'00010000',1614589776000,'2021-03-01');
+(4,'D004',2,20,2.2,22.2,'RC2',true,'cat',X'00010000',1614589776000,'2021-03-01');
 
 insert into t1(
 time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values
-(4,'D003',2,20,2.2,22.2,'RC2',true,'cat',X'00010000',1614589776000,'2021-03-01');
+(5,'D005',2,20,2.2,22.2,'RC2',true,'cat',X'00010000',1614589776000,'2021-03-01');
 
 insert into t1(
 time,ID,int32,int64,float,double,text,boolean,string,blob,timestamp,date) values
-(5,'D003',1,10,1.1,11.1,'RC1',false,'dog',X'49460001',1583053776000,'2020-03-01');
+(6,'D006',1,10,1.1,11.1,'RC1',false,'dog',X'49460001',1583053776000,'2020-03-01');
 
 
 --7. 全量数据查询
@@ -112,9 +112,9 @@ select time, max(distinct time),max(distinct id), max(distinct int32), max(disti
 
 select time, min(distinct time),min(distinct id), min(distinct int32), min(distinct int64), min(distinct float), min(distinct double), min(distinct text), min(distinct boolean), min(distinct string), min(distinct blob), min(distinct timestamp), min(distinct date) from t1 group by 1 order by 1;
 
-select time,first(distinct time), first(distinct id), first(distinct int32), first(distinct int64), first(distinct float), first(distinct double), first(distinct text), first(distinct boolean), first(distinct string), first(distinct blob), first(distinct timestamp), first(distinct date) from t1 group by 1 order by 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13;
+select time,first(distinct time), first(distinct id), first(distinct int32), first(distinct int64), first(distinct float), first(distinct double), first(distinct text), first(distinct boolean), first(distinct string), first(distinct blob), first(distinct timestamp), first(distinct date) from t1 group by 1 order by 1, 2, 3;
 
-select time,last(distinct time), last(distinct id), last(distinct int32), last(distinct int64), last(distinct float), last(distinct double), last(distinct text), last(distinct boolean), last(distinct string), last(distinct blob), last(distinct timestamp), last(distinct date) from t1 group by 1 order by 1,2,3,4,5,6,7,8,9,10,11,12,13;
+select time,last(distinct time), last(distinct id), last(distinct int32), last(distinct int64), last(distinct float), last(distinct double), last(distinct text), last(distinct boolean), last(distinct string), last(distinct blob), last(distinct timestamp), last(distinct date) from t1 group by 1 order by 1, 2, 3;
 
 select id, stddev(distinct int32), stddev(distinct int64), stddev(distinct float), stddev(distinct double) from t1 group by 1 order by 1;
 
@@ -132,7 +132,7 @@ select id, var_samp(distinct int32), var_samp(distinct int64), var_samp(distinct
 
 select id, extreme(distinct int32), extreme(distinct int64), extreme(distinct float), extreme(distinct double) from t1 group by 1 order by 1;
 
-select time, mode(distinct time), mode(distinct id), mode(distinct int32), mode(distinct int64), mode(distinct float), mode(distinct double), mode(distinct text), mode(distinct boolean), mode(distinct string), mode(distinct blob), mode(distinct timestamp), mode(distinct date) from t1 group by 1 order by 1,2,3,4,5,6,7,8,9,10,11,12,13;
+select time, mode(distinct time), mode(distinct id), mode(distinct int32), mode(distinct int64), mode(distinct float), mode(distinct double), mode(distinct text), mode(distinct boolean), mode(distinct string), mode(distinct blob), mode(distinct timestamp), mode(distinct date) from t1 group by 1 order by 1, 2, 3;
 
 select id, min_by(distinct id, int32), min_by(distinct id, int64), min_by(distinct id, float), min_by(distinct id, double), min_by(distinct id, text), min_by(distinct id, boolean), min_by(distinct id, string), min_by(distinct id, blob), min_by(distinct id, timestamp), min_by(distinct id, date) from t1 group by 1 order by 1;
 
