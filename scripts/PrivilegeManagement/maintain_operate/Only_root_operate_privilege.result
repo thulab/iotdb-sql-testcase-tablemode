@@ -77,7 +77,7 @@ PASS
 STRICT{
 Variable(TEXT)      |Value(TEXT)      |
 -------------------------------------
-ClusterName         |sql_coverage   |
+ClusterName         |sql_coverage     |
 -------------------------------------
 DataReplicationFacto|1                |
 r                   |                 |
