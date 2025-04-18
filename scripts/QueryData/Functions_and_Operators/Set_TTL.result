@@ -19,7 +19,7 @@ test_db             |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.68
+Elapsed Time: 0.0.54
 -- [1]21:use test_db
 STRICT{
 PASS
@@ -73,7 +73,7 @@ table_0              |INF                |
 总数目：7
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.18
 
 -- [1]59:desc table_2
 STRICT{
@@ -93,7 +93,7 @@ double                |DOUBLE              |FIELD               |
 总数目：6
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.13
 -- [1]62:insert into table_2(time, device_id, model_id, boolean, int64, double) values(1, 'd1', 'm1', false, 1, 1.1)
 STRICT{
 SQLSTATE : 607
@@ -107,13 +107,13 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.55
+Elapsed Time: 0.0.57
 -- [1]68:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 2, 2.1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.5
 -- [1]70:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 3, 3.1)
 STRICT{
 0
@@ -125,7 +125,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.4
+Elapsed Time: 0.0.3
 -- [1]74:insert into table_2(time, device_id, model_id, boolean, int64, double) values(now(), 'd1', 'm1', false, 5, 3.1)
 STRICT{
 0
@@ -141,7 +141,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.200
+Elapsed Time: 0.0.193
 
 -- [1]78:select count(*) as count_result from table_2
 STRICT{
@@ -151,7 +151,7 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.25
+Elapsed Time: 0.0.27
 -- [1]82:alter table if exists table_1 set properties ttl=3600000
 STRICT{
 PASS
@@ -319,13 +319,13 @@ t3                   |3600000            |
 总数目：3
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]117:insert into t1(time, device_id, int32) values(now(),'d1',1)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.202
+Elapsed Time: 0.0.237
 -- [1]119:insert into t1(time, device_id, int32) values(now()-1d,'d1',2)
 STRICT{
 SQLSTATE : 607
@@ -345,8 +345,8 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.81
--- [1]126:insert into t2(time, device_id, int32) values(now()-1m,'d1',2)
+Elapsed Time: 0.0.80
+-- [1]126:insert into t2(time, device_id, int32) values(now()-61000ms,'d1',2)
 STRICT{
 SQLSTATE : 607
 }
@@ -365,8 +365,8 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.0.14
--- [1]133:insert into t3(time, device_id, int32) values(now()-1h,'d1',2)
+Elapsed Time: 0.0.13
+-- [1]133:insert into t3(time, device_id, int32) values(now()-3660000ms,'d1',2)
 STRICT{
 SQLSTATE : 607
 }
@@ -379,4 +379,4 @@ count_result(INT64)      |
 总数目：1
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.14
