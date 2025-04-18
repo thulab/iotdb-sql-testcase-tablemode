@@ -278,6 +278,7 @@ INNER JOIN
 	grades g ON s.time < g.time and s.student_id <> g.student_id
 WHERE 
 	s.time between 1 AND 10 and s.region='haidian'
+order by t_tea_id,g_grade_id,g_score
 limit 10;
 	
 --8.1.7 针对任意列的任意连接
@@ -496,6 +497,7 @@ where
 	s.time = c.time + 1000
 	and 
 	s.time = g.time - 1000
+order by s_time,t_time,c_time,g_time
 limit 5 offset 3;
 
 --9.3 针对非time列的等值连接
@@ -532,7 +534,8 @@ where s.time = t.time and t.time = c.time and c.time = g.time
 	and
 	s.student_id = g.student_id
 	and
-	s.region= t.region;
+	s.region= t.region
+order by s_time,s_name,tea_id,cour_id,c_cour_name,grade_id,g_score;
 	
 
 --9.5 针对time列的非等值连接
@@ -548,6 +551,7 @@ from
 	students s, teachers t, courses c, grades g
 where 
 	s.time < g.time and g.score < 90 and s.region !='haidian'
+order by s_time,t_time,c_time,g_time,c_cour_name,g_score
 limit 5 offset 3;
 	
 
