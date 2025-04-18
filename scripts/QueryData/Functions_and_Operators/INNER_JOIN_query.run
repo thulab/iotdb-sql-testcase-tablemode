@@ -298,6 +298,7 @@ INNER JOIN
 INNER JOIN 
 	grades g ON g.course_id = c.course_id
 where g.score > 80
+order by s_time,t_time,s_name,s_birth,c_cour_name,g_score
 limit 5 offset 5;
 
 
@@ -571,6 +572,7 @@ where
 	(s.region != t.region and s.time > t.time)
 and
 	g.score between 80 and 90
+order by s_time,s_name,s_gender,s_dat_of_bir,t_tea_id,c_cour_name,g_grade_id,g_score
 limit 5 offset 5;
 
 
