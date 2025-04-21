@@ -175,14 +175,18 @@ FIRST_BY                |built-in aggregate funct|                          |AVA
 MIN_BY                  |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+CUMULATE                |built-in table function |                          |AVAILABLE        |
+-------------------------------------------------------------------------------------------
 SESSION                 |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 HOP                     |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
+TUMBLE                  |built-in table function |                          |AVAILABLE        |
+-------------------------------------------------------------------------------------------
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：68
+总数目：70
 }
 
 Elapsed Time: 0.0.12
@@ -474,14 +478,18 @@ FIRST_BY                |built-in aggregate funct|                          |AVA
 MIN_BY                  |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+CUMULATE                |built-in table function |                          |AVAILABLE        |
+-------------------------------------------------------------------------------------------
 SESSION                 |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 HOP                     |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
+TUMBLE                  |built-in table function |                          |AVAILABLE        |
+-------------------------------------------------------------------------------------------
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：68
+总数目：70
 }
 
 Elapsed Time: 0.0.2
@@ -669,14 +677,18 @@ FIRST_BY                |built-in aggregate funct|                          |AVA
 MIN_BY                  |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+CUMULATE                |built-in table function |                          |AVAILABLE        |
+-------------------------------------------------------------------------------------------
 SESSION                 |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 HOP                     |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
+TUMBLE                  |built-in table function |                          |AVAILABLE        |
+-------------------------------------------------------------------------------------------
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：68
+总数目：70
 }
 
 Elapsed Time: 0.0.1
@@ -864,14 +876,18 @@ FIRST_BY                |built-in aggregate funct|                          |AVA
 MIN_BY                  |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+CUMULATE                |built-in table function |                          |AVAILABLE        |
+-------------------------------------------------------------------------------------------
 SESSION                 |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 HOP                     |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
+TUMBLE                  |built-in table function |                          |AVAILABLE        |
+-------------------------------------------------------------------------------------------
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：68
+总数目：70
 }
 
 Elapsed Time: 0.0.2
@@ -1059,14 +1075,18 @@ FIRST_BY                |built-in aggregate funct|                          |AVA
 MIN_BY                  |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+CUMULATE                |built-in table function |                          |AVAILABLE        |
+-------------------------------------------------------------------------------------------
 SESSION                 |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 HOP                     |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
+TUMBLE                  |built-in table function |                          |AVAILABLE        |
+-------------------------------------------------------------------------------------------
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：68
+总数目：70
 }
 
 Elapsed Time: 0.0.2
