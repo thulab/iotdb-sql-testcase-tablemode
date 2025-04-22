@@ -1128,5 +1128,5 @@ SQLSTATE : 700: line 1:23: mismatched input '*'. Expecting: <expression>
 }
 -- [1]169:select distinct(time,int32,double) from t1
 STRICT{
-SQLSTATE : 301: Unsupported expression: Row
+SQLSTATE : 701: Unsupported expression: Row
 }
