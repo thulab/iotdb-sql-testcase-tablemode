@@ -145,6 +145,9 @@ MODE                    |built-in aggregate funct|                          |AVA
 LAST_BY                 |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+APPROX_COUNT_DISTINCT   |built-in aggregate funct|                          |AVAILABLE        |
+                        |ion                     |                          |                 |
+-------------------------------------------------------------------------------------------
 AVG                     |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
@@ -186,7 +189,7 @@ TUMBLE                  |built-in table function |                          |AVA
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：70
+总数目：71
 }
 
 Elapsed Time: 0.0.12
@@ -448,6 +451,9 @@ MODE                    |built-in aggregate funct|                          |AVA
 LAST_BY                 |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+APPROX_COUNT_DISTINCT   |built-in aggregate funct|                          |AVAILABLE        |
+                        |ion                     |                          |                 |
+-------------------------------------------------------------------------------------------
 AVG                     |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
@@ -489,7 +495,7 @@ TUMBLE                  |built-in table function |                          |AVA
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：70
+总数目：71
 }
 
 Elapsed Time: 0.0.2
@@ -647,6 +653,9 @@ MODE                    |built-in aggregate funct|                          |AVA
 LAST_BY                 |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+APPROX_COUNT_DISTINCT   |built-in aggregate funct|                          |AVAILABLE        |
+                        |ion                     |                          |                 |
+-------------------------------------------------------------------------------------------
 AVG                     |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
@@ -688,7 +697,7 @@ TUMBLE                  |built-in table function |                          |AVA
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：70
+总数目：71
 }
 
 Elapsed Time: 0.0.1
@@ -846,6 +855,9 @@ MODE                    |built-in aggregate funct|                          |AVA
 LAST_BY                 |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+APPROX_COUNT_DISTINCT   |built-in aggregate funct|                          |AVAILABLE        |
+                        |ion                     |                          |                 |
+-------------------------------------------------------------------------------------------
 AVG                     |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
@@ -887,7 +899,7 @@ TUMBLE                  |built-in table function |                          |AVA
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：70
+总数目：71
 }
 
 Elapsed Time: 0.0.2
@@ -1045,6 +1057,9 @@ MODE                    |built-in aggregate funct|                          |AVA
 LAST_BY                 |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+APPROX_COUNT_DISTINCT   |built-in aggregate funct|                          |AVAILABLE        |
+                        |ion                     |                          |                 |
+-------------------------------------------------------------------------------------------
 AVG                     |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
@@ -1086,7 +1101,7 @@ TUMBLE                  |built-in table function |                          |AVA
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：70
+总数目：71
 }
 
 Elapsed Time: 0.0.2
