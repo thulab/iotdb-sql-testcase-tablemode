@@ -101,9 +101,7 @@ select count(DISTINCT double) as origin, APPROX_COUNT_DISTINCT(double) as approx
 select count(DISTINCT int32) as origin, APPROX_COUNT_DISTINCT(int32, 0.023) as approx from table_1;
 select count(DISTINCT int32) as origin, APPROX_COUNT_DISTINCT(int32, 0.25) as approx from table_1;
 select count(DISTINCT int32) as origin, APPROX_COUNT_DISTINCT(int32, 0.0040625) as approx from table_1;
-<<SQLSTATE;
 select count(DISTINCT int32) as origin, APPROX_COUNT_DISTINCT(int32, 0.26000) as approx from table_1;
-<<SQLSTATE;
 select count(DISTINCT int32) as origin, APPROX_COUNT_DISTINCT(int32, 0.27) as approx from table_1;
 <<SQLSTATE;
 
