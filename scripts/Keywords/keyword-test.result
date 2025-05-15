@@ -28,7 +28,7 @@ PASS
 }
 -- [1]24:create table ALTER  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'ALTER'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'ALTER'. Expecting: 'IF', <identifier>
 }
 -- [1]33:create table table_01  ( 	ALTER STRING TAG )
 STRICT{
@@ -84,7 +84,7 @@ PASS
 }
 -- [1]72:create table AND  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'AND'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'AND'. Expecting: 'IF', <identifier>
 }
 -- [1]81:create table table_01  ( 	AND STRING TAG )
 STRICT{
@@ -140,7 +140,7 @@ PASS
 }
 -- [1]120:create table AS  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'AS'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'AS'. Expecting: 'IF', <identifier>
 }
 -- [1]129:create table table_01  ( 	AS STRING TAG )
 STRICT{
@@ -196,7 +196,7 @@ PASS
 }
 -- [1]168:create table BETWEEN  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'BETWEEN'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'BETWEEN'. Expecting: 'IF', <identifier>
 }
 -- [1]177:create table table_01  ( 	BETWEEN STRING TAG )
 STRICT{
@@ -252,7 +252,7 @@ PASS
 }
 -- [1]216:create table BY  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'BY'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'BY'. Expecting: 'IF', <identifier>
 }
 -- [1]225:create table table_01  ( 	BY STRING TAG )
 STRICT{
@@ -308,7 +308,7 @@ PASS
 }
 -- [1]264:create table CASE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CASE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CASE'. Expecting: 'IF', <identifier>
 }
 -- [1]273:create table table_01  ( 	CASE STRING TAG )
 STRICT{
@@ -364,7 +364,7 @@ PASS
 }
 -- [1]312:create table CAST  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CAST'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CAST'. Expecting: 'IF', <identifier>
 }
 -- [1]321:create table table_01  ( 	CAST STRING TAG )
 STRICT{
@@ -420,7 +420,7 @@ PASS
 }
 -- [1]360:create table CONSTRAINT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CONSTRAINT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CONSTRAINT'. Expecting: 'IF', <identifier>
 }
 -- [1]369:create table table_01  ( 	CONSTRAINT STRING TAG )
 STRICT{
@@ -476,7 +476,7 @@ PASS
 }
 -- [1]408:create table CREATE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CREATE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CREATE'. Expecting: 'IF', <identifier>
 }
 -- [1]417:create table table_01  ( 	CREATE STRING TAG )
 STRICT{
@@ -532,7 +532,7 @@ PASS
 }
 -- [1]456:create table CROSS  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CROSS'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CROSS'. Expecting: 'IF', <identifier>
 }
 -- [1]465:create table table_01  ( 	CROSS STRING TAG )
 STRICT{
@@ -588,7 +588,7 @@ PASS
 }
 -- [1]504:create table CUBE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CUBE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CUBE'. Expecting: 'IF', <identifier>
 }
 -- [1]513:create table table_01  ( 	CUBE STRING TAG )
 STRICT{
@@ -644,7 +644,7 @@ PASS
 }
 -- [1]552:create table CURRENT_CATALOG  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_CATALOG'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_CATALOG'. Expecting: 'IF', <identifier>
 }
 -- [1]561:create table table_01  ( 	CURRENT_CATALOG STRING TAG )
 STRICT{
@@ -700,7 +700,7 @@ PASS
 }
 -- [1]600:create table CURRENT_DATE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_DATE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_DATE'. Expecting: 'IF', <identifier>
 }
 -- [1]609:create table table_01  ( 	CURRENT_DATE STRING TAG )
 STRICT{
@@ -756,7 +756,7 @@ PASS
 }
 -- [1]648:create table CURRENT_PATH  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_PATH'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_PATH'. Expecting: 'IF', <identifier>
 }
 -- [1]657:create table table_01  ( 	CURRENT_PATH STRING TAG )
 STRICT{
@@ -812,7 +812,7 @@ PASS
 }
 -- [1]696:create table CURRENT_ROLE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_ROLE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_ROLE'. Expecting: 'IF', <identifier>
 }
 -- [1]705:create table table_01  ( 	CURRENT_ROLE STRING TAG )
 STRICT{
@@ -868,7 +868,7 @@ PASS
 }
 -- [1]744:create table CURRENT_SCHEMA  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_SCHEMA'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_SCHEMA'. Expecting: 'IF', <identifier>
 }
 -- [1]753:create table table_01  ( 	CURRENT_SCHEMA STRING TAG )
 STRICT{
@@ -924,7 +924,7 @@ PASS
 }
 -- [1]792:create table CURRENT_TIME  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_TIME'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_TIME'. Expecting: 'IF', <identifier>
 }
 -- [1]801:create table table_01  ( 	CURRENT_TIME STRING TAG )
 STRICT{
@@ -980,7 +980,7 @@ PASS
 }
 -- [1]840:create table CURRENT_TIMESTAMP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_TIMESTAMP'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_TIMESTAMP'. Expecting: 'IF', <identifier>
 }
 -- [1]849:create table table_01  ( 	CURRENT_TIMESTAMP STRING TAG )
 STRICT{
@@ -1036,7 +1036,7 @@ PASS
 }
 -- [1]888:create table CURRENT_USER  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_USER'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'CURRENT_USER'. Expecting: 'IF', <identifier>
 }
 -- [1]897:create table table_01  ( 	CURRENT_USER STRING TAG )
 STRICT{
@@ -1092,7 +1092,7 @@ PASS
 }
 -- [1]936:create table DEALLOCATE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'DEALLOCATE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'DEALLOCATE'. Expecting: 'IF', <identifier>
 }
 -- [1]945:create table table_01  ( 	DEALLOCATE STRING TAG )
 STRICT{
@@ -1148,7 +1148,7 @@ PASS
 }
 -- [1]984:create table DELETE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'DELETE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'DELETE'. Expecting: 'IF', <identifier>
 }
 -- [1]993:create table table_01  ( 	DELETE STRING TAG )
 STRICT{
@@ -1204,7 +1204,7 @@ PASS
 }
 -- [1]1032:create table DESCRIBE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'DESCRIBE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'DESCRIBE'. Expecting: 'IF', <identifier>
 }
 -- [1]1041:create table table_01  ( 	DESCRIBE STRING TAG )
 STRICT{
@@ -1260,7 +1260,7 @@ PASS
 }
 -- [1]1080:create table DISTINCT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'DISTINCT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'DISTINCT'. Expecting: 'IF', <identifier>
 }
 -- [1]1089:create table table_01  ( 	DISTINCT STRING TAG )
 STRICT{
@@ -1316,7 +1316,7 @@ PASS
 }
 -- [1]1128:create table DROP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'DROP'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'DROP'. Expecting: 'IF', <identifier>
 }
 -- [1]1137:create table table_01  ( 	DROP STRING TAG )
 STRICT{
@@ -1372,7 +1372,7 @@ PASS
 }
 -- [1]1176:create table ELSE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'ELSE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'ELSE'. Expecting: 'IF', <identifier>
 }
 -- [1]1185:create table table_01  ( 	ELSE STRING TAG )
 STRICT{
@@ -1428,7 +1428,7 @@ PASS
 }
 -- [1]1224:create table END  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'END'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'END'. Expecting: 'IF', <identifier>
 }
 -- [1]1233:create table table_01  ( 	END STRING TAG )
 STRICT{
@@ -1484,7 +1484,7 @@ PASS
 }
 -- [1]1272:create table ESCAPE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'ESCAPE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'ESCAPE'. Expecting: 'IF', <identifier>
 }
 -- [1]1281:create table table_01  ( 	ESCAPE STRING TAG )
 STRICT{
@@ -1540,7 +1540,7 @@ PASS
 }
 -- [1]1320:create table EXCEPT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'EXCEPT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'EXCEPT'. Expecting: 'IF', <identifier>
 }
 -- [1]1329:create table table_01  ( 	EXCEPT STRING TAG )
 STRICT{
@@ -1596,7 +1596,7 @@ PASS
 }
 -- [1]1368:create table EXISTS  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'EXISTS'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'EXISTS'. Expecting: 'IF', <identifier>
 }
 -- [1]1377:create table table_01  ( 	EXISTS STRING TAG )
 STRICT{
@@ -1652,7 +1652,7 @@ PASS
 }
 -- [1]1416:create table EXTRACT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'EXTRACT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'EXTRACT'. Expecting: 'IF', <identifier>
 }
 -- [1]1425:create table table_01  ( 	EXTRACT STRING TAG )
 STRICT{
@@ -1708,7 +1708,7 @@ PASS
 }
 -- [1]1464:create table FALSE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'FALSE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'FALSE'. Expecting: 'IF', <identifier>
 }
 -- [1]1473:create table table_01  ( 	FALSE STRING TAG )
 STRICT{
@@ -1764,7 +1764,7 @@ PASS
 }
 -- [1]1512:create table FOR  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'FOR'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'FOR'. Expecting: 'IF', <identifier>
 }
 -- [1]1521:create table table_01  ( 	FOR STRING TAG )
 STRICT{
@@ -1820,7 +1820,7 @@ PASS
 }
 -- [1]1560:create table FROM  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'FROM'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'FROM'. Expecting: 'IF', <identifier>
 }
 -- [1]1569:create table table_01  ( 	FROM STRING TAG )
 STRICT{
@@ -1876,7 +1876,7 @@ PASS
 }
 -- [1]1608:create table FULL  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'FULL'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'FULL'. Expecting: 'IF', <identifier>
 }
 -- [1]1617:create table table_01  ( 	FULL STRING TAG )
 STRICT{
@@ -1932,7 +1932,7 @@ PASS
 }
 -- [1]1656:create table GROUP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'GROUP'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'GROUP'. Expecting: 'IF', <identifier>
 }
 -- [1]1665:create table table_01  ( 	GROUP STRING TAG )
 STRICT{
@@ -1988,7 +1988,7 @@ PASS
 }
 -- [1]1704:create table GROUPING  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'GROUPING'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'GROUPING'. Expecting: 'IF', <identifier>
 }
 -- [1]1713:create table table_01  ( 	GROUPING STRING TAG )
 STRICT{
@@ -2044,7 +2044,7 @@ PASS
 }
 -- [1]1752:create table HAVING  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'HAVING'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'HAVING'. Expecting: 'IF', <identifier>
 }
 -- [1]1761:create table table_01  ( 	HAVING STRING TAG )
 STRICT{
@@ -2100,7 +2100,7 @@ PASS
 }
 -- [1]1800:create table IN  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'IN'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'IN'. Expecting: 'IF', <identifier>
 }
 -- [1]1809:create table table_01  ( 	IN STRING TAG )
 STRICT{
@@ -2156,7 +2156,7 @@ PASS
 }
 -- [1]1848:create table INNER  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'INNER'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'INNER'. Expecting: 'IF', <identifier>
 }
 -- [1]1857:create table table_01  ( 	INNER STRING TAG )
 STRICT{
@@ -2212,7 +2212,7 @@ PASS
 }
 -- [1]1896:create table INSERT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'INSERT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'INSERT'. Expecting: 'IF', <identifier>
 }
 -- [1]1905:create table table_01  ( 	INSERT STRING TAG )
 STRICT{
@@ -2268,7 +2268,7 @@ PASS
 }
 -- [1]1944:create table INTERSECT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'INTERSECT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'INTERSECT'. Expecting: 'IF', <identifier>
 }
 -- [1]1953:create table table_01  ( 	INTERSECT STRING TAG )
 STRICT{
@@ -2324,7 +2324,7 @@ PASS
 }
 -- [1]1992:create table INTO  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'INTO'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'INTO'. Expecting: 'IF', <identifier>
 }
 -- [1]2001:create table table_01  ( 	INTO STRING TAG )
 STRICT{
@@ -2380,7 +2380,7 @@ PASS
 }
 -- [1]2040:create table IS  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'IS'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'IS'. Expecting: 'IF', <identifier>
 }
 -- [1]2049:create table table_01  ( 	IS STRING TAG )
 STRICT{
@@ -2436,7 +2436,7 @@ PASS
 }
 -- [1]2088:create table JOIN  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'JOIN'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'JOIN'. Expecting: 'IF', <identifier>
 }
 -- [1]2097:create table table_01  ( 	JOIN STRING TAG )
 STRICT{
@@ -2492,7 +2492,7 @@ PASS
 }
 -- [1]2136:create table JSON_ARRAY  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'JSON_ARRAY'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'JSON_ARRAY'. Expecting: 'IF', <identifier>
 }
 -- [1]2145:create table table_01  ( 	JSON_ARRAY STRING TAG )
 STRICT{
@@ -2548,7 +2548,7 @@ PASS
 }
 -- [1]2184:create table JSON_EXISTS  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'JSON_EXISTS'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'JSON_EXISTS'. Expecting: 'IF', <identifier>
 }
 -- [1]2193:create table table_01  ( 	JSON_EXISTS STRING TAG )
 STRICT{
@@ -2604,7 +2604,7 @@ PASS
 }
 -- [1]2232:create table JSON_OBJECT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'JSON_OBJECT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'JSON_OBJECT'. Expecting: 'IF', <identifier>
 }
 -- [1]2241:create table table_01  ( 	JSON_OBJECT STRING TAG )
 STRICT{
@@ -2660,7 +2660,7 @@ PASS
 }
 -- [1]2280:create table JSON_QUERY  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'JSON_QUERY'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'JSON_QUERY'. Expecting: 'IF', <identifier>
 }
 -- [1]2289:create table table_01  ( 	JSON_QUERY STRING TAG )
 STRICT{
@@ -2716,7 +2716,7 @@ PASS
 }
 -- [1]2328:create table JSON_TABLE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'JSON_TABLE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'JSON_TABLE'. Expecting: 'IF', <identifier>
 }
 -- [1]2337:create table table_01  ( 	JSON_TABLE STRING TAG )
 STRICT{
@@ -2772,7 +2772,7 @@ PASS
 }
 -- [1]2376:create table JSON_VALUE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'JSON_VALUE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'JSON_VALUE'. Expecting: 'IF', <identifier>
 }
 -- [1]2385:create table table_01  ( 	JSON_VALUE STRING TAG )
 STRICT{
@@ -2828,7 +2828,7 @@ PASS
 }
 -- [1]2424:create table LEFT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'LEFT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'LEFT'. Expecting: 'IF', <identifier>
 }
 -- [1]2433:create table table_01  ( 	LEFT STRING TAG )
 STRICT{
@@ -2884,7 +2884,7 @@ PASS
 }
 -- [1]2472:create table LIKE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'LIKE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'LIKE'. Expecting: 'IF', <identifier>
 }
 -- [1]2481:create table table_01  ( 	LIKE STRING TAG )
 STRICT{
@@ -2940,7 +2940,7 @@ PASS
 }
 -- [1]2520:create table LISTAGG  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'LISTAGG'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'LISTAGG'. Expecting: 'IF', <identifier>
 }
 -- [1]2529:create table table_01  ( 	LISTAGG STRING TAG )
 STRICT{
@@ -2996,7 +2996,7 @@ PASS
 }
 -- [1]2568:create table LOCALTIME  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'LOCALTIME'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'LOCALTIME'. Expecting: 'IF', <identifier>
 }
 -- [1]2577:create table table_01  ( 	LOCALTIME STRING TAG )
 STRICT{
@@ -3052,7 +3052,7 @@ PASS
 }
 -- [1]2616:create table LOCALTIMESTAMP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'LOCALTIMESTAMP'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'LOCALTIMESTAMP'. Expecting: 'IF', <identifier>
 }
 -- [1]2625:create table table_01  ( 	LOCALTIMESTAMP STRING TAG )
 STRICT{
@@ -3108,7 +3108,7 @@ PASS
 }
 -- [1]2664:create table NATURAL  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'NATURAL'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'NATURAL'. Expecting: 'IF', <identifier>
 }
 -- [1]2673:create table table_01  ( 	NATURAL STRING TAG )
 STRICT{
@@ -3164,7 +3164,7 @@ PASS
 }
 -- [1]2712:create table NORMALIZE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'NORMALIZE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'NORMALIZE'. Expecting: 'IF', <identifier>
 }
 -- [1]2721:create table table_01  ( 	NORMALIZE STRING TAG )
 STRICT{
@@ -3220,7 +3220,7 @@ PASS
 }
 -- [1]2760:create table NOT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'NOT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'NOT'. Expecting: 'IF', <identifier>
 }
 -- [1]2769:create table table_01  ( 	NOT STRING TAG )
 STRICT{
@@ -3276,7 +3276,7 @@ PASS
 }
 -- [1]2808:create table NULL  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'NULL'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'NULL'. Expecting: 'IF', <identifier>
 }
 -- [1]2817:create table table_01  ( 	NULL STRING TAG )
 STRICT{
@@ -3332,7 +3332,7 @@ PASS
 }
 -- [1]2856:create table ON  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'ON'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'ON'. Expecting: 'IF', <identifier>
 }
 -- [1]2865:create table table_01  ( 	ON STRING TAG )
 STRICT{
@@ -3388,7 +3388,7 @@ PASS
 }
 -- [1]2904:create table OR  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'OR'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'OR'. Expecting: 'IF', <identifier>
 }
 -- [1]2913:create table table_01  ( 	OR STRING TAG )
 STRICT{
@@ -3444,7 +3444,7 @@ PASS
 }
 -- [1]2952:create table ORDER  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'ORDER'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'ORDER'. Expecting: 'IF', <identifier>
 }
 -- [1]2961:create table table_01  ( 	ORDER STRING TAG )
 STRICT{
@@ -3500,7 +3500,7 @@ PASS
 }
 -- [1]3000:create table OUTER  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'OUTER'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'OUTER'. Expecting: 'IF', <identifier>
 }
 -- [1]3009:create table table_01  ( 	OUTER STRING TAG )
 STRICT{
@@ -3556,7 +3556,7 @@ PASS
 }
 -- [1]3048:create table PREPARE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'PREPARE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'PREPARE'. Expecting: 'IF', <identifier>
 }
 -- [1]3057:create table table_01  ( 	PREPARE STRING TAG )
 STRICT{
@@ -3612,7 +3612,7 @@ PASS
 }
 -- [1]3096:create table RECURSIVE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'RECURSIVE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'RECURSIVE'. Expecting: 'IF', <identifier>
 }
 -- [1]3105:create table table_01  ( 	RECURSIVE STRING TAG )
 STRICT{
@@ -3668,7 +3668,7 @@ PASS
 }
 -- [1]3144:create table RIGHT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'RIGHT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'RIGHT'. Expecting: 'IF', <identifier>
 }
 -- [1]3153:create table table_01  ( 	RIGHT STRING TAG )
 STRICT{
@@ -3724,7 +3724,7 @@ PASS
 }
 -- [1]3192:create table ROLLUP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'ROLLUP'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'ROLLUP'. Expecting: 'IF', <identifier>
 }
 -- [1]3201:create table table_01  ( 	ROLLUP STRING TAG )
 STRICT{
@@ -3780,7 +3780,7 @@ PASS
 }
 -- [1]3240:create table SELECT  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'SELECT'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'SELECT'. Expecting: 'IF', <identifier>
 }
 -- [1]3249:create table table_01  ( 	SELECT STRING TAG )
 STRICT{
@@ -3836,7 +3836,7 @@ PASS
 }
 -- [1]3288:create table SKIP  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'SKIP'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'SKIP'. Expecting: 'IF', <identifier>
 }
 -- [1]3297:create table table_01  ( 	SKIP STRING TAG )
 STRICT{
@@ -3892,7 +3892,7 @@ PASS
 }
 -- [1]3336:create table TABLE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'TABLE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'TABLE'. Expecting: 'IF', <identifier>
 }
 -- [1]3345:create table table_01  ( 	TABLE STRING TAG )
 STRICT{
@@ -3948,7 +3948,7 @@ PASS
 }
 -- [1]3384:create table THEN  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'THEN'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'THEN'. Expecting: 'IF', <identifier>
 }
 -- [1]3393:create table table_01  ( 	THEN STRING TAG )
 STRICT{
@@ -4004,7 +4004,7 @@ PASS
 }
 -- [1]3432:create table TRIM  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'TRIM'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'TRIM'. Expecting: 'IF', <identifier>
 }
 -- [1]3441:create table table_01  ( 	TRIM STRING TAG )
 STRICT{
@@ -4060,7 +4060,7 @@ PASS
 }
 -- [1]3480:create table TRUE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'TRUE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'TRUE'. Expecting: 'IF', <identifier>
 }
 -- [1]3489:create table table_01  ( 	TRUE STRING TAG )
 STRICT{
@@ -4116,7 +4116,7 @@ PASS
 }
 -- [1]3528:create table UESCAPE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'UESCAPE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'UESCAPE'. Expecting: 'IF', <identifier>
 }
 -- [1]3537:create table table_01  ( 	UESCAPE STRING TAG )
 STRICT{
@@ -4172,7 +4172,7 @@ PASS
 }
 -- [1]3576:create table UNION  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'UNION'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'UNION'. Expecting: 'IF', <identifier>
 }
 -- [1]3585:create table table_01  ( 	UNION STRING TAG )
 STRICT{
@@ -4228,7 +4228,7 @@ PASS
 }
 -- [1]3624:create table UNNEST  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'UNNEST'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'UNNEST'. Expecting: 'IF', <identifier>
 }
 -- [1]3633:create table table_01  ( 	UNNEST STRING TAG )
 STRICT{
@@ -4284,7 +4284,7 @@ PASS
 }
 -- [1]3672:create table USING  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'USING'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'USING'. Expecting: 'IF', <identifier>
 }
 -- [1]3681:create table table_01  ( 	USING STRING TAG )
 STRICT{
@@ -4340,7 +4340,7 @@ PASS
 }
 -- [1]3720:create table VALUES  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'VALUES'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'VALUES'. Expecting: 'IF', <identifier>
 }
 -- [1]3729:create table table_01  ( 	VALUES STRING TAG )
 STRICT{
@@ -4396,7 +4396,7 @@ PASS
 }
 -- [1]3768:create table WHEN  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'WHEN'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'WHEN'. Expecting: 'IF', <identifier>
 }
 -- [1]3777:create table table_01  ( 	WHEN STRING TAG )
 STRICT{
@@ -4452,7 +4452,7 @@ PASS
 }
 -- [1]3816:create table WHERE  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'WHERE'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'WHERE'. Expecting: 'IF', <identifier>
 }
 -- [1]3825:create table table_01  ( 	WHERE STRING TAG )
 STRICT{
@@ -4508,7 +4508,7 @@ PASS
 }
 -- [1]3864:create table WITH  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'WITH'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'WITH'. Expecting: 'IF', <identifier>
 }
 -- [1]3873:create table table_01  ( 	WITH STRING TAG )
 STRICT{
@@ -4564,7 +4564,7 @@ PASS
 }
 -- [1]3912:create table FILL  ( 	device_id STRING TAG, 	s1 BOOLEAN FIELD, 	s2 INT32 FIELD )
 STRICT{
-SQLSTATE : 700: line 1:14: mismatched input 'FILL'. Expecting: 'IF', 'VIEW', <identifier>
+SQLSTATE : 700: line 1:14: mismatched input 'FILL'. Expecting: 'IF', <identifier>
 }
 -- [1]3921:create table table_01  ( 	FILL STRING TAG )
 STRICT{
