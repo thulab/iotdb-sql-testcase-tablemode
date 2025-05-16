@@ -10,18 +10,24 @@ PASS
 STRICT{
 PASS
 }
+-- [1]17:create table t2(device_id TAG, attr ATTRIBUTE, temperature FLOAT)
+STRICT{
+PASS
+}
 
--- [1]19:show tables
+-- [1]20:show tables
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
 t1                   |INF                |
-总数目：1
+----------------------------------------
+t2                   |INF                |
+总数目：2
 }
 
-Elapsed Time: 0.0.38
+Elapsed Time: 0.0.49
 
--- [1]22:desc t1
+-- [1]23:desc t1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -35,45 +41,67 @@ status                |BOOLEAN             |FIELD               |
 总数目：4
 }
 
-Elapsed Time: 0.0.12
--- [1]25:insert into t1(time, device_id, attr, status) values(1000, 'd1', 'attr_1', false)
+Elapsed Time: 0.0.16
+
+-- [1]24:desc t2
+STRICT{
+ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
+--------------------------------------------------------------
+time                  |TIMESTAMP           |TIME                |
+--------------------------------------------------------------
+device_id             |STRING              |TAG                 |
+--------------------------------------------------------------
+attr                  |STRING              |ATTRIBUTE           |
+--------------------------------------------------------------
+temperature           |FLOAT               |FIELD               |
+总数目：4
+}
+
+Elapsed Time: 0.0.4
+-- [1]27:insert into t1(time, device_id, attr, status) values(1000, 'd1', 'attr_1', false)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.662
--- [1]26:insert into t1(time, device_id, attr, status) values(3000, 'd2', 'attr_2', true)
+Elapsed Time: 0.0.726
+-- [1]28:insert into t1(time, device_id, attr, status) values(3000, 'd2', 'attr_2', true)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.78
--- [1]27:insert into t1(time, device_id, attr, status) values(5000, 'd3', 'attr_3', false)
+Elapsed Time: 0.0.101
+-- [1]29:insert into t1(time, device_id, attr, status) values(5000, 'd3', 'attr_3', false)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.19
--- [1]28:insert into t1(time, device_id, attr, status) values(7000, 'd4', 'attr_4', false)
+Elapsed Time: 0.0.31
+-- [1]30:insert into t1(time, device_id, attr, status) values(7000, 'd4', 'attr_4', false)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.14
--- [1]29:insert into t1(time, device_id, attr, status) values(10000, 'd5', 'attr_5', true)
+Elapsed Time: 0.0.22
+-- [1]31:insert into t1(time, device_id, attr, status) values(10000, 'd5', 'attr_5', true)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.13
--- [1]30:insert into t1(time, device_id, attr, status) values(20000, 'd6', 'attr_6', true)
+Elapsed Time: 0.0.23
+-- [1]32:insert into t1(time, device_id, attr, status) values(20000, 'd6', 'attr_6', true)
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.11
+Elapsed Time: 0.0.22
+-- [1]34:insert into t2(time, device_id, attr, temperature) values(1, 'd1', 'attr_1', 22.2),(2, 'd2', 'attr_2', 21.1)
+STRICT{
+0
+}
 
--- [1]33:select * from t1 order by time
+Elapsed Time: 0.0.30
+
+-- [1]37:select * from t1 order by time
 STRICT{
 time(TIMESTAMP)      |device_id(STRING)      |attr(STRING)      |status(BOOLEAN)      |
 -----------------------------------------------------------------------------------
@@ -97,9 +125,23 @@ time(TIMESTAMP)      |device_id(STRING)      |attr(STRING)      |status(BOOLEAN)
 总数目：6
 }
 
-Elapsed Time: 0.0.226
+Elapsed Time: 0.0.277
 
--- [1]36:show devices from t1
+-- [1]38:select * from t2 order by time
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |attr(STRING)      |temperature(FLOAT)      |
+--------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d1                     |attr_1            |22.2                    |
+01+08:00             |                       |                  |                        |
+--------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d2                     |attr_2            |21.1                    |
+02+08:00             |                       |                  |                        |
+总数目：2
+}
+
+Elapsed Time: 0.0.25
+
+-- [1]41:show devices from t1
 STRICT{
 device_id(STRING)      |attr(STRING)      |
 -----------------------------------------
@@ -117,15 +159,39 @@ d3                     |attr_3            |
 总数目：6
 }
 
-Elapsed Time: 0.0.5
--- [1]37:delete devices from t1 where device_id = 'd6'
+Elapsed Time: 0.0.6
+-- [1]42:delete devices from t1 where device_id = 'd6'
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.121
+Elapsed Time: 0.0.159
 
--- [1]38:show devices from t1
+-- [1]43:show devices from t1
+STRICT{
+device_id(STRING)      |attr(STRING)      |
+-----------------------------------------
+d4                     |attr_4            |
+-----------------------------------------
+d5                     |attr_5            |
+-----------------------------------------
+d1                     |attr_1            |
+-----------------------------------------
+d2                     |attr_2            |
+-----------------------------------------
+d3                     |attr_3            |
+总数目：5
+}
+
+Elapsed Time: 0.0.5
+-- [1]44:delete devices from t1 where device_id = 'd1' and device_id = 'd2'
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.9
+
+-- [1]45:show devices from t1
 STRICT{
 device_id(STRING)      |attr(STRING)      |
 -----------------------------------------
@@ -142,39 +208,71 @@ d3                     |attr_3            |
 }
 
 Elapsed Time: 0.0.4
--- [1]39:delete devices from t1 where device_id = 'd1' and device_id = 'd2'
+-- [1]46:delete devices from t1 where device_id = 'd1' or device_id = 'd2'
 STRICT{
 0
 }
 
-Elapsed Time: 0.0.41
+Elapsed Time: 0.0.54
 
--- [1]40:show devices from t1
+-- [1]47:show devices from t1
+STRICT{
+device_id(STRING)      |attr(STRING)      |
+-----------------------------------------
+d4                     |attr_4            |
+-----------------------------------------
+d5                     |attr_5            |
+-----------------------------------------
+d3                     |attr_3            |
+总数目：3
+}
+
+Elapsed Time: 0.0.5
+-- [1]48:delete devices from t1
+STRICT{
+0
+}
+
+Elapsed Time: 0.0.47
+
+-- [1]49:show devices from t1
 STRICT{
 device_id(STRING)      |attr(STRING)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.3
--- [1]41:delete devices from t1
+Elapsed Time: 0.0.5
+-- [1]52:delete devices from t2 where device_id in ('d1','d2')
 STRICT{
-0
+SQLSTATE : 701: Unsupported expression: (device_id IN ('d1', 'd2')) in (device_id IN ('d1', 'd2'))
 }
-
-Elapsed Time: 0.0.24
-
--- [1]42:show devices from t1
-STRICT{
-device_id(STRING)      |attr(STRING)      |
-总数目：0
-}
-
-Elapsed Time: 0.0.3
--- [1]45:delete devices from t1 where time = 10000
+-- [1]54:delete devices from t1 where time = 10000
 STRICT{
 SQLSTATE : 701: The TIME/FIELD columns are currently not allowed in devices related operations
 }
--- [1]47:delete devices from t1 where attr = 'attr_4'
+-- [1]56:delete devices from t1 where attr = 'attr_4'
 STRICT{
 SQLSTATE : 701: The column 'attr' does not exist or is not a tag column
 }
+
+-- [1]60:select * from t1 order by time
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |attr(STRING)      |status(BOOLEAN)      |
+总数目：0
+}
+
+Elapsed Time: 0.0.14
+
+-- [1]61:select * from t2 order by time
+STRICT{
+time(TIMESTAMP)      |device_id(STRING)      |attr(STRING)      |temperature(FLOAT)      |
+--------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d1                     |attr_1            |22.2                    |
+01+08:00             |                       |                  |                        |
+--------------------------------------------------------------------------------------
+1970-01-01T08:00:00.0|d2                     |attr_2            |21.1                    |
+02+08:00             |                       |                  |                        |
+总数目：2
+}
+
+Elapsed Time: 0.0.18
