@@ -158,7 +158,7 @@ ON
 ORDER BY time1;
 
 
---8.不支持ASOF LEFT JOIN
+--8.支持ASOF LEFT JOIN
 select 
        t1.time as time1, t1.id as id1, t1.sys as sys1, t1.price as price1, 
        t2.time as time2, t2.id as id2, t2.sys as sys2, t2.quanty as quanty1 
@@ -167,8 +167,9 @@ from
          ASOF LEFT JOIN 
        trades t2
 on
-       t1.time>=t2.time;
-<<SQLSTATE;
+       t1.time>=t2.time
+order by time1;
+
 
 --9. ASOF JOIN 中time不应该为等于号”=“,不等于号”<>“
 select 
