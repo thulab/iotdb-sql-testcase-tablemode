@@ -19,7 +19,7 @@ ln                  |INF                |1                                   |1 
 总数目：3
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.57
 -- [1]19:use ln
 STRICT{
 PASS
@@ -49,7 +49,7 @@ information_schema  |INF                |null                                |nu
 总数目：1
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.4
 -- [1]48:CREATE DATABASE _
 STRICT{
 PASS
@@ -83,7 +83,7 @@ _                   |INF                |1                                   |1 
 总数目：5
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]54:create database "qwertyuiop1234567890一二三四五六七八九十qwertyuiop1234567890qwertyuiop1234"
 STRICT{
 PASS
@@ -241,7 +241,7 @@ timestamp           |INF                |1                                   |1 
 总数目：12
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.4
 -- [1]130:CREATE DATABASE db
 STRICT{
 PASS
@@ -257,7 +257,7 @@ db                  |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]134:CREATE DATABASE DB
 STRICT{
 SQLSTATE : 501: Database db already exists
@@ -273,7 +273,7 @@ db                  |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]151:CREATE DATABASE TEST
 STRICT{
 PASS
@@ -293,7 +293,7 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 -- [1]159:DROP DATABASE test
 STRICT{
 PASS
@@ -335,7 +335,7 @@ table1               |INF                |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.19
 
 -- [1]183:desc table1
 STRICT{
@@ -369,13 +369,13 @@ s10                   |BLOB                |FIELD               |
 总数目：13
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.13
 -- [1]187:INSERT INTO table1(time,device_id,color,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10) values(1, 'd1', 'red', 'abcd', 1, 1, 1, 1, true, '2021-10-01', 1633046400000, 'abcd', X'abcd')
 STRICT{
 0
 }
 
-Elapsed Time: 0.1.654
+Elapsed Time: 0.0.712
 
 -- [1]189:select * from table1 order by time
 STRICT{
@@ -386,7 +386,7 @@ time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s1(TEXT)      
 总数目：1
 }
 
-Elapsed Time: 0.0.9
+Elapsed Time: 0.0.239
 -- [1]192:drop database test
 STRICT{
 PASS
@@ -407,18 +407,22 @@ SQLSTATE : 500: Unknown database test
 }
 -- [1]198:desc table1
 STRICT{
-SQLSTATE : 500: Unknown database test
+SQLSTATE : 701: database is not specified
 }
 -- [1]202:create database test
 STRICT{
 PASS
 }
--- [1]203:create table table1(device_id STRING TAG, color STRING ATTRIBUTE, s1 TEXT FIELD, s2 INT32 FIELD, s3 INT64 FIELD, s4 FLOAT FIELD, s5 DOUBLE FIELD, s6 BOOLEAN FIELD, s7 DATE FIELD, s8 TIMESTAMP FIELD, s9 STRING FIELD, s10 BLOB FIELD)
+-- [1]203:use test
+STRICT{
+PASS
+}
+-- [1]204:create table table1(device_id STRING TAG, color STRING ATTRIBUTE, s1 TEXT FIELD, s2 INT32 FIELD, s3 INT64 FIELD, s4 FLOAT FIELD, s5 DOUBLE FIELD, s6 BOOLEAN FIELD, s7 DATE FIELD, s8 TIMESTAMP FIELD, s9 STRING FIELD, s10 BLOB FIELD)
 STRICT{
 PASS
 }
 
--- [1]206:show databases
+-- [1]207:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -428,9 +432,9 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.3
 
--- [1]207:show tables from test
+-- [1]208:show tables from test
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
@@ -440,7 +444,7 @@ table1               |INF                |
 
 Elapsed Time: 0.0.1
 
--- [1]208:desc table1
+-- [1]209:desc table1
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
 --------------------------------------------------------------
@@ -472,33 +476,33 @@ s10                   |BLOB                |FIELD               |
 总数目：13
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
--- [1]211:select * from table1 order by time
+-- [1]212:select * from table1 order by time
 STRICT{
 time(TIMESTAMP)      |device_id(STRING)      |color(STRING)      |s1(TEXT)      |s2(INT32)      |s3(INT64)      |s4(FLOAT)      |s5(DOUBLE)      |s6(BOOLEAN)      |s7(DATE)      |s8(TIMESTAMP)      |s9(STRING)      |s10(BLOB)      |
 总数目：0
 }
 
-Elapsed Time: 0.0.5
--- [1]231:CREATE DATABASE test_DB1
+Elapsed Time: 0.0.17
+-- [1]232:CREATE DATABASE test_DB1
 STRICT{
 PASS
 }
--- [1]232:CREATE DATABASE test_DB2 with (ttl=86400000)
+-- [1]233:CREATE DATABASE test_DB2 with (ttl=86400000)
 STRICT{
 PASS
 }
--- [1]233:CREATE DATABASE IF NOT EXISTS test_DB3 with (TTL='INF')
+-- [1]234:CREATE DATABASE IF NOT EXISTS test_DB3 with (TTL='INF')
 STRICT{
 PASS
 }
--- [1]234:CREATE DATABASE IF NOT EXISTS test_DB4 with (TTL='INF',TIME_PARTITION_INTERVAL=604800000,SCHEMA_REGION_GROUP_NUM=1,DATA_REGION_GROUP_NUM=2)
+-- [1]235:CREATE DATABASE IF NOT EXISTS test_DB4 with (TTL='INF',TIME_PARTITION_INTERVAL=604800000,SCHEMA_REGION_GROUP_NUM=1,DATA_REGION_GROUP_NUM=2)
 STRICT{
 PASS
 }
 
--- [1]236:show databases
+-- [1]237:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -514,9 +518,9 @@ test_db2            |86400000           |1                                   |1 
 总数目：5
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
--- [1]237:show databases details
+-- [1]238:show databases details
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |SchemaRegionGroupNum(INT32)      |DataRegionGroupNum(INT32)      |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -532,13 +536,13 @@ test_db2            |86400000           |1                                   |1 
 总数目：5
 }
 
-Elapsed Time: 0.0.1
--- [1]240:count databases
+Elapsed Time: 0.0.3
+-- [1]241:count databases
 STRICT{
 SQLSTATE : 700: line 1:7: mismatched input 'databases'. Expecting: 'DEVICES', 'TIMEPARTITION', 'TIMESLOTID'
 }
 
--- [1]257:show databases
+-- [1]258:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -548,7 +552,7 @@ information_schema  |INF                |null                                |nu
 
 Elapsed Time: 0.0.2
 
--- [1]258:show databases details
+-- [1]259:show databases details
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |SchemaRegionGroupNum(INT32)      |DataRegionGroupNum(INT32)      |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -556,17 +560,17 @@ information_schema  |INF                |null                                |nu
 总数目：1
 }
 
-Elapsed Time: 0.0.1
--- [1]261:drop database information_schema
+Elapsed Time: 0.0.2
+-- [1]262:drop database information_schema
 STRICT{
 SQLSTATE : 701: The database 'information_schema' can only be queried
 }
--- [1]271:create database TEST
+-- [1]272:create database TEST
 STRICT{
 PASS
 }
 
--- [1]274:show databases
+-- [1]275:show databases
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -576,9 +580,9 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
--- [1]275:show databases details
+-- [1]276:show databases details
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |SchemaRegionGroupNum(INT32)      |DataRegionGroupNum(INT32)      |
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -588,23 +592,23 @@ test                |INF                |1                                   |1 
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.2
 
--- [1]279:SHOW CURRENT_DATABASE
+-- [1]280:SHOW CURRENT_DATABASE
 STRICT{
 CurrentDatabase(STRING)      |
 -----------------------------
-test                         |
+null                         |
 总数目：1
 }
 
 Elapsed Time: 0.0.2
--- [1]281:use TEST
+-- [1]282:use TEST
 STRICT{
 PASS
 }
 
--- [1]285:SHOW CURRENT_DATABASE
+-- [1]286:SHOW CURRENT_DATABASE
 STRICT{
 CurrentDatabase(STRING)      |
 -----------------------------
@@ -612,12 +616,12 @@ test                         |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
--- [1]287:drop database TEST
+Elapsed Time: 0.0.1
+-- [1]288:drop database TEST
 STRICT{
 PASS
 }
--- [1]290:create table t1(device_id STRING TAG, model_id STRING ATTRIBUTE, boolean BOOLEAN FIELD)
+-- [1]291:create table t1(device_id STRING TAG, model_id STRING ATTRIBUTE, boolean BOOLEAN FIELD)
 STRICT{
-SQLSTATE : 500: Unknown database test
+SQLSTATE : 701: database is not specified
 }

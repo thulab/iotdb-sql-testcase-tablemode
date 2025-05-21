@@ -200,6 +200,7 @@ desc table1;
 
 --8.再次创建数据库，表
 create database test;
+use test;
 create table table1(device_id STRING TAG, color STRING ATTRIBUTE, s1 TEXT FIELD, s2 INT32 FIELD, s3 INT64 FIELD, s4 FLOAT FIELD, s5 DOUBLE FIELD, s6 BOOLEAN FIELD, s7 DATE FIELD, s8 TIMESTAMP FIELD, s9 STRING FIELD, s10 BLOB FIELD);
 
 --9.查看数据库，展示表，列出表信息
