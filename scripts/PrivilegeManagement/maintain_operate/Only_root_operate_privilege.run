@@ -129,10 +129,10 @@ show CURRENT_TIMESTAMP;
 show CURRENT_USER;
 
 show queries;
-<<SQLSTATE;
+<<CHECKCODE;
 
 show query processlist;
-<<SQLSTATE;
+<<CHECKCODE;
 
 kill all queries;
 <<SQLSTATE;

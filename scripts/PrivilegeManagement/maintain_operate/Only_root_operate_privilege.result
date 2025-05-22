@@ -15,7 +15,7 @@ STRICT{
 0
 }
 
-Elapsed Time: 0.2.22
+Elapsed Time: 0.0.701
 -- [1]21:FLUSH
 STRICT{
 PASS
@@ -49,7 +49,7 @@ NodeID(INT32)      |Status(TEXT)      |InternalAddress(TEXT)      |InternalPort(
 总数目：1
 }
 
-Elapsed Time: 0.0.15
+Elapsed Time: 0.0.11
 
 -- [1]42:show datanodes
 STRICT{
@@ -59,7 +59,7 @@ NodeID(INT32)      |Status(TEXT)      |RpcAddress(TEXT)      |RpcPort(INT32)    
 总数目：1
 }
 
-Elapsed Time: 0.0.17
+Elapsed Time: 0.0.12
 -- [1]44:show regions
 STRICT{
 PASS
@@ -124,7 +124,7 @@ TimestampPrecision  |ms               |
 总数目：15
 }
 
-Elapsed Time: 0.0.16
+Elapsed Time: 0.0.11
 
 -- [1]55:show current_database
 STRICT{
@@ -134,7 +134,7 @@ test_db                      |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 
 -- [1]57:show CURRENT_SQL_DIALECT
 STRICT{
@@ -144,7 +144,7 @@ TABLE                          |
 总数目：1
 }
 
-Elapsed Time: 0.0.2
+Elapsed Time: 0.0.1
 -- [1]59:show CURRENT_TIMESTAMP
 STRICT{
 PASS
@@ -207,7 +207,7 @@ time(TIMESTAMP)      |device_id(STRING)      |int32(INT32)      |
 总数目：3
 }
 
-Elapsed Time: 0.0.7
+Elapsed Time: 0.0.33
 -- [1]83:set system to running
 STRICT{
 PASS
@@ -237,7 +237,7 @@ time(TIMESTAMP)      |device_id(STRING)      |int32(INT32)      |
 总数目：4
 }
 
-Elapsed Time: 0.0.5
+Elapsed Time: 0.0.9
 -- [1]90:show version
 STRICT{
 PASS
@@ -311,14 +311,14 @@ user01                   |
 总数目：1
 }
 
-Elapsed Time: 0.0.0
+Elapsed Time: 0.0.1
 -- [1]131:show queries
 STRICT{
-SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+PASS
 }
 -- [1]134:show query processlist
 STRICT{
-SQLSTATE : 803: Access Denied: No permissions for this operation, only root user is allowed
+PASS
 }
 -- [1]137:kill all queries
 STRICT{

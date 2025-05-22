@@ -54,7 +54,7 @@ drop role role_1;
 // 8、查询运行的查询取消查询
 connect user_1/pass1234;
 show queries;
-<<SQLSTATE;
+<<CHECKCODE;
 kill all queries;
 <<SQLSTATE;
 // 9、查看变量信息
