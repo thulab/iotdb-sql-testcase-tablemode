@@ -137,7 +137,7 @@ RIGHT JOIN
 	t2 ON t1.status = t2.status 
 RIGHT JOIN
     t3 ON t2.status = t3.status
-order by t1.time;
+order by t1.time, t2.time, t3.time;
 
 
 --8.4 右连接并使用聚合函数
