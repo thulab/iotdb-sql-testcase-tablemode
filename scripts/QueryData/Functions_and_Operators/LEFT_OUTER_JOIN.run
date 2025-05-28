@@ -328,6 +328,16 @@ WHERE
 ORDER BY 
     t2.time;
 	
+--9. 语法暂不支持
+select 
+	t1.id as id1,
+	t2.id as id2
+from 
+	t1 
+LEFT OUTER JOIN
+	t2 ON t1.time = 4000;
+<<SQLSTATE;
+	
 	
 --清理环境
 drop database test_db;
