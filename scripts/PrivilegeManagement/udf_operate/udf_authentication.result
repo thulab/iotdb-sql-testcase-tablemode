@@ -172,6 +172,9 @@ EXTREME                 |built-in aggregate funct|                          |AVA
 FIRST                   |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+APPROX_MOST_FREQUENT    |built-in aggregate funct|                          |AVAILABLE        |
+                        |ion                     |                          |                 |
+-------------------------------------------------------------------------------------------
 FIRST_BY                |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
@@ -191,7 +194,7 @@ FORECAST                |built-in table function |                          |AVA
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：72
+总数目：73
 }
 
 Elapsed Time: 0.0.12
@@ -480,6 +483,9 @@ EXTREME                 |built-in aggregate funct|                          |AVA
 FIRST                   |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+APPROX_MOST_FREQUENT    |built-in aggregate funct|                          |AVAILABLE        |
+                        |ion                     |                          |                 |
+-------------------------------------------------------------------------------------------
 FIRST_BY                |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
@@ -499,7 +505,7 @@ FORECAST                |built-in table function |                          |AVA
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：72
+总数目：73
 }
 
 Elapsed Time: 0.0.2
@@ -684,6 +690,9 @@ EXTREME                 |built-in aggregate funct|                          |AVA
 FIRST                   |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+APPROX_MOST_FREQUENT    |built-in aggregate funct|                          |AVAILABLE        |
+                        |ion                     |                          |                 |
+-------------------------------------------------------------------------------------------
 FIRST_BY                |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
@@ -703,7 +712,7 @@ FORECAST                |built-in table function |                          |AVA
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：72
+总数目：73
 }
 
 Elapsed Time: 0.0.1
@@ -888,6 +897,9 @@ EXTREME                 |built-in aggregate funct|                          |AVA
 FIRST                   |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+APPROX_MOST_FREQUENT    |built-in aggregate funct|                          |AVAILABLE        |
+                        |ion                     |                          |                 |
+-------------------------------------------------------------------------------------------
 FIRST_BY                |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
@@ -907,7 +919,7 @@ FORECAST                |built-in table function |                          |AVA
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：72
+总数目：73
 }
 
 Elapsed Time: 0.0.2
@@ -1092,6 +1104,9 @@ EXTREME                 |built-in aggregate funct|                          |AVA
 FIRST                   |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
+APPROX_MOST_FREQUENT    |built-in aggregate funct|                          |AVAILABLE        |
+                        |ion                     |                          |                 |
+-------------------------------------------------------------------------------------------
 FIRST_BY                |built-in aggregate funct|                          |AVAILABLE        |
                         |ion                     |                          |                 |
 -------------------------------------------------------------------------------------------
@@ -1111,7 +1126,7 @@ FORECAST                |built-in table function |                          |AVA
 VARIATION               |built-in table function |                          |AVAILABLE        |
 -------------------------------------------------------------------------------------------
 CAPACITY                |built-in table function |                          |AVAILABLE        |
-总数目：72
+总数目：73
 }
 
 Elapsed Time: 0.0.2
