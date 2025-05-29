@@ -25,7 +25,8 @@ employees            |INF                |
 总数目：2
 }
 
-Elapsed Time: 0.0.1
+Elapsed Time: 0.0.0
+
 -- [1]43:desc employees
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
@@ -51,6 +52,9 @@ date_of_birth         |DATE                |FIELD               |
 contac_info           |STRING              |FIELD               |
 总数目：10
 }
+
+Elapsed Time: 0.0.1
+
 -- [1]44:desc departments
 STRICT{
 ColumnName(TEXT)      |DataType(TEXT)      |Category(TEXT)      |
@@ -70,6 +74,8 @@ dep_status            |BOOLEAN             |FIELD               |
 dep_member            |INT32               |FIELD               |
 总数目：7
 }
+
+Elapsed Time: 0.0.1
 -- [1]48:insert into employees( time, department_id, remark, name, gender, status, employee_id, salary, date_of_birth, contac_info) values (1704874210000, 'D001', 'good', 'Mary','Female', false, 1223, 5500.22, '1988-10-12', '133-1212-1234')
 STRICT{
 0

@@ -31,11 +31,11 @@ PASS
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
-device_type_3        |INF                |
+device_type_1        |3600000            |
 ----------------------------------------
 device_type_2        |3600000            |
 ----------------------------------------
-device_type_1        |3600000            |
+device_type_3        |INF                |
 总数目：3
 }
 
@@ -45,11 +45,11 @@ Elapsed Time: 0.0.1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |Status(TEXT)      |Comment(TEXT)      |TableType(TEXT)      |
 --------------------------------------------------------------------------------------------------
-device_type_3        |INF                |USING             |null               |BASE TABLE           |
+device_type_1        |3600000            |USING             |null               |BASE TABLE           |
 --------------------------------------------------------------------------------------------------
 device_type_2        |3600000            |USING             |null               |BASE TABLE           |
 --------------------------------------------------------------------------------------------------
-device_type_1        |3600000            |USING             |null               |BASE TABLE           |
+device_type_3        |INF                |USING             |null               |BASE TABLE           |
 总数目：3
 }
 
@@ -59,11 +59,11 @@ Elapsed Time: 0.0.3
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |Status(TEXT)      |Comment(TEXT)      |TableType(TEXT)      |
 --------------------------------------------------------------------------------------------------
-device_type_3        |INF                |USING             |null               |BASE TABLE           |
+device_type_1        |3600000            |USING             |null               |BASE TABLE           |
 --------------------------------------------------------------------------------------------------
 device_type_2        |3600000            |USING             |null               |BASE TABLE           |
 --------------------------------------------------------------------------------------------------
-device_type_1        |3600000            |USING             |null               |BASE TABLE           |
+device_type_3        |INF                |USING             |null               |BASE TABLE           |
 总数目：3
 }
 
@@ -73,11 +73,11 @@ Elapsed Time: 0.0.1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |Status(TEXT)      |Comment(TEXT)      |TableType(TEXT)      |
 --------------------------------------------------------------------------------------------------
-device_type_3        |INF                |USING             |null               |BASE TABLE           |
+device_type_1        |3600000            |USING             |null               |BASE TABLE           |
 --------------------------------------------------------------------------------------------------
 device_type_2        |3600000            |USING             |null               |BASE TABLE           |
 --------------------------------------------------------------------------------------------------
-device_type_1        |3600000            |USING             |null               |BASE TABLE           |
+device_type_3        |INF                |USING             |null               |BASE TABLE           |
 总数目：3
 }
 
@@ -208,9 +208,9 @@ SQLSTATE : 701: Table property 'format' is currently not allowed.
 STRICT{
 Database(TEXT)      |TTL(ms)(TEXT)      |SchemaReplicationFactor(INT32)      |DataReplicationFactor(INT32)      |TimePartitionInterval(INT64)      |
 -----------------------------------------------------------------------------------------------------------------------------------------------
-information_schema  |INF                |null                                |null                              |null                              |
------------------------------------------------------------------------------------------------------------------------------------------------
 data                |INF                |1                                   |1                                 |604800000                         |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+information_schema  |INF                |null                                |null                              |null                              |
 -----------------------------------------------------------------------------------------------------------------------------------------------
 test_db             |INF                |1                                   |1                                 |604800000                         |
 总数目：3
@@ -222,11 +222,11 @@ Elapsed Time: 0.0.1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
-device_type_3        |INF                |
+device_type_1        |3600000            |
 ----------------------------------------
 device_type_2        |3600000            |
 ----------------------------------------
-device_type_1        |3600000            |
+device_type_3        |INF                |
 总数目：3
 }
 
@@ -236,13 +236,13 @@ Elapsed Time: 0.0.1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
-table5               |INF                |
-----------------------------------------
 table1               |INF                |
 ----------------------------------------
-table7               |3600000            |
+table5               |INF                |
 ----------------------------------------
 table6               |INF                |
+----------------------------------------
+table7               |3600000            |
 总数目：4
 }
 
@@ -252,11 +252,11 @@ Elapsed Time: 0.0.1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
-device_type_3        |INF                |
+device_type_1        |3600000            |
 ----------------------------------------
 device_type_2        |3600000            |
 ----------------------------------------
-device_type_1        |3600000            |
+device_type_3        |INF                |
 总数目：3
 }
 
@@ -266,13 +266,13 @@ Elapsed Time: 0.0.1
 STRICT{
 TableName(TEXT)      |TTL(ms)(TEXT)      |
 ----------------------------------------
-table5               |INF                |
-----------------------------------------
 table1               |INF                |
 ----------------------------------------
-table7               |3600000            |
+table5               |INF                |
 ----------------------------------------
 table6               |INF                |
+----------------------------------------
+table7               |3600000            |
 总数目：4
 }
 
