@@ -1438,7 +1438,7 @@ information_schema    |config_nodes            |INF                  |USING     
 db2                   |t1                      |INF                  |USING               |null                 |BASE TABLE              |
 ------------------------------------------------------------------------------------------------------------------------------------
 db1                   |t1                      |INF                  |USING               |null                 |BASE TABLE              |
-总数目：16
+总数目：19
 }
 
 Elapsed Time: 0.0.4
