@@ -282,7 +282,7 @@ time(TIMESTAMP)      |地区(STRING)      |厂号(STRING)      |设备号(STRING
 Elapsed Time: 0.0.3
 -- [1]59:select * from device_type_0 limit -1
 STRICT{
-SQLSTATE : 700: line 1:35: mismatched input '-'. Expecting: '(', ',', 'ASOF', 'CROSS', 'EXCEPT', 'FILL', 'FULL', 'GROUP', 'HAVING', 'INNER', 'INTERSECT', 'JOIN', 'LEFT', 'LIMIT', 'NATURAL', 'OFFSET', 'ORDER', 'RIGHT', 'UNION', 'WHERE', <EOF>
+SQLSTATE : 700: line 1:35: mismatched input '-'. Expecting: '(', ',', 'ASOF', 'CROSS', 'EXCEPT', 'FILL', 'FULL', 'GROUP', 'HAVING', 'INNER', 'INTERSECT', 'JOIN', 'LEFT', 'LIMIT', 'NATURAL', 'OFFSET', 'ORDER', 'RIGHT', 'UNION', 'WHERE', 'WINDOW', <EOF>
 }
 -- [1]61:select * from device_type_0 limit 9223372036854775808
 STRICT{
@@ -290,7 +290,7 @@ SQLSTATE : 700: line 1:35: Invalid numeric literal: 9223372036854775808
 }
 -- [1]63:select * from device_type_0 limit 11.1
 STRICT{
-SQLSTATE : 700: line 1:35: mismatched input '11.1'. Expecting: '(', ',', 'ASOF', 'CROSS', 'EXCEPT', 'FILL', 'FULL', 'GROUP', 'HAVING', 'INNER', 'INTERSECT', 'JOIN', 'LEFT', 'LIMIT', 'NATURAL', 'OFFSET', 'ORDER', 'RIGHT', 'UNION', 'WHERE', <EOF>
+SQLSTATE : 700: line 1:35: mismatched input '11.1'. Expecting: '(', ',', 'ASOF', 'CROSS', 'EXCEPT', 'FILL', 'FULL', 'GROUP', 'HAVING', 'INNER', 'INTERSECT', 'JOIN', 'LEFT', 'LIMIT', 'NATURAL', 'OFFSET', 'ORDER', 'RIGHT', 'UNION', 'WHERE', 'WINDOW', <EOF>
 }
 
 -- [1]67:select * from device_type_0 order by time,"地区" asc offset 5
@@ -403,7 +403,7 @@ time(TIMESTAMP)      |地区(STRING)      |厂号(STRING)      |设备号(STRING
 Elapsed Time: 0.0.5
 -- [1]69:select * from device_type_0 offset -1
 STRICT{
-SQLSTATE : 700: line 1:36: mismatched input '-'. Expecting: '(', ',', 'ASOF', 'CROSS', 'EXCEPT', 'FILL', 'FULL', 'GROUP', 'HAVING', 'INNER', 'INTERSECT', 'JOIN', 'LEFT', 'LIMIT', 'NATURAL', 'OFFSET', 'ORDER', 'RIGHT', 'UNION', 'WHERE', <EOF>
+SQLSTATE : 700: line 1:36: mismatched input '-'. Expecting: '(', ',', 'ASOF', 'CROSS', 'EXCEPT', 'FILL', 'FULL', 'GROUP', 'HAVING', 'INNER', 'INTERSECT', 'JOIN', 'LEFT', 'LIMIT', 'NATURAL', 'OFFSET', 'ORDER', 'RIGHT', 'UNION', 'WHERE', 'WINDOW', <EOF>
 }
 
 -- [1]73:select * from device_type_0  order by time,"地区" asc offset 2 limit 10
