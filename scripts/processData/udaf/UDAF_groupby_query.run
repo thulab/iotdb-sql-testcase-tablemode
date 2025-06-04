@@ -50,6 +50,9 @@ create function my_count as 'org.apache.iotdb.db.query.udf.example.relational.My
 --5. 执行UDAF查询
 select date_bin(5s, time),province,city,region,device_id, my_count(time) from table1 group by 1,2,3,4,5 order by 2,3,4,5,1;
 
+--6. 卸载UDF
+drop function my_count;
+
 
 --清理环境
 drop database test_db;
