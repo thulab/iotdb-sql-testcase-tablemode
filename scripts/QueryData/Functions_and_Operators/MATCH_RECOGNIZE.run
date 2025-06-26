@@ -144,6 +144,7 @@ order by time, price;
 -- RPR_LAST	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			RPR_LAST(totalprice) as price
 		ALL ROWS PER MATCH
@@ -151,11 +152,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			RPR_LAST(totalprice, 0) as price
 		ALL ROWS PER MATCH
@@ -163,11 +164,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			RPR_LAST(totalprice, 2) as price
 		ALL ROWS PER MATCH
@@ -175,11 +176,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			RUNNING RPR_LAST(totalprice) as price
 		ALL ROWS PER MATCH
@@ -187,11 +188,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			FINAL RPR_LAST(totalprice) as price
 		ALL ROWS PER MATCH
@@ -199,11 +200,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			FINAL RPR_LAST(totalprice, 2) as price
 		ALL ROWS PER MATCH
@@ -211,13 +212,13 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 
 --RPR_FIRST	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			RPR_FIRST(totalprice) as price
 		ALL ROWS PER MATCH
@@ -225,11 +226,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			RPR_FIRST(totalprice, 0) as price
 		ALL ROWS PER MATCH
@@ -237,11 +238,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;	
+	) AS m;	
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			RPR_FIRST(totalprice, 2) as price
 		ALL ROWS PER MATCH
@@ -249,11 +250,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;	
+	) AS m;	
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			RUNNING RPR_FIRST(totalprice) as price
 		ALL ROWS PER MATCH
@@ -261,11 +262,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			FINAL RPR_FIRST(totalprice) as price
 		ALL ROWS PER MATCH
@@ -273,11 +274,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;	
+	) AS m;	
 
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			FINAL RPR_FIRST(totalprice, 2) as price
 		ALL ROWS PER MATCH
@@ -285,13 +286,13 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 
 	
 --PREV	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			PREV(totalprice) as price
 		ALL ROWS PER MATCH
@@ -299,11 +300,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			PREV(totalprice, 1) as price
 		ALL ROWS PER MATCH
@@ -311,11 +312,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			PREV(totalprice, 2) as price
 		ALL ROWS PER MATCH
@@ -323,13 +324,13 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 
 	
 --NEXT
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			NEXT(totalprice) as price
 		ALL ROWS PER MATCH
@@ -337,11 +338,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 		
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			NEXT(totalprice, 1) as price
 		ALL ROWS PER MATCH
@@ -349,11 +350,11 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+	order by time
 		measures
 			NEXT(totalprice, 2) as price
 		ALL ROWS PER MATCH
@@ -361,14 +362,14 @@ select m.time, m.price from orders
 		PATTERN(A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 
 	
 --混合
 select * from orders
 	MATCH_RECOGNIZE(
 		partition by customer_id
+		order by time
 		measures 
 			MATCH_NUMBER() AS match,
 			RPR_FIRST(A.time) AS event_start,
@@ -388,6 +389,7 @@ select * from
 	)
 	MATCH_RECOGNIZE(
 		partition by region
+		order by time
 		measures
 			MATCH_NUMBER() AS match,
 			RPR_FIRST(A.time) AS event_start,
@@ -397,11 +399,11 @@ select * from
 		PATTERN (A+)
 		DEFINE
 			A AS A.totalprice > 100000
-	) AS m
-order by region, match;
+	) AS m;
 
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			PREV(RPR_FIRST(totalprice)) AS price
 		ALL ROWS PER MATCH
@@ -409,11 +411,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			PREV(RPR_FIRST(totalprice), 2) AS price
 		ALL ROWS PER MATCH
@@ -421,11 +423,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			PREV(RPR_FIRST(totalprice, 2)) AS price
 		ALL ROWS PER MATCH
@@ -433,11 +435,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			PREV(RPR_FIRST(totalprice, 2), 2) AS price
 		ALL ROWS PER MATCH
@@ -445,11 +447,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;	
+	) AS m;	
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			PREV(RPR_LAST(totalprice)) AS price
 		ALL ROWS PER MATCH
@@ -457,11 +459,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 		
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			PREV(RPR_LAST(totalprice), 2) AS price
 		ALL ROWS PER MATCH
@@ -469,11 +471,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			PREV(RPR_LAST(totalprice, 1)) AS price
 		ALL ROWS PER MATCH
@@ -481,11 +483,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			NEXT(RPR_FIRST(totalprice)) AS price
 		ALL ROWS PER MATCH
@@ -493,11 +495,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			NEXT(RPR_FIRST(totalprice), 2) AS price
 		ALL ROWS PER MATCH
@@ -505,11 +507,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+	order by time
 		measures
 			NEXT(RPR_FIRST(totalprice, 1)) AS price
 		ALL ROWS PER MATCH
@@ -517,11 +519,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			NEXT(RPR_FIRST(totalprice, 1), 2) AS price
 		ALL ROWS PER MATCH
@@ -529,11 +531,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;	
+	) AS m;	
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			NEXT(RPR_LAST(totalprice)) AS price
 		ALL ROWS PER MATCH
@@ -541,11 +543,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 		
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			NEXT(RPR_LAST(totalprice), 2) AS price
 		ALL ROWS PER MATCH
@@ -553,11 +555,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 	
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			NEXT(RPR_LAST(totalprice, 2)) AS price
 		ALL ROWS PER MATCH
@@ -565,11 +567,11 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 
 select m.time, m.price from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			NEXT(RPR_LAST(totalprice, 2), 2) AS price
 		ALL ROWS PER MATCH
@@ -577,13 +579,13 @@ select m.time, m.price from orders
 		PATTERN (A+)
 		DEFINE
 			A AS true	
-	) AS m
-order by time, price;
+	) AS m;
 
 
 -- * ：零次或多次重复
 select m.match, m.num, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
 		measures
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(number) AS num,
@@ -623,6 +625,7 @@ order by time, customer_id, match, price;
 --模式选择：A | B | C
 select m.time, m.match, m.price, m.label, m.prev_label, m.next_label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES 
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -636,13 +639,13 @@ select m.time, m.match, m.price, m.label, m.prev_label, m.next_label from orders
 			A AS A.totalprice = 55000,
 			L AS L.totalprice < 55000,
 			H AS H.totalprice > 55000
-    ) AS m
-order by time, match, price;
+    ) AS m;
 	
 
 -- ^A表示匹配以A为分区开始的模式	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time 
 		MEASURES
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -651,13 +654,13 @@ select m.time, m.match, m.price, m.label from orders
         AFTER MATCH SKIP PAST LAST ROW
 		PATTERN (^A)
 		DEFINE A AS true
-    ) AS m
-order by time;
+    ) AS m;
 	
 
 --当PATTERN子句的取值为^A^ 或 A^的时候，输出结果均为空	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
 		MEASURES
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -670,6 +673,7 @@ select m.time, m.match, m.price, m.label from orders
 
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
 		MEASURES
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -683,6 +687,7 @@ select m.time, m.match, m.price, m.label from orders
 --A$ 表示匹配以A为分区结束的模式	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
 		MEASURES
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -691,13 +696,13 @@ select m.time, m.match, m.price, m.label from orders
         AFTER MATCH SKIP PAST LAST ROW
 		PATTERN (A$)
 		DEFINE A AS true
-    ) AS m
-order by time;
+    ) AS m;
 	
 
 --当PATTERN子句的取值为 $A 或 $A$ 的时候，输出结果均为空
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
 		MEASURES
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -710,6 +715,7 @@ select m.time, m.match, m.price, m.label from orders
 
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
 		MEASURES
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -724,6 +730,7 @@ select m.time, m.match, m.price, m.label from orders
 --模式分组	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
 		MEASURES
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -741,6 +748,7 @@ order by time, match, price, label;
 --模式选择	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
 		MEASURES
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -758,6 +766,7 @@ order by time, match, price, label;
 --模式排列	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
 		MEASURES
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -774,6 +783,7 @@ order by time, match, price, label;
 
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
 		MEASURES
 			MATCH_NUMBER() AS match,
             RUNNING RPR_LAST(totalprice) AS price,
@@ -790,6 +800,7 @@ order by time, match, price, label;
 
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -805,6 +816,7 @@ order by time, match, price, label;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -820,6 +832,7 @@ order by time, match;
 
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -835,6 +848,7 @@ order by time, match, price;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -850,6 +864,7 @@ order by time, match, price;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -865,6 +880,7 @@ order by time, match, price, label;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+	order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -880,6 +896,7 @@ order by time, match;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -890,11 +907,12 @@ select m.time, m.match, m.price, m.label from orders
         DEFINE
 			B AS B.totalprice <= PREV(B.totalprice)
     ) AS m
-order by time, match, price;
+order by time, match, price,label;
 	
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -910,6 +928,7 @@ order by time, match;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -925,6 +944,7 @@ order by time, match, price;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -940,6 +960,7 @@ order by time, match, price;
 
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -955,6 +976,7 @@ order by time, match, price;
 
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -970,6 +992,7 @@ order by time, match, price;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -985,6 +1008,7 @@ order by time, match, price;
 
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -1000,6 +1024,7 @@ order by time, match;
 
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -1015,6 +1040,7 @@ order by time, match, price;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -1030,6 +1056,7 @@ order by time, match, price;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
@@ -1045,6 +1072,7 @@ order by time, match, price;
 	
 select m.time, m.match, m.price, m.label from orders
 	MATCH_RECOGNIZE(
+		order by time
         MEASURES
 			MATCH_NUMBER() AS match,
 			RUNNING RPR_LAST(totalprice) AS price,
