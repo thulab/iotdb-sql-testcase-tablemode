@@ -1125,7 +1125,6 @@ select m.time, m.region, m.product, m.lower_or_higher, m.label from orders
 			L AS L.number < 666,
 			H AS H.number > 666
 	) AS m;
-<<SQLSTATE;
 
 --9.3 {m, n}：重复次数在 m 到 n 之间（m、n 为非负整数）
 select m.time, m.match, m.price, m.label from orders
